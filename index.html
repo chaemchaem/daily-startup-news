@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="직전 24시간의 주요 스타트업·VC·창업 생태계 뉴스를 정리한 데일리 브리핑"
+    />
+    <title>Daily Startup &amp; VC Briefing</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <div class="eyebrow">DAILY RESEARCH BRIEF</div>
+        <h1>Daily Startup &amp; VC Briefing</h1>
+        <p class="subtitle">직전 24시간 기준 주요 투자·창업 생태계 뉴스 요약</p>
+
+        <dl class="brief-meta" aria-label="브리핑 기준 정보">
+          <div>
+            <dt>기준 시각</dt>
+            <dd id="generated-at">—</dd>
+          </div>
+          <div>
+            <dt>수집 기간</dt>
+            <dd id="collection-range">—</dd>
+          </div>
+          <div>
+            <dt>전체 기사</dt>
+            <dd><strong id="total-count">0</strong>건</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <main class="shell page-content">
+      <section class="archive-panel" aria-labelledby="viewing-date">
+        <div class="archive-copy">
+          <p class="section-kicker">BRIEFING ARCHIVE</p>
+          <div class="archive-title-row">
+            <h2 id="viewing-date">최신 브리핑</h2>
+            <span id="latest-badge" class="latest-badge" hidden>최신</span>
+          </div>
+          <p id="archive-status" class="archive-status" role="status">
+            아카이브 날짜를 확인하는 중입니다.
+          </p>
+        </div>
+
+        <div class="archive-controls">
+          <label class="date-field" for="briefing-date">
+            <span>브리핑 날짜</span>
+            <input id="briefing-date" type="date" aria-describedby="archive-status" />
+          </label>
+          <button id="latest-button" class="latest-button" type="button">최신 보기</button>
+        </div>
+      </section>
+
+      <section aria-labelledby="category-summary-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">OVERVIEW</p>
+            <h2 id="category-summary-title">카테고리별 수집 현황</h2>
+          </div>
+          <p id="data-status" class="data-status" role="status">데이터를 불러오는 중입니다.</p>
+        </div>
+        <div id="statistics" class="statistics" aria-live="polite"></div>
+      </section>
+
+      <section class="news-section" aria-labelledby="news-list-title">
+        <div class="news-toolbar">
+          <div>
+            <p class="section-kicker">LATEST NEWS</p>
+            <h2 id="news-list-title">주요 뉴스</h2>
+          </div>
+          <p id="visible-count" class="visible-count" aria-live="polite"></p>
+        </div>
+
+        <div
+          id="filters"
+          class="filters"
+          role="group"
+          aria-label="뉴스 카테고리 필터"
+        ></div>
+
+        <div id="news-grid" class="news-grid" aria-live="polite">
+          <div class="state-panel">뉴스 데이터를 준비하고 있습니다.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>RSS 메타데이터를 바탕으로 구성된 요약 브리핑입니다.</p>
+        <p>기사 저작권은 각 언론사에 있습니다.</p>
+      </div>
+    </footer>
+  </body>
+</html>
