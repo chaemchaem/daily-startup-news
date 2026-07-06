@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@11.7.0",
-  "description": "직전 24시간의 스타트업·VC 뉴스를 정리하는 정적 HTML 브리핑",
+  "description": "최근 48시간의 스타트업·VC 뉴스를 정리하는 정적 HTML 브리핑",
   "scripts": {
     "collect": "node scripts/collect-news.js",
     "start": "http-server . -a 127.0.0.1 -p 4173 -c-1",
