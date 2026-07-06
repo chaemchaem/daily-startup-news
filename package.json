@@ -2,11 +2,14 @@
   "name": "daily-startup-vc-briefing",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@11.7.0",
   "description": "직전 24시간의 스타트업·VC 뉴스를 정리하는 정적 HTML 브리핑",
   "scripts": {
     "collect": "node scripts/collect-news.js",
-    "start": "http-server . -p 4173 -c-1",
-    "preview": "http-server . -p 4173 -c-1"
+    "start": "http-server . -a 127.0.0.1 -p 4173 -c-1",
+    "preview": "http-server . -a 127.0.0.1 -p 4173 -c-1",
+    "test": "node --test tests/*.test.js",
+    "test:selection": "node --test tests/selection.test.js"
   },
   "engines": {
     "node": ">=20"

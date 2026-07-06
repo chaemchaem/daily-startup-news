@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-07-05T23:50:15+09:00",
+  "range": {
+    "from": "2026-07-04T23:50:15+09:00",
+    "to": "2026-07-05T23:50:15+09:00"
+  },
+  "totalCount": 3,
+  "categoryCounts": {
+    "VC / AC": 2,
+    "TIPS / LIPS": 0,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 0,
+    "스타트업 / 벤처기업 / 초기창업": 1,
+    "세컨더리 / 구주매각": 0,
+    "해외 VC": 0
+  },
+  "items": [
+    {
+      "id": "d824582f20c0e502",
+      "category": "VC / AC",
+      "title": "국토부, 모두의 카드 500만 돌파 등 국민체감 성과 17건 특별 포상",
+      "publishedAt": "2026-07-05",
+      "summary": "국토부가 모두의 카드 500만 돌파 등 국민체감 성과 17건 특별 포상 수상해 새만금 9조 원 규모의 민간투자 유치, 편의점 화물운송 갈등 대응, 물류업계 유가 위기 대응, 함",
+      "summarySource": "extractive_body",
+      "source": "뉴시스",
+      "url": "https://www.newsis.com/view/NISX20260704_0003695937",
+      "resolvedUrl": null,
+      "score": 29
+    },
+    {
+      "id": "508df6a08945a537",
+      "category": "VC / AC",
+      "title": "에코프로비엠 창사 10주년…유상증자로 인니 니켈 제련소 투자 속도",
+      "publishedAt": "2026-07-05",
+      "summary": "에코프로비엠은 600억 원 2명 코스닥 상장으로 1728억원의 자금을 조달했고 이를 마중물 삼아 포항 영일만 산업단지에 5만평 부지를 확보하고 CAM6 공장을 착공함",
+      "summarySource": "extractive_body",
+      "source": "뉴시스",
+      "url": "https://www.newsis.com/view/NISX20260705_0003696140",
+      "resolvedUrl": null,
+      "score": 23
+    },
+    {
+      "id": "c554e17c8ddc2b2e",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "\"소상공인 제품, 광고대행사가 육성\" 본격 추진",
+      "publishedAt": "2026-07-05",
+      "summary": "최종 선정된 30개사는 오는 12월까지 약 6개월간 SM C&C로부터 1대 1 맞춤형 지원을 받게 된다",
+      "summarySource": "extractive_body",
+      "source": "뉴시스",
+      "url": "https://www.newsis.com/view/NISX20260703_0003695433",
+      "resolvedUrl": null,
+      "score": 17
+    }
+  ]
+}

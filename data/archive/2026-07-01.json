@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-01T22:17:54+09:00",
+  "range": {
+    "from": "2026-06-30T22:17:54+09:00",
+    "to": "2026-07-01T22:17:54+09:00"
+  },
+  "totalCount": 2,
+  "categoryCounts": {
+    "VC / AC": 1,
+    "TIPS / LIPS": 0,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
+    "스타트업 / 벤처기업 / 초기창업": 0,
+    "세컨더리 / 구주매각": 0,
+    "해외 VC": 0
+  },
+  "items": [
+    {
+      "id": "60e3c29ccda7ca8a",
+      "category": "VC / AC",
+      "title": "AI 컴패니언 스타트업 딥그로브, 15억원 시드 투자 유치",
+      "publishedAt": "2026-07-01",
+      "summary": "AI 컴패니언 스타트업 딥그로브가 시드 단계에서 15억 원의 신규 투자 자금을 확보",
+      "summarySource": "titleFallback",
+      "source": "이데일리",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQ1JfUy11eXNNSVU4ZXBuWmItZjZ5Zmpoa0lPQk5xOHpOQWN3OElhQ21mTXhnZjVRZzB2NkVBUnJReGw5YVM2Rl83a3FOWmRpRm40TGt0cjJheUgyZG1XYUp1Um9wODlJWE1zSGdPSlhOV2laQU5mZVZqb1dHbFJGRg?oc=5",
+      "resolvedUrl": null,
+      "score": 23
+    },
+    {
+      "id": "b0aadf39d1f9207b",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "그린핏랩, ‘혁신성장 유형’ 벤처기업 인증 획득…AI 맞춤형 웰니스 사업 가속화",
+      "publishedAt": "2026-07-01",
+      "summary": "그린핏랩이 혁신성장 유형 벤처기업 인증을 받음",
+      "summarySource": "titleFallback",
+      "source": "서울경제TV",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE53OWRRdm0yRklPdmF0dFpud1I3Y0RRRUJVcVJiRzFTV1huQWI3SVdCMHJCS2V6YWZHRXVvSjJ6M3Y2azdGTVI5ZDBQU0o3MGl5N2lkSU8tdHpaZkxhTVFCd1h0TXE?oc=5",
+      "resolvedUrl": null,
+      "score": 20
+    }
+  ]
+}

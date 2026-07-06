@@ -62,6 +62,29 @@ function getBriefingDate(data) {
   return /^\d{4}-\d{2}-\d{2}$/u.test(generatedDate) ? generatedDate : null;
 }
 
+function normalizeBriefingData(data) {
+  if (!data || typeof data !== "object") throw new Error("브리핑 데이터 형식이 올바르지 않습니다.");
+  const items = Array.isArray(data.items)
+    ? data.items.filter((item) => item && typeof item === "object")
+    : [];
+  const categoryCounts = Object.fromEntries(
+    Object.keys(CATEGORY_LABELS).map((category) => [
+      category,
+      items.filter((item) => item.category === category).length,
+    ])
+  );
+  return {
+    ...data,
+    totalCount: items.length,
+    categoryCounts,
+    items,
+  };
+}
+
+function hasBriefingItems(data) {
+  return Array.isArray(data?.items) && data.items.length > 0;
+}
+
 function configureDatePicker() {
   const dates = [...archiveIndex.dates].sort((left, right) => left.localeCompare(right));
   elements.briefingDate.min = dates[0] || "";
@@ -188,14 +211,14 @@ function renderArticles() {
   elements.newsGrid.replaceChildren(...visibleItems.map(createArticleCard));
 }
 
-function renderBriefing({ isLatest = false } = {}) {
+function renderBriefing({ isLatest = false, statusText = "" } = {}) {
   briefingMessage = null;
   elements.generatedAt.textContent = formatDateTime(briefing.generatedAt);
   elements.collectionRange.textContent = formatRange(briefing.range);
-  elements.totalCount.textContent = String(briefing.totalCount || 0);
-  elements.dataStatus.textContent = isLatest
-    ? "최신 수집 데이터"
-    : `${formatBriefingDate(currentDate)} 아카이브`;
+  elements.totalCount.textContent = String(briefing.items.length);
+  elements.dataStatus.textContent =
+    statusText ||
+    (isLatest ? "최신 수집 데이터" : `${formatBriefingDate(currentDate)} 아카이브`);
   renderArchiveHeading({ isLatest });
   renderStatistics();
   renderFilters();
@@ -246,18 +269,36 @@ async function loadLatestBriefing() {
   const sequence = ++loadSequence;
   elements.dataStatus.textContent = "최신 브리핑을 불러오는 중입니다.";
   try {
-    let data;
+    let data = null;
+    let statusText = "";
+    let isLatestData = true;
     try {
       data = await fetchJson("data/news.json");
     } catch (error) {
-      if (!archiveIndex.latest) throw error;
-      data = await fetchJson(`data/archive/${archiveIndex.latest}.json`);
+      console.warn("최신 JSON을 불러오지 못해 아카이브를 확인합니다.", error);
     }
+
+    if (!hasBriefingItems(data)) {
+      const archiveDates = [...archiveIndex.dates].sort((left, right) => right.localeCompare(left));
+      for (const date of archiveDates) {
+        try {
+          const archived = await fetchJson(`data/archive/${date}.json`);
+          if (!hasBriefingItems(archived)) continue;
+          data = archived;
+          isLatestData = false;
+          statusText = "최신 수집이 비어 있어 최근 보존 데이터를 표시 중";
+          break;
+        } catch (error) {
+          console.warn(`${date} 아카이브 fallback을 불러오지 못했습니다.`, error);
+        }
+      }
+    }
+    if (!data) throw new Error("표시할 최신 또는 아카이브 데이터가 없습니다.");
     if (sequence !== loadSequence) return;
 
-    briefing = data;
+    briefing = normalizeBriefingData(data);
     currentDate = getBriefingDate(data) || archiveIndex.latest;
-    renderBriefing({ isLatest: true });
+    renderBriefing({ isLatest: isLatestData, statusText });
   } catch (error) {
     if (sequence !== loadSequence) return;
     console.error("최신 뉴스 데이터를 불러오지 못했습니다.", error);
@@ -280,11 +321,30 @@ async function loadArchiveDate(date) {
   elements.briefingDate.value = date;
 
   try {
-    const data = await fetchJson(`data/archive/${date}.json`);
+    let data;
+    let usedLatestFallback = false;
+    try {
+      data = await fetchJson(`data/archive/${date}.json`);
+    } catch (error) {
+      if (date !== archiveIndex.latest) throw error;
+      data = await fetchJson("data/news.json");
+      usedLatestFallback = true;
+    }
+    if (date === archiveIndex.latest && !hasBriefingItems(data)) {
+      const latestData = await fetchJson("data/news.json");
+      if (hasBriefingItems(latestData) || !data) {
+        data = latestData;
+        usedLatestFallback = true;
+      }
+    }
     if (sequence !== loadSequence) return;
 
-    briefing = data;
-    renderBriefing({ isLatest: date === archiveIndex.latest });
+    briefing = normalizeBriefingData(data);
+    currentDate = getBriefingDate(data) || date;
+    renderBriefing({
+      isLatest: usedLatestFallback,
+      statusText: usedLatestFallback ? "최신 JSON fallback 데이터" : "",
+    });
   } catch (error) {
     if (sequence !== loadSequence) return;
     if (error.status !== 404) console.error("아카이브를 불러오지 못했습니다.", error);

@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-07-02T11:58:04+09:00",
+  "range": {
+    "from": "2026-07-01T11:58:04+09:00",
+    "to": "2026-07-02T11:58:04+09:00"
+  },
+  "totalCount": 4,
+  "categoryCounts": {
+    "VC / AC": 3,
+    "TIPS / LIPS": 0,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
+    "스타트업 / 벤처기업 / 초기창업": 0,
+    "세컨더리 / 구주매각": 0,
+    "해외 VC": 0
+  },
+  "items": [
+    {
+      "id": "acfc158cb81cf535",
+      "category": "VC / AC",
+      "title": "‘연구실 AI’ 아닌 ‘현장 AI’ 통했다…카본식스, 600억 시리즈A 투자 유치",
+      "publishedAt": "2026-07-02",
+      "summary": "카본식스가 DSC·LB 공동리드로 600억 시리즈A를 유치, 제조현장 배치·매출 입증 후 글로벌 확장에 나섬",
+      "summarySource": "openai_body",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1095243/",
+      "resolvedUrl": null,
+      "score": 33
+    },
+    {
+      "id": "7fcb738adaa06ec5",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "오픈AI도 시작은 여기였다…혁신의숲, 글로벌 투자 흐름 읽는 ‘Pathfinder’ 공개",
+      "publishedAt": "2026-07-01",
+      "summary": "마크앤컴퍼니가 글로벌 초기투자 데이터를 국내 스타트업 정보와 연결한 투자 인텔리전스 Pathfinder를 출시함",
+      "summarySource": "openai_body",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1095077/",
+      "resolvedUrl": null,
+      "score": 24
+    },
+    {
+      "id": "452ef943a1d026ca",
+      "category": "VC / AC",
+      "title": "G42가 선택한 한국 AI 플랫폼…디토닉, 글로벌 AI 액셀러레이터 최종 합류",
+      "publishedAt": "2026-07-01",
+      "summary": "디토닉이 G42 계열 프리사이트 글로벌 AI 액셀러레이터 코호트 II에 최종 선정돼 중동·유럽 소버린 AI 진출을 확대함",
+      "summarySource": "openai_body",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1095069/",
+      "resolvedUrl": null,
+      "score": 20
+    },
+    {
+      "id": "b20791e2f3888f4c",
+      "category": "VC / AC",
+      "title": "Ashton Kutcher leaving Sound Ventures to launch new VC firm with Morgan Beller",
+      "publishedAt": "2026-07-02",
+      "summary": "아슈턴 커처가 소프트벤처스를 떠나 모건 벨러와 AI 인프라·에너지·딥테크 초기투자 펀드를 결성함",
+      "summarySource": "openai_body",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/01/ashton-kutcher-leaving-sound-ventures-to-launch-new-vc-firm-with-morgan-beller/",
+      "resolvedUrl": null,
+      "score": 19
+    }
+  ]
+}

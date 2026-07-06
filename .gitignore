@@ -6,3 +6,8 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Local collect logs and debug files
+collect-log*.txt
+data/debug/
+data/summary-cache.json

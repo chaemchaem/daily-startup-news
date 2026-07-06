@@ -391,9 +391,11 @@ h2 {
 
 .card-title {
   display: -webkit-box;
-  min-height: 3.05em;
+  height: 3.05em;
+  max-height: 3.05em;
   margin-bottom: var(--space-3);
   overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1.05rem;
   font-weight: 760;
   line-height: 1.52;

@@ -91,6 +91,18 @@ const categories = {
     "SoftBank Vision Fund",
     "Y Combinator",
     "글로벌 스타트업 투자",
+    "startup",
+    "startups",
+    "venture capital",
+    "funding",
+    "raises",
+    "raised",
+    "seed round",
+    "Series A",
+    "Series B",
+    "fund",
+    "acquires",
+    "acquisition",
   ],
 };
 
@@ -114,6 +126,47 @@ const techEcosystemKeywords = [
   "펀드",
   "선정",
   "보육기업",
+];
+
+// "투자"나 "선정" 같은 넓은 단어 하나만으로 일반 산업 기사가 통과하지
+// 않도록, 기술 카테고리에서는 아래의 강한 창업·투자 맥락도 요구한다.
+const techStartupContextKeywords = [
+  "스타트업",
+  "벤처기업",
+  "창업기업",
+  "초기창업",
+  "투자 유치",
+  "투자유치",
+  "시드",
+  "프리A",
+  "시리즈A",
+  "시리즈B",
+  "Series A",
+  "Series B",
+  "VC",
+  "벤처캐피탈",
+  "AC",
+  "액셀러레이터",
+  "TIPS",
+  "팁스",
+  "LIPS",
+  "립스",
+  "지원사업",
+  "데모데이",
+  "IR",
+  "실증",
+  "PoC",
+  "오픈이노베이션",
+  "액셀러레이팅",
+];
+
+const generalTechIndustryPatterns = [
+  /AI\s*데이터센터\s*(?:수요|시장|전망)/iu,
+  /데이터센터\s*냉각\s*(?:시장|산업|수요|전망)/iu,
+  /(?:일반\s*)?AI\s*검색\s*(?:시장|점유율|전망)/iu,
+  /에듀테크\s*(?:시장|산업)?\s*전망/iu,
+  /반도체\s*(?:산업|시장|업황)\s*전망/iu,
+  /(?:대기업|그룹|제조사).{0,20}설비\s*투자/iu,
 ];
 
 const startupGrowthContextKeywords = [
@@ -140,6 +193,7 @@ const startupGrowthContextKeywords = [
 // 매체 표기가 달라질 수 있으므로 실제 RSS의 source 값에 맞춰 자유롭게 추가/삭제한다.
 const allowedSources = [
   "연합뉴스",
+  "뉴스1",
   "매일경제",
   "한국경제",
   "서울경제",
@@ -148,16 +202,25 @@ const allowedSources = [
   "파이낸셜뉴스",
   "이데일리",
   "조선비즈",
+  "헤럴드경제",
   "중앙일보",
   "동아일보",
   "한겨레",
   "전자신문",
+  "디지털데일리",
+  "IT조선",
   "디지털타임스",
   "ZDNet Korea",
   "지디넷코리아",
   "블로터",
   "플래텀",
   "벤처스퀘어",
+  "와우테일",
+  "바이라인네트워크",
+  "아웃스탠딩",
+  "AI타임스",
+  "에이아이타임스",
+  "뉴시스",
   "스타트업투데이",
   "더벨",
   "딜사이트",
@@ -166,6 +229,10 @@ const allowedSources = [
   "테크M",
   "테크42",
   "CIO Korea",
+  "TechCrunch",
+  "VentureBeat",
+  "Crunchbase News",
+  "EU-Startups",
   "중소벤처기업부",
   "과학기술정보통신부",
   "농림축산식품부",
@@ -190,51 +257,429 @@ function googleNewsRss(query) {
   return `https://news.google.com/rss/search?${params.toString()}`;
 }
 
-// 직접 RSS를 추가할 때도 { name, url } 형식을 유지한다.
-const rssSources = [
-  {
+const allDomesticCategories = [
+  "VC / AC",
+  "TIPS / LIPS",
+  "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+  "스타트업 / 벤처기업 / 초기창업",
+  "세컨더리 / 구주매각",
+];
+const allGlobalCategories = [
+  "VC / AC",
+  "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+  "스타트업 / 벤처기업 / 초기창업",
+  "세컨더리 / 구주매각",
+  "해외 VC",
+];
+
+function defineSource(config) {
+  return {
+    name: config.name,
+    sourceName: config.sourceName || config.name,
+    enabled: config.enabled !== false,
+    type: config.type,
+    feedUrl: config.feedUrl || null,
+    listUrl: config.listUrl || null,
+    sitemapUrl: config.sitemapUrl || null,
+    baseUrl: config.baseUrl || null,
+    allowedUrlPatterns: config.allowedUrlPatterns || [],
+    categoryHints: config.categoryHints || allDomesticCategories,
+    articleLinkSelector: config.articleLinkSelector || "a[href]",
+    titleSelector: config.titleSelector || "meta[property='og:title'], h1",
+    dateSelector:
+      config.dateSelector || "meta[property='article:published_time'], time[datetime]",
+    bodySelector: config.bodySelector || "article, main",
+    removeSelectors:
+      config.removeSelectors || [
+        "script",
+        "style",
+        "nav",
+        "aside",
+        "footer",
+        ".advertisement",
+        ".related-news",
+        ".reporter",
+        ".copyright",
+        ".social-share",
+      ],
+    maxItems: config.maxItems || 20,
+    sourceWeight: config.sourceWeight ?? 4,
+    fetchDelayMs: config.fetchDelayMs ?? 500,
+    fetchTimeoutMs: config.fetchTimeoutMs || 10_000,
+    priority: config.priority || "primary",
+    region: config.region || "domestic",
+    fallbackFor: config.fallbackFor || null,
+    fallbackThreshold: config.fallbackThreshold ?? 3,
+    verifiedBy: config.verifiedBy || "official_site",
+    verificationNote: config.verificationNote || "",
+    reportWhenDisabled: config.reportWhenDisabled === true,
+  };
+}
+
+const configuredSourceFeeds = [
+  defineSource({
+    name: "벤처스퀘어",
+    type: "rss",
+    feedUrl: "https://www.venturesquare.net/rss/news",
+    baseUrl: "https://www.venturesquare.net",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?venturesquare\\.net/\\d+"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".article-content, .entry-content, article",
+    sourceWeight: 8,
+    maxItems: 30,
+  }),
+  defineSource({
+    name: "전자신문",
+    type: "rss",
+    feedUrl: "http://rss.etnews.com/22069.xml",
+    baseUrl: "https://www.etnews.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?etnews\\.com/\\d+"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".article_txt, #articleBody, article",
+    sourceWeight: 4,
+    maxItems: 35,
+  }),
+  defineSource({
+    name: "매일경제",
+    type: "rss",
+    feedUrl: "https://www.mk.co.kr/rss/50100032/",
+    baseUrl: "https://www.mk.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?mk\\.co\\.kr/news/.+/\\d+"],
+    categoryHints: [...allDomesticCategories, "해외 VC"],
+    bodySelector: ".news_cnt_detail_wrap, .article_body, article",
+    sourceWeight: 3,
+    maxItems: 35,
+  }),
+  defineSource({
+    name: "중소벤처기업부 RSS 86",
+    sourceName: "중소벤처기업부",
+    type: "rss",
+    feedUrl: "https://mss.go.kr/rss/smba/board/86.do",
+    baseUrl: "https://mss.go.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?mss\\.go\\.kr/"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".view_cont, .board_view, article",
+    sourceWeight: 9,
+    maxItems: 30,
+  }),
+  defineSource({
+    name: "중소벤처기업부 RSS 310",
+    sourceName: "중소벤처기업부",
+    type: "rss",
+    feedUrl: "https://mss.go.kr/rss/smba/board/310.do",
+    baseUrl: "https://mss.go.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?mss\\.go\\.kr/"],
+    categoryHints: ["TIPS / LIPS", ...allDomesticCategories.slice(2, 4)],
+    bodySelector: ".view_cont, .board_view, article",
+    sourceWeight: 9,
+    maxItems: 30,
+  }),
+  defineSource({
+    name: "뉴시스 산업",
+    sourceName: "뉴시스",
+    type: "rss",
+    feedUrl: "https://www.newsis.com/RSS/industry.xml",
+    baseUrl: "https://www.newsis.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.|mobile\\.)?newsis\\.com/view/"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".viewer, .articleBody, #textBody, article",
+    sourceWeight: 3,
+    maxItems: 35,
+    verifiedBy: "official_rss_page",
+  }),
+  defineSource({
+    name: "뉴시스 경제",
+    sourceName: "뉴시스",
+    type: "rss",
+    feedUrl: "https://www.newsis.com/RSS/economy.xml",
+    baseUrl: "https://www.newsis.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.|mobile\\.)?newsis\\.com/view/"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".viewer, .articleBody, #textBody, article",
+    sourceWeight: 3,
+    maxItems: 35,
+    verifiedBy: "official_rss_page",
+  }),
+  defineSource({
+    name: "플래텀",
+    enabled: false,
+    type: "rss",
+    feedUrl: null,
+    baseUrl: "https://platum.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?platum\\.kr/(?:archives/)?\\d+"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".entry-content, .post-content, article",
+    sourceWeight: 9,
+    maxItems: 30,
+    verifiedBy: "pending",
+    verificationNote: "공식 RSS 안내에서 현재 feed 주소 재확인 필요",
+  }),
+  defineSource({
+    name: "플래텀",
+    sourceName: "플래텀",
+    type: "html_list",
+    listUrl: "https://platum.kr/",
+    baseUrl: "https://platum.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?platum\\.kr/(?:archives/)?\\d+"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".entry-content, .post-content, article",
+    sourceWeight: 9,
+    maxItems: 20,
+    fetchDelayMs: 700,
+    verifiedBy: "official_homepage",
+  }),
+  defineSource({
+    name: "와우테일",
+    enabled: false,
+    type: "rss",
+    feedUrl: null,
+    baseUrl: "https://wowtale.net",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?wowtale\\.net/(?:archives/)?\\d+"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".entry-content, .td-post-content, article",
+    sourceWeight: 9,
+    maxItems: 30,
+    verifiedBy: "pending",
+    verificationNote: "공식 RSS 안내에서 현재 feed 주소 재확인 필요",
+  }),
+  defineSource({
+    name: "와우테일",
+    sourceName: "와우테일",
+    type: "html_list",
+    listUrl: "https://wowtale.net/",
+    baseUrl: "https://wowtale.net",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?wowtale\\.net/(?:archives/)?\\d+"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".entry-content, .td-post-content, article",
+    sourceWeight: 9,
+    maxItems: 20,
+    fetchDelayMs: 700,
+    verifiedBy: "official_homepage",
+  }),
+  defineSource({
+    name: "바이라인네트워크",
+    type: "html_list",
+    listUrl: "https://byline.network/",
+    baseUrl: "https://byline.network",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?byline\\.network/20\\d{2}/\\d{2}/"],
+    categoryHints: allDomesticCategories,
+    bodySelector: ".entry-content, .post-content, article",
+    sourceWeight: 6,
+    maxItems: 25,
+    fetchDelayMs: 700,
+  }),
+  defineSource({
+    name: "한국벤처투자",
+    enabled: false,
+    type: "html_list",
+    listUrl: "https://www.kvic.or.kr/notice/kvic-news/press-release",
+    baseUrl: "https://www.kvic.or.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?kvic\\.or\\.kr/notice/kvic-news/press-release/"],
+    categoryHints: ["VC / AC", "TIPS / LIPS", "스타트업 / 벤처기업 / 초기창업", "세컨더리 / 구주매각", "해외 VC"],
+    bodySelector: ".board-view, .view-content, main",
+    sourceWeight: 10,
+    maxItems: 20,
+    fetchDelayMs: 800,
+    verifiedBy: "official_list_without_server_side_article_links",
+    verificationNote:
+      "목록 내용은 보이지만 상세 기사 href가 서버 HTML에 노출되지 않아 html_list 수집을 비활성화함",
+    reportWhenDisabled: true,
+  }),
+  defineSource({
+    name: "창업진흥원",
+    type: "html_list",
+    listUrl: "https://www.kised.or.kr/board.es?bid=0006&list_no=&mid=a10305000000&tag=",
+    baseUrl: "https://www.kised.or.kr",
+    allowedUrlPatterns: [
+      "^https?://(?:www\\.)?kised\\.or\\.kr/board\\.es\\?.*(?:act=view.*bid=0006|bid=0006.*act=view)",
+    ],
+    categoryHints: [
+      "VC / AC",
+      "TIPS / LIPS",
+      "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "스타트업 / 벤처기업 / 초기창업",
+    ],
+    bodySelector: ".board_view, .board-view, #content, main",
+    sourceWeight: 10,
+    maxItems: 20,
+    fetchDelayMs: 800,
+    verifiedBy: "official_press_release_list",
+  }),
+  defineSource({
+    name: "AI타임스",
+    enabled: false,
+    type: "rss",
+    feedUrl: null,
+    baseUrl: "https://www.aitimes.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?aitimes\\.com/news/articleView\\.html"],
+    categoryHints: ["농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주", "스타트업 / 벤처기업 / 초기창업", "VC / AC"],
+    bodySelector: "#article-view-content-div, .article-body, article",
+    sourceWeight: 5,
+    maxItems: 30,
+    verifiedBy: "pending",
+    verificationNote: "공식 RSS 안내 또는 실접속 확인 필요",
+  }),
+  defineSource({
+    name: "TechCrunch",
+    region: "global",
+    type: "rss",
+    feedUrl: "https://techcrunch.com/feed/",
+    baseUrl: "https://techcrunch.com",
+    allowedUrlPatterns: ["^https?://techcrunch\\.com/20\\d{2}/"],
+    categoryHints: allGlobalCategories,
+    bodySelector: ".wp-block-post-content, .article-content, article",
+    sourceWeight: 7,
+    maxItems: 35,
+  }),
+  defineSource({
+    name: "VentureBeat",
+    region: "global",
+    type: "rss",
+    feedUrl: "https://venturebeat.com/feed/",
+    baseUrl: "https://venturebeat.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?venturebeat\\.com/"],
+    categoryHints: allGlobalCategories,
+    bodySelector: ".article-content, .entry-content, article",
+    sourceWeight: 6,
+    maxItems: 30,
+    verifiedBy: "official_domain_feed_endpoint",
+    verificationNote:
+      "feeds.venturebeat.com 인증서 불일치로 공식 도메인의 feed endpoint로 교체",
+  }),
+  defineSource({
+    name: "Crunchbase News",
+    region: "global",
+    type: "html_list",
+    listUrl: "https://news.crunchbase.com/",
+    baseUrl: "https://news.crunchbase.com",
+    allowedUrlPatterns: ["^https?://news\\.crunchbase\\.com/(?:venture|startups|ma|artificial-intelligence|business)/"],
+    categoryHints: allGlobalCategories,
+    bodySelector: ".article-content, .entry-content, article",
+    sourceWeight: 8,
+    maxItems: 25,
+    fetchDelayMs: 800,
+    verifiedBy: "official_homepage",
+  }),
+  defineSource({
+    name: "EU-Startups",
+    region: "global",
+    type: "html_list",
+    listUrl: "https://www.eu-startups.com/",
+    baseUrl: "https://www.eu-startups.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?eu-startups\\.com/20\\d{2}/\\d{2}/"],
+    categoryHints: allGlobalCategories,
+    bodySelector: ".td-post-content, .entry-content, article",
+    sourceWeight: 6,
+    maxItems: 20,
+    fetchDelayMs: 800,
+    verifiedBy: "official_homepage",
+  }),
+  defineSource({
     name: "Google 뉴스 - VC·AC",
-    url: googleNewsRss(
-      '("벤처캐피탈" OR "벤처투자" OR "투자유치" OR "액셀러레이터" OR "벤처펀드")'
+    type: "rss",
+    feedUrl: googleNewsRss(
+      '("벤처캐피탈" OR "벤처투자" OR "투자유치" OR "액셀러레이터" OR "벤처펀드" OR "모태펀드" OR "자금조달")'
     ),
-  },
-  {
+    priority: "discovery",
+    categoryHints: ["VC / AC"],
+  }),
+  defineSource({
     name: "Google 뉴스 - TIPS·LIPS",
-    url: googleNewsRss(
-      '("팁스" OR "TIPS" OR "립스" OR "LIPS" OR "초격차 스타트업")'
+    type: "rss",
+    feedUrl: googleNewsRss(
+      '("팁스" OR "TIPS" OR "립스" OR "LIPS" OR "초격차 스타트업" OR "스케일업 팁스")'
     ),
-  },
-  {
+    priority: "discovery",
+    categoryHints: ["TIPS / LIPS"],
+  }),
+  defineSource({
     name: "Google 뉴스 - 딥테크",
-    url: googleNewsRss(
-      '("딥테크" OR "푸드테크" OR "애그테크" OR "생성형 AI" OR "팹리스" OR "우주 스타트업")'
+    type: "rss",
+    feedUrl: googleNewsRss(
+      '("딥테크 스타트업" OR "AI 스타트업" OR "팹리스 스타트업" OR "로봇 스타트업" OR "바이오 스타트업" OR "우주 스타트업" OR "기후테크 스타트업")'
     ),
-  },
-  {
+    priority: "discovery",
+    categoryHints: ["농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주"],
+  }),
+  defineSource({
     name: "Google 뉴스 - 스타트업",
-    url: googleNewsRss(
-      '("스타트업" OR "벤처기업" OR "초기창업" OR "창업지원" OR "데모데이")'
+    type: "rss",
+    feedUrl: googleNewsRss(
+      '("스타트업 지원" OR "창업기업 모집" OR "벤처기업 정책" OR "스타트업 실증" OR "오픈이노베이션 스타트업" OR "창업 생태계" OR "글로벌 진출 지원")'
     ),
-  },
-  {
+    priority: "discovery",
+    categoryHints: ["스타트업 / 벤처기업 / 초기창업"],
+  }),
+  defineSource({
     name: "Google 뉴스 - 세컨더리",
-    url: googleNewsRss(
-      '("벤처 세컨더리" OR "구주매각" OR "회수시장" OR "투자 회수" OR "LP 지분")'
+    type: "rss",
+    feedUrl: googleNewsRss(
+      '("벤처 세컨더리" OR "구주매각" OR "회수시장" OR "투자 회수" OR "LP 지분" OR "스타트업 IPO" OR "스타트업 M&A")'
     ),
-  },
-  {
+    priority: "discovery",
+    categoryHints: ["세컨더리 / 구주매각"],
+  }),
+  defineSource({
     name: "Google 뉴스 - 해외 VC",
-    url: googleNewsRss(
+    region: "global",
+    type: "rss",
+    feedUrl: googleNewsRss(
       '("글로벌 VC" OR "해외 VC" OR "Sequoia" OR "a16z" OR "Y Combinator")'
     ),
-  },
+    priority: "discovery",
+    categoryHints: ["해외 VC"],
+  }),
+  defineSource({
+    name: "Google 뉴스 - 창업 정책·제도",
+    type: "rss",
+    feedUrl: googleNewsRss(
+      '("스타트업 정책" OR "창업 규제" OR "벤처기업 세제" OR "벤처투자 제도" OR "창업기업 판로" OR "창업기업 실증")'
+    ),
+    priority: "discovery",
+    categoryHints: ["VC / AC", "스타트업 / 벤처기업 / 초기창업"],
+  }),
+  // 아래 매체는 공식 RSS/목록 주소 또는 이용 조건을 재확인하기 전까지 비활성화한다.
+  ...[
+    "연합뉴스", "뉴스1", "한국경제", "서울경제", "이데일리", "파이낸셜뉴스",
+    "머니투데이", "아시아경제", "헤럴드경제", "조선비즈", "중앙일보", "동아일보",
+    "스타트업투데이", "블로터", "ZDNet Korea", "디지털데일리", "IT조선", "테크M",
+    "아웃스탠딩", "더벨", "딜사이트", "인베스트조선", "마켓인사이트",
+    "TIPS", "K-Startup", "서울창조경제혁신센터", "과학기술정보통신부",
+    "산업통상자원부", "농림축산식품부", "정보통신산업진흥원", "한국산업기술진흥원",
+    "Sifted", "PitchBook News", "CB Insights",
+  ].map((name) =>
+    defineSource({
+      name,
+      enabled: false,
+      type: "html_list",
+      verificationNote: "공식 수집 URL 또는 자동 수집 허용 범위 확인 필요",
+      verifiedBy: "pending",
+    })
+  ),
 ];
+
+// 비활성 후보는 실행 목록과 수집 통계에서 분리한다. 공식 RSS 안내 또는 공식 목록
+// 페이지가 확인되면 실제 설정을 추가한 뒤 configuredSourceFeeds에서 활성화한다.
+const sourceFeeds = configuredSourceFeeds.filter((source) => source.enabled);
+const disabledSources = configuredSourceFeeds
+  .filter((source) => !source.enabled)
+  .map((source) => ({
+    name: source.name,
+    reason: source.verificationNote || "공식 수집 URL 또는 자동 수집 허용 범위 확인 필요",
+  }));
+
+// 이전 코드와의 호환용 별칭. 새 코드는 sourceFeeds를 사용한다.
+const rssSources = sourceFeeds;
 
 module.exports = {
   categories,
   allowedSources,
+  disabledSources,
+  sourceFeeds,
   rssSources,
   startupGrowthContextKeywords,
   techCategoryName,
   techEcosystemKeywords,
+  techStartupContextKeywords,
+  generalTechIndustryPatterns,
 };
