@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-06T16:21:25+09:00",
+  "generatedAt": "2026-07-06T17:40:58+09:00",
   "range": {
-    "from": "2026-07-05T16:21:25+09:00",
-    "to": "2026-07-06T16:21:25+09:00"
+    "from": "2026-07-05T17:40:58+09:00",
+    "to": "2026-07-06T17:40:58+09:00"
   },
   "totalCount": 8,
   "categoryCounts": {
-    "VC / AC": 4,
-    "TIPS / LIPS": 1,
+    "VC / AC": 5,
+    "TIPS / LIPS": 0,
     "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 0,
     "스타트업 / 벤처기업 / 초기창업": 3,
     "세컨더리 / 구주매각": 0,
@@ -26,6 +26,19 @@
       "url": "https://www.mk.co.kr/news/it/12091002",
       "resolvedUrl": null,
       "score": 79
+    },
+    {
+      "id": "3bf4b29516f3484d",
+      "category": "VC / AC",
+      "title": "의사가 차트 대신 환자 본다…’니어닥’ 운영사 스튜디오키코, Pre-A 투자 유치",
+      "publishedAt": "2026-07-06",
+      "summary": "미국에서는 이미 의사 상당수가 AI 차트 작성 서비스를 활용하고 있으며, 관련 기업들도 대규모 투자를 유치하며 시장을 확대하고 있다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1096144/",
+      "resolvedUrl": null,
+      "score": 68
     },
     {
       "id": "8419bdf32adb7fc4",
@@ -93,30 +106,17 @@
       "score": 52
     },
     {
-      "id": "cbbef4220aacc33d",
-      "category": "TIPS / LIPS",
-      "title": "트리오어, '마스킹 ADC' 스케일업 팁스 R&D 선정",
+      "id": "b5a660e246fe825e",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "'한진家 막내딸' 조현민 \"女기업인에 필요한 건 공정한 운동장\"",
       "publishedAt": "2026-07-06",
-      "summary": "이번 스케일업 팁스 선정을 계기로 트리오어는 핵심 플랫폼과 ADC 파이프라인 연구개발을 고도화하고, 글로벌 기술사업화 및 신규 파트너십 확대에도 속도를 낼 계획이다.",
+      "summary": "에서 열린 국제 학술행사에서 \"여성 기업인의 지속 가능한 성장을 위한 공정한 시장 조성과 사람 중심의 상생 생태계 구축이 필요하다\"고 밝혔다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "바이오스펙테이터",
-      "url": "https://www.biospectator.com/news/view/29226",
-      "resolvedUrl": "https://www.biospectator.com/news/view/29226",
-      "score": 50
-    },
-    {
-      "id": "31d0c8d4feb7a585",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "벤처블릭, 헬스케어 스타트업 글로벌 진출 지원 3자 MOU 체결",
-      "publishedAt": "2026-07-06",
-      "summary": "벤처블릭이 헬스케어 스타트업 글로벌 진출 지원 3자 협력 체계를 구축",
-      "summarySource": "titleFallback",
-      "summaryType": "titleFallback",
-      "source": "병원신문",
-      "url": "https://www.khanews.com/news/articleView.html?idxno=247474",
-      "resolvedUrl": "https://www.khanews.com/news/articleView.html?idxno=247474",
-      "score": 39
+      "source": "뉴시스",
+      "url": "https://www.newsis.com/view/NISX20260706_0003697756",
+      "resolvedUrl": null,
+      "score": 31
     }
   ]
 }
