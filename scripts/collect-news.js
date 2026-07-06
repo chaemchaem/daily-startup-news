@@ -168,6 +168,8 @@ const DEFAULT_MIN_DOMESTIC_ARTICLES = 8;
 const DEFAULT_MIN_FINAL_ARTICLES = 10;
 const DEFAULT_MAX_FINAL_ARTICLES = 15;
 const DEFAULT_MAX_EXTRACTION_CANDIDATES = 30;
+const KST_OFFSET_MS = 9 * 60 * 60 * 1_000;
+const ONE_DAY_MS = 24 * 60 * 60 * 1_000;
 let urlNormalizationSampleLogged = false;
 
 async function loadLocalEnvironment() {
@@ -202,6 +204,33 @@ function readPositiveInteger(value, fallback) {
 function readNonNegativeInteger(value, fallback) {
   const parsed = Number.parseInt(value, 10);
   return Number.isInteger(parsed) && parsed >= 0 ? parsed : fallback;
+}
+
+function calculateKstCollectionRange(now = new Date()) {
+  const current = now instanceof Date ? new Date(now.getTime()) : new Date(now);
+  if (Number.isNaN(current.getTime())) {
+    throw new TypeError("수집 기준 시각이 올바른 날짜가 아닙니다.");
+  }
+
+  const kstClock = new Date(current.getTime() + KST_OFFSET_MS);
+  const beforeNineAm = kstClock.getUTCHours() < 9;
+  let rangeToMs =
+    Date.UTC(
+      kstClock.getUTCFullYear(),
+      kstClock.getUTCMonth(),
+      kstClock.getUTCDate(),
+      9,
+      0,
+      0,
+      0
+    ) - KST_OFFSET_MS;
+  if (beforeNineAm) rangeToMs -= ONE_DAY_MS;
+
+  const rangeTo = new Date(rangeToMs);
+  return {
+    rangeFrom: new Date(rangeToMs - ONE_DAY_MS),
+    rangeTo,
+  };
 }
 
 function wait(milliseconds) {
@@ -1793,8 +1822,7 @@ async function collectNews() {
   await loadLocalEnvironment();
   resetOpenAIRequestMetrics();
   const summaryCache = await loadSummaryCache();
-  const rangeTo = new Date();
-  const rangeFrom = new Date(rangeTo.getTime() - 24 * 60 * 60 * 1_000);
+  const { rangeFrom, rangeTo } = calculateKstCollectionRange();
   const includeUnlisted = /^true$/i.test(process.env.ALLOW_UNLISTED_SOURCES || "false");
   const maxItemsPerCategory = readPositiveInteger(
     process.env.MAX_ITEMS_PER_CATEGORY,
@@ -3004,6 +3032,7 @@ if (require.main === module) {
 
 module.exports = {
   analyzeStrongConnection,
+  calculateKstCollectionRange,
   normalizeCollectedUrl,
   calculateEditorialPriorityAdjustment,
   calculateRelevanceScore,
