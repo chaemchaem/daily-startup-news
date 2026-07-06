@@ -2959,11 +2959,47 @@ async function collectNews() {
   };
 }
 
-if (require.main === module) {
-  collectNews().catch((error) => {
+async function flushCliOutput(timeoutMs = 500) {
+  const flushStream = (stream) =>
+    new Promise((resolve) => {
+      if (!stream?.writable || stream.destroyed) {
+        resolve();
+        return;
+      }
+      stream.write("", resolve);
+    });
+  let timer;
+  await Promise.race([
+    Promise.all([flushStream(process.stdout), flushStream(process.stderr)]),
+    new Promise((resolve) => {
+      timer = setTimeout(resolve, timeoutMs);
+    }),
+  ]);
+  if (timer) clearTimeout(timer);
+}
+
+async function runCli({
+  collect = collectNews,
+  terminate = (code) => process.exit(code),
+  flush = flushCliOutput,
+} = {}) {
+  let exitCode = 0;
+  try {
+    await collect();
+    console.log("[수집 프로세스 종료] 모든 저장 작업을 완료했습니다.");
+  } catch (error) {
+    exitCode = 1;
     console.error(`[치명적 오류] ${error.stack || error.message}`);
-    process.exitCode = 1;
-  });
+  }
+
+  process.exitCode = exitCode;
+  await flush();
+  terminate(exitCode);
+  return exitCode;
+}
+
+if (require.main === module) {
+  void runCli();
 }
 
 module.exports = {
@@ -2983,6 +3019,7 @@ module.exports = {
   isLowValueEditorialArticle,
   isStartupEcosystemRelevant,
   mapWithConcurrency,
+  runCli,
   scoreArticle,
   selectFinalBriefingItems,
   summarizeArticleSafely,
