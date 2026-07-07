@@ -210,9 +210,20 @@ function calculateRollingCollectionRange(now = new Date()) {
   if (Number.isNaN(current.getTime())) {
     throw new TypeError("수집 기준 시각이 올바른 날짜가 아닙니다.");
   }
+
+  // GitHub Actions는 KST 09:15에 실행되지만, 브리핑 기준선은 KST 09:00으로 고정한다.
+  const kst = new Date(current.getTime() + 9 * 60 * 60 * 1000);
+  const [year, month, day] = kst.toISOString().slice(0, 10).split("-").map(Number);
+  const kstHour = kst.getUTCHours();
+  let rangeTo = new Date(Date.UTC(year, month - 1, day, 0, 0, 0, 0));
+
+  if (kstHour < 9) {
+    rangeTo = new Date(rangeTo.getTime() - 24 * 60 * 60 * 1000);
+  }
+
   return {
-    rangeFrom: new Date(current.getTime() - COLLECTION_WINDOW_MS),
-    rangeTo: current,
+    rangeFrom: new Date(rangeTo.getTime() - COLLECTION_WINDOW_MS),
+    rangeTo,
   };
 }
 

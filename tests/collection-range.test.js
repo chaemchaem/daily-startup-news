@@ -3,19 +3,27 @@ const test = require("node:test");
 
 const { calculateRollingCollectionRange } = require("../scripts/collect-news");
 
-test("수집 종료시각은 실제 실행 시각을 그대로 사용한다", () => {
+test("KST 09:00 이후 실행하면 수집 종료시각은 당일 09:00 KST이다", () => {
   const { rangeFrom, rangeTo } = calculateRollingCollectionRange(
-    new Date("2026-07-06T15:42:31+09:00")
+    new Date("2026-07-07T09:15:00+09:00")
   );
-  assert.equal(rangeTo.toISOString(), "2026-07-06T06:42:31.000Z");
-  assert.equal(rangeFrom.toISOString(), "2026-07-04T06:42:31.000Z");
+  assert.equal(rangeTo.toISOString(), "2026-07-07T00:00:00.000Z");
+  assert.equal(rangeFrom.toISOString(), "2026-07-05T00:00:00.000Z");
 });
 
-test("수집 시작시각은 실행 시각에서 정확히 48시간 전이다", () => {
+test("KST 09:00 이전 실행하면 수집 종료시각은 전날 09:00 KST이다", () => {
   const { rangeFrom, rangeTo } = calculateRollingCollectionRange(
-    "2026-07-06T09:05:12+09:00"
+    "2026-07-07T08:59:59+09:00"
   );
-  assert.equal(rangeFrom.toISOString(), "2026-07-04T00:05:12.000Z");
+  assert.equal(rangeTo.toISOString(), "2026-07-06T00:00:00.000Z");
+  assert.equal(rangeFrom.toISOString(), "2026-07-04T00:00:00.000Z");
+});
+
+test("수집 시작시각은 KST 09:00 종료시각에서 정확히 48시간 전이다", () => {
+  const { rangeFrom, rangeTo } = calculateRollingCollectionRange(
+    "2026-07-06T09:00:00+09:00"
+  );
+  assert.equal(rangeTo.toISOString(), "2026-07-06T00:00:00.000Z");
   assert.equal(rangeTo.getTime() - rangeFrom.getTime(), 48 * 60 * 60 * 1_000);
 });
 
