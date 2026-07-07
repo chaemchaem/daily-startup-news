@@ -1,19 +1,44 @@
 const CATEGORY_LABELS = {
   "VC / AC": "VC / AC",
   "TIPS / LIPS": "TIPS / LIPS",
-  "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": "딥테크·AI",
-  "스타트업 / 벤처기업 / 초기창업": "스타트업",
+  "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": "딥테크/AI/ESG",
+  "스타트업 / 벤처기업 / 초기창업": "스타트업/초기창업",
   "세컨더리 / 구주매각": "세컨더리",
   "해외 VC": "해외 VC",
 };
 
 const filters = [
   { label: "전체", value: "all" },
-  ...Object.entries(CATEGORY_LABELS).map(([value, label]) => ({ label, value })),
+  { label: "VC/AC", value: "VC / AC" },
+  { label: "스타트업/초기창업", value: "스타트업 / 벤처기업 / 초기창업" },
+  { label: "TIPS/LIPS", value: "TIPS / LIPS" },
+  { label: "딥테크/AI/ESG", value: "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주" },
+  { label: "해외 VC", value: "해외 VC" },
+];
+
+const OVERSEAS_SOURCE_HINTS = [
+  "TechCrunch",
+  "Crunchbase",
+  "VentureBeat",
+  "Sifted",
+  "EU-Startups",
+  "PitchBook",
+  "CB Insights",
+];
+
+const OVERSEAS_HOST_HINTS = [
+  "techcrunch.com",
+  "crunchbase.com",
+  "venturebeat.com",
+  "sifted.eu",
+  "eu-startups.com",
+  "pitchbook.com",
+  "cbinsights.com",
 ];
 
 const elements = {
   archiveStatus: document.querySelector("#archive-status"),
+  archiveTabs: document.querySelector("#archive-tabs"),
   briefingDate: document.querySelector("#briefing-date"),
   collectionRange: document.querySelector("#collection-range"),
   dataStatus: document.querySelector("#data-status"),
@@ -57,6 +82,12 @@ function formatBriefingDate(value) {
   return `${year}.${month}.${day}`;
 }
 
+function formatShortDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/u.test(value || "")) return value || "날짜";
+  const [, month, day] = value.split("-");
+  return `${Number(month)}.${Number(day)}`;
+}
+
 function getBriefingDate(data) {
   const generatedDate = String(data?.generatedAt || "").slice(0, 10);
   return /^\d{4}-\d{2}-\d{2}$/u.test(generatedDate) ? generatedDate : null;
@@ -95,15 +126,41 @@ function configureDatePicker() {
   );
 }
 
+function renderArchiveTabs() {
+  const dates = [...archiveIndex.dates].sort((left, right) => right.localeCompare(left));
+  if (!elements.archiveTabs) return;
+
+  if (!dates.length) {
+    elements.archiveTabs.replaceChildren(
+      createElement("span", "archive-tab-empty", "저장된 날짜 없음")
+    );
+    return;
+  }
+
+  elements.archiveTabs.replaceChildren(
+    ...dates.slice(0, 12).map((date) => {
+      const button = createElement("button", "archive-tab", formatShortDate(date));
+      button.type = "button";
+      button.dataset.date = date;
+      button.title = `${formatBriefingDate(date)} 브리핑 보기`;
+      button.setAttribute("role", "tab");
+      button.setAttribute("aria-selected", String(date === currentDate));
+      button.addEventListener("click", () => loadArchiveDate(date));
+      return button;
+    })
+  );
+}
+
 function renderArchiveHeading({ isLatest = false } = {}) {
   elements.viewingDate.textContent = currentDate
     ? `${formatBriefingDate(currentDate)} 브리핑`
     : "최신 브리핑";
   elements.latestBadge.hidden = !isLatest;
   elements.archiveStatus.textContent = archiveIndex.dates.length
-    ? `저장된 브리핑 ${archiveIndex.dates.length}일 · 달력에서 날짜를 선택하세요.`
+    ? `저장된 브리핑 ${archiveIndex.dates.length}일 · 날짜 탭 또는 달력에서 선택하세요.`
     : "저장된 과거 브리핑이 아직 없습니다.";
   configureDatePicker();
+  renderArchiveTabs();
 }
 
 function safeArticleUrl(value) {
@@ -120,6 +177,19 @@ function createElement(tag, className, text) {
   if (className) element.className = className;
   if (text !== undefined) element.textContent = text;
   return element;
+}
+
+function isOverseasArticle(article) {
+  if (article?.category === "해외 VC") return true;
+  const source = String(article?.source || "");
+  if (OVERSEAS_SOURCE_HINTS.some((hint) => source.includes(hint))) return true;
+
+  try {
+    const host = new URL(article?.url || "").hostname.replace(/^www\./u, "");
+    return OVERSEAS_HOST_HINTS.some((hint) => host.endsWith(hint));
+  } catch {
+    return false;
+  }
 }
 
 function renderFilters() {
@@ -141,12 +211,24 @@ function renderFilters() {
 
 function renderStatistics() {
   const counts = briefing?.categoryCounts || {};
-  const cards = Object.entries(CATEGORY_LABELS).map(([category, label]) => {
-    const card = createElement("article", "stat-card");
-    card.append(createElement("p", "stat-label", label));
+  const items = Array.isArray(briefing?.items) ? briefing.items : [];
+  const domesticCount = items.filter((item) => !isOverseasArticle(item)).length;
+  const overseasCount = items.length - domesticCount;
+  const activeCategoryCount = Object.values(counts).filter((count) => count > 0).length;
+  const stats = [
+    { label: "전체 기사 수", value: items.length, unit: "건" },
+    { label: "국내 기사 수", value: domesticCount, unit: "건" },
+    { label: "해외 기사 수", value: overseasCount, unit: "건" },
+    { label: "VC/AC 기사 수", value: counts["VC / AC"] || 0, unit: "건" },
+    { label: "주요 카테고리 수", value: activeCategoryCount, unit: "개" },
+  ];
 
-    const value = createElement("p", "stat-value", String(counts[category] || 0));
-    value.append(createElement("span", "stat-unit", "건"));
+  const cards = stats.map((stat) => {
+    const card = createElement("article", "stat-card");
+    card.append(createElement("p", "stat-label", stat.label));
+
+    const value = createElement("p", "stat-value", String(stat.value));
+    value.append(createElement("span", "stat-unit", stat.unit));
     card.append(value);
     return card;
   });
@@ -156,20 +238,25 @@ function renderStatistics() {
 
 function createArticleCard(article) {
   const card = createElement("article", "news-card");
-  const topLine = createElement("div", "card-topline");
-  topLine.append(
+  const badgeLine = createElement("div", "card-badges");
+  const sourceText = article.source || "출처 미상";
+  const countryText = isOverseasArticle(article) ? "해외" : "국내";
+
+  badgeLine.append(
     createElement(
       "span",
       "category-badge",
       CATEGORY_LABELS[article.category] || article.category || "기타"
     ),
-    createElement("time", "card-date", article.publishedAt || "날짜 미상")
+    createElement("span", "source-badge", sourceText),
+    createElement("span", `country-badge ${countryText === "해외" ? "is-overseas" : ""}`, countryText)
   );
 
   const title = createElement("h3", "card-title", article.title || "제목 없음");
-  const source = createElement("p", "card-source", article.source || "출처 미상");
+  const meta = createElement("div", "card-meta");
+  meta.append(createElement("time", "card-date", article.publishedAt || "날짜 미상"));
   const summary = createElement("p", "card-summary", article.summary || "요약이 없습니다.");
-  card.append(topLine, title, source, summary);
+  card.append(badgeLine, title, meta, summary);
 
   const url = safeArticleUrl(article.url);
   if (url) {

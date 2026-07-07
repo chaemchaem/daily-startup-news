@@ -14,24 +14,31 @@
   <body>
     <header class="site-header">
       <div class="shell header-inner">
-        <div class="eyebrow">DAILY RESEARCH BRIEF</div>
-        <h1>Daily Startup &amp; VC Briefing</h1>
-        <p class="subtitle">최근 48시간 기준 주요 투자·창업 생태계 뉴스 요약</p>
+        <div class="hero-copy">
+          <div class="eyebrow">AUTOMATED RESEARCH DASHBOARD</div>
+          <h1>Daily Startup &amp; VC Briefing</h1>
+          <p class="subtitle">
+            매일 오전 9시 기준 최근 48시간의 스타트업·VC 뉴스를 자동 수집·요약
+          </p>
+        </div>
 
-        <dl class="brief-meta" aria-label="브리핑 기준 정보">
-          <div>
-            <dt>기준 시각</dt>
-            <dd id="generated-at">—</dd>
-          </div>
-          <div>
-            <dt>수집 기간</dt>
-            <dd id="collection-range">—</dd>
-          </div>
-          <div>
-            <dt>전체 기사</dt>
-            <dd><strong id="total-count">0</strong>건</dd>
-          </div>
-        </dl>
+        <aside class="hero-panel" aria-label="브리핑 기준 정보">
+          <p class="hero-panel-label">Briefing Snapshot</p>
+          <dl class="brief-meta">
+            <div>
+              <dt>마지막 업데이트</dt>
+              <dd id="generated-at">—</dd>
+            </div>
+            <div>
+              <dt>수집 기간</dt>
+              <dd id="collection-range">—</dd>
+            </div>
+            <div>
+              <dt>전체 기사</dt>
+              <dd><strong id="total-count">0</strong>건</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
     </header>
 
@@ -55,13 +62,20 @@
           </label>
           <button id="latest-button" class="latest-button" type="button">최신 보기</button>
         </div>
+
+        <div
+          id="archive-tabs"
+          class="archive-tabs"
+          role="tablist"
+          aria-label="아카이브 날짜 탭"
+        ></div>
       </section>
 
       <section aria-labelledby="category-summary-title">
         <div class="section-heading">
           <div>
             <p class="section-kicker">OVERVIEW</p>
-            <h2 id="category-summary-title">카테고리별 수집 현황</h2>
+            <h2 id="category-summary-title">브리핑 요약 지표</h2>
           </div>
           <p id="data-status" class="data-status" role="status">데이터를 불러오는 중입니다.</p>
         </div>
@@ -87,6 +101,24 @@
         <div id="news-grid" class="news-grid" aria-live="polite">
           <div class="state-panel">뉴스 데이터를 준비하고 있습니다.</div>
         </div>
+      </section>
+
+      <section class="automation-section" aria-labelledby="automation-title">
+        <div>
+          <p class="section-kicker">AUTOMATION</p>
+          <h2 id="automation-title">자동화 방식</h2>
+          <p class="automation-copy">
+            GitHub Actions가 매일 KST 09:15에 수집 스크립트를 실행하고,
+            데이터 기준은 KST 09:00 기준 최근 48시간으로 고정합니다. 기본 요약은
+            OpenAI API 없이 기사 본문에서 핵심 문장을 추출하는
+            <code>local_extractive</code> 방식으로 생성할 수 있습니다.
+          </p>
+        </div>
+        <ul class="automation-list" aria-label="자동화 핵심 구성">
+          <li>Scheduled GitHub Actions</li>
+          <li>KST 09:00 기준 최근 48시간</li>
+          <li>Local extractive summary</li>
+        </ul>
       </section>
     </main>
 
