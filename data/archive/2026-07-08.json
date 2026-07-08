@@ -4,11 +4,11 @@
     "from": "2026-07-06T09:00:00+09:00",
     "to": "2026-07-08T09:00:00+09:00"
   },
-  "totalCount": 11,
+  "totalCount": 7,
   "categoryCounts": {
-    "VC / AC": 4,
+    "VC / AC": 2,
     "TIPS / LIPS": 0,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 0,
     "스타트업 / 벤처기업 / 초기창업": 0,
     "세컨더리 / 구주매각": 0,
     "해외 VC": 5
@@ -26,19 +26,6 @@
       "url": "https://www.eu-startups.com/2026/07/spanish-cybersecurity-startup-8layers-extends-pre-seed-round-to-e2-5-million-total-funding/",
       "resolvedUrl": null,
       "score": 103
-    },
-    {
-      "id": "c794cdcf9914f2b2",
-      "category": "해외 VC",
-      "title": "From cash deposits to everyday rewards: London-based Stoa raises €2.1 million | EU-Startups",
-      "publishedAt": "2026-07-06",
-      "summary": "“ Home Funding From cash deposits to everyday rewards: London-based Stoa raises €2.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/07/360944/",
-      "resolvedUrl": null,
-      "score": 87
     },
     {
       "id": "54e40878edc9c46f",
@@ -67,19 +54,6 @@
       "score": 83
     },
     {
-      "id": "4e9e53686a51fef2",
-      "category": "해외 VC",
-      "title": "UK startup Worldmodeldata raises €8 million to turn video games into training data for physical AI | EU-Startups",
-      "publishedAt": "2026-07-06",
-      "summary": "Home Funding UK startup Worldmodeldata raises €8 million to turn video games into training.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/07/uk-startup-worldmodeldata-raises-e8-million-to-turn-video-games-into-training-data-for-physical-ai/",
-      "resolvedUrl": null,
-      "score": 82
-    },
-    {
       "id": "339914907ca7aa3f",
       "category": "해외 VC",
       "title": "Leiden-based Whispp raises €5 million to scale on-device voice reconstruction AI technology globally | EU-Startups",
@@ -93,6 +67,32 @@
       "score": 78
     },
     {
+      "id": "8e84b98defceecda",
+      "category": "해외 VC",
+      "title": "London-based HIVE raises €13.1 million to build \"silicon brain” for industrial machines | EU-Startups",
+      "publishedAt": "2026-07-07",
+      "summary": "Home UK-Startups London-based HIVE raises €13.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/07/london-based-hive-raises-e13-1-million-to-build-silicon-brain-for-industrial-machines/",
+      "resolvedUrl": null,
+      "score": 74
+    },
+    {
+      "id": "7b991a712198110b",
+      "category": "해외 VC",
+      "title": "Beyond the raise: How private investing works for European founders | EU-Startups",
+      "publishedAt": "2026-07-07",
+      "summary": "The question is no longer whether private investing is a credible funding option.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/07/beyond-the-raise-how-private-investing-works-for-european-founders/",
+      "resolvedUrl": null,
+      "score": 67
+    },
+    {
       "id": "c1a6ef912f09f6ff",
       "category": "VC / AC",
       "title": "“투자 정보는 한곳에서”…네이버페이, 스타트업 투자 플랫폼 ‘Npay 스타트업’ 출범",
@@ -104,58 +104,6 @@
       "url": "https://www.venturesquare.net/1096699/",
       "resolvedUrl": null,
       "score": 58
-    },
-    {
-      "id": "0442b289d89c653e",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "카본블랙, ICML 찾은 글로벌 AI 인재와 만난다…’넥스트 카본식스’ 창업팀 발굴",
-      "publishedAt": "2026-07-07",
-      "summary": "참가자들은 연구 성과의 산업 적용 가능성과 제품 검증, 사업화 전략, 투자 유치, 글로벌 시장 진출 등 연구를 창업으로 연결하는 과정에 대해 논의했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "벤처스퀘어",
-      "url": "https://www.venturesquare.net/1096594/",
-      "resolvedUrl": null,
-      "score": 58
-    },
-    {
-      "id": "018b3b690e4adfe0",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "안전 AI로 성장 궤도 오른 인텔리빅스…중기부 ‘도약 프로그램’ 선정",
-      "publishedAt": "2026-07-07",
-      "summary": "지난 6월에는 정금랑 CFO(상무)가 ‘2026 서울 중소기업인 대회’에서 모범 중소기업인 부문 중소벤처기업부 장관 표창을 수상했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "벤처스퀘어",
-      "url": "https://www.venturesquare.net/1096511/",
-      "resolvedUrl": null,
-      "score": 52
-    },
-    {
-      "id": "5ca0a7e62c4eb247",
-      "category": "VC / AC",
-      "title": "“소비는 줄지 않았다”…비자가 본 AI 시대 글로벌 경제의 세 가지 변화",
-      "publishedAt": "2026-07-07",
-      "summary": "보고서는 소비 위축보다 소비 방식의 변화가 나타나고 있으며, AI 투자 확대와 디지털 커머스 확산, 전략 산업 중심의 기업 투자가 글로벌 경제를 떠받치는 핵심 동력이라고 분석했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "벤처스퀘어",
-      "url": "https://www.venturesquare.net/1096494/",
-      "resolvedUrl": null,
-      "score": 51
-    },
-    {
-      "id": "c542b3b5aa0b5bda",
-      "category": "VC / AC",
-      "title": "투자받은 스타트업, 이제 인재도 데이터로 찾는다…혁신의숲·리멤버 맞손",
-      "publishedAt": "2026-07-07",
-      "summary": "이를 통해 투자 유치 직후 스케일업에 나서는 스타트업이 기업 성장 단계와 조직 문화에 적합한 경력직 인재를 보다 빠르게 확보할 수 있도록 지원한다는 전략이다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "벤처스퀘어",
-      "url": "https://www.venturesquare.net/1096607/",
-      "resolvedUrl": null,
-      "score": 45
     }
   ]
 }
