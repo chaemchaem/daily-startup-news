@@ -2,7 +2,6 @@ name: Daily startup news briefing
 
 on:
   schedule:
-    # GitHub Actions cron은 UTC 기준입니다. 00:15 UTC = 09:15 KST.
     - cron: "15 0 * * *"
   workflow_dispatch:
 
@@ -36,6 +35,13 @@ jobs:
 
       - name: 의존성 설치
         run: pnpm install --frozen-lockfile
+
+      - name: 실행 환경 디버그 정보
+        run: |
+          echo "event_name=${{ github.event_name }}"
+          echo "utc_now=$(date -u '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "kst_now=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "branch=${GITHUB_REF_NAME}"
 
       - name: 최근 48시간 뉴스 수집
         env:

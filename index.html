@@ -43,34 +43,6 @@
     </header>
 
     <main class="shell page-content">
-      <section class="archive-panel" aria-labelledby="viewing-date">
-        <div class="archive-copy">
-          <p class="section-kicker">BRIEFING ARCHIVE</p>
-          <div class="archive-title-row">
-            <h2 id="viewing-date">최신 브리핑</h2>
-            <span id="latest-badge" class="latest-badge" hidden>최신</span>
-          </div>
-          <p id="archive-status" class="archive-status" role="status">
-            아카이브 날짜를 확인하는 중입니다.
-          </p>
-        </div>
-
-        <div class="archive-controls">
-          <label class="date-field" for="briefing-date">
-            <span>브리핑 날짜</span>
-            <input id="briefing-date" type="date" aria-describedby="archive-status" />
-          </label>
-          <button id="latest-button" class="latest-button" type="button">최신 보기</button>
-        </div>
-
-        <div
-          id="archive-tabs"
-          class="archive-tabs"
-          role="tablist"
-          aria-label="아카이브 날짜 탭"
-        ></div>
-      </section>
-
       <section aria-labelledby="category-summary-title">
         <div class="section-heading">
           <div>
@@ -103,21 +75,52 @@
         </div>
       </section>
 
+      <section class="archive-panel" aria-labelledby="viewing-date">
+        <div class="archive-copy">
+          <p class="section-kicker">BRIEFING ARCHIVE</p>
+          <div class="archive-title-row">
+            <h2 id="viewing-date">최신 브리핑</h2>
+            <span id="latest-badge" class="latest-badge" hidden>최신</span>
+          </div>
+          <p id="archive-status" class="archive-status" role="status">
+            아카이브 날짜를 확인하는 중입니다.
+          </p>
+        </div>
+
+        <div
+          id="archive-tabs"
+          class="archive-tabs"
+          role="tablist"
+          aria-label="아카이브 날짜 탭"
+        ></div>
+
+        <div class="archive-controls">
+          <label class="date-field" for="briefing-date">
+            <span>브리핑 날짜</span>
+            <input id="briefing-date" type="date" aria-describedby="archive-status" />
+          </label>
+          <button id="latest-button" class="latest-button" type="button">최신 보기</button>
+        </div>
+      </section>
+
       <section class="automation-section" aria-labelledby="automation-title">
         <div>
           <p class="section-kicker">AUTOMATION</p>
           <h2 id="automation-title">자동화 방식</h2>
-          <p class="automation-copy">
-            GitHub Actions가 매일 KST 09:15에 수집 스크립트를 실행하고,
-            데이터 기준은 KST 09:00 기준 최근 48시간으로 고정합니다. 기본 요약은
-            OpenAI API 없이 기사 본문에서 핵심 문장을 추출하는
-            <code>local_extractive</code> 방식으로 생성할 수 있습니다.
-          </p>
         </div>
         <ul class="automation-list" aria-label="자동화 핵심 구성">
-          <li>Scheduled GitHub Actions</li>
-          <li>KST 09:00 기준 최근 48시간</li>
-          <li>Local extractive summary</li>
+          <li>
+            <strong>Scheduled GitHub Actions</strong>
+            <span>매일 KST 09:15에 수집 스크립트를 자동 실행합니다.</span>
+          </li>
+          <li>
+            <strong>KST 09:00 기준 최근 48시간</strong>
+            <span>실행 지연과 무관하게 브리핑 기준 시각을 고정합니다.</span>
+          </li>
+          <li>
+            <strong>Local extractive summary</strong>
+            <span>OpenAI API 없이도 본문 핵심 문장을 추출해 요약할 수 있습니다.</span>
+          </li>
         </ul>
       </section>
     </main>

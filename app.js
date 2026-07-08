@@ -192,6 +192,14 @@ function isOverseasArticle(article) {
   }
 }
 
+function sortArticlesForDisplay(items) {
+  return [...items].sort((left, right) => {
+    const leftOverseas = isOverseasArticle(left) ? 1 : 0;
+    const rightOverseas = isOverseasArticle(right) ? 1 : 0;
+    return leftOverseas - rightOverseas;
+  });
+}
+
 function renderFilters() {
   elements.filters.replaceChildren(
     ...filters.map((filter) => {
@@ -249,7 +257,11 @@ function createArticleCard(article) {
       CATEGORY_LABELS[article.category] || article.category || "기타"
     ),
     createElement("span", "source-badge", sourceText),
-    createElement("span", `country-badge ${countryText === "해외" ? "is-overseas" : ""}`, countryText)
+    createElement(
+      "span",
+      `country-badge ${countryText === "해외" ? "is-overseas" : ""}`,
+      countryText
+    )
   );
 
   const title = createElement("h3", "card-title", article.title || "제목 없음");
@@ -283,8 +295,8 @@ function renderArticles() {
   const allItems = Array.isArray(briefing?.items) ? briefing.items : [];
   const visibleItems =
     activeFilter === "all"
-      ? allItems
-      : allItems.filter((item) => item.category === activeFilter);
+      ? sortArticlesForDisplay(allItems)
+      : sortArticlesForDisplay(allItems.filter((item) => item.category === activeFilter));
 
   elements.visibleCount.textContent = `${visibleItems.length}건 표시`;
 
