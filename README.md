@@ -11,8 +11,8 @@
 5. 최종 후보에 한해 기사 페이지에서 본문 추출을 시도하고 광고·저작권·추천기사 문구를 제거합니다.
 6. 본문이 추출되고 OpenAI 설정이 유효하면 Responses API로 먼저 요약하며, 실패하거나 꺼져 있으면 로컬 추출형 요약으로 전환합니다.
 7. 결과를 최신용 `data/news.json`과 KST 날짜별 `data/archive/YYYY-MM-DD.json`에 함께 저장합니다.
-8. `data/archive/index.json`에 조회 가능한 날짜 목록과 최신 날짜를 기록합니다.
-9. `app.js`가 최신 또는 선택한 날짜의 JSON을 읽어 정적 대시보드에 렌더링합니다.
+8. `data/archive/index.json`에 조회 가능한 날짜 목록을, `data/status.json`에 최근 수집 실행 상태를 기록합니다.
+9. `app.js`가 최신 또는 선택한 날짜의 JSON을 읽어 핵심 기사·검색·정렬을 제공하는 정적 대시보드에 렌더링합니다.
 
 Codex는 이 프로젝트를 만들고 수정하는 **개발 단계에서만** 사용됩니다. 운영 중 매일 실행되는 작업은 일반 Node.js 스크립트이며 Codex가 예약 실행되거나 Codex 크레딧을 사용하지 않습니다. GitHub Actions 대신 Vercel Cron 또는 Netlify Scheduled Functions에서 같은 스크립트를 실행하도록 구성할 수도 있습니다.
 
@@ -36,6 +36,7 @@ news-briefing-site/
 ├─ app.js
 ├─ data/
 │  ├─ news.json
+│  ├─ status.json
 │  ├─ summary-cache.json
 │  └─ archive/
 │     ├─ index.json
@@ -144,7 +145,7 @@ OpenAI 설정이 유효하면 제목·출처·카테고리·description과 정�
 
 무료 `local_extractive` 요약은 본문을 한국어 문장 단위로 나눈 뒤 제목과의 핵심어 중첩, 투자금액·라운드·펀드·TIPS·선정·지원·실증·기관명·기업명·본문 위치를 점수화합니다. 기자명·이메일·사진설명·입력일·수정일·저작권·관련기사·로그인·구독·공유·광고 문장은 제외하고, 완결된 핵심문장 1~2개를 원문에서 그대로 선택합니다. 새 사실이나 문장을 생성하지 않습니다.
 
-영어 로컬 추출 요약은 60~100자이며 사건 동사와 완결 문장부호가 있는 문장만 허용합니다. 짧거나 중간에서 잘린 본문 문장은 버리고 완결된 RSS description을 다시 시도하며, 그것도 없으면 기본 `MAX_TITLE_FALLBACK_ITEMS=0` 정책에 따라 저장하지 않습니다.
+영어 로컬 추출 요약은 60~100자이며 사건 동사와 완결 문장부호가 있는 문장만 허용합니다. EU-Startups의 `Home`, `Funding`, `CLUB`, 국가별 `*-Startups` 메뉴 문구와 `€1.`처럼 잘린 금액 문장은 제거합니다. 본문·description 요약이 실패한 해외 투자 기사는 제목에 기업명과 완전한 투자금액이 확인될 때만 완결된 구조형 요약을 만들며, 그것도 불가능하면 깨진 문장 대신 요약 없음 상태로 표시합니다.
 
 - Google News RSS는 `news.google.com/rss/articles/...` 중계 링크를 제공하므로 원문 URL 해석이나 본문 추출이 실패할 수 있습니다. 기본 설정에서는 비활성화되며 `ENABLE_DISCOVERY_FALLBACK=true`일 때만 discovery 소스로 사용합니다.
 - Google News 중계 링크는 HTTP redirect, canonical URL, `og:url`, meta refresh, Google News URL 해석 요청 순으로 원문을 확인합니다. 원문 언론사 URL을 확인하지 못하면 본문 추출과 최종 저장에서 제외합니다.
@@ -166,12 +167,14 @@ OpenAI 설정이 유효하면 제목·출처·카테고리·description과 정�
 - `description`: RSS 제목과 description을 사용함
 - `titleFallback`: 제목 정보만 사용함. 점수를 낮춰 우선순위를 떨어뜨림
 - `openai_body`: OpenAI API가 추출 본문을 바탕으로 요약하고 검증까지 통과함
+- `structured_overseas`: 해외 투자 제목에서 확인된 기업명·금액·라운드·목적만으로 완결된 문장을 구성함
+- `unavailable`: 본문·description·제목에서 안전한 완결 요약을 만들 수 없어 요약 없음으로 표시함
 
 Google News 중계 링크가 실제 언론사 링크로 확인된 항목은 `url`에 원문 URL을 사용하고, 진단용 `resolvedUrl`에도 해당 URL을 기록합니다. 기사 본문 자체는 어떤 JSON 필드에도 기록하지 않습니다.
 
 저장 직전에 제목과 요약의 토큰·문자 유사도를 검사합니다. 유사도가 80% 이상이면 저장하지 않습니다. `titleFallback`은 기본 0건이며 `MAX_TITLE_FALLBACK_ITEMS=1`을 명시한 경우에만 마지막 수단으로 1건 허용합니다.
 
-저장 우선순위는 `openai_body → openai_description → local_extractive → description → titleFallback`입니다. 각 기사에는 `summarySource`와 같은 값을 가진 `summaryType`도 저장합니다. 요약 후에는 기업명·투자금액·라운드·주요 사건을 비교해 같은 사건을 다시 다룬 기사를 제거하고 더 높은 summarySource를 남깁니다. 기사 전문은 어느 경로에서도 JSON에 저장하지 않습니다.
+저장 우선순위는 `openai_body → openai_description → local_extractive/structured_overseas → description → titleFallback`입니다. 각 기사에는 `summarySource`와 같은 값을 가진 `summaryType`도 저장합니다. 제목과 요약에 명시된 경우에만 `company`, `fundingAmount`, `fundingStage`, `eventType`, `industry`를 추가하며 추정값은 만들지 않습니다. 요약 후에는 기업명·투자금액·라운드·주요 사건을 비교해 중복을 제거하고, 해외 VC는 최대 3건, 동일 출처는 최대 2건만 남깁니다. 기사 전문은 어느 경로에서도 JSON에 저장하지 않습니다.
 
 ## 로컬 화면 확인
 
@@ -182,6 +185,8 @@ pnpm run start
 ```
 
 브라우저에서 `http://localhost:4173`을 엽니다. `pnpm run preview`도 같은 명령입니다. 기사 수가 0건이어도 통계와 빈 상태 화면이 정상적으로 표시됩니다.
+
+대시보드는 점수·국내 여부·구체 정보·카테고리 균형을 반영한 **오늘의 핵심 3건**을 표시합니다. 제목·요약·출처·기업명 검색, 중요도순/최신순 정렬, 국내/해외 토글은 기존 카테고리 필터와 함께 적용됩니다. 상단 수집 상태는 `data/status.json`의 마지막 실행 시각과 성공 여부를 기준으로 정상 업데이트 또는 갱신 지연을 표시합니다.
 
 ## 날짜별 아카이브
 
@@ -290,7 +295,7 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 2. pnpm 11.7 설정
 3. `pnpm install --frozen-lockfile`
 4. `pnpm run collect`
-5. 변경된 `data/news.json`, `data/archive/YYYY-MM-DD.json`, `data/archive/index.json`, `data/summary-cache.json` 자동 커밋 및 푸시
+5. 변경된 `data/news.json`, `data/status.json`, `data/archive/YYYY-MM-DD.json`, `data/archive/index.json`, `data/summary-cache.json` 자동 커밋 및 푸시
 
 자동 커밋이나 푸시가 권한 문제로 실패하더라도 해당 단계는 경고만 남기고 워크플로우 전체를 치명적으로 중단하지 않습니다.
 

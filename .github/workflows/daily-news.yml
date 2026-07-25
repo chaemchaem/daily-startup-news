@@ -73,7 +73,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.json data/archive
+          git add data/news.json data/archive data/status.json
           if [ -f data/summary-cache.json ]; then
             git add data/summary-cache.json
           fi

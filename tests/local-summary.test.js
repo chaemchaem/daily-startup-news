@@ -2,8 +2,10 @@ const assert = require("node:assert/strict");
 const test = require("node:test");
 
 const {
+  normalizeEnglishExtractiveSummary,
   summarizeArticleWithMetadata,
   summarizeFreeLocal,
+  summarizeOverseasFundingFromTitle,
 } = require("../scripts/summarize");
 const { validateFallbackSummaryQuality } = require("../scripts/utils");
 const { summarizeArticleSafely } = require("../scripts/collect-news");
@@ -51,6 +53,60 @@ test("본문에서 완결 문장을 찾지 못하면 정제된 description을 �
 
   assert.equal(result.summarySource, "description");
   assert.match(result.summary, /창업기업.*프로그램.*모집한다/u);
+});
+
+test("해외 요약은 메뉴 문구와 잘린 금액 문장을 저장하지 않는다", () => {
+  assert.equal(
+    normalizeEnglishExtractiveSummary(
+      "Home Funding From cash deposits to rewards: Stoa raises €2."
+    ),
+    ""
+  );
+  assert.equal(
+    normalizeEnglishExtractiveSummary(
+      "Home Portugal-Startups Lisbon-based BIZAY raises €48."
+    ),
+    ""
+  );
+});
+
+test("해외 투자 제목에서 기업·금액·라운드·목적을 완결된 구조로 복구한다", () => {
+  const summary = summarizeOverseasFundingFromTitle(
+    "UK startup Worldmodeldata raises €8 million to turn video games into training data for physical AI | EU-Startups"
+  );
+  assert.equal(
+    summary,
+    "Worldmodeldata raised €8 million to turn video games into training data for physical AI."
+  );
+  assert.equal(
+    summarizeOverseasFundingFromTitle(
+      "Spanish cybersecurity startup 8Layers extends pre-Seed round to €2.5 million total funding | EU-Startups"
+    ),
+    "8Layers extended its pre-Seed round to €2.5 million in total funding."
+  );
+
+  const result = summarizeFreeLocal({
+    title:
+      "Lisbon-based BIZAY raises €48.7 million Series D; set to reach profitability | EU-Startups",
+    description: "",
+    category: "해외 VC",
+    source: "EU-Startups",
+    extractedArticleText: "Home Funding CLUB Portugal-Startups ".repeat(30),
+  });
+  assert.equal(result.summarySource, "structured_overseas");
+  assert.match(result.summary, /BIZAY raised €48\.7 million.*Series D/iu);
+});
+
+test("구조형 해외 투자 요약도 만들 수 없으면 요약 없음 상태를 반환한다", () => {
+  const result = summarizeFreeLocal({
+    title: "European founders discuss the next decade of innovation",
+    description: "",
+    category: "해외 VC",
+    source: "EU-Startups",
+    extractedArticleText: "Home CLUB Germany-Startups ".repeat(30),
+  });
+  assert.equal(result.summary, "");
+  assert.equal(result.summarySource, "unavailable");
 });
 
 test("투자유치 제목은 기술 설명보다 투자 규모·투자자·자금 용도 문장을 우선한다", () => {

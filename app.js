@@ -40,13 +40,18 @@ const elements = {
   archiveStatus: document.querySelector("#archive-status"),
   archiveTabs: document.querySelector("#archive-tabs"),
   briefingDate: document.querySelector("#briefing-date"),
+  collectionHealth: document.querySelector("#collection-health"),
   collectionRange: document.querySelector("#collection-range"),
   dataStatus: document.querySelector("#data-status"),
+  featuredGrid: document.querySelector("#featured-grid"),
   filters: document.querySelector("#filters"),
   generatedAt: document.querySelector("#generated-at"),
   latestBadge: document.querySelector("#latest-badge"),
   latestButton: document.querySelector("#latest-button"),
   newsGrid: document.querySelector("#news-grid"),
+  newsSearch: document.querySelector("#news-search"),
+  newsSort: document.querySelector("#news-sort"),
+  regionFilters: document.querySelector("#region-filters"),
   statistics: document.querySelector("#statistics"),
   totalCount: document.querySelector("#total-count"),
   visibleCount: document.querySelector("#visible-count"),
@@ -59,6 +64,10 @@ let archiveIndex = { dates: [], latest: null };
 let currentDate = null;
 let briefingMessage = null;
 let loadSequence = 0;
+let activeRegion = "all";
+let searchQuery = "";
+let sortMode = "importance";
+let collectionStatus = null;
 
 function formatDateTime(value) {
   const date = new Date(value);
@@ -192,12 +201,124 @@ function isOverseasArticle(article) {
   }
 }
 
-function sortArticlesForDisplay(items) {
+function extractClientStructuredInfo(article) {
+  const context = `${article?.title || ""} ${article?.summary || ""}`;
+  const firstMatch = (pattern) => context.match(pattern)?.[1]?.trim() || null;
+  return {
+    company:
+      article?.company ||
+      firstMatch(/\b([A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(?:raises?|raised|secures?|secured)\b/u) ||
+      firstMatch(/(?:^|[.!?]\s*)([A-Za-z0-9가-힣][A-Za-z0-9가-힣&·._-]{1,39})(?:은|는|이|가)\s/u),
+    fundingAmount:
+      article?.fundingAmount ||
+      firstMatch(/((?:약\s*|총\s*)?\d[\d,.]*\s*(?:조|억|만)\s*원)/iu) ||
+      firstMatch(/([€$£]\s*\d+(?:[.,]\d+)?\s*(?:million|billion|m|bn)?)/iu),
+    fundingStage:
+      article?.fundingStage ||
+      firstMatch(/((?:pre[-\s]?)?seed(?:\s+round)?|(?:series|시리즈)\s*[A-H]|프리[-\s]?[A-H]|시드)/iu),
+    eventType:
+      article?.eventType ||
+      (/(?:투자\s*유치|투자유치|\braises?\b|\braised\b)/iu.test(context)
+        ? "투자유치"
+        : /(?:TIPS|팁스|LIPS|립스).{0,30}(?:선정|선발)/iu.test(context)
+          ? "TIPS·LIPS 선정"
+          : /펀드\s*(?:결성|조성)|(?:first|final)\s+close/iu.test(context)
+            ? "펀드결성"
+            : /실증|\bPoC\b/iu.test(context)
+              ? "실증·PoC"
+              : /모집/iu.test(context)
+                ? "모집"
+                : /선정|선발/iu.test(context)
+                  ? "선정"
+                  : /협약|MOU|맞손/iu.test(context)
+                    ? "협약"
+                    : null),
+    industry: article?.industry || null,
+  };
+}
+
+function articleImportance(article) {
+  const info = extractClientStructuredInfo(article);
+  return (
+    Number(article?.score || 0) +
+    (isOverseasArticle(article) ? 0 : 8) +
+    (info.fundingAmount ? 8 : 0) +
+    (info.fundingStage ? 6 : 0) +
+    (info.eventType ? 4 : 0) +
+    (info.company ? 2 : 0)
+  );
+}
+
+function sortArticlesForDisplay(items, mode = sortMode) {
   return [...items].sort((left, right) => {
-    const leftOverseas = isOverseasArticle(left) ? 1 : 0;
-    const rightOverseas = isOverseasArticle(right) ? 1 : 0;
-    return leftOverseas - rightOverseas;
+    if (mode === "latest") {
+      return (
+        String(right.publishedAt || "").localeCompare(String(left.publishedAt || "")) ||
+        Number(isOverseasArticle(left)) - Number(isOverseasArticle(right)) ||
+        articleImportance(right) - articleImportance(left)
+      );
+    }
+    return (
+      Number(isOverseasArticle(left)) - Number(isOverseasArticle(right)) ||
+      articleImportance(right) - articleImportance(left) ||
+      String(right.publishedAt || "").localeCompare(String(left.publishedAt || ""))
+    );
   });
+}
+
+function normalizedSearchText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLocaleLowerCase("ko-KR")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
+function articleMatchesSearch(article) {
+  if (!searchQuery) return true;
+  const info = extractClientStructuredInfo(article);
+  return normalizedSearchText(
+    [article.title, article.summary, article.source, info.company].filter(Boolean).join(" ")
+  ).includes(searchQuery);
+}
+
+function featuredEventKey(article) {
+  const info = extractClientStructuredInfo(article);
+  if (info.company && (info.fundingAmount || info.eventType)) {
+    return normalizedSearchText(
+      [info.company, info.fundingAmount, info.fundingStage, info.eventType]
+        .filter(Boolean)
+        .join("|")
+    );
+  }
+  return normalizedSearchText(article.title)
+    .replace(/[^\p{L}\p{N}]+/gu, "")
+    .slice(0, 36);
+}
+
+function selectFeaturedArticles(items, limit = 3) {
+  const pool = sortArticlesForDisplay(items, "importance");
+  const selected = [];
+  const eventKeys = new Set();
+  const usedCategories = new Set();
+
+  while (selected.length < limit) {
+    const candidate = pool
+      .filter((article) => !eventKeys.has(featuredEventKey(article)))
+      .sort(
+        (left, right) =>
+          articleImportance(right) +
+            (usedCategories.has(right.category) ? 0 : 7) -
+            (articleImportance(left) +
+              (usedCategories.has(left.category) ? 0 : 7))
+      )[0];
+    if (!candidate) break;
+    selected.push(candidate);
+    eventKeys.add(featuredEventKey(candidate));
+    usedCategories.add(candidate.category);
+    pool.splice(pool.indexOf(candidate), 1);
+  }
+  return selected;
 }
 
 function renderFilters() {
@@ -215,6 +336,13 @@ function renderFilters() {
       return button;
     })
   );
+}
+
+function renderRegionFilters() {
+  if (!elements.regionFilters) return;
+  for (const button of elements.regionFilters.querySelectorAll("[data-region]")) {
+    button.setAttribute("aria-pressed", String(button.dataset.region === activeRegion));
+  }
 }
 
 function renderStatistics() {
@@ -244,12 +372,19 @@ function renderStatistics() {
   elements.statistics.replaceChildren(...cards);
 }
 
-function createArticleCard(article) {
-  const card = createElement("article", "news-card");
+function createArticleCard(article, { featuredRank = null } = {}) {
+  const card = createElement(
+    "article",
+    `news-card${featuredRank ? " featured-card" : ""}`
+  );
   const badgeLine = createElement("div", "card-badges");
   const sourceText = article.source || "출처 미상";
   const countryText = isOverseasArticle(article) ? "해외" : "국내";
+  const structuredInfo = extractClientStructuredInfo(article);
 
+  if (featuredRank) {
+    badgeLine.append(createElement("span", "featured-rank", `핵심 ${featuredRank}`));
+  }
   badgeLine.append(
     createElement(
       "span",
@@ -267,8 +402,26 @@ function createArticleCard(article) {
   const title = createElement("h3", "card-title", article.title || "제목 없음");
   const meta = createElement("div", "card-meta");
   meta.append(createElement("time", "card-date", article.publishedAt || "날짜 미상"));
-  const summary = createElement("p", "card-summary", article.summary || "요약이 없습니다.");
-  card.append(badgeLine, title, meta, summary);
+  const detailBadges = createElement("div", "detail-badges");
+  for (const [className, value] of [
+    ["amount", structuredInfo.fundingAmount],
+    ["stage", structuredInfo.fundingStage],
+    ["event", structuredInfo.eventType],
+  ]) {
+    if (value) {
+      detailBadges.append(
+        createElement("span", `detail-badge is-${className}`, value)
+      );
+    }
+  }
+  const summary = createElement(
+    "p",
+    `card-summary${article.summary ? "" : " is-unavailable"}`,
+    article.summary || "본문 요약을 제공할 수 없는 기사입니다."
+  );
+  card.append(badgeLine, title, meta);
+  if (detailBadges.childElementCount) card.append(detailBadges);
+  card.append(summary);
 
   const url = safeArticleUrl(article.url);
   if (url) {
@@ -283,6 +436,29 @@ function createArticleCard(article) {
   return card;
 }
 
+function renderFeaturedArticles() {
+  if (!elements.featuredGrid) return;
+  if (briefingMessage) {
+    elements.featuredGrid.replaceChildren(
+      createElement("div", "state-panel compact", briefingMessage)
+    );
+    return;
+  }
+  const items = Array.isArray(briefing?.items) ? briefing.items : [];
+  const featured = selectFeaturedArticles(items);
+  if (!featured.length) {
+    elements.featuredGrid.replaceChildren(
+      createElement("div", "state-panel compact", "선정할 핵심 기사가 없습니다.")
+    );
+    return;
+  }
+  elements.featuredGrid.replaceChildren(
+    ...featured.map((article, index) =>
+      createArticleCard(article, { featuredRank: index + 1 })
+    )
+  );
+}
+
 function renderArticles() {
   if (briefingMessage) {
     elements.visibleCount.textContent = "0건 표시";
@@ -293,10 +469,15 @@ function renderArticles() {
   }
 
   const allItems = Array.isArray(briefing?.items) ? briefing.items : [];
-  const visibleItems =
-    activeFilter === "all"
-      ? sortArticlesForDisplay(allItems)
-      : sortArticlesForDisplay(allItems.filter((item) => item.category === activeFilter));
+  const visibleItems = sortArticlesForDisplay(
+    allItems.filter((item) => {
+      if (activeFilter !== "all" && item.category !== activeFilter) return false;
+      if (activeRegion === "domestic" && isOverseasArticle(item)) return false;
+      if (activeRegion === "overseas" && !isOverseasArticle(item)) return false;
+      return articleMatchesSearch(item);
+    }),
+    sortMode
+  );
 
   elements.visibleCount.textContent = `${visibleItems.length}건 표시`;
 
@@ -320,7 +501,9 @@ function renderBriefing({ isLatest = false, statusText = "" } = {}) {
     (isLatest ? "최신 수집 데이터" : `${formatBriefingDate(currentDate)} 아카이브`);
   renderArchiveHeading({ isLatest });
   renderStatistics();
+  renderFeaturedArticles();
   renderFilters();
+  renderRegionFilters();
   renderArticles();
 }
 
@@ -334,7 +517,9 @@ function renderMissingArchive(date) {
   elements.dataStatus.textContent = "아카이브 없음";
   renderArchiveHeading();
   renderStatistics();
+  renderFeaturedArticles();
   renderFilters();
+  renderRegionFilters();
   renderArticles();
 }
 
@@ -346,6 +531,46 @@ async function fetchJson(url) {
     throw error;
   }
   return response.json();
+}
+
+function renderCollectionStatus() {
+  if (!elements.collectionHealth) return;
+  const lastRun = new Date(collectionStatus?.lastRunAt || "");
+  const ageMs = Date.now() - lastRun.getTime();
+  const isRecent = Number.isFinite(ageMs) && ageMs >= 0 && ageMs <= 36 * 60 * 60 * 1_000;
+  const healthy = collectionStatus?.success === true && isRecent;
+
+  elements.collectionHealth.className = `collection-health ${
+    healthy ? "is-healthy" : "is-delayed"
+  }`;
+  elements.collectionHealth.textContent = healthy ? "정상 업데이트" : "갱신 지연";
+  const statusDetails = collectionStatus
+    ? [
+        `마지막 실행 ${formatDateTime(collectionStatus.lastRunAt)}`,
+        ...(Number.isFinite(collectionStatus.rawArticleCount)
+          ? [`원본 ${collectionStatus.rawArticleCount}건`]
+          : []),
+        ...(Number.isFinite(collectionStatus.candidateArticleCount)
+          ? [`후보 ${collectionStatus.candidateArticleCount}건`]
+          : []),
+        ...(Number.isFinite(collectionStatus.finalArticleCount)
+          ? [`최종 ${collectionStatus.finalArticleCount}건`]
+          : []),
+      ]
+    : [];
+  elements.collectionHealth.title = statusDetails.length
+    ? statusDetails.join(" · ")
+    : "수집 상태 파일을 확인할 수 없습니다.";
+}
+
+async function loadCollectionStatus() {
+  try {
+    collectionStatus = await fetchJson("data/status.json");
+  } catch (error) {
+    console.warn("수집 상태 데이터를 불러오지 못했습니다.", error);
+    collectionStatus = null;
+  }
+  renderCollectionStatus();
 }
 
 async function loadArchiveIndex() {
@@ -405,7 +630,9 @@ async function loadLatestBriefing() {
     elements.dataStatus.textContent = "데이터 로드 실패";
     renderArchiveHeading();
     renderStatistics();
+    renderFeaturedArticles();
     renderFilters();
+    renderRegionFilters();
     renderArticles();
   }
 }
@@ -457,11 +684,29 @@ elements.briefingDate.addEventListener("change", (event) => {
 });
 
 elements.latestButton.addEventListener("click", () => loadLatestBriefing());
+elements.newsSearch?.addEventListener("input", (event) => {
+  searchQuery = normalizedSearchText(event.target.value);
+  renderArticles();
+});
+elements.newsSort?.addEventListener("change", (event) => {
+  sortMode = event.target.value === "latest" ? "latest" : "importance";
+  renderArticles();
+});
+elements.regionFilters?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-region]");
+  if (!button || !elements.regionFilters.contains(button)) return;
+  activeRegion = ["domestic", "overseas"].includes(button.dataset.region)
+    ? button.dataset.region
+    : "all";
+  renderRegionFilters();
+  renderArticles();
+});
 
 renderFilters();
+renderRegionFilters();
 
 async function initialize() {
-  await loadArchiveIndex();
+  await Promise.all([loadArchiveIndex(), loadCollectionStatus()]);
   await loadLatestBriefing();
 }
 

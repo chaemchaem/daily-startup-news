@@ -328,6 +328,121 @@ function validateSummaryQuality(title, summary, options = {}) {
   };
 }
 
+function firstStructuredMatch(value, patterns) {
+  for (const pattern of patterns) {
+    const match = cleanText(value).match(pattern);
+    if (match?.[1]) return cleanText(match[1]);
+    if (match?.[0]) return cleanText(match[0]);
+  }
+  return null;
+}
+
+function extractStructuredCompany(title, summary) {
+  const titleText = cleanText(title).replace(/\s*\|\s*[^|]{2,40}$/u, "");
+  const combined = `${titleText} ${cleanText(summary)}`.trim();
+  const englishCompany = firstStructuredMatch(titleText, [
+    /\b(?:[A-Z][A-Za-z-]+-based|[A-Z]{2,}\s+startup|startup)\s+([A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(?:raises?|raised|secures?|secured|closes?|closed|extends?)\b/u,
+    /\b([A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(?:raises?|raised|secures?|secured|closes?|closed|extends?)\b/u,
+  ]);
+  if (englishCompany) return englishCompany;
+
+  const quotedCompany = [...titleText.matchAll(/[‘“'"]([^’”'"]{2,35})[’”'"]/gu)]
+    .map((match) => cleanText(match[1]))
+    .find((value) => !/투자|기술|서비스|프로그램|인공태양|핵융합\s*발전/iu.test(value));
+  if (quotedCompany) return quotedCompany;
+
+  const actorFromSentence = firstStructuredMatch(combined, [
+    /(?:^|[.!?]\s*)([A-Za-z0-9가-힣][A-Za-z0-9가-힣&·._-]{1,39})(?:은|는|이|가)\s+(?=[^.!?]{0,45}(?:투자\s*유치|유치|선정|모집|결성|출시|인수|협약|실증))/u,
+  ]);
+  if (actorFromSentence) return actorFromSentence;
+
+  const leadingClause = titleText.split(/[,，…]|\.{3}/u)[0]?.trim() || "";
+  const tokens = leadingClause
+    .replace(/[‘’“”'"]/gu, "")
+    .split(/\s+/u)
+    .filter(Boolean);
+  const lastToken = tokens.at(-1) || "";
+  if (
+    lastToken.length >= 2 &&
+    lastToken.length <= 40 &&
+    !/^(?:스타트업|기업|정부|기관|VC|AC|투자|지원|산업|시장)$/iu.test(lastToken) &&
+    /투자\s*유치|투자유치|시드|프리[-\s]?[A-C]|시리즈\s*[A-C]|선정|모집|인수|협약|실증/iu.test(
+      combined
+    )
+  ) {
+    return lastToken;
+  }
+  return null;
+}
+
+function extractStructuredArticleInfo({ title = "", summary = "" } = {}) {
+  const text = cleanText(`${title} ${summary}`);
+  const fundingAmount = firstStructuredMatch(text, [
+    /((?:약\s*|총\s*)?\d[\d,.]*\s*(?:조|억|만)\s*원)/iu,
+    /([€$£]\s*\d+(?:[.,]\d+)?\s*(?:million|billion|m|bn)?)/iu,
+    /(\d+(?:[.,]\d+)?\s*(?:million|billion)\s*(?:euros?|dollars?|pounds?))/iu,
+  ]);
+  const fundingStage = firstStructuredMatch(text, [
+    /((?:pre[-\s]?)?seed(?:\s+round)?)/iu,
+    /((?:series|시리즈)\s*[A-H])/iu,
+    /(프리[-\s]?[A-H])/iu,
+    /(시드(?:\s*투자|\s*라운드)?)/iu,
+    /(브릿지(?:\s*투자|\s*라운드)?|후속\s*투자|Pre[-\s]?IPO)/iu,
+  ]);
+
+  let eventType = null;
+  const eventPatterns = [
+    ["투자유치", /투자\s*유치|투자유치|\braises?\b|\braised\b|\bsecures?\b.{0,25}\bfunding\b/iu],
+    ["펀드결성", /펀드\s*(?:결성|조성)|(?:first|final)\s+close/iu],
+    ["TIPS·LIPS 선정", /(?:TIPS|팁스|LIPS|립스).{0,35}(?:선정|선발)|(?:선정|선발).{0,35}(?:TIPS|팁스|LIPS|립스)/iu],
+    ["선정", /선정|선발|확정/iu],
+    ["모집", /모집|참가사\s*접수|지원기업\s*접수/iu],
+    ["실증·PoC", /\bPoC\b|실증|기술\s*검증/iu],
+    ["출시·상용화", /출시|상용화|공개/iu],
+    ["인수·M&A", /인수|합병|M&A|acquir/iu],
+    ["협약", /협약|MOU|맞손|partnership/iu],
+    ["세컨더리", /세컨더리|구주|LP\s*지분|회수시장/iu],
+    ["지원사업", /지원사업|사업화\s*지원|글로벌\s*진출\s*지원|창업기업.{0,25}지원/iu],
+  ];
+  for (const [label, pattern] of eventPatterns) {
+    if (pattern.test(text)) {
+      eventType = label;
+      break;
+    }
+  }
+
+  let industry = null;
+  const industryPatterns = [
+    ["AI", /(?:생성형|피지컬|의료|산업용)?\s*AI|인공지능/iu],
+    ["바이오·헬스케어", /바이오|헬스케어|의료|신약|ADC/iu],
+    ["반도체", /반도체|팹리스|칩렛/iu],
+    ["로봇", /로봇|로보틱스/iu],
+    ["기후테크·ESG", /기후테크|클린테크|CCUS|탄소|ESG/iu],
+    ["우주항공", /우주항공|항공우주|위성|로켓/iu],
+    ["농식품", /농식품|푸드테크|애그테크|스마트팜/iu],
+    ["사이버보안", /사이버\s*보안|cybersecurity/iu],
+    ["핀테크", /핀테크|fintech/iu],
+    ["SaaS", /\bSaaS\b|소프트웨어\s*서비스/iu],
+  ];
+  for (const [label, pattern] of industryPatterns) {
+    if (pattern.test(text)) {
+      industry = label;
+      break;
+    }
+  }
+
+  return {
+    company: extractStructuredCompany(title, summary),
+    fundingAmount:
+      fundingAmount && !/[€$£]\s*\d+[.,]$/u.test(fundingAmount)
+        ? fundingAmount.replace(/\s+/gu, " ").trim()
+        : null,
+    fundingStage: fundingStage?.replace(/\s+/gu, " ").trim() || null,
+    eventType,
+    industry,
+  };
+}
+
 function deduplicateArticles(articles) {
   const kept = [];
   const seenUrls = new Set();
@@ -536,6 +651,7 @@ module.exports = {
   deduplicateArticles,
   deduplicateSummarizedItems,
   duplicateEventReason,
+  extractStructuredArticleInfo,
   formatKstDate,
   formatKstIso,
   hasStructuredSummary,

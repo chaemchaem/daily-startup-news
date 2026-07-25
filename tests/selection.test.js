@@ -294,3 +294,42 @@ test("allowlist 밖의 강한 국내 후보를 목표 미달 시 보충한다", 
   assert.equal(result.domesticCount, 10);
   assert.equal(result.sourceRecoverySupplementCount, 6);
 });
+
+test("최종 구성은 해외 VC 3건과 동일 출처 2건을 넘지 않는다", () => {
+  const domestic = Array.from({ length: 8 }, (_, index) => ({
+    id: `domestic-cap-${index}`,
+    title: `국내 스타트업 투자 기사 ${index}`,
+    source: index < 4 ? "동일매체" : `국내매체${index}`,
+    publishedAt: "2026-07-08",
+    score: 70 - index,
+    category: index % 2 ? "VC / AC" : "스타트업 / 벤처기업 / 초기창업",
+    _isDomestic: true,
+    _strongConnectionType: "A",
+    _sourceAllowed: true,
+  }));
+  const overseas = Array.from({ length: 6 }, (_, index) => ({
+    id: `overseas-cap-${index}`,
+    title: `Global startup ${index} raises funding`,
+    source: index < 4 ? "EU-Startups" : `GlobalSource${index}`,
+    publishedAt: "2026-07-08",
+    score: 100 - index,
+    category: "해외 VC",
+    _isDomestic: false,
+    _strongConnectionType: "C",
+    _sourceAllowed: true,
+  }));
+
+  const result = selectFinalBriefingItems([...overseas, ...domestic], {
+    minDomestic: 6,
+    minFinal: 8,
+    maxFinal: 15,
+    maxPerCategory: 8,
+  });
+  assert.ok(result.overseasCount <= 3);
+  const sourceCounts = result.items.reduce((counts, item) => {
+    counts[item.source] = (counts[item.source] || 0) + 1;
+    return counts;
+  }, {});
+  assert.ok(Object.values(sourceCounts).every((count) => count <= 2));
+  assert.ok(result.domesticCount >= 6);
+});

@@ -29,6 +29,7 @@ const BOILERPLATE_PATTERNS = [
   /조회(?:수)?\s*[:=]?\s*[\d,]+/iu,
   /(?:사진|자료)\s*=/iu,
   /재배포\s*금지/iu,
+  /^(?:Home|Funding|CLUB|[A-Z][A-Za-z -]+-Startups)(?:\s*[>|/·-]\s*)?$/iu,
 ];
 
 const PAYWALL_PATTERNS = [
@@ -135,6 +136,10 @@ function stripArticleMetadata(text) {
     .replace(/\s+[A-Za-z0-9가-힣·._-]{2,30}\s*(?:기자|특파원)\s*$/u, "")
     .replace(/\s*(?:사진|자료)\s*=\s*[^.!?。]{1,80}(?=$|[.!?。])/giu, " ")
     .replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/giu, " ")
+    .replace(
+      /^(?:(?:Home|Funding|CLUB|[A-Z][A-Za-z -]+-Startups)\s*(?:[>|/·-]\s*)?){1,5}(?=[A-Z0-9“‘"'])/u,
+      ""
+    )
     .replace(/\s+/g, " ")
     .trim();
 }

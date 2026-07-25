@@ -1,7 +1,22 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
 
-const { resolveOriginalArticleUrl } = require("../scripts/article-extractor");
+const {
+  cleanArticleText,
+  resolveOriginalArticleUrl,
+} = require("../scripts/article-extractor");
+
+test("EU-Startups 본문 앞의 메뉴와 국가별 브레드크럼을 제거한다", () => {
+  const cleaned = cleanArticleText(`
+    <article>
+      <p>Home Funding CLUB Portugal-Startups Lisbon-based BIZAY raised €48.7 million in a Series D round.</p>
+      <p>The company will use the funding to expand its production platform across Europe.</p>
+    </article>
+  `);
+
+  assert.doesNotMatch(cleaned, /\bHome\b|\bFunding\b|\bCLUB\b|Portugal-Startups/u);
+  assert.match(cleaned, /BIZAY raised €48\.7 million/u);
+});
 
 test("Google 중계 해석 실패 시 등록된 매체 주소에서 제목으로 원문을 찾는다", async () => {
   const originalFetch = global.fetch;

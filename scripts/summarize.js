@@ -1260,6 +1260,10 @@ function sanitizeExtractiveSentence(value, source = "") {
       /전체\s*맥락을\s*이해하려면\s*기사\s*본문을\s*함께\s*확인하는\s*것이\s*좋습니다[.!?。]?\s*/giu,
       ""
     )
+    .replace(
+      /^(?:(?:Home|Funding|CLUB|[A-Z][A-Za-z -]+-Startups)\s*(?:[>|/·-]\s*)?){1,5}(?=[A-Z0-9“‘"'])/u,
+      ""
+    )
     .replace(/\s+/g, " ")
     .trim();
 
@@ -1444,7 +1448,67 @@ function normalizeEnglishExtractiveSummary(value) {
     length > SUMMARY_MAX_LENGTH ||
     !/[.!?]["')\]]?$/u.test(summary) ||
     !ENGLISH_EVENT_PATTERN.test(summary) ||
+    /[€$£]\s*\d+(?:[.,]\d+)?[.!?]$/u.test(summary) ||
+    /\b\d+(?:[.,]\d+)?[.!?]$/u.test(summary) ||
     /\b(?:and|or|to|of|with|for|as|by|the|a|an)\s*[.!?]?$/iu.test(summary)
+  ) {
+    return "";
+  }
+  return summary;
+}
+
+function summarizeOverseasFundingFromTitle(value) {
+  const title = cleanText(value)
+    .replace(/\s*\|\s*EU-Startups\s*$/iu, "")
+    .replace(
+      /^(?:(?:Home|Funding|CLUB|[A-Z][A-Za-z -]+-Startups)\s*(?:[>|/·-]\s*)?){1,5}(?=[A-Z0-9“‘"'])/u,
+      ""
+    )
+    .trim();
+  const actionMatch = title.match(
+    /\b([A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(raises?|raised|secures?|secured|closes?|closed|extends?)\b/u
+  );
+  const amountMatch = title.match(
+    /[€$£]\s*\d+(?:[.,]\d+)?\s*(?:million|billion|m|bn)?/iu
+  );
+  if (!actionMatch || !amountMatch || /[€$£]\s*\d+[.,]$/u.test(amountMatch[0])) {
+    return "";
+  }
+
+  const company = actionMatch[1];
+  const amount = cleanText(amountMatch[0]);
+  const stage =
+    title.match(/\b(?:pre[-\s]?)?seed(?:\s+round)?\b/iu)?.[0] ||
+    title.match(/\bseries\s+[A-H]\b/iu)?.[0] ||
+    "";
+  const action = actionMatch[2].toLowerCase();
+  let summary;
+
+  if (action.startsWith("extend")) {
+    const roundLabel = stage
+      ? /\bround\b/iu.test(stage)
+        ? stage
+        : `${stage} round`
+      : "funding round";
+    summary = `${company} extended its ${roundLabel} to ${amount} in total funding.`;
+  } else {
+    const amountEnd = amountMatch.index + amountMatch[0].length;
+    const afterAmount = title.slice(amountEnd).replace(/^[\s,;:–—-]+/u, "");
+    const purpose = afterAmount.match(/^to\s+(.+)$/iu)?.[1]
+      ?.replace(/[.;|]+$/u, "")
+      .trim();
+    const base = `${company} raised ${amount}${stage ? ` in a ${stage} round` : ""}`;
+    const withPurpose = purpose ? `${base} to ${purpose}.` : `${base}.`;
+    summary =
+      Array.from(withPurpose).length <= SUMMARY_MAX_LENGTH
+        ? withPurpose
+        : `${base}.`;
+  }
+
+  if (
+    Array.from(summary).length > SUMMARY_MAX_LENGTH ||
+    /[€$£]\s*\d+(?:[.,]\d+)?[.!?]$/u.test(summary) ||
+    !/\braised\b|\bextended\b/iu.test(summary)
   ) {
     return "";
   }
@@ -1634,6 +1698,26 @@ function summarizeExtractiveLocal({
     }
   }
 
+  if (category === "해외 VC" || isPredominantlyEnglish(title)) {
+    const structuredSummary = summarizeOverseasFundingFromTitle(title);
+    if (structuredSummary) {
+      return {
+        summary: structuredSummary,
+        summarySource: "structured_overseas",
+        metaRejectedCount,
+        similarRejectedCount,
+        candidateCount: 0,
+      };
+    }
+    return {
+      summary: "",
+      summarySource: "unavailable",
+      metaRejectedCount,
+      similarRejectedCount,
+      candidateCount: 0,
+    };
+  }
+
   return {
     summary: summarizeTitleFallback(title),
     summarySource: "titleFallback",
@@ -1791,6 +1875,7 @@ module.exports = {
   summarizeFreeLocal,
   isPredominantlyEnglish,
   normalizeEnglishExtractiveSummary,
+  summarizeOverseasFundingFromTitle,
   summarizeLocal,
   summarizeTitleFallback,
   summarizeWithOpenAI,

@@ -36,6 +36,7 @@ const {
   createSummaryCacheKey,
   deduplicateArticles,
   deduplicateSummarizedItems,
+  extractStructuredArticleInfo,
   formatKstDate,
   formatKstIso,
   isAllowedSource,
@@ -62,6 +63,7 @@ const ARCHIVE_DIR = path.join(DATA_DIR, "archive");
 const DEBUG_DIR = path.join(DATA_DIR, "debug");
 const ARCHIVE_INDEX_PATH = path.join(ARCHIVE_DIR, "index.json");
 const SUMMARY_CACHE_PATH = path.join(DATA_DIR, "summary-cache.json");
+const STATUS_PATH = path.join(DATA_DIR, "status.json");
 const SUMMARY_CACHE_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1_000;
 const SUMMARY_CACHE_MAX_ITEMS = 500;
 const ADVERTISING_WORDS = ["광고", "이벤트", "할인", "무료체험", "구독 이벤트", "협찬"];
@@ -168,6 +170,8 @@ const DEFAULT_MIN_DOMESTIC_ARTICLES = 8;
 const DEFAULT_MIN_FINAL_ARTICLES = 10;
 const DEFAULT_MAX_FINAL_ARTICLES = 15;
 const DEFAULT_MAX_EXTRACTION_CANDIDATES = 30;
+const DEFAULT_MAX_OVERSEAS_ARTICLES = 3;
+const DEFAULT_MAX_ITEMS_PER_SOURCE = 2;
 const COLLECTION_WINDOW_MS = 48 * 60 * 60 * 1_000;
 let urlNormalizationSampleLogged = false;
 
@@ -1600,14 +1604,16 @@ function selectFinalBriefingItems(
     minFinal = DEFAULT_MIN_FINAL_ARTICLES,
     maxFinal = DEFAULT_MAX_FINAL_ARTICLES,
     maxPerCategory = 5,
+    maxOverseas = DEFAULT_MAX_OVERSEAS_ARTICLES,
+    maxPerSource = DEFAULT_MAX_ITEMS_PER_SOURCE,
   } = {}
 ) {
   const ordered = items
     .filter((item) => item._strongConnectionType)
     .sort(
     (left, right) =>
-      right.score - left.score ||
       Number(right._isDomestic) - Number(left._isDomestic) ||
+      right.score - left.score ||
       right.publishedAt.localeCompare(left.publishedAt)
     );
   const strictOrdered = ordered.filter((item) => item._sourceAllowed !== false);
@@ -1616,20 +1622,29 @@ function selectFinalBriefingItems(
   const categoryCounts = Object.fromEntries(
     Object.keys(categories).map((category) => [category, 0])
   );
+  const sourceCounts = new Map();
+  let overseasCount = 0;
   let supplementalCount = 0;
   let sourceRecoverySupplementCount = 0;
 
   const add = (item, supplemental = false) => {
+    const sourceKey = cleanText(
+      item.source || item.id || "출처 미상"
+    ).toLocaleLowerCase("ko-KR");
     if (
       selected.length >= maxFinal ||
       selectedIds.has(item.id) ||
-      categoryCounts[item.category] >= maxPerCategory
+      categoryCounts[item.category] >= maxPerCategory ||
+      (item._isDomestic === false && overseasCount >= maxOverseas) ||
+      (sourceCounts.get(sourceKey) || 0) >= maxPerSource
     ) {
       return false;
     }
     selected.push(item);
     selectedIds.add(item.id);
     categoryCounts[item.category] += 1;
+    sourceCounts.set(sourceKey, (sourceCounts.get(sourceKey) || 0) + 1);
+    if (item._isDomestic === false) overseasCount += 1;
     if (supplemental) {
       supplementalCount += 1;
       if (item._sourceRecovery) sourceRecoverySupplementCount += 1;
@@ -1680,7 +1695,7 @@ function selectFinalBriefingItems(
         : []),
     ],
     domesticCount: domesticCount(),
-    overseasCount: selected.filter((item) => !item._isDomestic).length,
+    overseasCount,
   };
 }
 
@@ -1760,13 +1775,17 @@ function validateFinalArticleItem(item) {
     "url",
     "source",
     "category",
-    "summary",
     "summaryType",
   ];
   const missingField = requiredTextFields.find(
     (field) => !cleanText(item?.[field] || "")
   );
   if (missingField) return { isValid: false, reason: `missing_${missingField}` };
+  const summaryUnavailable =
+    item.summaryType === "unavailable" && !cleanText(item.summary || "");
+  if (!summaryUnavailable && !cleanText(item.summary || "")) {
+    return { isValid: false, reason: "missing_summary" };
+  }
   if (isGoogleNewsUrl(item.url)) {
     return { isValid: false, reason: "google_news_url_forbidden" };
   }
@@ -1810,6 +1829,39 @@ async function saveBriefing(output, generatedDate) {
   );
 
   return { archivePath, archiveIndex };
+}
+
+async function saveCollectionStatus({
+  success,
+  rawArticleCount = 0,
+  candidateArticleCount = 0,
+  finalArticleCount = 0,
+  sourceSuccessCount = 0,
+  sourceFailureCount = 0,
+  message = null,
+} = {}) {
+  const status = {
+    lastRunAt: new Date().toISOString(),
+    success: Boolean(success),
+    rawArticleCount: Number(rawArticleCount) || 0,
+    candidateArticleCount: Number(candidateArticleCount) || 0,
+    finalArticleCount: Number(finalArticleCount) || 0,
+    sourceSuccessCount: Number(sourceSuccessCount) || 0,
+    sourceFailureCount: Number(sourceFailureCount) || 0,
+    ...(message ? { message: cleanText(message).slice(0, 200) } : {}),
+  };
+  await fs.mkdir(DATA_DIR, { recursive: true });
+  await fs.writeFile(STATUS_PATH, `${JSON.stringify(status, null, 2)}\n`, "utf8");
+  return status;
+}
+
+async function saveCollectionStatusSafely(status) {
+  try {
+    return await saveCollectionStatus(status);
+  } catch (error) {
+    console.warn(`[수집 상태 저장 실패] ${error.message}`);
+    return null;
+  }
 }
 
 async function collectNews() {
@@ -1992,6 +2044,8 @@ async function collectNews() {
   }
 
   const sourceResults = [...primaryResults, ...discoveryResults];
+  const sourceSuccessCount = sourceResults.filter((result) => result.succeeded).length;
+  const sourceFailureCount = sourceResults.length - sourceSuccessCount;
   const fetched = [...primaryFetched, ...discoveryFetched];
   const normalized = [...primaryNormalized, ...discoveryNormalized].sort(compareForDedup);
   const recoveryNormalized = deduplicateArticles(sourceRecoveryCandidates).sort(compareForDedup);
@@ -2406,11 +2460,23 @@ async function collectNews() {
 
     const isOpenAIDescription = summaryResult.summarySource === "openai_description";
     const isLocalExtractive = summaryResult.summarySource === "local_extractive";
-    let quality = validateSummaryQuality(article.title, summaryResult.summary, {
-      maxLength: isOpenAIDescription ? 120 : 100,
-      maxSimilarity: isOpenAIDescription ? 1.01 : isLocalExtractive ? 0.97 : 0.8,
-      requireStructured: summaryResult.summarySource === "titleFallback",
-    });
+    const isStructuredOverseas =
+      summaryResult.summarySource === "structured_overseas";
+    const summaryUnavailable =
+      summaryResult.summarySource === "unavailable" &&
+      !cleanText(summaryResult.summary || "");
+    let quality = summaryUnavailable
+      ? { isValid: true, reason: null, similarity: 0 }
+      : validateSummaryQuality(article.title, summaryResult.summary, {
+          maxLength: isOpenAIDescription ? 120 : 100,
+          maxSimilarity:
+            isOpenAIDescription || isStructuredOverseas
+              ? 1.01
+              : isLocalExtractive
+                ? 0.97
+                : 0.8,
+          requireStructured: summaryResult.summarySource === "titleFallback",
+        });
     if (isOpenAIDescription && quality.isValid) {
       const descriptionQuality = validateOpenAIDescriptionSummary({
         title: article.title,
@@ -2473,12 +2539,14 @@ async function collectNews() {
       }
     }
 
-    const fallbackQuality = validateFallbackSummaryQuality({
-      title: article.title,
-      summary: summaryResult.summary,
-      source: article.source,
-      summarySource: summaryResult.summarySource,
-    });
+    const fallbackQuality = summaryUnavailable
+      ? { isValid: true, reason: null }
+      : validateFallbackSummaryQuality({
+          title: article.title,
+          summary: summaryResult.summary,
+          source: article.source,
+          summarySource: summaryResult.summarySource,
+        });
     if (!fallbackQuality.isValid) {
       if (fallbackQuality.reason === "noun_phrase_summary") {
         nounPhraseSummaryExcludedCount += 1;
@@ -2556,12 +2624,16 @@ async function collectNews() {
     if (["local_extractive", "extractive_body"].includes(summaryResult.summarySource)) {
       extractiveBodySummarySavedCount += 1;
     }
+    const structuredInfo = extractStructuredArticleInfo({
+      title: article.title,
+      summary: summaryResult.summary || "",
+    });
     const finalItem = {
       id: createArticleId(article),
       category: article.category,
       title: article.title,
       publishedAt: formatKstDate(article.publishedAt),
-      summary: summaryResult.summary,
+      summary: summaryResult.summary || null,
       summarySource: summaryResult.summarySource,
       summaryType: summaryResult.summarySource,
       source: article.source,
@@ -2572,9 +2644,14 @@ async function collectNews() {
       _strongConnectionType: article.strongConnectionType,
       _sourceAllowed: article._sourceAllowed !== false,
       _sourceRecovery: Boolean(article._sourceRecovery),
+      ...Object.fromEntries(
+        Object.entries(structuredInfo).filter(([, value]) => Boolean(value))
+      ),
       score:
         summaryResult.summarySource === "titleFallback"
           ? Math.max(0, article.score - 5)
+          : summaryResult.summarySource === "unavailable"
+            ? Math.max(0, article.score - 20)
           : article.googleNewsUrl && article.resolutionStatus === "failed"
             ? Math.max(0, article.score - 8)
             : article.score,
@@ -2607,8 +2684,10 @@ async function collectNews() {
     openai_description: 4,
     local_extractive: 3,
     extractive_body: 3,
+    structured_overseas: 3,
     description: 2,
     titleFallback: 1,
+    unavailable: 0,
   };
   const finalHardSafeItems = items.filter((item) => {
     const reason = finalHardExcludeReason(item);
@@ -2899,6 +2978,15 @@ async function collectNews() {
       console.warn(
         "[빈 결과 저장 취소] FORCE_SAVE_EMPTY=true가 아니므로 기존 data/news.json과 아카이브를 보존합니다."
       );
+      await saveCollectionStatusSafely({
+        success: false,
+        rawArticleCount: fetched.length,
+        candidateArticleCount: selected.length,
+        finalArticleCount: 0,
+        sourceSuccessCount,
+        sourceFailureCount,
+        message: "empty_result_preserved",
+      });
       return {
         saved: false,
         output,
@@ -2940,6 +3028,14 @@ async function collectNews() {
   }
 
   const { archivePath, archiveIndex } = await saveBriefing(output, generatedDate);
+  await saveCollectionStatusSafely({
+    success: true,
+    rawArticleCount: fetched.length,
+    candidateArticleCount: selected.length,
+    finalArticleCount: items.length,
+    sourceSuccessCount,
+    sourceFailureCount,
+  });
   console.log(`[저장 완료] ${OUTPUT_PATH} (${items.length}건)`);
   console.log(`[아카이브 저장] ${archivePath}`);
   console.log(`[아카이브 인덱스] ${archiveIndex.dates.length}일 / 최신 ${archiveIndex.latest}`);
@@ -3012,6 +3108,12 @@ async function runCli({
   } catch (error) {
     exitCode = 1;
     console.error(`[치명적 오류] ${error.stack || error.message}`);
+    if (collect === collectNews) {
+      await saveCollectionStatusSafely({
+        success: false,
+        message: error.message || "collect_failed",
+      });
+    }
   }
 
   process.exitCode = exitCode;

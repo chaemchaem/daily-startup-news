@@ -23,7 +23,12 @@
         </div>
 
         <aside class="hero-panel" aria-label="브리핑 기준 정보">
-          <p class="hero-panel-label">Briefing Snapshot</p>
+          <div class="hero-panel-heading">
+            <p class="hero-panel-label">Briefing Snapshot</p>
+            <span id="collection-health" class="collection-health is-loading" role="status">
+              수집 상태 확인 중
+            </span>
+          </div>
           <dl class="brief-meta">
             <div>
               <dt>마지막 업데이트</dt>
@@ -54,6 +59,17 @@
         <div id="statistics" class="statistics" aria-live="polite"></div>
       </section>
 
+      <section class="featured-section" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">EDITOR'S PICK</p>
+            <h2 id="featured-title">오늘의 핵심 3건</h2>
+          </div>
+          <p class="featured-caption">구체성과 중요도, 카테고리 균형을 함께 반영했습니다.</p>
+        </div>
+        <div id="featured-grid" class="featured-grid" aria-live="polite"></div>
+      </section>
+
       <section class="news-section" aria-labelledby="news-list-title">
         <div class="news-toolbar">
           <div>
@@ -69,6 +85,32 @@
           role="group"
           aria-label="뉴스 카테고리 필터"
         ></div>
+
+        <div class="discovery-toolbar" aria-label="뉴스 검색 및 정렬">
+          <label class="search-field" for="news-search">
+            <span class="visually-hidden">기사 검색</span>
+            <input
+              id="news-search"
+              type="search"
+              placeholder="제목, 요약, 출처, 기업명 검색"
+              autocomplete="off"
+            />
+          </label>
+
+          <div id="region-filters" class="region-filters" role="group" aria-label="국내·해외 필터">
+            <button type="button" data-region="all" aria-pressed="true">전체</button>
+            <button type="button" data-region="domestic" aria-pressed="false">국내</button>
+            <button type="button" data-region="overseas" aria-pressed="false">해외</button>
+          </div>
+
+          <label class="sort-field" for="news-sort">
+            <span>정렬</span>
+            <select id="news-sort">
+              <option value="importance">중요도순</option>
+              <option value="latest">최신순</option>
+            </select>
+          </label>
+        </div>
 
         <div id="news-grid" class="news-grid" aria-live="polite">
           <div class="state-panel">뉴스 데이터를 준비하고 있습니다.</div>
