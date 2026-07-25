@@ -4,14 +4,14 @@
     "from": "2026-07-23T09:00:00+09:00",
     "to": "2026-07-25T09:00:00+09:00"
   },
-  "totalCount": 11,
+  "totalCount": 8,
   "categoryCounts": {
-    "VC / AC": 4,
+    "VC / AC": 3,
     "TIPS / LIPS": 0,
     "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
     "스타트업 / 벤처기업 / 초기창업": 1,
     "세컨더리 / 구주매각": 0,
-    "해외 VC": 5
+    "해외 VC": 3
   },
   "items": [
     {
@@ -19,12 +19,15 @@
       "category": "해외 VC",
       "title": "German DeepTech startup kausable raises €12 million to develop reasoning-first AI that adapts without retraining | EU-Startups",
       "publishedAt": "2026-07-23",
-      "summary": "It has also raised a pre-Seed round of €1.",
+      "summary": "German DeepTech startup kausable raises €12 million to develop reasoning-first AI that.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/german-deeptech-startup-kausable-raises-e12-million-to-develop-reasoning-first-ai-that-adapts-without-retraining/",
       "resolvedUrl": null,
+      "fundingAmount": "€12 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 92
     },
     {
@@ -32,26 +35,17 @@
       "category": "해외 VC",
       "title": "Nernst Electric raises €1.7 million to scale on-site oxygen generation technology for aquaculture and heavy industry | EU-Startups",
       "publishedAt": "2026-07-23",
-      "summary": "Home Ireland Startups Nernst Electric raises €1.",
+      "summary": "Ireland Startups Nernst Electric raises €1.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/irelands-nernst-electric-raises-e1-7-million-to-advance-on-site-oxygen-generation-technology-for-aquaculture-and-heavy-industry/",
       "resolvedUrl": null,
+      "company": "Electric",
+      "fundingAmount": "€1.7 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 81
-    },
-    {
-      "id": "1efcb77f9f77a79a",
-      "category": "해외 VC",
-      "title": "YC-backed telli raises €13.1 million to build AI for B2C customer operations | EU-Startups",
-      "publishedAt": "2026-07-23",
-      "summary": "Home Germany-Startups YC-backed telli raises €13.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/07/yc-backed-telli-raises-e13-1-million-to-build-ai-for-b2c-customer-operations/",
-      "resolvedUrl": null,
-      "score": 78
     },
     {
       "id": "1d9cb0bdf98e7b47",
@@ -64,33 +58,29 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1100897/",
       "resolvedUrl": null,
+      "company": "테크타카",
+      "fundingAmount": "180억 원",
+      "fundingStage": "후속 투자",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 76
     },
     {
-      "id": "3c216c4ab0b802dd",
+      "id": "011a01522b38cc74",
       "category": "해외 VC",
-      "title": "Weekly funding round-up! All of the European startup funding rounds we tracked this week (July 20 -July 24) | EU-Startups",
+      "title": "Sam Altman’s biometric startup World raises $52.5M via crypto sale",
       "publishedAt": "2026-07-25",
-      "summary": "Home CLUB Weekly funding round-up! All of the European startup funding rounds we tracked.",
+      "summary": "World, the online verification startup co-founded by OpenAI’s Sam Altman, has raised $52.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/07/weekly-funding-round-up-all-of-the-european-startup-funding-rounds-we-tracked-this-week-july-20-july-24/",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/24/sam-altmans-biometric-startup-world-raises-52-5-million-via-crypto-sale/",
       "resolvedUrl": null,
-      "score": 75
-    },
-    {
-      "id": "8b084c910c7f9e16",
-      "category": "해외 VC",
-      "title": "Oxford-based Moa Technology raises €25.9 million to tackle herbicide-resistant weeds | EU-Startups",
-      "publishedAt": "2026-07-24",
-      "summary": "Home UK-Startups Oxford-based Moa Technology raises €25.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/07/oxford-based-moa-technology-raises-e25-9-million-to-tackle-herbicide-resistant-weeds/",
-      "resolvedUrl": null,
-      "score": 74
+      "company": "World",
+      "fundingAmount": "$52.5M",
+      "eventType": "투자유치",
+      "industry": "AI",
+      "score": 72
     },
     {
       "id": "5f5b662aaec5026c",
@@ -103,6 +93,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1101043/",
       "resolvedUrl": null,
+      "eventType": "출시·상용화",
+      "industry": "AI",
       "score": 48
     },
     {
@@ -116,6 +108,7 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12106996",
       "resolvedUrl": null,
+      "industry": "AI",
       "score": 48
     },
     {
@@ -129,6 +122,8 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12106466",
       "resolvedUrl": null,
+      "company": "온라인수출 중소기업 물류 지원사업",
+      "eventType": "선정",
       "score": 48
     },
     {
@@ -142,20 +137,10 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/291383",
       "resolvedUrl": null,
+      "company": "디캠프",
+      "fundingStage": "시리즈A",
+      "industry": "로봇",
       "score": 45
-    },
-    {
-      "id": "32178b9dd459cefd",
-      "category": "VC / AC",
-      "title": "전기차 충전 데이터도 블록체인으로… 고래, 5만 대 온체인 구축",
-      "publishedAt": "2026-07-24",
-      "summary": "이에 충전 데이터를 블록체인에 기록해 정산 효율을 높이고 투자 신뢰성을 확보하려는 시도가 본격화되고 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "벤처스퀘어",
-      "url": "https://www.venturesquare.net/1100958/",
-      "resolvedUrl": null,
-      "score": 31
     }
   ]
 }

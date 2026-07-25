@@ -1,10 +1,9 @@
 {
-  "lastRunAt": "2026-07-08T00:00:00.000Z",
+  "lastRunAt": "2026-07-25T16:27:36.271Z",
   "success": true,
-  "rawArticleCount": null,
-  "candidateArticleCount": null,
-  "finalArticleCount": 11,
-  "sourceSuccessCount": null,
-  "sourceFailureCount": null,
-  "message": "bootstrap_from_existing_briefing"
+  "rawArticleCount": 262,
+  "candidateArticleCount": 30,
+  "finalArticleCount": 8,
+  "sourceSuccessCount": 15,
+  "sourceFailureCount": 0
 }
