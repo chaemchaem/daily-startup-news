@@ -1,9 +1,9 @@
 {
-  "lastRunAt": "2026-09-12T04:28:55.519Z",
+  "lastRunAt": "2026-09-13T04:41:13.916Z",
   "success": true,
-  "rawArticleCount": 239,
-  "candidateArticleCount": 30,
-  "finalArticleCount": 6,
-  "sourceSuccessCount": 13,
-  "sourceFailureCount": 2
+  "rawArticleCount": 193,
+  "candidateArticleCount": 25,
+  "finalArticleCount": 4,
+  "sourceSuccessCount": 11,
+  "sourceFailureCount": 4
 }
