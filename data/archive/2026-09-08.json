@@ -25,7 +25,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/swiss-startup-jaipur-robotics-raises-e4-3-million-to-expand-its-ai-operating-system-across-more-waste-to-energy-and-industrial-plants/",
       "resolvedUrl": null,
-      "company": "Robotics",
+      "company": "Jaipur Robotics",
       "fundingAmount": "€4.3 million",
       "eventType": "투자유치",
       "industry": "AI",
@@ -42,10 +42,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/molten-ventures-raises-e203-million-to-back-uk-and-european-growth-stage-tech-companies/",
       "resolvedUrl": null,
-      "company": "Ventures",
+      "company": "Molten Ventures",
       "fundingAmount": "€203 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 87
     },
     {
@@ -59,7 +58,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1111473/",
       "resolvedUrl": null,
-      "company": "순환",
       "eventType": "실증·PoC",
       "industry": "AI",
       "score": 71

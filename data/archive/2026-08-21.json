@@ -27,7 +27,7 @@
       "resolvedUrl": null,
       "company": "Callosum",
       "fundingAmount": "€85.4 million",
-      "fundingStage": "Seed round",
+      "fundingStage": "Seed",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 100
@@ -45,7 +45,8 @@
       "resolvedUrl": null,
       "company": "Velatir",
       "fundingAmount": "€5 million",
-      "fundingStage": "pre-Seed round",
+      "fundingStage": "pre-Seed",
+      "eventType": "투자유치",
       "industry": "AI",
       "score": 96
     },
@@ -60,7 +61,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1107230/",
       "resolvedUrl": null,
-      "fundingAmount": "7,000억원",
       "score": 66
     },
     {
@@ -74,7 +74,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1107310/",
       "resolvedUrl": null,
-      "company": "인트",
+      "company": "씨엔티테크",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 55
@@ -90,7 +90,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12132785",
       "resolvedUrl": null,
-      "eventType": "출시·상용화",
       "industry": "반도체",
       "score": 47
     },
@@ -105,7 +104,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12132293",
       "resolvedUrl": null,
-      "company": "성장 연결 구조",
       "score": 46
     },
     {
@@ -119,7 +117,6 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/292734",
       "resolvedUrl": null,
-      "company": "템프서울(/tmp Seoul)",
       "score": 30
     }
   ]

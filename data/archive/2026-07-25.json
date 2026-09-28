@@ -41,10 +41,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/irelands-nernst-electric-raises-e1-7-million-to-advance-on-site-oxygen-generation-technology-for-aquaculture-and-heavy-industry/",
       "resolvedUrl": null,
-      "company": "Electric",
+      "company": "Nernst Electric",
       "fundingAmount": "€1.7 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 81
     },
     {
@@ -79,7 +78,6 @@
       "company": "World",
       "fundingAmount": "$52.5M",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 72
     },
     {
@@ -93,6 +91,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1101043/",
       "resolvedUrl": null,
+      "company": "젠스파크",
       "eventType": "출시·상용화",
       "industry": "AI",
       "score": 48
@@ -122,8 +121,8 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12106466",
       "resolvedUrl": null,
-      "company": "온라인수출 중소기업 물류 지원사업",
-      "eventType": "선정",
+      "company": "콜로세움",
+      "eventType": "인수·M&A",
       "score": 48
     },
     {
@@ -137,9 +136,8 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/291383",
       "resolvedUrl": null,
-      "company": "디캠프",
-      "fundingStage": "시리즈A",
-      "industry": "로봇",
+      "fundingStage": "프리A",
+      "eventType": "투자유치",
       "score": 45
     }
   ]

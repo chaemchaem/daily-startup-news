@@ -29,7 +29,6 @@
       "fundingAmount": "€39.9 million",
       "fundingStage": "Series B",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 102
     },
     {
@@ -43,7 +42,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1104499/",
       "resolvedUrl": null,
-      "company": "1분 파스타",
+      "company": "위글리",
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
       "score": 84
@@ -93,7 +92,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1104345/",
       "resolvedUrl": null,
-      "company": "2026 ValueUP 19기",
       "eventType": "투자유치",
       "score": 63
     },
@@ -109,9 +107,8 @@
       "url": "https://techcrunch.com/2026/08/06/defense-tech-hadrian-raises-1-37b-at-8b-valuation/",
       "resolvedUrl": null,
       "company": "Hadrian",
-      "fundingAmount": "$1.37",
+      "fundingAmount": "$1.37B",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 61
     }
   ]

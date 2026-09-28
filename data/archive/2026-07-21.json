@@ -25,6 +25,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/spains-female-led-foodtech-startup-sensesbit-raises-e1-million-to-scale-its-ai-powered-sensory-intelligence-platform/",
       "resolvedUrl": null,
+      "company": "Sensesbit",
+      "fundingAmount": "€1 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 93
     },
     {
@@ -38,6 +42,11 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/cuspai-raises-e393-2-million-at-e2-2-billion-valuation-launches-ai-materials-foundry-to-accelerate-materials-discovery/",
       "resolvedUrl": null,
+      "company": "CuspAI",
+      "fundingAmount": "€393.2 million",
+      "fundingStage": "Series B",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 86
     },
     {
@@ -51,6 +60,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099718/",
       "resolvedUrl": null,
+      "company": "데이터브릭스",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 58
     },
     {
@@ -64,6 +76,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/milan-based-contents-acquires-spanish-financial-wellbeing-platform-balio-in-sixth-buy-and-build-deal/",
       "resolvedUrl": null,
+      "eventType": "인수·M&A",
       "score": 39
     },
     {

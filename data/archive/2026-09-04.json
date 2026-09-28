@@ -27,7 +27,7 @@
       "resolvedUrl": null,
       "company": "Backbone",
       "fundingAmount": "€4 million",
-      "fundingStage": "pre-Seed round",
+      "fundingStage": "pre-Seed",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 96
@@ -43,7 +43,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/yc-backed-zeit-ai-raises-e5-million-to-build-europes-autonomous-data-engineer/",
       "resolvedUrl": null,
-      "company": "AI",
+      "company": "Zeit AI",
       "fundingAmount": "€4.3 million",
       "eventType": "투자유치",
       "industry": "AI",
@@ -60,7 +60,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12143512",
       "resolvedUrl": null,
-      "company": "청년 인재 발굴",
       "industry": "AI",
       "score": 48
     },
@@ -75,9 +74,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110842/",
       "resolvedUrl": null,
-      "company": "읽는다",
+      "company": "버즈앤비",
       "eventType": "선정",
-      "industry": "AI",
       "score": 45
     },
     {
@@ -91,8 +89,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110850/",
       "resolvedUrl": null,
-      "company": "연결",
-      "eventType": "출시·상용화",
+      "eventType": "인수·M&A",
       "score": 44
     },
     {

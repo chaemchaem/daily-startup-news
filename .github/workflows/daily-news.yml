@@ -66,16 +66,23 @@ jobs:
           DISCOVERY_MAX_RESULTS_PER_QUERY: ${{ vars.DISCOVERY_MAX_RESULTS_PER_QUERY || '5' }}
           DISCOVERY_MAX_TOTAL_RESULTS: ${{ vars.DISCOVERY_MAX_TOTAL_RESULTS || '40' }}
           DISCOVERY_REQUIRE_ORIGINAL_URL: ${{ vars.DISCOVERY_REQUIRE_ORIGINAL_URL || 'true' }}
+          ENABLE_CANDIDATE_SOURCES: ${{ vars.ENABLE_CANDIDATE_SOURCES || 'false' }}
         run: pnpm run collect
 
       - name: 변경된 뉴스 데이터 커밋
+        # 수집 단계가 실패해도 실패 상태(status.json)는 커밋되도록 취소된 경우만 제외한다.
+        if: ${{ !cancelled() }}
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/news.json data/archive data/status.json
+          if [ -f data/insights.json ]; then
+            git add data/insights.json
+          fi
+          # summary-cache.json은 .gitignore 대상이라 -f 없이는 git add가 실패해 커밋 전체가 중단된다.
           if [ -f data/summary-cache.json ]; then
-            git add data/summary-cache.json
+            git add -f data/summary-cache.json
           fi
 
           if git diff --cached --quiet; then

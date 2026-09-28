@@ -25,7 +25,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/",
       "resolvedUrl": null,
-      "fundingAmount": "$400M",
+      "industry": "반도체",
       "score": 57
     },
     {
@@ -39,7 +39,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1104579/",
       "resolvedUrl": null,
-      "company": "미토스 5",
       "industry": "AI",
       "score": 55
     }

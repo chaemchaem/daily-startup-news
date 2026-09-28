@@ -25,6 +25,8 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/291158",
       "resolvedUrl": null,
+      "company": "디캠프",
+      "eventType": "모집",
       "score": 76
     },
     {
@@ -38,6 +40,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/omio-raises-e8-7-million-strategic-investment-for-asian-expansion/",
       "resolvedUrl": null,
+      "company": "Omio",
+      "fundingAmount": "€8.7 million",
+      "eventType": "투자유치",
       "score": 75
     },
     {
@@ -51,6 +56,8 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/profitable-space-startup-deltavision-secures-e10-2-million-to-provide-the-cardiovascular-system-for-spacecraft/",
       "resolvedUrl": null,
+      "fundingAmount": "€10.2 million",
+      "eventType": "투자유치",
       "score": 71
     },
     {
@@ -64,6 +71,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1100072/",
       "resolvedUrl": null,
+      "company": "하이온",
+      "eventType": "선정",
+      "industry": "AI",
       "score": 66
     },
     {
@@ -77,6 +87,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1100075/",
       "resolvedUrl": null,
+      "company": "퓨처렉스",
+      "eventType": "TIPS·LIPS 선정",
       "score": 60
     },
     {
@@ -90,6 +102,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/new-unicorn-humanoid-secures-e133-million-at-e1-1-billion-valuation-to-scale-industrial-robotics-and-physical-ai/",
       "resolvedUrl": null,
+      "company": "Humanoid",
+      "fundingAmount": "€133 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 60
     },
     {
@@ -103,6 +119,8 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12103888",
       "resolvedUrl": null,
+      "eventType": "출시·상용화",
+      "industry": "AI",
       "score": 58
     },
     {
@@ -116,6 +134,7 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/291171",
       "resolvedUrl": null,
+      "eventType": "선정",
       "score": 47
     },
     {
@@ -129,6 +148,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099954/",
       "resolvedUrl": null,
+      "industry": "바이오·헬스케어",
       "score": 40
     },
     {

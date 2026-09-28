@@ -25,6 +25,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/360944/",
       "resolvedUrl": null,
+      "company": "Stoa",
+      "fundingAmount": "€2.1 million",
+      "eventType": "투자유치",
       "score": 89
     },
     {
@@ -38,6 +41,10 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/290428",
       "resolvedUrl": null,
+      "company": "이터나퓨전",
+      "fundingAmount": "23억 원",
+      "fundingStage": "시드 투자",
+      "eventType": "투자유치",
       "score": 85
     },
     {
@@ -51,6 +58,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/uk-startup-worldmodeldata-raises-e8-million-to-turn-video-games-into-training-data-for-physical-ai/",
       "resolvedUrl": null,
+      "company": "Worldmodeldata",
+      "fundingAmount": "€8 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 84
     },
     {
@@ -90,6 +101,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/finlands-curifylabs-raises-e12-million-to-expand-3d-printing-based-medicine-compounding/",
       "resolvedUrl": null,
+      "company": "CurifyLabs",
+      "fundingAmount": "€12 million",
+      "eventType": "투자유치",
       "score": 71
     },
     {
@@ -103,6 +117,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1096371/",
       "resolvedUrl": null,
+      "eventType": "선정",
       "score": 68
     },
     {
@@ -116,6 +131,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1096144/",
       "resolvedUrl": null,
+      "company": "스튜디오키코",
+      "eventType": "투자유치",
       "score": 67
     },
     {
@@ -129,6 +146,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1096226/",
       "resolvedUrl": null,
+      "company": "씨이엘랩",
+      "eventType": "투자유치",
+      "industry": "기후테크·ESG",
       "score": 67
     },
     {

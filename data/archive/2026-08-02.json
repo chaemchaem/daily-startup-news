@@ -28,7 +28,6 @@
       "company": "Apolownia",
       "fundingAmount": "€1 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 79
     },
     {
@@ -70,8 +69,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12113257",
       "resolvedUrl": null,
-      "company": "매출 3배 늘었다",
-      "fundingAmount": "2000억 원",
       "score": 46
     },
     {
@@ -85,8 +82,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1102716/",
       "resolvedUrl": null,
-      "company": "소재로",
-      "fundingStage": "SEED",
+      "company": "씨엔티테크",
       "eventType": "선정",
       "score": 43
     }

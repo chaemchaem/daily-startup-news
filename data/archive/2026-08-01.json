@@ -74,8 +74,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12113257",
       "resolvedUrl": null,
-      "company": "매출 3배 늘었다",
-      "fundingAmount": "2000억 원",
       "score": 48
     },
     {
@@ -89,8 +87,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1102716/",
       "resolvedUrl": null,
-      "company": "소재로",
-      "fundingStage": "SEED",
+      "company": "씨엔티테크",
       "eventType": "선정",
       "score": 45
     },
@@ -105,7 +102,7 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12112332",
       "resolvedUrl": null,
-      "company": "시중銀 대출 축소에 자금조달 더 어려워",
+      "eventType": "투자유치",
       "score": 42
     },
     {
@@ -132,7 +129,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260731_0003732198",
       "resolvedUrl": null,
-      "company": "롯데하이마트",
       "eventType": "투자유치",
       "score": 28
     },
@@ -147,7 +143,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/07/31/repeat-founder-ryan-williams-raises-10m-seed-for-an-ai-startup-for-private-credit-managers/",
       "resolvedUrl": null,
-      "company": "Williams",
       "fundingAmount": "$10M",
       "fundingStage": "seed",
       "eventType": "투자유치",

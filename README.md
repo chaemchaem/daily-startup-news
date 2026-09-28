@@ -11,8 +11,9 @@
 5. 최종 후보에 한해 기사 페이지에서 본문 추출을 시도하고 광고·저작권·추천기사 문구를 제거합니다.
 6. 본문이 추출되고 OpenAI 설정이 유효하면 Responses API로 먼저 요약하며, 실패하거나 꺼져 있으면 로컬 추출형 요약으로 전환합니다.
 7. 결과를 최신용 `data/news.json`과 KST 날짜별 `data/archive/YYYY-MM-DD.json`에 함께 저장합니다.
-8. `data/archive/index.json`에 조회 가능한 날짜 목록을, `data/status.json`에 최근 수집 실행 상태를 기록합니다.
-9. `app.js`가 최신 또는 선택한 날짜의 JSON을 읽어 핵심 기사·검색·정렬을 제공하는 정적 대시보드에 렌더링합니다.
+8. `data/archive/index.json`에 조회 가능한 날짜 목록을, `data/status.json`에 최근 수집 실행 상태와 수집원별 진단을 기록합니다.
+9. `scripts/insights.js`가 아카이브를 모아 최근 7일·30일 추세를 `data/insights.json`으로 저장합니다.
+10. `app.js`가 최신 또는 선택한 날짜의 JSON을 읽어 1면(핵심 3건)·전체 기사·투자 라운드·흐름·지난 브리핑·수집 현황을 정적 페이지로 렌더링합니다.
 
 Codex는 이 프로젝트를 만들고 수정하는 **개발 단계에서만** 사용됩니다. 운영 중 매일 실행되는 작업은 일반 Node.js 스크립트이며 Codex가 예약 실행되거나 Codex 크레딧을 사용하지 않습니다. GitHub Actions 대신 Vercel Cron 또는 Netlify Scheduled Functions에서 같은 스크립트를 실행하도록 구성할 수도 있습니다.
 
@@ -37,6 +38,7 @@ news-briefing-site/
 ├─ data/
 │  ├─ news.json
 │  ├─ status.json
+│  ├─ insights.json
 │  ├─ summary-cache.json
 │  └─ archive/
 │     ├─ index.json
@@ -44,6 +46,9 @@ news-briefing-site/
 ├─ scripts/
 │  ├─ collect-news.js
 │  ├─ article-extractor.js
+│  ├─ insights.js
+│  ├─ probe-sources.js
+│  ├─ reextract-structured.js
 │  ├─ sources.js
 │  ├─ summarize.js
 │  └─ utils.js
@@ -52,7 +57,8 @@ news-briefing-site/
 ├─ README.md
 └─ .github/
    └─ workflows/
-      └─ daily-news.yml
+      ├─ daily-news.yml
+      └─ probe-sources.yml
 ```
 
 ## 설치
@@ -174,7 +180,16 @@ Google News 중계 링크가 실제 언론사 링크로 확인된 항목은 `url
 
 저장 직전에 제목과 요약의 토큰·문자 유사도를 검사합니다. 유사도가 80% 이상이면 저장하지 않습니다. `titleFallback`은 기본 0건이며 `MAX_TITLE_FALLBACK_ITEMS=1`을 명시한 경우에만 마지막 수단으로 1건 허용합니다.
 
-저장 우선순위는 `openai_body → openai_description → local_extractive/structured_overseas → description → titleFallback`입니다. 각 기사에는 `summarySource`와 같은 값을 가진 `summaryType`도 저장합니다. 제목과 요약에 명시된 경우에만 `company`, `fundingAmount`, `fundingStage`, `eventType`, `industry`를 추가하며 추정값은 만들지 않습니다. 요약 후에는 기업명·투자금액·라운드·주요 사건을 비교해 중복을 제거하고, 해외 VC는 최대 3건, 동일 출처는 최대 2건만 남깁니다. 기사 전문은 어느 경로에서도 JSON에 저장하지 않습니다.
+저장 우선순위는 `openai_body → openai_description → local_extractive/structured_overseas → description → titleFallback`입니다. 각 기사에는 `summarySource`와 같은 값을 가진 `summaryType`도 저장합니다. 제목과 요약에 명시된 경우에만 `company`, `fundingAmount`, `fundingStage`, `eventType`, `industry`를 추가하며 추정값은 만들지 않습니다.
+
+구조화 필드는 precision 우선 규칙을 따릅니다.
+
+- `eventType`은 제목에서 먼저 판단하고, 제목에 없을 때만 요약을 봅니다. "recently raised", "누적 투자" 같은 과거 이력은 사건으로 보지 않습니다.
+- `fundingAmount`·`fundingStage`는 투자유치·펀드결성·세컨더리 사건이고, 같은 문장 안에 투자 표현이 있을 때만 저장합니다. 기업가치·매출 금액과 `$3.`처럼 잘린 금액은 저장하지 않습니다.
+- `industry`는 제목에서만 판단합니다. `AI`는 독립된 단어일 때만 인정합니다(raised·Spain 오탐 방지).
+- `company`는 "회사명, 사건" 제목 구조, 쉼표·조사가 바로 붙은 따옴표 이름, 요약 첫 문장의 주어 순으로 찾습니다. 기관·국가·일반명사·조사가 붙은 구·인물은 저장하지 않습니다.
+- 프론트엔드는 저장된 필드만 표시하며 브라우저에서 다시 추정하지 않습니다.
+- 규칙을 바꾼 뒤 과거 데이터에 반영하려면 `node scripts/reextract-structured.js`로 변경 예정 내역을 확인하고, `--write`로 반영합니다(제목·요약은 바꾸지 않음). 요약 후에는 기업명·투자금액·라운드·주요 사건을 비교해 중복을 제거하고, 해외 VC는 최대 3건, 동일 출처는 최대 2건만 남깁니다. 기사 전문은 어느 경로에서도 JSON에 저장하지 않습니다.
 
 ## 로컬 화면 확인
 
@@ -186,7 +201,9 @@ pnpm run start
 
 브라우저에서 `http://localhost:4173`을 엽니다. `pnpm run preview`도 같은 명령입니다. 기사 수가 0건이어도 통계와 빈 상태 화면이 정상적으로 표시됩니다.
 
-대시보드는 점수·국내 여부·구체 정보·카테고리 균형을 반영한 **오늘의 핵심 3건**을 표시합니다. 제목·요약·출처·기업명 검색, 중요도순/최신순 정렬, 국내/해외 토글은 기존 카테고리 필터와 함께 적용됩니다. 상단 수집 상태는 `data/status.json`의 마지막 실행 시각과 성공 여부를 기준으로 정상 업데이트 또는 갱신 지연을 표시합니다.
+페이지는 신문 1면처럼 구성됩니다. 점수·국내 여부·구체 정보·카테고리 균형을 반영한 **오늘의 핵심 3건**(첫 기사는 국내 우선), 카테고리·검색·국내/해외·정렬을 지원하는 **전체 기사**, `data/insights.json` 기반의 **투자 라운드 표와 7일/30일 흐름**, **지난 브리핑** 날짜 띠, 하단의 **수집 현황**(수집원별 원본·기간 내·통과·최종 건수)을 제공합니다. 상단 상태 표시는 `data/status.json`의 마지막 실행 시각·성공 여부·실패 수집원을 기준으로 표시합니다.
+
+`style.css` 또는 `app.js`를 수정하면 `index.html`의 `?v=` 값(ASSET_VERSION 주석 참고)을 두 파일 모두 같은 새 값으로 올려야 GitHub Pages에서 옛 자산이 섞이지 않습니다.
 
 ## 날짜별 아카이브
 
@@ -263,6 +280,16 @@ pnpm run start
 }
 ```
 
+`maxFinalItems`는 최종 브리핑에서 같은 매체가 차지할 수 있는 건수이며 기본 2건, 스타트업 전문 매체·공공기관은 3건입니다. 최종 해외 기사는 최대 3건이고, 본문 추출 후보 단계에서도 해외 기사는 최대 8건으로 제한해 국내 후보 자리를 확보합니다.
+
+### 대형 언론사 후보 수집원
+
+`candidateSourceFeeds`에는 연합뉴스·조선일보·중앙일보·동아일보·한국경제·한겨레·경향신문·전자신문(전체)·ZDNet Korea·AI타임스·스타트업투데이의 공식 RSS 안내 기준 주소가 있습니다. 실제 응답을 확인하기 전까지 기본 비활성이며, 다음 순서로 검증합니다.
+
+1. GitHub Actions의 **Probe news sources** 워크플로를 수동 실행하거나 로컬에서 `pnpm run probe:sources`를 실행합니다. 수집원별 응답·최근 48시간 기사 수·URL 패턴 일치·키워드 일치·robots 허용 여부를 표로 보여 주며 데이터 파일은 바꾸지 않습니다.
+2. 결과가 정상인 후보만 쓰려면 Repository Variable `ENABLE_CANDIDATE_SOURCES=true`로 시험 운영합니다. 수집 현황 표에 "(검증 중)"으로 표시됩니다.
+3. 안정적으로 동작하는 후보는 `candidateSourceFeeds`에서 `configuredSourceFeeds`로 옮기고, 실패하는 주소는 공식 안내에서 새 주소를 확인해 고칩니다.
+
 `type`은 `rss`, `html_list`, `sitemap`, `search_page` 중 하나입니다. RSS가 있는 매체는 RSS를 우선 사용하며, `fallbackFor`가 지정된 HTML 목록은 같은 매체의 RSS 원본 수가 기준보다 적을 때만 실행됩니다. 목록 수집은 `allowedUrlPatterns`, `maxItems`, timeout, `fetchDelayMs`로 제한합니다. 사이트의 `robots.txt`에서 금지된 목록·기사 경로는 요청하지 않습니다.
 
 실행 시 사용하는 `sourceFeeds`에는 RSS·HTML 목록 방식이 실제로 구성된 활성 소스만 들어갑니다. 공식 URL이나 상세 링크 추출 방식을 확인하지 못한 이름은 `disabledSources`로 분리되어 수집 통계와 primary 개수에 포함되지 않습니다. 스타트업·투자 전문매체와 공공기관에는 높은 `sourceWeight`를 부여하고, 종합·경제지는 강한 연결 조건을 확인합니다.
@@ -285,19 +312,21 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 
 ## GitHub Actions 자동 실행
 
-`.github/workflows/daily-news.yml`은 cron `15 0 * * *`로 매일 `00:15 UTC`, 즉 한국시간 `09:15`에 실행됩니다. GitHub Actions cron은 UTC 기준이며, GitHub의 예약 작업은 서비스 상황에 따라 몇 분 지연될 수 있어 정각을 피했습니다. 실제 데이터 수집 기간은 실행 시각과 별개로 한국시간 `09:00` 기준 최근 48시간으로 고정됩니다.
+`.github/workflows/daily-news.yml`은 cron `15 0 * * *`로 매일 `00:15 UTC`, 즉 한국시간 `09:15`에 실행되도록 예약되어 있습니다. 다만 GitHub의 예약 작업은 혼잡할 때 크게 늦어질 수 있으며, 2026년 9월 기준 실제 시작 시각은 대체로 KST 13:30~14:20이었습니다. 실제 데이터 수집 기간은 실행 시각과 별개로 한국시간 `09:00` 기준 최근 48시간으로 고정되고, 실제 수집 시각은 `data/news.json`의 `collectedAt`과 `data/status.json`의 `lastRunAt`에 기록됩니다.
 
 자동 실행은 프로젝트를 **GitHub 저장소에 push하고 Actions가 활성화되어 있어야** 동작합니다. 프로젝트가 로컬 폴더에만 있으면 매일 오전 9시 15분 자동 실행은 일어나지 않습니다.
 
 워크플로우는 다음 순서로 동작합니다.
 
-1. Node.js 20 설치
-2. pnpm 11.7 설정
+1. pnpm 11.7 설정
+2. Node.js 22 설치
 3. `pnpm install --frozen-lockfile`
 4. `pnpm run collect`
-5. 변경된 `data/news.json`, `data/status.json`, `data/archive/YYYY-MM-DD.json`, `data/archive/index.json`, `data/summary-cache.json` 자동 커밋 및 푸시
+5. 변경된 `data/news.json`, `data/status.json`, `data/insights.json`, `data/archive/YYYY-MM-DD.json`, `data/archive/index.json`, `data/summary-cache.json` 자동 커밋 및 푸시
 
-자동 커밋이나 푸시가 권한 문제로 실패하더라도 해당 단계는 경고만 남기고 워크플로우 전체를 치명적으로 중단하지 않습니다.
+자동 커밋이나 푸시가 권한 문제로 실패하더라도 해당 단계는 경고만 남기고 워크플로우 전체를 치명적으로 중단하지 않습니다. 커밋 단계는 수집 단계가 실패해도(취소된 경우 제외) 실행되어 실패 상태가 `status.json`에 남습니다. `summary-cache.json`은 `.gitignore` 대상이므로 `git add -f`로 추가합니다.
+
+**Probe news sources** 워크플로(`probe-sources.yml`)는 수동 실행 전용이며, 수집원 점검 결과를 실행 요약에만 남기고 아무것도 커밋하지 않습니다.
 
 저장소의 **Settings → Actions → General → Workflow permissions**에서 `Read and write permissions`가 허용되어 있는지 확인하세요. 조직 정책이 쓰기를 막으면 저장소 관리자에게 권한을 요청해야 합니다. `Actions` 화면의 `Daily startup news briefing`에서 `Run workflow`를 눌러 수동 실행할 수도 있습니다.
 
@@ -336,6 +365,7 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 - `DISCOVERY_MAX_RESULTS_PER_QUERY`: 기본 `5`. 검색 쿼리별 후보 상한
 - `DISCOVERY_MAX_TOTAL_RESULTS`: 기본 `40`. 한 번의 수집에서 discovery 전체 후보 상한
 - `DISCOVERY_REQUIRE_ORIGINAL_URL`: 기본 `true`. 원문 언론사 URL을 확인한 검색 결과만 저장
+- `ENABLE_CANDIDATE_SOURCES`: 기본 `false`. 응답 검증 전인 대형 언론사 후보 수집원까지 수집
 
 API 키를 Repository Variable, 코드, 커밋, 워크플로우 본문에 직접 넣지 마세요. `USE_OPENAI_SUMMARY=true`여도 `OPENAI_API_KEY` Secret이 비어 있으면 로컬 규칙 요약만 사용합니다.
 

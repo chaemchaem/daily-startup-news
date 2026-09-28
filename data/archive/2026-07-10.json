@@ -25,6 +25,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097608/",
       "resolvedUrl": null,
+      "company": "큐빅",
+      "eventType": "선정",
+      "industry": "AI",
       "score": 80
     },
     {
@@ -38,6 +41,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/university-of-sheffield-spin-out-pixel-flo-raises-e6-1-million-to-scale-microled-display-manufacturing/",
       "resolvedUrl": null,
+      "company": "Pixel-Flo",
+      "fundingAmount": "€6.1 million",
+      "eventType": "투자유치",
       "score": 74
     },
     {
@@ -51,6 +57,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/londons-alchemab-therapeutics-secures-e29-3-million-as-british-business-bank-makes-its-largest-life-sciences-investment-yet/",
       "resolvedUrl": null,
+      "company": "Alchemab Therapeutics",
+      "fundingAmount": "€29.3 million",
+      "fundingStage": "Series A",
+      "eventType": "투자유치",
       "score": 67
     },
     {
@@ -64,6 +74,10 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/290350",
       "resolvedUrl": null,
+      "company": "워트인텔리전스",
+      "fundingAmount": "165억 원",
+      "fundingStage": "시리즈B",
+      "eventType": "투자유치",
       "score": 48
     },
     {

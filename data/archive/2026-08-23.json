@@ -26,8 +26,6 @@
       "url": "https://www.eu-startups.com/2026/08/uk-based-hexseed-raises-over-e700k-to-cool-ai-data-centres-with-its-with-diamond-coating-technology/",
       "resolvedUrl": null,
       "company": "HexSeed",
-      "fundingAmount": "€700",
-      "fundingStage": "Seed",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 72
@@ -63,7 +61,7 @@
       "company": "Oshen",
       "fundingAmount": "€4.27 million",
       "eventType": "투자유치",
-      "industry": "AI",
+      "industry": "로봇",
       "score": 69
     },
     {
@@ -77,7 +75,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1107744/",
       "resolvedUrl": null,
-      "company": "지도",
       "eventType": "선정",
       "score": 39
     },
@@ -92,7 +89,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260820_0003756285",
       "resolvedUrl": null,
-      "eventType": "출시·상용화",
       "score": 31
     }
   ]

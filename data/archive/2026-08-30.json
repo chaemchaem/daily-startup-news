@@ -25,11 +25,11 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/montpellier-based-dental-robotics-startup-lupin-dental-closes-e15-million-series-a-round/",
       "resolvedUrl": null,
-      "company": "Dental",
+      "company": "Lupin Dental",
       "fundingAmount": "€15 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
+      "industry": "로봇",
       "score": 91
     },
     {
@@ -61,7 +61,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1109280/",
       "resolvedUrl": null,
-      "company": "통제까지",
+      "company": "에임인텔리전스",
       "eventType": "선정",
       "industry": "AI",
       "score": 60
@@ -77,7 +77,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1109408/",
       "resolvedUrl": null,
-      "company": "비하인드스퀘어",
       "score": 38
     },
     {
@@ -92,7 +91,6 @@
       "url": "https://techcrunch.com/2026/08/28/apple-tv-is-raising-its-subscription-prices-again/",
       "resolvedUrl": null,
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 32
     }
   ]

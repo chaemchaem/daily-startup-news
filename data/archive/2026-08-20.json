@@ -25,9 +25,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106928/",
       "resolvedUrl": null,
-      "company": "지난해에",
-      "fundingAmount": "41억원",
-      "fundingStage": "시리즈A",
+      "company": "렌트리",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 93
@@ -43,7 +41,6 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/292741",
       "resolvedUrl": null,
-      "company": "하드웨어 설계 AI",
       "fundingStage": "시드투자",
       "eventType": "투자유치",
       "industry": "AI",
@@ -113,7 +110,6 @@
       "fundingAmount": "$100M",
       "fundingStage": "Series C",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 78
     },
     {
@@ -127,7 +123,7 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/292636",
       "resolvedUrl": null,
-      "company": "뷰런테크놀로지",
+      "company": "케이존",
       "eventType": "TIPS·LIPS 선정",
       "industry": "로봇",
       "score": 76
@@ -143,8 +139,6 @@
       "source": "바이라인네트워크",
       "url": "https://byline.network/2026/08/19_29182873/",
       "resolvedUrl": null,
-      "company": "비싸게 사도 손해 안 본다",
-      "fundingAmount": "30억원",
       "score": 43
     }
   ]

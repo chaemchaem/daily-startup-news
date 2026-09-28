@@ -29,7 +29,6 @@
       "fundingAmount": "€34.35 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 97
     },
     {
@@ -61,8 +60,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1109045/",
       "resolvedUrl": null,
-      "company": "한 공정씩 자동화",
-      "fundingAmount": "300억원",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 75
@@ -78,7 +75,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1109280/",
       "resolvedUrl": null,
-      "company": "통제까지",
+      "company": "에임인텔리전스",
       "eventType": "선정",
       "industry": "AI",
       "score": 62
@@ -94,7 +91,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260828_0003767248",
       "resolvedUrl": null,
-      "eventType": "출시·상용화",
       "score": 46
     }
   ]

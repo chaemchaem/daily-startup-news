@@ -25,10 +25,8 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/the-10-biggest-startup-investments-in-sweden-this-year/",
       "resolvedUrl": null,
-      "fundingAmount": "€8",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 81
     },
     {
@@ -42,7 +40,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106191/",
       "resolvedUrl": null,
-      "company": "레티널",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 78
@@ -58,7 +55,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106236/",
       "resolvedUrl": null,
-      "company": "만든다",
+      "company": "아트블러드",
       "eventType": "TIPS·LIPS 선정",
       "score": 76
     },
@@ -86,7 +83,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260814_0003749963",
       "resolvedUrl": null,
-      "company": "캠퍼스리뷰",
       "eventType": "출시·상용화",
       "score": 31
     }

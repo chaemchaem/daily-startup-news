@@ -26,7 +26,6 @@
       "url": "https://www.eu-startups.com/2026/08/uk-based-spaceam-closes-seed-round-to-scale-ai-powered-sensing-technology-for-defence-and-space/",
       "resolvedUrl": null,
       "company": "SpaceAM",
-      "fundingStage": "Seed round",
       "industry": "AI",
       "score": 85
     },
@@ -44,7 +43,6 @@
       "company": "Birdsview",
       "fundingAmount": "€3.7 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 77
     },
     {
@@ -58,9 +56,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/17/sound-powered-fire-protection-startup-gets-15m-to-snuff-out-fires-before-they-turn-catastrophic/",
       "resolvedUrl": null,
-      "fundingAmount": "$15M",
-      "eventType": "투자유치",
-      "industry": "AI",
       "score": 66
     },
     {
@@ -74,9 +69,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106544/",
       "resolvedUrl": null,
-      "company": "오블리뷰",
-      "fundingAmount": "90억원",
-      "fundingStage": "시드 투자",
       "score": 61
     },
     {
@@ -90,8 +82,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106403/",
       "resolvedUrl": null,
-      "company": "92명→37명",
-      "fundingAmount": "500억원",
+      "fundingAmount": "500억 원",
       "eventType": "투자유치",
       "industry": "SaaS",
       "score": 43

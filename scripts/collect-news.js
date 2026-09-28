@@ -7,6 +7,7 @@ const {
   categories,
   disabledSources,
   generalTechIndustryPatterns,
+  resolveSourceFeeds,
   sourceFeeds,
   startupGrowthContextKeywords,
   techCategoryName,
@@ -28,6 +29,7 @@ const {
   summarizeFreeLocal,
   summarizeTitleFallback,
 } = require("./summarize");
+const { saveInsights } = require("./insights");
 const {
   cleanText,
   containsKeyword,
@@ -147,7 +149,7 @@ const STRONG_STARTUP_EVENT_PATTERNS = [
   /(?:정부|중기부|중소벤처기업부|창업진흥원).{0,30}(?:창업|벤처|스타트업).{0,20}(?:정책|지원|사업)/iu,
 ];
 const LOW_VALUE_EDITORIAL_PATTERNS = [
-  /\[(?:칼럼|기고|오피니언|전문가\s*기고)\]|(?:^|\s)(?:칼럼|기고|오피니언)(?:\s|$)/iu,
+  /\[(?:칼럼|기고|오피니언|전문가\s*기고|사설|기자수첩|그게\s*뭔가요|용어\s*(?:설명|해설)|해설)\]|(?:^|\s)(?:칼럼|기고|오피니언)(?:\s|$)/iu,
   /법률\s*(?:리터러시|상식|가이드|조언)|스타트업\s*(?:운영|경영)\s*(?:조언|가이드)/iu,
   /(?:창업자|스타트업).{0,20}(?:알아야\s*할|체크리스트|주의사항|성공하는\s*법)/iu,
   /\b(?:opinion|column|startup\s+advice|founder\s+advice|how\s+to|guide\s+for\s+(?:founders|startups))\b/iu,
@@ -162,7 +164,13 @@ const LARGE_COMPANY_GENERAL_PATTERNS = [
   /(?:실적|매출|공급|신사업|사업\s*확대|설비\s*투자).{0,35}(?:삼성|LG|SK|현대|롯데|한화|포스코|대기업|그룹)/iu,
 ];
 const OVERSEAS_VC_REQUIRED_PATTERN =
-  /\b(?:funding|raises?|raised|seed(?:\s+round)?|series(?:\s+[a-z])?|first\s+close|final\s+close|investment\s+round|invests?|invested|venture\s+capital|VC\s+fund)\b/iu;
+  /\b(?:funding|raises?|raised|seed(?:\s+round)?|series(?:\s+[a-z])?|first\s+close|final\s+close|investment\s+round|invests?|invested|venture\s+capital|VC\s+fund|backs|backed|round|acquires|acquired|valuation)\b/iu;
+const SPONSORED_CONTENT_PATTERN =
+  /\((?:sponsored|partner\s+content|advertorial|paid\s+post)\)|\[(?:sponsored|AD|광고|PR|협찬|애드버토리얼)\]|\bsponsored\s+(?:content|post|by)\b|^sponsored\b/iu;
+const ROUNDUP_LISTICLE_PATTERN =
+  /\bround-?up\b|\bweek(?:ly|'s|’s)?\b[^.!?]{0,40}\b(?:funding|rounds|deals|raises)\b|\bthis\s+week\s+in\b|^\s*(?:the\s+)?\d{1,3}\s+(?:[\w-]+\s+){0,4}(?:startups|funding|investors|VCs|funds|vehicles|companies|deals|rounds)\b/iu;
+const MACRO_TRADE_POLICY_PATTERN =
+  /대미\s*투자|한미\s*(?:전략적\s*)?투자|관세|통상\s*(?:협상|합의|압박|현안)|무역\s*(?:협상|합의|분쟁)|환율\s*(?:전망|급등|급락)/u;
 const OVERSEAS_ADVICE_PATTERN =
   /\b(?:opinion|column|startup\s+advice|founder\s+advice|how\s+to|tips\s+for|guide\s+for)\b/iu;
 const MIN_RELEVANCE_SCORE = 12;
@@ -172,6 +180,7 @@ const DEFAULT_MAX_FINAL_ARTICLES = 15;
 const DEFAULT_MAX_EXTRACTION_CANDIDATES = 30;
 const DEFAULT_MAX_OVERSEAS_ARTICLES = 3;
 const DEFAULT_MAX_ITEMS_PER_SOURCE = 2;
+const DEFAULT_MAX_OVERSEAS_EXTRACTION_CANDIDATES = 8;
 const COLLECTION_WINDOW_MS = 48 * 60 * 60 * 1_000;
 let urlNormalizationSampleLogged = false;
 
@@ -596,21 +605,26 @@ function publisherSourceConfig(source) {
   ) || null;
 }
 
+function isSourceOnlySuffix(tail, source) {
+  const normalizedSource = normalizeForMatch(source).replace(/[^\p{L}\p{N}]+/gu, "");
+  const normalizedTail = normalizeForMatch(tail).replace(/[^\p{L}\p{N}]+/gu, "");
+  if (!normalizedTail || !normalizedSource) return false;
+  if (normalizedTail === normalizedSource) return true;
+  // "뉴시스", "EU-Startups 뉴스" 정도의 짧은 변형만 매체명 꼬리로 본다.
+  const leftover = normalizedTail.replace(normalizedSource, "");
+  return (
+    (normalizedTail.includes(normalizedSource) && leftover.length <= 4) ||
+    (normalizedSource.includes(normalizedTail) && normalizedTail.length >= 2)
+  );
+}
+
 function stripSourceSuffix(title, source) {
-  const normalizedSource = normalizeForMatch(source).replace(/[()]/g, "");
   let cleanedTitle = cleanText(title);
 
   while (true) {
-    const match = cleanedTitle.match(/^(.*)\s[-–—]\s([^–—]{1,50})$/u);
-    if (!match) break;
-
-    const normalizedTail = normalizeForMatch(match[2]).replace(/[()]/g, "");
-    const isSourceSuffix =
-      normalizedTail &&
-      normalizedSource &&
-      (normalizedTail.includes(normalizedSource) || normalizedSource.includes(normalizedTail));
-    if (!isSourceSuffix) break;
-
+    const match = cleanedTitle.match(/^(.*\S)\s*[|｜]\s*([^|｜]{1,50})$/u) ||
+      cleanedTitle.match(/^(.*)\s[-–—]\s([^–—]{1,50})$/u);
+    if (!match || !isSourceOnlySuffix(match[2], source)) break;
     cleanedTitle = match[1].trim();
   }
 
@@ -740,6 +754,15 @@ function finalHardExcludeReason({
     (STARTUP_TARGET_PATTERN.test(currentEventContext) ||
       VENTURE_ECOSYSTEM_PATTERN.test(currentEventContext));
 
+  if (SPONSORED_CONTENT_PATTERN.test(titleText)) {
+    return "hard_exclude_sponsored_content";
+  }
+  if (MACRO_TRADE_POLICY_PATTERN.test(titleText) && !STARTUP_TARGET_PATTERN.test(titleText)) {
+    return "hard_exclude_macro_trade_policy";
+  }
+  if (ROUNDUP_LISTICLE_PATTERN.test(titleText) && isPredominantlyLatin(titleText)) {
+    return "hard_exclude_roundup_listicle";
+  }
   if (/유상증자/iu.test(currentEventContext) && publicCompanySignal) {
     return "hard_exclude_public_company_rights_issue";
   }
@@ -774,6 +797,13 @@ function finalHardExcludeReason({
     return "hard_exclude_historical_venture_origin_only";
   }
   return null;
+}
+
+function isPredominantlyLatin(value) {
+  const text = cleanText(value);
+  const latinCount = (text.match(/[A-Za-z]/gu) || []).length;
+  const koreanCount = (text.match(/[가-힣]/gu) || []).length;
+  return latinCount > koreanCount * 2;
 }
 
 function analyzeStrongConnection(title = "", description = "", articleBody = "") {
@@ -874,11 +904,8 @@ function inferBroadCategory(
     return "세컨더리 / 구주매각";
   }
   if (/(?:TIPS|팁스|LIPS|립스)/iu.test(context)) return "TIPS / LIPS";
-  if (
-    !isDomestic &&
-    hasOverseasVcSignal(title, description) &&
-    categoryHints.includes("해외 VC")
-  ) {
+  // 해외 기사는 제목에서 투자 사건이 확인될 때만 해외 VC로 분류한다(본문의 배경 언급 제외).
+  if (!isDomestic && hasOverseasVcSignal(title) && categoryHints.includes("해외 VC")) {
     return "해외 VC";
   }
   const titleHasDirectInvestment = DIRECT_VENTURE_INVESTMENT_PATTERN.test(title);
@@ -945,8 +972,7 @@ function explicitExclusionReason({
   }
   if (
     !isDomestic &&
-    category === "해외 VC" &&
-    (!hasOverseasVcSignal(title, description) || OVERSEAS_ADVICE_PATTERN.test(context))
+    (!hasOverseasVcSignal(title) || OVERSEAS_ADVICE_PATTERN.test(context))
   ) {
     return "overseas_vc_signal_missing";
   }
@@ -1180,6 +1206,15 @@ function evaluateArticle(
   };
 }
 
+function createSkipCounter() {
+  return {
+    keywordMissing: 0,
+    robotsDisallowed: 0,
+    detailFailed: 0,
+    dateMissing: 0,
+  };
+}
+
 async function fetchRssSource(feed) {
   try {
     const parsed = await createRssParser(feed.fetchTimeoutMs).parseURL(feed.feedUrl);
@@ -1218,8 +1253,12 @@ async function fetchHtmlListSource(feed) {
 
   const links = extractListLinks(page.html, feed);
   const entries = [];
+  const skipped = createSkipCounter();
   for (const link of links) {
-    if (!hasPotentialNewsKeyword(link.title)) continue;
+    if (!hasPotentialNewsKeyword(link.title)) {
+      skipped.keywordMissing += 1;
+      continue;
+    }
     let publishedAt = link.publishedAt;
     let description = "";
     let title = link.title;
@@ -1227,19 +1266,25 @@ async function fetchHtmlListSource(feed) {
     const articleAllowed = await isUrlAllowedByRobots(link.url, {
       timeoutMs: feed.fetchTimeoutMs,
     });
-    if (!articleAllowed) continue;
-    if (articleAllowed) {
-      await wait(feed.fetchDelayMs);
-      const detail = await requestHtml(link.url, feed.fetchTimeoutMs, "source_detail_");
-      if (detail.ok) {
-        publishedAt =
-          extractDateFromMarkup(detail.html, feed.dateSelector) || publishedAt;
-        description = descriptionFromArticleHtml(detail.html);
-        title = titleFromArticleHtml(detail.html, title, feed.titleSelector);
-        prefetchedHtml = detail.html;
-      }
+    if (!articleAllowed) {
+      skipped.robotsDisallowed += 1;
+      continue;
     }
-    if (!publishedAt) continue;
+    await wait(feed.fetchDelayMs);
+    const detail = await requestHtml(link.url, feed.fetchTimeoutMs, "source_detail_");
+    if (detail.ok) {
+      publishedAt =
+        extractDateFromMarkup(detail.html, feed.dateSelector) || publishedAt;
+      description = descriptionFromArticleHtml(detail.html);
+      title = titleFromArticleHtml(detail.html, title, feed.titleSelector);
+      prefetchedHtml = detail.html;
+    } else {
+      skipped.detailFailed += 1;
+    }
+    if (!publishedAt) {
+      skipped.dateMissing += 1;
+      continue;
+    }
     entries.push({
       item: {
         title,
@@ -1251,7 +1296,7 @@ async function fetchHtmlListSource(feed) {
       feed,
     });
   }
-  return { entries, feed, succeeded: true, rawCount: links.length };
+  return { entries, feed, succeeded: true, rawCount: links.length, skipped };
 }
 
 async function fetchSitemapSource(feed) {
@@ -1267,13 +1312,23 @@ async function fetchSitemapSource(feed) {
     .filter((entry) => entry.publishedAt && matchesAllowedUrl(entry.url, feed))
     .slice(0, feed.maxItems);
   const entries = [];
+  const skipped = createSkipCounter();
   for (const record of records) {
-    if (!(await isUrlAllowedByRobots(record.url, { timeoutMs: feed.fetchTimeoutMs }))) continue;
+    if (!(await isUrlAllowedByRobots(record.url, { timeoutMs: feed.fetchTimeoutMs }))) {
+      skipped.robotsDisallowed += 1;
+      continue;
+    }
     await wait(feed.fetchDelayMs);
     const detail = await requestHtml(record.url, feed.fetchTimeoutMs, "source_detail_");
-    if (!detail.ok) continue;
+    if (!detail.ok) {
+      skipped.detailFailed += 1;
+      continue;
+    }
     const title = titleFromArticleHtml(detail.html, "", feed.titleSelector);
-    if (!title || !hasPotentialNewsKeyword(title)) continue;
+    if (!title || !hasPotentialNewsKeyword(title)) {
+      skipped.keywordMissing += 1;
+      continue;
+    }
     entries.push({
       item: {
         title,
@@ -1285,7 +1340,7 @@ async function fetchSitemapSource(feed) {
       feed,
     });
   }
-  return { entries, feed, succeeded: true, rawCount: records.length };
+  return { entries, feed, succeeded: true, rawCount: records.length, skipped };
 }
 
 async function fetchSource(feed) {
@@ -1377,16 +1432,25 @@ function normalizeFeedItem(
   const { item, feed } = entry;
   const publishedAt = parsePublishedDate(item.isoDate || item.pubDate || item.published);
   const url = item.link || item.guid;
-  if (
-    !publishedAt ||
-    publishedAt < rangeFrom ||
-    publishedAt > rangeTo ||
-    !url ||
-    !matchesAllowedUrl(url, feed)
-  ) {
+  const sourceRecord = getSourceDiagnostics(diagnostics, feed);
+  sourceRecord.entries += 1;
+  const metadataIssue = !publishedAt
+    ? "dateMissing"
+    : publishedAt < rangeFrom
+      ? "olderThanRange"
+      : publishedAt > rangeTo
+        ? "newerThanRange"
+        : !url
+          ? "urlMissing"
+          : !matchesAllowedUrl(url, feed)
+            ? "urlPatternMismatch"
+            : null;
+  if (metadataIssue) {
+    sourceRecord.skipped[metadataIssue] = (sourceRecord.skipped[metadataIssue] || 0) + 1;
     diagnostics.metadataOrDateExcludedCount += 1;
     return null;
   }
+  sourceRecord.inRange += 1;
 
   const source = sourceNameFromItem(item, feed);
   const publisherBaseUrl = publisherUrlFromItem(item);
@@ -1419,8 +1483,10 @@ function normalizeFeedItem(
   if (evaluation.keywordMatched) {
     diagnostics.keywordFilterPassedCount += 1;
     diagnostics.broadCandidateCount += 1;
+    sourceRecord.keywordPassed += 1;
+  } else {
+    diagnostics.keywordExcludedCount += 1;
   }
-  else diagnostics.keywordExcludedCount += 1;
   addCandidateAuditRecord(candidateAudit, {
     title,
     source,
@@ -1504,7 +1570,63 @@ function normalizeFeedItem(
     return null;
   }
   diagnostics.sourceFilterPassedCount += 1;
+  sourceRecord.passed += 1;
   return normalizedArticle;
+}
+
+function getSourceDiagnostics(diagnostics, feed) {
+  if (!diagnostics.bySource) diagnostics.bySource = new Map();
+  const key = feed.name;
+  if (!diagnostics.bySource.has(key)) {
+    diagnostics.bySource.set(key, {
+      name: feed.name,
+      source: feed.sourceName || feed.name,
+      type: feed.type,
+      region: feed.region === "global" ? "global" : "domestic",
+      priority: feed.priority,
+      candidate: Boolean(feed.candidate),
+      ok: null,
+      error: null,
+      fetched: 0,
+      entries: 0,
+      inRange: 0,
+      keywordPassed: 0,
+      passed: 0,
+      candidates: 0,
+      extracted: 0,
+      final: 0,
+      skipped: {},
+    });
+  }
+  return diagnostics.bySource.get(key);
+}
+
+function recordSourceFetchResult(diagnostics, result) {
+  const record = getSourceDiagnostics(diagnostics, result.feed);
+  record.ok = Boolean(result.succeeded);
+  record.error = result.succeeded ? null : String(result.error || "unknown").slice(0, 120);
+  record.fetched = Number(result.rawCount) || 0;
+  for (const [reason, count] of Object.entries(result.skipped || {})) {
+    if (count) record.skipped[reason] = (record.skipped[reason] || 0) + count;
+  }
+}
+
+function summarizeSourceDiagnostics(diagnostics) {
+  return [...(diagnostics.bySource?.values() || [])]
+    .filter((record) => record.ok !== null)
+    .map((record) => ({
+      ...record,
+      skipped: Object.fromEntries(
+        Object.entries(record.skipped).filter(([, count]) => count > 0)
+      ),
+    }))
+    .sort(
+      (left, right) =>
+        Number(left.region === "global") - Number(right.region === "global") ||
+        right.final - left.final ||
+        right.passed - left.passed ||
+        left.name.localeCompare(right.name, "ko")
+    );
 }
 
 function compareForDedup(left, right) {
@@ -1560,7 +1682,8 @@ function fillCandidatesByPriority(
   primaryArticles,
   discoveryArticles,
   maxItemsPerCategory,
-  maxTotal = DEFAULT_MAX_EXTRACTION_CANDIDATES
+  maxTotal = DEFAULT_MAX_EXTRACTION_CANDIDATES,
+  maxOverseas = Number.POSITIVE_INFINITY
 ) {
   const regularCounts = Object.fromEntries(
     Object.keys(categories).map((category) => [category, 0])
@@ -1581,8 +1704,11 @@ function fillCandidatesByPriority(
       right.publishedAt - left.publishedAt
   );
 
+  let overseasCount = 0;
   for (const article of ordered) {
     if (selected.length >= maxTotal) break;
+    // 최종 해외 기사는 소수만 저장하므로 본문 추출 후보도 해외 비중을 제한해 국내 후보를 보호한다.
+    if (article.isDomestic === false && overseasCount >= maxOverseas) continue;
     const protectedCandidate = isProtectedPreselectionCandidate(article);
     if (protectedCandidate) {
       if (protectedCounts[article.category] >= maxItemsPerCategory + 4) continue;
@@ -1592,6 +1718,7 @@ function fillCandidatesByPriority(
       regularCounts[article.category] += 1;
     }
     selected.push(article);
+    if (article.isDomestic === false) overseasCount += 1;
   }
 
   return selected;
@@ -1636,7 +1763,7 @@ function selectFinalBriefingItems(
       selectedIds.has(item.id) ||
       categoryCounts[item.category] >= maxPerCategory ||
       (item._isDomestic === false && overseasCount >= maxOverseas) ||
-      (sourceCounts.get(sourceKey) || 0) >= maxPerSource
+      (sourceCounts.get(sourceKey) || 0) >= (item._maxPerSource || maxPerSource)
     ) {
       return false;
     }
@@ -1839,9 +1966,22 @@ async function saveCollectionStatus({
   sourceSuccessCount = 0,
   sourceFailureCount = 0,
   message = null,
+  briefingDate = null,
+  range = null,
+  domesticCount = null,
+  overseasCount = null,
+  runDurationMs = null,
+  sources = null,
 } = {}) {
+  const now = new Date().toISOString();
+  const previous = await readPreviousStatus();
+  const lastSuccessfulRunAt = success
+    ? now
+    : previous?.lastSuccessfulRunAt || (previous?.success ? previous.lastRunAt : null);
+  const sourceList = Array.isArray(sources) ? sources : [];
+  // 기존 필드는 그대로 유지하고 진단 필드는 뒤에 추가한다(프론트·과거 데이터 호환).
   const status = {
-    lastRunAt: new Date().toISOString(),
+    lastRunAt: now,
     success: Boolean(success),
     rawArticleCount: Number(rawArticleCount) || 0,
     candidateArticleCount: Number(candidateArticleCount) || 0,
@@ -1849,10 +1989,28 @@ async function saveCollectionStatus({
     sourceSuccessCount: Number(sourceSuccessCount) || 0,
     sourceFailureCount: Number(sourceFailureCount) || 0,
     ...(message ? { message: cleanText(message).slice(0, 200) } : {}),
+    lastSuccessfulRunAt: lastSuccessfulRunAt || null,
+    ...(briefingDate ? { briefingDate } : {}),
+    ...(range ? { range } : {}),
+    ...(Number.isFinite(domesticCount) ? { domesticCount } : {}),
+    ...(Number.isFinite(overseasCount) ? { overseasCount } : {}),
+    ...(Number.isFinite(runDurationMs) ? { runDurationMs } : {}),
+    failedSources: sourceList
+      .filter((source) => source.ok === false)
+      .map((source) => ({ name: source.name, error: source.error })),
+    ...(sourceList.length ? { sources: sourceList } : {}),
   };
   await fs.mkdir(DATA_DIR, { recursive: true });
   await fs.writeFile(STATUS_PATH, `${JSON.stringify(status, null, 2)}\n`, "utf8");
   return status;
+}
+
+async function readPreviousStatus() {
+  try {
+    return JSON.parse(await fs.readFile(STATUS_PATH, "utf8"));
+  } catch {
+    return null;
+  }
 }
 
 async function saveCollectionStatusSafely(status) {
@@ -1865,6 +2023,7 @@ async function saveCollectionStatusSafely(status) {
 }
 
 async function collectNews() {
+  const runStartedAt = new Date();
   await loadLocalEnvironment();
   resetOpenAIRequestMetrics();
   const summaryCache = await loadSummaryCache();
@@ -1936,8 +2095,12 @@ async function collectNews() {
   };
   const candidateAudit = new Map();
   const sourceRecoveryCandidates = [];
-  const enabledSources = sourceFeeds;
+  const enabledSources = resolveSourceFeeds(process.env);
   console.log(`[비활성 placeholder 수] ${disabledSources.length}개`);
+  const candidateSourceCount = enabledSources.filter((feed) => feed.candidate).length;
+  if (candidateSourceCount) {
+    console.log(`[검증 대기 후보 수집원 사용] ${candidateSourceCount}개 (ENABLE_CANDIDATE_SOURCES=true)`);
+  }
   const primaryFeeds = enabledSources.filter(
     (feed) => feed.priority === "primary" && !feed.fallbackFor
   );
@@ -2044,6 +2207,7 @@ async function collectNews() {
   }
 
   const sourceResults = [...primaryResults, ...discoveryResults];
+  for (const result of sourceResults) recordSourceFetchResult(diagnostics, result);
   const sourceSuccessCount = sourceResults.filter((result) => result.succeeded).length;
   const sourceFailureCount = sourceResults.length - sourceSuccessCount;
   const fetched = [...primaryFetched, ...discoveryFetched];
@@ -2058,11 +2222,15 @@ async function collectNews() {
     primaryPool,
     shouldUseDiscovery ? discoveryPool : [],
     candidateItemsPerCategory,
-    maxExtractionCandidates
+    maxExtractionCandidates,
+    DEFAULT_MAX_OVERSEAS_EXTRACTION_CANDIDATES
   );
   const selectedCandidateKeys = new Set(
     selected.map((article) => candidateAuditKey(article.title, article.url))
   );
+  for (const article of selected) {
+    if (article.sourceConfig) getSourceDiagnostics(diagnostics, article.sourceConfig).candidates += 1;
+  }
   for (const article of deduplicated) {
     if (!selectedCandidateKeys.has(candidateAuditKey(article.title, article.url))) {
       updateCandidateAuditRecord(candidateAudit, article, {
@@ -2184,8 +2352,14 @@ async function collectNews() {
             (extractionFailuresByFeed.get(feedFailure) || 0) + 1
           );
         }
-        if (extraction.text) sourceExtractionStats.success += 1;
-        else sourceExtractionStats.failure += 1;
+        if (extraction.text) {
+          sourceExtractionStats.success += 1;
+          if (article.sourceConfig) {
+            getSourceDiagnostics(diagnostics, article.sourceConfig).extracted += 1;
+          }
+        } else {
+          sourceExtractionStats.failure += 1;
+        }
         extractionStatsBySource.set(extractionKey, sourceExtractionStats);
         if (article.googleNewsUrl && extraction.resolutionStatus === "resolved") {
           googleResolveSuccessCount += 1;
@@ -2641,6 +2815,8 @@ async function collectNews() {
       resolvedUrl:
         article.resolutionStatus === "resolved" ? article.resolvedUrl : null,
       _isDomestic: article.isDomestic,
+      _feedName: article.feedName,
+      _maxPerSource: article.sourceConfig?.maxFinalItems,
       _strongConnectionType: article.strongConnectionType,
       _sourceAllowed: article._sourceAllowed !== false,
       _sourceRecovery: Boolean(article._sourceRecovery),
@@ -2745,7 +2921,14 @@ async function collectNews() {
       right.publishedAt.localeCompare(left.publishedAt)
   );
   for (const item of items) {
+    const feedRecord = diagnostics.bySource?.get(item._feedName);
+    if (feedRecord) feedRecord.final += 1;
+  }
+  const finalDomesticCount = items.filter((item) => item._isDomestic).length;
+  for (const item of items) {
     delete item._isDomestic;
+    delete item._feedName;
+    delete item._maxPerSource;
     delete item._strongConnectionType;
     delete item._sourceAllowed;
     delete item._sourceRecovery;
@@ -2919,6 +3102,7 @@ async function collectNews() {
   );
   const output = {
     generatedAt: formatKstIso(rangeTo),
+    collectedAt: formatKstIso(new Date()),
     range: {
       from: formatKstIso(rangeFrom),
       to: formatKstIso(rangeTo),
@@ -2965,6 +3149,28 @@ async function collectNews() {
     ["기타 요약 품질", otherQualityExcludedCount],
   ].sort((left, right) => right[1] - left[1]);
 
+  const sourceDiagnostics = summarizeSourceDiagnostics(diagnostics);
+  for (const record of sourceDiagnostics) {
+    const skipped = Object.entries(record.skipped)
+      .map(([reason, count]) => `${reason}=${count}`)
+      .join(", ");
+    console.log(
+      `[source 진단] ${record.name} | ${record.ok ? "성공" : `실패(${record.error})`} | 원본 ${record.fetched} · 기간내 ${record.inRange} · 필터통과 ${record.passed} · 후보 ${record.candidates} · 최종 ${record.final}${skipped ? ` | 제외 ${skipped}` : ""}`
+    );
+  }
+  const statusDetails = {
+    rawArticleCount: fetched.length,
+    candidateArticleCount: selected.length,
+    sourceSuccessCount,
+    sourceFailureCount,
+    briefingDate: generatedDate,
+    range: output.range,
+    domesticCount: finalDomesticCount,
+    overseasCount: items.length - finalDomesticCount,
+    runDurationMs: Date.now() - runStartedAt.getTime(),
+    sources: sourceDiagnostics,
+  };
+
   if (!items.length) {
     const topExclusions = exclusionStages
       .filter(([, count]) => count > 0)
@@ -2979,12 +3185,9 @@ async function collectNews() {
         "[빈 결과 저장 취소] FORCE_SAVE_EMPTY=true가 아니므로 기존 data/news.json과 아카이브를 보존합니다."
       );
       await saveCollectionStatusSafely({
+        ...statusDetails,
         success: false,
-        rawArticleCount: fetched.length,
-        candidateArticleCount: selected.length,
         finalArticleCount: 0,
-        sourceSuccessCount,
-        sourceFailureCount,
         message: "empty_result_preserved",
       });
       return {
@@ -3029,16 +3232,24 @@ async function collectNews() {
 
   const { archivePath, archiveIndex } = await saveBriefing(output, generatedDate);
   await saveCollectionStatusSafely({
+    ...statusDetails,
     success: true,
-    rawArticleCount: fetched.length,
-    candidateArticleCount: selected.length,
     finalArticleCount: items.length,
-    sourceSuccessCount,
-    sourceFailureCount,
   });
   console.log(`[저장 완료] ${OUTPUT_PATH} (${items.length}건)`);
   console.log(`[아카이브 저장] ${archivePath}`);
   console.log(`[아카이브 인덱스] ${archiveIndex.dates.length}일 / 최신 ${archiveIndex.latest}`);
+  try {
+    const insights = await saveInsights();
+    if (insights) {
+      console.log(
+        `[인사이트 저장] 7일 ${insights.weekly.articleCount}건·투자 ${insights.weekly.dealCount}건 / 30일 ${insights.monthly.articleCount}건`
+      );
+    }
+  } catch (error) {
+    // 인사이트는 부가 기능이므로 실패해도 브리핑 저장 결과에는 영향을 주지 않는다.
+    console.warn(`[인사이트 저장 실패] ${error.message}`);
+  }
   return {
     saved: true,
     output,
@@ -3147,6 +3358,8 @@ module.exports = {
   runCli,
   scoreArticle,
   selectFinalBriefingItems,
+  stripSourceSuffix,
   summarizeArticleSafely,
+  summarizeSourceDiagnostics,
   validateBriefingOutput,
 };

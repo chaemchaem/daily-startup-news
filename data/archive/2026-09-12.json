@@ -25,11 +25,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/copenhagens-seed-capital-closes-e130-million-fund-v-to-back-nordic-startups-from-seed-to-series-a/",
       "resolvedUrl": null,
-      "company": "Capital",
+      "company": "Seed Capital",
       "fundingAmount": "€130 million",
-      "fundingStage": "Seed",
-      "eventType": "투자유치",
-      "industry": "AI",
+      "eventType": "펀드결성",
       "score": 96
     },
     {
@@ -61,7 +59,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260911_0003786385",
       "resolvedUrl": null,
-      "company": "어촌어항공단",
       "eventType": "투자유치",
       "score": 66
     },
@@ -90,7 +87,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12150359",
       "resolvedUrl": null,
-      "company": "美 시장 뚫으려면 실리콘밸리 말고 이스라엘로",
       "score": 45
     },
     {
@@ -104,8 +100,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
       "resolvedUrl": null,
-      "fundingAmount": "$500M",
-      "fundingStage": "Series A",
       "industry": "AI",
       "score": 62
     }

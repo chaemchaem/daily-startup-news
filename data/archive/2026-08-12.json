@@ -25,11 +25,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/uk-air-defence-company-cambridge-aerospace-raises-e259-7-million-series-c-at-e2-94-billion-valuation/",
       "resolvedUrl": null,
-      "company": "Aerospace",
+      "company": "Cambridge Aerospace",
       "fundingAmount": "€259.7 million",
       "fundingStage": "Series C",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 90
     },
     {
@@ -60,10 +59,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105189/",
       "resolvedUrl": null,
-      "company": "기계",
-      "fundingAmount": "8억원",
+      "company": "디플리",
       "eventType": "TIPS·LIPS 선정",
-      "industry": "AI",
       "score": 74
     },
     {
@@ -77,10 +74,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105335/",
       "resolvedUrl": null,
-      "company": "예측",
-      "fundingAmount": "1억원",
+      "company": "잇뉴",
+      "fundingAmount": "1억 원",
       "fundingStage": "시드투자",
-      "eventType": "선정",
+      "eventType": "투자유치",
       "score": 61
     },
     {
@@ -109,8 +106,7 @@
       "url": "https://techcrunch.com/2026/08/11/accel-closes-oversubscribed-550m-india-fund-within-weeks-19-months-after-its-last/",
       "resolvedUrl": null,
       "company": "Accel",
-      "fundingAmount": "$550M",
-      "industry": "AI",
+      "eventType": "펀드결성",
       "score": 56
     }
   ]

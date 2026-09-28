@@ -25,6 +25,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/lakestar-closes-e262-2-million-resilience-i-fund-to-back-european-defence-and-dual-use-companies/",
       "resolvedUrl": null,
+      "company": "Lakestar",
+      "fundingAmount": "€262.2 million",
+      "eventType": "펀드결성",
       "score": 80
     },
     {
@@ -51,6 +54,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/grenoble-based-engo-raises-e5-1-million-to-scale-its-lightweight-ar-glasses-for-athletes/",
       "resolvedUrl": null,
+      "company": "ENGO",
+      "fundingAmount": "€5.1 million",
+      "eventType": "투자유치",
       "score": 79
     },
     {
@@ -64,6 +70,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/germanys-prior-labs-raises-e1-billion-and-exits-to-sap-18-months-after-being-founded/",
       "resolvedUrl": null,
+      "company": "Prior Labs",
+      "fundingAmount": "€1 billion",
+      "eventType": "투자유치",
       "score": 76
     },
     {
@@ -77,6 +86,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/antwerps-sightera-biosciences-raises-e3-million-to-scale-its-patient-derived-ai-drug-discovery-platform/",
       "resolvedUrl": null,
+      "company": "Sightera Biosciences",
+      "fundingAmount": "€3 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 75
     },
     {
@@ -90,6 +103,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099438/",
       "resolvedUrl": null,
+      "industry": "AI",
       "score": 46
     }
   ]

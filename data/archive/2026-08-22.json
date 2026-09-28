@@ -27,7 +27,7 @@
       "resolvedUrl": null,
       "company": "Callosum",
       "fundingAmount": "€85.4 million",
-      "fundingStage": "Seed round",
+      "fundingStage": "Seed",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 98
@@ -45,7 +45,8 @@
       "resolvedUrl": null,
       "company": "Velatir",
       "fundingAmount": "€5 million",
-      "fundingStage": "pre-Seed round",
+      "fundingStage": "pre-Seed",
+      "eventType": "투자유치",
       "industry": "AI",
       "score": 94
     },
@@ -77,7 +78,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12133056",
       "resolvedUrl": null,
-      "company": "브랜드 밸류업 1기 파트너스데이",
       "score": 44
     },
     {
@@ -91,7 +91,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1107500/",
       "resolvedUrl": null,
-      "company": "모두의 제나",
+      "company": "제논",
       "eventType": "출시·상용화",
       "industry": "AI",
       "score": 44
@@ -107,9 +107,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1107463/",
       "resolvedUrl": null,
-      "company": "화면에서",
+      "company": "프리키친랩",
       "fundingStage": "시드투자",
-      "industry": "로봇",
+      "eventType": "투자유치",
       "score": 42
     }
   ]

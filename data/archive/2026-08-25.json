@@ -42,10 +42,8 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/fresh-from-e1-2-billion-raise-neura-robotics-acquires-adlatus-robotics-to-give-cleaning-robots-a-new-brain/",
       "resolvedUrl": null,
-      "company": "new brain",
-      "fundingAmount": "€1.2 billion",
-      "eventType": "투자유치",
-      "industry": "AI",
+      "eventType": "인수·M&A",
+      "industry": "로봇",
       "score": 77
     },
     {
@@ -59,7 +57,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1108167/",
       "resolvedUrl": null,
-      "fundingAmount": "50억 원",
       "score": 64
     },
     {
@@ -73,9 +70,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1108170/",
       "resolvedUrl": null,
-      "company": "결제",
-      "fundingStage": "시드",
-      "industry": "핀테크",
       "score": 54
     },
     {

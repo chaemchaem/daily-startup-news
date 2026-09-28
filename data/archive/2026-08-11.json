@@ -25,7 +25,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105094/",
       "resolvedUrl": null,
-      "company": "데이터",
+      "company": "알투씨컴퍼니",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 94
@@ -41,11 +41,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/uk-air-defence-company-cambridge-aerospace-raises-e259-7-million-series-c-at-e2-94-billion-valuation/",
       "resolvedUrl": null,
-      "company": "Aerospace",
+      "company": "Cambridge Aerospace",
       "fundingAmount": "€259.7 million",
       "fundingStage": "Series C",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 92
     },
     {
@@ -77,10 +76,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105189/",
       "resolvedUrl": null,
-      "company": "기계",
-      "fundingAmount": "8억원",
+      "company": "디플리",
       "eventType": "TIPS·LIPS 선정",
-      "industry": "AI",
       "score": 76
     },
     {
@@ -94,7 +91,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/",
       "resolvedUrl": null,
-      "fundingAmount": "$400M",
+      "industry": "반도체",
       "score": 55
     }
   ]

@@ -25,6 +25,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098136/",
       "resolvedUrl": null,
+      "company": "홀리데이로보틱스",
+      "fundingStage": "시리즈A",
+      "eventType": "투자유치",
+      "industry": "로봇",
       "score": 87
     },
     {
@@ -38,6 +42,10 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/",
       "resolvedUrl": null,
+      "company": "PixVerse",
+      "fundingAmount": "$439M",
+      "fundingStage": "Series C",
+      "eventType": "투자유치",
       "score": 76
     },
     {
@@ -51,6 +59,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/mycelium-based-paving-material-developer-visibuilt-raises-e3-34-million-out-denmark/",
       "resolvedUrl": null,
+      "company": "Visibuilt",
+      "fundingAmount": "€3.34 million",
+      "fundingStage": "Seed",
+      "eventType": "투자유치",
       "score": 72
     },
     {
@@ -64,6 +76,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098169/",
       "resolvedUrl": null,
+      "company": "스카이인텔리전스",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 63
     },
     {
@@ -77,6 +92,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098267/",
       "resolvedUrl": null,
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 59
     },
     {
@@ -90,6 +107,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098106/",
       "resolvedUrl": null,
+      "company": "프라운",
+      "eventType": "투자유치",
       "score": 57
     },
     {
@@ -103,6 +122,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/spains-acurio-ventures-launches-e115-million-vehicle-to-provide-liquidity-to-european-vc-funds/",
       "resolvedUrl": null,
+      "eventType": "출시·상용화",
       "score": 55
     },
     {
@@ -116,6 +136,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/e300-million-for-iberian-biotech-and-deeptech-as-criteriacaixa-rebrands-its-vc-arm/",
       "resolvedUrl": null,
+      "eventType": "투자유치",
       "score": 52
     },
     {
@@ -129,6 +150,7 @@
       "source": "바이라인네트워크",
       "url": "https://byline.network/2026/07/4328917983/",
       "resolvedUrl": null,
+      "industry": "로봇",
       "score": 49
     },
     {

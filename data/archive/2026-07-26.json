@@ -56,8 +56,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/07/25/elon-musks-boring-company-reportedly-raising-funding-at-a-20-billion-valuation/",
       "resolvedUrl": null,
-      "fundingAmount": "$20 billion",
-      "industry": "AI",
       "score": 72
     },
     {
@@ -71,11 +69,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/oxford-based-moa-technology-raises-e25-9-million-to-tackle-herbicide-resistant-weeds/",
       "resolvedUrl": null,
-      "company": "Technology",
+      "company": "Moa Technology",
       "fundingAmount": "€25.9 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 72
     },
     {
@@ -89,6 +86,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1101043/",
       "resolvedUrl": null,
+      "company": "젠스파크",
       "eventType": "출시·상용화",
       "industry": "AI",
       "score": 46
@@ -118,9 +116,8 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/291383",
       "resolvedUrl": null,
-      "company": "디캠프",
-      "fundingStage": "시리즈A",
-      "industry": "로봇",
+      "fundingStage": "프리A",
+      "eventType": "투자유치",
       "score": 43
     },
     {
@@ -134,7 +131,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260724_0003722783",
       "resolvedUrl": null,
-      "company": "가짜 계약서",
       "eventType": "모집",
       "score": 28
     }

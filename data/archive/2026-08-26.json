@@ -25,11 +25,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/europe-is-aging-rapidly-solace-care-raises-e2-1-million-in-largest-pre-seed-round-to-date-for-a-european-end-of-life-platform/",
       "resolvedUrl": null,
-      "company": "Care",
+      "company": "Solace Care",
       "fundingAmount": "€2.1 million",
-      "fundingStage": "pre-Seed round",
+      "fundingStage": "pre-Seed",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 96
     },
     {
@@ -43,11 +42,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/hungarys-bookr-kids-closes-e6-1-million-series-a-for-global-edtech-expansion/",
       "resolvedUrl": null,
-      "company": "Kids",
+      "company": "BOOKR Kids",
       "fundingAmount": "€6.1 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 95
     },
     {
@@ -64,7 +62,6 @@
       "company": "머신플로우",
       "fundingStage": "시드투자",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 88
     },
     {
@@ -78,7 +75,6 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/293126",
       "resolvedUrl": null,
-      "company": "라이너",
       "fundingAmount": "500억 원",
       "fundingStage": "시리즈C",
       "eventType": "투자유치",
@@ -96,7 +92,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1108431/",
       "resolvedUrl": null,
-      "company": "찾는다",
+      "company": "디멘필",
       "eventType": "TIPS·LIPS 선정",
       "score": 82
     },
@@ -111,7 +107,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1108407/",
       "resolvedUrl": null,
-      "company": "정확하게",
+      "company": "딥메이즈에이아이",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 77

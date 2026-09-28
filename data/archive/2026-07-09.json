@@ -25,6 +25,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097147/",
       "resolvedUrl": null,
+      "eventType": "선정",
+      "industry": "AI",
       "score": 80
     },
     {
@@ -38,6 +40,11 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/yc-backed-fleek-raises-e22-million-to-build-ai-infrastructure-keeping-global-secondhand-fashion-on-fleek/",
       "resolvedUrl": null,
+      "company": "Fleek",
+      "fundingAmount": "€22 million",
+      "fundingStage": "Series B",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 80
     },
     {
@@ -51,6 +58,9 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/07/08/crypto-vc-firm-paradigm-raises-1-2b-to-invest-in-technical-frontier-startups/",
       "resolvedUrl": null,
+      "company": "Paradigm",
+      "fundingAmount": "$1.2B",
+      "eventType": "투자유치",
       "score": 78
     },
     {
@@ -64,6 +74,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/as-power-demand-rises-from-electrification-and-data-centres-londons-axle-energy-raises-e21-million-for-energy-flexibility/",
       "resolvedUrl": null,
+      "company": "Axle Energy",
+      "fundingAmount": "€21 million",
+      "eventType": "투자유치",
       "score": 74
     },
     {
@@ -77,6 +90,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/university-of-sheffield-spin-out-pixel-flo-raises-e6-1-million-to-scale-microled-display-manufacturing/",
       "resolvedUrl": null,
+      "company": "Pixel-Flo",
+      "fundingAmount": "€6.1 million",
+      "eventType": "투자유치",
       "score": 65
     },
     {
@@ -90,6 +106,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097189/",
       "resolvedUrl": null,
+      "company": "제이앤피메디",
+      "eventType": "선정",
+      "industry": "AI",
       "score": 53
     },
     {
@@ -103,6 +122,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097158/",
       "resolvedUrl": null,
+      "company": "오디엔",
+      "eventType": "선정",
       "score": 52
     },
     {
@@ -116,6 +137,10 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/290350",
       "resolvedUrl": null,
+      "company": "워트인텔리전스",
+      "fundingAmount": "165억 원",
+      "fundingStage": "시리즈B",
+      "eventType": "투자유치",
       "score": 50
     },
     {
@@ -129,6 +154,8 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/07/08/solo-gp-ashley-smith-announces-25m-close-of-second-fund/",
       "resolvedUrl": null,
+      "eventType": "펀드결성",
+      "industry": "AI",
       "score": 43
     }
   ]

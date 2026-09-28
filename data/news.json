@@ -38,6 +38,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/nus-enterprise-sets-up-outpost-in-munich-and-shanghai-and-launches-nova-an-ai-platform-for-research-commercialisation-sponsored/",
       "resolvedUrl": null,
+      "eventType": "출시·상용화",
       "industry": "AI",
       "score": 41
     },
@@ -52,8 +53,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
       "resolvedUrl": null,
-      "fundingAmount": "$1.25",
-      "eventType": "투자유치",
       "industry": "AI",
       "score": 40
     },
@@ -84,7 +83,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260923_0003802485",
       "resolvedUrl": null,
-      "company": "상업적 합리성 있는 사업만",
       "eventType": "협약",
       "score": 38
     }

@@ -1,0 +1,46 @@
+name: Probe news sources
+
+# 수동 실행 전용. 수집원 RSS 응답·robots·최근 기사 수를 점검하고 결과를 실행 요약에 남긴다.
+# 데이터 파일을 수정하거나 커밋하지 않는다.
+on:
+  workflow_dispatch:
+    inputs:
+      candidates_only:
+        description: "검증 대기 후보 수집원만 점검"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: pnpm 설정
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+          run_install: false
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: 의존성 설치
+        run: pnpm install --frozen-lockfile
+
+      - name: 수집원 점검
+        run: |
+          if [ "${{ inputs.candidates_only }}" = "true" ]; then
+            node scripts/probe-sources.js --candidates
+          else
+            node scripts/probe-sources.js
+          fi

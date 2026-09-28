@@ -25,7 +25,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110122/",
       "resolvedUrl": null,
-      "company": "고도화",
+      "company": "그룹바이",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 91
@@ -41,7 +41,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110174/",
       "resolvedUrl": null,
-      "company": "5년 내 폐기",
+      "company": "스페이스랩",
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
       "industry": "우주항공",
@@ -58,10 +58,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/drone-attack-at-leipzig-halle-airport-underscores-threat-as-inleap-photonics-raises-e20-million-for-drone-defence/",
       "resolvedUrl": null,
-      "company": "Photonics",
+      "company": "INLEAP Photonics",
       "fundingAmount": "€20 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 89
     },
     {
@@ -76,7 +75,7 @@
       "url": "https://www.eu-startups.com/2026/09/berlins-auxxo-closes-female-catalyst-fund-ii-at-e33-3-million-and-launches-founder-matchmaking-platform/",
       "resolvedUrl": null,
       "company": "Auxxo",
-      "fundingAmount": "€33.3 million",
+      "eventType": "펀드결성",
       "score": 77
     },
     {
@@ -90,9 +89,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/",
       "resolvedUrl": null,
-      "fundingAmount": "$3.2",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 75
     },
     {
@@ -106,9 +103,9 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/293649",
       "resolvedUrl": null,
-      "company": "에이블랩스",
       "fundingAmount": "121억 원",
       "fundingStage": "시리즈A",
+      "eventType": "투자유치",
       "industry": "로봇",
       "score": 59
     },
@@ -123,7 +120,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12141503",
       "resolvedUrl": null,
-      "fundingAmount": "3000억원",
       "eventType": "지원사업",
       "score": 51
     }

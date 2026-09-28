@@ -25,8 +25,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
       "resolvedUrl": null,
-      "fundingAmount": "$7",
-      "eventType": "인수·M&A",
       "industry": "AI",
       "score": 48
     },
@@ -41,7 +39,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12128848",
       "resolvedUrl": null,
-      "company": "오픈AI 그만둔다고? 그 좋은 회사 왜 나와",
       "industry": "AI",
       "score": 45
     },
@@ -70,7 +67,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260814_0003750166",
       "resolvedUrl": null,
-      "company": "빌라·오피스텔 13만호",
       "eventType": "세컨더리",
       "score": 38
     },
@@ -85,7 +81,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260816_0003751062",
       "resolvedUrl": null,
-      "company": "14시간",
       "eventType": "협약",
       "score": 31
     },
@@ -100,7 +95,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/16/techcrunch-mobility-the-shifting-flight-path-of-electric-air-taxis/",
       "resolvedUrl": null,
-      "industry": "AI",
       "score": 17
     }
   ]

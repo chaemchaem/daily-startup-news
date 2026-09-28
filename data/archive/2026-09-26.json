@@ -28,7 +28,6 @@
       "company": "Clastix",
       "fundingAmount": "€2.9 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 82
     },
     {
@@ -45,7 +44,6 @@
       "company": "Duqu",
       "fundingAmount": "€1.5 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 79
     },
     {
@@ -59,7 +57,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1116065/",
       "resolvedUrl": null,
-      "company": "파일러",
       "eventType": "실증·PoC",
       "industry": "AI",
       "score": 70
@@ -75,7 +72,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260923_0003802071",
       "resolvedUrl": null,
-      "company": "가을 산행부터 일상까지",
       "eventType": "출시·상용화",
       "score": 40
     },

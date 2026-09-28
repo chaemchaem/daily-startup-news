@@ -1,0 +1,799 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-28T10:29:21.399Z",
+  "latestDate": "2026-09-27",
+  "weekly": {
+    "from": "2026-09-21",
+    "to": "2026-09-27",
+    "briefingDays": 7,
+    "articleCount": 30,
+    "domesticCount": 18,
+    "overseasCount": 12,
+    "dealCount": 7,
+    "disclosedKrwDealCount": 2,
+    "disclosedKrwTotalEok": 42,
+    "byCategory": [
+      {
+        "label": "해외 VC",
+        "count": 11
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 7
+      },
+      {
+        "label": "VC / AC",
+        "count": 5
+      },
+      {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 4
+      },
+      {
+        "label": "TIPS / LIPS",
+        "count": 3
+      }
+    ],
+    "byEventType": [
+      {
+        "label": "투자유치",
+        "count": 9
+      },
+      {
+        "label": "선정",
+        "count": 4
+      },
+      {
+        "label": "출시·상용화",
+        "count": 2
+      },
+      {
+        "label": "협약",
+        "count": 2
+      },
+      {
+        "label": "실증·PoC",
+        "count": 1
+      },
+      {
+        "label": "펀드결성",
+        "count": 1
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 1
+      }
+    ],
+    "byIndustry": [
+      {
+        "label": "AI",
+        "count": 11
+      },
+      {
+        "label": "바이오·헬스케어",
+        "count": 1
+      },
+      {
+        "label": "반도체",
+        "count": 1
+      }
+    ],
+    "byStage": [
+      {
+        "label": "시드",
+        "count": 1
+      },
+      {
+        "label": "프리A",
+        "count": 1
+      },
+      {
+        "label": "Seed",
+        "count": 1
+      }
+    ],
+    "topSources": [
+      {
+        "label": "EU-Startups",
+        "count": 8
+      },
+      {
+        "label": "벤처스퀘어",
+        "count": 6
+      },
+      {
+        "label": "매일경제",
+        "count": 4
+      },
+      {
+        "label": "플래텀",
+        "count": 4
+      },
+      {
+        "label": "TechCrunch",
+        "count": 4
+      },
+      {
+        "label": "뉴시스",
+        "count": 3
+      },
+      {
+        "label": "바이라인네트워크",
+        "count": 1
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-09-21",
+        "total": 2,
+        "overseas": 0
+      },
+      {
+        "date": "2026-09-22",
+        "total": 4,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-23",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-24",
+        "total": 10,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-25",
+        "total": 9,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-26",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-27",
+        "total": 5,
+        "overseas": 3
+      }
+    ],
+    "deals": [
+      {
+        "date": "2026-09-24",
+        "company": "Enveda",
+        "fundingAmount": "$311M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
+        "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-09-24",
+        "company": "Clastix",
+        "fundingAmount": "€2.9 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Italy's Clastix raises €2.9 million with Mistral backing to build sovereign Kubernetes infrastructure for Europe | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/italys-clastix-raises-e2-9-million-with-mistral-backing-to-build-sovereign-kubernetes-infrastructure-for-europe/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-24",
+        "company": "Duqu",
+        "fundingAmount": "€1.5 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Amsterdam-based Duqu raises €1.5 million to unlock cash tied up in unpaid invoices | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/amsterdam-based-duqu-raises-e1-5-million-to-unlock-cash-tied-up-in-unpaid-invoices/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-23",
+        "company": "Spiich",
+        "fundingAmount": "€3 million",
+        "fundingStage": "Seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Stockholm’s Spiich raises €3 million to let AI handle admin work while sales teams focus on customers | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/stockholms-spiich-raises-e3-million-to-let-ai-handle-admin-work-while-sales-teams-focus-on-customers/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-23",
+        "company": "마케마케",
+        "fundingAmount": "30억 원",
+        "fundingStage": "프리A",
+        "industry": null,
+        "overseas": false,
+        "title": "마케마케, 프리A 30억 원 투자 유치",
+        "url": "https://www.mk.co.kr/news/business/12160073",
+        "source": "매일경제"
+      },
+      {
+        "date": "2026-09-22",
+        "company": "케이바이오게이트웨이",
+        "fundingAmount": "12억 원",
+        "fundingStage": "시드",
+        "industry": "바이오·헬스케어",
+        "overseas": false,
+        "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
+        "url": "https://www.venturesquare.net/1115810/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-09-21",
+        "company": "Novadip Biosciences",
+        "fundingAmount": "€10.4 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Belgium's Novadip Biosciences raises €10.4 million to fund pivotal clinical trial and unlock EIB loan tranche | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
+        "source": "EU-Startups"
+      }
+    ],
+    "previous": {
+      "articleCount": 30,
+      "dealCount": 10,
+      "briefingDays": 7
+    }
+  },
+  "monthly": {
+    "from": "2026-08-29",
+    "to": "2026-09-27",
+    "briefingDays": 30,
+    "articleCount": 125,
+    "domesticCount": 69,
+    "overseasCount": 56,
+    "dealCount": 40,
+    "disclosedKrwDealCount": 5,
+    "disclosedKrwTotalEok": 658,
+    "byCategory": [
+      {
+        "label": "해외 VC",
+        "count": 55
+      },
+      {
+        "label": "VC / AC",
+        "count": 24
+      },
+      {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 15
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 15
+      },
+      {
+        "label": "TIPS / LIPS",
+        "count": 15
+      },
+      {
+        "label": "세컨더리 / 구주매각",
+        "count": 1
+      }
+    ],
+    "byEventType": [
+      {
+        "label": "투자유치",
+        "count": 56
+      },
+      {
+        "label": "선정",
+        "count": 11
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 5
+      },
+      {
+        "label": "인수·M&A",
+        "count": 4
+      },
+      {
+        "label": "협약",
+        "count": 4
+      },
+      {
+        "label": "실증·PoC",
+        "count": 3
+      },
+      {
+        "label": "펀드결성",
+        "count": 3
+      },
+      {
+        "label": "출시·상용화",
+        "count": 2
+      },
+      {
+        "label": "모집",
+        "count": 1
+      },
+      {
+        "label": "지원사업",
+        "count": 1
+      }
+    ],
+    "byIndustry": [
+      {
+        "label": "AI",
+        "count": 49
+      },
+      {
+        "label": "로봇",
+        "count": 2
+      },
+      {
+        "label": "바이오·헬스케어",
+        "count": 1
+      },
+      {
+        "label": "반도체",
+        "count": 1
+      },
+      {
+        "label": "우주항공",
+        "count": 1
+      }
+    ],
+    "byStage": [
+      {
+        "label": "Series A",
+        "count": 5
+      },
+      {
+        "label": "Seed",
+        "count": 4
+      },
+      {
+        "label": "시드",
+        "count": 2
+      },
+      {
+        "label": "시드 투자",
+        "count": 2
+      },
+      {
+        "label": "시리즈B",
+        "count": 2
+      },
+      {
+        "label": "프리A",
+        "count": 2
+      },
+      {
+        "label": "pre-Seed",
+        "count": 2
+      },
+      {
+        "label": "시리즈C",
+        "count": 1
+      },
+      {
+        "label": "시리즈D",
+        "count": 1
+      },
+      {
+        "label": "seed",
+        "count": 1
+      }
+    ],
+    "topSources": [
+      {
+        "label": "EU-Startups",
+        "count": 37
+      },
+      {
+        "label": "벤처스퀘어",
+        "count": 36
+      },
+      {
+        "label": "TechCrunch",
+        "count": 19
+      },
+      {
+        "label": "매일경제",
+        "count": 16
+      },
+      {
+        "label": "플래텀",
+        "count": 9
+      },
+      {
+        "label": "뉴시스",
+        "count": 7
+      },
+      {
+        "label": "바이라인네트워크",
+        "count": 1
+      }
+    ],
+    "daily": [
+      {
+        "date": "2026-08-29",
+        "total": 5,
+        "overseas": 2
+      },
+      {
+        "date": "2026-08-30",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-08-31",
+        "total": 2,
+        "overseas": 0
+      },
+      {
+        "date": "2026-09-01",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-02",
+        "total": 7,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-03",
+        "total": 6,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-04",
+        "total": 6,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-05",
+        "total": 4,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-06",
+        "total": 4,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-07",
+        "total": 1,
+        "overseas": 1
+      },
+      {
+        "date": "2026-09-08",
+        "total": 4,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-09",
+        "total": 7,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-10",
+        "total": 7,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-11",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-12",
+        "total": 6,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-13",
+        "total": 4,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-14",
+        "total": 1,
+        "overseas": 0
+      },
+      {
+        "date": "2026-09-15",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-16",
+        "total": 6,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-17",
+        "total": 6,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-18",
+        "total": 6,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-19",
+        "total": 8,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-20",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-21",
+        "total": 2,
+        "overseas": 0
+      },
+      {
+        "date": "2026-09-22",
+        "total": 4,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-23",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-24",
+        "total": 10,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-25",
+        "total": 9,
+        "overseas": 2
+      },
+      {
+        "date": "2026-09-26",
+        "total": 5,
+        "overseas": 3
+      },
+      {
+        "date": "2026-09-27",
+        "total": 5,
+        "overseas": 3
+      }
+    ],
+    "deals": [
+      {
+        "date": "2026-09-24",
+        "company": "Enveda",
+        "fundingAmount": "$311M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
+        "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-09-24",
+        "company": "Clastix",
+        "fundingAmount": "€2.9 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Italy's Clastix raises €2.9 million with Mistral backing to build sovereign Kubernetes infrastructure for Europe | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/italys-clastix-raises-e2-9-million-with-mistral-backing-to-build-sovereign-kubernetes-infrastructure-for-europe/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-24",
+        "company": "Duqu",
+        "fundingAmount": "€1.5 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Amsterdam-based Duqu raises €1.5 million to unlock cash tied up in unpaid invoices | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/amsterdam-based-duqu-raises-e1-5-million-to-unlock-cash-tied-up-in-unpaid-invoices/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-23",
+        "company": "Spiich",
+        "fundingAmount": "€3 million",
+        "fundingStage": "Seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Stockholm’s Spiich raises €3 million to let AI handle admin work while sales teams focus on customers | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/stockholms-spiich-raises-e3-million-to-let-ai-handle-admin-work-while-sales-teams-focus-on-customers/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-23",
+        "company": "마케마케",
+        "fundingAmount": "30억 원",
+        "fundingStage": "프리A",
+        "industry": null,
+        "overseas": false,
+        "title": "마케마케, 프리A 30억 원 투자 유치",
+        "url": "https://www.mk.co.kr/news/business/12160073",
+        "source": "매일경제"
+      },
+      {
+        "date": "2026-09-22",
+        "company": "케이바이오게이트웨이",
+        "fundingAmount": "12억 원",
+        "fundingStage": "시드",
+        "industry": "바이오·헬스케어",
+        "overseas": false,
+        "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
+        "url": "https://www.venturesquare.net/1115810/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-09-21",
+        "company": "Novadip Biosciences",
+        "fundingAmount": "€10.4 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Belgium's Novadip Biosciences raises €10.4 million to fund pivotal clinical trial and unlock EIB loan tranche | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-19",
+        "company": "삼전·닉스",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "삼전·닉스, 'AI 생태계' 투자 넓힌다…\"칩 넘어 데이터센터·SW까지\"",
+        "url": "https://www.newsis.com/view/NISX20260918_0003796133",
+        "source": "뉴시스"
+      },
+      {
+        "date": "2026-09-18",
+        "company": "Crusoe",
+        "fundingAmount": "$3.9B",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Crusoe raises $3.9B to build massive data centers and small modular ‘AI factories’",
+        "url": "https://techcrunch.com/2026/09/17/crusoe-raises-3-9b-to-build-massive-data-centers-and-small-modular-ai-factories/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-09-18",
+        "company": "Arcos",
+        "fundingAmount": "€5.5 million",
+        "fundingStage": "Seed",
+        "industry": null,
+        "overseas": true,
+        "title": "Munich-based Arcos raises €5.5 million to build and operate civil safety infrastructure across Europe | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/munich-based-arcos-raises-e5-5-million-to-build-and-operate-civil-safety-infrastructure-across-europe/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-17",
+        "company": "인핸스",
+        "fundingAmount": "512억 원",
+        "fundingStage": "시리즈C",
+        "industry": null,
+        "overseas": false,
+        "title": "인핸스, 512억원 시리즈C 유치…고객사였던 LG·포스코·롯데 계열사 주주로",
+        "url": "https://www.venturesquare.net/1114540/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-09-17",
+        "company": "Health Force",
+        "fundingAmount": "€4.2 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Barcelona-based Health Force raises €4.2 million to streamline hospital operations with AI agents | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/barcelona-based-health-force-raises-e4-2-million-to-streamline-hospital-operations-with-ai-agents/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-16",
+        "company": "Veridion",
+        "fundingAmount": "€17.5 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Bucharest-based Veridion raises €17.5 million to scale its real-time map of the world's businesses | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/bucharest-based-veridion-raises-e17-5-million-to-scale-its-real-time-map-of-the-worlds-businesses/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-15",
+        "company": "Jill",
+        "fundingAmount": "€34.68 million",
+        "fundingStage": "Series A",
+        "industry": "AI",
+        "overseas": true,
+        "title": "London-based Jack & Jill raises €34.68 million Series A to scale its AI agents for jobseekers and employers | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/london-based-jack-jill-raises-e34-68-million-series-a-to-scale-its-ai-agents-for-jobseekers-and-employers/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-15",
+        "company": "EnforceShield",
+        "fundingAmount": "€1.7 million",
+        "fundingStage": "Seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Vilnius-based EnforceShield raises €1.7 million Seed round to fight AI-powered IP abuse with autonomous enforcement | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/vilnius-based-enforceshield-raises-e1-7-million-seed-round-to-fight-ai-powered-ip-abuse-with-autonomous-enforcement/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-15",
+        "company": "코로로직",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": "AI",
+        "overseas": false,
+        "title": "X선 촬영량과 영상 품질의 딜레마…코로로직, 심혈관 AI로 시드 투자",
+        "url": "https://www.venturesquare.net/1113760/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-09-14",
+        "company": "Chift",
+        "fundingAmount": "€10.5 million",
+        "fundingStage": "Series A",
+        "industry": null,
+        "overseas": true,
+        "title": "Brussels-based Chift raises €10.5 million Series A to become Europe's financial connectivity layer | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/brussels-based-chift-raises-e10-5-million-series-a-to-become-europes-financial-connectivity-layer/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-11",
+        "company": "리아드코퍼레이션",
+        "fundingAmount": null,
+        "fundingStage": "시드",
+        "industry": "AI",
+        "overseas": false,
+        "title": "예약 조회·변경·취소까지 AI가 처리…리아드코퍼레이션, 사제파트너스 투자 유치",
+        "url": "https://www.venturesquare.net/1112557/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-09-11",
+        "company": "Furo",
+        "fundingAmount": "€3.44 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Munich-based Furo raises €3.44 million to make industrial battery storage economically viable | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/munich-based-furo-raises-e3-44-million-to-make-industrial-battery-storage-economically-viable/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-10",
+        "company": "Bynario",
+        "fundingAmount": "€2.1 million",
+        "fundingStage": "pre-Seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Milan-based Bynario raises €2.1 million pre-Seed after AI research exposed serious Apple vulnerabilities | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/milan-based-bynario-raises-e2-1-million-pre-seed-after-ai-research-exposed-serious-apple-vulnerabilities/",
+        "source": "EU-Startups"
+      }
+    ],
+    "previous": {
+      "articleCount": 132,
+      "dealCount": 41,
+      "briefingDays": 30
+    }
+  }
+}

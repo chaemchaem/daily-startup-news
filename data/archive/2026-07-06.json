@@ -25,6 +25,10 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12091002",
       "resolvedUrl": null,
+      "company": "이터나퓨전",
+      "fundingAmount": "23억 원",
+      "fundingStage": "시드투자",
+      "eventType": "투자유치",
       "score": 79
     },
     {
@@ -38,6 +42,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1096144/",
       "resolvedUrl": null,
+      "company": "스튜디오키코",
+      "eventType": "투자유치",
       "score": 68
     },
     {
@@ -51,6 +57,9 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12091114",
       "resolvedUrl": null,
+      "company": "스튜디오키코",
+      "fundingStage": "프리A",
+      "eventType": "투자유치",
       "score": 68
     },
     {
@@ -64,6 +73,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1095932/",
       "resolvedUrl": null,
+      "company": "킵코퍼레이션",
+      "fundingStage": "시드 투자",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 66
     },
     {
@@ -77,6 +90,9 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12091250",
       "resolvedUrl": null,
+      "company": "씨이엘랩",
+      "eventType": "투자유치",
+      "industry": "기후테크·ESG",
       "score": 60
     },
     {
@@ -90,6 +106,7 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12091261",
       "resolvedUrl": null,
+      "eventType": "선정",
       "score": 58
     },
     {
@@ -103,6 +120,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1095976/",
       "resolvedUrl": null,
+      "industry": "AI",
       "score": 52
     },
     {

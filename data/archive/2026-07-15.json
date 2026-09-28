@@ -25,6 +25,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/europes-only-gallium-oxide-epiwafer-producer-nextgo-epi-raises-e2-million-pre-seed-funding/",
       "resolvedUrl": null,
+      "company": "NextGO Epi",
+      "fundingAmount": "€2 million",
+      "fundingStage": "pre-Seed",
+      "eventType": "투자유치",
       "score": 96
     },
     {
@@ -38,6 +42,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098543/",
       "resolvedUrl": null,
+      "company": "커넥셔너리",
+      "fundingStage": "시드 투자",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 88
     },
     {
@@ -51,6 +59,11 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/290767",
       "resolvedUrl": null,
+      "company": "홀리데이로보틱스",
+      "fundingAmount": "1,550억 원",
+      "fundingStage": "시리즈A",
+      "eventType": "투자유치",
+      "industry": "로봇",
       "score": 81
     },
     {
@@ -64,6 +77,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/netflix-alumni-founded-nopan-reaches-e7-2-million-in-funding-to-scale-account-and-wallet-payments-across-europe/",
       "resolvedUrl": null,
+      "eventType": "투자유치",
       "score": 74
     },
     {
@@ -77,6 +91,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/dutch-clean-tech-raises-e15-million-to-acquire-25-stake-in-guatemalas-drinking-water-firm-agua-del-mariscal/",
       "resolvedUrl": null,
+      "company": "Clean Tech",
+      "fundingAmount": "€15 million",
+      "eventType": "투자유치",
       "score": 71
     },
     {
@@ -90,6 +107,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/mycelium-based-paving-material-developer-visibuilt-raises-e3-34-million-out-denmark/",
       "resolvedUrl": null,
+      "company": "Visibuilt",
+      "fundingAmount": "€3.34 million",
+      "fundingStage": "Seed",
+      "eventType": "투자유치",
       "score": 70
     },
     {
@@ -103,6 +124,9 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12098622",
       "resolvedUrl": null,
+      "fundingAmount": "70억 원",
+      "eventType": "투자유치",
+      "industry": "로봇",
       "score": 61
     },
     {
@@ -116,6 +140,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/e300-million-for-iberian-biotech-and-deeptech-as-criteriacaixa-rebrands-its-vc-arm/",
       "resolvedUrl": null,
+      "eventType": "투자유치",
       "score": 50
     },
     {
@@ -129,6 +154,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098553/",
       "resolvedUrl": null,
+      "eventType": "협약",
+      "industry": "AI",
       "score": 49
     },
     {
@@ -142,6 +169,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1098476/",
       "resolvedUrl": null,
+      "industry": "AI",
       "score": 46
     }
   ]

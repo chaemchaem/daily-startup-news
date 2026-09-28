@@ -1242,11 +1242,28 @@ async function summarizeWithOpenAI({
   throw new Error(`OpenAI 요약 검증 실패: ${retryReason || "알 수 없는 오류"}`);
 }
 
+const DECIMAL_POINT_PLACEHOLDER = "․";
+const ENGLISH_ABBREVIATION_PATTERN =
+  /\b(Mr|Mrs|Ms|Dr|Prof|Inc|Ltd|Co|Corp|Jr|Sr|St|vs|etc|approx|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|No|U\.S|U\.K|E\.U)\.(?=\s)/gu;
+
 function splitExtractiveSentences(value) {
-  const text = cleanText(String(value || "").replace(/\r?\n+/gu, ". "));
+  // 소수점("$3.4 billion", "1.5억")과 영문 약어("Sept.", "Inc.")에서 문장이 잘리지 않도록 보호한다.
+  const text = cleanText(String(value || "").replace(/\r?\n+/gu, ". "))
+    .replace(/(\d)\.(?=\d)/gu, `$1${DECIMAL_POINT_PLACEHOLDER}`)
+    .replace(ENGLISH_ABBREVIATION_PATTERN, `$1${DECIMAL_POINT_PLACEHOLDER}`);
   return (text.match(/[^.!?。]+[.!?。]?/gu) || [])
-    .map((sentence) => sentence.trim())
+    .map((sentence) => sentence.replaceAll(DECIMAL_POINT_PLACEHOLDER, ".").trim())
     .filter(Boolean);
+}
+
+// 영문 문장이 금액·숫자·기능어에서 끊겼는지 확인한다.
+function isTruncatedEnglishSentence(sentence) {
+  const text = cleanText(sentence);
+  return (
+    /[€$£]\s*\d+(?:[.,]\d+)?[.!?]$/u.test(text) ||
+    /\b\d+(?:[.,]\d+)?[.!?]$/u.test(text) ||
+    /\b(?:and|or|to|of|with|for|as|by|the|a|an|at|in|on|from)\s*[.!?]?$/iu.test(text)
+  );
 }
 
 function sanitizeExtractiveSentence(value, source = "") {
@@ -1264,11 +1281,13 @@ function sanitizeExtractiveSentence(value, source = "") {
       /^(?:(?:Home|Funding|CLUB|[A-Z][A-Za-z -]+-Startups)\s*(?:[>|/·-]\s*)?){1,5}(?=[A-Z0-9“‘"'])/u,
       ""
     )
+    // 앞 문장에서 넘어온 닫는 따옴표(예: "” NUS Enterprise ...")를 제거한다.
+    .replace(/^[”’"')\]]+\s*/u, "")
     .replace(/\s+/g, " ")
     .trim();
 
   if (source) {
-    const sourceOnly = new RegExp(`^(?:${escapeRegExp(cleanText(source))})[\s|·:-]*$`, "iu");
+    const sourceOnly = new RegExp(`^(?:${escapeRegExp(cleanText(source))})[\\s|·:-]*$`, "iu");
     if (sourceOnly.test(sentence)) return "";
   }
 
@@ -1567,7 +1586,12 @@ function isCompleteExtractiveSentence(value) {
   const length = Array.from(sentence).length;
   if (length < 25 || length > SUMMARY_MAX_LENGTH) return false;
   if (isPredominantlyEnglish(sentence)) {
-    return ENGLISH_EVENT_PATTERN.test(sentence) && /[.!?]["')\]]?$/u.test(sentence);
+    return (
+      ENGLISH_EVENT_PATTERN.test(sentence) &&
+      /[.!?]["')\]]?$/u.test(sentence) &&
+      /^[A-Z0-9“"‘']/u.test(sentence) &&
+      !isTruncatedEnglishSentence(sentence)
+    );
   }
   return /(?:했다|됐다|한다|된다|이다|있다|없다|나섰다|밝혔다|전했다|추진한다|지원한다|선정했다|유치했다|결성했다|조성했다|출시했다|확대했다|체결했다|참여했다|확보했다|예정이다|계획이다|받았다|열었다|진행한다|제공한다|모집한다|개최한다|상용화했다|개발했다)[.!?。]?$/u.test(
     sentence

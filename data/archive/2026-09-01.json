@@ -28,7 +28,6 @@
       "company": "S-Transistors",
       "fundingAmount": "€2.6 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 89
     },
     {
@@ -44,6 +43,7 @@
       "resolvedUrl": null,
       "company": "Nexeon",
       "fundingAmount": "€116.7 million",
+      "eventType": "투자유치",
       "score": 58
     },
     {
@@ -57,9 +57,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/31/a16z-brings-growth-fund-to-8-5b-days-after-launching-new-1-1b-fund/",
       "resolvedUrl": null,
-      "fundingAmount": "$8.5",
-      "eventType": "투자유치",
-      "industry": "AI",
       "score": 53
     },
     {
@@ -73,9 +70,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1109893/",
       "resolvedUrl": null,
-      "company": "모든 대학생의 AI",
-      "fundingAmount": "70억원",
+      "company": "튜링",
+      "fundingAmount": "70억 원",
       "fundingStage": "시리즈B",
+      "eventType": "투자유치",
       "industry": "AI",
       "score": 51
     },
@@ -90,7 +88,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1109811/",
       "resolvedUrl": null,
-      "eventType": "출시·상용화",
       "industry": "AI",
       "score": 49
     }

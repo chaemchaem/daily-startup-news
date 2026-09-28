@@ -42,8 +42,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1103254/",
       "resolvedUrl": null,
-      "company": "화학소재로",
-      "fundingStage": "시드 투자",
+      "company": "업사이클엑스",
       "eventType": "TIPS·LIPS 선정",
       "score": 90
     },
@@ -92,8 +91,9 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/03/horizon3-hits-2-billion-valuation-with-250m-series-e-as-ai-threats-escalate/",
       "resolvedUrl": null,
-      "fundingAmount": "$2 billion",
+      "fundingAmount": "$250M",
       "fundingStage": "Series E",
+      "eventType": "투자유치",
       "industry": "AI",
       "score": 50
     }
