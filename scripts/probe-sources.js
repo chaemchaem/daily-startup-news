@@ -8,7 +8,7 @@ const Parser = require("rss-parser");
 
 const { candidateSourceFeeds, categories, sourceFeeds } = require("./sources");
 const { isUrlAllowedByRobots } = require("./article-extractor");
-const { cleanText, containsKeyword, parsePublishedDate } = require("./utils");
+const { cleanText, containsKeyword, parseFeedItemDate } = require("./utils");
 
 const WINDOW_MS = 48 * 60 * 60 * 1_000;
 const BROAD_KEYWORDS = [
@@ -38,7 +38,7 @@ async function probeRss(feed) {
     .map((item) => ({
       title: cleanText(item.title || ""),
       url: item.link || item.guid || "",
-      publishedAt: parsePublishedDate(item.isoDate || item.pubDate),
+      publishedAt: parseFeedItemDate(item, { assumeKst: feed.region !== "global" }),
     }))
     .filter((item) => item.title);
   const recent = dated.filter(

@@ -1,7 +1,11 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
 
-const { cleanText, extractStructuredArticleInfo } = require("../scripts/utils");
+const {
+  cleanText,
+  extractStructuredArticleInfo,
+  parseFeedItemDate,
+} = require("../scripts/utils");
 
 const info = (title, summary = "") => extractStructuredArticleInfo({ title, summary });
 
@@ -77,6 +81,25 @@ test("문장 조각·서비스명·인물·수식어를 회사명으로 저장�
   for (const [title, summary, expected] of cases) {
     assert.equal(info(title, summary).company, expected, title);
   }
+});
+
+test("시간대 없는 국내 피드 발행일은 한국 시각으로 읽는다", () => {
+  const kst = { assumeKst: true };
+  // AI타임스처럼 "2026-09-28 18:00:00"을 주면 서버(UTC) 기준으로 9시간 미래가 되던 문제
+  assert.equal(
+    parseFeedItemDate({ pubDate: "2026-09-28 18:00:00", isoDate: "2026-09-28T18:00:00.000Z" }, kst).toISOString(),
+    "2026-09-28T09:00:00.000Z"
+  );
+  assert.equal(
+    parseFeedItemDate({ pubDate: "Mon, 28 Sep 2026 10:24:26 +0900" }, kst).toISOString(),
+    "2026-09-28T01:24:26.000Z"
+  );
+  assert.equal(
+    parseFeedItemDate({ pubDate: "Mon, 28 Sep 2026 10:24:26 GMT" }, kst).toISOString(),
+    "2026-09-28T10:24:26.000Z"
+  );
+  assert.equal(parseFeedItemDate({ isoDate: "2026-09-28T01:00:00.000Z" }, kst).toISOString(), "2026-09-28T01:00:00.000Z");
+  assert.equal(parseFeedItemDate({ pubDate: "not a date" }, kst), null);
 });
 
 test("HTML 엔티티(&ndash; 등)를 텍스트로 복원한다", () => {

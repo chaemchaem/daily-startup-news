@@ -160,5 +160,15 @@ test("검증 대기 후보 수집원은 ENABLE_CANDIDATE_SOURCES=true일 때만 
   const candidates = withCandidates.filter((feed) => feed.candidate);
   assert.ok(candidates.length > 0);
   assert.ok(candidates.every((feed) => feed.enabled && feed.feedUrl && feed.allowedUrlPatterns.length));
-  assert.ok(candidates.some((feed) => feed.sourceName === "연합뉴스"));
+  assert.ok(candidates.some((feed) => feed.sourceName === "중앙일보"));
+});
+
+test("점검을 통과한 대형 언론사는 기본 수집원에 포함되고 옛 전자신문 섹션 피드는 빠진다", () => {
+  const names = new Set(sourceFeeds.map((feed) => feed.sourceName));
+  for (const outlet of ["연합뉴스", "조선일보", "동아일보", "한국경제", "경향신문", "ZDNet Korea", "AI타임스", "스타트업투데이"]) {
+    assert.ok(names.has(outlet), `${outlet} 누락`);
+  }
+  const etnews = sourceFeeds.filter((feed) => feed.sourceName === "전자신문");
+  assert.deepEqual(etnews.map((feed) => feed.feedUrl), ["http://rss.etnews.com/Section901.xml"]);
+  assert.ok(!sourceFeeds.some((feed) => ["중앙일보", "한겨레"].includes(feed.sourceName)));
 });
