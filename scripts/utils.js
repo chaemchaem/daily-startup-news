@@ -4,10 +4,21 @@ function decodeHtmlEntities(value = "") {
   const entities = {
     amp: "&",
     apos: "'",
+    bull: "•",
     gt: ">",
+    hellip: "…",
+    laquo: "«",
+    ldquo: "“",
+    lsquo: "‘",
     lt: "<",
+    mdash: "—",
+    middot: "·",
     nbsp: " ",
+    ndash: "–",
     quot: '"',
+    raquo: "»",
+    rdquo: "”",
+    rsquo: "’",
   };
 
   return String(value)
@@ -337,95 +348,263 @@ function firstStructuredMatch(value, patterns) {
   return null;
 }
 
+// 구조화 필드는 recall보다 precision이 중요하다. 불확실하면 null을 반환한다.
+const GENERIC_ACTOR_PATTERN =
+  /^(?:스타트업|기업|회사|업체|업계|정부|당국|양국|양사|양측|기관|VC|AC|투자|투자사|지원|산업|시장|이번|해당|이들|국내|글로벌|해외|우리|대표|창업자|중기부|중소벤처기업부|과기정통부|금융위|금융위원회|미국|중국|일본|한국|유럽|인도|대만|베트남|반도체|드론|로봇|바이오|배터리|원전|성장동력)$/iu;
+const ENGLISH_NAME_DESCRIPTOR_PATTERN =
+  /^(?:American|Austrian|Belgian|British|Chinese|Danish|Dutch|Estonian|European|Finnish|French|German|Greek|Indian|Irish|Israeli|Italian|Japanese|Korean|Latvian|Lithuanian|Norwegian|Polish|Portuguese|Romanian|Spanish|Swedish|Swiss|Turkish|Ukrainian|UK|US|EU|Nordic|Baltic|Berlin|London|Paris|Stockholm|Madrid|Munich|Amsterdam|Copenhagen|Helsinki|Lisbon|Dublin|Vienna|Zurich|Profitable|Embattled|Stealth|Crypto|Startup|Scaleup|CleanTech|Cleantech|ClimateTech|Climatetech|FinTech|Fintech|HealthTech|Healthtech|DeepTech|Deeptech|PropTech|Proptech|EdTech|Edtech|InsurTech|Insurtech|BioTech|Biotech|MedTech|Medtech|FoodTech|Foodtech|AgriTech|Agritech|SpaceTech|Spacetech|Defence|Defense|Quantum|Robotics|Cybersecurity|AI)$/u;
+const KOREAN_EVENT_CLAUSE_PATTERN =
+  /투자|유치|시드|시리즈|프리[-\s]?[A-C]|선정|선발|모집|인수|합병|협약|MOU|맞손|실증|PoC|출시|상용화|결성|조성|수상|확보|진출|IPO|상장/iu;
+const INSTITUTION_SUFFIX_PATTERN =
+  /(?:부|처|청|위원회|센터|재단|공사|공단|진흥원|협회|연구원|대학교|대학|은행|시청|도청|구청|군청)$/u;
+const ENGLISH_GENERIC_ACTOR_PATTERN =
+  /^(?:startup|startups|company|firm|it|this|that|the|a|an|ai|fintech|platform|report|study|founder|founders|investors?)$/iu;
+const FUNDING_EVENT_PATTERN =
+  /투자\s*유치|투자유치|(?:투자|시드|시리즈\s*[A-H]|프리[-\s]?[A-H])[^.!?…]{0,20}(?:유치|확보)|(?:프리[-\s]?)?시리즈\s*[A-H]\s*(?:투자|유치|라운드)?|후속\s*투자|브릿지\s*투자|펀드\s*(?:결성|조성)|자금\s*조달|\braise[sd]\b|\bsecur(?:es|ed)\b\s+(?:[€$£]|\d|(?:a\s+)?(?:new\s+)?(?:funding|investment|round))|[€$£]\s*\d[\d.,]*\s*(?:million|billion|mn|bn|[MBK])?\s+(?:[Pp]re-)?(?:Series\s+[A-H]|[Ss]eed)\b|\bfirst\s+close\b|\bfinal\s+close\b|\bclose[sd]?\s+(?:a\s+)?(?:[€$£]|\d)[^!?]{0,30}\bfund\b/iu;
+const BACKGROUND_FUNDING_PATTERN =
+  /(?:recently|previously|earlier|last\s+(?:year|month|week)|had|once)\s+(?:\w+\s+){0,2}raised|앞서|지난해|이전에|과거|누적/iu;
+
+function isPlausibleCompanyName(value) {
+  const name = cleanText(value).replace(/^[‘’“”'"]+|[‘’“”'"]+$/gu, "");
+  const length = Array.from(name).length;
+  if (length < 2 || length > 30) return false;
+  const isLatinName = /^[A-Za-z0-9&._\s-]+$/u.test(name);
+  if ((name.match(/\s/gu) || []).length > (isLatinName ? 2 : 1)) return false;
+  if (/^\d+$/u.test(name) || /[…|]/u.test(name)) return false;
+  if (GENERIC_ACTOR_PATTERN.test(name) || ENGLISH_GENERIC_ACTOR_PATTERN.test(name)) {
+    return false;
+  }
+  if (INSTITUTION_SUFFIX_PATTERN.test(name)) return false;
+  // 한국어 문장 조각(조사·어미로 끝나는 구)은 회사명으로 보지 않는다.
+  if (/(?:만|은|는|을|를|의|에|로|다|요|까|죠|며|고|서)$/u.test(name) && /\s/u.test(name)) {
+    return false;
+  }
+  if (/[가-힣](?:에|에서|에게|으로)$/u.test(name)) return false;
+  return true;
+}
+
+function stripTitleDecorations(title) {
+  return cleanText(title)
+    .replace(/\s*[|｜]\s*[^|｜]{2,40}$/u, "")
+    .replace(/^(?:\[[^\]]{1,30}\]\s*)+/u, "")
+    .trim();
+}
+
 function extractStructuredCompany(title, summary) {
-  const titleText = cleanText(title).replace(/\s*\|\s*[^|]{2,40}$/u, "");
+  const titleText = stripTitleDecorations(title);
   const combined = `${titleText} ${cleanText(summary)}`.trim();
   const englishCompany = firstStructuredMatch(titleText, [
-    /\b(?:[A-Z][A-Za-z-]+-based|[A-Z]{2,}\s+startup|startup)\s+([A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(?:raises?|raised|secures?|secured|closes?|closed|extends?)\b/u,
-    /\b([A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(?:raises?|raised|secures?|secured|closes?|closed|extends?)\b/u,
+    /(?:^|[\s’'])((?:[A-Z0-9][A-Za-z0-9&._]*\s){0,3}[A-Z0-9][A-Za-z0-9&._-]{1,39})\s+(?:raises|raised|secures|secured|closes|closed|extends|extended)\b/u,
   ]);
-  if (englishCompany) return englishCompany;
+  // "Profitable Belgian CleanTech Octave.energy raises"처럼 앞에 붙은 형용사·국가·업종 수식어를 뗀다.
+  // "Repeat founder Ryan Williams raises"처럼 인물이 주어인 제목은 회사명을 비워 둔다.
+  const personSubject = englishCompany
+    ? new RegExp(
+        `\\b(?:founder|co-founder|CEO|investor|partner|entrepreneur)\\s+${englishCompany.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}\\s`,
+        "iu"
+      ).test(titleText)
+    : false;
+  const englishTokens = (personSubject ? "" : englishCompany || "").split(/\s+/u).filter(Boolean);
+  while (englishTokens.length > 1 && ENGLISH_NAME_DESCRIPTOR_PATTERN.test(englishTokens[0])) {
+    englishTokens.shift();
+  }
+  const englishName = englishTokens.join(" ");
+  if (englishName && isPlausibleCompanyName(englishName)) return englishName;
 
-  const quotedCompany = [...titleText.matchAll(/[‘“'"]([^’”'"]{2,35})[’”'"]/gu)]
+  const hasCompanyEvent =
+    /투자\s*유치|투자유치|시드|프리[-\s]?[A-C]|시리즈\s*[A-C]|선정|모집|인수|협약|실증|출시|상용화/iu.test(
+      combined
+    );
+  if (!hasCompanyEvent) return null;
+
+  // 1순위: "회사명, 사건" 형태의 국내 제목 구간. 쉼표 뒤에 사건이 있는 구간만 본다.
+  for (const clause of titleText.split(/\s*(?:…|\.{3})\s*/u)) {
+    const commaMatch = clause.match(/^([^,，]{2,40})[,，]\s*(\S.*)$/u);
+    if (!commaMatch || !KOREAN_EVENT_CLAUSE_PATTERN.test(commaMatch[2])) continue;
+    const tokens = commaMatch[1]
+      .replace(/[‘’“”'"]/gu, "")
+      .split(/\s+/u)
+      .filter(Boolean);
+    if (!tokens.length || tokens.length > 3) continue;
+    // "데이원컴퍼니의 새 성장동력", "하늘은 드론"처럼 조사가 붙은 수식 구는 회사명이 아니다.
+    if (tokens.slice(0, -1).some((token) => /(?:의|은|는|을|를|에|로)$/u.test(token))) continue;
+    const lastToken = tokens.at(-1);
+    if (/(?:의|은|는|을|를)$/u.test(lastToken)) continue;
+    if (isPlausibleCompanyName(lastToken)) return lastToken;
+  }
+
+  // 2순위: 따옴표 이름 바로 뒤에 쉼표나 주격 조사가 붙은 경우만(서비스명·슬로건 오인 방지).
+  const quotedCompany = [
+    ...titleText.matchAll(/(?:^|…\s*)[‘“'"]([^’”'"]{2,30})[’”'"](?=\s*[,，]|(?:은|는|이|가)\s)/gu),
+  ]
     .map((match) => cleanText(match[1]))
-    .find((value) => !/투자|기술|서비스|프로그램|인공태양|핵융합\s*발전/iu.test(value));
+    .find(
+      (value) =>
+        isPlausibleCompanyName(value) &&
+        !/\s/u.test(value) &&
+        !/투자|기술|서비스|프로그램|인공태양|핵융합|플랫폼|솔루션|사업/iu.test(value)
+    );
   if (quotedCompany) return quotedCompany;
 
-  const actorFromSentence = firstStructuredMatch(combined, [
-    /(?:^|[.!?]\s*)([A-Za-z0-9가-힣][A-Za-z0-9가-힣&·._-]{1,39})(?:은|는|이|가)\s+(?=[^.!?]{0,45}(?:투자\s*유치|유치|선정|모집|결성|출시|인수|협약|실증))/u,
+  // 3순위: 요약 첫 문장의 주어가 곧바로 투자·선정 등의 사건으로 이어지는 경우.
+  const actorFromSentence = firstStructuredMatch(cleanText(summary), [
+    /^([A-Za-z0-9가-힣][A-Za-z0-9가-힣&·._-]{1,29})(?:은|는|이|가)\s+(?=[^.!?]{0,45}(?:투자\s*유치|유치|선정|모집|결성|출시|인수|협약|실증))/u,
   ]);
-  if (actorFromSentence) return actorFromSentence;
+  if (actorFromSentence && isPlausibleCompanyName(actorFromSentence)) {
+    return actorFromSentence;
+  }
+  return null;
+}
 
-  const leadingClause = titleText.split(/[,，…]|\.{3}/u)[0]?.trim() || "";
-  const tokens = leadingClause
-    .replace(/[‘’“”'"]/gu, "")
-    .split(/\s+/u)
+function splitStructuredSegments(value) {
+  return cleanText(value)
+    .replace(/(\d)\.(\d)/gu, "$1․$2")
+    .split(/(?<=[.!?。])\s+|\s*[…|｜]\s*|\.{3}/u)
+    .map((segment) => segment.replace(/․/gu, ".").trim())
     .filter(Boolean);
-  const lastToken = tokens.at(-1) || "";
-  if (
-    lastToken.length >= 2 &&
-    lastToken.length <= 40 &&
-    !/^(?:스타트업|기업|정부|기관|VC|AC|투자|지원|산업|시장)$/iu.test(lastToken) &&
-    /투자\s*유치|투자유치|시드|프리[-\s]?[A-C]|시리즈\s*[A-C]|선정|모집|인수|협약|실증/iu.test(
-      combined
-    )
-  ) {
-    return lastToken;
+}
+
+function normalizeKoreanAmount(value) {
+  let amount = cleanText(value).replace(/\s+/gu, " ").trim();
+  if (!/원$/u.test(amount)) amount = `${amount} 원`;
+  return amount
+    .replace(/(\d)\s*(조|억|천만|만)\s*원$/u, "$1$2 원")
+    .replace(/\s+/gu, " ")
+    .trim();
+}
+
+function extractFundingAmountFromSegment(segment) {
+  // 기업가치(밸류에이션)·매출 같은 다른 금액은 투자금으로 보지 않는다.
+  const isNonFundingAmount = (before, after) =>
+    /^\s*(?:valuation|post-money|pre-money|in\s+(?:revenue|sales|ARR))/iu.test(after) ||
+    /(?:기업가치|밸류에이션|몸값|매출|시가총액|valued\s+at|valuation\s+of)\s*(?:은|는|이|가|을|를)?\s*$/iu.test(before) ||
+    /^\s*(?:의\s*)?(?:기업가치|밸류|매출)/u.test(after);
+
+  for (const koreanMatch of segment.matchAll(
+    /((?:약\s*|총\s*)?\d[\d,.]*\s*(?:조|억|천만|만)(?:\s*\d[\d,.]*\s*(?:억|천만|만))*)\s*(원)?/gu
+  )) {
+    const before = segment.slice(0, koreanMatch.index);
+    const after = segment.slice(koreanMatch.index + koreanMatch[0].length);
+    const hasCurrencyContext =
+      Boolean(koreanMatch[2]) || /^\s*(?:규모|투자|유치|시드|시리즈|프리|펀드|의\s*(?:투자|자금))/u.test(after);
+    if (hasCurrencyContext && !isNonFundingAmount(before, after)) {
+      return normalizeKoreanAmount(koreanMatch[1]);
+    }
+  }
+
+  const foreignPatterns = [
+    /((?:US|A|C)?[€$£]\s*\d+(?:[.,]\d+)?\s*(?:million|billion|mn|bn|[MBK])?)(?![A-Za-z0-9])/gu,
+    /(\d+(?:[.,]\d+)?\s*(?:million|billion)\s*(?:euros?|dollars?|pounds?))/giu,
+  ];
+  for (const pattern of foreignPatterns) {
+    for (const match of segment.matchAll(pattern)) {
+      const before = segment.slice(0, match.index);
+      const after = segment.slice(match.index + match[0].length);
+      // "raised $3."처럼 소수점 뒤가 잘린 금액은 저장하지 않는다.
+      if (/^[.,]\s*$/u.test(after) || /^[.,]\d/u.test(after)) continue;
+      if (isNonFundingAmount(before, after)) continue;
+      return cleanText(match[1]).replace(/\s+/gu, " ");
+    }
+  }
+  return null;
+}
+
+function extractFundingStageFromSegment(segment) {
+  const patterns = [
+    [/\b((?:[Pp]re[-\s]?)?[Ss]eed)(?:\s+round)?\b/u, (value) => value],
+    [/\b[Ss]eries\s+([A-H])\b/u, (value) => `Series ${value}`],
+    [/(프리[-\s]?시리즈\s*[A-H]|프리[-\s]?[A-H](?![A-Za-z]))/u, (value) => value.replace(/\s+/gu, "")],
+    [/(?:^|[^A-Za-z])시리즈\s*([A-Ha-h])(?![A-Za-z])/u, (value) => `시리즈${value.toUpperCase()}`],
+    [/(시드(?:\s*투자|\s*라운드)?)/u, (value) => value],
+    [/(브릿지\s*(?:투자|라운드)|후속\s*투자|Pre[-\s]?IPO)/iu, (value) => value],
+  ];
+  for (const [pattern, format] of patterns) {
+    const match = segment.match(pattern);
+    if (match?.[1]) return cleanText(format(match[1]));
+  }
+  return null;
+}
+
+const FUND_FORMATION_PATTERN =
+  /펀드\s*(?:결성|조성)|(?:first|final)\s+close|\bclose[sd]?\b[^!?]{0,40}\bfund\b/iu;
+
+const STRUCTURED_EVENT_PATTERNS = [
+  ["투자유치", FUNDING_EVENT_PATTERN],
+  ["펀드결성", FUND_FORMATION_PATTERN],
+  ["TIPS·LIPS 선정", /(?:TIPS|팁스|LIPS|립스).{0,35}(?:선정|선발)|(?:선정|선발).{0,35}(?:TIPS|팁스|LIPS|립스)/u],
+  ["인수·M&A", /인수(?!인계)|합병|M&A|\bacquir(?:es|ed|ing)\b/u],
+  ["선정", /선정|선발/u],
+  ["모집", /모집|참가사\s*접수|지원기업\s*접수/u],
+  ["실증·PoC", /\bPoC\b|실증|기술\s*검증/u],
+  ["출시·상용화", /출시|상용화|\blaunch(?:es|ed)\b/u],
+  ["협약", /협약|MOU|맞손|\bpartners?\s+with\b/u],
+  ["세컨더리", /세컨더리|구주|LP\s*지분/u],
+  ["지원사업", /지원사업|사업화\s*지원|글로벌\s*진출\s*지원|창업기업.{0,25}지원/u],
+];
+
+function detectStructuredEvent(value) {
+  const text = cleanText(value);
+  for (const [label, pattern] of STRUCTURED_EVENT_PATTERNS) {
+    if (!pattern.test(text)) continue;
+    // 투자유치 패턴은 펀드 결성 표현도 포함하므로, 투자유치 표현이 없으면 펀드결성으로 본다.
+    if (
+      label === "투자유치" &&
+      FUND_FORMATION_PATTERN.test(text) &&
+      !/투자\s*유치|투자유치|\braise[sd]?\b/iu.test(text)
+    ) {
+      return "펀드결성";
+    }
+    return label;
   }
   return null;
 }
 
 function extractStructuredArticleInfo({ title = "", summary = "" } = {}) {
-  const text = cleanText(`${title} ${summary}`);
-  const fundingAmount = firstStructuredMatch(text, [
-    /((?:약\s*|총\s*)?\d[\d,.]*\s*(?:조|억|만)\s*원)/iu,
-    /([€$£]\s*\d+(?:[.,]\d+)?\s*(?:million|billion|m|bn)?)/iu,
-    /(\d+(?:[.,]\d+)?\s*(?:million|billion)\s*(?:euros?|dollars?|pounds?))/iu,
-  ]);
-  const fundingStage = firstStructuredMatch(text, [
-    /((?:pre[-\s]?)?seed(?:\s+round)?)/iu,
-    /((?:series|시리즈)\s*[A-H])/iu,
-    /(프리[-\s]?[A-H])/iu,
-    /(시드(?:\s*투자|\s*라운드)?)/iu,
-    /(브릿지(?:\s*투자|\s*라운드)?|후속\s*투자|Pre[-\s]?IPO)/iu,
-  ]);
+  const titleText = stripTitleDecorations(title);
+  const summaryText = cleanText(summary);
 
-  let eventType = null;
-  const eventPatterns = [
-    ["투자유치", /투자\s*유치|투자유치|\braises?\b|\braised\b|\bsecures?\b.{0,25}\bfunding\b/iu],
-    ["펀드결성", /펀드\s*(?:결성|조성)|(?:first|final)\s+close/iu],
-    ["TIPS·LIPS 선정", /(?:TIPS|팁스|LIPS|립스).{0,35}(?:선정|선발)|(?:선정|선발).{0,35}(?:TIPS|팁스|LIPS|립스)/iu],
-    ["선정", /선정|선발|확정/iu],
-    ["모집", /모집|참가사\s*접수|지원기업\s*접수/iu],
-    ["실증·PoC", /\bPoC\b|실증|기술\s*검증/iu],
-    ["출시·상용화", /출시|상용화|공개/iu],
-    ["인수·M&A", /인수|합병|M&A|acquir/iu],
-    ["협약", /협약|MOU|맞손|partnership/iu],
-    ["세컨더리", /세컨더리|구주|LP\s*지분|회수시장/iu],
-    ["지원사업", /지원사업|사업화\s*지원|글로벌\s*진출\s*지원|창업기업.{0,25}지원/iu],
-  ];
-  for (const [label, pattern] of eventPatterns) {
-    if (pattern.test(text)) {
-      eventType = label;
-      break;
+  // 사건 유형은 제목을 우선한다. 제목에서 확인되지 않을 때만 요약의 주된 사건을 쓴다.
+  let eventType = detectStructuredEvent(titleText);
+  if (!eventType && summaryText) {
+    const summaryEvent = detectStructuredEvent(summaryText);
+    const isBackgroundFunding =
+      summaryEvent === "투자유치" && BACKGROUND_FUNDING_PATTERN.test(summaryText);
+    eventType = isBackgroundFunding ? null : summaryEvent;
+  }
+
+  // 금액·라운드는 투자 사건이 확인되고, 같은 문장 안에 투자 표현이 있을 때만 저장한다.
+  let fundingAmount = null;
+  let fundingStage = null;
+  if (["투자유치", "펀드결성", "세컨더리"].includes(eventType)) {
+    const segments = [...splitStructuredSegments(titleText), ...splitStructuredSegments(summaryText)];
+    for (const segment of segments) {
+      const isFundingSegment =
+        FUNDING_EVENT_PATTERN.test(segment) ||
+        /펀드|세컨더리|구주|시드|시리즈|Series|[Ss]eed/u.test(segment);
+      if (!isFundingSegment) continue;
+      if (BACKGROUND_FUNDING_PATTERN.test(segment) && segment !== titleText) continue;
+      fundingAmount ||= extractFundingAmountFromSegment(segment);
+      fundingStage ||= eventType === "투자유치" ? extractFundingStageFromSegment(segment) : null;
+      if (fundingAmount && fundingStage) break;
     }
   }
 
+  // 산업은 제목에서만 판단한다. 요약의 부수적인 언급으로 산업을 붙이지 않는다.
   let industry = null;
   const industryPatterns = [
-    ["AI", /(?:생성형|피지컬|의료|산업용)?\s*AI|인공지능/iu],
-    ["바이오·헬스케어", /바이오|헬스케어|의료|신약|ADC/iu],
-    ["반도체", /반도체|팹리스|칩렛/iu],
-    ["로봇", /로봇|로보틱스/iu],
-    ["기후테크·ESG", /기후테크|클린테크|CCUS|탄소|ESG/iu],
-    ["우주항공", /우주항공|항공우주|위성|로켓/iu],
-    ["농식품", /농식품|푸드테크|애그테크|스마트팜/iu],
-    ["사이버보안", /사이버\s*보안|cybersecurity/iu],
-    ["핀테크", /핀테크|fintech/iu],
-    ["SaaS", /\bSaaS\b|소프트웨어\s*서비스/iu],
+    ["AI", /(?<![A-Za-z])AI(?![A-Za-z])|인공지능|[Aa]rtificial [Ii]ntelligence/u],
+    ["바이오·헬스케어", /바이오|헬스케어|의료|신약|(?<![A-Za-z])ADC(?![A-Za-z])|\b[Bb]iotech\b|\b[Hh]ealthcare\b/u],
+    ["반도체", /반도체|팹리스|칩렛|\b[Ss]emiconductors?\b|\b[Cc]hips?\b/u],
+    ["로봇", /로봇|로보틱스|\b[Rr]obot(?:s|ics)?\b/u],
+    ["기후테크·ESG", /기후테크|클린테크|CCUS|탄소|(?<![A-Za-z])ESG(?![A-Za-z])|\b[Cc]limate\s*tech\b/u],
+    ["우주항공", /우주항공|항공우주|위성|로켓|\b[Ss]atellites?\b|\b[Ss]pace\s*tech\b/u],
+    ["농식품", /농식품|푸드테크|애그테크|스마트팜|\b[Aa]gri(?:tech|food)\b|\b[Ff]oodtech\b/u],
+    ["사이버보안", /사이버\s*보안|\b[Cc]ybersecurity\b/u],
+    ["핀테크", /핀테크|\b[Ff]intech\b/u],
+    ["SaaS", /(?<![A-Za-z])SaaS(?![A-Za-z])/u],
   ];
   for (const [label, pattern] of industryPatterns) {
-    if (pattern.test(text)) {
+    if (pattern.test(titleText)) {
       industry = label;
       break;
     }
@@ -433,11 +612,8 @@ function extractStructuredArticleInfo({ title = "", summary = "" } = {}) {
 
   return {
     company: extractStructuredCompany(title, summary),
-    fundingAmount:
-      fundingAmount && !/[€$£]\s*\d+[.,]$/u.test(fundingAmount)
-        ? fundingAmount.replace(/\s+/gu, " ").trim()
-        : null,
-    fundingStage: fundingStage?.replace(/\s+/gu, " ").trim() || null,
+    fundingAmount,
+    fundingStage,
     eventType,
     industry,
   };

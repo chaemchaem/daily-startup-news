@@ -5,173 +5,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="최근 48시간의 주요 스타트업·VC·창업 생태계 뉴스를 정리한 데일리 브리핑"
+      content="매일 오전 9시 기준 직전 48시간의 스타트업·벤처투자 뉴스를 골라 요약한 데일리 브리핑"
     />
+    <meta name="color-scheme" content="light dark" />
     <title>Daily Startup &amp; VC Briefing</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <!--
+      ASSET_VERSION: style.css 또는 app.js를 수정하면 아래 두 ?v= 값을 같은 새 값으로 올린다.
+      GitHub Pages에서 새 index.html과 브라우저에 남은 옛 CSS/JS가 섞이는 문제를 막기 위함이다.
+    -->
+    <link rel="stylesheet" href="style.css?v=20260928-2" />
+    <script src="app.js?v=20260928-2" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="shell header-inner">
-        <div class="hero-copy">
-          <div class="eyebrow">AUTOMATED RESEARCH DASHBOARD</div>
-          <h1>Daily Startup &amp; VC Briefing</h1>
-          <p class="subtitle">
-            매일 오전 9시 기준 최근 48시간의 스타트업·VC 뉴스를 자동 수집·요약
-          </p>
-        </div>
+    <a class="skip-link" href="#stories">기사 목록으로 건너뛰기</a>
 
-        <aside class="hero-panel" aria-label="브리핑 기준 정보">
-          <div class="hero-panel-heading">
-            <p class="hero-panel-label">Briefing Snapshot</p>
-            <span id="collection-health" class="collection-health is-loading" role="status">
-              수집 상태 확인 중
-            </span>
-          </div>
-          <dl class="brief-meta">
-            <div>
-              <dt>마지막 업데이트</dt>
-              <dd id="generated-at">—</dd>
-            </div>
-            <div>
-              <dt>수집 기간</dt>
-              <dd id="collection-range">—</dd>
-            </div>
-            <div>
-              <dt>전체 기사</dt>
-              <dd><strong id="total-count">0</strong>건</dd>
-            </div>
-          </dl>
-        </aside>
+    <header class="masthead">
+      <div class="wrap masthead-top">
+        <p id="dateline" class="dateline">—</p>
+        <p id="run-status" class="run-status is-loading" role="status">수집 상태 확인 중</p>
       </div>
+      <div class="wrap masthead-title">
+        <h1>Daily Startup &amp; VC Briefing</h1>
+        <p class="tagline">
+          스타트업·벤처투자 뉴스를 매일 한 장으로 정리합니다.
+          <span id="range-text" class="range-text"></span>
+        </p>
+      </div>
+      <nav class="wrap section-nav" aria-label="섹션 바로가기">
+        <a href="#front">오늘의 핵심</a>
+        <a href="#stories">전체 기사</a>
+        <a href="#deals">투자 라운드</a>
+        <a href="#trends">흐름</a>
+        <a href="#archive">지난 브리핑</a>
+        <a href="#status">수집 현황</a>
+      </nav>
     </header>
 
-    <main class="shell page-content">
-      <section aria-labelledby="category-summary-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">OVERVIEW</p>
-            <h2 id="category-summary-title">브리핑 요약 지표</h2>
-          </div>
-          <p id="data-status" class="data-status" role="status">데이터를 불러오는 중입니다.</p>
+    <main class="wrap">
+      <section id="front" class="front" aria-labelledby="front-title">
+        <div class="section-head">
+          <h2 id="front-title" class="section-label">오늘의 핵심</h2>
+          <p id="issue-note" class="section-note"></p>
         </div>
-        <div id="statistics" class="statistics" aria-live="polite"></div>
+        <div id="front-grid" class="front-grid" aria-live="polite">
+          <p class="empty-note">브리핑을 불러오는 중입니다.</p>
+        </div>
+        <p id="numbers-line" class="numbers-line" aria-live="polite"></p>
       </section>
 
-      <section class="featured-section" aria-labelledby="featured-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">EDITOR'S PICK</p>
-            <h2 id="featured-title">오늘의 핵심 3건</h2>
-          </div>
-          <p class="featured-caption">구체성과 중요도, 카테고리 균형을 함께 반영했습니다.</p>
-        </div>
-        <div id="featured-grid" class="featured-grid" aria-live="polite"></div>
-      </section>
-
-      <section class="news-section" aria-labelledby="news-list-title">
-        <div class="news-toolbar">
-          <div>
-            <p class="section-kicker">LATEST NEWS</p>
-            <h2 id="news-list-title">주요 뉴스</h2>
-          </div>
-          <p id="visible-count" class="visible-count" aria-live="polite"></p>
-        </div>
-
-        <div
-          id="filters"
-          class="filters"
-          role="group"
-          aria-label="뉴스 카테고리 필터"
-        ></div>
-
-        <div class="discovery-toolbar" aria-label="뉴스 검색 및 정렬">
-          <label class="search-field" for="news-search">
-            <span class="visually-hidden">기사 검색</span>
-            <input
-              id="news-search"
-              type="search"
-              placeholder="제목, 요약, 출처, 기업명 검색"
-              autocomplete="off"
-            />
-          </label>
-
-          <div id="region-filters" class="region-filters" role="group" aria-label="국내·해외 필터">
-            <button type="button" data-region="all" aria-pressed="true">전체</button>
-            <button type="button" data-region="domestic" aria-pressed="false">국내</button>
-            <button type="button" data-region="overseas" aria-pressed="false">해외</button>
+      <div class="columns">
+        <section id="stories" class="stories" aria-labelledby="stories-title">
+          <div class="section-head">
+            <h2 id="stories-title" class="section-label">전체 기사</h2>
+            <p id="visible-count" class="section-note" aria-live="polite"></p>
           </div>
 
-          <label class="sort-field" for="news-sort">
-            <span>정렬</span>
-            <select id="news-sort">
-              <option value="importance">중요도순</option>
-              <option value="latest">최신순</option>
-            </select>
-          </label>
-        </div>
-
-        <div id="news-grid" class="news-grid" aria-live="polite">
-          <div class="state-panel">뉴스 데이터를 준비하고 있습니다.</div>
-        </div>
-      </section>
-
-      <section class="archive-panel" aria-labelledby="viewing-date">
-        <div class="archive-copy">
-          <p class="section-kicker">BRIEFING ARCHIVE</p>
-          <div class="archive-title-row">
-            <h2 id="viewing-date">최신 브리핑</h2>
-            <span id="latest-badge" class="latest-badge" hidden>최신</span>
+          <div class="controls">
+            <div id="category-tabs" class="category-tabs" role="group" aria-label="카테고리"></div>
+            <div class="control-row">
+              <label class="search-field" for="news-search">
+                <span class="visually-hidden">기사 검색</span>
+                <input
+                  id="news-search"
+                  type="search"
+                  placeholder="기업명, 제목, 요약, 매체 검색"
+                  autocomplete="off"
+                />
+              </label>
+              <div id="region-filters" class="segmented" role="group" aria-label="국내·해외">
+                <button type="button" data-region="all" aria-pressed="true">전체</button>
+                <button type="button" data-region="domestic" aria-pressed="false">국내</button>
+                <button type="button" data-region="overseas" aria-pressed="false">해외</button>
+              </div>
+              <label class="sort-field" for="news-sort">
+                <span class="visually-hidden">정렬</span>
+                <select id="news-sort">
+                  <option value="importance">중요도순</option>
+                  <option value="latest">최신순</option>
+                </select>
+              </label>
+            </div>
           </div>
-          <p id="archive-status" class="archive-status" role="status">
-            아카이브 날짜를 확인하는 중입니다.
-          </p>
+
+          <ol id="story-list" class="story-list" aria-live="polite"></ol>
+        </section>
+
+        <aside class="sidebar" aria-label="투자 라운드와 흐름">
+          <div class="period-row">
+            <p class="period-label">집계 기간</p>
+            <div id="period-toggle" class="segmented" role="group" aria-label="집계 기간">
+              <button type="button" data-period="weekly" aria-pressed="true">최근 7일</button>
+              <button type="button" data-period="monthly" aria-pressed="false">최근 30일</button>
+            </div>
+          </div>
+
+          <section id="deals" class="side-section" aria-labelledby="deals-title">
+            <h2 id="deals-title" class="section-label">투자 라운드</h2>
+            <p id="deal-summary" class="side-note"></p>
+            <div class="table-scroll">
+              <table class="deal-table">
+                <caption class="visually-hidden">기간 내 투자유치 기사</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">기업</th>
+                    <th scope="col">라운드</th>
+                    <th scope="col" class="num">금액</th>
+                  </tr>
+                </thead>
+                <tbody id="deal-rows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="trends" class="side-section" aria-labelledby="trends-title">
+            <h2 id="trends-title" class="section-label">흐름</h2>
+            <p id="trend-summary" class="side-note"></p>
+            <figure class="chart-block">
+              <figcaption>일별 브리핑 기사 수</figcaption>
+              <div id="daily-chart" class="column-chart"></div>
+            </figure>
+            <figure class="chart-block">
+              <figcaption>제목에 드러난 분야</figcaption>
+              <div id="industry-bars" class="bar-list"></div>
+            </figure>
+            <figure class="chart-block">
+              <figcaption>사건 유형</figcaption>
+              <div id="event-bars" class="bar-list"></div>
+            </figure>
+            <figure class="chart-block">
+              <figcaption>많이 실린 매체</figcaption>
+              <div id="source-bars" class="bar-list"></div>
+            </figure>
+          </section>
+        </aside>
+      </div>
+
+      <section id="archive" class="archive" aria-labelledby="archive-title">
+        <div class="section-head">
+          <h2 id="archive-title" class="section-label">지난 브리핑</h2>
+          <p id="archive-status" class="section-note" role="status"></p>
         </div>
-
-        <div
-          id="archive-tabs"
-          class="archive-tabs"
-          role="tablist"
-          aria-label="아카이브 날짜 탭"
-        ></div>
-
+        <div id="archive-strip" class="archive-strip" role="group" aria-label="최근 브리핑 날짜"></div>
         <div class="archive-controls">
           <label class="date-field" for="briefing-date">
-            <span>브리핑 날짜</span>
-            <input id="briefing-date" type="date" aria-describedby="archive-status" />
+            <span>날짜로 찾기</span>
+            <input id="briefing-date" type="date" />
           </label>
-          <button id="latest-button" class="latest-button" type="button">최신 보기</button>
+          <button id="latest-button" class="text-button" type="button">최신 브리핑으로</button>
         </div>
-      </section>
-
-      <section class="automation-section" aria-labelledby="automation-title">
-        <div>
-          <p class="section-kicker">AUTOMATION</p>
-          <h2 id="automation-title">자동화 방식</h2>
-        </div>
-        <ul class="automation-list" aria-label="자동화 핵심 구성">
-          <li>
-            <strong>Scheduled GitHub Actions</strong>
-            <span>매일 KST 09:15에 수집 스크립트를 자동 실행합니다.</span>
-          </li>
-          <li>
-            <strong>KST 09:00 기준 최근 48시간</strong>
-            <span>실행 지연과 무관하게 브리핑 기준 시각을 고정합니다.</span>
-          </li>
-          <li>
-            <strong>Local extractive summary</strong>
-            <span>OpenAI API 없이도 본문 핵심 문장을 추출해 요약할 수 있습니다.</span>
-          </li>
-        </ul>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell footer-inner">
-        <p>RSS 메타데이터를 바탕으로 구성된 요약 브리핑입니다.</p>
-        <p>기사 저작권은 각 언론사에 있습니다.</p>
-        <p>Daily Startup &amp; VC Briefing · Operated by Chaemin Lim</p>
+    <footer id="status" class="colophon">
+      <div class="wrap colophon-grid">
+        <section aria-labelledby="status-title">
+          <h2 id="status-title" class="section-label">수집 현황</h2>
+          <p id="status-summary" class="colophon-text">수집 상태를 불러오는 중입니다.</p>
+          <details id="source-details" class="source-details">
+            <summary>수집원별 상세</summary>
+            <div class="table-scroll">
+              <table class="source-table">
+                <caption class="visually-hidden">수집원별 마지막 실행 결과</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">수집원</th>
+                    <th scope="col">상태</th>
+                    <th scope="col" class="num">원본</th>
+                    <th scope="col" class="num">기간 내</th>
+                    <th scope="col" class="num">통과</th>
+                    <th scope="col" class="num">최종</th>
+                    <th scope="col">비고</th>
+                  </tr>
+                </thead>
+                <tbody id="source-rows"></tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+
+        <section aria-labelledby="about-title">
+          <h2 id="about-title" class="section-label">이 브리핑에 대해</h2>
+          <p class="colophon-text">
+            매일 한국시간 오전 9시를 기준으로 직전 48시간 동안 나온 기사를 GitHub Actions가 모으고,
+            스타트업·투자 생태계와 직접 관련된 기사만 골라 정적 페이지로 게시합니다. 예약 실행이 늦어져도
+            수집 기간은 항상 오전 9시 기준으로 고정됩니다.
+          </p>
+          <p class="colophon-text">
+            요약은 기사 본문에서 핵심 문장을 그대로 뽑은 것이며 외부 AI API를 쓰지 않습니다. 기업명·투자
+            금액·라운드는 제목과 요약에 명시된 경우에만 표시합니다.
+          </p>
+          <p class="fine-print">
+            기사 저작권은 각 언론사에 있습니다. 중요한 판단 전에는 원문을 확인하세요.
+            · Operated by Chaemin Lim
+          </p>
+        </section>
       </div>
     </footer>
   </body>

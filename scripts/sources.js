@@ -221,6 +221,8 @@ const allowedSources = [
   "AI타임스",
   "에이아이타임스",
   "뉴시스",
+  "조선일보",
+  "경향신문",
   "스타트업투데이",
   "더벨",
   "딜사이트",
@@ -303,6 +305,8 @@ function defineSource(config) {
         ".social-share",
       ],
     maxItems: config.maxItems || 20,
+    // 최종 브리핑에서 같은 매체가 차지할 수 있는 최대 건수. 스타트업 전문 매체·공공기관만 3건.
+    maxFinalItems: config.maxFinalItems ?? 2,
     sourceWeight: config.sourceWeight ?? 4,
     fetchDelayMs: config.fetchDelayMs ?? 500,
     fetchTimeoutMs: config.fetchTimeoutMs || 10_000,
@@ -313,13 +317,139 @@ function defineSource(config) {
     verifiedBy: config.verifiedBy || "official_site",
     verificationNote: config.verificationNote || "",
     reportWhenDisabled: config.reportWhenDisabled === true,
+    candidate: config.candidate === true,
   };
 }
+
+// 공식 RSS 주소를 아직 실제 응답으로 검증하지 못한 대형 언론사 후보.
+// 기본 비활성이며 ENABLE_CANDIDATE_SOURCES=true일 때만 수집한다.
+// `pnpm run probe:sources`(또는 "Probe news sources" 워크플로)로 응답을 확인한 뒤
+// 정상인 항목은 candidate 표시를 지우고 일반 수집원으로 옮긴다.
+function defineCandidateSource(config) {
+  return defineSource({
+    type: "rss",
+    categoryHints: allDomesticCategories,
+    bodySelector: "article, #articleBody, .article-body, .article_body, main",
+    sourceWeight: 3,
+    maxItems: 40,
+    ...config,
+    enabled: false,
+    candidate: true,
+    verifiedBy: "pending_probe",
+    verificationNote:
+      config.verificationNote || "공식 RSS 안내 기준 주소. 실제 응답·robots 확인 전까지 후보로 둔다.",
+  });
+}
+
+const candidateSourceFeeds = [
+  defineCandidateSource({
+    name: "연합뉴스 경제",
+    sourceName: "연합뉴스",
+    feedUrl: "https://www.yna.co.kr/rss/economy.xml",
+    baseUrl: "https://www.yna.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.|m\\.)?yna\\.co\\.kr/view/"],
+    bodySelector: ".story-news, #articleWrap, article",
+  }),
+  defineCandidateSource({
+    name: "연합뉴스 산업",
+    sourceName: "연합뉴스",
+    feedUrl: "https://www.yna.co.kr/rss/industry.xml",
+    baseUrl: "https://www.yna.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.|m\\.)?yna\\.co\\.kr/view/"],
+    bodySelector: ".story-news, #articleWrap, article",
+  }),
+  defineCandidateSource({
+    name: "조선일보 경제",
+    sourceName: "조선일보",
+    feedUrl: "https://www.chosun.com/arc/outboundfeeds/rss/category/economy/?outputType=xml",
+    baseUrl: "https://www.chosun.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.|biz\\.)?chosun\\.com/"],
+  }),
+  defineCandidateSource({
+    name: "중앙일보 경제",
+    sourceName: "중앙일보",
+    feedUrl: "https://rss.joins.com/joins_money_list.xml",
+    baseUrl: "https://www.joongang.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.|news\\.)?(?:joongang\\.co\\.kr|joins\\.com)/"],
+    verificationNote: "구 joins.com RSS 주소. 사이트 개편으로 변경됐을 가능성이 커서 반드시 확인 필요",
+  }),
+  defineCandidateSource({
+    name: "동아일보 경제",
+    sourceName: "동아일보",
+    feedUrl: "https://rss.donga.com/economy.xml",
+    baseUrl: "https://www.donga.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?donga\\.com/"],
+  }),
+  defineCandidateSource({
+    name: "한국경제 경제",
+    sourceName: "한국경제",
+    feedUrl: "https://www.hankyung.com/feed/economy",
+    baseUrl: "https://www.hankyung.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?hankyung\\.com/article/"],
+  }),
+  defineCandidateSource({
+    name: "한국경제 IT",
+    sourceName: "한국경제",
+    feedUrl: "https://www.hankyung.com/feed/it",
+    baseUrl: "https://www.hankyung.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?hankyung\\.com/article/"],
+  }),
+  defineCandidateSource({
+    name: "한겨레 경제",
+    sourceName: "한겨레",
+    feedUrl: "https://www.hani.co.kr/rss/economy/",
+    baseUrl: "https://www.hani.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?hani\\.co\\.kr/arti/"],
+  }),
+  defineCandidateSource({
+    name: "경향신문 경제",
+    sourceName: "경향신문",
+    feedUrl: "https://www.khan.co.kr/rss/rssdata/economy_news.xml",
+    baseUrl: "https://www.khan.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?khan\\.co\\.kr/"],
+  }),
+  defineCandidateSource({
+    name: "전자신문 전체",
+    sourceName: "전자신문",
+    feedUrl: "http://rss.etnews.com/Section901.xml",
+    baseUrl: "https://www.etnews.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?etnews\\.com/\\d+"],
+    bodySelector: ".article_txt, #articleBody, article",
+    sourceWeight: 4,
+    verificationNote: "기존 22069 섹션 피드가 최근 한 달 필터 통과 0건이라 전체 기사 피드를 후보로 둔다",
+  }),
+  defineCandidateSource({
+    name: "ZDNet Korea",
+    feedUrl: "https://feeds.feedburner.com/zdkorea",
+    baseUrl: "https://zdnet.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?zdnet\\.co\\.kr/view/"],
+    sourceWeight: 4,
+  }),
+  defineCandidateSource({
+    name: "AI타임스",
+    feedUrl: "https://www.aitimes.com/rss/allArticle.xml",
+    baseUrl: "https://www.aitimes.com",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?aitimes\\.com/news/articleView\\.html"],
+    categoryHints: ["농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주", "스타트업 / 벤처기업 / 초기창업", "VC / AC"],
+    bodySelector: "#article-view-content-div, .article-body, article",
+    sourceWeight: 5,
+  }),
+  defineCandidateSource({
+    name: "스타트업투데이",
+    feedUrl: "https://www.startuptoday.kr/rss/allArticle.xml",
+    baseUrl: "https://www.startuptoday.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?startuptoday\\.kr/news/articleView\\.html"],
+    bodySelector: "#article-view-content-div, .article-body, article",
+    sourceWeight: 8,
+    maxFinalItems: 3,
+  }),
+];
 
 const configuredSourceFeeds = [
   defineSource({
     name: "벤처스퀘어",
     type: "rss",
+    maxFinalItems: 3,
     feedUrl: "https://www.venturesquare.net/rss/news",
     baseUrl: "https://www.venturesquare.net",
     allowedUrlPatterns: ["^https?://(?:www\\.)?venturesquare\\.net/\\d+"],
@@ -352,6 +482,7 @@ const configuredSourceFeeds = [
   }),
   defineSource({
     name: "중소벤처기업부 RSS 86",
+    maxFinalItems: 3,
     sourceName: "중소벤처기업부",
     type: "rss",
     feedUrl: "https://mss.go.kr/rss/smba/board/86.do",
@@ -364,6 +495,7 @@ const configuredSourceFeeds = [
   }),
   defineSource({
     name: "중소벤처기업부 RSS 310",
+    maxFinalItems: 3,
     sourceName: "중소벤처기업부",
     type: "rss",
     feedUrl: "https://mss.go.kr/rss/smba/board/310.do",
@@ -418,6 +550,7 @@ const configuredSourceFeeds = [
     name: "플래텀",
     sourceName: "플래텀",
     type: "html_list",
+    maxFinalItems: 3,
     listUrl: "https://platum.kr/",
     baseUrl: "https://platum.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.)?platum\\.kr/(?:archives/)?\\d+"],
@@ -446,6 +579,7 @@ const configuredSourceFeeds = [
     name: "와우테일",
     sourceName: "와우테일",
     type: "html_list",
+    maxFinalItems: 3,
     listUrl: "https://wowtale.net/",
     baseUrl: "https://wowtale.net",
     allowedUrlPatterns: ["^https?://(?:www\\.)?wowtale\\.net/(?:archives/)?\\d+"],
@@ -488,6 +622,7 @@ const configuredSourceFeeds = [
   defineSource({
     name: "창업진흥원",
     type: "html_list",
+    maxFinalItems: 3,
     listUrl: "https://www.kised.or.kr/board.es?bid=0006&list_no=&mid=a10305000000&tag=",
     baseUrl: "https://www.kised.or.kr",
     allowedUrlPatterns: [
@@ -640,9 +775,9 @@ const configuredSourceFeeds = [
   }),
   // 아래 매체는 공식 RSS/목록 주소 또는 이용 조건을 재확인하기 전까지 비활성화한다.
   ...[
-    "연합뉴스", "뉴스1", "한국경제", "서울경제", "이데일리", "파이낸셜뉴스",
-    "머니투데이", "아시아경제", "헤럴드경제", "조선비즈", "중앙일보", "동아일보",
-    "스타트업투데이", "블로터", "ZDNet Korea", "디지털데일리", "IT조선", "테크M",
+    "뉴스1", "서울경제", "이데일리", "파이낸셜뉴스",
+    "머니투데이", "아시아경제", "헤럴드경제", "조선비즈",
+    "블로터", "디지털데일리", "IT조선", "테크M",
     "아웃스탠딩", "더벨", "딜사이트", "인베스트조선", "마켓인사이트",
     "TIPS", "K-Startup", "서울창조경제혁신센터", "과학기술정보통신부",
     "산업통상자원부", "농림축산식품부", "정보통신산업진흥원", "한국산업기술진흥원",
@@ -661,6 +796,15 @@ const configuredSourceFeeds = [
 // 비활성 후보는 실행 목록과 수집 통계에서 분리한다. 공식 RSS 안내 또는 공식 목록
 // 페이지가 확인되면 실제 설정을 추가한 뒤 configuredSourceFeeds에서 활성화한다.
 const sourceFeeds = configuredSourceFeeds.filter((source) => source.enabled);
+
+// 실행 시점의 환경변수로 활성 수집원을 결정한다(.env를 늦게 읽어도 반영되도록 함수로 둔다).
+function resolveSourceFeeds(env = process.env) {
+  const includeCandidates = /^true$/iu.test(env.ENABLE_CANDIDATE_SOURCES || "false");
+  return includeCandidates
+    ? [...sourceFeeds, ...candidateSourceFeeds.map((source) => ({ ...source, enabled: true }))]
+    : sourceFeeds;
+}
+
 const disabledSources = configuredSourceFeeds
   .filter((source) => !source.enabled)
   .map((source) => ({
@@ -674,7 +818,9 @@ const rssSources = sourceFeeds;
 module.exports = {
   categories,
   allowedSources,
+  candidateSourceFeeds,
   disabledSources,
+  resolveSourceFeeds,
   sourceFeeds,
   rssSources,
   startupGrowthContextKeywords,
