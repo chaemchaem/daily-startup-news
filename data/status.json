@@ -1,9 +1,10 @@
 {
-  "lastRunAt": "2026-09-27T05:13:37.715Z",
-  "success": true,
-  "rawArticleCount": 197,
-  "candidateArticleCount": 22,
-  "finalArticleCount": 5,
-  "sourceSuccessCount": 11,
-  "sourceFailureCount": 4
+  "lastRunAt": "2026-09-28T05:16:56.061Z",
+  "success": false,
+  "rawArticleCount": 272,
+  "candidateArticleCount": 18,
+  "finalArticleCount": 0,
+  "sourceSuccessCount": 14,
+  "sourceFailureCount": 1,
+  "message": "empty_result_preserved"
 }
