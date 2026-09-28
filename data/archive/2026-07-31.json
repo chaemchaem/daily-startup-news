@@ -29,7 +29,6 @@
       "fundingAmount": "$200M",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 91
     },
     {
@@ -77,7 +76,6 @@
       "source": "바이라인네트워크",
       "url": "https://byline.network/2026/07/8392482034/",
       "resolvedUrl": null,
-      "company": "바이라인네트워크",
       "eventType": "실증·PoC",
       "industry": "AI",
       "score": 71
@@ -93,7 +91,7 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12112332",
       "resolvedUrl": null,
-      "company": "시중銀 대출 축소에 자금조달 더 어려워",
+      "eventType": "투자유치",
       "score": 44
     },
     {

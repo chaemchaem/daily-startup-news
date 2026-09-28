@@ -420,7 +420,7 @@ function extractStructuredCompany(title, summary) {
   // 1순위: "회사명, 사건" 형태의 국내 제목 구간. 쉼표 뒤에 사건이 있는 구간만 본다.
   for (const clause of titleText.split(/\s*(?:…|\.{3})\s*/u)) {
     const commaMatch = clause.match(/^([^,，]{2,40})[,，]\s*(\S.*)$/u);
-    if (!commaMatch || !KOREAN_EVENT_CLAUSE_PATTERN.test(commaMatch[2])) continue;
+    if (!commaMatch) continue;
     const tokens = commaMatch[1]
       .replace(/[‘’“”'"]/gu, "")
       .split(/\s+/u)
@@ -430,6 +430,12 @@ function extractStructuredCompany(title, summary) {
     if (tokens.slice(0, -1).some((token) => /(?:의|은|는|을|를|에|로)$/u.test(token))) continue;
     const lastToken = tokens.at(-1);
     if (/(?:의|은|는|을|를)$/u.test(lastToken)) continue;
+    // 쉼표 뒤에 사건이 있거나, 요약에서 같은 이름이 주어("…가 선정됐다")로 확인될 때만 인정한다.
+    const escapedToken = lastToken.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&");
+    const confirmedBySummary = new RegExp(`${escapedToken}(?:은|는|이|가)\\s`, "u").test(
+      cleanText(summary)
+    );
+    if (!KOREAN_EVENT_CLAUSE_PATTERN.test(commaMatch[2]) && !confirmedBySummary) continue;
     if (isPlausibleCompanyName(lastToken)) return lastToken;
   }
 

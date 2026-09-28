@@ -29,7 +29,6 @@
       "fundingAmount": "€34.35 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 99
     },
     {
@@ -46,7 +45,7 @@
       "company": "Motion",
       "fundingAmount": "€1.7 million",
       "eventType": "투자유치",
-      "industry": "AI",
+      "industry": "로봇",
       "score": 86
     },
     {
@@ -63,7 +62,6 @@
       "company": "Atorie",
       "fundingAmount": "$9.5M",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 69
     }
   ]

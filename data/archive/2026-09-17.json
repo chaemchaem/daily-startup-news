@@ -46,7 +46,6 @@
       "company": "Veridion",
       "fundingAmount": "€17.5 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 92
     },
     {
@@ -61,8 +60,9 @@
       "url": "https://www.venturesquare.net/1114540/",
       "resolvedUrl": null,
       "company": "인핸스",
-      "fundingAmount": "512억원",
+      "fundingAmount": "512억 원",
       "fundingStage": "시리즈C",
+      "eventType": "투자유치",
       "score": 52
     },
     {

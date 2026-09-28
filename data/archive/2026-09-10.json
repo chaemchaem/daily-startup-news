@@ -25,11 +25,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/portugals-hope-care-closes-e6-million-series-a-to-expand-remote-patient-monitoring-across-europe/",
       "resolvedUrl": null,
-      "company": "Care",
+      "company": "Hope Care",
       "fundingAmount": "€6 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 96
     },
     {
@@ -46,7 +45,6 @@
       "company": "Tellia",
       "fundingAmount": "€4.3 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 89
     },
     {
@@ -60,7 +58,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1111894/",
       "resolvedUrl": null,
-      "company": "엔업",
+      "company": "모멘트큐브",
       "eventType": "선정",
       "score": 57
     },
@@ -75,7 +73,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12148638",
       "resolvedUrl": null,
-      "company": "K컬처가 스타트업 자양분되고 있다",
       "score": 53
     },
     {
@@ -89,8 +86,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1111928/",
       "resolvedUrl": null,
-      "company": "삼성전자",
-      "fundingStage": "시리즈 D",
+      "company": "미스트랄",
+      "fundingStage": "시리즈D",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 52
@@ -106,8 +103,6 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/294160",
       "resolvedUrl": null,
-      "company": "IPO",
-      "fundingAmount": "10조원",
       "eventType": "선정",
       "score": 42
     },
@@ -122,7 +117,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/09/harvey-hits-15-5b-valuation-months-after-reaching-11b/",
       "resolvedUrl": null,
-      "fundingAmount": "$15.5",
       "score": 41
     }
   ]

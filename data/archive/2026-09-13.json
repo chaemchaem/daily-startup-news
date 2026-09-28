@@ -25,11 +25,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/copenhagens-seed-capital-closes-e130-million-fund-v-to-back-nordic-startups-from-seed-to-series-a/",
       "resolvedUrl": null,
-      "company": "Capital",
+      "company": "Seed Capital",
       "fundingAmount": "€130 million",
-      "fundingStage": "Seed",
-      "eventType": "투자유치",
-      "industry": "AI",
+      "eventType": "펀드결성",
       "score": 94
     },
     {
@@ -46,7 +44,6 @@
       "company": "Furo",
       "fundingAmount": "€3.44 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 82
     },
     {
@@ -60,7 +57,6 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20260913_0003787047",
       "resolvedUrl": null,
-      "company": "귀국",
       "eventType": "선정",
       "score": 41
     },
@@ -75,8 +71,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/11/mecka-ai-nears-500m-valuation-in-sequoia-led-deal-amid-rush-for-robot-training-data/",
       "resolvedUrl": null,
-      "fundingAmount": "$500M",
-      "fundingStage": "Series A",
       "industry": "AI",
       "score": 60
     }

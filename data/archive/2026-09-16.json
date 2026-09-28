@@ -45,7 +45,7 @@
       "resolvedUrl": null,
       "company": "EnforceShield",
       "fundingAmount": "€1.7 million",
-      "fundingStage": "Seed round",
+      "fundingStage": "Seed",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 100
@@ -64,7 +64,6 @@
       "fundingAmount": "$180M",
       "fundingStage": "Series D",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 87
     },
     {
@@ -78,8 +77,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1113760/",
       "resolvedUrl": null,
-      "company": "딜레마",
+      "company": "코로로직",
       "fundingStage": "시드 투자",
+      "eventType": "투자유치",
       "industry": "AI",
       "score": 62
     },
@@ -94,9 +94,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1113804/",
       "resolvedUrl": null,
-      "company": "잇는다",
-      "fundingStage": "시드 투자",
-      "industry": "AI",
+      "company": "시리즈벤처스",
       "score": 62
     },
     {

@@ -25,8 +25,6 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/exclusive-switzerlands-aeon-acquires-aware-health-as-total-seed-funding-passes-e12-million/",
       "resolvedUrl": null,
-      "fundingAmount": "€12 million",
-      "fundingStage": "Seed",
       "eventType": "인수·M&A",
       "score": 102
     },
@@ -45,7 +43,6 @@
       "fundingAmount": "€10.5 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 96
     },
     {
@@ -59,7 +56,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1113605/",
       "resolvedUrl": null,
-      "company": "월드모델",
+      "company": "베스텔라랩",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 75
@@ -89,9 +86,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/14/a-vinyl-bar-in-shibuya-is-a-startup-offering-fun-music-apps/",
       "resolvedUrl": null,
-      "fundingAmount": "$5",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 38
     }
   ]

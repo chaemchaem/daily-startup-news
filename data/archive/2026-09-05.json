@@ -28,7 +28,6 @@
       "company": "Octave.energy",
       "fundingAmount": "€10 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 89
     },
     {
@@ -42,7 +41,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/yc-backed-zeit-ai-raises-e5-million-to-build-europes-autonomous-data-engineer/",
       "resolvedUrl": null,
-      "company": "AI",
+      "company": "Zeit AI",
       "fundingAmount": "€4.3 million",
       "eventType": "투자유치",
       "industry": "AI",
@@ -59,6 +58,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110918/",
       "resolvedUrl": null,
+      "eventType": "투자유치",
       "score": 48
     },
     {
@@ -72,9 +72,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110842/",
       "resolvedUrl": null,
-      "company": "읽는다",
+      "company": "버즈앤비",
       "eventType": "선정",
-      "industry": "AI",
       "score": 43
     }
   ]

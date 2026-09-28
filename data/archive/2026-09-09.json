@@ -25,11 +25,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/portugals-hope-care-closes-e6-million-series-a-to-expand-remote-patient-monitoring-across-europe/",
       "resolvedUrl": null,
-      "company": "Care",
+      "company": "Hope Care",
       "fundingAmount": "€6 million",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 98
     },
     {
@@ -43,11 +42,10 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/08/nuclear-startup-bluecore-energy-raises-50m-seed-round-just-two-months-after-launch/",
       "resolvedUrl": null,
-      "company": "Energy",
+      "company": "Bluecore Energy",
       "fundingAmount": "$50M",
-      "fundingStage": "seed round",
+      "fundingStage": "seed",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 91
     },
     {
@@ -64,7 +62,6 @@
       "company": "Tellia",
       "fundingAmount": "€4.3 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 91
     },
     {
@@ -78,8 +75,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12147355",
       "resolvedUrl": null,
-      "company": "미스트랄 AI",
-      "fundingAmount": "7조원",
       "industry": "AI",
       "score": 61
     },
@@ -94,7 +89,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1111894/",
       "resolvedUrl": null,
-      "company": "엔업",
+      "company": "모멘트큐브",
       "eventType": "선정",
       "score": 59
     },
@@ -109,8 +104,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1111822/",
       "resolvedUrl": null,
-      "company": "파트너 커넥트",
-      "industry": "AI",
       "score": 59
     },
     {
@@ -124,7 +117,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12147373",
       "resolvedUrl": null,
-      "company": "밸류체인 독립",
       "eventType": "인수·M&A",
       "score": 42
     }

@@ -25,10 +25,8 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/the-10-biggest-startup-investments-in-sweden-this-year/",
       "resolvedUrl": null,
-      "fundingAmount": "€8",
       "fundingStage": "Series A",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 83
     },
     {
@@ -42,7 +40,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106191/",
       "resolvedUrl": null,
-      "company": "레티널",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 80
@@ -58,7 +55,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106236/",
       "resolvedUrl": null,
-      "company": "만든다",
+      "company": "아트블러드",
       "eventType": "TIPS·LIPS 선정",
       "score": 78
     },
@@ -73,7 +70,6 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/lancaster-university-spinout-mindgard-lands-e26-million-to-secure-enterprise-ai-systems/",
       "resolvedUrl": null,
-      "fundingAmount": "€26 million",
       "industry": "AI",
       "score": 71
     },
@@ -88,9 +84,7 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/292527",
       "resolvedUrl": null,
-      "company": "팔란티어식",
       "eventType": "인수·M&A",
-      "industry": "AI",
       "score": 41
     },
     {
@@ -104,9 +98,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/",
       "resolvedUrl": null,
-      "fundingAmount": "$1",
-      "eventType": "투자유치",
-      "industry": "AI",
       "score": 34
     }
   ]

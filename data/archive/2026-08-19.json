@@ -43,7 +43,6 @@
       "url": "https://www.eu-startups.com/2026/08/uk-based-spaceam-closes-seed-round-to-scale-ai-powered-sensing-technology-for-defence-and-space/",
       "resolvedUrl": null,
       "company": "SpaceAM",
-      "fundingStage": "Seed round",
       "industry": "AI",
       "score": 83
     },
@@ -58,8 +57,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106800/",
       "resolvedUrl": null,
-      "company": "딥인사이트",
-      "fundingAmount": "747억원",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 76
@@ -75,7 +72,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/18/reach-capital-raises-265m-fund-v-to-back-ai-founders-building-to-expand-human-potential/",
       "resolvedUrl": null,
-      "company": "Capital",
+      "company": "Reach Capital",
       "fundingAmount": "$265M",
       "eventType": "투자유치",
       "industry": "AI",
@@ -92,11 +89,9 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/292726",
       "resolvedUrl": null,
-      "company": "그래비스",
       "fundingAmount": "약 2,800억 원",
       "fundingStage": "시리즈A",
       "eventType": "투자유치",
-      "industry": "로봇",
       "score": 71
     },
     {
@@ -110,8 +105,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1106761/",
       "resolvedUrl": null,
-      "company": "곡면까지",
-      "fundingStage": "브릿지",
+      "company": "솔라스틱",
       "eventType": "투자유치",
       "score": 61
     },

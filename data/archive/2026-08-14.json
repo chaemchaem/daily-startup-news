@@ -43,11 +43,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/lovable-raise-e343-million-series-c-to-expand-its-platform-infrastructure-and-global-team/",
       "resolvedUrl": null,
-      "company": "Lovable",
       "fundingAmount": "€343 million",
       "fundingStage": "Series C",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 80
     },
     {
@@ -61,7 +59,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105890/",
       "resolvedUrl": null,
-      "company": "팁스(TIPS)",
+      "company": "에듀싱크",
       "eventType": "TIPS·LIPS 선정",
       "score": 79
     },
@@ -76,8 +74,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105807/",
       "resolvedUrl": null,
-      "company": "거래·데이터",
-      "eventType": "출시·상용화",
       "industry": "AI",
       "score": 54
     },
@@ -106,9 +102,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/",
       "resolvedUrl": null,
-      "fundingAmount": "$1",
-      "eventType": "투자유치",
-      "industry": "AI",
       "score": 36
     }
   ]

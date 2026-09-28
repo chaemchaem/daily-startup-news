@@ -43,11 +43,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/08/lovable-raise-e343-million-series-c-to-expand-its-platform-infrastructure-and-global-team/",
       "resolvedUrl": null,
-      "company": "Lovable",
       "fundingAmount": "€343 million",
       "fundingStage": "Series C",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 82
     },
     {
@@ -61,10 +59,8 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/292324",
       "resolvedUrl": null,
-      "company": "막는다",
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 81
     },
     {
@@ -78,8 +74,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105532/",
       "resolvedUrl": null,
-      "company": "막는다",
-      "fundingAmount": "75억원",
+      "company": "어썸레이",
       "eventType": "선정",
       "score": 77
     },
@@ -94,9 +89,8 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/12/lovable-confirms-new-13-3b-valuation-raises-another-400m/",
       "resolvedUrl": null,
-      "fundingAmount": "$13.3",
+      "fundingAmount": "$400M",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 71
     },
     {
@@ -110,7 +104,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1105504/",
       "resolvedUrl": null,
-      "company": "청년창업사관학교, 없앨 게 아니라 더 잘 키워야",
       "score": 59
     },
     {
@@ -124,7 +117,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12126113",
       "resolvedUrl": null,
-      "company": "대표님 장발 자르시려나",
       "industry": "반도체",
       "score": 47
     },
@@ -139,7 +131,6 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/business/12125603",
       "resolvedUrl": null,
-      "company": "자동차 용접 공정에 AI 도입 … 불량률 확 줄였죠",
       "industry": "AI",
       "score": 47
     }

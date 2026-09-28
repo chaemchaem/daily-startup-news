@@ -42,10 +42,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/manchesters-nuclear-turbines-raises-e17-5-million-to-develop-compact-cost-effective-nuclear-power-systems/",
       "resolvedUrl": null,
-      "company": "Turbines",
+      "company": "Nuclear Turbines",
       "fundingAmount": "€17.5 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 77
     },
     {
@@ -62,7 +61,6 @@
       "company": "Antares",
       "fundingAmount": "$470M",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 68
     }
   ]

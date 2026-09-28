@@ -25,6 +25,8 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/spanish-cybersecurity-startup-8layers-extends-pre-seed-round-to-e2-5-million-total-funding/",
       "resolvedUrl": null,
+      "company": "8Layers",
+      "industry": "사이버보안",
       "score": 103
     },
     {
@@ -38,6 +40,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/lisbon-based-bizay-raises-e48-75-million-series-d-set-to-surpass-e88-6-million-revenue-and-reach-profitability/",
       "resolvedUrl": null,
+      "company": "BIZAY",
+      "fundingAmount": "€48.7 million",
+      "fundingStage": "Series D",
+      "eventType": "투자유치",
       "score": 84
     },
     {
@@ -51,6 +57,10 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/290428",
       "resolvedUrl": null,
+      "company": "이터나퓨전",
+      "fundingAmount": "23억 원",
+      "fundingStage": "시드 투자",
+      "eventType": "투자유치",
       "score": 83
     },
     {
@@ -64,6 +74,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/leiden-based-whispp-raises-e5m-to-scale-on-device-voice-reconstruction-ai-technology-globally/",
       "resolvedUrl": null,
+      "company": "Whispp",
+      "fundingAmount": "€5 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 78
     },
     {
@@ -77,6 +91,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/london-based-hive-raises-e13-1-million-to-build-silicon-brain-for-industrial-machines/",
       "resolvedUrl": null,
+      "company": "HIVE",
+      "fundingAmount": "€13.1 million",
+      "eventType": "투자유치",
       "score": 74
     },
     {

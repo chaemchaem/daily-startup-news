@@ -25,9 +25,8 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/belgiums-newschool-vc-closes-maiden-fund-at-e10-million-at-to-back-b2b-technology-startups/",
       "resolvedUrl": null,
-      "company": "VC",
-      "fundingAmount": "€10 million",
-      "industry": "AI",
+      "company": "NewSchool VC",
+      "eventType": "펀드결성",
       "score": 91
     },
     {
@@ -41,10 +40,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
       "resolvedUrl": null,
-      "company": "Biosciences",
+      "company": "Novadip Biosciences",
       "fundingAmount": "€10.4 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 89
     },
     {

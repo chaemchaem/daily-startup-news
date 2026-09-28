@@ -25,6 +25,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097897/",
       "resolvedUrl": null,
+      "company": "베라모어",
+      "fundingStage": "프리A",
+      "eventType": "투자유치",
       "score": 86
     },
     {
@@ -38,6 +41,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/ai-puts-uk-startup-funding-back-in-the-big-leagues-with-strongest-first-half-since-2022-new-data-shows/",
       "resolvedUrl": null,
+      "industry": "AI",
       "score": 84
     },
     {
@@ -51,6 +55,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/en-carta-diagnostics-raises-e5-million-to-bring-at-home-molecular-tests-for-lyme-disease-and-stis-to-market/",
       "resolvedUrl": null,
+      "company": "En Carta Diagnostics",
+      "fundingAmount": "€5 million",
+      "eventType": "투자유치",
       "score": 78
     },
     {
@@ -64,6 +71,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097608/",
       "resolvedUrl": null,
+      "company": "큐빅",
+      "eventType": "선정",
+      "industry": "AI",
       "score": 78
     },
     {
@@ -77,6 +87,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/paris-based-aria-raises-e7-million-and-launches-e240-million-debt-facility-to-tackle-europes-late-payment-crisis/",
       "resolvedUrl": null,
+      "company": "Aria",
+      "fundingAmount": "€7 million",
+      "eventType": "투자유치",
       "score": 77
     },
     {
@@ -90,6 +103,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1097900/",
       "resolvedUrl": null,
+      "company": "애드",
+      "eventType": "선정",
       "score": 72
     },
     {
@@ -103,6 +118,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/university-of-sheffield-spin-out-pixel-flo-raises-e6-1-million-to-scale-microled-display-manufacturing/",
       "resolvedUrl": null,
+      "company": "Pixel-Flo",
+      "fundingAmount": "€6.1 million",
+      "eventType": "투자유치",
       "score": 72
     },
     {

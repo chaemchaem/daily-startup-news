@@ -27,7 +27,7 @@
       "resolvedUrl": null,
       "company": "Spiich",
       "fundingAmount": "€3 million",
-      "fundingStage": "Seed round",
+      "fundingStage": "Seed",
       "eventType": "투자유치",
       "industry": "AI",
       "score": 90
@@ -73,8 +73,7 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/295113",
       "resolvedUrl": null,
-      "company": "측정",
-      "fundingAmount": "50억원",
+      "fundingAmount": "50억 원",
       "eventType": "투자유치",
       "score": 68
     },
@@ -90,9 +89,7 @@
       "url": "https://www.venturesquare.net/1115953/",
       "resolvedUrl": null,
       "company": "뤼튼",
-      "fundingAmount": "약 2300억원",
-      "fundingStage": "시리즈C",
-      "eventType": "투자유치",
+      "eventType": "선정",
       "score": 59
     },
     {
@@ -107,9 +104,9 @@
       "url": "https://www.venturesquare.net/1115810/",
       "resolvedUrl": null,
       "company": "케이바이오게이트웨이",
-      "fundingAmount": "12억원",
+      "fundingAmount": "12억 원",
       "fundingStage": "시드",
-      "eventType": "TIPS·LIPS 선정",
+      "eventType": "투자유치",
       "industry": "바이오·헬스케어",
       "score": 59
     },
@@ -154,8 +151,8 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12160146",
       "resolvedUrl": null,
-      "company": "돕는다",
-      "eventType": "선정",
+      "company": "디캠프",
+      "eventType": "협약",
       "score": 48
     },
     {

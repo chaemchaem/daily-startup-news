@@ -25,6 +25,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099165/",
       "resolvedUrl": null,
+      "company": "홈핏",
+      "eventType": "TIPS·LIPS 선정",
+      "industry": "AI",
       "score": 85
     },
     {
@@ -38,6 +41,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/paris-based-syntetica-raises-e26-1-million-to-industrialise-process-that-cracks-a-major-nylon-recycling-barrier/",
       "resolvedUrl": null,
+      "company": "Syntetica",
+      "fundingAmount": "€26.1 million",
+      "eventType": "투자유치",
       "score": 84
     },
     {
@@ -51,6 +57,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099113/",
       "resolvedUrl": null,
+      "company": "모닥불에너지",
+      "eventType": "TIPS·LIPS 선정",
+      "industry": "AI",
       "score": 76
     },
     {
@@ -64,6 +73,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/london-based-applied-computing-raises-e17-4-million-to-scale-ai-that-works-for-the-energy-industry/",
       "resolvedUrl": null,
+      "company": "Applied Computing",
+      "fundingAmount": "€17.4 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 74
     },
     {
@@ -77,6 +90,10 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/07/espoo-based-hyperion-robotics-raises-e6-4-million-to-bring-physical-ai-to-european-infrastructure/",
       "resolvedUrl": null,
+      "company": "Hyperion Robotics",
+      "fundingAmount": "€6.4 million",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 74
     },
     {
@@ -90,6 +107,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099019/",
       "resolvedUrl": null,
+      "company": "후커블",
+      "fundingStage": "시드 투자",
+      "eventType": "투자유치",
+      "industry": "AI",
       "score": 72
     },
     {
@@ -116,6 +137,9 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099233/",
       "resolvedUrl": null,
+      "company": "맨인블록",
+      "eventType": "실증·PoC",
+      "industry": "AI",
       "score": 67
     },
     {
@@ -129,6 +153,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099331/",
       "resolvedUrl": null,
+      "eventType": "선정",
+      "industry": "농식품",
       "score": 63
     },
     {
@@ -142,6 +168,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099088/",
       "resolvedUrl": null,
+      "industry": "AI",
       "score": 61
     },
     {
@@ -155,6 +182,8 @@
       "source": "플래텀",
       "url": "https://platum.kr/archives/290887",
       "resolvedUrl": null,
+      "fundingStage": "시리즈A",
+      "eventType": "투자유치",
       "score": 54
     },
     {
@@ -168,6 +197,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099138/",
       "resolvedUrl": null,
+      "eventType": "인수·M&A",
+      "industry": "AI",
       "score": 52
     },
     {
@@ -181,6 +212,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1099309/",
       "resolvedUrl": null,
+      "eventType": "선정",
+      "industry": "AI",
       "score": 46
     }
   ]

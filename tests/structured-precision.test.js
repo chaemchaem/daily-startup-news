@@ -66,6 +66,11 @@ test("문장 조각·서비스명·인물·수식어를 회사명으로 저장�
     ["데이원컴퍼니의 새 성장동력, '팔란티어식' AX 스타트업 인수", "", null],
     ["하늘은 드론, 땅은 로봇…엑스업·메이사, AI 기반 현장관리 시장 공략", "", null],
     ["Repeat founder Ryan Williams raises $10M seed for an AI startup", "", null],
+    [
+      "에임인텔리전스, AI가 행동하기 전부터 실행 이후까지 지킨다…엔비디아 챌린지 Top 10",
+      "AI 보안 전문기업 에임인텔리전스가 최종 Top 10에 선정됐다.",
+      "에임인텔리전스",
+    ],
     ["Profitable Belgian CleanTech Octave.energy raises €10 million", "", "Octave.energy"],
     ["Madrid-based Buenavista Equity Partners secures €75 million fund", "", "Buenavista Equity Partners"],
   ];

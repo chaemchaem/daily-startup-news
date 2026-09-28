@@ -28,7 +28,6 @@
       "company": "Octave.energy",
       "fundingAmount": "€10 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 87
     },
     {
@@ -59,6 +58,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110918/",
       "resolvedUrl": null,
+      "eventType": "투자유치",
       "score": 46
     },
     {
@@ -72,8 +72,7 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/economy/12144868",
       "resolvedUrl": null,
-      "company": "자사주 1년내 소각",
-      "eventType": "출시·상용화",
+      "eventType": "인수·M&A",
       "score": 38
     }
   ]

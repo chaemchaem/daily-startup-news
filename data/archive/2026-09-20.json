@@ -29,7 +29,6 @@
       "fundingAmount": "€5.5 million",
       "fundingStage": "Seed",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 90
     },
     {
@@ -43,9 +42,7 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/with-200-million-patients-covered-penelope-health-secures-e87-million-in-funding/",
       "resolvedUrl": null,
-      "company": "Health",
-      "fundingAmount": "€87 million",
-      "eventType": "투자유치",
+      "company": "Penelope Health",
       "score": 72
     },
     {
@@ -59,8 +56,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1114983/",
       "resolvedUrl": null,
-      "company": "위얼라이브",
       "fundingStage": "시리즈A",
+      "eventType": "투자유치",
       "score": 71
     },
     {
@@ -74,8 +71,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1115045/",
       "resolvedUrl": null,
-      "company": "루닛",
-      "eventType": "TIPS·LIPS 선정",
+      "eventType": "선정",
       "industry": "AI",
       "score": 61
     },

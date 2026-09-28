@@ -25,10 +25,9 @@
       "source": "EU-Startups",
       "url": "https://www.eu-startups.com/2026/09/drone-attack-at-leipzig-halle-airport-underscores-threat-as-inleap-photonics-raises-e20-million-for-drone-defence/",
       "resolvedUrl": null,
-      "company": "Photonics",
+      "company": "INLEAP Photonics",
       "fundingAmount": "€20 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 87
     },
     {
@@ -45,7 +44,6 @@
       "company": "Pharosyn",
       "fundingAmount": "€2.5 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 85
     },
     {
@@ -59,10 +57,10 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110380/",
       "resolvedUrl": null,
-      "company": "시간으로",
-      "fundingAmount": "34억원",
-      "fundingStage": "시리즈 A",
-      "industry": "AI",
+      "company": "인텔리시아",
+      "fundingAmount": "34억 원",
+      "fundingStage": "프리A",
+      "eventType": "투자유치",
       "score": 69
     },
     {
@@ -76,8 +74,6 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1110458/",
       "resolvedUrl": null,
-      "company": "크벤스 AI",
-      "fundingAmount": "8억원",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
       "score": 66
@@ -93,9 +89,8 @@
       "source": "매일경제",
       "url": "https://www.mk.co.kr/news/it/12142669",
       "resolvedUrl": null,
-      "company": "젠슨 황 만나 ‘엔비디아에 반란",
+      "company": "리벨리온",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 53
     },
     {
@@ -109,7 +104,6 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/09/02/wonderful-more-than-doubles-its-valuation-to-5b-in-under-6-months/",
       "resolvedUrl": null,
-      "fundingAmount": "$5",
       "score": 41
     }
   ]

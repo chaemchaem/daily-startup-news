@@ -25,8 +25,8 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1101751/",
       "resolvedUrl": null,
-      "company": "기회",
-      "fundingStage": "시리즈A",
+      "company": "플랜트너",
+      "fundingStage": "프리시리즈A",
       "eventType": "투자유치",
       "score": 85
     },
@@ -44,7 +44,6 @@
       "company": "DITTO",
       "fundingAmount": "€5.2 million",
       "eventType": "투자유치",
-      "industry": "AI",
       "score": 84
     },
     {
@@ -75,7 +74,7 @@
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/07/28/fish-audio-raises-50m-seed-to-build-ai-voice-models-for-creators-and-enterprises/",
       "resolvedUrl": null,
-      "company": "Audio",
+      "company": "Fish Audio",
       "fundingAmount": "$52M",
       "fundingStage": "seed",
       "eventType": "투자유치",
@@ -93,8 +92,7 @@
       "source": "벤처스퀘어",
       "url": "https://www.venturesquare.net/1101765/",
       "resolvedUrl": null,
-      "company": "마중",
-      "eventType": "투자유치",
+      "eventType": "선정",
       "score": 67
     }
   ]
