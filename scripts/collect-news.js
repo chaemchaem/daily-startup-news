@@ -43,6 +43,7 @@ const {
   formatKstIso,
   isAllowedSource,
   normalizeForMatch,
+  parseFeedItemDate,
   parsePublishedDate,
   validateFallbackSummaryQuality,
   validateOpenAIDescriptionSummary,
@@ -1430,7 +1431,7 @@ function normalizeFeedItem(
   sourceRecoveryCandidates = []
 ) {
   const { item, feed } = entry;
-  const publishedAt = parsePublishedDate(item.isoDate || item.pubDate || item.published);
+  const publishedAt = parseFeedItemDate(item, { assumeKst: feed.region !== "global" });
   const url = item.link || item.guid;
   const sourceRecord = getSourceDiagnostics(diagnostics, feed);
   sourceRecord.entries += 1;

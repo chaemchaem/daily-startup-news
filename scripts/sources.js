@@ -321,16 +321,24 @@ function defineSource(config) {
   };
 }
 
-// 공식 RSS 주소를 아직 실제 응답으로 검증하지 못한 대형 언론사 후보.
-// 기본 비활성이며 ENABLE_CANDIDATE_SOURCES=true일 때만 수집한다.
-// `pnpm run probe:sources`(또는 "Probe news sources" 워크플로)로 응답을 확인한 뒤
-// 정상인 항목은 candidate 표시를 지우고 일반 수집원으로 옮긴다.
-function defineCandidateSource(config) {
+// 공식 RSS 안내 기준 주소의 대형 언론사 수집원.
+// 2026-09-28 "Probe news sources" 점검에서 응답·최근 48시간 기사·URL 패턴·robots 허용을 확인했다.
+// 종합지는 기사량이 많으므로 sourceWeight를 낮게 두고, 강한 생태계 연결 조건을 그대로 적용한다.
+function defineMajorOutletSource(config) {
   return defineSource({
     type: "rss",
     categoryHints: allDomesticCategories,
     bodySelector: "article, #articleBody, .article-body, .article_body, main",
     sourceWeight: 3,
+    maxItems: 60,
+    verifiedBy: "probe_2026-09-28",
+    ...config,
+  });
+}
+
+// 아직 정상 응답을 확인하지 못한 후보. 기본 비활성이며 ENABLE_CANDIDATE_SOURCES=true일 때만 수집한다.
+function defineCandidateSource(config) {
+  return defineMajorOutletSource({
     maxItems: 40,
     ...config,
     enabled: false,
@@ -341,91 +349,79 @@ function defineCandidateSource(config) {
   });
 }
 
-const candidateSourceFeeds = [
-  defineCandidateSource({
+const majorOutletFeeds = [
+  defineMajorOutletSource({
     name: "연합뉴스 경제",
     sourceName: "연합뉴스",
     feedUrl: "https://www.yna.co.kr/rss/economy.xml",
     baseUrl: "https://www.yna.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.|m\\.)?yna\\.co\\.kr/view/"],
     bodySelector: ".story-news, #articleWrap, article",
+    maxItems: 150,
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "연합뉴스 산업",
     sourceName: "연합뉴스",
     feedUrl: "https://www.yna.co.kr/rss/industry.xml",
     baseUrl: "https://www.yna.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.|m\\.)?yna\\.co\\.kr/view/"],
     bodySelector: ".story-news, #articleWrap, article",
+    maxItems: 150,
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "조선일보 경제",
     sourceName: "조선일보",
     feedUrl: "https://www.chosun.com/arc/outboundfeeds/rss/category/economy/?outputType=xml",
     baseUrl: "https://www.chosun.com",
     allowedUrlPatterns: ["^https?://(?:www\\.|biz\\.)?chosun\\.com/"],
+    maxItems: 120,
   }),
-  defineCandidateSource({
-    name: "중앙일보 경제",
-    sourceName: "중앙일보",
-    feedUrl: "https://rss.joins.com/joins_money_list.xml",
-    baseUrl: "https://www.joongang.co.kr",
-    allowedUrlPatterns: ["^https?://(?:www\\.|news\\.)?(?:joongang\\.co\\.kr|joins\\.com)/"],
-    verificationNote: "구 joins.com RSS 주소. 사이트 개편으로 변경됐을 가능성이 커서 반드시 확인 필요",
-  }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "동아일보 경제",
     sourceName: "동아일보",
     feedUrl: "https://rss.donga.com/economy.xml",
     baseUrl: "https://www.donga.com",
     allowedUrlPatterns: ["^https?://(?:www\\.)?donga\\.com/"],
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "한국경제 경제",
     sourceName: "한국경제",
     feedUrl: "https://www.hankyung.com/feed/economy",
     baseUrl: "https://www.hankyung.com",
     allowedUrlPatterns: ["^https?://(?:www\\.)?hankyung\\.com/article/"],
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "한국경제 IT",
     sourceName: "한국경제",
     feedUrl: "https://www.hankyung.com/feed/it",
     baseUrl: "https://www.hankyung.com",
     allowedUrlPatterns: ["^https?://(?:www\\.)?hankyung\\.com/article/"],
   }),
-  defineCandidateSource({
-    name: "한겨레 경제",
-    sourceName: "한겨레",
-    feedUrl: "https://www.hani.co.kr/rss/economy/",
-    baseUrl: "https://www.hani.co.kr",
-    allowedUrlPatterns: ["^https?://(?:www\\.)?hani\\.co\\.kr/arti/"],
-  }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "경향신문 경제",
     sourceName: "경향신문",
     feedUrl: "https://www.khan.co.kr/rss/rssdata/economy_news.xml",
     baseUrl: "https://www.khan.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.)?khan\\.co\\.kr/"],
   }),
-  defineCandidateSource({
-    name: "전자신문 전체",
-    sourceName: "전자신문",
+  defineMajorOutletSource({
+    // 기존 22069 섹션 피드는 2026년 9월 한 달간 필터 통과 0건이라 전체 기사 피드로 교체했다.
+    name: "전자신문",
     feedUrl: "http://rss.etnews.com/Section901.xml",
     baseUrl: "https://www.etnews.com",
     allowedUrlPatterns: ["^https?://(?:www\\.)?etnews\\.com/\\d+"],
     bodySelector: ".article_txt, #articleBody, article",
     sourceWeight: 4,
-    verificationNote: "기존 22069 섹션 피드가 최근 한 달 필터 통과 0건이라 전체 기사 피드를 후보로 둔다",
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "ZDNet Korea",
     feedUrl: "https://feeds.feedburner.com/zdkorea",
     baseUrl: "https://zdnet.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.)?zdnet\\.co\\.kr/view/"],
     sourceWeight: 4,
+    maxItems: 40,
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "AI타임스",
     feedUrl: "https://www.aitimes.com/rss/allArticle.xml",
     baseUrl: "https://www.aitimes.com",
@@ -434,14 +430,34 @@ const candidateSourceFeeds = [
     bodySelector: "#article-view-content-div, .article-body, article",
     sourceWeight: 5,
   }),
-  defineCandidateSource({
+  defineMajorOutletSource({
     name: "스타트업투데이",
     feedUrl: "https://www.startuptoday.kr/rss/allArticle.xml",
     baseUrl: "https://www.startuptoday.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.)?startuptoday\\.kr/news/articleView\\.html"],
     bodySelector: "#article-view-content-div, .article-body, article",
     sourceWeight: 8,
+    maxItems: 50,
     maxFinalItems: 3,
+  }),
+];
+
+const candidateSourceFeeds = [
+  defineCandidateSource({
+    name: "중앙일보 경제",
+    sourceName: "중앙일보",
+    feedUrl: "https://rss.joins.com/joins_money_list.xml",
+    baseUrl: "https://www.joongang.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.|news\\.)?(?:joongang\\.co\\.kr|joins\\.com)/"],
+    verificationNote: "2026-09-28 점검에서 응답 시간 초과. 개편된 공식 RSS 주소 확인 필요",
+  }),
+  defineCandidateSource({
+    name: "한겨레 경제",
+    sourceName: "한겨레",
+    feedUrl: "https://www.hani.co.kr/rss/economy/",
+    baseUrl: "https://www.hani.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?hani\\.co\\.kr/arti/"],
+    verificationNote: "2026-09-28 점검에서 30건 응답했으나 최근 48시간 0건(발행일 형식 확인 필요)",
   }),
 ];
 
@@ -457,17 +473,6 @@ const configuredSourceFeeds = [
     bodySelector: ".article-content, .entry-content, article",
     sourceWeight: 8,
     maxItems: 30,
-  }),
-  defineSource({
-    name: "전자신문",
-    type: "rss",
-    feedUrl: "http://rss.etnews.com/22069.xml",
-    baseUrl: "https://www.etnews.com",
-    allowedUrlPatterns: ["^https?://(?:www\\.)?etnews\\.com/\\d+"],
-    categoryHints: allDomesticCategories,
-    bodySelector: ".article_txt, #articleBody, article",
-    sourceWeight: 4,
-    maxItems: 35,
   }),
   defineSource({
     name: "매일경제",
@@ -773,6 +778,7 @@ const configuredSourceFeeds = [
     priority: "discovery",
     categoryHints: ["VC / AC", "스타트업 / 벤처기업 / 초기창업"],
   }),
+  ...majorOutletFeeds,
   // 아래 매체는 공식 RSS/목록 주소 또는 이용 조건을 재확인하기 전까지 비활성화한다.
   ...[
     "뉴스1", "서울경제", "이데일리", "파이낸셜뉴스",

@@ -63,6 +63,28 @@ function parsePublishedDate(value) {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
+// RSS 항목의 발행 시각을 읽는다. 일부 국내 CMS는 "2026-09-28 18:00:00"처럼 시간대 없이
+// 한국 시각을 주는데, 이를 그대로 읽으면 실행 서버(UTC) 기준으로 9시간 어긋난다.
+// 시간대 표기가 없는 국내 피드 날짜는 KST로 해석한다.
+function parseFeedItemDate(item, { assumeKst = false } = {}) {
+  const raw = String(item?.pubDate || item?.published || item?.updated || "").trim();
+  if (raw) {
+    const hasTimezone = /(?:Z|[+-]\d{2}:?\d{2}|\b(?:GMT|UTC|UT|KST|[ECMP][SD]T))\s*$/iu.test(raw);
+    const localMatch = raw.match(
+      /^(\d{4})[-./](\d{1,2})[-./](\d{1,2})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?$/u
+    );
+    if (assumeKst && !hasTimezone && localMatch) {
+      const [, year, month, day, hour = "0", minute = "0", second = "0"] = localMatch;
+      const iso = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T${hour.padStart(2, "0")}:${minute}:${second.padStart(2, "0")}+09:00`;
+      const parsed = parsePublishedDate(iso);
+      if (parsed) return parsed;
+    }
+    const parsed = parsePublishedDate(raw);
+    if (parsed) return parsed;
+  }
+  return parsePublishedDate(item?.isoDate);
+}
+
 function formatKstIso(date) {
   const shifted = new Date(date.getTime() + 9 * 60 * 60 * 1000);
   return `${shifted.toISOString().slice(0, 19)}+09:00`;
@@ -840,6 +862,7 @@ module.exports = {
   isAllowedSource,
   isTitleFallbackEventEligible,
   normalizeForMatch,
+  parseFeedItemDate,
   parsePublishedDate,
   titleFingerprint,
   truncateReportSummary,
