@@ -3,11 +3,14 @@
 //
 //   pnpm run probe:sources            # 활성 + 후보 전체
 //   pnpm run probe:sources -- --candidates   # 후보만
+//
+// 후보 수집원에 rssGuideUrl이 있으면 해당 언론사의 공식 RSS 안내 페이지에서 피드 주소를 찾아
+// 함께 점검한다(주소 변경 확인용). 발행일을 읽지 못하는 피드는 날짜 원문 샘플을 보여 준다.
 const fs = require("node:fs/promises");
 const Parser = require("rss-parser");
 
 const { candidateSourceFeeds, categories, sourceFeeds } = require("./sources");
-const { isUrlAllowedByRobots } = require("./article-extractor");
+const { isUrlAllowedByRobots, requestHtml } = require("./article-extractor");
 const { cleanText, containsKeyword, parseFeedItemDate } = require("./utils");
 
 const WINDOW_MS = 48 * 60 * 60 * 1_000;
@@ -33,6 +36,15 @@ async function probeRss(feed) {
   });
   const parsed = await parser.parseURL(feed.feedUrl);
   const items = parsed.items || [];
+  const rawDateSamples = items.slice(0, 2).map((item) =>
+    JSON.stringify({
+      pubDate: item.pubDate ?? null,
+      isoDate: item.isoDate ?? null,
+      dcDate: item["dc:date"] ?? null,
+      published: item.published ?? null,
+      updated: item.updated ?? null,
+    })
+  );
   const now = Date.now();
   const dated = items
     .map((item) => ({
@@ -70,7 +82,31 @@ async function probeRss(feed) {
     newest: newest ? newest.toISOString() : null,
     robotsAllowed,
     samples: keywordMatched.slice(0, 3).map((item) => item.title),
+    rawDateSamples,
+    firstTitle: dated[0]?.title || null,
+    firstUrl: dated[0]?.url || null,
   };
+}
+
+// 공식 RSS 안내 페이지에서 피드로 보이는 링크를 찾는다.
+async function discoverFeedLinks(guideUrl) {
+  if (!(await isUrlAllowedByRobots(guideUrl, { timeoutMs: 10_000 }))) {
+    return { guideUrl, error: "robots_disallowed", links: [] };
+  }
+  const page = await requestHtml(guideUrl, 20_000, "guide_");
+  if (!page.ok) return { guideUrl, error: page.reason, links: [] };
+  const links = new Set();
+  for (const match of page.html.matchAll(/(?:href|value|data-url)\s*=\s*["']([^"']+)["']/giu)) {
+    const raw = match[1].replace(/&amp;/gu, "&");
+    if (!/rss|\.xml|\/feed|outboundfeeds/iu.test(raw)) continue;
+    try {
+      const url = new URL(raw, page.finalUrl || guideUrl).href;
+      if (/^https?:/u.test(url)) links.add(url);
+    } catch {
+      // 잘못된 링크는 건너뛴다.
+    }
+  }
+  return { guideUrl, links: [...links].slice(0, 40) };
 }
 
 async function probeSource(feed) {
@@ -88,6 +124,32 @@ async function probeSource(feed) {
   } catch (error) {
     return { ...base, ok: false, error: cleanText(error.message).slice(0, 120) };
   }
+}
+
+function discoveryMarkdown(discoveries) {
+  if (!discoveries.length) return "";
+  const lines = ["", "### RSS 안내 페이지에서 찾은 주소"];
+  for (const discovery of discoveries) {
+    lines.push("", `**${discovery.name}** — ${discovery.guideUrl}${discovery.error ? ` (실패: ${discovery.error})` : ""}`);
+    if (!discovery.results.length && !discovery.error) lines.push("- 피드 링크를 찾지 못함");
+    for (const result of discovery.results) {
+      const status = result.ok ? `정상 ${result.items}건 · 48시간 ${result.recent48h}건 · 최신 ${result.newest || "—"}` : `실패 ${result.error || "(0건)"}`;
+      lines.push(`- ${result.url} → ${status}${result.firstTitle ? ` · 예: ${result.firstTitle.slice(0, 40)}` : ""}`);
+    }
+  }
+  return lines.join("\n");
+}
+
+function dateDetailMarkdown(results) {
+  const targets = results.filter(
+    (result) => result.ok && (result.candidate || !result.recent48h) && result.rawDateSamples?.length
+  );
+  if (!targets.length) return "";
+  const lines = ["", "### 날짜 원문 샘플 (최근 48시간 0건이거나 후보인 피드)"];
+  for (const result of targets) {
+    lines.push(`- **${result.name}**: ${result.rawDateSamples.join(" / ")}${result.firstUrl ? ` · 예시 링크 ${result.firstUrl}` : ""}`);
+  }
+  return lines.join("\n");
 }
 
 function toMarkdown(results) {
@@ -122,7 +184,20 @@ async function main() {
   for (const feed of feeds) {
     results.push(await probeSource(feed));
   }
-  const markdown = toMarkdown(results);
+  const discoveries = [];
+  for (const feed of candidateSourceFeeds.filter((candidate) => candidate.rssGuideUrls?.length)) {
+    for (const guideUrl of feed.rssGuideUrls) {
+      const discovery = await discoverFeedLinks(guideUrl);
+      const preferred = discovery.links.filter((url) => (feed.rssGuideKeywords || []).some((keyword) => url.toLowerCase().includes(keyword)));
+      const toProbe = [...new Set([...preferred, ...discovery.links])].slice(0, 12);
+      const probed = [];
+      for (const url of toProbe) {
+        probed.push(await probeSource({ ...feed, name: url, feedUrl: url, fetchTimeoutMs: 20_000 }));
+      }
+      discoveries.push({ name: feed.name, ...discovery, results: probed.map((result) => ({ ...result, url: result.url })) });
+    }
+  }
+  const markdown = `${toMarkdown(results)}${discoveryMarkdown(discoveries)}${dateDetailMarkdown(results)}`;
   console.log(markdown);
   if (process.env.GITHUB_STEP_SUMMARY) {
     await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, `## 수집원 점검 결과\n\n${markdown}\n`);

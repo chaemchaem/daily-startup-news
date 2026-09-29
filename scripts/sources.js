@@ -318,6 +318,9 @@ function defineSource(config) {
     verificationNote: config.verificationNote || "",
     reportWhenDisabled: config.reportWhenDisabled === true,
     candidate: config.candidate === true,
+    // 점검 스크립트가 새 RSS 주소를 찾을 때 여는 공식 RSS 안내 페이지(후보 전용).
+    rssGuideUrls: config.rssGuideUrls || [],
+    rssGuideKeywords: config.rssGuideKeywords || [],
   };
 }
 
@@ -449,6 +452,9 @@ const candidateSourceFeeds = [
     feedUrl: "https://rss.joins.com/joins_money_list.xml",
     baseUrl: "https://www.joongang.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.|news\\.)?(?:joongang\\.co\\.kr|joins\\.com)/"],
+    fetchTimeoutMs: 20_000,
+    rssGuideUrls: ["https://www.joongang.co.kr/rss", "https://rss.joins.com/"],
+    rssGuideKeywords: ["money", "economy", "business", "industry", "경제"],
     verificationNote: "2026-09-28 점검에서 응답 시간 초과. 개편된 공식 RSS 주소 확인 필요",
   }),
   defineCandidateSource({
@@ -457,6 +463,8 @@ const candidateSourceFeeds = [
     feedUrl: "https://www.hani.co.kr/rss/economy/",
     baseUrl: "https://www.hani.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.)?hani\\.co\\.kr/arti/"],
+    rssGuideUrls: ["https://www.hani.co.kr/rss"],
+    rssGuideKeywords: ["economy", "economic", "business", "경제"],
     verificationNote: "2026-09-28 점검에서 30건 응답했으나 최근 48시간 0건(발행일 형식 확인 필요)",
   }),
 ];
