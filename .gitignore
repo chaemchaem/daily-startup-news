@@ -11,3 +11,6 @@ node_modules/
 collect-log*.txt
 data/debug/
 data/summary-cache.json
+
+# RSS 기사 목록 버퍼(GitHub Actions 캐시로만 주고받고 커밋하지 않음)
+.cache/

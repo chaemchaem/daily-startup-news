@@ -1,0 +1,59 @@
+name: Feed snapshot
+
+# 2시간마다 RSS 기사 목록(제목·링크·발행일·설명)을 모아 GitHub Actions 캐시에 보관한다.
+# 매일 수집(daily-news.yml)이 늦게 시작해도 KST 09:00 이전 기사를 놓치지 않기 위한 보조 작업이다.
+# 저장소에는 아무것도 커밋하지 않는다.
+on:
+  schedule:
+    - cron: "40 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: feed-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: pnpm 설정
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+          run_install: false
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: 의존성 설치
+        run: pnpm install --frozen-lockfile
+
+      - name: 이전 버퍼 불러오기
+        uses: actions/cache/restore@v4
+        continue-on-error: true
+        with:
+          path: .cache/feed-buffer.json
+          key: feed-buffer-none-${{ github.run_id }}
+          restore-keys: |
+            feed-buffer-
+
+      - name: RSS 스냅샷
+        run: pnpm run snapshot:feeds
+
+      - name: 버퍼 저장
+        uses: actions/cache/save@v4
+        continue-on-error: true
+        with:
+          path: .cache/feed-buffer.json
+          key: feed-buffer-${{ github.run_id }}-${{ github.run_attempt }}

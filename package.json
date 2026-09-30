@@ -8,6 +8,7 @@
     "collect": "node scripts/collect-news.js",
     "insights": "node scripts/insights.js",
     "probe:sources": "node scripts/probe-sources.js",
+    "snapshot:feeds": "node scripts/snapshot-feeds.js",
     "start": "http-server . -a 127.0.0.1 -p 4173 -c-1",
     "preview": "http-server . -a 127.0.0.1 -p 4173 -c-1",
     "test": "node --test tests/*.test.js",

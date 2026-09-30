@@ -330,6 +330,18 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 
 자동 커밋이나 푸시가 권한 문제로 실패하더라도 해당 단계는 경고만 남기고 워크플로우 전체를 치명적으로 중단하지 않습니다. 커밋 단계는 수집 단계가 실패해도(취소된 경우 제외) 실행되어 실패 상태가 `status.json`에 남습니다. `summary-cache.json`은 `.gitignore` 대상이므로 `git add -f`로 추가합니다.
 
+### RSS 기사 버퍼 (Feed snapshot)
+
+GitHub 예약 실행은 실제로 KST 13~14시에 시작하는 날이 많습니다. 연합뉴스·뉴시스처럼 기사량이 많은 RSS는 최근 약 100~120건만 보여 주기 때문에, 그 시각에는 브리핑 기준(KST 09:00) 이전 기사가 이미 목록에서 밀려나 있습니다(수집 현황의 "기간 이후" 제외).
+
+이를 보완하기 위해 **Feed snapshot** 워크플로(`feed-snapshot.yml`)가 2시간마다 RSS 항목의 제목·링크·발행일·설명(500자 이내)만 모아 GitHub Actions 캐시(`.cache/feed-buffer.json`, 72시간 보관)에 저장합니다. 매일 수집은 시작할 때 이 캐시를 불러와, RSS에서 이미 사라진 항목만 보충합니다. 버퍼 항목도 일반 기사와 똑같이 수집 기간·관련성·품질 필터를 거칩니다.
+
+- 저장소에는 아무것도 커밋하지 않습니다(`.cache/`는 `.gitignore` 대상).
+- 기사 페이지를 따로 읽어야 하는 목록형 수집원과 `dateFromArticlePage` 수집원은 요청 부담 때문에 버퍼 대상에서 제외합니다.
+- 캐시가 없거나 불러오기에 실패해도 수집은 지금처럼 실시간 RSS만으로 진행됩니다.
+- 로컬에서는 `pnpm run snapshot:feeds`로 버퍼를 만들 수 있습니다(`FEED_BUFFER_PATH`로 경로 변경 가능).
+- 수집 현황 표의 "미리 담은 기사 N"이 버퍼에서 보충된 건수입니다.
+
 **Probe news sources** 워크플로(`probe-sources.yml`)는 수동 실행 전용이며, 수집원 점검 결과를 실행 요약에만 남기고 아무것도 커밋하지 않습니다.
 
 저장소의 **Settings → Actions → General → Workflow permissions**에서 `Read and write permissions`가 허용되어 있는지 확인하세요. 조직 정책이 쓰기를 막으면 저장소 관리자에게 권한을 요청해야 합니다. `Actions` 화면의 `Daily startup news briefing`에서 `Run workflow`를 눌러 수동 실행할 수도 있습니다.

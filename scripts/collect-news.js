@@ -30,6 +30,7 @@ const {
   summarizeTitleFallback,
 } = require("./summarize");
 const { saveInsights } = require("./insights");
+const { appendBufferedEntries, loadFeedBuffer } = require("./feed-buffer");
 const {
   cleanText,
   containsKeyword,
@@ -1626,6 +1627,7 @@ function getSourceDiagnostics(diagnostics, feed) {
       inRange: 0,
       keywordPassed: 0,
       passed: 0,
+      buffered: 0,
       candidates: 0,
       extracted: 0,
       final: 0,
@@ -1640,6 +1642,7 @@ function recordSourceFetchResult(diagnostics, result) {
   record.ok = Boolean(result.succeeded);
   record.error = result.succeeded ? null : String(result.error || "unknown").slice(0, 120);
   record.fetched = Number(result.rawCount) || 0;
+  record.buffered = Number(result.bufferedCount) || 0;
   for (const [reason, count] of Object.entries(result.skipped || {})) {
     if (count) record.skipped[reason] = (record.skipped[reason] || 0) + count;
   }
@@ -2151,6 +2154,14 @@ async function collectNews() {
     `[실제 활성 수집원 수] ${enabledSources.length}개 (primary ${primaryFeeds.length + fallbackFeeds.length}, discovery ${discoveryFeeds.length})`
   );
   const primaryBaseResults = await mapWithConcurrency(primaryFeeds, 4, fetchSource);
+  // 예약 실행이 늦어도 KST 09:00 이전 기사를 놓치지 않도록, 2시간마다 모아 둔 RSS 항목을 합친다.
+  const feedBuffer = await loadFeedBuffer();
+  const bufferedEntryCount = appendBufferedEntries(primaryBaseResults, feedBuffer);
+  console.log(
+    feedBuffer.updatedAt
+      ? `[RSS 버퍼] 마지막 스냅샷 ${formatKstIso(new Date(feedBuffer.updatedAt))} · 보관 ${feedBuffer.items.length}건 · 이번 수집에 추가 ${bufferedEntryCount}건`
+      : "[RSS 버퍼] 없음(스냅샷 전이거나 캐시가 없음) · 실시간 RSS만 사용"
+  );
   const rawCountsBySource = new Map();
   for (const result of primaryBaseResults) {
     const key = result.feed.sourceName || result.feed.name;
