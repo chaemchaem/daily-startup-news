@@ -286,7 +286,9 @@ pnpm run start
 
 2026-09-28 "Probe news sources" 점검에서 정상 응답·최근 48시간 기사·robots 허용을 확인한 연합뉴스(경제·산업)·조선일보·동아일보·한국경제(경제·IT)·경향신문·전자신문(전체 기사)·ZDNet Korea·AI타임스·스타트업투데이는 `majorOutletFeeds`로 기본 수집합니다. 종합지는 기사량이 많아 `sourceWeight`를 낮게 두며, 스타트업·투자 생태계와의 강한 연결 조건은 그대로 적용됩니다. 시간대 표기 없이 한국 시각을 주는 피드(예: AI타임스)는 KST로 해석합니다.
 
-중앙일보(응답 시간 초과)와 한겨레(발행일 해석 불가)는 `candidateSourceFeeds`에 후보로 남아 있습니다. 후보는 기본 비활성이며, 다음 순서로 검증합니다.
+중앙일보는 옛 RSS 주소(rss.joins.com)가 응답하지 않고 새 RSS 안내 페이지도 없어, 경제 섹션 기사 목록(`https://www.joongang.co.kr/money`)을 읽는 목록형 수집원으로 수집합니다. 한겨레는 RSS에 발행일이 없어 `dateFromArticlePage: true`로 기사 페이지의 발행일을 읽습니다(요청 사이 지연, robots 준수, 4일보다 오래된 기사가 나오면 중단). 중소벤처기업부 RSS의 `YYYYMMDDHHmmss` 발행일도 KST로 해석합니다. 두 매체 모두 2026-09-30 점검에서 정상 동작을 확인했습니다.
+
+`candidateSourceFeeds`에는 응답하지 않는 옛 중앙일보 RSS만 후보로 남아 있습니다. 후보는 기본 비활성이며, 다음 순서로 검증합니다.
 
 1. GitHub Actions의 **Probe news sources** 워크플로를 수동 실행하거나 로컬에서 `pnpm run probe:sources`를 실행합니다. 수집원별 응답·최근 48시간 기사 수·URL 패턴 일치·키워드 일치·robots 허용 여부를 표로 보여 주며 데이터 파일은 바꾸지 않습니다.
 2. 결과가 정상인 후보만 쓰려면 Repository Variable `ENABLE_CANDIDATE_SOURCES=true`로 시험 운영합니다. 수집 현황 표에 "(검증 중)"으로 표시됩니다.
