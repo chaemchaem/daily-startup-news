@@ -159,7 +159,11 @@ test("검증 대기 후보 수집원은 ENABLE_CANDIDATE_SOURCES=true일 때만 
   const withCandidates = resolveSourceFeeds({ ENABLE_CANDIDATE_SOURCES: "true" });
   const candidates = withCandidates.filter((feed) => feed.candidate);
   assert.ok(candidates.length > 0);
-  assert.ok(candidates.every((feed) => feed.enabled && feed.feedUrl && feed.allowedUrlPatterns.length));
+  assert.ok(
+    candidates.every(
+      (feed) => feed.enabled && (feed.feedUrl || feed.listUrl) && feed.allowedUrlPatterns.length
+    )
+  );
   assert.ok(candidates.some((feed) => feed.sourceName === "중앙일보"));
 });
 

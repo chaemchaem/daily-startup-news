@@ -70,16 +70,18 @@ function parseFeedItemDate(item, { assumeKst = false } = {}) {
   const raw = String(item?.pubDate || item?.published || item?.updated || "").trim();
   if (raw) {
     const hasTimezone = /(?:Z|[+-]\d{2}:?\d{2}|\b(?:GMT|UTC|UT|KST|[ECMP][SD]T))\s*$/iu.test(raw);
-    const localMatch = raw.match(
-      /^(\d{4})[-./](\d{1,2})[-./](\d{1,2})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?$/u
-    );
+    // 중소벤처기업부 RSS처럼 "20260922161951"(YYYYMMDDHHmmss) 형식도 지원한다.
+    const localMatch =
+      raw.match(/^(\d{4})[-./](\d{1,2})[-./](\d{1,2})(?:[ T](\d{1,2}):(\d{2})(?::(\d{2}))?)?$/u) ||
+      raw.match(/^(\d{4})(\d{2})(\d{2})(?:(\d{2})(\d{2})(\d{2})?)?$/u);
     if (assumeKst && !hasTimezone && localMatch) {
       const [, year, month, day, hour = "0", minute = "0", second = "0"] = localMatch;
-      const iso = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T${hour.padStart(2, "0")}:${minute}:${second.padStart(2, "0")}+09:00`;
+      const iso = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}T${hour.padStart(2, "0")}:${minute.padStart(2, "0")}:${second.padStart(2, "0")}+09:00`;
       const parsed = parsePublishedDate(iso);
       if (parsed) return parsed;
     }
-    const parsed = parsePublishedDate(raw);
+    // 숫자만 있는 값은 Date가 에포크 밀리초로 오해하므로 일반 파싱에 넘기지 않는다.
+    const parsed = /^\d+$/u.test(raw) ? null : parsePublishedDate(raw);
     if (parsed) return parsed;
   }
   return parsePublishedDate(item?.isoDate);

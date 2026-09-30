@@ -1216,15 +1216,48 @@ function createSkipCounter() {
   };
 }
 
+// 발행일이 없는 RSS(예: 한겨레)는 기사 페이지의 발행일 메타데이터를 읽는다.
+// robots를 지키고 요청 사이에 지연을 두며, 오래된 기사가 나오면 더 읽지 않는다.
+async function fillMissingRssDates(items, feed) {
+  const skipped = createSkipCounter();
+  const cutoff = Date.now() - 4 * 24 * 60 * 60 * 1_000;
+  for (const item of items) {
+    if (parseFeedItemDate(item, { assumeKst: feed.region !== "global" })) continue;
+    const url = item.link || item.guid;
+    if (!url || !matchesAllowedUrl(url, feed)) continue;
+    if (!(await isUrlAllowedByRobots(url, { timeoutMs: feed.fetchTimeoutMs }))) {
+      skipped.robotsDisallowed += 1;
+      continue;
+    }
+    await wait(feed.fetchDelayMs);
+    const detail = await requestHtml(url, feed.fetchTimeoutMs, "source_detail_");
+    if (!detail.ok) {
+      skipped.detailFailed += 1;
+      continue;
+    }
+    const publishedAt = extractDateFromMarkup(detail.html, feed.dateSelector);
+    if (!publishedAt) continue;
+    item.pubDate = publishedAt.toISOString();
+    item._prefetchedHtml = detail.html;
+    if (!item.contentSnippet && !item.description) {
+      item.contentSnippet = descriptionFromArticleHtml(detail.html);
+    }
+    if (publishedAt.getTime() < cutoff) break;
+  }
+  return skipped;
+}
+
 async function fetchRssSource(feed) {
   try {
     const parsed = await createRssParser(feed.fetchTimeoutMs).parseURL(feed.feedUrl);
     const items = (parsed.items || []).slice(0, feed.maxItems);
+    const skipped = feed.dateFromArticlePage ? await fillMissingRssDates(items, feed) : undefined;
     return {
       entries: items.map((item) => ({ item, feed })),
       feed,
       succeeded: true,
       rawCount: items.length,
+      ...(skipped ? { skipped } : {}),
     };
   } catch (error) {
     return { entries: [], feed, succeeded: false, rawCount: 0, error: error.message };
@@ -3348,6 +3381,7 @@ module.exports = {
   collectNews,
   evaluateArticle,
   evaluateStrongConnectionArticle,
+  fetchSource,
   finalHardExcludeReason,
   fillCandidatesByPriority,
   hasEcosystemKeyword,

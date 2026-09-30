@@ -109,6 +109,44 @@ async function discoverFeedLinks(guideUrl) {
   return { guideUrl, links: [...links].slice(0, 40) };
 }
 
+// 후보 수집원은 실제 수집 로직(fetchSource)을 그대로 돌려 목록형·기사 페이지 날짜 보완까지 확인한다.
+async function probeViaCollector(feed) {
+  const { fetchSource } = require("./collect-news");
+  const result = await fetchSource(feed);
+  if (!result.succeeded) throw new Error(result.error || "fetch_failed");
+  const now = Date.now();
+  const dated = result.entries.map(({ item }) => ({
+    title: cleanText(item.title || ""),
+    url: item.link || item.guid || "",
+    publishedAt: parseFeedItemDate(item, { assumeKst: feed.region !== "global" }),
+  }));
+  const recent = dated.filter(
+    (item) => item.publishedAt && now - item.publishedAt.getTime() <= WINDOW_MS
+  );
+  const keywordMatched = recent.filter((item) =>
+    BROAD_KEYWORDS.some((keyword) => containsKeyword(item.title, keyword))
+  );
+  const sampleUrl = dated[0]?.url || "";
+  const newest = dated
+    .map((item) => item.publishedAt)
+    .filter(Boolean)
+    .sort((left, right) => right - left)[0];
+  return {
+    ok: dated.length > 0,
+    items: result.rawCount,
+    recent48h: recent.length,
+    urlPatternMatched: dated.length,
+    keywordMatched48h: keywordMatched.length,
+    newest: newest ? newest.toISOString() : null,
+    robotsAllowed: sampleUrl ? await isUrlAllowedByRobots(sampleUrl, { timeoutMs: 8_000 }) : null,
+    samples: keywordMatched.slice(0, 3).map((item) => item.title),
+    rawDateSamples: dated.slice(0, 2).map((item) => `${item.title.slice(0, 30)} → ${item.publishedAt?.toISOString() || "날짜 없음"}`),
+    firstTitle: dated[0]?.title || null,
+    firstUrl: dated[0]?.url || null,
+    skipped: result.skipped || null,
+  };
+}
+
 async function probeSource(feed) {
   const base = {
     name: feed.name,
@@ -116,6 +154,13 @@ async function probeSource(feed) {
     type: feed.type,
     url: sourceUrl(feed),
   };
+  if (feed.candidate && !feed.probeUrlOnly) {
+    try {
+      return { ...base, ...(await probeViaCollector({ ...feed, enabled: true })) };
+    } catch (error) {
+      return { ...base, ok: false, error: cleanText(error.message).slice(0, 120) };
+    }
+  }
   if (feed.type !== "rss") {
     return { ...base, ok: null, note: "목록형 수집원은 수집 로그의 source 진단으로 확인" };
   }
@@ -192,7 +237,9 @@ async function main() {
       const toProbe = [...new Set([...preferred, ...discovery.links])].slice(0, 12);
       const probed = [];
       for (const url of toProbe) {
-        probed.push(await probeSource({ ...feed, name: url, feedUrl: url, fetchTimeoutMs: 20_000 }));
+        probed.push(
+          await probeSource({ ...feed, name: url, type: "rss", feedUrl: url, fetchTimeoutMs: 20_000, probeUrlOnly: true })
+        );
       }
       discoveries.push({ name: feed.name, ...discovery, results: probed.map((result) => ({ ...result, url: result.url })) });
     }
