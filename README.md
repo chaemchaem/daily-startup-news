@@ -286,7 +286,9 @@ pnpm run start
 
 2026-09-28 "Probe news sources" 점검에서 정상 응답·최근 48시간 기사·robots 허용을 확인한 연합뉴스(경제·산업)·조선일보·동아일보·한국경제(경제·IT)·경향신문·전자신문(전체 기사)·ZDNet Korea·AI타임스·스타트업투데이는 `majorOutletFeeds`로 기본 수집합니다. 종합지는 기사량이 많아 `sourceWeight`를 낮게 두며, 스타트업·투자 생태계와의 강한 연결 조건은 그대로 적용됩니다. 시간대 표기 없이 한국 시각을 주는 피드(예: AI타임스)는 KST로 해석합니다.
 
-중앙일보(응답 시간 초과)와 한겨레(발행일 해석 불가)는 `candidateSourceFeeds`에 후보로 남아 있습니다. 후보는 기본 비활성이며, 다음 순서로 검증합니다.
+중앙일보는 옛 RSS 주소(rss.joins.com)가 응답하지 않고 새 RSS 안내 페이지도 없어, 경제 섹션 기사 목록(`https://www.joongang.co.kr/money`)을 읽는 목록형 수집원으로 수집합니다. 한겨레는 RSS에 발행일이 없어 `dateFromArticlePage: true`로 기사 페이지의 발행일을 읽습니다(요청 사이 지연, robots 준수, 4일보다 오래된 기사가 나오면 중단). 중소벤처기업부 RSS의 `YYYYMMDDHHmmss` 발행일도 KST로 해석합니다. 두 매체 모두 2026-09-30 점검에서 정상 동작을 확인했습니다.
+
+`candidateSourceFeeds`에는 응답하지 않는 옛 중앙일보 RSS만 후보로 남아 있습니다. 후보는 기본 비활성이며, 다음 순서로 검증합니다.
 
 1. GitHub Actions의 **Probe news sources** 워크플로를 수동 실행하거나 로컬에서 `pnpm run probe:sources`를 실행합니다. 수집원별 응답·최근 48시간 기사 수·URL 패턴 일치·키워드 일치·robots 허용 여부를 표로 보여 주며 데이터 파일은 바꾸지 않습니다.
 2. 결과가 정상인 후보만 쓰려면 Repository Variable `ENABLE_CANDIDATE_SOURCES=true`로 시험 운영합니다. 수집 현황 표에 "(검증 중)"으로 표시됩니다.
@@ -327,6 +329,18 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 5. 변경된 `data/news.json`, `data/status.json`, `data/insights.json`, `data/archive/YYYY-MM-DD.json`, `data/archive/index.json`, `data/summary-cache.json` 자동 커밋 및 푸시
 
 자동 커밋이나 푸시가 권한 문제로 실패하더라도 해당 단계는 경고만 남기고 워크플로우 전체를 치명적으로 중단하지 않습니다. 커밋 단계는 수집 단계가 실패해도(취소된 경우 제외) 실행되어 실패 상태가 `status.json`에 남습니다. `summary-cache.json`은 `.gitignore` 대상이므로 `git add -f`로 추가합니다.
+
+### RSS 기사 버퍼 (Feed snapshot)
+
+GitHub 예약 실행은 실제로 KST 13~14시에 시작하는 날이 많습니다. 연합뉴스·뉴시스처럼 기사량이 많은 RSS는 최근 약 100~120건만 보여 주기 때문에, 그 시각에는 브리핑 기준(KST 09:00) 이전 기사가 이미 목록에서 밀려나 있습니다(수집 현황의 "기간 이후" 제외).
+
+이를 보완하기 위해 **Feed snapshot** 워크플로(`feed-snapshot.yml`)가 2시간마다 RSS 항목의 제목·링크·발행일·설명(500자 이내)만 모아 GitHub Actions 캐시(`.cache/feed-buffer.json`, 72시간 보관)에 저장합니다. 매일 수집은 시작할 때 이 캐시를 불러와, RSS에서 이미 사라진 항목만 보충합니다. 버퍼 항목도 일반 기사와 똑같이 수집 기간·관련성·품질 필터를 거칩니다.
+
+- 저장소에는 아무것도 커밋하지 않습니다(`.cache/`는 `.gitignore` 대상).
+- 기사 페이지를 따로 읽어야 하는 목록형 수집원과 `dateFromArticlePage` 수집원은 요청 부담 때문에 버퍼 대상에서 제외합니다.
+- 캐시가 없거나 불러오기에 실패해도 수집은 지금처럼 실시간 RSS만으로 진행됩니다.
+- 로컬에서는 `pnpm run snapshot:feeds`로 버퍼를 만들 수 있습니다(`FEED_BUFFER_PATH`로 경로 변경 가능).
+- 수집 현황 표의 "미리 담은 기사 N"이 버퍼에서 보충된 건수입니다.
 
 **Probe news sources** 워크플로(`probe-sources.yml`)는 수동 실행 전용이며, 수집원 점검 결과를 실행 요약에만 남기고 아무것도 커밋하지 않습니다.
 

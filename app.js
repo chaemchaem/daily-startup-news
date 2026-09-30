@@ -537,7 +537,10 @@ function renderSourceTable(sources) {
         .sort((left, right) => right[1] - left[1])
         .slice(0, 2)
         .map(([reason, count]) => `${SKIP_REASON_LABELS[reason] || reason} ${count}`);
-      const note = source.ok ? skipped.join(", ") : source.error || "";
+      const buffered = source.buffered ? [`미리 담은 기사 ${source.buffered}`] : [];
+      const note = source.ok
+        ? [...buffered, ...skipped].join(", ")
+        : [...buffered, source.error || ""].filter(Boolean).join(", ");
       row.append(
         name,
         stateCell,

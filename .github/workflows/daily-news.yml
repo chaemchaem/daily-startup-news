@@ -36,6 +36,16 @@ jobs:
       - name: 의존성 설치
         run: pnpm install --frozen-lockfile
 
+      # Feed snapshot 워크플로가 모아 둔 RSS 기사 목록. 없거나 실패해도 수집은 그대로 진행된다.
+      - name: RSS 기사 버퍼 불러오기
+        uses: actions/cache/restore@v4
+        continue-on-error: true
+        with:
+          path: .cache/feed-buffer.json
+          key: feed-buffer-none-${{ github.run_id }}
+          restore-keys: |
+            feed-buffer-
+
       - name: 실행 환경 디버그 정보
         run: |
           echo "event_name=${{ github.event_name }}"

@@ -30,6 +30,7 @@ const {
   summarizeTitleFallback,
 } = require("./summarize");
 const { saveInsights } = require("./insights");
+const { appendBufferedEntries, loadFeedBuffer } = require("./feed-buffer");
 const {
   cleanText,
   containsKeyword,
@@ -1216,15 +1217,48 @@ function createSkipCounter() {
   };
 }
 
+// 발행일이 없는 RSS(예: 한겨레)는 기사 페이지의 발행일 메타데이터를 읽는다.
+// robots를 지키고 요청 사이에 지연을 두며, 오래된 기사가 나오면 더 읽지 않는다.
+async function fillMissingRssDates(items, feed) {
+  const skipped = createSkipCounter();
+  const cutoff = Date.now() - 4 * 24 * 60 * 60 * 1_000;
+  for (const item of items) {
+    if (parseFeedItemDate(item, { assumeKst: feed.region !== "global" })) continue;
+    const url = item.link || item.guid;
+    if (!url || !matchesAllowedUrl(url, feed)) continue;
+    if (!(await isUrlAllowedByRobots(url, { timeoutMs: feed.fetchTimeoutMs }))) {
+      skipped.robotsDisallowed += 1;
+      continue;
+    }
+    await wait(feed.fetchDelayMs);
+    const detail = await requestHtml(url, feed.fetchTimeoutMs, "source_detail_");
+    if (!detail.ok) {
+      skipped.detailFailed += 1;
+      continue;
+    }
+    const publishedAt = extractDateFromMarkup(detail.html, feed.dateSelector);
+    if (!publishedAt) continue;
+    item.pubDate = publishedAt.toISOString();
+    item._prefetchedHtml = detail.html;
+    if (!item.contentSnippet && !item.description) {
+      item.contentSnippet = descriptionFromArticleHtml(detail.html);
+    }
+    if (publishedAt.getTime() < cutoff) break;
+  }
+  return skipped;
+}
+
 async function fetchRssSource(feed) {
   try {
     const parsed = await createRssParser(feed.fetchTimeoutMs).parseURL(feed.feedUrl);
     const items = (parsed.items || []).slice(0, feed.maxItems);
+    const skipped = feed.dateFromArticlePage ? await fillMissingRssDates(items, feed) : undefined;
     return {
       entries: items.map((item) => ({ item, feed })),
       feed,
       succeeded: true,
       rawCount: items.length,
+      ...(skipped ? { skipped } : {}),
     };
   } catch (error) {
     return { entries: [], feed, succeeded: false, rawCount: 0, error: error.message };
@@ -1593,6 +1627,7 @@ function getSourceDiagnostics(diagnostics, feed) {
       inRange: 0,
       keywordPassed: 0,
       passed: 0,
+      buffered: 0,
       candidates: 0,
       extracted: 0,
       final: 0,
@@ -1607,6 +1642,7 @@ function recordSourceFetchResult(diagnostics, result) {
   record.ok = Boolean(result.succeeded);
   record.error = result.succeeded ? null : String(result.error || "unknown").slice(0, 120);
   record.fetched = Number(result.rawCount) || 0;
+  record.buffered = Number(result.bufferedCount) || 0;
   for (const [reason, count] of Object.entries(result.skipped || {})) {
     if (count) record.skipped[reason] = (record.skipped[reason] || 0) + count;
   }
@@ -2118,6 +2154,14 @@ async function collectNews() {
     `[실제 활성 수집원 수] ${enabledSources.length}개 (primary ${primaryFeeds.length + fallbackFeeds.length}, discovery ${discoveryFeeds.length})`
   );
   const primaryBaseResults = await mapWithConcurrency(primaryFeeds, 4, fetchSource);
+  // 예약 실행이 늦어도 KST 09:00 이전 기사를 놓치지 않도록, 2시간마다 모아 둔 RSS 항목을 합친다.
+  const feedBuffer = await loadFeedBuffer();
+  const bufferedEntryCount = appendBufferedEntries(primaryBaseResults, feedBuffer);
+  console.log(
+    feedBuffer.updatedAt
+      ? `[RSS 버퍼] 마지막 스냅샷 ${formatKstIso(new Date(feedBuffer.updatedAt))} · 보관 ${feedBuffer.items.length}건 · 이번 수집에 추가 ${bufferedEntryCount}건`
+      : "[RSS 버퍼] 없음(스냅샷 전이거나 캐시가 없음) · 실시간 RSS만 사용"
+  );
   const rawCountsBySource = new Map();
   for (const result of primaryBaseResults) {
     const key = result.feed.sourceName || result.feed.name;
@@ -3348,6 +3392,7 @@ module.exports = {
   collectNews,
   evaluateArticle,
   evaluateStrongConnectionArticle,
+  fetchSource,
   finalHardExcludeReason,
   fillCandidatesByPriority,
   hasEcosystemKeyword,

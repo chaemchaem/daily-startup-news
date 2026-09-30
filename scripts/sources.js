@@ -318,6 +318,11 @@ function defineSource(config) {
     verificationNote: config.verificationNote || "",
     reportWhenDisabled: config.reportWhenDisabled === true,
     candidate: config.candidate === true,
+    // RSS에 발행일이 없으면 기사 페이지의 발행일 메타데이터를 읽는다(요청 수가 늘어나므로 필요한 곳만).
+    dateFromArticlePage: config.dateFromArticlePage === true,
+    // 점검 스크립트가 새 RSS 주소를 찾을 때 여는 공식 RSS 안내 페이지(후보 전용).
+    rssGuideUrls: config.rssGuideUrls || [],
+    rssGuideKeywords: config.rssGuideKeywords || [],
   };
 }
 
@@ -408,6 +413,8 @@ const majorOutletFeeds = [
     // 기존 22069 섹션 피드는 2026년 9월 한 달간 필터 통과 0건이라 전체 기사 피드로 교체했다.
     name: "전자신문",
     feedUrl: "http://rss.etnews.com/Section901.xml",
+    // 2026-09-29 점검에서 10초 제한에 걸려 여유를 둔다.
+    fetchTimeoutMs: 20_000,
     baseUrl: "https://www.etnews.com",
     allowedUrlPatterns: ["^https?://(?:www\\.)?etnews\\.com/\\d+"],
     bodySelector: ".article_txt, #articleBody, article",
@@ -440,6 +447,31 @@ const majorOutletFeeds = [
     maxItems: 50,
     maxFinalItems: 3,
   }),
+  defineMajorOutletSource({
+    name: "중앙일보 경제 목록",
+    sourceName: "중앙일보",
+    type: "html_list",
+    feedUrl: null,
+    listUrl: "https://www.joongang.co.kr/money",
+    baseUrl: "https://www.joongang.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?joongang\\.co\\.kr/article/\\d+"],
+    maxItems: 25,
+    fetchDelayMs: 700,
+    fetchTimeoutMs: 15_000,
+    verifiedBy: "probe_2026-09-30",
+    verificationNote: "joongang.co.kr/rss가 404라 경제 섹션 기사 목록 페이지에서 링크를 읽는다",
+  }),
+  defineMajorOutletSource({
+    name: "한겨레 경제",
+    sourceName: "한겨레",
+    feedUrl: "https://www.hani.co.kr/rss/economy/",
+    baseUrl: "https://www.hani.co.kr",
+    allowedUrlPatterns: ["^https?://(?:www\\.)?hani\\.co\\.kr/arti/"],
+    dateFromArticlePage: true,
+    fetchDelayMs: 600,
+    verifiedBy: "probe_2026-09-30",
+    verificationNote: "RSS에 발행일 필드가 없어(2026-09-29 점검) 기사 페이지의 발행일을 읽는다",
+  }),
 ];
 
 const candidateSourceFeeds = [
@@ -449,15 +481,10 @@ const candidateSourceFeeds = [
     feedUrl: "https://rss.joins.com/joins_money_list.xml",
     baseUrl: "https://www.joongang.co.kr",
     allowedUrlPatterns: ["^https?://(?:www\\.|news\\.)?(?:joongang\\.co\\.kr|joins\\.com)/"],
-    verificationNote: "2026-09-28 점검에서 응답 시간 초과. 개편된 공식 RSS 주소 확인 필요",
-  }),
-  defineCandidateSource({
-    name: "한겨레 경제",
-    sourceName: "한겨레",
-    feedUrl: "https://www.hani.co.kr/rss/economy/",
-    baseUrl: "https://www.hani.co.kr",
-    allowedUrlPatterns: ["^https?://(?:www\\.)?hani\\.co\\.kr/arti/"],
-    verificationNote: "2026-09-28 점검에서 30건 응답했으나 최근 48시간 0건(발행일 형식 확인 필요)",
+    fetchTimeoutMs: 20_000,
+    rssGuideUrls: ["https://www.joongang.co.kr/rss", "https://rss.joins.com/"],
+    rssGuideKeywords: ["money", "economy", "business", "industry", "경제"],
+    verificationNote: "2026-09-28·29 점검에서 rss.joins.com 응답 없음. 현재는 '중앙일보 경제 목록'(목록형)으로 수집한다",
   }),
 ];
 

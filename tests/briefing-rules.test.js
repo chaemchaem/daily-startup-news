@@ -159,16 +159,23 @@ test("검증 대기 후보 수집원은 ENABLE_CANDIDATE_SOURCES=true일 때만 
   const withCandidates = resolveSourceFeeds({ ENABLE_CANDIDATE_SOURCES: "true" });
   const candidates = withCandidates.filter((feed) => feed.candidate);
   assert.ok(candidates.length > 0);
-  assert.ok(candidates.every((feed) => feed.enabled && feed.feedUrl && feed.allowedUrlPatterns.length));
+  assert.ok(
+    candidates.every(
+      (feed) => feed.enabled && (feed.feedUrl || feed.listUrl) && feed.allowedUrlPatterns.length
+    )
+  );
   assert.ok(candidates.some((feed) => feed.sourceName === "중앙일보"));
 });
 
 test("점검을 통과한 대형 언론사는 기본 수집원에 포함되고 옛 전자신문 섹션 피드는 빠진다", () => {
   const names = new Set(sourceFeeds.map((feed) => feed.sourceName));
-  for (const outlet of ["연합뉴스", "조선일보", "동아일보", "한국경제", "경향신문", "ZDNet Korea", "AI타임스", "스타트업투데이"]) {
+  for (const outlet of ["연합뉴스", "조선일보", "중앙일보", "동아일보", "한국경제", "한겨레", "경향신문", "ZDNet Korea", "AI타임스", "스타트업투데이"]) {
     assert.ok(names.has(outlet), `${outlet} 누락`);
   }
   const etnews = sourceFeeds.filter((feed) => feed.sourceName === "전자신문");
   assert.deepEqual(etnews.map((feed) => feed.feedUrl), ["http://rss.etnews.com/Section901.xml"]);
-  assert.ok(!sourceFeeds.some((feed) => ["중앙일보", "한겨레"].includes(feed.sourceName)));
+  // 응답 없는 옛 중앙일보 RSS는 후보로만 남고, 실제 수집은 목록형으로 한다.
+  assert.ok(!sourceFeeds.some((feed) => feed.feedUrl === "https://rss.joins.com/joins_money_list.xml"));
+  assert.equal(sourceFeeds.find((feed) => feed.sourceName === "중앙일보").type, "html_list");
+  assert.equal(sourceFeeds.find((feed) => feed.sourceName === "한겨레").dateFromArticlePage, true);
 });

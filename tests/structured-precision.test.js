@@ -100,6 +100,9 @@ test("시간대 없는 국내 피드 발행일은 한국 시각으로 읽는다"
   );
   assert.equal(parseFeedItemDate({ isoDate: "2026-09-28T01:00:00.000Z" }, kst).toISOString(), "2026-09-28T01:00:00.000Z");
   assert.equal(parseFeedItemDate({ pubDate: "not a date" }, kst), null);
+  // 중소벤처기업부 RSS의 "YYYYMMDDHHmmss" 형식(2026-09-29 점검에서 확인)
+  assert.equal(parseFeedItemDate({ pubDate: "20260922161951" }, kst).toISOString(), "2026-09-22T07:19:51.000Z");
+  assert.equal(parseFeedItemDate({ pubDate: "20260928" }, kst).toISOString(), "2026-09-27T15:00:00.000Z");
 });
 
 test("HTML 엔티티(&ndash; 등)를 텍스트로 복원한다", () => {
