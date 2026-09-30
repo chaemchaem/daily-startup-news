@@ -9,7 +9,7 @@ const {
   isBufferableFeed,
   mergeIntoBuffer,
 } = require("../scripts/feed-buffer");
-const { snapshotFeeds } = require("../scripts/snapshot-feeds");
+const { runSnapshotCli, snapshotFeeds } = require("../scripts/snapshot-feeds");
 
 const now = new Date("2026-09-30T05:00:00Z"); // KST 14:00 — 실제 예약 실행이 도는 시각대
 const rssFeed = { name: "연합뉴스 산업", type: "rss", priority: "primary", feedUrl: "https://example.com/rss", region: "domestic" };
@@ -92,4 +92,24 @@ test("스냅샷 스크립트는 버퍼 파일을 만들고 실패한 수집원�
     else process.env.FEED_BUFFER_PATH = previousPath;
     fs.rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test("스냅샷 CLI는 작업 후 반드시 종료하고, 실패해도 종료 코드 0을 쓴다", async () => {
+  const codes = [];
+  const logs = [];
+  await runSnapshotCli({
+    snapshot: async () => ({ feeds: 2, failed: ["전자신문"], added: 3, pruned: 0, total: 3, previousTotal: 0 }),
+    terminate: (code) => codes.push(code),
+    log: (line) => logs.push(line),
+  });
+  await runSnapshotCli({
+    snapshot: async () => {
+      throw new Error("network down");
+    },
+    terminate: (code) => codes.push(code),
+    logError: (line) => logs.push(line),
+  });
+  assert.deepEqual(codes, [0, 0]);
+  assert.match(logs[0], /보관 0→3건/u);
+  assert.match(logs.at(-1), /스냅샷 실패/u);
 });

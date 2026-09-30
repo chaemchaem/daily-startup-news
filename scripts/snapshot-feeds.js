@@ -33,18 +33,33 @@ async function snapshotFeeds({ feeds = sourceFeeds, now = new Date(), fetchSourc
   };
 }
 
-if (require.main === module) {
-  snapshotFeeds()
-    .then((summary) => {
-      console.log(
-        `[스냅샷] 수집원 ${summary.feeds}곳 · 새 항목 ${summary.added}건 · 정리 ${summary.pruned}건 · 보관 ${summary.previousTotal}→${summary.total}건`
-      );
-      if (summary.failed.length) console.log(`[스냅샷 실패 수집원] ${summary.failed.join(", ")}`);
-    })
-    .catch((error) => {
-      // 스냅샷 실패는 브리핑에 영향을 주지 않는다. 로그만 남기고 정상 종료한다.
-      console.error(`[스냅샷 실패] ${error.stack || error.message}`);
-    });
+// 스냅샷은 부가 작업이므로 실패해도 브리핑에 영향을 주지 않도록 항상 정상 종료(0)한다.
+// 네트워크 연결이 남아 프로세스가 끝나지 않는 일을 막기 위해 출력을 비운 뒤 명시적으로 종료한다.
+async function runSnapshotCli({
+  snapshot = snapshotFeeds,
+  terminate = (code) => process.exit(code),
+  log = console.log,
+  logError = console.error,
+} = {}) {
+  try {
+    const summary = await snapshot();
+    log(
+      `[스냅샷] 수집원 ${summary.feeds}곳 · 새 항목 ${summary.added}건 · 정리 ${summary.pruned}건 · 보관 ${summary.previousTotal}→${summary.total}건`
+    );
+    if (summary.failed.length) log(`[스냅샷 실패 수집원] ${summary.failed.join(", ")}`);
+  } catch (error) {
+    logError(`[스냅샷 실패] ${error.stack || error.message}`);
+  }
+  await new Promise((resolve) => {
+    if (!process.stdout.writable) return resolve();
+    process.stdout.write("", resolve);
+  });
+  terminate(0);
+  return 0;
 }
 
-module.exports = { snapshotFeeds };
+if (require.main === module) {
+  void runSnapshotCli();
+}
+
+module.exports = { runSnapshotCli, snapshotFeeds };
