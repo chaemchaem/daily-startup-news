@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-29T05:38:56.038Z",
-  "latestDate": "2026-09-29",
+  "generatedAt": "2026-09-30T05:27:13.157Z",
+  "latestDate": "2026-09-30",
   "weekly": {
-    "from": "2026-09-23",
-    "to": "2026-09-29",
+    "from": "2026-09-24",
+    "to": "2026-09-30",
     "briefingDays": 6,
-    "articleCount": 40,
-    "domesticCount": 25,
+    "articleCount": 47,
+    "domesticCount": 32,
     "overseasCount": 15,
-    "dealCount": 9,
-    "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 262,
+    "dealCount": 12,
+    "disclosedKrwDealCount": 4,
+    "disclosedKrwTotalEok": 400262,
     "byCategory": [
       {
         "label": "해외 VC",
         "count": 14
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 9
+        "label": "VC / AC",
+        "count": 12
       },
       {
-        "label": "VC / AC",
+        "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 8
       },
       {
         "label": "TIPS / LIPS",
-        "count": 5
+        "count": 8
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 4
+        "count": 5
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 15
+        "count": 18
       },
       {
         "label": "실증·PoC",
@@ -48,30 +48,26 @@
         "count": 3
       },
       {
+        "label": "TIPS·LIPS 선정",
+        "count": 3
+      },
+      {
         "label": "출시·상용화",
         "count": 2
       },
       {
         "label": "협약",
         "count": 2
-      },
-      {
-        "label": "펀드결성",
-        "count": 1
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 15
+        "count": 18
       },
       {
         "label": "바이오·헬스케어",
-        "count": 1
+        "count": 2
       },
       {
         "label": "반도체",
@@ -94,35 +90,39 @@
       {
         "label": "Seed",
         "count": 1
+      },
+      {
+        "label": "Series A",
+        "count": 1
       }
     ],
     "topSources": [
+      {
+        "label": "벤처스퀘어",
+        "count": 10
+      },
       {
         "label": "EU-Startups",
         "count": 10
       },
       {
-        "label": "벤처스퀘어",
-        "count": 7
-      },
-      {
         "label": "플래텀",
-        "count": 7
+        "count": 6
       },
       {
         "label": "TechCrunch",
         "count": 5
       },
       {
-        "label": "뉴시스",
-        "count": 3
-      },
-      {
         "label": "매일경제",
-        "count": 3
+        "count": 4
       },
       {
         "label": "스타트업투데이",
+        "count": 4
+      },
+      {
+        "label": "뉴시스",
         "count": 3
       },
       {
@@ -131,11 +131,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-23",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-24",
         "total": 10,
@@ -160,9 +155,58 @@
         "date": "2026-09-29",
         "total": 14,
         "overseas": 3
+      },
+      {
+        "date": "2026-09-30",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-09-30",
+        "company": "EliseAI",
+        "fundingAmount": "$350M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "a16z-backed EliseAI raises $350M, doubles valuation to $4B",
+        "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-09-30",
+        "company": "오픈AI",
+        "fundingAmount": "40조 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표",
+        "url": "https://www.etnews.com/20260930000012",
+        "source": "전자신문"
+      },
+      {
+        "date": "2026-09-29",
+        "company": "Rayon",
+        "fundingAmount": "€10 million",
+        "fundingStage": "Series A",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Paris-based Rayon raises €10 million to build the drawing layer for interior design’s AI era",
+        "url": "https://www.eu-startups.com/2026/09/paris-based-rayon-raises-e10-million-to-build-the-drawing-layer-for-interior-designs-ai-era/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-29",
+        "company": "Marble",
+        "fundingAmount": "€6.5 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Paris-based Marble raises €6.5 million to automate fraud and AML compliance with its no-code, open-source platform",
+        "url": "https://www.eu-startups.com/2026/09/paris-based-marble-raises-e6-5-million-to-automate-fraud-and-aml-compliance-with-its-no-code-open-source-platform/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-09-28",
         "company": "Klang",
@@ -250,51 +294,40 @@
         "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
         "url": "https://www.venturesquare.net/1115810/",
         "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-09-21",
-        "company": "Novadip Biosciences",
-        "fundingAmount": "€10.4 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Belgium's Novadip Biosciences raises €10.4 million to fund pivotal clinical trial and unlock EIB loan tranche | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 30,
-      "dealCount": 10,
+      "articleCount": 28,
+      "dealCount": 8,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-08-31",
-    "to": "2026-09-29",
+    "from": "2026-09-01",
+    "to": "2026-09-30",
     "briefingDays": 29,
-    "articleCount": 131,
-    "domesticCount": 76,
-    "overseasCount": 55,
-    "dealCount": 39,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 878,
+    "articleCount": 140,
+    "domesticCount": 82,
+    "overseasCount": 58,
+    "dealCount": 43,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 400878,
     "byCategory": [
       {
         "label": "해외 VC",
-        "count": 54
+        "count": 57
       },
       {
         "label": "VC / AC",
-        "count": 27
+        "count": 31
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 20
+        "count": 19
       },
       {
         "label": "TIPS / LIPS",
-        "count": 15
+        "count": 18
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -308,15 +341,19 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 58
+        "count": 63
       },
       {
         "label": "선정",
-        "count": 10
+        "count": 9
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 6
       },
       {
         "label": "실증·PoC",
-        "count": 6
+        "count": 5
       },
       {
         "label": "인수·M&A",
@@ -324,10 +361,6 @@
       },
       {
         "label": "협약",
-        "count": 4
-      },
-      {
-        "label": "TIPS·LIPS 선정",
         "count": 4
       },
       {
@@ -350,7 +383,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 52
+        "count": 55
+      },
+      {
+        "label": "바이오·헬스케어",
+        "count": 2
       },
       {
         "label": "반도체",
@@ -361,25 +398,21 @@
         "count": 1
       },
       {
-        "label": "바이오·헬스케어",
-        "count": 1
-      },
-      {
         "label": "우주항공",
         "count": 1
       }
     ],
     "byStage": [
       {
+        "label": "Series A",
+        "count": 4
+      },
+      {
         "label": "시리즈B",
         "count": 3
       },
       {
         "label": "Seed",
-        "count": 3
-      },
-      {
-        "label": "Series A",
         "count": 3
       },
       {
@@ -414,19 +447,19 @@
     "topSources": [
       {
         "label": "벤처스퀘어",
-        "count": 36
+        "count": 39
       },
       {
         "label": "EU-Startups",
-        "count": 36
+        "count": 38
       },
       {
         "label": "TechCrunch",
-        "count": 19
+        "count": 20
       },
       {
         "label": "매일경제",
-        "count": 17
+        "count": 16
       },
       {
         "label": "플래텀",
@@ -438,7 +471,7 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 3
+        "count": 4
       },
       {
         "label": "바이라인네트워크",
@@ -446,11 +479,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-08-31",
-        "total": 2,
-        "overseas": 0
-      },
       {
         "date": "2026-09-01",
         "total": 5,
@@ -590,9 +618,58 @@
         "date": "2026-09-29",
         "total": 14,
         "overseas": 3
+      },
+      {
+        "date": "2026-09-30",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-09-30",
+        "company": "EliseAI",
+        "fundingAmount": "$350M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "a16z-backed EliseAI raises $350M, doubles valuation to $4B",
+        "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-09-30",
+        "company": "오픈AI",
+        "fundingAmount": "40조 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표",
+        "url": "https://www.etnews.com/20260930000012",
+        "source": "전자신문"
+      },
+      {
+        "date": "2026-09-29",
+        "company": "Rayon",
+        "fundingAmount": "€10 million",
+        "fundingStage": "Series A",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Paris-based Rayon raises €10 million to build the drawing layer for interior design’s AI era",
+        "url": "https://www.eu-startups.com/2026/09/paris-based-rayon-raises-e10-million-to-build-the-drawing-layer-for-interior-designs-ai-era/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-29",
+        "company": "Marble",
+        "fundingAmount": "€6.5 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Paris-based Marble raises €6.5 million to automate fraud and AML compliance with its no-code, open-source platform",
+        "url": "https://www.eu-startups.com/2026/09/paris-based-marble-raises-e6-5-million-to-automate-fraud-and-aml-compliance-with-its-no-code-open-source-platform/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-09-28",
         "company": "Klang",
@@ -768,55 +845,11 @@
         "title": "London-based Jack & Jill raises €34.68 million Series A to scale its AI agents for jobseekers and employers | EU-Startups",
         "url": "https://www.eu-startups.com/2026/09/london-based-jack-jill-raises-e34-68-million-series-a-to-scale-its-ai-agents-for-jobseekers-and-employers/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-15",
-        "company": "EnforceShield",
-        "fundingAmount": "€1.7 million",
-        "fundingStage": "Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Vilnius-based EnforceShield raises €1.7 million Seed round to fight AI-powered IP abuse with autonomous enforcement | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/vilnius-based-enforceshield-raises-e1-7-million-seed-round-to-fight-ai-powered-ip-abuse-with-autonomous-enforcement/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-15",
-        "company": "코로로직",
-        "fundingAmount": null,
-        "fundingStage": "시드 투자",
-        "industry": "AI",
-        "overseas": false,
-        "title": "X선 촬영량과 영상 품질의 딜레마…코로로직, 심혈관 AI로 시드 투자",
-        "url": "https://www.venturesquare.net/1113760/",
-        "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-09-14",
-        "company": "Chift",
-        "fundingAmount": "€10.5 million",
-        "fundingStage": "Series A",
-        "industry": null,
-        "overseas": true,
-        "title": "Brussels-based Chift raises €10.5 million Series A to become Europe's financial connectivity layer | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/brussels-based-chift-raises-e10-5-million-series-a-to-become-europes-financial-connectivity-layer/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-11",
-        "company": "리아드코퍼레이션",
-        "fundingAmount": null,
-        "fundingStage": "시드",
-        "industry": "AI",
-        "overseas": false,
-        "title": "예약 조회·변경·취소까지 AI가 처리…리아드코퍼레이션, 사제파트너스 투자 유치",
-        "url": "https://www.venturesquare.net/1112557/",
-        "source": "벤처스퀘어"
       }
     ],
     "previous": {
-      "articleCount": 133,
-      "dealCount": 40,
+      "articleCount": 129,
+      "dealCount": 38,
       "briefingDays": 30
     }
   }
