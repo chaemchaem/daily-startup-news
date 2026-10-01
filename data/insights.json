@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-30T05:27:13.157Z",
-  "latestDate": "2026-09-30",
+  "generatedAt": "2026-10-01T05:45:40.788Z",
+  "latestDate": "2026-10-01",
   "weekly": {
-    "from": "2026-09-24",
-    "to": "2026-09-30",
+    "from": "2026-09-25",
+    "to": "2026-10-01",
     "briefingDays": 6,
-    "articleCount": 47,
-    "domesticCount": 32,
+    "articleCount": 53,
+    "domesticCount": 38,
     "overseasCount": 15,
-    "dealCount": 12,
-    "disclosedKrwDealCount": 4,
-    "disclosedKrwTotalEok": 400262,
+    "dealCount": 11,
+    "disclosedKrwDealCount": 3,
+    "disclosedKrwTotalEok": 400250,
     "byCategory": [
       {
         "label": "해외 VC",
@@ -19,11 +19,11 @@
       },
       {
         "label": "VC / AC",
-        "count": 12
+        "count": 13
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 8
+        "count": 10
       },
       {
         "label": "TIPS / LIPS",
@@ -31,13 +31,17 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 5
+        "count": 7
+      },
+      {
+        "label": "세컨더리 / 구주매각",
+        "count": 1
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 18
+        "count": 17
       },
       {
         "label": "실증·PoC",
@@ -58,16 +62,28 @@
       {
         "label": "협약",
         "count": 2
+      },
+      {
+        "label": "세컨더리",
+        "count": 1
+      },
+      {
+        "label": "인수·M&A",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 18
+        "count": 20
       },
       {
         "label": "바이오·헬스케어",
-        "count": 2
+        "count": 4
+      },
+      {
+        "label": "로봇",
+        "count": 1
       },
       {
         "label": "반도체",
@@ -75,10 +91,6 @@
       }
     ],
     "byStage": [
-      {
-        "label": "시드",
-        "count": 1
-      },
       {
         "label": "시리즈B",
         "count": 1
@@ -98,44 +110,39 @@
     ],
     "topSources": [
       {
-        "label": "벤처스퀘어",
-        "count": 10
-      },
-      {
         "label": "EU-Startups",
         "count": 10
       },
       {
-        "label": "플래텀",
-        "count": 6
+        "label": "벤처스퀘어",
+        "count": 9
+      },
+      {
+        "label": "스타트업투데이",
+        "count": 5
       },
       {
         "label": "TechCrunch",
         "count": 5
       },
       {
+        "label": "뉴시스",
+        "count": 4
+      },
+      {
         "label": "매일경제",
         "count": 4
       },
       {
-        "label": "스타트업투데이",
+        "label": "플래텀",
         "count": 4
       },
       {
-        "label": "뉴시스",
+        "label": "전자신문",
         "count": 3
-      },
-      {
-        "label": "바이라인네트워크",
-        "count": 1
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-24",
-        "total": 10,
-        "overseas": 3
-      },
       {
         "date": "2026-09-25",
         "total": 9,
@@ -158,6 +165,11 @@
       },
       {
         "date": "2026-09-30",
+        "total": 15,
+        "overseas": 3
+      },
+      {
+        "date": "2026-10-01",
         "total": 15,
         "overseas": 3
       }
@@ -184,6 +196,17 @@
         "title": "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표",
         "url": "https://www.etnews.com/20260930000012",
         "source": "전자신문"
+      },
+      {
+        "date": "2026-09-30",
+        "company": "Inbolt",
+        "fundingAmount": "€11 million",
+        "fundingStage": null,
+        "industry": "로봇",
+        "overseas": true,
+        "title": "Paris-based Inbolt raises €11 million to give industrial robots real-time vision and intelligence",
+        "url": "https://www.eu-startups.com/2026/09/paris-based-inbolt-raises-e11-million-to-give-industrial-robots-real-time-vision-and-intelligence/",
+        "source": "EU-Startups"
       },
       {
         "date": "2026-09-29",
@@ -231,17 +254,6 @@
       },
       {
         "date": "2026-09-24",
-        "company": "Enveda",
-        "fundingAmount": "$311M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
-        "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-09-24",
         "company": "Clastix",
         "fundingAmount": "€2.9 million",
         "fundingStage": null,
@@ -283,65 +295,54 @@
         "title": "마케마케, 프리A 30억 원 투자 유치",
         "url": "https://www.mk.co.kr/news/business/12160073",
         "source": "매일경제"
-      },
-      {
-        "date": "2026-09-22",
-        "company": "케이바이오게이트웨이",
-        "fundingAmount": "12억 원",
-        "fundingStage": "시드",
-        "industry": "바이오·헬스케어",
-        "overseas": false,
-        "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
-        "url": "https://www.venturesquare.net/1115810/",
-        "source": "벤처스퀘어"
       }
     ],
     "previous": {
-      "articleCount": 28,
-      "dealCount": 8,
+      "articleCount": 31,
+      "dealCount": 10,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-01",
-    "to": "2026-09-30",
+    "from": "2026-09-02",
+    "to": "2026-10-01",
     "briefingDays": 29,
-    "articleCount": 140,
-    "domesticCount": 82,
-    "overseasCount": 58,
-    "dealCount": 43,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 400878,
+    "articleCount": 146,
+    "domesticCount": 89,
+    "overseasCount": 57,
+    "dealCount": 41,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 400808,
     "byCategory": [
       {
         "label": "해외 VC",
-        "count": 57
+        "count": 56
       },
       {
         "label": "VC / AC",
-        "count": 31
+        "count": 33
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 19
+        "count": 20
       },
       {
         "label": "TIPS / LIPS",
-        "count": 18
+        "count": 19
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 14
+        "count": 16
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 1
+        "count": 2
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 63
+        "count": 62
       },
       {
         "label": "선정",
@@ -357,7 +358,7 @@
       },
       {
         "label": "인수·M&A",
-        "count": 4
+        "count": 5
       },
       {
         "label": "협약",
@@ -376,6 +377,10 @@
         "count": 1
       },
       {
+        "label": "세컨더리",
+        "count": 1
+      },
+      {
         "label": "지원사업",
         "count": 1
       }
@@ -383,19 +388,19 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 55
+        "count": 56
       },
       {
         "label": "바이오·헬스케어",
+        "count": 5
+      },
+      {
+        "label": "로봇",
         "count": 2
       },
       {
         "label": "반도체",
         "count": 2
-      },
-      {
-        "label": "로봇",
-        "count": 1
       },
       {
         "label": "우주항공",
@@ -408,10 +413,6 @@
         "count": 4
       },
       {
-        "label": "시리즈B",
-        "count": 3
-      },
-      {
         "label": "Seed",
         "count": 3
       },
@@ -421,6 +422,10 @@
       },
       {
         "label": "시드 투자",
+        "count": 2
+      },
+      {
+        "label": "시리즈B",
         "count": 2
       },
       {
@@ -447,11 +452,11 @@
     "topSources": [
       {
         "label": "벤처스퀘어",
-        "count": 39
+        "count": 37
       },
       {
         "label": "EU-Startups",
-        "count": 38
+        "count": 37
       },
       {
         "label": "TechCrunch",
@@ -467,23 +472,18 @@
       },
       {
         "label": "뉴시스",
-        "count": 6
+        "count": 7
       },
       {
         "label": "스타트업투데이",
-        "count": 4
+        "count": 5
       },
       {
-        "label": "바이라인네트워크",
-        "count": 1
+        "label": "전자신문",
+        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-01",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-02",
         "total": 7,
@@ -623,6 +623,11 @@
         "date": "2026-09-30",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-01",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -647,6 +652,17 @@
         "title": "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표",
         "url": "https://www.etnews.com/20260930000012",
         "source": "전자신문"
+      },
+      {
+        "date": "2026-09-30",
+        "company": "Inbolt",
+        "fundingAmount": "€11 million",
+        "fundingStage": null,
+        "industry": "로봇",
+        "overseas": true,
+        "title": "Paris-based Inbolt raises €11 million to give industrial robots real-time vision and intelligence",
+        "url": "https://www.eu-startups.com/2026/09/paris-based-inbolt-raises-e11-million-to-give-industrial-robots-real-time-vision-and-intelligence/",
+        "source": "EU-Startups"
       },
       {
         "date": "2026-09-29",
@@ -834,22 +850,11 @@
         "title": "Bucharest-based Veridion raises €17.5 million to scale its real-time map of the world's businesses | EU-Startups",
         "url": "https://www.eu-startups.com/2026/09/bucharest-based-veridion-raises-e17-5-million-to-scale-its-real-time-map-of-the-worlds-businesses/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-15",
-        "company": "Jill",
-        "fundingAmount": "€34.68 million",
-        "fundingStage": "Series A",
-        "industry": "AI",
-        "overseas": true,
-        "title": "London-based Jack & Jill raises €34.68 million Series A to scale its AI agents for jobseekers and employers | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/london-based-jack-jill-raises-e34-68-million-series-a-to-scale-its-ai-agents-for-jobseekers-and-employers/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
       "articleCount": 129,
-      "dealCount": 38,
+      "dealCount": 40,
       "briefingDays": 30
     }
   }
