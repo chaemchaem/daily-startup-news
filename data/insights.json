@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-01T05:45:40.788Z",
-  "latestDate": "2026-10-01",
+  "generatedAt": "2026-10-02T05:29:50.225Z",
+  "latestDate": "2026-10-02",
   "weekly": {
-    "from": "2026-09-25",
-    "to": "2026-10-01",
+    "from": "2026-09-26",
+    "to": "2026-10-02",
     "briefingDays": 6,
-    "articleCount": 53,
-    "domesticCount": 38,
-    "overseasCount": 15,
-    "dealCount": 11,
+    "articleCount": 59,
+    "domesticCount": 42,
+    "overseasCount": 17,
+    "dealCount": 12,
     "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 400250,
+    "disclosedKrwTotalEok": 400365,
     "byCategory": [
       {
-        "label": "해외 VC",
-        "count": 14
+        "label": "VC / AC",
+        "count": 17
       },
       {
-        "label": "VC / AC",
-        "count": 13
+        "label": "해외 VC",
+        "count": 16
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -41,15 +41,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 17
+        "count": 22
       },
       {
         "label": "실증·PoC",
         "count": 4
-      },
-      {
-        "label": "선정",
-        "count": 3
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -60,8 +56,8 @@
         "count": 2
       },
       {
-        "label": "협약",
-        "count": 2
+        "label": "선정",
+        "count": 1
       },
       {
         "label": "세컨더리",
@@ -70,16 +66,24 @@
       {
         "label": "인수·M&A",
         "count": 1
+      },
+      {
+        "label": "펀드결성",
+        "count": 1
+      },
+      {
+        "label": "협약",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 20
+        "count": 24
       },
       {
         "label": "바이오·헬스케어",
-        "count": 4
+        "count": 5
       },
       {
         "label": "로봇",
@@ -92,15 +96,11 @@
     ],
     "byStage": [
       {
+        "label": "시리즈A",
+        "count": 1
+      },
+      {
         "label": "시리즈B",
-        "count": 1
-      },
-      {
-        "label": "프리A",
-        "count": 1
-      },
-      {
-        "label": "Seed",
         "count": 1
       },
       {
@@ -111,26 +111,22 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 10
+        "count": 11
       },
       {
         "label": "벤처스퀘어",
-        "count": 9
+        "count": 10
       },
       {
         "label": "스타트업투데이",
-        "count": 5
+        "count": 8
       },
       {
         "label": "TechCrunch",
-        "count": 5
+        "count": 6
       },
       {
-        "label": "뉴시스",
-        "count": 4
-      },
-      {
-        "label": "매일경제",
+        "label": "전자신문",
         "count": 4
       },
       {
@@ -138,16 +134,15 @@
         "count": 4
       },
       {
-        "label": "전자신문",
+        "label": "AI타임스",
+        "count": 4
+      },
+      {
+        "label": "뉴시스",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-25",
-        "total": 9,
-        "overseas": 2
-      },
       {
         "date": "2026-09-26",
         "total": 5,
@@ -172,9 +167,47 @@
         "date": "2026-10-01",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-02",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-02",
+        "company": "Armadin",
+        "fundingAmount": "$255.5M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Kevin Mandia’s new ‘agent swarm’ security startup Armadin raises $255.5M at $2.5B valuation",
+        "url": "https://techcrunch.com/2026/10/01/kevin-mandias-new-agent-swarm-security-startup-armadin-raises-255-5m-at-2-5b-valuation/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-01",
+        "company": "Revnu",
+        "fundingAmount": "€2.6 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "AI sales startup Revnu raises €2.6 million to build team and accelerate international growth",
+        "url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-01",
+        "company": "자리컴퍼니",
+        "fundingAmount": "145억 원",
+        "fundingStage": "시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "자리컴퍼니, 145억 원 시리즈 A 라운드 클로징∙∙∙임대관리 프롭테크 시장 독주체제 가시화",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53102",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-09-30",
         "company": "EliseAI",
@@ -273,66 +306,44 @@
         "title": "Amsterdam-based Duqu raises €1.5 million to unlock cash tied up in unpaid invoices | EU-Startups",
         "url": "https://www.eu-startups.com/2026/09/amsterdam-based-duqu-raises-e1-5-million-to-unlock-cash-tied-up-in-unpaid-invoices/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-23",
-        "company": "Spiich",
-        "fundingAmount": "€3 million",
-        "fundingStage": "Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Stockholm’s Spiich raises €3 million to let AI handle admin work while sales teams focus on customers | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/stockholms-spiich-raises-e3-million-to-let-ai-handle-admin-work-while-sales-teams-focus-on-customers/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-23",
-        "company": "마케마케",
-        "fundingAmount": "30억 원",
-        "fundingStage": "프리A",
-        "industry": null,
-        "overseas": false,
-        "title": "마케마케, 프리A 30억 원 투자 유치",
-        "url": "https://www.mk.co.kr/news/business/12160073",
-        "source": "매일경제"
       }
     ],
     "previous": {
-      "articleCount": 31,
-      "dealCount": 10,
+      "articleCount": 30,
+      "dealCount": 9,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-02",
-    "to": "2026-10-01",
+    "from": "2026-09-03",
+    "to": "2026-10-02",
     "briefingDays": 29,
-    "articleCount": 146,
-    "domesticCount": 89,
-    "overseasCount": 57,
-    "dealCount": 41,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 400808,
+    "articleCount": 153,
+    "domesticCount": 95,
+    "overseasCount": 58,
+    "dealCount": 43,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 400953,
     "byCategory": [
       {
         "label": "해외 VC",
-        "count": 56
+        "count": 57
       },
       {
         "label": "VC / AC",
-        "count": 33
+        "count": 36
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 20
-      },
-      {
-        "label": "TIPS / LIPS",
-        "count": 19
+        "count": 22
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 16
+        "count": 18
+      },
+      {
+        "label": "TIPS / LIPS",
+        "count": 18
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -342,7 +353,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 62
+        "count": 66
       },
       {
         "label": "선정",
@@ -379,31 +390,23 @@
       {
         "label": "세컨더리",
         "count": 1
-      },
-      {
-        "label": "지원사업",
-        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 56
+        "count": 61
       },
       {
         "label": "바이오·헬스케어",
-        "count": 5
-      },
-      {
-        "label": "로봇",
-        "count": 2
+        "count": 6
       },
       {
         "label": "반도체",
         "count": 2
       },
       {
-        "label": "우주항공",
+        "label": "로봇",
         "count": 1
       }
     ],
@@ -421,10 +424,6 @@
         "count": 2
       },
       {
-        "label": "시드 투자",
-        "count": 2
-      },
-      {
         "label": "시리즈B",
         "count": 2
       },
@@ -435,6 +434,14 @@
       {
         "label": "pre-Seed",
         "count": 2
+      },
+      {
+        "label": "시드 투자",
+        "count": 1
+      },
+      {
+        "label": "시리즈A",
+        "count": 1
       },
       {
         "label": "시리즈C",
@@ -451,11 +458,11 @@
     ],
     "topSources": [
       {
-        "label": "벤처스퀘어",
-        "count": 37
+        "label": "EU-Startups",
+        "count": 38
       },
       {
-        "label": "EU-Startups",
+        "label": "벤처스퀘어",
         "count": 37
       },
       {
@@ -464,31 +471,26 @@
       },
       {
         "label": "매일경제",
-        "count": 16
+        "count": 15
       },
       {
         "label": "플래텀",
         "count": 12
       },
       {
+        "label": "스타트업투데이",
+        "count": 8
+      },
+      {
         "label": "뉴시스",
         "count": 7
       },
       {
-        "label": "스타트업투데이",
-        "count": 5
-      },
-      {
         "label": "전자신문",
-        "count": 3
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-02",
-        "total": 7,
-        "overseas": 3
-      },
       {
         "date": "2026-09-03",
         "total": 6,
@@ -628,9 +630,47 @@
         "date": "2026-10-01",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-02",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-02",
+        "company": "Armadin",
+        "fundingAmount": "$255.5M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Kevin Mandia’s new ‘agent swarm’ security startup Armadin raises $255.5M at $2.5B valuation",
+        "url": "https://techcrunch.com/2026/10/01/kevin-mandias-new-agent-swarm-security-startup-armadin-raises-255-5m-at-2-5b-valuation/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-01",
+        "company": "Revnu",
+        "fundingAmount": "€2.6 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "AI sales startup Revnu raises €2.6 million to build team and accelerate international growth",
+        "url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-01",
+        "company": "자리컴퍼니",
+        "fundingAmount": "145억 원",
+        "fundingStage": "시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "자리컴퍼니, 145억 원 시리즈 A 라운드 클로징∙∙∙임대관리 프롭테크 시장 독주체제 가시화",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53102",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-09-30",
         "company": "EliseAI",
@@ -817,44 +857,11 @@
         "title": "Munich-based Arcos raises €5.5 million to build and operate civil safety infrastructure across Europe | EU-Startups",
         "url": "https://www.eu-startups.com/2026/09/munich-based-arcos-raises-e5-5-million-to-build-and-operate-civil-safety-infrastructure-across-europe/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-17",
-        "company": "인핸스",
-        "fundingAmount": "512억 원",
-        "fundingStage": "시리즈C",
-        "industry": null,
-        "overseas": false,
-        "title": "인핸스, 512억원 시리즈C 유치…고객사였던 LG·포스코·롯데 계열사 주주로",
-        "url": "https://www.venturesquare.net/1114540/",
-        "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-09-17",
-        "company": "Health Force",
-        "fundingAmount": "€4.2 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Barcelona-based Health Force raises €4.2 million to streamline hospital operations with AI agents | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/barcelona-based-health-force-raises-e4-2-million-to-streamline-hospital-operations-with-ai-agents/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-16",
-        "company": "Veridion",
-        "fundingAmount": "€17.5 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Bucharest-based Veridion raises €17.5 million to scale its real-time map of the world's businesses | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/bucharest-based-veridion-raises-e17-5-million-to-scale-its-real-time-map-of-the-worlds-businesses/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 129,
-      "dealCount": 40,
+      "articleCount": 134,
+      "dealCount": 42,
       "briefingDays": 30
     }
   }
