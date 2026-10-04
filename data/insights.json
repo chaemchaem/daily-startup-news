@@ -1,37 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T05:13:25.900Z",
-  "latestDate": "2026-10-03",
+  "generatedAt": "2026-10-04T05:46:16.635Z",
+  "latestDate": "2026-10-04",
   "weekly": {
-    "from": "2026-09-27",
-    "to": "2026-10-03",
+    "from": "2026-09-28",
+    "to": "2026-10-04",
     "briefingDays": 6,
-    "articleCount": 60,
-    "domesticCount": 45,
-    "overseasCount": 15,
-    "dealCount": 12,
-    "disclosedKrwDealCount": 4,
-    "disclosedKrwTotalEok": 400625,
+    "articleCount": 61,
+    "domesticCount": 48,
+    "overseasCount": 13,
+    "dealCount": 14,
+    "disclosedKrwDealCount": 5,
+    "disclosedKrwTotalEok": 400628,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 19
+        "count": 21
       },
       {
         "label": "해외 VC",
-        "count": 15
+        "count": 13
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 10
+        "count": 11
       },
       {
         "label": "TIPS / LIPS",
-        "count": 8
+        "count": 9
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 6
+        "count": 5
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,18 +41,18 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 24
+        "count": 27
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 4
+        "count": 5
       },
       {
         "label": "실증·PoC",
         "count": 3
       },
       {
-        "label": "선정",
+        "label": "모집",
         "count": 1
       },
       {
@@ -64,22 +64,14 @@
         "count": 1
       },
       {
-        "label": "출시·상용화",
-        "count": 1
-      },
-      {
         "label": "펀드결성",
-        "count": 1
-      },
-      {
-        "label": "협약",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 25
+        "count": 23
       },
       {
         "label": "바이오·헬스케어",
@@ -96,6 +88,10 @@
     ],
     "byStage": [
       {
+        "label": "시드 투자",
+        "count": 1
+      },
+      {
         "label": "시리즈A",
         "count": 1
       },
@@ -110,44 +106,39 @@
     ],
     "topSources": [
       {
-        "label": "벤처스퀘어",
-        "count": 10
+        "label": "스타트업투데이",
+        "count": 11
       },
       {
-        "label": "스타트업투데이",
-        "count": 10
+        "label": "벤처스퀘어",
+        "count": 9
       },
       {
         "label": "EU-Startups",
-        "count": 10
-      },
-      {
-        "label": "TechCrunch",
-        "count": 5
+        "count": 9
       },
       {
         "label": "전자신문",
-        "count": 4
+        "count": 5
       },
       {
         "label": "플래텀",
-        "count": 4
+        "count": 5
       },
       {
         "label": "AI타임스",
-        "count": 4
+        "count": 5
       },
       {
         "label": "연합뉴스",
-        "count": 3
+        "count": 4
+      },
+      {
+        "label": "TechCrunch",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-27",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-29",
         "total": 14,
@@ -172,6 +163,11 @@
         "date": "2026-10-03",
         "total": 12,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-04",
+        "total": 12,
+        "overseas": 2
       }
     ],
     "deals": [
@@ -206,6 +202,28 @@
         "overseas": false,
         "title": "아산시, 수도권 투자유치 설명회 성료∙∙∙첨단기업 3개사와 260억 원 딜 체결",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53118",
+        "source": "스타트업투데이"
+      },
+      {
+        "date": "2026-10-02",
+        "company": "Omnio",
+        "fundingAmount": "€2.9 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Sweden’s Omnio raises €2.9 million to advance its plasminogen-based therapy for hard-to-heal chronic wounds",
+        "url": "https://www.eu-startups.com/2026/10/swedens-omnio-raises-e2-9-million-to-advance-its-plasminogen-based-therapy-for-hard-to-heal-chronic-wounds/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-02",
+        "company": "관악연구소",
+        "fundingAmount": "3억 원",
+        "fundingStage": "시드 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "관악연구소, 서울대기술지주로부터 3억 원 유치∙∙∙금융 AX 솔루션 영토 확장",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53117",
         "source": "스타트업투데이"
       },
       {
@@ -310,36 +328,36 @@
     ],
     "previous": {
       "articleCount": 30,
-      "dealCount": 8,
+      "dealCount": 7,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-04",
-    "to": "2026-10-03",
+    "from": "2026-09-05",
+    "to": "2026-10-04",
     "briefingDays": 29,
-    "articleCount": 153,
-    "domesticCount": 97,
-    "overseasCount": 56,
-    "dealCount": 42,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 401179,
+    "articleCount": 155,
+    "domesticCount": 100,
+    "overseasCount": 55,
+    "dealCount": 43,
+    "disclosedKrwDealCount": 8,
+    "disclosedKrwTotalEok": 401182,
     "byCategory": [
       {
         "label": "해외 VC",
-        "count": 55
+        "count": 54
       },
       {
         "label": "VC / AC",
-        "count": 38
+        "count": 39
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 22
+        "count": 23
       },
       {
         "label": "TIPS / LIPS",
-        "count": 18
+        "count": 19
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -353,7 +371,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 66
+        "count": 68
       },
       {
         "label": "선정",
@@ -361,7 +379,7 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 6
+        "count": 7
       },
       {
         "label": "실증·PoC",
@@ -369,7 +387,7 @@
       },
       {
         "label": "인수·M&A",
-        "count": 5
+        "count": 4
       },
       {
         "label": "협약",
@@ -380,12 +398,12 @@
         "count": 3
       },
       {
-        "label": "출시·상용화",
+        "label": "모집",
         "count": 2
       },
       {
-        "label": "모집",
-        "count": 1
+        "label": "출시·상용화",
+        "count": 2
       },
       {
         "label": "세컨더리",
@@ -395,7 +413,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 62
+        "count": 61
       },
       {
         "label": "바이오·헬스케어",
@@ -424,16 +442,12 @@
         "count": 2
       },
       {
+        "label": "시드 투자",
+        "count": 2
+      },
+      {
         "label": "시리즈B",
         "count": 2
-      },
-      {
-        "label": "pre-Seed",
-        "count": 2
-      },
-      {
-        "label": "시드 투자",
-        "count": 1
       },
       {
         "label": "시리즈A",
@@ -452,6 +466,10 @@
         "count": 1
       },
       {
+        "label": "pre-Seed",
+        "count": 1
+      },
+      {
         "label": "seed",
         "count": 1
       }
@@ -463,23 +481,23 @@
       },
       {
         "label": "벤처스퀘어",
-        "count": 36
+        "count": 35
       },
       {
         "label": "TechCrunch",
-        "count": 19
+        "count": 18
       },
       {
         "label": "매일경제",
-        "count": 14
+        "count": 13
       },
       {
         "label": "플래텀",
-        "count": 12
+        "count": 13
       },
       {
         "label": "스타트업투데이",
-        "count": 10
+        "count": 11
       },
       {
         "label": "뉴시스",
@@ -487,15 +505,10 @@
       },
       {
         "label": "전자신문",
-        "count": 4
+        "count": 5
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-04",
-        "total": 6,
-        "overseas": 3
-      },
       {
         "date": "2026-09-05",
         "total": 4,
@@ -635,6 +648,11 @@
         "date": "2026-10-03",
         "total": 12,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-04",
+        "total": 12,
+        "overseas": 2
       }
     ],
     "deals": [
@@ -669,6 +687,28 @@
         "overseas": false,
         "title": "아산시, 수도권 투자유치 설명회 성료∙∙∙첨단기업 3개사와 260억 원 딜 체결",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53118",
+        "source": "스타트업투데이"
+      },
+      {
+        "date": "2026-10-02",
+        "company": "Omnio",
+        "fundingAmount": "€2.9 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Sweden’s Omnio raises €2.9 million to advance its plasminogen-based therapy for hard-to-heal chronic wounds",
+        "url": "https://www.eu-startups.com/2026/10/swedens-omnio-raises-e2-9-million-to-advance-its-plasminogen-based-therapy-for-hard-to-heal-chronic-wounds/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-02",
+        "company": "관악연구소",
+        "fundingAmount": "3억 원",
+        "fundingStage": "시드 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "관악연구소, 서울대기술지주로부터 3억 원 유치∙∙∙금융 AX 솔루션 영토 확장",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53117",
         "source": "스타트업투데이"
       },
       {
@@ -835,32 +875,10 @@
         "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
         "url": "https://www.venturesquare.net/1115810/",
         "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-09-21",
-        "company": "Novadip Biosciences",
-        "fundingAmount": "€10.4 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Belgium's Novadip Biosciences raises €10.4 million to fund pivotal clinical trial and unlock EIB loan tranche | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-19",
-        "company": "삼전·닉스",
-        "fundingAmount": null,
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "삼전·닉스, 'AI 생태계' 투자 넓힌다…\"칩 넘어 데이터센터·SW까지\"",
-        "url": "https://www.newsis.com/view/NISX20260918_0003796133",
-        "source": "뉴시스"
       }
     ],
     "previous": {
-      "articleCount": 136,
+      "articleCount": 137,
       "dealCount": 43,
       "briefingDays": 30
     }
