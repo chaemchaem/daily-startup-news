@@ -93,3 +93,15 @@ test("1면 카드 덱은 저장된 구조화 값만 표시한다", () => {
   assert.ok(deckSource.includes("structuredInfo(article)"));
   assert.ok(!/extract|parse(?:Amount|Company)/u.test(deckSource));
 });
+
+test("사이트 아이콘 파일이 있고 index.html·manifest가 참조한다", () => {
+  const html = read("index.html");
+  for (const file of ["favicon.svg", "icons/favicon-32.png", "icons/apple-touch-icon.png", "site.webmanifest"]) {
+    assert.ok(fs.existsSync(path.join(root, file)), `${file} 없음`);
+    assert.ok(html.includes(`href="${file}"`), `index.html이 ${file}을 참조하지 않음`);
+  }
+  const manifest = JSON.parse(read("site.webmanifest"));
+  for (const icon of manifest.icons) {
+    assert.ok(fs.existsSync(path.join(root, icon.src)), `${icon.src} 없음`);
+  }
+});
