@@ -288,6 +288,8 @@ pnpm run start
 
 중앙일보는 옛 RSS 주소(rss.joins.com)가 응답하지 않고 새 RSS 안내 페이지도 없어, 경제 섹션 기사 목록(`https://www.joongang.co.kr/money`)을 읽는 목록형 수집원으로 수집합니다. 한겨레는 RSS에 발행일이 없어 `dateFromArticlePage: true`로 기사 페이지의 발행일을 읽습니다(요청 사이 지연, robots 준수, 4일보다 오래된 기사가 나오면 중단). 중소벤처기업부 RSS의 `YYYYMMDDHHmmss` 발행일도 KST로 해석합니다. 두 매체 모두 2026-09-30 점검에서 정상 동작을 확인했습니다.
 
+2026-10-04에는 네이버 뉴스스탠드 언론사 35곳을 `scripts/source-discovery.js`에 정리하고 **Probe news sources**의 `discover` 입력(또는 `node scripts/probe-sources.js --discover`)으로 각 언론사 RSS 안내 페이지에서 피드를 찾아 시험했습니다. 정상 응답한 머니투데이·서울경제(경제·산업)·아시아경제·파이낸셜뉴스·헤럴드경제(경제)·이투데이·아주경제·조선비즈·서울신문(경제)·세계일보(경제)·블로터·테크M·IT조선·SBS(경제)·연합뉴스TV(경제)를 기본 수집원에 추가했습니다(활성 수집원 50개). 이데일리·뉴스1·국민일보·한국일보·문화일보·KBS·MBC·YTN·JTBC 등은 공개 RSS를 찾지 못해 보류했습니다.
+
 `candidateSourceFeeds`에는 응답하지 않는 옛 중앙일보 RSS만 후보로 남아 있습니다. 후보는 기본 비활성이며, 다음 순서로 검증합니다.
 
 1. GitHub Actions의 **Probe news sources** 워크플로를 수동 실행하거나 로컬에서 `pnpm run probe:sources`를 실행합니다. 수집원별 응답·최근 48시간 기사 수·URL 패턴 일치·키워드 일치·robots 허용 여부를 표로 보여 주며 데이터 파일은 바꾸지 않습니다.

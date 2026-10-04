@@ -482,6 +482,8 @@ const majorOutletFeeds = [
   defineMajorOutletSource({
     name: "머니투데이",
     feedUrl: "https://rss.mt.co.kr/mt_news.xml",
+    // 2026-10-04 점검에서 10초 제한에 걸린 적이 있어 여유를 둔다.
+    fetchTimeoutMs: 20_000,
     allowedUrlPatterns: ["^https?://(?:www\\.|news\\.)?mt\\.co\\.kr/"],
     maxItems: 120,
     sourceWeight: 3,
