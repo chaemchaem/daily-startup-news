@@ -649,17 +649,62 @@ function extractStructuredArticleInfo({ title = "", summary = "" } = {}) {
   };
 }
 
+// areSimilarTitles와 같은 판정을 하되, 제목별 지문·토큰·바이그램을 한 번만 계산한다.
+// 수집원이 늘어 비교 쌍이 수십만 개가 되어도 수집 시간이 늘지 않도록 하기 위함이다.
+function titleSignature(title) {
+  const fingerprint = titleFingerprint(title);
+  const tokens = tokenSet(title);
+  const bigramCounts = new Map();
+  let bigramTotal = 0;
+  for (let index = 0; index < fingerprint.length - 1; index += 1) {
+    const part = fingerprint.slice(index, index + 2);
+    bigramCounts.set(part, (bigramCounts.get(part) || 0) + 1);
+    bigramTotal += 1;
+  }
+  return { fingerprint, tokens, bigramCounts, bigramTotal };
+}
+
+function areSimilarSignatures(left, right) {
+  if (!left.fingerprint || !right.fingerprint) return false;
+  if (left.fingerprint === right.fingerprint) return true;
+
+  if (left.tokens.size && right.tokens.size) {
+    const [small, large] =
+      left.tokens.size <= right.tokens.size ? [left.tokens, right.tokens] : [right.tokens, left.tokens];
+    // 자카드 유사도의 상한(작은 집합/큰 집합)이 기준보다 낮으면 계산을 건너뛴다.
+    if (small.size / large.size >= 0.72) {
+      let intersection = 0;
+      for (const token of small) if (large.has(token)) intersection += 1;
+      if (intersection / (left.tokens.size + right.tokens.size - intersection) >= 0.72) return true;
+    }
+  }
+
+  if (!left.bigramTotal || !right.bigramTotal) return false;
+  // 다이스 계수의 상한(2·min/(a+b))이 기준보다 낮으면 계산을 건너뛴다.
+  if ((2 * Math.min(left.bigramTotal, right.bigramTotal)) / (left.bigramTotal + right.bigramTotal) < 0.88) {
+    return false;
+  }
+  let matches = 0;
+  for (const [part, count] of right.bigramCounts) {
+    matches += Math.min(count, left.bigramCounts.get(part) || 0);
+  }
+  return (2 * matches) / (left.bigramTotal + right.bigramTotal) >= 0.88;
+}
+
 function deduplicateArticles(articles) {
   const kept = [];
+  const keptSignatures = [];
   const seenUrls = new Set();
 
   for (const article of articles) {
     const canonicalUrl = canonicalizeUrl(article.url);
     if (!canonicalUrl || seenUrls.has(canonicalUrl)) continue;
-    if (kept.some((candidate) => areSimilarTitles(article.title, candidate.title))) continue;
+    const signature = titleSignature(article.title);
+    if (keptSignatures.some((candidate) => areSimilarSignatures(signature, candidate))) continue;
 
     seenUrls.add(canonicalUrl);
     kept.push({ ...article, url: canonicalUrl });
+    keptSignatures.push(signature);
   }
 
   return kept;
