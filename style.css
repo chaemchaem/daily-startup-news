@@ -20,6 +20,16 @@
   --warn: #8a5a00;
   --bad: #a3261b;
   --focus: #2a6fb0;
+  --cat-1: #a3261b;
+  --cat-2: #8a5a00;
+  --cat-3: #2f6b3a;
+  --cat-4: #2a6fb0;
+  --cat-5: #6b4aa0;
+  --cat-6: #0f7b7b;
+  --extrude: #d8d3c8;
+  --extrude-shadow: rgba(60, 50, 30, 0.18);
+  --glare: rgba(255, 255, 255, 0.55);
+  --card-shadow: 0 1px 2px rgba(40, 32, 20, 0.06), 0 18px 40px -16px rgba(40, 32, 20, 0.32);
 
   --serif: "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
   --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
@@ -48,6 +58,16 @@
     --warn: #d9a64a;
     --bad: #e0776a;
     --focus: #4f8fd0;
+    --cat-1: #e0776a;
+    --cat-2: #d9a64a;
+    --cat-3: #7fbf88;
+    --cat-4: #6fa5dc;
+    --cat-5: #b29ae0;
+    --cat-6: #5fc0bd;
+    --extrude: #3a3833;
+    --extrude-shadow: rgba(0, 0, 0, 0.5);
+    --glare: rgba(255, 255, 255, 0.08);
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -16px rgba(0, 0, 0, 0.8);
     color-scheme: dark;
   }
 }
@@ -68,6 +88,16 @@
   --warn: #d9a64a;
   --bad: #e0776a;
   --focus: #4f8fd0;
+  --cat-1: #e0776a;
+  --cat-2: #d9a64a;
+  --cat-3: #7fbf88;
+  --cat-4: #6fa5dc;
+  --cat-5: #b29ae0;
+  --cat-6: #5fc0bd;
+  --extrude: #3a3833;
+  --extrude-shadow: rgba(0, 0, 0, 0.5);
+  --glare: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -16px rgba(0, 0, 0, 0.8);
   color-scheme: dark;
 }
 
@@ -285,60 +315,447 @@ select {
   padding-top: 36px;
 }
 
-.front-grid {
+/* ---------- Front page: 숫자 타일 + 3D 카드 덱 ---------- */
+
+.front-stage {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  gap: 0 40px;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: 32px 56px;
+  align-items: start;
 }
 
-.front-lead {
-  padding-right: 40px;
-  border-right: 1px solid var(--rule);
-  margin-right: -40px;
-}
-
-.front-side {
+.stat-tiles {
   display: grid;
-  align-content: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  padding-top: 52px;
 }
 
-.front-side .front-story + .front-story {
-  margin-top: 20px;
-  padding-top: 20px;
+.stat-tile {
+  padding-top: 10px;
   border-top: 1px solid var(--rule);
 }
 
-.front-story .story-title {
-  font-size: 21px;
+.stat-tile.is-main {
+  grid-column: 1 / -1;
+  padding-top: 0;
+  border-top: 0;
 }
 
-.front-lead .story-title {
-  font-size: clamp(26px, 3.2vw, 36px);
-  line-height: 1.25;
+.stat-figure {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
 }
 
-.front-lead .story-summary {
-  font-size: 17px;
-  color: var(--ink-soft);
-}
-
-.numbers-line {
-  margin: 28px 0 0;
-  padding: 12px 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 14px;
-}
-
-.numbers-line strong {
-  color: var(--ink);
+.stat-value {
+  font-family: var(--serif);
+  font-size: 40px;
   font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
-.numbers-line .sep {
-  margin: 0 10px;
-  color: var(--rule);
+.stat-tile.is-main .stat-value {
+  font-size: clamp(76px, 8vw, 104px);
+  color: var(--ink);
+  /* 겹친 그림자로 숫자가 종이에서 튀어나온 듯한 두께를 만든다. */
+  text-shadow:
+    1px 1px 0 var(--extrude),
+    2px 2px 0 var(--extrude),
+    3px 3px 0 var(--extrude),
+    4px 4px 0 var(--extrude),
+    5px 5px 0 var(--extrude),
+    8px 10px 18px var(--extrude-shadow);
+}
+
+.stat-unit {
+  color: var(--ink-muted);
+  font-size: 15px;
+}
+
+.stat-label {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.deck {
+  min-width: 0;
+}
+
+.deck-stack {
+  position: relative;
+  height: 390px;
+  margin-top: 52px;
+  perspective: 1600px;
+  perspective-origin: 50% 0%;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.deck-stack > .empty-note {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--rule);
+  border-radius: 14px;
+}
+
+.deck-card {
+  --d: 0;
+  --cat: var(--accent);
+  position: absolute;
+  inset: 0;
+  z-index: calc(20 - var(--d));
+  transform-style: preserve-3d;
+  transform:
+    translate3d(calc(var(--drag, 0) * 1px), calc(var(--d) * -18px), calc(var(--d) * -70px))
+    rotateZ(calc(var(--drag, 0) * 0.03deg))
+    rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+  transition:
+    transform 560ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 420ms ease;
+  cursor: pointer;
+}
+
+.deck-card[data-category="1"] { --cat: var(--cat-1); }
+.deck-card[data-category="2"] { --cat: var(--cat-2); }
+.deck-card[data-category="3"] { --cat: var(--cat-3); }
+.deck-card[data-category="4"] { --cat: var(--cat-4); }
+.deck-card[data-category="5"] { --cat: var(--cat-5); }
+.deck-card[data-category="6"] { --cat: var(--cat-6); }
+
+.deck-card.is-tilting {
+  transition: transform 140ms ease-out;
+}
+
+.deck-card.is-dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.deck-card.is-past {
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-120%, 24px, 60px) rotateZ(-12deg) rotateY(-26deg);
+}
+
+.deck-card.is-far {
+  opacity: 0;
+}
+
+.card-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+.deck-card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 32px 24px;
+  overflow: hidden;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-face::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: var(--cat);
+}
+
+.card-front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 0%),
+    var(--glare),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.deck-card.is-tilting .card-front::after {
+  opacity: 1;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+/* 뒤에 깔린 카드는 가장자리만 보이게 내용을 감춘다. */
+.deck-card:not(.is-active) .card-face > * {
+  opacity: 0;
+}
+
+.card-face > * {
+  transition: opacity 260ms ease;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 14px;
+}
+
+.card-category {
+  color: var(--cat);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.card-number {
+  color: var(--ink-muted);
+  font-family: var(--serif);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-front .card-number {
+  position: absolute;
+  right: 22px;
+  bottom: -18px;
+  z-index: 0;
+  font-size: 150px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--rule);
+  pointer-events: none;
+}
+
+.card-front > :not(.card-top) {
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  margin: 4px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.card-title a {
+  text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+.card-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.card-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, max-content));
+  gap: 8px 28px;
+  margin: auto 0 0;
+  padding-top: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-facts dt {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.card-facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card-facts .is-amount dd {
+  color: var(--cat);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.card-flip {
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 6px 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: none;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-facts + .card-flip {
+  margin-top: 16px;
+}
+
+.card-title + .card-flip {
+  margin-top: auto;
+}
+
+.card-flip:hover {
+  color: var(--ink);
+}
+
+.card-back-title {
+  margin: 0 0 10px;
+  color: var(--ink-muted);
+  font-size: 13px;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.card-summary {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.card-summary.is-unavailable {
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.card-actions .source-link,
+.card-actions .card-flip {
+  margin-top: 0;
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.deck-button {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--paper-raised);
+  font-size: 17px;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.deck-button:hover:not(:disabled) {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.deck-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.deck-dots {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.deck-dot {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.deck-dot::before {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin: auto;
+  border-radius: 999px;
+  background: var(--rule);
+  transition: width 240ms ease, background 240ms ease;
+}
+
+.deck-dot[aria-current="true"]::before {
+  width: 20px;
+  background: var(--ink);
+}
+
+.deck-position {
+  min-width: 44px;
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.deck-hint {
+  margin: 10px 0 0;
+  color: var(--ink-muted);
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.deck-hint a {
+  margin-left: 6px;
+  color: var(--ink-soft);
+}
+
+.deck.is-empty .deck-controls,
+.deck.is-empty .deck-hint {
+  display: none;
 }
 
 /* ---------- Story (shared by front page and list) ---------- */
@@ -964,20 +1381,38 @@ select {
     --gutter: 16px;
   }
 
-  .front-grid {
+  .front-stage {
     grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
   }
 
-  .front-lead {
-    margin-right: 0;
-    padding-right: 0;
-    padding-bottom: 22px;
-    border-right: 0;
-    border-bottom: 1px solid var(--rule);
+  .stat-tiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px 16px;
+    padding-top: 0;
   }
 
-  .front-side {
-    padding-top: 22px;
+  .stat-value {
+    font-size: 30px;
+  }
+
+  .stat-tile.is-main {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .stat-tile.is-main .stat-value {
+    font-size: 64px;
+  }
+
+  .stat-tile.is-main .stat-label {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .deck-stack {
+    height: 440px;
   }
 
   .sidebar,
@@ -1005,12 +1440,43 @@ select {
     font-size: 13px;
   }
 
-  .front-lead .story-title {
-    font-size: 25px;
-  }
-
   .story-title {
     font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 26px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .deck-stack {
+    height: 460px;
+    margin-top: 44px;
+  }
+
+  .card-face {
+    padding: 24px 20px 18px;
+    border-radius: 12px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .card-facts {
+    gap: 8px 20px;
+  }
+
+  .card-front .card-number {
+    font-size: 110px;
+    right: 14px;
+  }
+
+  .card-summary {
+    font-size: 15px;
   }
 
   .control-row .segmented {
@@ -1029,10 +1495,6 @@ select {
     width: 100%;
   }
 
-  .numbers-line .sep {
-    margin: 0 6px;
-  }
-
   .bar-row {
     grid-template-columns: 84px minmax(0, 1fr);
   }
@@ -1042,9 +1504,17 @@ select {
   html {
     scroll-behavior: auto;
   }
+
+  .deck-card,
+  .card-inner,
+  .card-face > *,
+  .deck-dot::before {
+    transition: none;
+  }
 }
 
 @media print {
+  .deck,
   .section-nav,
   .controls,
   .sidebar .segmented,

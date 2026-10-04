@@ -23,8 +23,8 @@
       ASSET_VERSION: style.css 또는 app.js를 수정하면 아래 두 ?v= 값을 같은 새 값으로 올린다.
       GitHub Pages에서 새 index.html과 브라우저에 남은 옛 CSS/JS가 섞이는 문제를 막기 위함이다.
     -->
-    <link rel="stylesheet" href="style.css?v=20260930-1" />
-    <script src="app.js?v=20260930-1" defer></script>
+    <link rel="stylesheet" href="style.css?v=20261004-1" />
+    <script src="app.js?v=20261004-1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#stories">기사 목록으로 건너뛰기</a>
@@ -57,10 +57,35 @@
           <h2 id="front-title" class="section-label">오늘의 핵심</h2>
           <p id="issue-note" class="section-note"></p>
         </div>
-        <div id="front-grid" class="front-grid" aria-live="polite">
-          <p class="empty-note">브리핑을 불러오는 중입니다.</p>
+        <div class="front-stage">
+          <div id="stat-tiles" class="stat-tiles" aria-label="오늘의 숫자"></div>
+
+          <div
+            id="deck"
+            class="deck"
+            role="region"
+            aria-roledescription="카드 묶음"
+            aria-label="오늘의 핵심 기사 카드"
+          >
+            <div id="deck-stack" class="deck-stack">
+              <p class="empty-note">브리핑을 불러오는 중입니다.</p>
+            </div>
+            <div class="deck-controls">
+              <button id="deck-prev" class="deck-button" type="button" aria-label="이전 카드">
+                <span aria-hidden="true">←</span>
+              </button>
+              <div id="deck-dots" class="deck-dots" role="group" aria-label="카드 바로가기"></div>
+              <p id="deck-position" class="deck-position" aria-live="polite"></p>
+              <button id="deck-next" class="deck-button" type="button" aria-label="다음 카드">
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <p class="deck-hint">
+              옆으로 밀거나 ← → 키로 넘기고, 카드를 누르면 뒤집혀 요약이 보입니다.
+              <a href="#stories">목록으로 보기</a>
+            </p>
+          </div>
         </div>
-        <p id="numbers-line" class="numbers-line" aria-live="polite"></p>
       </section>
 
       <div class="columns">

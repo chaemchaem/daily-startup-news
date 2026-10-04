@@ -55,16 +55,20 @@ const elements = {
   categoryTabs: $("#category-tabs"),
   dailyChart: $("#daily-chart"),
   dateline: $("#dateline"),
+  deck: $("#deck"),
+  deckDots: $("#deck-dots"),
+  deckNext: $("#deck-next"),
+  deckPosition: $("#deck-position"),
+  deckPrev: $("#deck-prev"),
+  deckStack: $("#deck-stack"),
   dealRows: $("#deal-rows"),
   dealSummary: $("#deal-summary"),
   eventBars: $("#event-bars"),
-  frontGrid: $("#front-grid"),
   industryBars: $("#industry-bars"),
   issueNote: $("#issue-note"),
   latestButton: $("#latest-button"),
   newsSearch: $("#news-search"),
   newsSort: $("#news-sort"),
-  numbersLine: $("#numbers-line"),
   periodToggle: $("#period-toggle"),
   rangeText: $("#range-text"),
   regionFilters: $("#region-filters"),
@@ -72,6 +76,7 @@ const elements = {
   sourceBars: $("#source-bars"),
   sourceDetails: $("#source-details"),
   sourceRows: $("#source-rows"),
+  statTiles: $("#stat-tiles"),
   statusSummary: $("#status-summary"),
   storyList: $("#story-list"),
   trendSummary: $("#trend-summary"),
@@ -342,48 +347,360 @@ function renderStory(article, { headingLevel = "h3" } = {}) {
   return fragment;
 }
 
-function renderFront() {
-  const grid = elements.frontGrid;
-  if (state.briefingMessage) {
-    grid.replaceChildren(el("p", "empty-note", state.briefingMessage));
-    elements.numbersLine.replaceChildren();
+// ---------- 1면: 숫자 타일 + 3D 카드 덱 ----------
+
+const DECK_SIZE = 7;
+const DECK_VISIBLE_DEPTH = 3;
+const SWIPE_THRESHOLD = 70;
+
+const deck = {
+  items: [],
+  index: 0,
+  flipped: false,
+  drag: null,
+  suppressClick: false,
+};
+
+function prefersReducedMotion() {
+  return window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+}
+
+function countUp(node, target) {
+  const value = Math.max(0, Math.round(Number(target) || 0));
+  if (prefersReducedMotion() || value === 0) {
+    node.textContent = value;
     return;
   }
-  const items = state.briefing?.items || [];
-  const featured = selectFeatured(items);
-  if (!featured.length) {
-    grid.replaceChildren(el("p", "empty-note", "이 날짜에는 선별된 기사가 없습니다."));
-  } else {
-    const lead = el("article", "front-story front-lead");
-    lead.append(renderStory(featured[0]));
-    const side = el("div", "front-side");
-    for (const article of featured.slice(1)) {
-      const story = el("article", "front-story");
-      story.append(renderStory(article));
-      side.append(story);
-    }
-    grid.replaceChildren(lead, side);
-  }
+  const duration = 900 + Math.min(value, 40) * 12;
+  const start = performance.now();
+  const step = (now) => {
+    const progress = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    node.textContent = Math.round(value * eased);
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  node.textContent = "0";
+  requestAnimationFrame(step);
+}
 
+function renderStats() {
+  const container = elements.statTiles;
+  if (state.briefingMessage || !state.briefing) {
+    container.replaceChildren();
+    return;
+  }
+  const items = state.briefing.items || [];
   const domestic = items.filter((item) => !isOverseas(item)).length;
   const deals = items.filter((item) => structuredInfo(item).eventType === "투자유치").length;
   const categories = new Set(items.map((item) => item.category).filter(Boolean)).size;
-  const parts = [
-    ["기사", items.length, "건"],
+  const tiles = [
+    ["오늘 고른 기사", items.length, "건", "is-main"],
     ["국내", domestic, "건"],
     ["해외", items.length - domestic, "건"],
     ["투자유치", deals, "건"],
     ["카테고리", categories, "개"],
   ];
-  const line = elements.numbersLine;
-  line.replaceChildren();
-  parts.forEach(([label, value, unit], index) => {
-    if (index) line.append(el("span", "sep", "|"));
-    const chunk = el("span");
-    chunk.append(`${label} `, el("strong", null, value), unit);
-    line.append(chunk);
-  });
+  container.replaceChildren(
+    ...tiles.map(([label, value, unit, extra]) => {
+      const tile = el("div", `stat-tile${extra ? ` ${extra}` : ""}`);
+      const number = el("span", "stat-value", value);
+      number.setAttribute("aria-hidden", "true");
+      const figure = el("p", "stat-figure");
+      figure.append(number, el("span", "stat-unit", unit));
+      tile.append(figure, el("p", "stat-label", label));
+      tile.append(el("span", "visually-hidden", `${label} ${value}${unit}`));
+      countUp(number, value);
+      return tile;
+    })
+  );
 }
+
+function renderCardFace(article, position, total) {
+  const info = structuredInfo(article);
+  const url = safeUrl(article.url);
+
+  const front = el("div", "card-face card-front");
+  const top = el("p", "card-top");
+  top.append(
+    el("span", "card-category", CATEGORY_LABELS[article.category] || article.category || "기타"),
+    el("span", "card-number", String(position).padStart(2, "0"))
+  );
+  const kicker = el("p", "kicker");
+  kicker.append(
+    el("span", null, article.source || "출처 미상"),
+    el("span", null, isOverseas(article) ? "해외" : "국내")
+  );
+  if (isIsoDate(article.publishedAt)) {
+    const time = el("time", null, formatShortDate(article.publishedAt));
+    time.dateTime = article.publishedAt;
+    kicker.append(time);
+  }
+  const title = el("h3", "card-title");
+  if (url) {
+    const link = el("a", null, article.title || "제목 없음");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.draggable = false;
+    title.append(link);
+  } else {
+    title.textContent = article.title || "제목 없음";
+  }
+  front.append(top, kicker, title);
+
+  const facts = [
+    ["기업", info.company],
+    ["라운드", info.fundingStage],
+    ["금액", info.fundingAmount],
+    ["유형", info.fundingAmount || info.fundingStage ? null : info.eventType],
+  ].filter(([, value]) => value);
+  if (facts.length) {
+    const list = el("dl", "card-facts");
+    list.setAttribute("aria-label", "기사에 명시된 정보");
+    for (const [label, value] of facts) {
+      const row = el("div", label === "금액" ? "is-amount" : null);
+      row.append(el("dt", null, label), el("dd", null, value));
+      list.append(row);
+    }
+    front.append(list);
+  }
+  const flip = el("button", "card-flip", "요약 보기");
+  flip.type = "button";
+  flip.dataset.flip = "true";
+  front.append(flip);
+
+  const back = el("div", "card-face card-back");
+  const backTop = el("p", "card-top");
+  backTop.append(el("span", "card-category", "요약"), el("span", "card-number", `${position} / ${total}`));
+  const summary = el(
+    "p",
+    `card-summary${article.summary ? "" : " is-unavailable"}`,
+    article.summary || "본문에서 안전하게 요약할 문장을 찾지 못했습니다. 원문을 확인하세요."
+  );
+  back.append(backTop, el("p", "card-back-title", article.title || "제목 없음"), summary);
+  const actions = el("div", "card-actions");
+  if (url) {
+    const source = el("a", "source-link", `${article.source || "원문"}에서 읽기`);
+    source.href = url;
+    source.target = "_blank";
+    source.rel = "noopener noreferrer";
+    source.setAttribute("aria-label", `${article.title || "기사"} 원문 보기 (새 탭)`);
+    actions.append(source);
+  }
+  const flipBack = el("button", "card-flip", "앞면으로");
+  flipBack.type = "button";
+  flipBack.dataset.flip = "true";
+  actions.append(flipBack);
+  back.append(actions);
+  return { front, back };
+}
+
+function renderDeck() {
+  const stack = elements.deckStack;
+  deck.index = 0;
+  deck.flipped = false;
+  if (state.briefingMessage) {
+    deck.items = [];
+    stack.replaceChildren(el("p", "empty-note", state.briefingMessage));
+    updateDeck();
+    return;
+  }
+  deck.items = selectFeatured(state.briefing?.items || [], DECK_SIZE);
+  if (!deck.items.length) {
+    stack.replaceChildren(el("p", "empty-note", "이 날짜에는 선별된 기사가 없습니다."));
+    updateDeck();
+    return;
+  }
+  const total = deck.items.length;
+  stack.replaceChildren(
+    ...deck.items.map((article, index) => {
+      const card = el("article", "deck-card");
+      card.dataset.index = String(index);
+      card.dataset.category = String(CATEGORY_ORDER.indexOf(article.category) + 1 || 0);
+      card.setAttribute("aria-roledescription", "카드");
+      card.setAttribute("aria-label", `${index + 1} / ${total}: ${article.title || "제목 없음"}`);
+      const inner = el("div", "card-inner");
+      const { front, back } = renderCardFace(article, index + 1, total);
+      inner.append(front, back);
+      card.append(inner);
+      return card;
+    })
+  );
+  elements.deckDots.replaceChildren(
+    ...deck.items.map((article, index) => {
+      const dot = el("button", "deck-dot");
+      dot.type = "button";
+      dot.dataset.goto = String(index);
+      dot.setAttribute("aria-label", `${index + 1}번째 카드: ${article.title || "제목 없음"}`);
+      return dot;
+    })
+  );
+  updateDeck();
+}
+
+function setInert(node, value) {
+  if (!node) return;
+  node.inert = value;
+  if (value) node.setAttribute("aria-hidden", "true");
+  else node.removeAttribute("aria-hidden");
+}
+
+function updateDeck() {
+  const cards = [...elements.deckStack.querySelectorAll(".deck-card")];
+  const total = cards.length;
+  cards.forEach((card, index) => {
+    const depth = index - deck.index;
+    const active = depth === 0;
+    card.style.setProperty("--d", String(Math.max(0, Math.min(depth, DECK_VISIBLE_DEPTH + 1))));
+    card.classList.toggle("is-active", active);
+    card.classList.toggle("is-past", depth < 0);
+    card.classList.toggle("is-far", depth > DECK_VISIBLE_DEPTH);
+    card.classList.toggle("is-flipped", active && deck.flipped);
+    if (!active) {
+      card.style.removeProperty("--drag");
+      card.style.removeProperty("--tilt-x");
+      card.style.removeProperty("--tilt-y");
+    }
+    setInert(card, !active);
+    setInert(card.querySelector(".card-front"), active && deck.flipped);
+    setInert(card.querySelector(".card-back"), !(active && deck.flipped));
+  });
+  elements.deckPrev.disabled = deck.index <= 0;
+  elements.deckNext.disabled = deck.index >= total - 1;
+  elements.deckPosition.textContent = total ? `${deck.index + 1} / ${total}` : "";
+  for (const dot of elements.deckDots.querySelectorAll("[data-goto]")) {
+    const current = Number(dot.dataset.goto) === deck.index;
+    dot.setAttribute("aria-current", current ? "true" : "false");
+  }
+  elements.deck.classList.toggle("is-empty", !total);
+}
+
+function goToCard(index, { focus = false } = {}) {
+  const total = deck.items.length;
+  if (!total) return;
+  const next = Math.max(0, Math.min(total - 1, index));
+  if (next === deck.index) return;
+  deck.index = next;
+  deck.flipped = false;
+  updateDeck();
+  if (focus) activeCard()?.querySelector(".card-title a, .card-flip")?.focus({ preventScroll: true });
+}
+
+function toggleFlip() {
+  if (!deck.items.length) return;
+  deck.flipped = !deck.flipped;
+  updateDeck();
+  const card = activeCard();
+  const target = deck.flipped ? card?.querySelector(".card-back .card-flip") : card?.querySelector(".card-front .card-flip");
+  target?.focus({ preventScroll: true });
+}
+
+function activeCard() {
+  return elements.deckStack.querySelector(".deck-card.is-active");
+}
+
+function clearTilt() {
+  const card = activeCard();
+  if (!card) return;
+  card.classList.remove("is-tilting");
+  card.style.removeProperty("--tilt-x");
+  card.style.removeProperty("--tilt-y");
+}
+
+elements.deckStack.addEventListener("pointerdown", (event) => {
+  const card = activeCard();
+  if (!card || !card.contains(event.target) || event.button !== 0) return;
+  // 제목 링크 위에서 시작한 스와이프도 넘기기로 처리한다(끝난 뒤 링크 클릭은 막는다).
+  if (event.target.closest("button")) return;
+  deck.drag = { id: event.pointerId, card, x: event.clientX, y: event.clientY, dx: 0, moving: false };
+});
+
+elements.deckStack.addEventListener("pointermove", (event) => {
+  const card = activeCard();
+  if (!card) return;
+  const drag = deck.drag;
+  if (drag && drag.id === event.pointerId) {
+    const dx = event.clientX - drag.x;
+    const dy = event.clientY - drag.y;
+    if (!drag.moving && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
+      drag.moving = true;
+      clearTilt();
+      card.classList.add("is-dragging");
+      elements.deckStack.setPointerCapture?.(event.pointerId);
+    }
+    if (drag.moving) {
+      drag.dx = dx;
+      card.style.setProperty("--drag", String(Math.round(dx)));
+    }
+    return;
+  }
+  // 마우스를 올리면 카드가 포인터 쪽으로 살짝 기운다.
+  if (event.pointerType !== "mouse" || prefersReducedMotion() || !card.contains(event.target)) return;
+  const box = card.getBoundingClientRect();
+  const px = (event.clientX - box.left) / box.width - 0.5;
+  const py = (event.clientY - box.top) / box.height - 0.5;
+  card.classList.add("is-tilting");
+  card.style.setProperty("--tilt-x", `${(-py * 8).toFixed(2)}deg`);
+  card.style.setProperty("--tilt-y", `${(px * 10).toFixed(2)}deg`);
+  card.style.setProperty("--glare-x", `${((px + 0.5) * 100).toFixed(1)}%`);
+  card.style.setProperty("--glare-y", `${((py + 0.5) * 100).toFixed(1)}%`);
+});
+
+function endDrag(event) {
+  const drag = deck.drag;
+  if (!drag || drag.id !== event.pointerId) return;
+  deck.drag = null;
+  if (!drag.moving) return;
+  deck.suppressClick = true;
+  setTimeout(() => {
+    deck.suppressClick = false;
+  }, 0);
+  drag.card.classList.remove("is-dragging");
+  if (drag.dx <= -SWIPE_THRESHOLD && deck.index < deck.items.length - 1) goToCard(deck.index + 1);
+  else if (drag.dx >= SWIPE_THRESHOLD && deck.index > 0) goToCard(deck.index - 1);
+  else drag.card.style.removeProperty("--drag");
+}
+
+elements.deckStack.addEventListener("pointerup", endDrag);
+elements.deckStack.addEventListener("pointercancel", endDrag);
+elements.deckStack.addEventListener("pointerleave", (event) => {
+  if (event.pointerType === "mouse" && !deck.drag) clearTilt();
+});
+
+elements.deckStack.addEventListener("click", (event) => {
+  if (deck.suppressClick) {
+    event.preventDefault();
+    return;
+  }
+  const card = event.target.closest(".deck-card");
+  if (!card) return;
+  if (!card.classList.contains("is-active")) return;
+  if (event.target.closest("[data-flip]")) {
+    toggleFlip();
+    return;
+  }
+  if (event.target.closest("a, button")) return;
+  if (window.getSelection?.().toString()) return;
+  toggleFlip();
+});
+
+elements.deck.addEventListener("keydown", (event) => {
+  if (event.target.closest("input, select, textarea")) return;
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    goToCard(deck.index + 1, { focus: true });
+  } else if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    goToCard(deck.index - 1, { focus: true });
+  }
+});
+
+elements.deckPrev.addEventListener("click", () => goToCard(deck.index - 1));
+elements.deckNext.addEventListener("click", () => goToCard(deck.index + 1));
+elements.deckDots.addEventListener("click", (event) => {
+  const dot = event.target.closest("[data-goto]");
+  if (dot) goToCard(Number(dot.dataset.goto));
+});
 
 function renderCategoryTabs() {
   const items = state.briefing?.items || [];
@@ -769,7 +1086,8 @@ function renderArchive() {
 
 function renderAll() {
   renderMasthead();
-  renderFront();
+  renderStats();
+  renderDeck();
   renderCategoryTabs();
   renderStoryList();
   renderArchive();
