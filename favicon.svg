@@ -8,13 +8,13 @@
     <polygon points="335.672,32 415.34400000000005,78 335.672,124 256,78" fill="url(#hot)"/>
     <polygon points="256,78 335.672,124 335.672,354 256,308" fill="#c43a2b"/>
     <polygon points="335.672,124 415.34400000000005,78 415.34400000000005,308 335.672,354" fill="#8e2219"/>
-    <g transform="translate(256 78) matrix(0.866 0.5 0 1 0 0) translate(21.400000000000002 16) scale(0.82)"
+    <g transform="translate(256 78) matrix(0.866 0.5 0 1 0 0) translate(24.400000000000002 10) scale(0.72)"
       fill="#ffe2c8" color="#ffe2c8"><path d="M53 19A25 31 0 1 0 53 61" fill="none" stroke-width="16" stroke="currentColor"/></g>
      
     <polygon points="256,168 335.672,214 256,260 176.328,214" fill="#b6a8ff"/>
     <polygon points="176.328,214 256,260 256,400 176.328,354" fill="#6f5bd6"/>
     <polygon points="256,260 335.672,214 335.672,354 256,400" fill="#4b3aa6"/>
-    <g transform="translate(176.328 214) matrix(0.866 0.5 0 1 0 0) translate(21.400000000000002 16) scale(0.82)"
+    <g transform="translate(176.328 214) matrix(0.866 0.5 0 1 0 0) translate(24.400000000000002 10) scale(0.72)"
       fill="#ffffff" color="#ffffff"><path fill-rule="evenodd" d="M2 0H34C50 0 58 9 58 21C58 30 53 36 46 39C55 42 60 49 60 58C60 71 51 80 35 80H2ZM18 14V33H31C38 33 42 30 42 23.5C42 17 38 14 31 14ZM18 46V66H33C40 66 44 62 44 56C44 50 40 46 33 46Z"/></g>
      
     <polygon points="176.328,290 256,336 176.328,382 96.656,336" fill="#e7e1ff"/>
