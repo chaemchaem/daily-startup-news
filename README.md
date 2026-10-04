@@ -13,7 +13,7 @@
 7. 결과를 최신용 `data/news.json`과 KST 날짜별 `data/archive/YYYY-MM-DD.json`에 함께 저장합니다.
 8. `data/archive/index.json`에 조회 가능한 날짜 목록을, `data/status.json`에 최근 수집 실행 상태와 수집원별 진단을 기록합니다.
 9. `scripts/insights.js`가 아카이브를 모아 최근 7일·30일 추세를 `data/insights.json`으로 저장합니다.
-10. `app.js`가 최신 또는 선택한 날짜의 JSON을 읽어 1면(핵심 3건)·전체 기사·투자 라운드·흐름·지난 브리핑·수집 현황을 정적 페이지로 렌더링합니다.
+10. `app.js`가 최신 또는 선택한 날짜의 JSON을 읽어 1면(숫자 타일 + 핵심 기사 카드 덱)·전체 기사·투자 라운드·흐름·지난 브리핑·수집 현황을 정적 페이지로 렌더링합니다.
 
 Codex는 이 프로젝트를 만들고 수정하는 **개발 단계에서만** 사용됩니다. 운영 중 매일 실행되는 작업은 일반 Node.js 스크립트이며 Codex가 예약 실행되거나 Codex 크레딧을 사용하지 않습니다. GitHub Actions 대신 Vercel Cron 또는 Netlify Scheduled Functions에서 같은 스크립트를 실행하도록 구성할 수도 있습니다.
 
@@ -201,7 +201,7 @@ pnpm run start
 
 브라우저에서 `http://localhost:4173`을 엽니다. `pnpm run preview`도 같은 명령입니다. 기사 수가 0건이어도 통계와 빈 상태 화면이 정상적으로 표시됩니다.
 
-페이지는 신문 1면처럼 구성됩니다. 점수·국내 여부·구체 정보·카테고리 균형을 반영한 **오늘의 핵심 3건**(첫 기사는 국내 우선), 카테고리·검색·국내/해외·정렬을 지원하는 **전체 기사**, `data/insights.json` 기반의 **투자 라운드 표와 7일/30일 흐름**, **지난 브리핑** 날짜 띠, 하단의 **수집 현황**(수집원별 원본·기간 내·통과·최종 건수)을 제공합니다. 상단 상태 표시는 `data/status.json`의 마지막 실행 시각·성공 여부·실패 수집원을 기준으로 표시합니다.
+페이지 1면은 **오늘의 숫자**(기사·국내·해외·투자유치·카테고리 수가 0부터 올라가는 타일)와 **3D 카드 덱**으로 구성됩니다. 덱에는 점수·국내 여부·구체 정보·카테고리 균형을 반영한 핵심 기사 최대 7건(첫 장은 국내 우선)이 겹쳐 쌓이고, 옆으로 밀기·← → 키·화살표 버튼·점 버튼으로 넘기며, 카드를 누르면 뒤집혀 요약과 원문 링크가 나옵니다. 마우스를 올리면 카드가 포인터 쪽으로 살짝 기웁니다. 카드 앞면의 기업·라운드·금액은 수집 단계에서 저장된 값만 표시합니다. `prefers-reduced-motion` 환경에서는 숫자 올라가기·기울기·전환 애니메이션을 끕니다. 아래에는 카테고리·검색·국내/해외·정렬을 지원하는 **전체 기사** 목록, `data/insights.json` 기반의 **투자 라운드 표와 7일/30일 흐름**, **지난 브리핑** 날짜 띠, 하단의 **수집 현황**(수집원별 원본·기간 내·통과·최종 건수)이 이어집니다. 상단 상태 표시는 `data/status.json`의 마지막 실행 시각·성공 여부·실패 수집원을 기준으로 표시합니다.
 
 `style.css` 또는 `app.js`를 수정하면 `index.html`의 `?v=` 값(ASSET_VERSION 주석 참고)을 두 파일 모두 같은 새 값으로 올려야 GitHub Pages에서 옛 자산이 섞이지 않습니다.
 
@@ -318,7 +318,7 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 
 ## GitHub Actions 자동 실행
 
-`.github/workflows/daily-news.yml`은 cron `15 0 * * *`로 매일 `00:15 UTC`, 즉 한국시간 `09:15`에 실행되도록 예약되어 있습니다. 다만 GitHub의 예약 작업은 혼잡할 때 크게 늦어질 수 있으며, 2026년 9월 기준 실제 시작 시각은 대체로 KST 13:30~14:20이었습니다. 실제 데이터 수집 기간은 실행 시각과 별개로 한국시간 `09:00` 기준 최근 48시간으로 고정되고, 실제 수집 시각은 `data/news.json`의 `collectedAt`과 `data/status.json`의 `lastRunAt`에 기록됩니다.
+`.github/workflows/daily-news.yml`은 cron `15 0 * * *`로 매일 `00:15 UTC`, 즉 한국시간 `09:15`에 실행되도록 예약되어 있습니다. 다만 GitHub의 예약 작업은 혼잡할 때 크게 늦어질 수 있으며, 2026년 9~10월 기준 실제 시작 시각은 대체로 KST 13:30~14:50이었습니다(아래 "정시 실행" 참고). 실제 데이터 수집 기간은 실행 시각과 별개로 한국시간 `09:00` 기준 최근 48시간으로 고정되고, 실제 수집 시각은 `data/news.json`의 `collectedAt`과 `data/status.json`의 `lastRunAt`에 기록됩니다.
 
 자동 실행은 프로젝트를 **GitHub 저장소에 push하고 Actions가 활성화되어 있어야** 동작합니다. 프로젝트가 로컬 폴더에만 있으면 매일 오전 9시 15분 자동 실행은 일어나지 않습니다.
 
@@ -331,6 +331,17 @@ Google News는 중계 URL 때문에 본문 추출 성공률이 낮으므로 기�
 5. 변경된 `data/news.json`, `data/status.json`, `data/insights.json`, `data/archive/YYYY-MM-DD.json`, `data/archive/index.json`, `data/summary-cache.json` 자동 커밋 및 푸시
 
 자동 커밋이나 푸시가 권한 문제로 실패하더라도 해당 단계는 경고만 남기고 워크플로우 전체를 치명적으로 중단하지 않습니다. 커밋 단계는 수집 단계가 실패해도(취소된 경우 제외) 실행되어 실패 상태가 `status.json`에 남습니다. `summary-cache.json`은 `.gitignore` 대상이므로 `git add -f`로 추가합니다.
+
+### 정시 실행 (외부 알람 + 중복 방지)
+
+GitHub 예약 실행은 KST 09시대 혼잡 때문에 4~5시간씩 늦게 시작됩니다(2026-10 기준 실제 시작 대체로 KST 14:10~14:50). 오전에 브리핑을 올리려면 무료 외부 알람 서비스(예: cron-job.org)가 매일 KST 09:10에 `workflow_dispatch` API를 호출하게 합니다.
+
+- 요청: `POST https://api.github.com/repos/chaemchaem/daily-startup-news/actions/workflows/daily-news.yml/dispatches`
+- 헤더: `Authorization: Bearer <토큰>`, `Accept: application/vnd.github+json`, `Content-Type: application/json`
+- 본문: `{"ref":"main"}` (성공 시 응답 코드 204)
+- 토큰: 이 저장소만 선택한 fine-grained personal access token, 권한은 **Actions: Read and write** 하나만. 토큰은 저장소에 커밋하지 않습니다.
+
+예약 실행(`schedule`)은 안전망으로 남겨 둡니다. 예약 실행이 시작되면 첫 단계에서 `data/status.json`을 확인해, **오늘 날짜(KST) 브리핑이 이미 성공적으로 저장되어 있으면 수집·커밋 단계를 건너뜁니다.** 외부 알람이 실패했거나 그날 수집이 실패·0건이면 예약 실행이 평소처럼 수집합니다. 수동 실행(`workflow_dispatch`)은 항상 수집합니다.
 
 ### RSS 기사 버퍼 (Feed snapshot)
 

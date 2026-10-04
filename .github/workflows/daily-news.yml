@@ -21,23 +21,47 @@ jobs:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
 
+      # 외부 알람(cron-job.org 등)이 workflow_dispatch로 오전에 먼저 수집하면,
+      # 몇 시간 늦게 시작되는 예약 실행(schedule)은 같은 날 브리핑을 다시 만들지 않고 끝낸다.
+      # 오늘 수집이 실패했거나 아직 없으면 예약 실행이 그대로 수집해 안전망 역할을 한다.
+      # 수동 실행(workflow_dispatch)은 항상 수집한다.
+      - name: 오늘 브리핑 완료 여부 확인
+        id: guard
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          today="$(TZ=Asia/Seoul date '+%Y-%m-%d')"
+          git fetch --depth=1 origin "${GITHUB_REF_NAME}" || true
+          status_json="$(git show "origin/${GITHUB_REF_NAME}:data/status.json" 2>/dev/null || cat data/status.json 2>/dev/null || echo '{}')"
+          done="$(printf '%s' "$status_json" | jq -r --arg today "$today" \
+            'if .success == true and .briefingDate == $today and ((.finalArticleCount // 0) > 0) then "true" else "false" end' \
+            2>/dev/null || echo false)"
+          echo "today_kst=${today} already_done=${done}"
+          echo "skip=${done}" >> "$GITHUB_OUTPUT"
+          if [ "$done" = "true" ]; then
+            echo "::notice::오늘(${today}) 브리핑이 이미 수집되어 예약 실행은 건너뜁니다."
+          fi
+
       - name: pnpm 설정
+        if: ${{ steps.guard.outputs.skip != 'true' }}
         uses: pnpm/action-setup@v4
         with:
           version: 11.7.0
           run_install: false
 
       - name: Node.js 설정
+        if: ${{ steps.guard.outputs.skip != 'true' }}
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
 
       - name: 의존성 설치
+        if: ${{ steps.guard.outputs.skip != 'true' }}
         run: pnpm install --frozen-lockfile
 
       # Feed snapshot 워크플로가 모아 둔 RSS 기사 목록. 없거나 실패해도 수집은 그대로 진행된다.
       - name: RSS 기사 버퍼 불러오기
+        if: ${{ steps.guard.outputs.skip != 'true' }}
         uses: actions/cache/restore@v4
         continue-on-error: true
         with:
@@ -54,6 +78,7 @@ jobs:
           echo "branch=${GITHUB_REF_NAME}"
 
       - name: 최근 48시간 뉴스 수집
+        if: ${{ steps.guard.outputs.skip != 'true' }}
         env:
           USE_OPENAI_SUMMARY: ${{ vars.USE_OPENAI_SUMMARY || 'false' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -81,7 +106,7 @@ jobs:
 
       - name: 변경된 뉴스 데이터 커밋
         # 수집 단계가 실패해도 실패 상태(status.json)는 커밋되도록 취소된 경우만 제외한다.
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.guard.outputs.skip != 'true' }}
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"

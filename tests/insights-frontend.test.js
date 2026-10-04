@@ -75,3 +75,21 @@ test("프론트는 JSON을 no-store로 읽고 구조화 정보를 브라우저�
   assert.doesNotMatch(app, /\.match\(\/[^/]*raise/u);
   assert.match(app, /"세컨더리 \/ 구주매각"/u);
 });
+
+test("예약 실행은 cron을 유지하고, 오늘 브리핑이 이미 있으면 수집·커밋을 건너뛴다", () => {
+  const workflow = read(".github/workflows/daily-news.yml");
+  assert.match(workflow, /cron: "15 0 \* \* \*"/u);
+  assert.match(workflow, /workflow_dispatch:/u);
+  assert.match(workflow, /id: guard\n\s+if: \$\{\{ github\.event_name == 'schedule' \}\}/u);
+  assert.match(workflow, /\.briefingDate == \$today/u);
+  const guarded = workflow.match(/if: \$\{\{ (?:!cancelled\(\) && )?steps\.guard\.outputs\.skip != 'true' \}\}/gu) || [];
+  // pnpm·Node·설치·버퍼·수집·커밋 6단계
+  assert.equal(guarded.length, 6);
+});
+
+test("1면 카드 덱은 저장된 구조화 값만 표시한다", () => {
+  const app = read("app.js");
+  const deckSource = app.slice(app.indexOf("function renderCardFace"), app.indexOf("function renderDeck"));
+  assert.ok(deckSource.includes("structuredInfo(article)"));
+  assert.ok(!/extract|parse(?:Amount|Company)/u.test(deckSource));
+});
