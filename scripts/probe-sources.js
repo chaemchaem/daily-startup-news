@@ -220,7 +220,74 @@ function toMarkdown(results) {
   return lines.join("\n");
 }
 
+// discover 모드: 뉴스스탠드 언론사들의 후보 주소와 RSS 안내 페이지에서 찾은 피드를 시험한다.
+async function discoverTarget(target) {
+  const urls = new Set(target.feedUrls || []);
+  const guideErrors = [];
+  for (const guideUrl of target.guideUrls || []) {
+    try {
+      const discovery = await discoverFeedLinks(guideUrl);
+      if (discovery.error) guideErrors.push(`${guideUrl}: ${discovery.error}`);
+      const preferred = discovery.links.filter((url) =>
+        target.keywords.some((keyword) => url.toLowerCase().includes(keyword))
+      );
+      for (const url of [...preferred, ...discovery.links].slice(0, 6)) urls.add(url);
+    } catch (error) {
+      guideErrors.push(`${guideUrl}: ${cleanText(error.message).slice(0, 60)}`);
+    }
+  }
+  const results = [];
+  for (const url of [...urls].slice(0, 10)) {
+    results.push(
+      await probeSource({
+        name: url,
+        type: "rss",
+        feedUrl: url,
+        region: "domestic",
+        fetchTimeoutMs: 12_000,
+        allowedUrlPatterns: [],
+        probeUrlOnly: true,
+      })
+    );
+  }
+  return { sourceName: target.sourceName, guideErrors, results };
+}
+
+function discoverMarkdown(outlets) {
+  const lines = ["## 뉴스스탠드 언론사 RSS 탐색", ""];
+  for (const outlet of outlets) {
+    const working = outlet.results.filter((result) => result.ok && result.recent48h > 0);
+    lines.push(`### ${outlet.sourceName} — ${working.length ? `사용 가능 ${working.length}개` : "사용 가능한 피드 없음"}`);
+    if (outlet.guideErrors.length) lines.push(`- 안내 페이지 실패: ${outlet.guideErrors.join(" / ")}`);
+    for (const result of outlet.results) {
+      const status = result.ok
+        ? `${result.items}건 · 48시간 ${result.recent48h}건 · 키워드 ${result.keywordMatched48h}건 · 최신 ${result.newest || "날짜 없음"} · robots ${result.robotsAllowed === false ? "차단" : "허용"}`
+        : `실패 ${result.error || "(0건)"}`;
+      lines.push(`- ${result.url} → ${status}${result.firstTitle ? ` · 예: ${result.firstTitle.slice(0, 30)}` : ""}${result.firstUrl ? ` · 링크 ${result.firstUrl}` : ""}`);
+    }
+    lines.push("");
+  }
+  return lines.join("\n");
+}
+
+async function runDiscover() {
+  const { discoveryTargets } = require("./source-discovery");
+  const outlets = [];
+  for (let index = 0; index < discoveryTargets.length; index += 4) {
+    outlets.push(...(await Promise.all(discoveryTargets.slice(index, index + 4).map(discoverTarget))));
+  }
+  return discoverMarkdown(outlets);
+}
+
 async function main() {
+  if (process.argv.includes("--discover")) {
+    const markdown = await runDiscover();
+    console.log(markdown);
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, `${markdown}\n`);
+    }
+    return;
+  }
   const candidatesOnly = process.argv.includes("--candidates");
   const feeds = candidatesOnly
     ? candidateSourceFeeds
@@ -252,10 +319,14 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().catch((error) => {
-    console.error(`[수집원 점검 실패] ${error.stack || error.message}`);
-    process.exitCode = 1;
-  });
+  // 남은 네트워크 연결 때문에 프로세스가 몇 분씩 끝나지 않는 일을 막기 위해 명시적으로 종료한다.
+  main()
+    .then(() => 0)
+    .catch((error) => {
+      console.error(`[수집원 점검 실패] ${error.stack || error.message}`);
+      return 1;
+    })
+    .then((code) => process.stdout.write("", () => process.exit(code)));
 }
 
 module.exports = { probeSource, toMarkdown };

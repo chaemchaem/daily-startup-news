@@ -9,6 +9,10 @@ on:
         description: "검증 대기 후보 수집원만 점검"
         type: boolean
         default: true
+      discover:
+        description: "뉴스스탠드 언론사 RSS 주소 탐색(scripts/source-discovery.js)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -39,7 +43,9 @@ jobs:
 
       - name: 수집원 점검
         run: |
-          if [ "${{ inputs.candidates_only }}" = "true" ]; then
+          if [ "${{ inputs.discover }}" = "true" ]; then
+            node scripts/probe-sources.js --discover
+          elif [ "${{ inputs.candidates_only }}" = "true" ]; then
             node scripts/probe-sources.js --candidates
           else
             node scripts/probe-sources.js
