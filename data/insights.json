@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-04T11:56:41.845Z",
+  "generatedAt": "2026-10-04T12:16:35.038Z",
   "latestDate": "2026-10-04",
   "weekly": {
     "from": "2026-09-28",
@@ -9,9 +9,9 @@
     "articleCount": 61,
     "domesticCount": 48,
     "overseasCount": 13,
-    "dealCount": 14,
-    "disclosedKrwDealCount": 5,
-    "disclosedKrwTotalEok": 400628,
+    "dealCount": 12,
+    "disclosedKrwDealCount": 3,
+    "disclosedKrwTotalEok": 368,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -41,7 +41,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 27
+        "count": 25
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -195,17 +195,6 @@
       },
       {
         "date": "2026-10-02",
-        "company": "아산시",
-        "fundingAmount": "260억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "아산시, 수도권 투자유치 설명회 성료∙∙∙첨단기업 3개사와 260억 원 딜 체결",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53118",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-02",
         "company": "Omnio",
         "fundingAmount": "€2.9 million",
         "fundingStage": null,
@@ -258,17 +247,6 @@
         "title": "a16z-backed EliseAI raises $350M, doubles valuation to $4B",
         "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-09-30",
-        "company": "오픈AI",
-        "fundingAmount": "40조 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표",
-        "url": "https://www.etnews.com/20260930000012",
-        "source": "전자신문"
       },
       {
         "date": "2026-09-30",
@@ -339,9 +317,9 @@
     "articleCount": 155,
     "domesticCount": 100,
     "overseasCount": 55,
-    "dealCount": 43,
-    "disclosedKrwDealCount": 8,
-    "disclosedKrwTotalEok": 401182,
+    "dealCount": 41,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 922,
     "byCategory": [
       {
         "label": "해외 VC",
@@ -371,7 +349,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 68
+        "count": 66
       },
       {
         "label": "선정",
@@ -680,17 +658,6 @@
       },
       {
         "date": "2026-10-02",
-        "company": "아산시",
-        "fundingAmount": "260억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "아산시, 수도권 투자유치 설명회 성료∙∙∙첨단기업 3개사와 260억 원 딜 체결",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53118",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-02",
         "company": "Omnio",
         "fundingAmount": "€2.9 million",
         "fundingStage": null,
@@ -743,17 +710,6 @@
         "title": "a16z-backed EliseAI raises $350M, doubles valuation to $4B",
         "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-09-30",
-        "company": "오픈AI",
-        "fundingAmount": "40조 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표",
-        "url": "https://www.etnews.com/20260930000012",
-        "source": "전자신문"
       },
       {
         "date": "2026-09-30",
@@ -875,6 +831,28 @@
         "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
         "url": "https://www.venturesquare.net/1115810/",
         "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-09-21",
+        "company": "Novadip Biosciences",
+        "fundingAmount": "€10.4 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Belgium's Novadip Biosciences raises €10.4 million to fund pivotal clinical trial and unlock EIB loan tranche | EU-Startups",
+        "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-09-19",
+        "company": "삼전·닉스",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "삼전·닉스, 'AI 생태계' 투자 넓힌다…\"칩 넘어 데이터센터·SW까지\"",
+        "url": "https://www.newsis.com/view/NISX20260918_0003796133",
+        "source": "뉴시스"
       }
     ],
     "previous": {

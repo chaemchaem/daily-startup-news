@@ -23,8 +23,8 @@
       ASSET_VERSION: style.css 또는 app.js를 수정하면 아래 두 ?v= 값을 같은 새 값으로 올린다.
       GitHub Pages에서 새 index.html과 브라우저에 남은 옛 CSS/JS가 섞이는 문제를 막기 위함이다.
     -->
-    <link rel="stylesheet" href="style.css?v=20261004-1" />
-    <script src="app.js?v=20261004-1" defer></script>
+    <link rel="stylesheet" href="style.css?v=20261004-3" />
+    <script src="app.js?v=20261004-3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#stories">기사 목록으로 건너뛰기</a>
@@ -51,43 +51,52 @@
       </nav>
     </header>
 
-    <main class="wrap">
-      <section id="front" class="front" aria-labelledby="front-title">
-        <div class="section-head">
-          <h2 id="front-title" class="section-label">오늘의 핵심</h2>
-          <p id="issue-note" class="section-note"></p>
-        </div>
-        <div class="front-stage">
-          <div id="stat-tiles" class="stat-tiles" aria-label="오늘의 숫자"></div>
+    <main>
+      <section id="front" class="front hero" aria-labelledby="front-title">
+        <canvas id="hero-field" class="hero-field" aria-hidden="true"></canvas>
+        <div class="hero-floor" aria-hidden="true"></div>
 
-          <div
-            id="deck"
-            class="deck"
-            role="region"
-            aria-roledescription="카드 묶음"
-            aria-label="오늘의 핵심 기사 카드"
-          >
-            <div id="deck-stack" class="deck-stack">
+        <div class="wrap hero-head">
+          <div class="section-head">
+            <h2 id="front-title" class="section-label">오늘의 핵심</h2>
+            <p id="issue-note" class="section-note"></p>
+          </div>
+          <div id="stat-tiles" class="stat-tiles" aria-label="오늘의 숫자"></div>
+        </div>
+
+        <div
+          id="deck"
+          class="deck"
+          role="region"
+          aria-roledescription="회전 카드"
+          aria-label="오늘의 핵심 기사 카드"
+        >
+          <div id="deck-stack" class="deck-stack">
+            <div class="deck-shadow" aria-hidden="true"></div>
+            <div id="deck-ring" class="deck-ring">
               <p class="empty-note">브리핑을 불러오는 중입니다.</p>
             </div>
-            <div class="deck-controls">
-              <button id="deck-prev" class="deck-button" type="button" aria-label="이전 카드">
-                <span aria-hidden="true">←</span>
-              </button>
-              <div id="deck-dots" class="deck-dots" role="group" aria-label="카드 바로가기"></div>
-              <p id="deck-position" class="deck-position" aria-live="polite"></p>
-              <button id="deck-next" class="deck-button" type="button" aria-label="다음 카드">
-                <span aria-hidden="true">→</span>
-              </button>
-            </div>
-            <p class="deck-hint">
-              옆으로 밀거나 ← → 키로 넘기고, 카드를 누르면 뒤집혀 요약이 보입니다.
-              <a href="#stories">목록으로 보기</a>
-            </p>
           </div>
+          <div class="wrap deck-controls">
+            <button id="deck-prev" class="deck-button" type="button" aria-label="이전 카드">
+              <span aria-hidden="true">←</span>
+            </button>
+            <div id="deck-dots" class="deck-dots" role="group" aria-label="카드 바로가기"></div>
+            <p id="deck-position" class="deck-position" aria-live="polite"></p>
+            <button id="deck-next" class="deck-button" type="button" aria-label="다음 카드">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <p class="wrap deck-hint">
+            끌어서 돌리거나 ← → 키로 넘기고, 가운데 카드를 누르면 뒤집혀 요약이 보입니다.
+            <a href="#stories">목록으로 보기</a>
+          </p>
         </div>
+
+        <div id="deal-ticker" class="deal-ticker" hidden></div>
       </section>
 
+      <div class="wrap">
       <div class="columns">
         <section id="stories" class="stories" aria-labelledby="stories-title">
           <div class="section-head">
@@ -189,6 +198,7 @@
           <button id="latest-button" class="text-button" type="button">최신 브리핑으로</button>
         </div>
       </section>
+      </div>
     </main>
 
     <footer id="status" class="colophon">

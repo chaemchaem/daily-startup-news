@@ -381,6 +381,12 @@ const KOREAN_EVENT_CLAUSE_PATTERN =
   /투자|유치|시드|시리즈|프리[-\s]?[A-C]|선정|선발|모집|인수|합병|협약|MOU|맞손|실증|PoC|출시|상용화|결성|조성|수상|확보|진출|IPO|상장/iu;
 const INSTITUTION_SUFFIX_PATTERN =
   /(?:부|처|청|위원회|센터|재단|공사|공단|진흥원|협회|연구원|대학교|대학|은행|시청|도청|구청|군청)$/u;
+// 지방자치단체(아산시·경기도·강남구 등)는 기업이 아니다. 지자체의 "투자유치"는 기업 유치 행사이지 스타트업 투자가 아니다.
+const LOCAL_GOVERNMENT_PATTERN = /^[가-힣]{1,5}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|도)$/u;
+const LOCAL_GOVERNMENT_TITLE_ACTOR_PATTERN =
+  /^[‘'"]?([가-힣]{1,5}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|도))(?:[,·∙]|\s*(?:가|는|이|와|과)\s)/u;
+const PLANNED_FUNDING_PATTERN =
+  /(?:투자|유치|조달|라운드|펀드)[^.!?…]{0,12}(?:추진|검토|타진|협상|논의|모색)|\b(?:in\s+talks\s+to\s+raise|(?:plans?|plotting|looking|seeking|seeks?|aims?)\s+to\s+raise|reportedly\s+(?:in\s+talks|raising|seeking))\b/iu;
 const ENGLISH_GENERIC_ACTOR_PATTERN =
   /^(?:startup|startups|company|firm|it|this|that|the|a|an|ai|fintech|platform|report|study|founder|founders|investors?)$/iu;
 const FUNDING_EVENT_PATTERN =
@@ -399,12 +405,17 @@ function isPlausibleCompanyName(value) {
     return false;
   }
   if (INSTITUTION_SUFFIX_PATTERN.test(name)) return false;
+  if (LOCAL_GOVERNMENT_PATTERN.test(name)) return false;
   // 한국어 문장 조각(조사·어미로 끝나는 구)은 회사명으로 보지 않는다.
   if (/(?:만|은|는|을|를|의|에|로|다|요|까|죠|며|고|서)$/u.test(name) && /\s/u.test(name)) {
     return false;
   }
   if (/[가-힣](?:에|에서|에게|으로)$/u.test(name)) return false;
   return true;
+}
+
+function isLocalGovernmentTitleActor(title) {
+  return LOCAL_GOVERNMENT_TITLE_ACTOR_PATTERN.test(stripTitleDecorations(title));
 }
 
 function stripTitleDecorations(title) {
@@ -602,10 +613,17 @@ function extractStructuredArticleInfo({ title = "", summary = "" } = {}) {
     eventType = isBackgroundFunding ? null : summaryEvent;
   }
 
+  // 제목의 주체가 지자체면 "투자유치"는 기업 유치 행사다. 투자 사건·금액·라운드로 보지 않는다.
+  if (isLocalGovernmentTitleActor(titleText) && ["투자유치", "펀드결성", "세컨더리"].includes(eventType)) {
+    eventType = null;
+  }
+
   // 금액·라운드는 투자 사건이 확인되고, 같은 문장 안에 투자 표현이 있을 때만 저장한다.
+  // 제목이 아직 끝나지 않은 투자(추진·검토·타진·협상)를 말하면 금액·라운드는 확정값이 아니므로 저장하지 않는다.
   let fundingAmount = null;
   let fundingStage = null;
-  if (["투자유치", "펀드결성", "세컨더리"].includes(eventType)) {
+  const isPlannedFunding = PLANNED_FUNDING_PATTERN.test(titleText);
+  if (["투자유치", "펀드결성", "세컨더리"].includes(eventType) && !isPlannedFunding) {
     const segments = [...splitStructuredSegments(titleText), ...splitStructuredSegments(summaryText)];
     for (const segment of segments) {
       const isFundingSegment =
@@ -891,6 +909,7 @@ function truncateSentence(value, maxLength = 100) {
 }
 
 module.exports = {
+  isLocalGovernmentTitleActor,
   areSimilarTitles,
   calculateTextSimilarity,
   canonicalizeUrl,

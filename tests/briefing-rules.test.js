@@ -183,3 +183,15 @@ test("점검을 통과한 대형 언론사는 기본 수집원에 포함되고 �
   assert.equal(sourceFeeds.find((feed) => feed.sourceName === "중앙일보").type, "html_list");
   assert.equal(sourceFeeds.find((feed) => feed.sourceName === "한겨레").dateFromArticlePage, true);
 });
+
+test("지자체 기업 유치 설명회는 제외하되, 스타트업 대상 행사는 유지한다", () => {
+  assert.equal(
+    finalHardExcludeReason({ title: "아산시, 수도권 투자유치 설명회 성료∙∙∙첨단기업 3개사와 260억 원 딜 체결" }),
+    "hard_exclude_local_government_investment_attraction"
+  );
+  assert.equal(
+    finalHardExcludeReason({ title: "아산시, '삼성 113조 투자' 계기 서울서 투자유치 설명회" }),
+    "hard_exclude_local_government_investment_attraction"
+  );
+  assert.equal(finalHardExcludeReason({ title: "경기도, 스타트업 50곳 투자유치 설명회 개최" }), null);
+});
