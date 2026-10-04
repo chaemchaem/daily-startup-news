@@ -169,7 +169,11 @@ test("검증 대기 후보 수집원은 ENABLE_CANDIDATE_SOURCES=true일 때만 
 
 test("점검을 통과한 대형 언론사는 기본 수집원에 포함되고 옛 전자신문 섹션 피드는 빠진다", () => {
   const names = new Set(sourceFeeds.map((feed) => feed.sourceName));
-  for (const outlet of ["연합뉴스", "조선일보", "중앙일보", "동아일보", "한국경제", "한겨레", "경향신문", "ZDNet Korea", "AI타임스", "스타트업투데이"]) {
+  for (const outlet of [
+    "연합뉴스", "조선일보", "중앙일보", "동아일보", "한국경제", "한겨레", "경향신문", "ZDNet Korea", "AI타임스", "스타트업투데이",
+    "머니투데이", "서울경제", "아시아경제", "파이낸셜뉴스", "헤럴드경제", "이투데이", "아주경제", "조선비즈",
+    "서울신문", "세계일보", "블로터", "테크M", "IT조선", "SBS", "연합뉴스TV",
+  ]) {
     assert.ok(names.has(outlet), `${outlet} 누락`);
   }
   const etnews = sourceFeeds.filter((feed) => feed.sourceName === "전자신문");
