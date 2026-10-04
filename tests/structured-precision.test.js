@@ -108,3 +108,41 @@ test("시간대 없는 국내 피드 발행일은 한국 시각으로 읽는다"
 test("HTML 엔티티(&ndash; 등)를 텍스트로 복원한다", () => {
   assert.equal(cleanText("AI 모델 JEV &ndash; 바이라인네트워크"), "AI 모델 JEV – 바이라인네트워크");
 });
+
+test("지자체는 기업명이 아니며, 지자체의 기업 유치 행사는 투자 사건·금액·라운드로 저장하지 않는다", () => {
+  const asan = extractStructuredArticleInfo({
+    title: "아산시, 수도권 투자유치 설명회 성료∙∙∙첨단기업 3개사와 260억 원 딜 체결",
+    summary: "아산시가 서울 피스앤파크 컨벤션에서 2026 아산시 투자유치 설명회를 개최하고 첨단전략산업 기업 유치에 나섰다고 2일 밝혔다.",
+  });
+  assert.equal(asan.company, null);
+  assert.equal(asan.eventType, null);
+  assert.equal(asan.fundingAmount, null);
+
+  const samsung = extractStructuredArticleInfo({
+    title: "아산시, '삼성 113조 투자' 계기 서울서 투자유치 설명회",
+    summary: "시는 설명회에 참석한 기업들과 지속적인 접점을 유지하며 후속 투자유치에도 나설 방침이다.",
+  });
+  assert.equal(samsung.company, null);
+  assert.equal(samsung.fundingAmount, null);
+  assert.equal(samsung.fundingStage, null);
+
+  // 일반 스타트업 투자 기사는 그대로 추출한다.
+  const startup = extractStructuredArticleInfo({
+    title: "관악연구소, 서울대기술지주로부터 3억 원 유치…금융 AX 솔루션 영토 확장",
+    summary: "금융 의사결정 인공지능(AI) 기업 관악연구소(대표 승현찬)가 서울대학교기술지주로부터 3억 원 규모의 시드 투자를 유치했다고 2일 밝혔다.",
+  });
+  assert.equal(startup.company, "관악연구소");
+  assert.equal(startup.fundingAmount, "3억 원");
+});
+
+test("아직 끝나지 않은 투자(추진·검토·in talks)는 금액·라운드를 확정값으로 저장하지 않는다", () => {
+  const planned = extractStructuredArticleInfo({ title: "오픈AI, 40조원 신규 투자 유치 추진…기업가치 1900조원 목표" });
+  assert.equal(planned.fundingAmount, null);
+  const talks = extractStructuredArticleInfo({ title: "Acme in talks to raise $50 million Series B" });
+  assert.equal(talks.fundingAmount, null);
+  // 'eyes and ears' 같은 일반 표현은 계획 표현이 아니다.
+  const closed = extractStructuredArticleInfo({
+    title: "Plymouth-based Oshen raises €4.27 million to scale robot swarms that act as the ocean’s “eyes and ears”",
+  });
+  assert.equal(closed.fundingAmount, "€4.27 million");
+});

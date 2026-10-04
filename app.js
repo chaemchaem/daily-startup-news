@@ -60,10 +60,14 @@ const elements = {
   deckNext: $("#deck-next"),
   deckPosition: $("#deck-position"),
   deckPrev: $("#deck-prev"),
+  deckRing: $("#deck-ring"),
   deckStack: $("#deck-stack"),
+  dealTicker: $("#deal-ticker"),
   dealRows: $("#deal-rows"),
   dealSummary: $("#deal-summary"),
   eventBars: $("#event-bars"),
+  front: $("#front"),
+  heroField: $("#hero-field"),
   industryBars: $("#industry-bars"),
   issueNote: $("#issue-note"),
   latestButton: $("#latest-button"),
@@ -347,22 +351,41 @@ function renderStory(article, { headingLevel = "h3" } = {}) {
   return fragment;
 }
 
-// ---------- 1면: 숫자 타일 + 3D 카드 덱 ----------
+// ---------- 1면: 숫자 타일 · 3D 회전 카드 · 별자리 배경 · 투자 티커 ----------
 
 const DECK_SIZE = 7;
-const DECK_VISIBLE_DEPTH = 3;
-const SWIPE_THRESHOLD = 70;
+const RING_STEP_DEG = 36;
+const RING_HIDE_DEG = 100;
+const DECK_PERSPECTIVE = 1400;
 
 const deck = {
   items: [],
-  index: 0,
+  cards: [],
+  pos: 0,
+  vel: 0,
+  target: 0,
+  active: -1,
   flipped: false,
   drag: null,
   suppressClick: false,
+  frame: 0,
+  lastTime: 0,
+  cardWidth: 460,
+  radius: 700,
+  pointer: { x: 0, y: 0 },
+  scroll: 0,
 };
 
 function prefersReducedMotion() {
   return window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function mod(value, size) {
+  return ((value % size) + size) % size;
 }
 
 function countUp(node, target) {
@@ -382,6 +405,8 @@ function countUp(node, target) {
   node.textContent = "0";
   requestAnimationFrame(step);
 }
+
+// ----- 숫자 타일 -----
 
 function renderStats() {
   const container = elements.statTiles;
@@ -409,11 +434,53 @@ function renderStats() {
       figure.append(number, el("span", "stat-unit", unit));
       tile.append(figure, el("p", "stat-label", label));
       tile.append(el("span", "visually-hidden", `${label} ${value}${unit}`));
+      if (extra === "is-main") tile.append(el("div", "stat-spark"));
       countUp(number, value);
       return tile;
     })
   );
+  renderStatSpark();
 }
+
+// 최근 7일 일별 기사 수를 큰 숫자 옆에 작은 선으로 그린다.
+function renderStatSpark() {
+  const holder = elements.statTiles.querySelector(".stat-spark");
+  if (!holder) return;
+  const daily = (state.insights?.weekly?.daily || []).slice(-7);
+  if (daily.length < 2) {
+    holder.replaceChildren();
+    return;
+  }
+  const width = 120;
+  const height = 36;
+  const max = Math.max(1, ...daily.map((day) => day.total));
+  const points = daily.map((day, index) => [
+    (index / (daily.length - 1)) * (width - 6) + 3,
+    height - 4 - (day.total / max) * (height - 10),
+  ]);
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.setAttribute("width", String(width));
+  svg.setAttribute("height", String(height));
+  svg.setAttribute("aria-hidden", "true");
+  const line = document.createElementNS(ns, "polyline");
+  line.setAttribute("points", points.map((point) => point.map((value) => value.toFixed(1)).join(",")).join(" "));
+  line.setAttribute("class", "spark-line");
+  line.setAttribute("pathLength", "100");
+  const [lastX, lastY] = points.at(-1);
+  const dot = document.createElementNS(ns, "circle");
+  dot.setAttribute("cx", lastX.toFixed(1));
+  dot.setAttribute("cy", lastY.toFixed(1));
+  dot.setAttribute("r", "3");
+  dot.setAttribute("class", "spark-dot");
+  svg.append(line, dot);
+  const caption = el("span", "spark-caption", `최근 ${daily.length}일 흐름`);
+  holder.replaceChildren(svg, caption);
+  holder.title = daily.map((day) => `${formatShortDate(day.date)} ${day.total}건`).join(" · ");
+}
+
+// ----- 카드 -----
 
 function renderCardFace(article, position, total) {
   const info = structuredInfo(article);
@@ -421,11 +488,10 @@ function renderCardFace(article, position, total) {
 
   const front = el("div", "card-face card-front");
   const top = el("p", "card-top");
-  top.append(
-    el("span", "card-category", CATEGORY_LABELS[article.category] || article.category || "기타"),
-    el("span", "card-number", String(position).padStart(2, "0"))
-  );
-  const kicker = el("p", "kicker");
+  top.append(el("span", "card-category", CATEGORY_LABELS[article.category] || article.category || "기타"));
+  const numeral = el("span", "card-number", String(position).padStart(2, "0"));
+  numeral.setAttribute("aria-hidden", "true");
+  const kicker = el("p", "kicker card-kicker");
   kicker.append(
     el("span", null, article.source || "출처 미상"),
     el("span", null, isOverseas(article) ? "해외" : "국내")
@@ -446,7 +512,7 @@ function renderCardFace(article, position, total) {
   } else {
     title.textContent = article.title || "제목 없음";
   }
-  front.append(top, kicker, title);
+  front.append(numeral, top, kicker, title);
 
   const facts = [
     ["기업", info.company],
@@ -468,10 +534,11 @@ function renderCardFace(article, position, total) {
   flip.type = "button";
   flip.dataset.flip = "true";
   front.append(flip);
+  front.append(el("span", "card-glare"), el("span", "card-fog"));
 
   const back = el("div", "card-face card-back");
   const backTop = el("p", "card-top");
-  backTop.append(el("span", "card-category", "요약"), el("span", "card-number", `${position} / ${total}`));
+  backTop.append(el("span", "card-category", "요약"), el("span", "card-count", `${position} / ${total}`));
   const summary = el(
     "p",
     `card-summary${article.summary ? "" : " is-unavailable"}`,
@@ -484,6 +551,7 @@ function renderCardFace(article, position, total) {
     source.href = url;
     source.target = "_blank";
     source.rel = "noopener noreferrer";
+    source.draggable = false;
     source.setAttribute("aria-label", `${article.title || "기사"} 원문 보기 (새 탭)`);
     actions.append(source);
   }
@@ -496,36 +564,41 @@ function renderCardFace(article, position, total) {
 }
 
 function renderDeck() {
-  const stack = elements.deckStack;
-  deck.index = 0;
+  const ring = elements.deckRing;
+  deck.pos = 0;
+  deck.vel = 0;
+  deck.target = 0;
+  deck.active = -1;
   deck.flipped = false;
-  if (state.briefingMessage) {
-    deck.items = [];
-    stack.replaceChildren(el("p", "empty-note", state.briefingMessage));
-    updateDeck();
-    return;
-  }
-  deck.items = selectFeatured(state.briefing?.items || [], DECK_SIZE);
+  deck.items = state.briefingMessage ? [] : selectFeatured(state.briefing?.items || [], DECK_SIZE);
   if (!deck.items.length) {
-    stack.replaceChildren(el("p", "empty-note", "이 날짜에는 선별된 기사가 없습니다."));
-    updateDeck();
+    deck.cards = [];
+    ring.replaceChildren(
+      el("p", "empty-note", state.briefingMessage || "이 날짜에는 선별된 기사가 없습니다.")
+    );
+    elements.deckDots.replaceChildren();
+    elements.deck.classList.add("is-empty");
+    elements.deckPosition.textContent = "";
+    heroField.setNodes([]);
     return;
   }
+  elements.deck.classList.remove("is-empty");
   const total = deck.items.length;
-  stack.replaceChildren(
-    ...deck.items.map((article, index) => {
-      const card = el("article", "deck-card");
-      card.dataset.index = String(index);
-      card.dataset.category = String(CATEGORY_ORDER.indexOf(article.category) + 1 || 0);
-      card.setAttribute("aria-roledescription", "카드");
-      card.setAttribute("aria-label", `${index + 1} / ${total}: ${article.title || "제목 없음"}`);
-      const inner = el("div", "card-inner");
-      const { front, back } = renderCardFace(article, index + 1, total);
-      inner.append(front, back);
-      card.append(inner);
-      return card;
-    })
-  );
+  deck.cards = deck.items.map((article, index) => {
+    const card = el("article", "deck-card");
+    card.dataset.index = String(index);
+    card.dataset.category = String(CATEGORY_ORDER.indexOf(article.category) + 1 || 0);
+    card.setAttribute("aria-roledescription", "카드");
+    card.setAttribute("aria-label", `${index + 1} / ${total}: ${article.title || "제목 없음"}`);
+    const tilt = el("div", "card-tilt");
+    const inner = el("div", "card-inner");
+    const { front, back } = renderCardFace(article, index + 1, total);
+    inner.append(front, back);
+    tilt.append(el("div", "card-shade"), inner);
+    card.append(tilt);
+    return card;
+  });
+  ring.replaceChildren(...deck.cards);
   elements.deckDots.replaceChildren(
     ...deck.items.map((article, index) => {
       const dot = el("button", "deck-dot");
@@ -535,130 +608,263 @@ function renderDeck() {
       return dot;
     })
   );
-  updateDeck();
+  heroField.setNodes(deck.items.map((article) => CATEGORY_ORDER.indexOf(article.category) + 1));
+  layoutDeck();
+  paintDeck();
 }
 
-function setInert(node, value) {
-  if (!node) return;
-  node.inert = value;
-  if (value) node.setAttribute("aria-hidden", "true");
-  else node.removeAttribute("aria-hidden");
+function ringWraps() {
+  return deck.items.length >= 3;
 }
 
-function updateDeck() {
-  const cards = [...elements.deckStack.querySelectorAll(".deck-card")];
-  const total = cards.length;
-  cards.forEach((card, index) => {
-    const depth = index - deck.index;
-    const active = depth === 0;
-    card.style.setProperty("--d", String(Math.max(0, Math.min(depth, DECK_VISIBLE_DEPTH + 1))));
-    card.classList.toggle("is-active", active);
-    card.classList.toggle("is-past", depth < 0);
-    card.classList.toggle("is-far", depth > DECK_VISIBLE_DEPTH);
-    card.classList.toggle("is-flipped", active && deck.flipped);
-    if (!active) {
-      card.style.removeProperty("--drag");
-      card.style.removeProperty("--tilt-x");
-      card.style.removeProperty("--tilt-y");
+function layoutDeck() {
+  const width = elements.deckStack.clientWidth || window.innerWidth;
+  const narrow = width < 640;
+  deck.cardWidth = Math.round(narrow ? clamp(width - 72, 240, 420) : clamp(width * 0.4, 360, 520));
+  const gap = narrow ? 16 : 30;
+  deck.radius = Math.round((deck.cardWidth / 2 + gap) / Math.tan(((RING_STEP_DEG / 2) * Math.PI) / 180));
+  elements.deckStack.style.setProperty("--card-w", `${deck.cardWidth}px`);
+}
+
+function relativeOffset(index) {
+  const offset = index - deck.pos;
+  if (!ringWraps()) return offset;
+  const size = deck.items.length;
+  return mod(offset + size / 2, size) - size / 2;
+}
+
+function setFaceInert(face, value) {
+  if (!face) return;
+  face.inert = value;
+  if (value) face.setAttribute("aria-hidden", "true");
+  else face.removeAttribute("aria-hidden");
+}
+
+function paintDeck() {
+  const size = deck.items.length;
+  if (!size) return;
+  const tiltX = -deck.pointer.y * 3 + deck.scroll * 16;
+  const tiltY = deck.pointer.x * 2.5;
+  // 카드마다 원근(perspective)을 따로 주어 각자 독립된 3D 공간에 그린다.
+  // 카드들이 한 3D 공간을 공유하면 Chrome이 기울어진 정면 카드 일부를 그리지 않는 문제가 있다.
+  // 앞뒤 순서는 z-index로 직접 정한다.
+  deck.cards.forEach((card, index) => {
+    const offset = relativeOffset(index);
+    const angle = offset * RING_STEP_DEG;
+    const distance = Math.abs(angle);
+    card.style.transform =
+      `perspective(${DECK_PERSPECTIVE}px) translateZ(${-deck.radius}px) ` +
+      `rotateX(${tiltX.toFixed(2)}deg) rotateY(${(angle + tiltY).toFixed(3)}deg) translateZ(${deck.radius}px)`;
+    card.style.zIndex = String(1000 + Math.round(Math.cos((angle * Math.PI) / 180) * 500));
+    if (distance >= RING_HIDE_DEG) {
+      card.style.visibility = "hidden";
+    } else {
+      card.style.visibility = "";
     }
-    setInert(card, !active);
-    setInert(card.querySelector(".card-front"), active && deck.flipped);
-    setInert(card.querySelector(".card-back"), !(active && deck.flipped));
+    // 옆 카드는 카드 안의 안개 레이어(.card-fog)로 흐리게 한다.
+    // 카드 자체에 opacity·filter를 쓰면 반투명해지거나 브라우저의 3D 정렬이 깨진다.
+    const fade = distance < 1 ? 0 : clamp(distance / RING_HIDE_DEG, 0, 1);
+    card.style.setProperty("--fade", fade.toFixed(3));
+
   });
-  elements.deckPrev.disabled = deck.index <= 0;
-  elements.deckNext.disabled = deck.index >= total - 1;
-  elements.deckPosition.textContent = total ? `${deck.index + 1} / ${total}` : "";
-  for (const dot of elements.deckDots.querySelectorAll("[data-goto]")) {
-    const current = Number(dot.dataset.goto) === deck.index;
-    dot.setAttribute("aria-current", current ? "true" : "false");
-  }
-  elements.deck.classList.toggle("is-empty", !total);
+  const nearest = mod(Math.round(deck.pos), size);
+  if (nearest !== deck.active) setActiveCard(nearest);
+  heroField.setRotation(deck.pos * ((RING_STEP_DEG * Math.PI) / 180) * 0.35);
 }
 
-function goToCard(index, { focus = false } = {}) {
-  const total = deck.items.length;
-  if (!total) return;
-  const next = Math.max(0, Math.min(total - 1, index));
-  if (next === deck.index) return;
-  deck.index = next;
+function setActiveCard(index) {
+  deck.active = index;
   deck.flipped = false;
-  updateDeck();
-  if (focus) activeCard()?.querySelector(".card-title a, .card-flip")?.focus({ preventScroll: true });
+  deck.cards.forEach((card, cardIndex) => {
+    const active = cardIndex === index;
+    card.classList.toggle("is-active", active);
+    card.classList.remove("is-flipped");
+    if (active) card.removeAttribute("aria-hidden");
+    else card.setAttribute("aria-hidden", "true");
+    card.querySelector(".card-tilt")?.style.removeProperty("--tilt-x");
+    card.querySelector(".card-tilt")?.style.removeProperty("--tilt-y");
+    card.classList.remove("is-tilting");
+    setFaceInert(card.querySelector(".card-front"), !active);
+    setFaceInert(card.querySelector(".card-back"), true);
+  });
+  const total = deck.items.length;
+  elements.deckPosition.textContent = `${index + 1} / ${total}`;
+  for (const dot of elements.deckDots.querySelectorAll("[data-goto]")) {
+    dot.setAttribute("aria-current", Number(dot.dataset.goto) === index ? "true" : "false");
+  }
+  const atStart = !ringWraps() && index === 0;
+  const atEnd = !ringWraps() && index === total - 1;
+  elements.deckPrev.disabled = atStart || total < 2;
+  elements.deckNext.disabled = atEnd || total < 2;
+  heroField.setActive(index);
 }
 
-function toggleFlip() {
-  if (!deck.items.length) return;
-  deck.flipped = !deck.flipped;
-  updateDeck();
-  const card = activeCard();
-  const target = deck.flipped ? card?.querySelector(".card-back .card-flip") : card?.querySelector(".card-front .card-flip");
-  target?.focus({ preventScroll: true });
+function startDeckAnimation() {
+  if (deck.frame) return;
+  deck.lastTime = performance.now();
+  deck.frame = requestAnimationFrame(stepDeck);
+}
+
+// 스프링 물리: 목표 위치로 끌려가며 살짝 출렁이다 멈춘다.
+function stepDeck(now) {
+  deck.frame = 0;
+  const steps = clamp((now - deck.lastTime) / 16.667, 0.5, 3);
+  deck.lastTime = now;
+  if (!deck.drag?.moving) {
+    for (let i = 0; i < Math.round(steps); i += 1) {
+      deck.vel += (deck.target - deck.pos) * 0.075;
+      deck.vel *= 0.74;
+      deck.pos += deck.vel;
+    }
+    if (Math.abs(deck.target - deck.pos) < 0.0008 && Math.abs(deck.vel) < 0.0008) {
+      deck.pos = deck.target;
+      deck.vel = 0;
+      paintDeck();
+      return;
+    }
+  }
+  paintDeck();
+  deck.frame = requestAnimationFrame(stepDeck);
+}
+
+function moveDeckBy(delta) {
+  const size = deck.items.length;
+  if (size < 2) return;
+  let target = Math.round(deck.target) + delta;
+  if (!ringWraps()) target = clamp(target, 0, size - 1);
+  setDeckTarget(target);
+}
+
+function moveDeckTo(index) {
+  const size = deck.items.length;
+  if (!size) return;
+  const current = mod(Math.round(deck.target), size);
+  let delta = index - current;
+  if (ringWraps()) delta = mod(delta + size / 2, size) - size / 2;
+  setDeckTarget(Math.round(deck.target) + Math.round(delta));
+}
+
+function setDeckTarget(target) {
+  deck.target = target;
+  if (prefersReducedMotion()) {
+    deck.pos = target;
+    deck.vel = 0;
+    paintDeck();
+    return;
+  }
+  startDeckAnimation();
 }
 
 function activeCard() {
-  return elements.deckStack.querySelector(".deck-card.is-active");
+  return deck.cards[deck.active] || null;
 }
 
-function clearTilt() {
+function toggleFlip() {
   const card = activeCard();
+  if (!card || Math.abs(deck.pos - deck.target) > 0.05) return;
+  deck.flipped = !deck.flipped;
+  card.classList.toggle("is-flipped", deck.flipped);
+  card.classList.add("is-lifting");
+  setTimeout(() => card.classList.remove("is-lifting"), 360);
+  setFaceInert(card.querySelector(".card-front"), deck.flipped);
+  setFaceInert(card.querySelector(".card-back"), !deck.flipped);
+  const target = deck.flipped
+    ? card.querySelector(".card-back .card-flip")
+    : card.querySelector(".card-front .card-flip");
+  target?.focus({ preventScroll: true });
+}
+
+function clearTilt(card = activeCard()) {
   if (!card) return;
   card.classList.remove("is-tilting");
-  card.style.removeProperty("--tilt-x");
-  card.style.removeProperty("--tilt-y");
+  const tilt = card.querySelector(".card-tilt");
+  tilt?.style.removeProperty("--tilt-x");
+  tilt?.style.removeProperty("--tilt-y");
 }
 
 elements.deckStack.addEventListener("pointerdown", (event) => {
-  const card = activeCard();
-  if (!card || !card.contains(event.target) || event.button !== 0) return;
-  // 제목 링크 위에서 시작한 스와이프도 넘기기로 처리한다(끝난 뒤 링크 클릭은 막는다).
+  if (!deck.items.length || event.button !== 0) return;
   if (event.target.closest("button")) return;
-  deck.drag = { id: event.pointerId, card, x: event.clientX, y: event.clientY, dx: 0, moving: false };
+  deck.drag = {
+    id: event.pointerId,
+    x: event.clientX,
+    y: event.clientY,
+    startPos: deck.pos,
+    lastX: event.clientX,
+    lastTime: performance.now(),
+    speed: 0,
+    moving: false,
+  };
 });
 
 elements.deckStack.addEventListener("pointermove", (event) => {
-  const card = activeCard();
-  if (!card) return;
   const drag = deck.drag;
   if (drag && drag.id === event.pointerId) {
     const dx = event.clientX - drag.x;
     const dy = event.clientY - drag.y;
-    if (!drag.moving && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
+    if (!drag.moving && Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) {
       drag.moving = true;
       clearTilt();
-      card.classList.add("is-dragging");
+      elements.deckStack.classList.add("is-dragging");
       elements.deckStack.setPointerCapture?.(event.pointerId);
+      if (deck.flipped) toggleFlipSilently();
     }
     if (drag.moving) {
-      drag.dx = dx;
-      card.style.setProperty("--drag", String(Math.round(dx)));
+      const now = performance.now();
+      const spacing = deck.cardWidth * 0.85;
+      const elapsed = Math.max(1, now - drag.lastTime);
+      drag.speed = drag.speed * 0.6 + (-(event.clientX - drag.lastX) / spacing / elapsed) * 0.4;
+      drag.lastX = event.clientX;
+      drag.lastTime = now;
+      let next = drag.startPos - dx / spacing;
+      if (!ringWraps()) {
+        const max = deck.items.length - 1;
+        if (next < 0) next *= 0.3;
+        if (next > max) next = max + (next - max) * 0.3;
+      }
+      deck.pos = next;
+      deck.vel = 0;
+      paintDeck();
     }
     return;
   }
-  // 마우스를 올리면 카드가 포인터 쪽으로 살짝 기운다.
-  if (event.pointerType !== "mouse" || prefersReducedMotion() || !card.contains(event.target)) return;
+  // 마우스를 올리면 가운데 카드가 포인터 쪽으로 기운다(내부 요소들이 서로 다른 깊이로 움직인다).
+  const card = activeCard();
+  if (event.pointerType !== "mouse" || prefersReducedMotion() || !card || !card.contains(event.target)) return;
   const box = card.getBoundingClientRect();
   const px = (event.clientX - box.left) / box.width - 0.5;
   const py = (event.clientY - box.top) / box.height - 0.5;
   card.classList.add("is-tilting");
-  card.style.setProperty("--tilt-x", `${(-py * 8).toFixed(2)}deg`);
-  card.style.setProperty("--tilt-y", `${(px * 10).toFixed(2)}deg`);
-  card.style.setProperty("--glare-x", `${((px + 0.5) * 100).toFixed(1)}%`);
-  card.style.setProperty("--glare-y", `${((py + 0.5) * 100).toFixed(1)}%`);
+  const tilt = card.querySelector(".card-tilt");
+  tilt.style.setProperty("--tilt-x", `${(-py * 12).toFixed(2)}deg`);
+  tilt.style.setProperty("--tilt-y", `${(px * 14).toFixed(2)}deg`);
+  tilt.style.setProperty("--glare-x", `${((px + 0.5) * 100).toFixed(1)}%`);
+  tilt.style.setProperty("--glare-y", `${((py + 0.5) * 100).toFixed(1)}%`);
 });
+
+function toggleFlipSilently() {
+  const card = activeCard();
+  deck.flipped = false;
+  card?.classList.remove("is-flipped");
+  setFaceInert(card?.querySelector(".card-front"), false);
+  setFaceInert(card?.querySelector(".card-back"), true);
+}
 
 function endDrag(event) {
   const drag = deck.drag;
   if (!drag || drag.id !== event.pointerId) return;
   deck.drag = null;
+  elements.deckStack.classList.remove("is-dragging");
   if (!drag.moving) return;
   deck.suppressClick = true;
   setTimeout(() => {
     deck.suppressClick = false;
   }, 0);
-  drag.card.classList.remove("is-dragging");
-  if (drag.dx <= -SWIPE_THRESHOLD && deck.index < deck.items.length - 1) goToCard(deck.index + 1);
-  else if (drag.dx >= SWIPE_THRESHOLD && deck.index > 0) goToCard(deck.index - 1);
-  else drag.card.style.removeProperty("--drag");
+  // 놓는 순간의 속도만큼 더 돌아간 뒤 가장 가까운 카드에 멈춘다.
+  const projected = deck.pos + clamp(drag.speed * 180, -2.5, 2.5);
+  let target = Math.round(projected);
+  if (!ringWraps()) target = clamp(target, 0, deck.items.length - 1);
+  setDeckTarget(target);
 }
 
 elements.deckStack.addEventListener("pointerup", endDrag);
@@ -674,7 +880,12 @@ elements.deckStack.addEventListener("click", (event) => {
   }
   const card = event.target.closest(".deck-card");
   if (!card) return;
-  if (!card.classList.contains("is-active")) return;
+  const index = Number(card.dataset.index);
+  if (index !== deck.active) {
+    event.preventDefault();
+    moveDeckTo(index);
+    return;
+  }
   if (event.target.closest("[data-flip]")) {
     toggleFlip();
     return;
@@ -686,21 +897,335 @@ elements.deckStack.addEventListener("click", (event) => {
 
 elements.deck.addEventListener("keydown", (event) => {
   if (event.target.closest("input, select, textarea")) return;
-  if (event.key === "ArrowRight") {
+  if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
     event.preventDefault();
-    goToCard(deck.index + 1, { focus: true });
-  } else if (event.key === "ArrowLeft") {
-    event.preventDefault();
-    goToCard(deck.index - 1, { focus: true });
+    moveDeckBy(event.key === "ArrowRight" ? 1 : -1);
+    requestAnimationFrame(() =>
+      activeCard()?.querySelector(".card-title a, .card-flip")?.focus({ preventScroll: true })
+    );
   }
 });
 
-elements.deckPrev.addEventListener("click", () => goToCard(deck.index - 1));
-elements.deckNext.addEventListener("click", () => goToCard(deck.index + 1));
+elements.deckPrev.addEventListener("click", () => moveDeckBy(-1));
+elements.deckNext.addEventListener("click", () => moveDeckBy(1));
 elements.deckDots.addEventListener("click", (event) => {
   const dot = event.target.closest("[data-goto]");
-  if (dot) goToCard(Number(dot.dataset.goto));
+  if (dot) moveDeckTo(Number(dot.dataset.goto));
 });
+
+// 화면 위 포인터 위치와 스크롤에 따라 회전 무대 전체가 살짝 기운다.
+elements.front.addEventListener("pointermove", (event) => {
+  if (event.pointerType !== "mouse" || prefersReducedMotion() || deck.drag) return;
+  const box = elements.front.getBoundingClientRect();
+  deck.pointer.x = clamp((event.clientX - box.left) / box.width - 0.5, -0.5, 0.5);
+  deck.pointer.y = clamp((event.clientY - box.top) / box.height - 0.5, -0.5, 0.5);
+  heroField.setPointer(deck.pointer.x, deck.pointer.y);
+  if (!deck.frame) requestAnimationFrame(paintDeck);
+});
+
+elements.front.addEventListener("pointerleave", () => {
+  deck.pointer.x = 0;
+  deck.pointer.y = 0;
+  heroField.setPointer(0, 0);
+  if (!deck.frame) requestAnimationFrame(paintDeck);
+});
+
+let scrollQueued = false;
+window.addEventListener(
+  "scroll",
+  () => {
+    if (scrollQueued || prefersReducedMotion()) return;
+    scrollQueued = true;
+    requestAnimationFrame(() => {
+      scrollQueued = false;
+      const box = elements.front.getBoundingClientRect();
+      deck.scroll = clamp(-box.top / Math.max(1, box.height), 0, 1);
+      heroField.setScroll(deck.scroll);
+      if (!deck.frame) paintDeck();
+    });
+  },
+  { passive: true }
+);
+
+let resizeQueued = false;
+window.addEventListener("resize", () => {
+  if (resizeQueued) return;
+  resizeQueued = true;
+  requestAnimationFrame(() => {
+    resizeQueued = false;
+    layoutDeck();
+    paintDeck();
+    heroField.resize();
+  });
+});
+
+// ----- 별자리 배경(canvas) -----
+// 은은한 점과 선이 3D 공간에서 천천히 돈다. 오늘의 핵심 기사는 카테고리 색 별로 표시되고,
+// 가운데 카드의 별이 맥박처럼 빛난다. 화면 밖이거나 '동작 줄이기' 설정이면 멈춘다.
+
+const heroField = (() => {
+  const canvas = elements.heroField;
+  const context = canvas?.getContext?.("2d");
+  const field = {
+    points: [],
+    links: [],
+    nodeIndexes: [],
+    active: -1,
+    rotation: 0,
+    autoRotation: 0,
+    pointer: { x: 0, y: 0 },
+    scroll: 0,
+    colors: null,
+    visible: true,
+    frame: 0,
+    width: 0,
+    height: 0,
+    ratio: 1,
+  };
+
+  function random(seed) {
+    let value = seed;
+    return () => {
+      value = (value * 16807) % 2147483647;
+      return (value - 1) / 2147483646;
+    };
+  }
+
+  function buildPoints() {
+    const next = random(20261004);
+    field.points = Array.from({ length: 120 }, () => ({
+      x: next() * 2 - 1,
+      y: (next() * 2 - 1) * 0.55,
+      z: next() * 2 - 1,
+      size: 0.6 + next() * 1.1,
+      category: 0,
+    }));
+    field.links = [];
+    for (let i = 0; i < field.points.length; i += 1) {
+      for (let j = i + 1; j < field.points.length; j += 1) {
+        const a = field.points[i];
+        const b = field.points[j];
+        const distance = Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z);
+        if (distance < 0.3) field.links.push([i, j, distance]);
+      }
+    }
+  }
+
+  function readColors() {
+    const style = getComputedStyle(document.documentElement);
+    const read = (name) => style.getPropertyValue(name).trim();
+    field.colors = {
+      dot: read("--field-dot"),
+      line: read("--field-line"),
+      categories: [read("--accent"), ...[1, 2, 3, 4, 5, 6].map((n) => read(`--cat-${n}`))],
+    };
+  }
+
+  function resize() {
+    if (!canvas) return;
+    const box = canvas.getBoundingClientRect();
+    field.ratio = Math.min(2, window.devicePixelRatio || 1);
+    field.width = box.width;
+    field.height = box.height;
+    canvas.width = Math.round(box.width * field.ratio);
+    canvas.height = Math.round(box.height * field.ratio);
+    draw();
+  }
+
+  function project(point) {
+    const yaw = field.rotation + field.autoRotation + field.pointer.x * 0.35;
+    const pitch = 0.18 + field.pointer.y * 0.2 + field.scroll * 0.5;
+    const cosY = Math.cos(yaw);
+    const sinY = Math.sin(yaw);
+    const x1 = point.x * cosY - point.z * sinY;
+    const z1 = point.x * sinY + point.z * cosY;
+    const cosP = Math.cos(pitch);
+    const sinP = Math.sin(pitch);
+    const y2 = point.y * cosP - z1 * sinP;
+    const z2 = point.y * sinP + z1 * cosP;
+    const depth = 2.6 / (2.6 + z2);
+    return {
+      x: field.width / 2 + x1 * depth * field.width * 0.55,
+      y: field.height * 0.48 + y2 * depth * field.height * 0.9,
+      depth,
+      z: z2,
+    };
+  }
+
+  function draw(time = performance.now()) {
+    if (!context || !field.width) return;
+    if (!field.colors) readColors();
+    context.setTransform(field.ratio, 0, 0, field.ratio, 0, 0);
+    context.clearRect(0, 0, field.width, field.height);
+    const projected = field.points.map(project);
+    context.lineWidth = 1;
+    context.strokeStyle = field.colors.line;
+    for (const [i, j, distance] of field.links) {
+      const a = projected[i];
+      const b = projected[j];
+      context.globalAlpha = clamp((1 - distance / 0.3) * Math.min(a.depth, b.depth) * 0.9, 0, 0.8);
+      context.beginPath();
+      context.moveTo(a.x, a.y);
+      context.lineTo(b.x, b.y);
+      context.stroke();
+    }
+    projected.forEach((point, index) => {
+      const source = field.points[index];
+      const node = field.nodeIndexes.indexOf(index);
+      context.globalAlpha = clamp(point.depth * 0.9, 0.2, 1);
+      if (node >= 0) {
+        const color = field.colors.categories[source.category] || field.colors.categories[0];
+        const radius = (node === field.active ? 5 : 3.2) * point.depth;
+        context.fillStyle = color;
+        context.beginPath();
+        context.arc(point.x, point.y, radius, 0, Math.PI * 2);
+        context.fill();
+        if (node === field.active) {
+          const pulse = prefersReducedMotion() ? 0.5 : (Math.sin(time / 420) + 1) / 2;
+          context.globalAlpha = 0.5 - pulse * 0.35;
+          context.strokeStyle = color;
+          context.lineWidth = 1.5;
+          context.beginPath();
+          context.arc(point.x, point.y, radius + 6 + pulse * 10, 0, Math.PI * 2);
+          context.stroke();
+          context.lineWidth = 1;
+          context.strokeStyle = field.colors.line;
+        }
+      } else {
+        context.fillStyle = field.colors.dot;
+        context.beginPath();
+        context.arc(point.x, point.y, source.size * point.depth, 0, Math.PI * 2);
+        context.fill();
+      }
+    });
+    context.globalAlpha = 1;
+  }
+
+  function loop(time) {
+    field.frame = 0;
+    if (!field.visible || document.hidden) return;
+    field.autoRotation += 0.0007;
+    draw(time);
+    field.frame = requestAnimationFrame(loop);
+  }
+
+  function start() {
+    if (field.frame || prefersReducedMotion()) {
+      draw();
+      return;
+    }
+    field.frame = requestAnimationFrame(loop);
+  }
+
+  function refresh() {
+    if (prefersReducedMotion() || !field.frame) draw();
+  }
+
+  if (canvas && context) {
+    buildPoints();
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        field.visible = entries.some((entry) => entry.isIntersecting);
+        if (field.visible) start();
+      }).observe(canvas);
+    }
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) start();
+    });
+    const scheme = window.matchMedia?.("(prefers-color-scheme: dark)");
+    scheme?.addEventListener?.("change", () => {
+      readColors();
+      refresh();
+    });
+    requestAnimationFrame(() => {
+      resize();
+      start();
+    });
+  }
+
+  return {
+    resize,
+    // 기사 수만큼 비교적 앞쪽의 점을 골라 카테고리 색 별로 바꾼다.
+    setNodes(categories) {
+      if (!field.points.length) return;
+      for (const point of field.points) point.category = 0;
+      const candidates = field.points
+        .map((point, index) => ({ index, score: Math.abs(point.y) + Math.abs(point.z) * 0.3 }))
+        .sort((left, right) => left.score - right.score);
+      const step = Math.max(1, Math.floor(candidates.length / Math.max(1, categories.length * 2)));
+      field.nodeIndexes = categories.map((category, order) => {
+        const index = candidates[(order * step) % candidates.length].index;
+        field.points[index].category = category;
+        return index;
+      });
+      refresh();
+    },
+    setActive(index) {
+      field.active = index;
+      refresh();
+    },
+    setRotation(value) {
+      field.rotation = value;
+      refresh();
+    },
+    setPointer(x, y) {
+      field.pointer = { x, y };
+      refresh();
+    },
+    setScroll(value) {
+      field.scroll = value;
+      refresh();
+    },
+  };
+})();
+
+// ----- 투자 티커 -----
+
+function renderTicker() {
+  const ticker = elements.dealTicker;
+  const items = state.briefingMessage ? [] : state.briefing?.items || [];
+  const deals = sortArticles(items, "importance").filter((item) => {
+    const info = structuredInfo(item);
+    return info.company && (info.fundingAmount || info.fundingStage);
+  });
+  if (deals.length < 2) {
+    ticker.hidden = true;
+    ticker.replaceChildren();
+    return;
+  }
+  ticker.hidden = false;
+  const makeTrack = (hidden) => {
+    const list = el("ul", "ticker-track");
+    if (hidden) list.setAttribute("aria-hidden", "true");
+    for (const article of deals) {
+      const info = structuredInfo(article);
+      const item = el("li", "ticker-item");
+      item.dataset.category = String(CATEGORY_ORDER.indexOf(article.category) + 1 || 0);
+      const url = safeUrl(article.url);
+      const label = el(url ? "a" : "span", "ticker-link");
+      if (url) {
+        label.href = url;
+        label.target = "_blank";
+        label.rel = "noopener noreferrer";
+        label.title = article.title || "";
+        if (hidden) label.tabIndex = -1;
+      }
+      label.append(el("strong", null, info.company));
+      if (info.fundingStage) label.append(el("span", null, info.fundingStage));
+      if (info.fundingAmount) label.append(el("span", "ticker-amount", info.fundingAmount));
+      item.append(label);
+      list.append(item);
+    }
+    return list;
+  };
+  const viewport = el("div", "ticker-viewport");
+  const belt = el("div", "ticker-belt");
+  belt.append(makeTrack(false), makeTrack(true));
+  belt.style.setProperty("--ticker-duration", `${Math.max(24, deals.length * 6)}s`);
+  viewport.append(belt);
+  ticker.replaceChildren(el("p", "ticker-label", "오늘의 투자"), viewport);
+  ticker.setAttribute("aria-label", `오늘 기사에 명시된 투자 ${deals.length}건`);
+}
 
 function renderCategoryTabs() {
   const items = state.briefing?.items || [];
@@ -1028,6 +1553,7 @@ function renderBarList(container, entries, { limit = 6, empty = "데이터가 �
 }
 
 function renderInsights() {
+  renderStatSpark();
   const window = state.insights?.[state.period];
   for (const button of elements.periodToggle.querySelectorAll("[data-period]")) {
     button.setAttribute("aria-pressed", String(button.dataset.period === state.period));
@@ -1088,6 +1614,7 @@ function renderAll() {
   renderMasthead();
   renderStats();
   renderDeck();
+  renderTicker();
   renderCategoryTabs();
   renderStoryList();
   renderArchive();

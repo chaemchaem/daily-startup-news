@@ -43,6 +43,7 @@ const {
   formatKstDate,
   formatKstIso,
   isAllowedSource,
+  isLocalGovernmentTitleActor,
   normalizeForMatch,
   parseFeedItemDate,
   parsePublishedDate,
@@ -764,6 +765,15 @@ function finalHardExcludeReason({
   }
   if (ROUNDUP_LISTICLE_PATTERN.test(titleText) && isPredominantlyLatin(titleText)) {
     return "hard_exclude_roundup_listicle";
+  }
+  // 지자체가 주체인 기업 유치 설명회·투자협약은 스타트업 투자 뉴스가 아니다(스타트업이 대상이면 유지).
+  if (
+    isLocalGovernmentTitleActor(titleText) &&
+    /투자\s*유치|투자\s*협약|설명회|MOU|업무협약/iu.test(titleText) &&
+    !STARTUP_TARGET_PATTERN.test(titleText) &&
+    !VENTURE_ECOSYSTEM_PATTERN.test(titleText)
+  ) {
+    return "hard_exclude_local_government_investment_attraction";
   }
   if (/유상증자/iu.test(currentEventContext) && publicCompanySignal) {
     return "hard_exclude_public_company_rights_issue";
