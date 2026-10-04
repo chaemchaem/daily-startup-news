@@ -48,10 +48,14 @@ jobs:
           restore-keys: |
             feed-buffer-
 
+      # 스크립트가 끝나지 않더라도 다음 단계(버퍼 저장)는 실행되도록 시간 제한과 continue-on-error를 둔다.
       - name: RSS 스냅샷
+        timeout-minutes: 4
+        continue-on-error: true
         run: pnpm run snapshot:feeds
 
       - name: 버퍼 저장
+        if: ${{ !cancelled() && hashFiles('.cache/feed-buffer.json') != '' }}
         uses: actions/cache/save@v4
         continue-on-error: true
         with:
