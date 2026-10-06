@@ -1,37 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T00:11:41.171Z",
-  "latestDate": "2026-10-05",
+  "generatedAt": "2026-10-06T00:12:01.478Z",
+  "latestDate": "2026-10-06",
   "weekly": {
-    "from": "2026-09-29",
-    "to": "2026-10-05",
+    "from": "2026-09-30",
+    "to": "2026-10-06",
     "briefingDays": 7,
-    "articleCount": 69,
-    "domesticCount": 56,
-    "overseasCount": 13,
+    "articleCount": 70,
+    "domesticCount": 59,
+    "overseasCount": 11,
     "dealCount": 12,
-    "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 368,
+    "disclosedKrwDealCount": 2,
+    "disclosedKrwTotalEok": 148,
     "byCategory": [
       {
         "label": "VC / AC",
         "count": 26
       },
       {
-        "label": "해외 VC",
-        "count": 13
-      },
-      {
         "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 11
       },
       {
+        "label": "해외 VC",
+        "count": 11
+      },
+      {
         "label": "TIPS / LIPS",
-        "count": 10
+        "count": 11
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 6
+        "count": 8
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,15 +41,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 26
+        "count": 25
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 5
-      },
-      {
-        "label": "실증·PoC",
-        "count": 3
+        "count": 6
       },
       {
         "label": "모집",
@@ -57,25 +53,29 @@
       },
       {
         "label": "선정",
-        "count": 1
+        "count": 2
       },
       {
-        "label": "세컨더리",
-        "count": 1
+        "label": "실증·PoC",
+        "count": 2
       },
       {
         "label": "인수·M&A",
-        "count": 1
+        "count": 2
       },
       {
         "label": "펀드결성",
+        "count": 2
+      },
+      {
+        "label": "세컨더리",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 24
+        "count": 23
       },
       {
         "label": "바이오·헬스케어",
@@ -111,15 +111,15 @@
     "topSources": [
       {
         "label": "스타트업투데이",
-        "count": 11
-      },
-      {
-        "label": "벤처스퀘어",
-        "count": 9
+        "count": 10
       },
       {
         "label": "EU-Startups",
-        "count": 9
+        "count": 8
+      },
+      {
+        "label": "벤처스퀘어",
+        "count": 6
       },
       {
         "label": "연합뉴스",
@@ -130,24 +130,19 @@
         "count": 5
       },
       {
-        "label": "플래텀",
-        "count": 5
-      },
-      {
         "label": "AI타임스",
         "count": 5
       },
       {
-        "label": "TechCrunch",
+        "label": "뉴시스",
+        "count": 4
+      },
+      {
+        "label": "플래텀",
         "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-29",
-        "total": 14,
-        "overseas": 3
-      },
       {
         "date": "2026-09-30",
         "total": 15,
@@ -177,9 +172,36 @@
         "date": "2026-10-05",
         "total": 9,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-06",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-05",
+        "company": "Fleuret AI",
+        "fundingAmount": "€4 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "French cybersecurity startup Fleuret AI raises €4 million to automate penetration testing with AI agents",
+        "url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-05",
+        "company": "에스앤이컴퍼니",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "에스앤이컴퍼니, 농업 비즈니스 데이터 AI 의사결정 지원 [서울AI허브 2027]",
+        "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171415",
+        "source": "IT조선"
+      },
       {
         "date": "2026-10-02",
         "company": "Armadin",
@@ -289,66 +311,44 @@
         "title": "Paris-based Marble raises €6.5 million to automate fraud and AML compliance with its no-code, open-source platform",
         "url": "https://www.eu-startups.com/2026/09/paris-based-marble-raises-e6-5-million-to-automate-fraud-and-aml-compliance-with-its-no-code-open-source-platform/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-28",
-        "company": "Klang",
-        "fundingAmount": "€1.32 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Helsingborg’s conversation AI startup Klang raises €1.32 million and releases open speech-to-text model for Swedish",
-        "url": "https://www.eu-startups.com/2026/09/helsingborgs-conversation-ai-startup-klang-raises-e1-32-million-and-releases-open-speech-to-text-model-for-swedish/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-28",
-        "company": "넥스세라",
-        "fundingAmount": "220억 원",
-        "fundingStage": "시리즈B",
-        "industry": null,
-        "overseas": false,
-        "title": "넥스세라, 220억원 시리즈B 유치…황반변성 점안제 美 임상 속도",
-        "url": "https://www.hankyung.com/article/202609288541i",
-        "source": "한국경제"
       }
     ],
     "previous": {
-      "articleCount": 28,
-      "dealCount": 7,
+      "articleCount": 40,
+      "dealCount": 9,
       "briefingDays": 6
     }
   },
   "monthly": {
-    "from": "2026-09-06",
-    "to": "2026-10-05",
+    "from": "2026-09-07",
+    "to": "2026-10-06",
     "briefingDays": 29,
-    "articleCount": 161,
-    "domesticCount": 107,
-    "overseasCount": 54,
-    "dealCount": 40,
+    "articleCount": 168,
+    "domesticCount": 115,
+    "overseasCount": 53,
+    "dealCount": 41,
     "disclosedKrwDealCount": 6,
     "disclosedKrwTotalEok": 922,
     "byCategory": [
       {
         "label": "해외 VC",
-        "count": 53
+        "count": 52
       },
       {
         "label": "VC / AC",
-        "count": 44
+        "count": 47
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 23
+        "count": 25
       },
       {
         "label": "TIPS / LIPS",
-        "count": 20
+        "count": 21
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 17
+        "count": 19
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -358,15 +358,15 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 66
+        "count": 67
       },
       {
         "label": "선정",
-        "count": 9
+        "count": 10
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 7
+        "count": 8
       },
       {
         "label": "실증·PoC",
@@ -377,15 +377,15 @@
         "count": 4
       },
       {
+        "label": "펀드결성",
+        "count": 4
+      },
+      {
         "label": "협약",
         "count": 4
       },
       {
         "label": "모집",
-        "count": 3
-      },
-      {
-        "label": "펀드결성",
         "count": 3
       },
       {
@@ -400,7 +400,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 61
+        "count": 64
       },
       {
         "label": "바이오·헬스케어",
@@ -421,6 +421,10 @@
         "count": 4
       },
       {
+        "label": "시리즈B",
+        "count": 3
+      },
+      {
         "label": "Seed",
         "count": 3
       },
@@ -430,10 +434,6 @@
       },
       {
         "label": "시드 투자",
-        "count": 2
-      },
-      {
-        "label": "시리즈B",
         "count": 2
       },
       {
@@ -464,23 +464,23 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 36
+        "count": 35
       },
       {
         "label": "벤처스퀘어",
-        "count": 34
+        "count": 33
       },
       {
         "label": "TechCrunch",
         "count": 18
       },
       {
-        "label": "매일경제",
+        "label": "플래텀",
         "count": 13
       },
       {
-        "label": "플래텀",
-        "count": 13
+        "label": "매일경제",
+        "count": 12
       },
       {
         "label": "스타트업투데이",
@@ -488,7 +488,7 @@
       },
       {
         "label": "뉴시스",
-        "count": 9
+        "count": 10
       },
       {
         "label": "연합뉴스",
@@ -496,11 +496,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-06",
-        "total": 4,
-        "overseas": 2
-      },
       {
         "date": "2026-09-07",
         "total": 1,
@@ -640,9 +635,36 @@
         "date": "2026-10-05",
         "total": 9,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-06",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-05",
+        "company": "Fleuret AI",
+        "fundingAmount": "€4 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "French cybersecurity startup Fleuret AI raises €4 million to automate penetration testing with AI agents",
+        "url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-05",
+        "company": "에스앤이컴퍼니",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "에스앤이컴퍼니, 농업 비즈니스 데이터 AI 의사결정 지원 [서울AI허브 2027]",
+        "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171415",
+        "source": "IT조선"
+      },
       {
         "date": "2026-10-02",
         "company": "Armadin",
@@ -840,33 +862,11 @@
         "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
         "url": "https://www.venturesquare.net/1115810/",
         "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-09-21",
-        "company": "Novadip Biosciences",
-        "fundingAmount": "€10.4 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Belgium's Novadip Biosciences raises €10.4 million to fund pivotal clinical trial and unlock EIB loan tranche | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/belgiums-novadip-biosciences-raises-e10-4-million-to-fund-pivotal-clinical-trial-and-unlock-eib-loan-tranche/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-19",
-        "company": "삼전·닉스",
-        "fundingAmount": null,
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "삼전·닉스, 'AI 생태계' 투자 넓힌다…\"칩 넘어 데이터센터·SW까지\"",
-        "url": "https://www.newsis.com/view/NISX20260918_0003796133",
-        "source": "뉴시스"
       }
     ],
     "previous": {
-      "articleCount": 133,
-      "dealCount": 41,
+      "articleCount": 129,
+      "dealCount": 39,
       "briefingDays": 30
     }
   }
