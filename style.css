@@ -508,6 +508,7 @@ select {
   height: 470px;
   margin-top: 8px;
   touch-action: pan-y;
+  overscroll-behavior-x: contain;
   user-select: none;
   -webkit-user-select: none;
   cursor: grab;
