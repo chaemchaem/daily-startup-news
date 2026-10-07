@@ -35,7 +35,11 @@
   --field-dot: #8f897d;
   --field-line: #b9b3a6;
 
-  --serif: "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
+  /* 영문 제목·숫자는 Bricolage Grotesque, 한글 제목은 원티드 산스. 한글은 뒤쪽 글꼴로 이어진다. */
+  --display: "Bricolage Grotesque", "Wanted Sans Variable", "Wanted Sans", "Pretendard Variable", Pretendard,
+    -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --headline: "Wanted Sans Variable", "Wanted Sans", "Pretendard Variable", Pretendard, -apple-system,
+    "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
     "Malgun Gothic", "Segoe UI", sans-serif;
 
@@ -250,11 +254,11 @@ select {
 
 .masthead-title h1 {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(34px, 5.4vw, 60px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.08;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.035em;
 }
 
 .tagline {
@@ -419,11 +423,11 @@ select {
 }
 
 .stat-value {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.045em;
 }
 
 .stat-tile.is-main .stat-value {
@@ -722,7 +726,7 @@ select {
 
 .card-count {
   color: var(--ink-muted);
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 15px;
   font-variant-numeric: tabular-nums;
 }
@@ -731,9 +735,9 @@ select {
   position: absolute;
   right: 22px;
   bottom: 8px;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 140px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1px var(--rule);
@@ -746,11 +750,11 @@ select {
 
 .card-title {
   margin: 4px 0 0;
-  font-family: var(--serif);
+  font-family: var(--headline);
   font-size: clamp(21px, 2.2vw, 27px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.34;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.03em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -1068,11 +1072,11 @@ a.ticker-link:hover strong {
 
 .story-title {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--headline);
   font-size: 19px;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
 }
 
 .story-title a {
