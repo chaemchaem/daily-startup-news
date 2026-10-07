@@ -1,28 +1,28 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T00:12:01.478Z",
-  "latestDate": "2026-10-06",
+  "generatedAt": "2026-10-07T00:11:35.881Z",
+  "latestDate": "2026-10-07",
   "weekly": {
-    "from": "2026-09-30",
-    "to": "2026-10-06",
+    "from": "2026-10-01",
+    "to": "2026-10-07",
     "briefingDays": 7,
-    "articleCount": 70,
-    "domesticCount": 59,
-    "overseasCount": 11,
-    "dealCount": 12,
-    "disclosedKrwDealCount": 2,
-    "disclosedKrwTotalEok": 148,
+    "articleCount": 72,
+    "domesticCount": 60,
+    "overseasCount": 12,
+    "dealCount": 13,
+    "disclosedKrwDealCount": 3,
+    "disclosedKrwTotalEok": 295,
     "byCategory": [
       {
         "label": "VC / AC",
         "count": 26
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 11
+        "label": "해외 VC",
+        "count": 12
       },
       {
-        "label": "해외 VC",
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
         "count": 11
       },
       {
@@ -30,8 +30,8 @@
         "count": 11
       },
       {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 8
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 9
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,11 +41,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 25
+        "count": 27
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 6
+        "count": 7
       },
       {
         "label": "모집",
@@ -53,10 +53,6 @@
       },
       {
         "label": "선정",
-        "count": 2
-      },
-      {
-        "label": "실증·PoC",
         "count": 2
       },
       {
@@ -70,27 +66,39 @@
       {
         "label": "세컨더리",
         "count": 1
+      },
+      {
+        "label": "지원사업",
+        "count": 1
+      },
+      {
+        "label": "협약",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 23
+        "count": 26
       },
       {
         "label": "바이오·헬스케어",
         "count": 5
       },
       {
-        "label": "반도체",
-        "count": 2
+        "label": "로봇",
+        "count": 1
       },
       {
-        "label": "로봇",
+        "label": "반도체",
         "count": 1
       }
     ],
     "byStage": [
+      {
+        "label": "Series A",
+        "count": 2
+      },
       {
         "label": "시드 투자",
         "count": 1
@@ -102,32 +110,24 @@
       {
         "label": "시리즈B",
         "count": 1
-      },
-      {
-        "label": "Series A",
-        "count": 1
       }
     ],
     "topSources": [
       {
-        "label": "스타트업투데이",
-        "count": 10
-      },
-      {
         "label": "EU-Startups",
-        "count": 8
+        "count": 9
       },
       {
         "label": "벤처스퀘어",
-        "count": 6
+        "count": 8
+      },
+      {
+        "label": "스타트업투데이",
+        "count": 8
       },
       {
         "label": "연합뉴스",
         "count": 6
-      },
-      {
-        "label": "전자신문",
-        "count": 5
       },
       {
         "label": "AI타임스",
@@ -138,16 +138,15 @@
         "count": 4
       },
       {
-        "label": "플래텀",
+        "label": "전자신문",
         "count": 4
+      },
+      {
+        "label": "머니투데이",
+        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-30",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-01",
         "total": 15,
@@ -177,9 +176,47 @@
         "date": "2026-10-06",
         "total": 15,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-07",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-06",
+        "company": "Procuros",
+        "fundingAmount": "€20 million",
+        "fundingStage": "Series A",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Hamburg’s Procuros raises €20 million Series A to build AI-native infrastructure for autonomous B2B trade",
+        "url": "https://www.eu-startups.com/2026/10/hamburgs-procuros-raises-e20-million-series-a-to-build-ai-native-infrastructure-for-autonomous-b2b-trade/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-06",
+        "company": "Hadrian",
+        "fundingAmount": "€35.68 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Cybersecurity startup Hadrian raises €35.68 million to scale its agentic AI offensive security platform",
+        "url": "https://www.eu-startups.com/2026/10/london-amsterdam-based-hadrian-raises-e35-68-million-to-scale-its-agentic-ai-offensive-security-platform/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-06",
+        "company": "고스트",
+        "fundingAmount": "147억 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "19세 청년의 반란...고스트, 개인용 AI PC '코어'로 147억 투자 유치",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=216012",
+        "source": "AI타임스"
+      },
       {
         "date": "2026-10-05",
         "company": "Fleuret AI",
@@ -270,17 +307,6 @@
       },
       {
         "date": "2026-09-30",
-        "company": "EliseAI",
-        "fundingAmount": "$350M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "a16z-backed EliseAI raises $350M, doubles valuation to $4B",
-        "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-09-30",
         "company": "Inbolt",
         "fundingAmount": "€11 million",
         "fundingStage": null,
@@ -300,43 +326,32 @@
         "title": "Paris-based Rayon raises €10 million to build the drawing layer for interior design’s AI era",
         "url": "https://www.eu-startups.com/2026/09/paris-based-rayon-raises-e10-million-to-build-the-drawing-layer-for-interior-designs-ai-era/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-29",
-        "company": "Marble",
-        "fundingAmount": "€6.5 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Paris-based Marble raises €6.5 million to automate fraud and AML compliance with its no-code, open-source platform",
-        "url": "https://www.eu-startups.com/2026/09/paris-based-marble-raises-e6-5-million-to-automate-fraud-and-aml-compliance-with-its-no-code-open-source-platform/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 40,
-      "dealCount": 9,
+      "articleCount": 47,
+      "dealCount": 11,
       "briefingDays": 6
     }
   },
   "monthly": {
-    "from": "2026-09-07",
-    "to": "2026-10-06",
+    "from": "2026-09-08",
+    "to": "2026-10-07",
     "briefingDays": 29,
-    "articleCount": 168,
-    "domesticCount": 115,
-    "overseasCount": 53,
-    "dealCount": 41,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 922,
+    "articleCount": 180,
+    "domesticCount": 125,
+    "overseasCount": 55,
+    "dealCount": 44,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 1069,
     "byCategory": [
       {
         "label": "해외 VC",
-        "count": 52
+        "count": 54
       },
       {
         "label": "VC / AC",
-        "count": 47
+        "count": 52
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -344,11 +359,11 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 21
+        "count": 23
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 19
+        "count": 22
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -358,7 +373,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 67
+        "count": 74
       },
       {
         "label": "선정",
@@ -366,10 +381,14 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 8
+        "count": 10
       },
       {
         "label": "실증·PoC",
+        "count": 5
+      },
+      {
+        "label": "협약",
         "count": 5
       },
       {
@@ -378,10 +397,6 @@
       },
       {
         "label": "펀드결성",
-        "count": 4
-      },
-      {
-        "label": "협약",
         "count": 4
       },
       {
@@ -395,12 +410,16 @@
       {
         "label": "세컨더리",
         "count": 1
+      },
+      {
+        "label": "지원사업",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 64
+        "count": 71
       },
       {
         "label": "바이오·헬스케어",
@@ -418,7 +437,7 @@
     "byStage": [
       {
         "label": "Series A",
-        "count": 4
+        "count": 5
       },
       {
         "label": "시리즈B",
@@ -464,11 +483,11 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 35
+        "count": 37
       },
       {
         "label": "벤처스퀘어",
-        "count": 33
+        "count": 35
       },
       {
         "label": "TechCrunch",
@@ -484,7 +503,7 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 11
+        "count": 12
       },
       {
         "label": "뉴시스",
@@ -496,11 +515,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-07",
-        "total": 1,
-        "overseas": 1
-      },
       {
         "date": "2026-09-08",
         "total": 4,
@@ -640,9 +654,47 @@
         "date": "2026-10-06",
         "total": 15,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-07",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-06",
+        "company": "Procuros",
+        "fundingAmount": "€20 million",
+        "fundingStage": "Series A",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Hamburg’s Procuros raises €20 million Series A to build AI-native infrastructure for autonomous B2B trade",
+        "url": "https://www.eu-startups.com/2026/10/hamburgs-procuros-raises-e20-million-series-a-to-build-ai-native-infrastructure-for-autonomous-b2b-trade/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-06",
+        "company": "Hadrian",
+        "fundingAmount": "€35.68 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Cybersecurity startup Hadrian raises €35.68 million to scale its agentic AI offensive security platform",
+        "url": "https://www.eu-startups.com/2026/10/london-amsterdam-based-hadrian-raises-e35-68-million-to-scale-its-agentic-ai-offensive-security-platform/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-06",
+        "company": "고스트",
+        "fundingAmount": "147억 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "19세 청년의 반란...고스트, 개인용 AI PC '코어'로 147억 투자 유치",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=216012",
+        "source": "AI타임스"
+      },
       {
         "date": "2026-10-05",
         "company": "Fleuret AI",
@@ -829,44 +881,11 @@
         "title": "Amsterdam-based Duqu raises €1.5 million to unlock cash tied up in unpaid invoices | EU-Startups",
         "url": "https://www.eu-startups.com/2026/09/amsterdam-based-duqu-raises-e1-5-million-to-unlock-cash-tied-up-in-unpaid-invoices/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-23",
-        "company": "Spiich",
-        "fundingAmount": "€3 million",
-        "fundingStage": "Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Stockholm’s Spiich raises €3 million to let AI handle admin work while sales teams focus on customers | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/stockholms-spiich-raises-e3-million-to-let-ai-handle-admin-work-while-sales-teams-focus-on-customers/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-23",
-        "company": "마케마케",
-        "fundingAmount": "30억 원",
-        "fundingStage": "프리A",
-        "industry": null,
-        "overseas": false,
-        "title": "마케마케, 프리A 30억 원 투자 유치",
-        "url": "https://www.mk.co.kr/news/business/12160073",
-        "source": "매일경제"
-      },
-      {
-        "date": "2026-09-22",
-        "company": "케이바이오게이트웨이",
-        "fundingAmount": "12억 원",
-        "fundingStage": "시드",
-        "industry": "바이오·헬스케어",
-        "overseas": false,
-        "title": "케이바이오게이트웨이, 다이어트 유산균으로 12억원 시드 유치…글로벌 임상·인허가 추진",
-        "url": "https://www.venturesquare.net/1115810/",
-        "source": "벤처스퀘어"
       }
     ],
     "previous": {
-      "articleCount": 129,
-      "dealCount": 39,
+      "articleCount": 127,
+      "dealCount": 37,
       "briefingDays": 30
     }
   }
