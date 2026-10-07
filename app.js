@@ -869,6 +869,40 @@ function endDrag(event) {
 
 elements.deckStack.addEventListener("pointerup", endDrag);
 elements.deckStack.addEventListener("pointercancel", endDrag);
+// 트랙패드 두 손가락 가로 스와이프(가로 휠)와 Shift+휠로도 카드를 돌린다.
+// 손가락을 따라 연속으로 돌다가, 입력이 멈추면 가장 가까운 카드에 스프링으로 멈춘다.
+let wheelSettleTimer = 0;
+elements.deckStack.addEventListener(
+  "wheel",
+  (event) => {
+    if (!deck.items.length || deck.drag?.moving) return;
+    const horizontal = Math.abs(event.deltaX) > Math.abs(event.deltaY) * 1.2;
+    const shiftWheel = event.shiftKey && !event.deltaX && event.deltaY;
+    if (!horizontal && !shiftWheel) return;
+    event.preventDefault();
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? deck.cardWidth : 1;
+    const delta = (horizontal ? event.deltaX : event.deltaY) * unit;
+    if (deck.frame) {
+      cancelAnimationFrame(deck.frame);
+      deck.frame = 0;
+    }
+    deck.vel = 0;
+    clearTilt();
+    if (deck.flipped) toggleFlipSilently();
+    deck.pos += delta / (deck.cardWidth * 0.85);
+    if (!ringWraps()) deck.pos = clamp(deck.pos, -0.3, deck.items.length - 0.7);
+    deck.target = deck.pos;
+    paintDeck();
+    clearTimeout(wheelSettleTimer);
+    wheelSettleTimer = setTimeout(() => {
+      let target = Math.round(deck.pos);
+      if (!ringWraps()) target = clamp(target, 0, deck.items.length - 1);
+      setDeckTarget(target);
+    }, 140);
+  },
+  { passive: false }
+);
+
 elements.deckStack.addEventListener("pointerleave", (event) => {
   if (event.pointerType === "mouse" && !deck.drag) clearTilt();
 });
