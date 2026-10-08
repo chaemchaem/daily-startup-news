@@ -1,51 +1,51 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T00:11:35.881Z",
-  "latestDate": "2026-10-07",
+  "generatedAt": "2026-10-08T00:12:00.456Z",
+  "latestDate": "2026-10-08",
   "weekly": {
-    "from": "2026-10-01",
-    "to": "2026-10-07",
+    "from": "2026-10-02",
+    "to": "2026-10-08",
     "briefingDays": 7,
-    "articleCount": 72,
-    "domesticCount": 60,
+    "articleCount": 67,
+    "domesticCount": 55,
     "overseasCount": 12,
-    "dealCount": 13,
+    "dealCount": 14,
     "disclosedKrwDealCount": 3,
     "disclosedKrwTotalEok": 295,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
+        "count": 27
       },
       {
         "label": "해외 VC",
         "count": 12
       },
       {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 11
-      },
-      {
         "label": "TIPS / LIPS",
         "count": 11
       },
       {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 8
+      },
+      {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 9
+        "count": 7
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 3
+        "count": 2
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 27
+        "count": 31
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 7
+        "count": 9
       },
       {
         "label": "모집",
@@ -56,15 +56,11 @@
         "count": 2
       },
       {
-        "label": "인수·M&A",
-        "count": 2
-      },
-      {
         "label": "펀드결성",
         "count": 2
       },
       {
-        "label": "세컨더리",
+        "label": "인수·M&A",
         "count": 1
       },
       {
@@ -79,14 +75,10 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 26
+        "count": 25
       },
       {
         "label": "바이오·헬스케어",
-        "count": 5
-      },
-      {
-        "label": "로봇",
         "count": 1
       },
       {
@@ -95,10 +87,6 @@
       }
     ],
     "byStage": [
-      {
-        "label": "Series A",
-        "count": 2
-      },
       {
         "label": "시드 투자",
         "count": 1
@@ -110,16 +98,16 @@
       {
         "label": "시리즈B",
         "count": 1
+      },
+      {
+        "label": "Series A",
+        "count": 1
       }
     ],
     "topSources": [
       {
         "label": "EU-Startups",
         "count": 9
-      },
-      {
-        "label": "벤처스퀘어",
-        "count": 8
       },
       {
         "label": "스타트업투데이",
@@ -130,28 +118,27 @@
         "count": 6
       },
       {
-        "label": "AI타임스",
+        "label": "머니투데이",
         "count": 5
       },
       {
+        "label": "벤처스퀘어",
+        "count": 5
+      },
+      {
+        "label": "AI타임스",
+        "count": 4
+      },
+      {
         "label": "뉴시스",
-        "count": 4
+        "count": 3
       },
       {
-        "label": "전자신문",
-        "count": 4
-      },
-      {
-        "label": "머니투데이",
+        "label": "아시아경제",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-01",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-02",
         "total": 13,
@@ -181,9 +168,47 @@
         "date": "2026-10-07",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-08",
+        "total": 14,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-08",
+        "company": "Healthleap",
+        "fundingAmount": "$38M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
+        "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-07",
+        "company": "Cori Clinical",
+        "fundingAmount": "€3.8 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "London’s Cori Clinical raises €3.8 million to accelerate clinical trials and reduce delays",
+        "url": "https://www.eu-startups.com/2026/10/londons-cori-clinical-raises-e3-55-million-to-accelerate-clinical-trials-and-reduce-delays/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-07",
+        "company": "Konsileo",
+        "fundingAmount": "€5.9 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "UK-based InsurTech Konsileo raises €5.9 million to expand its team and integrate AI",
+        "url": "https://www.eu-startups.com/2026/10/uk-based-insurtech-konsileo-raises-e5-9-million-to-expand-its-team-and-integrate-ai/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-06",
         "company": "Procuros",
@@ -304,62 +329,40 @@
         "title": "자리컴퍼니, 145억 원 시리즈 A 라운드 클로징∙∙∙임대관리 프롭테크 시장 독주체제 가시화",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53102",
         "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-09-30",
-        "company": "Inbolt",
-        "fundingAmount": "€11 million",
-        "fundingStage": null,
-        "industry": "로봇",
-        "overseas": true,
-        "title": "Paris-based Inbolt raises €11 million to give industrial robots real-time vision and intelligence",
-        "url": "https://www.eu-startups.com/2026/09/paris-based-inbolt-raises-e11-million-to-give-industrial-robots-real-time-vision-and-intelligence/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-29",
-        "company": "Rayon",
-        "fundingAmount": "€10 million",
-        "fundingStage": "Series A",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Paris-based Rayon raises €10 million to build the drawing layer for interior design’s AI era",
-        "url": "https://www.eu-startups.com/2026/09/paris-based-rayon-raises-e10-million-to-build-the-drawing-layer-for-interior-designs-ai-era/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 47,
-      "dealCount": 11,
+      "articleCount": 53,
+      "dealCount": 10,
       "briefingDays": 6
     }
   },
   "monthly": {
-    "from": "2026-09-08",
-    "to": "2026-10-07",
+    "from": "2026-09-09",
+    "to": "2026-10-08",
     "briefingDays": 29,
-    "articleCount": 180,
-    "domesticCount": 125,
-    "overseasCount": 55,
-    "dealCount": 44,
+    "articleCount": 186,
+    "domesticCount": 130,
+    "overseasCount": 56,
+    "dealCount": 45,
     "disclosedKrwDealCount": 7,
     "disclosedKrwTotalEok": 1069,
     "byCategory": [
       {
-        "label": "해외 VC",
-        "count": 54
-      },
-      {
         "label": "VC / AC",
-        "count": 52
+        "count": 56
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 25
+        "label": "해외 VC",
+        "count": 55
       },
       {
         "label": "TIPS / LIPS",
-        "count": 23
+        "count": 26
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 24
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -367,29 +370,29 @@
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 4
+        "count": 3
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 74
+        "count": 79
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 13
       },
       {
         "label": "선정",
         "count": 10
       },
       {
-        "label": "TIPS·LIPS 선정",
-        "count": 10
+        "label": "협약",
+        "count": 5
       },
       {
         "label": "실증·PoC",
-        "count": 5
-      },
-      {
-        "label": "협약",
-        "count": 5
+        "count": 4
       },
       {
         "label": "인수·M&A",
@@ -419,7 +422,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 71
+        "count": 72
       },
       {
         "label": "바이오·헬스케어",
@@ -487,23 +490,23 @@
       },
       {
         "label": "벤처스퀘어",
-        "count": 35
+        "count": 33
       },
       {
         "label": "TechCrunch",
-        "count": 18
+        "count": 19
+      },
+      {
+        "label": "매일경제",
+        "count": 13
+      },
+      {
+        "label": "스타트업투데이",
+        "count": 13
       },
       {
         "label": "플래텀",
         "count": 13
-      },
-      {
-        "label": "매일경제",
-        "count": 12
-      },
-      {
-        "label": "스타트업투데이",
-        "count": 12
       },
       {
         "label": "뉴시스",
@@ -511,15 +514,10 @@
       },
       {
         "label": "연합뉴스",
-        "count": 6
+        "count": 7
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-08",
-        "total": 4,
-        "overseas": 2
-      },
       {
         "date": "2026-09-09",
         "total": 7,
@@ -659,9 +657,47 @@
         "date": "2026-10-07",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-08",
+        "total": 14,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-08",
+        "company": "Healthleap",
+        "fundingAmount": "$38M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
+        "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-07",
+        "company": "Cori Clinical",
+        "fundingAmount": "€3.8 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "London’s Cori Clinical raises €3.8 million to accelerate clinical trials and reduce delays",
+        "url": "https://www.eu-startups.com/2026/10/londons-cori-clinical-raises-e3-55-million-to-accelerate-clinical-trials-and-reduce-delays/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-07",
+        "company": "Konsileo",
+        "fundingAmount": "€5.9 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "UK-based InsurTech Konsileo raises €5.9 million to expand its team and integrate AI",
+        "url": "https://www.eu-startups.com/2026/10/uk-based-insurtech-konsileo-raises-e5-9-million-to-expand-its-team-and-integrate-ai/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-06",
         "company": "Procuros",
@@ -848,44 +884,11 @@
         "title": "넥스세라, 220억원 시리즈B 유치…황반변성 점안제 美 임상 속도",
         "url": "https://www.hankyung.com/article/202609288541i",
         "source": "한국경제"
-      },
-      {
-        "date": "2026-09-24",
-        "company": "Enveda",
-        "fundingAmount": "$311M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Enveda secures $311M to bring more nature-derived AI drugs into clinical trials",
-        "url": "https://techcrunch.com/2026/09/23/enveda-secures-311m-to-bring-more-nature-derived-ai-drugs-into-clinical-trials/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-09-24",
-        "company": "Clastix",
-        "fundingAmount": "€2.9 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Italy's Clastix raises €2.9 million with Mistral backing to build sovereign Kubernetes infrastructure for Europe | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/italys-clastix-raises-e2-9-million-with-mistral-backing-to-build-sovereign-kubernetes-infrastructure-for-europe/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-24",
-        "company": "Duqu",
-        "fundingAmount": "€1.5 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Amsterdam-based Duqu raises €1.5 million to unlock cash tied up in unpaid invoices | EU-Startups",
-        "url": "https://www.eu-startups.com/2026/09/amsterdam-based-duqu-raises-e1-5-million-to-unlock-cash-tied-up-in-unpaid-invoices/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 127,
-      "dealCount": 37,
+      "articleCount": 128,
+      "dealCount": 36,
       "briefingDays": 30
     }
   }
