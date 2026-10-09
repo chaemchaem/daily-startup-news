@@ -1,47 +1,47 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-08T00:12:00.456Z",
-  "latestDate": "2026-10-08",
+  "generatedAt": "2026-10-09T00:11:51.064Z",
+  "latestDate": "2026-10-09",
   "weekly": {
-    "from": "2026-10-02",
-    "to": "2026-10-08",
+    "from": "2026-10-03",
+    "to": "2026-10-09",
     "briefingDays": 7,
     "articleCount": 67,
-    "domesticCount": 55,
-    "overseasCount": 12,
-    "dealCount": 14,
+    "domesticCount": 54,
+    "overseasCount": 13,
+    "dealCount": 16,
     "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 295,
+    "disclosedKrwTotalEok": 152,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 27
+        "count": 26
       },
       {
         "label": "해외 VC",
-        "count": 12
+        "count": 13
       },
       {
         "label": "TIPS / LIPS",
-        "count": 11
+        "count": 12
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 8
-      },
-      {
-        "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 7
       },
       {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 6
+      },
+      {
         "label": "세컨더리 / 구주매각",
-        "count": 2
+        "count": 3
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 31
+        "count": 34
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -56,8 +56,8 @@
         "count": 2
       },
       {
-        "label": "펀드결성",
-        "count": 2
+        "label": "세컨더리",
+        "count": 1
       },
       {
         "label": "인수·M&A",
@@ -65,6 +65,10 @@
       },
       {
         "label": "지원사업",
+        "count": 1
+      },
+      {
+        "label": "펀드결성",
         "count": 1
       },
       {
@@ -89,11 +93,7 @@
     "byStage": [
       {
         "label": "시드 투자",
-        "count": 1
-      },
-      {
-        "label": "시리즈A",
-        "count": 1
+        "count": 2
       },
       {
         "label": "시리즈B",
@@ -107,11 +107,11 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 9
+        "count": 10
       },
       {
         "label": "스타트업투데이",
-        "count": 8
+        "count": 7
       },
       {
         "label": "연합뉴스",
@@ -126,24 +126,19 @@
         "count": 5
       },
       {
+        "label": "아시아경제",
+        "count": 4
+      },
+      {
         "label": "AI타임스",
         "count": 4
       },
       {
         "label": "뉴시스",
         "count": 3
-      },
-      {
-        "label": "아시아경제",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-02",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-10-03",
         "total": 12,
@@ -173,6 +168,11 @@
         "date": "2026-10-08",
         "total": 14,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-09",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -186,6 +186,39 @@
         "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
         "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-08",
+        "company": "웨이비나",
+        "fundingAmount": "2억 원",
+        "fundingStage": "시드 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "웨이비나, 2억 원 시드 투자 유치∙∙∙심전도 기반 혈액 예측 기술 고도화",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53176",
+        "source": "스타트업투데이"
+      },
+      {
+        "date": "2026-10-08",
+        "company": "Finches",
+        "fundingAmount": "€2 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "German female-founded startup Finches raises €2 million to bring AI early warnings to agricultural sourcing",
+        "url": "https://www.eu-startups.com/2026/10/bavarias-female-founded-startup-finches-raises-e2-million-to-bring-ai-early-warnings-to-agricultural-procurement/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-08",
+        "company": "TODAY",
+        "fundingAmount": "€2.8 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Copenhagen’s TODAY raises €2.8 million to bring compliant AI agents to financial and insurance advisors",
+        "url": "https://www.eu-startups.com/2026/10/copenhagens-today-raises-e2-8-million-to-bring-compliant-ai-agents-to-financial-and-insurance-advisors/",
+        "source": "EU-Startups"
       },
       {
         "date": "2026-10-07",
@@ -318,47 +351,36 @@
         "title": "AI sales startup Revnu raises €2.6 million to build team and accelerate international growth",
         "url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-01",
-        "company": "자리컴퍼니",
-        "fundingAmount": "145억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "자리컴퍼니, 145억 원 시리즈 A 라운드 클로징∙∙∙임대관리 프롭테크 시장 독주체제 가시화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53102",
-        "source": "스타트업투데이"
       }
     ],
     "previous": {
-      "articleCount": 53,
-      "dealCount": 10,
+      "articleCount": 59,
+      "dealCount": 11,
       "briefingDays": 6
     }
   },
   "monthly": {
-    "from": "2026-09-09",
-    "to": "2026-10-08",
+    "from": "2026-09-10",
+    "to": "2026-10-09",
     "briefingDays": 29,
-    "articleCount": 186,
-    "domesticCount": 130,
-    "overseasCount": 56,
-    "dealCount": 45,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 1069,
+    "articleCount": 188,
+    "domesticCount": 131,
+    "overseasCount": 57,
+    "dealCount": 47,
+    "disclosedKrwDealCount": 8,
+    "disclosedKrwTotalEok": 1071,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 56
+        "count": 57
       },
       {
         "label": "해외 VC",
-        "count": 55
+        "count": 56
       },
       {
         "label": "TIPS / LIPS",
-        "count": 26
+        "count": 27
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -366,17 +388,17 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 22
+        "count": 20
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 3
+        "count": 4
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 79
+        "count": 83
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -395,10 +417,6 @@
         "count": 4
       },
       {
-        "label": "인수·M&A",
-        "count": 4
-      },
-      {
         "label": "펀드결성",
         "count": 4
       },
@@ -407,12 +425,16 @@
         "count": 3
       },
       {
-        "label": "출시·상용화",
-        "count": 2
+        "label": "인수·M&A",
+        "count": 3
       },
       {
         "label": "세컨더리",
-        "count": 1
+        "count": 2
+      },
+      {
+        "label": "출시·상용화",
+        "count": 2
       },
       {
         "label": "지원사업",
@@ -422,7 +444,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 72
+        "count": 74
       },
       {
         "label": "바이오·헬스케어",
@@ -443,6 +465,10 @@
         "count": 5
       },
       {
+        "label": "시드 투자",
+        "count": 3
+      },
+      {
         "label": "시리즈B",
         "count": 3
       },
@@ -452,10 +478,6 @@
       },
       {
         "label": "시드",
-        "count": 2
-      },
-      {
-        "label": "시드 투자",
         "count": 2
       },
       {
@@ -477,16 +499,12 @@
       {
         "label": "pre-Seed",
         "count": 1
-      },
-      {
-        "label": "seed",
-        "count": 1
       }
     ],
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 37
+        "count": 39
       },
       {
         "label": "벤처스퀘어",
@@ -494,19 +512,19 @@
       },
       {
         "label": "TechCrunch",
-        "count": 19
-      },
-      {
-        "label": "매일경제",
-        "count": 13
+        "count": 18
       },
       {
         "label": "스타트업투데이",
-        "count": 13
+        "count": 14
       },
       {
         "label": "플래텀",
         "count": 13
+      },
+      {
+        "label": "매일경제",
+        "count": 11
       },
       {
         "label": "뉴시스",
@@ -518,11 +536,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-09",
-        "total": 7,
-        "overseas": 3
-      },
       {
         "date": "2026-09-10",
         "total": 7,
@@ -662,6 +675,11 @@
         "date": "2026-10-08",
         "total": 14,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-09",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -675,6 +693,39 @@
         "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
         "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-08",
+        "company": "웨이비나",
+        "fundingAmount": "2억 원",
+        "fundingStage": "시드 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "웨이비나, 2억 원 시드 투자 유치∙∙∙심전도 기반 혈액 예측 기술 고도화",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53176",
+        "source": "스타트업투데이"
+      },
+      {
+        "date": "2026-10-08",
+        "company": "Finches",
+        "fundingAmount": "€2 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "German female-founded startup Finches raises €2 million to bring AI early warnings to agricultural sourcing",
+        "url": "https://www.eu-startups.com/2026/10/bavarias-female-founded-startup-finches-raises-e2-million-to-bring-ai-early-warnings-to-agricultural-procurement/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-08",
+        "company": "TODAY",
+        "fundingAmount": "€2.8 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Copenhagen’s TODAY raises €2.8 million to bring compliant AI agents to financial and insurance advisors",
+        "url": "https://www.eu-startups.com/2026/10/copenhagens-today-raises-e2-8-million-to-bring-compliant-ai-agents-to-financial-and-insurance-advisors/",
+        "source": "EU-Startups"
       },
       {
         "date": "2026-10-07",
@@ -851,44 +902,11 @@
         "title": "Paris-based Rayon raises €10 million to build the drawing layer for interior design’s AI era",
         "url": "https://www.eu-startups.com/2026/09/paris-based-rayon-raises-e10-million-to-build-the-drawing-layer-for-interior-designs-ai-era/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-29",
-        "company": "Marble",
-        "fundingAmount": "€6.5 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Paris-based Marble raises €6.5 million to automate fraud and AML compliance with its no-code, open-source platform",
-        "url": "https://www.eu-startups.com/2026/09/paris-based-marble-raises-e6-5-million-to-automate-fraud-and-aml-compliance-with-its-no-code-open-source-platform/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-28",
-        "company": "Klang",
-        "fundingAmount": "€1.32 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Helsingborg’s conversation AI startup Klang raises €1.32 million and releases open speech-to-text model for Swedish",
-        "url": "https://www.eu-startups.com/2026/09/helsingborgs-conversation-ai-startup-klang-raises-e1-32-million-and-releases-open-speech-to-text-model-for-swedish/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-28",
-        "company": "넥스세라",
-        "fundingAmount": "220억 원",
-        "fundingStage": "시리즈B",
-        "industry": null,
-        "overseas": false,
-        "title": "넥스세라, 220억원 시리즈B 유치…황반변성 점안제 美 임상 속도",
-        "url": "https://www.hankyung.com/article/202609288541i",
-        "source": "한국경제"
       }
     ],
     "previous": {
-      "articleCount": 128,
-      "dealCount": 36,
+      "articleCount": 134,
+      "dealCount": 39,
       "briefingDays": 30
     }
   }
