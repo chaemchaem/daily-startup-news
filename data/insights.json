@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-09T00:11:51.064Z",
-  "latestDate": "2026-10-09",
+  "generatedAt": "2026-10-10T00:11:47.993Z",
+  "latestDate": "2026-10-10",
   "weekly": {
-    "from": "2026-10-03",
-    "to": "2026-10-09",
+    "from": "2026-10-04",
+    "to": "2026-10-10",
     "briefingDays": 7,
-    "articleCount": 67,
-    "domesticCount": 54,
-    "overseasCount": 13,
-    "dealCount": 16,
+    "articleCount": 72,
+    "domesticCount": 60,
+    "overseasCount": 12,
+    "dealCount": 15,
     "disclosedKrwDealCount": 3,
     "disclosedKrwTotalEok": 152,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
+        "count": 28
       },
       {
         "label": "해외 VC",
-        "count": 13
+        "count": 12
       },
       {
         "label": "TIPS / LIPS",
@@ -27,63 +27,59 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 7
+        "count": 8
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 6
+        "count": 7
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 3
+        "count": 5
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 34
+        "count": 32
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 9
+        "count": 8
+      },
+      {
+        "label": "선정",
+        "count": 4
+      },
+      {
+        "label": "세컨더리",
+        "count": 3
       },
       {
         "label": "모집",
         "count": 2
       },
       {
-        "label": "선정",
+        "label": "지원사업",
         "count": 2
       },
       {
-        "label": "세컨더리",
-        "count": 1
+        "label": "협약",
+        "count": 2
       },
       {
         "label": "인수·M&A",
         "count": 1
       },
       {
-        "label": "지원사업",
-        "count": 1
-      },
-      {
         "label": "펀드결성",
-        "count": 1
-      },
-      {
-        "label": "협약",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 25
-      },
-      {
-        "label": "바이오·헬스케어",
-        "count": 1
+        "count": 27
       },
       {
         "label": "반도체",
@@ -110,40 +106,35 @@
         "count": 10
       },
       {
-        "label": "스타트업투데이",
+        "label": "머니투데이",
         "count": 7
+      },
+      {
+        "label": "스타트업투데이",
+        "count": 6
       },
       {
         "label": "연합뉴스",
         "count": 6
       },
       {
-        "label": "머니투데이",
+        "label": "아시아경제",
+        "count": 5
+      },
+      {
+        "label": "IT조선",
         "count": 5
       },
       {
         "label": "벤처스퀘어",
-        "count": 5
-      },
-      {
-        "label": "아시아경제",
         "count": 4
       },
       {
-        "label": "AI타임스",
+        "label": "아주경제",
         "count": 4
-      },
-      {
-        "label": "뉴시스",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-03",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-10-04",
         "total": 12,
@@ -173,9 +164,25 @@
         "date": "2026-10-09",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-10",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-09",
+        "company": "Klarent",
+        "fundingAmount": "€7.13 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Zurich’s Klarent raises €7.13 million to scale its agentic software testing platform and expand into the US",
+        "url": "https://www.eu-startups.com/2026/10/zurichs-klarent-raises-e7-13-million-to-scale-its-agentic-software-testing-platform-and-expand-into-the-us/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-08",
         "company": "Healthleap",
@@ -299,17 +306,6 @@
       },
       {
         "date": "2026-10-02",
-        "company": "Armadin",
-        "fundingAmount": "$255.5M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Kevin Mandia’s new ‘agent swarm’ security startup Armadin raises $255.5M at $2.5B valuation",
-        "url": "https://techcrunch.com/2026/10/01/kevin-mandias-new-agent-swarm-security-startup-armadin-raises-255-5m-at-2-5b-valuation/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-02",
         "company": "Kuro",
         "fundingAmount": "€10 million",
         "fundingStage": null,
@@ -340,43 +336,32 @@
         "title": "관악연구소, 서울대기술지주로부터 3억 원 유치∙∙∙금융 AX 솔루션 영토 확장",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53117",
         "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-01",
-        "company": "Revnu",
-        "fundingAmount": "€2.6 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "AI sales startup Revnu raises €2.6 million to build team and accelerate international growth",
-        "url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 59,
-      "dealCount": 11,
+      "articleCount": 60,
+      "dealCount": 10,
       "briefingDays": 6
     }
   },
   "monthly": {
-    "from": "2026-09-10",
-    "to": "2026-10-09",
+    "from": "2026-09-11",
+    "to": "2026-10-10",
     "briefingDays": 29,
-    "articleCount": 188,
-    "domesticCount": 131,
-    "overseasCount": 57,
-    "dealCount": 47,
+    "articleCount": 193,
+    "domesticCount": 138,
+    "overseasCount": 55,
+    "dealCount": 45,
     "disclosedKrwDealCount": 8,
     "disclosedKrwTotalEok": 1071,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 57
+        "count": 59
       },
       {
         "label": "해외 VC",
-        "count": 56
+        "count": 54
       },
       {
         "label": "TIPS / LIPS",
@@ -384,15 +369,15 @@
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 24
+        "count": 25
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 20
+        "count": 21
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 4
+        "count": 7
       }
     ],
     "byEventType": [
@@ -410,7 +395,11 @@
       },
       {
         "label": "협약",
-        "count": 5
+        "count": 6
+      },
+      {
+        "label": "세컨더리",
+        "count": 4
       },
       {
         "label": "실증·PoC",
@@ -429,22 +418,18 @@
         "count": 3
       },
       {
-        "label": "세컨더리",
+        "label": "지원사업",
         "count": 2
       },
       {
         "label": "출시·상용화",
         "count": 2
-      },
-      {
-        "label": "지원사업",
-        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 74
+        "count": 77
       },
       {
         "label": "바이오·헬스케어",
@@ -462,7 +447,7 @@
     "byStage": [
       {
         "label": "Series A",
-        "count": 5
+        "count": 4
       },
       {
         "label": "시드 투자",
@@ -489,10 +474,6 @@
         "count": 1
       },
       {
-        "label": "시리즈D",
-        "count": 1
-      },
-      {
         "label": "프리A",
         "count": 1
       },
@@ -504,15 +485,15 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 39
+        "count": 38
       },
       {
         "label": "벤처스퀘어",
-        "count": 33
+        "count": 31
       },
       {
         "label": "TechCrunch",
-        "count": 18
+        "count": 17
       },
       {
         "label": "스타트업투데이",
@@ -520,27 +501,22 @@
       },
       {
         "label": "플래텀",
-        "count": 13
-      },
-      {
-        "label": "매일경제",
-        "count": 11
+        "count": 12
       },
       {
         "label": "뉴시스",
         "count": 10
       },
       {
+        "label": "매일경제",
+        "count": 10
+      },
+      {
         "label": "연합뉴스",
-        "count": 7
+        "count": 8
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-10",
-        "total": 7,
-        "overseas": 3
-      },
       {
         "date": "2026-09-11",
         "total": 5,
@@ -680,9 +656,25 @@
         "date": "2026-10-09",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-10",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-09",
+        "company": "Klarent",
+        "fundingAmount": "€7.13 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Zurich’s Klarent raises €7.13 million to scale its agentic software testing platform and expand into the US",
+        "url": "https://www.eu-startups.com/2026/10/zurichs-klarent-raises-e7-13-million-to-scale-its-agentic-software-testing-platform-and-expand-into-the-us/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-08",
         "company": "Healthleap",
@@ -891,21 +883,10 @@
         "title": "Paris-based Inbolt raises €11 million to give industrial robots real-time vision and intelligence",
         "url": "https://www.eu-startups.com/2026/09/paris-based-inbolt-raises-e11-million-to-give-industrial-robots-real-time-vision-and-intelligence/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-09-29",
-        "company": "Rayon",
-        "fundingAmount": "€10 million",
-        "fundingStage": "Series A",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Paris-based Rayon raises €10 million to build the drawing layer for interior design’s AI era",
-        "url": "https://www.eu-startups.com/2026/09/paris-based-rayon-raises-e10-million-to-build-the-drawing-layer-for-interior-designs-ai-era/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 134,
+      "articleCount": 135,
       "dealCount": 39,
       "briefingDays": 30
     }
