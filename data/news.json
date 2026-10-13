@@ -1,33 +1,68 @@
 {
-  "generatedAt": "2026-10-12T09:00:00+09:00",
-  "collectedAt": "2026-10-12T09:11:47+09:00",
+  "generatedAt": "2026-10-13T09:00:00+09:00",
+  "collectedAt": "2026-10-13T09:11:47+09:00",
   "range": {
-    "from": "2026-10-10T09:00:00+09:00",
-    "to": "2026-10-12T09:00:00+09:00"
+    "from": "2026-10-11T09:00:00+09:00",
+    "to": "2026-10-13T09:00:00+09:00"
   },
   "totalCount": 15,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 3,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
-    "스타트업 / 벤처기업 / 초기창업": 5,
+    "TIPS / LIPS": 2,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 3,
+    "스타트업 / 벤처기업 / 초기창업": 4,
     "세컨더리 / 구주매각": 0,
-    "해외 VC": 0
+    "해외 VC": 1
   },
   "items": [
     {
-      "id": "cb0616fb21a09931",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "중기부-국세청 협업 \"2559개 AI 중소·스타트업 집중 지원\"",
-      "publishedAt": "2026-10-11",
-      "summary": "중기부는 올해 AI 모델·서비스 개발과 AI 기술 산업현장 적용 등을 지원하기 위해 20개 사업을 통해 AI 중소·스타트업을 지원하고, 해당 기업 명단을 국세청과 공유했다.",
+      "id": "6fd4ddcee5a46690",
+      "category": "TIPS / LIPS",
+      "title": "세진사, 서울대기술지주 투자 유치·팁스 선정…세차 데이터로 AI 차량관리 개발",
+      "publishedAt": "2026-10-12",
+      "summary": "세진사는 팁스 선정에 따라 향후 2년간 총 8억원의 연구개발(R&D) 자금을 지원받으며, 투자금과 정부 연구개발 자금은 각각 다른 목적으로 활용된다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "ZDNet Korea",
-      "url": "https://zdnet.co.kr/view/?no=20261011161305",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1119089/",
       "resolvedUrl": null,
+      "company": "세진사",
+      "eventType": "투자유치",
       "industry": "AI",
-      "score": 82
+      "score": 99
+    },
+    {
+      "id": "fdc99fed1c93ced8",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "앤드리슨 호로위츠, 1조4900억원 AI 하드웨어 펀드 조성 후 방한…한국 반도체·로봇 기업과 협력 모색",
+      "publishedAt": "2026-10-12",
+      "summary": "반도체와 메모리, 첨단 제조 분야의 한국 기업들이 보유한 기술 및 생산 역량은 AI 하드웨어 스타트업의 제품 개발과 상용화 과정에서 협력 자산이 될 수 있다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1119082/",
+      "resolvedUrl": null,
+      "company": "호로위츠",
+      "fundingAmount": "1조4900억 원",
+      "eventType": "펀드결성",
+      "industry": "AI",
+      "score": 80
+    },
+    {
+      "id": "7cb84badc5a1e801",
+      "category": "해외 VC",
+      "title": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
+      "publishedAt": "2026-10-12",
+      "summary": "The final close comes just four months after the fund’s first close at €40 million in June.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
+      "resolvedUrl": null,
+      "company": "Gaius Capital",
+      "fundingAmount": "€50 million",
+      "eventType": "투자유치",
+      "score": 75
     },
     {
       "id": "2fd578ed9a2d6a91",
@@ -42,7 +77,7 @@
       "resolvedUrl": null,
       "eventType": "지원사업",
       "industry": "AI",
-      "score": 80
+      "score": 74
     },
     {
       "id": "08d22b7790186b65",
@@ -56,7 +91,21 @@
       "url": "https://view.asiae.co.kr/article/2026101004253984037",
       "resolvedUrl": null,
       "industry": "AI",
-      "score": 75
+      "score": 73
+    },
+    {
+      "id": "00029c9d2b9b194a",
+      "category": "VC / AC",
+      "title": "부산창조경제혁신센터, 초기창업패키지 기업 교류 지원∙∙∙투자사 밋업∙IR 연계",
+      "publishedAt": "2026-10-12",
+      "summary": "선정기업별 수요에 따라 전시부스 운영, 투자사 밋업, 기업설명회(IR) 발표를 매칭해 기업이 다양한 관계자에게 자사 제품∙서비스를 알리고 신규 협력 기회를 발굴할 수 있게 했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53198",
+      "resolvedUrl": null,
+      "eventType": "선정",
+      "score": 72
     },
     {
       "id": "74b656b9f28f572d",
@@ -74,7 +123,35 @@
       "fundingStage": "시드투자",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 72
+      "score": 70
+    },
+    {
+      "id": "327c125925fa1ad0",
+      "category": "VC / AC",
+      "title": "KT&G, 청년 창업 활성화 비전 선포∙∙∙‘상상스타트업캠프’ 10기 데모데이",
+      "publishedAt": "2026-10-12",
+      "summary": "‘KT&G 상상스타트업캠프 10기 파이널 데모데이’에 참석한 참여기업 대표 및 관계자들이 기념촬영을 하고 있다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53204",
+      "resolvedUrl": null,
+      "score": 69
+    },
+    {
+      "id": "afced66b12bec6b7",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "굳갱랩스, ‘AI 아바타 반달이’ 탐방 안내 서비스 개발",
+      "publishedAt": "2026-10-12",
+      "summary": "/ 굳갱랩스 이번 사업은 중소벤처기업부 민관협력 오픈이노베이션 지원사업의 ‘3D AI 아바타 기반 국립공원 탐방 안내 및 산행 안전 서비스 개발’ 과제로 추진된다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "IT조선",
+      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171834",
+      "resolvedUrl": null,
+      "eventType": "지원사업",
+      "industry": "AI",
+      "score": 67
     },
     {
       "id": "e91dd45acb73f917",
@@ -90,22 +167,22 @@
       "company": "아마존",
       "eventType": "인수·M&A",
       "industry": "AI",
-      "score": 69
+      "score": 67
     },
     {
-      "id": "614a554f1c2cb13d",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "중기부·국세청, AI 기업 2천559개사 성장·세정지원 연계",
-      "publishedAt": "2026-10-11",
-      "summary": "특히 창업 5년 이내 AI 스타트업을 정기 세무조사 선정에서 제외하고, 그 밖의 AI 중소기업은 납세자 신청에 따라 세무조사 착수 예정일로부터 2년간 정기 세무조사를 유예한다.",
+      "id": "44c2f4f2e22e026f",
+      "category": "VC / AC",
+      "title": "누리호 싣고 135억 투자 유치까지…천안 'C-스타' 스타트업 날개",
+      "publishedAt": "2026-10-13",
+      "summary": "이 회사는 지난달 135억원 규모의 투자를 유치하며 글로벌 시장 진출과 FSM 양산 체계 구축에 속도를 내고 있다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "연합뉴스",
-      "url": "https://www.yna.co.kr/view/AKR20261009033600030",
+      "url": "https://www.yna.co.kr/view/AKR20261013035800063",
       "resolvedUrl": null,
-      "eventType": "선정",
-      "industry": "AI",
-      "score": 65
+      "fundingAmount": "135억 원",
+      "eventType": "투자유치",
+      "score": 64
     },
     {
       "id": "e54f9ac27f4fac2d",
@@ -123,110 +200,21 @@
       "fundingStage": "시리즈B",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 64
+      "score": 62
     },
     {
-      "id": "c57408dccd8da6a0",
+      "id": "b1b9fb19d1f2e6b4",
       "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "중기부, 2차 '모두의 창업' AI 솔루션 선정",
-      "publishedAt": "2026-10-11",
-      "summary": "선정된 AI 솔루션 목록은 12일부터 '모두의 창업 플랫폼'을 통해 공개한다. 2차 모두의 창업 1라운드 진출자는 1인당 100만원의 범위에서 AI 솔루션을 이용할 수 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026101021380394942",
-      "resolvedUrl": null,
-      "eventType": "선정",
-      "industry": "AI",
-      "score": 63
-    },
-    {
-      "id": "63dac15790b9c10f",
-      "category": "VC / AC",
-      "title": "[VC·PE 20년의 헌사] KCGI 3.0 개막, 행동주의서 '승계·성장 조력자'로",
+      "title": "충남콘텐츠진흥원, 천안 스타트업 7곳 중국서 1560만달러 수출 상담·협력 성과…MOU 12건 체결",
       "publishedAt": "2026-10-12",
-      "summary": "KCGI는 2021년 11월 ㈜LIG가 발행한 1000억원 규모의 교환사채(EB, 교환 대상 LIG넥스원 지분 8.63%)를 인수하고 대주주와 주주간 계약을 체결했다.",
+      "summary": "이번 행사에서 참여기업들은 약 1560만달러(약 208억원) 규모의 수출 상담 및 업무협력 성과를 기록했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "블로터",
-      "url": "https://www.bloter.net/news/articleView.html?idxno=675153",
+      "source": "벤처스퀘어",
+      "url": "https://www.venturesquare.net/1119176/",
       "resolvedUrl": null,
-      "eventType": "인수·M&A",
-      "score": 61
-    },
-    {
-      "id": "06a90fe196586a27",
-      "category": "TIPS / LIPS",
-      "title": "그레이비랩, 조직문화 AI로 분석해 채용 지원 [서울AI허브 2027]",
-      "publishedAt": "2026-10-12",
-      "summary": "국내 대기업·공공 실증 넘어 글로벌 HR 분석시장으로 확장 그레이비랩은 2023년 중소벤처기업부 팁스(TIPS)에 선정됐다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "IT조선",
-      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171709",
-      "resolvedUrl": null,
-      "company": "그레이비랩",
-      "eventType": "TIPS·LIPS 선정",
-      "industry": "AI",
-      "score": 56
-    },
-    {
-      "id": "a0f8d4192982854f",
-      "category": "VC / AC",
-      "title": "메타 인수 무산된 마누스, 6700억 투자 유치로 독립 경영 가속",
-      "publishedAt": "2026-10-10",
-      "summary": "2025년 초 중국에서 출범한 뒤 미국 투자사 벤치마크의 투자를 받았으며, 같은 해 직원들을 싱가포르로 이전했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "AI타임스",
-      "url": "https://www.aitimes.com/news/articleView.html?idxno=216118",
-      "resolvedUrl": null,
-      "fundingAmount": "6700억 원",
-      "eventType": "투자유치",
-      "score": 55
-    },
-    {
-      "id": "1cd91c3d073ca243",
-      "category": "VC / AC",
-      "title": "혈액속 암세포 한 칩에서 잡고 읽고 꺼낸다…수술후 재발감시 겨냥",
-      "publishedAt": "2026-10-12",
-      "summary": "누적 투자유치액은 5억원으로, 현재 30억원 규모의 프리시리즈A 투자를 유치하고 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "머니투데이",
-      "url": "https://www.mt.co.kr/future/2026/10/12/2026093017250957691",
-      "resolvedUrl": null,
-      "score": 53
-    },
-    {
-      "id": "89966fae69fd41ca",
-      "category": "TIPS / LIPS",
-      "title": "바이브존, 팬에 의한 팬을 위한 팬 중심 케이팝 감성 플랫폼 [서울AI허브 2027]",
-      "publishedAt": "2026-10-11",
-      "summary": "팬덤을 지속 확보하고 운영할 수 있도록 지원하는 것이 핵심이다. 바이브존은 2025년 삼성전자와 사업의향서(LOI)를 체결하고 삼성TV 프리로드 K팝 서비스를 출시한 바 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "IT조선",
-      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171491",
-      "resolvedUrl": null,
-      "company": "바이브존",
-      "eventType": "출시·상용화",
-      "industry": "AI",
-      "score": 52
-    },
-    {
-      "id": "a06e5bc803f8080e",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "부산은행 'B-스타트업 챌린지'… 5개사 수상",
-      "publishedAt": "2026-10-11",
-      "summary": "심사위원단은 각 기업의 기술성, 사업화 가능성, 시장성, 팀 역량 등을 종합 평가해 최종 5개 수상기업을 선정했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "파이낸셜뉴스",
-      "url": "https://www.fnnews.com/news/202610111923324969",
-      "resolvedUrl": null,
-      "eventType": "선정",
-      "score": 51
+      "eventType": "협약",
+      "score": 49
     },
     {
       "id": "22d01b0d5ffb5b5d",
@@ -240,7 +228,21 @@
       "url": "https://www.yna.co.kr/view/AKR20261011014600004",
       "resolvedUrl": null,
       "eventType": "모집",
-      "score": 50
+      "score": 48
+    },
+    {
+      "id": "b1c07b3a75d58fd5",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "\"제주 장애인 예비창업가 뒷받침\"…교육생 모집",
+      "publishedAt": "2026-10-13",
+      "summary": "전액 무료인 이번 아카데미는 제주 지역 예비 창업자의 정보 접근성을 강화하고자 마련됐다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "뉴시스",
+      "url": "https://www.newsis.com/view/NISX20261013_0003823141",
+      "resolvedUrl": null,
+      "eventType": "모집",
+      "score": 38
     }
   ]
 }

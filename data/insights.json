@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-12T00:11:47.161Z",
-  "latestDate": "2026-10-12",
+  "generatedAt": "2026-10-13T00:11:47.176Z",
+  "latestDate": "2026-10-13",
   "weekly": {
-    "from": "2026-10-06",
-    "to": "2026-10-12",
+    "from": "2026-10-07",
+    "to": "2026-10-13",
     "briefingDays": 7,
-    "articleCount": 83,
-    "domesticCount": 73,
+    "articleCount": 79,
+    "domesticCount": 69,
     "overseasCount": 10,
-    "dealCount": 13,
+    "dealCount": 12,
     "disclosedKrwDealCount": 3,
     "disclosedKrwTotalEok": 2849,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 30
+        "count": 28
       },
       {
         "label": "TIPS / LIPS",
@@ -27,7 +27,7 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 11
+        "count": 10
       },
       {
         "label": "해외 VC",
@@ -35,13 +35,13 @@
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 6
+        "count": 5
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 35
+        "count": 33
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -49,10 +49,10 @@
       },
       {
         "label": "선정",
-        "count": 7
+        "count": 6
       },
       {
-        "label": "인수·M&A",
+        "label": "지원사업",
         "count": 4
       },
       {
@@ -60,16 +60,20 @@
         "count": 3
       },
       {
-        "label": "지원사업",
+        "label": "인수·M&A",
         "count": 3
       },
       {
         "label": "협약",
-        "count": 2
+        "count": 3
       },
       {
         "label": "모집",
-        "count": 1
+        "count": 2
+      },
+      {
+        "label": "펀드결성",
+        "count": 2
       },
       {
         "label": "실증·PoC",
@@ -78,25 +82,21 @@
       {
         "label": "출시·상용화",
         "count": 1
-      },
-      {
-        "label": "펀드결성",
-        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 36
+        "count": 34
       }
     ],
     "byStage": [
       {
-        "label": "시리즈B",
-        "count": 2
+        "label": "시드투자",
+        "count": 1
       },
       {
-        "label": "시드투자",
+        "label": "시리즈B",
         "count": 1
       },
       {
@@ -107,18 +107,18 @@
     "topSources": [
       {
         "label": "머니투데이",
-        "count": 10
+        "count": 8
       },
       {
         "label": "EU-Startups",
         "count": 8
       },
       {
-        "label": "아시아경제",
+        "label": "벤처스퀘어",
         "count": 7
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "아시아경제",
         "count": 7
       },
       {
@@ -130,7 +130,7 @@
         "count": 6
       },
       {
-        "label": "아주경제",
+        "label": "스타트업투데이",
         "count": 5
       },
       {
@@ -139,11 +139,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-06",
-        "total": 15,
-        "overseas": 1
-      },
       {
         "date": "2026-10-07",
         "total": 15,
@@ -173,9 +168,25 @@
         "date": "2026-10-12",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-13",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-12",
+        "company": "Gaius Capital",
+        "fundingAmount": "€50 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
+        "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-11",
         "company": "웨이비나",
@@ -296,58 +307,36 @@
         "title": "19세 청년의 반란...고스트, 개인용 AI PC '코어'로 147억 투자 유치",
         "url": "https://www.aitimes.com/news/articleView.html?idxno=216012",
         "source": "AI타임스"
-      },
-      {
-        "date": "2026-10-05",
-        "company": "Fleuret AI",
-        "fundingAmount": "€4 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "French cybersecurity startup Fleuret AI raises €4 million to automate penetration testing with AI agents",
-        "url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-05",
-        "company": "에스앤이컴퍼니",
-        "fundingAmount": null,
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "에스앤이컴퍼니, 농업 비즈니스 데이터 AI 의사결정 지원 [서울AI허브 2027]",
-        "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171415",
-        "source": "IT조선"
       }
     ],
     "previous": {
-      "articleCount": 69,
+      "articleCount": 70,
       "dealCount": 12,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-13",
-    "to": "2026-10-12",
+    "from": "2026-09-14",
+    "to": "2026-10-13",
     "briefingDays": 29,
-    "articleCount": 212,
-    "domesticCount": 160,
-    "overseasCount": 52,
+    "articleCount": 217,
+    "domesticCount": 167,
+    "overseasCount": 50,
     "dealCount": 43,
     "disclosedKrwDealCount": 9,
     "disclosedKrwTotalEok": 3771,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 66
+        "count": 69
       },
       {
         "label": "해외 VC",
-        "count": 51
+        "count": 49
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 33
+        "count": 35
       },
       {
         "label": "TIPS / LIPS",
@@ -355,7 +344,7 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 23
+        "count": 25
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -365,7 +354,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 87
+        "count": 89
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -376,32 +365,32 @@
         "count": 13
       },
       {
+        "label": "협약",
+        "count": 7
+      },
+      {
         "label": "인수·M&A",
         "count": 6
       },
       {
-        "label": "협약",
-        "count": 6
+        "label": "모집",
+        "count": 5
       },
       {
         "label": "실증·PoC",
         "count": 5
       },
       {
-        "label": "모집",
+        "label": "세컨더리",
         "count": 4
       },
       {
-        "label": "세컨더리",
+        "label": "지원사업",
         "count": 4
       },
       {
         "label": "펀드결성",
         "count": 4
-      },
-      {
-        "label": "지원사업",
-        "count": 3
       },
       {
         "label": "출시·상용화",
@@ -411,7 +400,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 85
+        "count": 87
       },
       {
         "label": "바이오·헬스케어",
@@ -467,23 +456,27 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 36
+        "count": 35
       },
       {
         "label": "벤처스퀘어",
-        "count": 30
-      },
-      {
-        "label": "TechCrunch",
-        "count": 16
+        "count": 33
       },
       {
         "label": "스타트업투데이",
-        "count": 14
+        "count": 16
+      },
+      {
+        "label": "TechCrunch",
+        "count": 15
       },
       {
         "label": "플래텀",
         "count": 14
+      },
+      {
+        "label": "연합뉴스",
+        "count": 11
       },
       {
         "label": "AI타임스",
@@ -492,18 +485,9 @@
       {
         "label": "머니투데이",
         "count": 10
-      },
-      {
-        "label": "연합뉴스",
-        "count": 10
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-13",
-        "total": 4,
-        "overseas": 3
-      },
       {
         "date": "2026-09-14",
         "total": 1,
@@ -643,9 +627,25 @@
         "date": "2026-10-12",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-13",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-12",
+        "company": "Gaius Capital",
+        "fundingAmount": "€50 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
+        "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-11",
         "company": "웨이비나",
@@ -854,21 +854,10 @@
         "title": "자리컴퍼니, 145억 원 시리즈 A 라운드 클로징∙∙∙임대관리 프롭테크 시장 독주체제 가시화",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53102",
         "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-09-30",
-        "company": "EliseAI",
-        "fundingAmount": "$350M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "a16z-backed EliseAI raises $350M, doubles valuation to $4B",
-        "url": "https://techcrunch.com/2026/09/29/a16z-backed-eliseai-raises-350m-doubles-valuation-to-4b/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 133,
+      "articleCount": 130,
       "dealCount": 39,
       "briefingDays": 30
     }
