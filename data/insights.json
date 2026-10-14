@@ -1,33 +1,33 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-13T00:11:47.176Z",
-  "latestDate": "2026-10-13",
+  "generatedAt": "2026-10-14T00:11:43.768Z",
+  "latestDate": "2026-10-14",
   "weekly": {
-    "from": "2026-10-07",
-    "to": "2026-10-13",
+    "from": "2026-10-08",
+    "to": "2026-10-14",
     "briefingDays": 7,
-    "articleCount": 79,
-    "domesticCount": 69,
+    "articleCount": 80,
+    "domesticCount": 70,
     "overseasCount": 10,
-    "dealCount": 12,
-    "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 2849,
+    "dealCount": 14,
+    "disclosedKrwDealCount": 4,
+    "disclosedKrwTotalEok": 3399,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 28
+        "count": 26
       },
       {
         "label": "TIPS / LIPS",
-        "count": 14
-      },
-      {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 12
+        "count": 16
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 10
+        "count": 12
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 11
       },
       {
         "label": "해외 VC",
@@ -45,15 +45,11 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 8
+        "count": 10
       },
       {
         "label": "선정",
-        "count": 6
-      },
-      {
-        "label": "지원사업",
-        "count": 4
+        "count": 7
       },
       {
         "label": "세컨더리",
@@ -64,7 +60,7 @@
         "count": 3
       },
       {
-        "label": "협약",
+        "label": "지원사업",
         "count": 3
       },
       {
@@ -72,22 +68,30 @@
         "count": 2
       },
       {
-        "label": "펀드결성",
+        "label": "실증·PoC",
         "count": 2
       },
       {
-        "label": "실증·PoC",
-        "count": 1
+        "label": "협약",
+        "count": 2
       },
       {
         "label": "출시·상용화",
+        "count": 1
+      },
+      {
+        "label": "펀드결성",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 34
+        "count": 35
+      },
+      {
+        "label": "로봇",
+        "count": 1
       }
     ],
     "byStage": [
@@ -98,20 +102,16 @@
       {
         "label": "시리즈B",
         "count": 1
-      },
-      {
-        "label": "Series A",
-        "count": 1
       }
     ],
     "topSources": [
       {
-        "label": "머니투데이",
+        "label": "EU-Startups",
         "count": 8
       },
       {
-        "label": "EU-Startups",
-        "count": 8
+        "label": "머니투데이",
+        "count": 7
       },
       {
         "label": "벤처스퀘어",
@@ -122,28 +122,23 @@
         "count": 7
       },
       {
-        "label": "IT조선",
+        "label": "AI타임스",
         "count": 7
       },
       {
-        "label": "AI타임스",
+        "label": "스타트업투데이",
         "count": 6
       },
       {
-        "label": "스타트업투데이",
-        "count": 5
+        "label": "연합뉴스",
+        "count": 6
       },
       {
-        "label": "연합뉴스",
-        "count": 5
+        "label": "IT조선",
+        "count": 6
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-07",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-08",
         "total": 14,
@@ -173,9 +168,58 @@
         "date": "2026-10-13",
         "total": 15,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-14",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-14",
+        "company": "Pluto Security",
+        "fundingAmount": "$42M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
+        "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-13",
+        "company": "CarbonFarm",
+        "fundingAmount": "€7 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Paris-based CarbonFarm raises €7 million to tackle methane emissions from rice farming",
+        "url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-13",
+        "company": "Obsero",
+        "fundingAmount": "€1 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "London's Obsero raises €1 million to help brands improve visibility in AI-powered search",
+        "url": "https://www.eu-startups.com/2026/10/londons-obsero-raises-e1-million-to-help-brands-improve-visibility-in-ai-powered-search/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-13",
+        "company": "함안군수",
+        "fundingAmount": "550억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "차석호 함안군수, 취임 100일 국도비 확보550억원 투자유치 성과",
+        "url": "https://view.asiae.co.kr/article/2026101315032020517",
+        "source": "아시아경제"
+      },
       {
         "date": "2026-10-12",
         "company": "Gaius Capital",
@@ -277,28 +321,6 @@
       },
       {
         "date": "2026-10-06",
-        "company": "Procuros",
-        "fundingAmount": "€20 million",
-        "fundingStage": "Series A",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Hamburg’s Procuros raises €20 million Series A to build AI-native infrastructure for autonomous B2B trade",
-        "url": "https://www.eu-startups.com/2026/10/hamburgs-procuros-raises-e20-million-series-a-to-build-ai-native-infrastructure-for-autonomous-b2b-trade/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-06",
-        "company": "Hadrian",
-        "fundingAmount": "€35.68 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Cybersecurity startup Hadrian raises €35.68 million to scale its agentic AI offensive security platform",
-        "url": "https://www.eu-startups.com/2026/10/london-amsterdam-based-hadrian-raises-e35-68-million-to-scale-its-agentic-ai-offensive-security-platform/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-06",
         "company": "고스트",
         "fundingAmount": "147억 원",
         "fundingStage": null,
@@ -310,29 +332,29 @@
       }
     ],
     "previous": {
-      "articleCount": 70,
-      "dealCount": 12,
+      "articleCount": 72,
+      "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-14",
-    "to": "2026-10-13",
+    "from": "2026-09-15",
+    "to": "2026-10-14",
     "briefingDays": 29,
-    "articleCount": 217,
-    "domesticCount": 167,
-    "overseasCount": 50,
-    "dealCount": 43,
-    "disclosedKrwDealCount": 9,
-    "disclosedKrwTotalEok": 3771,
+    "articleCount": 228,
+    "domesticCount": 175,
+    "overseasCount": 53,
+    "dealCount": 47,
+    "disclosedKrwDealCount": 10,
+    "disclosedKrwTotalEok": 4321,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 69
+        "count": 71
       },
       {
         "label": "해외 VC",
-        "count": 49
+        "count": 52
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -340,11 +362,11 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 31
+        "count": 34
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 25
+        "count": 28
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -354,19 +376,23 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 89
+        "count": 94
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 15
+        "count": 18
       },
       {
         "label": "선정",
-        "count": 13
+        "count": 14
       },
       {
         "label": "협약",
         "count": 7
+      },
+      {
+        "label": "실증·PoC",
+        "count": 6
       },
       {
         "label": "인수·M&A",
@@ -374,10 +400,6 @@
       },
       {
         "label": "모집",
-        "count": 5
-      },
-      {
-        "label": "실증·PoC",
         "count": 5
       },
       {
@@ -400,7 +422,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 87
+        "count": 91
       },
       {
         "label": "바이오·헬스케어",
@@ -412,7 +434,7 @@
       },
       {
         "label": "로봇",
-        "count": 1
+        "count": 2
       }
     ],
     "byStage": [
@@ -456,7 +478,7 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 35
+        "count": 37
       },
       {
         "label": "벤처스퀘어",
@@ -464,11 +486,11 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 16
+        "count": 17
       },
       {
         "label": "TechCrunch",
-        "count": 15
+        "count": 16
       },
       {
         "label": "플래텀",
@@ -476,11 +498,11 @@
       },
       {
         "label": "연합뉴스",
-        "count": 11
+        "count": 12
       },
       {
         "label": "AI타임스",
-        "count": 11
+        "count": 12
       },
       {
         "label": "머니투데이",
@@ -488,11 +510,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-14",
-        "total": 1,
-        "overseas": 0
-      },
       {
         "date": "2026-09-15",
         "total": 5,
@@ -632,9 +649,58 @@
         "date": "2026-10-13",
         "total": 15,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-14",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-14",
+        "company": "Pluto Security",
+        "fundingAmount": "$42M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
+        "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-13",
+        "company": "CarbonFarm",
+        "fundingAmount": "€7 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Paris-based CarbonFarm raises €7 million to tackle methane emissions from rice farming",
+        "url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-13",
+        "company": "Obsero",
+        "fundingAmount": "€1 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "London's Obsero raises €1 million to help brands improve visibility in AI-powered search",
+        "url": "https://www.eu-startups.com/2026/10/londons-obsero-raises-e1-million-to-help-brands-improve-visibility-in-ai-powered-search/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-13",
+        "company": "함안군수",
+        "fundingAmount": "550억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "차석호 함안군수, 취임 100일 국도비 확보550억원 투자유치 성과",
+        "url": "https://view.asiae.co.kr/article/2026101315032020517",
+        "source": "아시아경제"
+      },
       {
         "date": "2026-10-12",
         "company": "Gaius Capital",
@@ -810,54 +876,10 @@
         "title": "Berlin-based Kuro raises €10 million to build the AI foundation for general contractors",
         "url": "https://www.eu-startups.com/2026/10/berlin-based-kuro-raises-e10-million-to-build-the-ai-foundation-for-general-contractors/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-02",
-        "company": "Omnio",
-        "fundingAmount": "€2.9 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Sweden’s Omnio raises €2.9 million to advance its plasminogen-based therapy for hard-to-heal chronic wounds",
-        "url": "https://www.eu-startups.com/2026/10/swedens-omnio-raises-e2-9-million-to-advance-its-plasminogen-based-therapy-for-hard-to-heal-chronic-wounds/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-02",
-        "company": "관악연구소",
-        "fundingAmount": "3억 원",
-        "fundingStage": "시드 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "관악연구소, 서울대기술지주로부터 3억 원 유치∙∙∙금융 AX 솔루션 영토 확장",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53117",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-01",
-        "company": "Revnu",
-        "fundingAmount": "€2.6 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "AI sales startup Revnu raises €2.6 million to build team and accelerate international growth",
-        "url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-01",
-        "company": "자리컴퍼니",
-        "fundingAmount": "145억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "자리컴퍼니, 145억 원 시리즈 A 라운드 클로징∙∙∙임대관리 프롭테크 시장 독주체제 가시화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53102",
-        "source": "스타트업투데이"
       }
     ],
     "previous": {
-      "articleCount": 130,
+      "articleCount": 128,
       "dealCount": 39,
       "briefingDays": 30
     }
