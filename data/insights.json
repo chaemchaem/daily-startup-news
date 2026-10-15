@@ -1,29 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-14T00:11:43.768Z",
-  "latestDate": "2026-10-14",
+  "generatedAt": "2026-10-15T00:11:53.828Z",
+  "latestDate": "2026-10-15",
   "weekly": {
-    "from": "2026-10-08",
-    "to": "2026-10-14",
+    "from": "2026-10-09",
+    "to": "2026-10-15",
     "briefingDays": 7,
-    "articleCount": 80,
-    "domesticCount": 70,
-    "overseasCount": 10,
-    "dealCount": 14,
-    "disclosedKrwDealCount": 4,
-    "disclosedKrwTotalEok": 3399,
+    "articleCount": 84,
+    "domesticCount": 73,
+    "overseasCount": 11,
+    "dealCount": 17,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 3742,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
+        "count": 29
       },
       {
         "label": "TIPS / LIPS",
-        "count": 16
+        "count": 15
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 12
+        "count": 13
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -31,7 +31,7 @@
       },
       {
         "label": "해외 VC",
-        "count": 10
+        "count": 11
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,15 +41,15 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 33
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 10
+        "count": 36
       },
       {
         "label": "선정",
-        "count": 7
+        "count": 9
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 9
       },
       {
         "label": "세컨더리",
@@ -87,11 +87,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 35
+        "count": 37
       },
       {
         "label": "로봇",
-        "count": 1
+        "count": 2
       }
     ],
     "byStage": [
@@ -100,11 +100,35 @@
         "count": 1
       },
       {
+        "label": "시리즈A",
+        "count": 1
+      },
+      {
         "label": "시리즈B",
+        "count": 1
+      },
+      {
+        "label": "프리시리즈A",
+        "count": 1
+      },
+      {
+        "label": "후속 투자",
+        "count": 1
+      },
+      {
+        "label": "Seed",
         "count": 1
       }
     ],
     "topSources": [
+      {
+        "label": "벤처스퀘어",
+        "count": 8
+      },
+      {
+        "label": "아시아경제",
+        "count": 8
+      },
       {
         "label": "EU-Startups",
         "count": 8
@@ -114,11 +138,7 @@
         "count": 7
       },
       {
-        "label": "벤처스퀘어",
-        "count": 7
-      },
-      {
-        "label": "아시아경제",
+        "label": "연합뉴스",
         "count": 7
       },
       {
@@ -130,20 +150,11 @@
         "count": 6
       },
       {
-        "label": "연합뉴스",
-        "count": 6
-      },
-      {
         "label": "IT조선",
         "count": 6
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-08",
-        "total": 14,
-        "overseas": 3
-      },
       {
         "date": "2026-10-09",
         "total": 13,
@@ -173,9 +184,36 @@
         "date": "2026-10-14",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-15",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-15",
+        "company": "휴로보틱스",
+        "fundingAmount": "250억 원",
+        "fundingStage": "시리즈A",
+        "industry": "로봇",
+        "overseas": false,
+        "title": "휴로보틱스, 250억원 시리즈A 투자유치",
+        "url": "https://view.asiae.co.kr/article/2026101508245845605",
+        "source": "아시아경제"
+      },
+      {
+        "date": "2026-10-15",
+        "company": "오큐티",
+        "fundingAmount": "140억 원",
+        "fundingStage": "프리시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "양자컴퓨팅 기업 오큐티, 140억원 규모 프리 시리즈A 투자 받는다",
+        "url": "https://view.asiae.co.kr/article/2026101508104908540",
+        "source": "아시아경제"
+      },
       {
         "date": "2026-10-14",
         "company": "Pluto Security",
@@ -185,6 +223,50 @@
         "overseas": true,
         "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
         "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "Robotics",
+        "fundingAmount": "€1 million",
+        "fundingStage": "Seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
+        "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "Ambio",
+        "fundingAmount": "€5.1 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Helsinki’s Ambio raises €5.1 million to scale its AI-powered recycled plastics procurement platform",
+        "url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "알엑스",
+        "fundingAmount": "100억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "알엑스, 산업은행 등서 100억원 투자 유치…산업용 열공급 SMR ‘RX-50’ 개발 속도",
+        "url": "https://www.venturesquare.net/1119736/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "Scimplify",
+        "fundingAmount": "$25M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
+        "url": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
         "source": "TechCrunch"
       },
       {
@@ -266,17 +348,6 @@
       },
       {
         "date": "2026-10-08",
-        "company": "Healthleap",
-        "fundingAmount": "$38M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
-        "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-08",
         "company": "Finches",
         "fundingAmount": "€2 million",
         "fundingStage": null,
@@ -288,6 +359,17 @@
       },
       {
         "date": "2026-10-08",
+        "company": "Healthleap",
+        "fundingAmount": "$38M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Healthleap raises $38M for its AI that flags hospital patients who may need a closer look",
+        "url": "https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-08",
         "company": "TODAY",
         "fundingAmount": "€2.8 million",
         "fundingStage": null,
@@ -296,61 +378,28 @@
         "title": "Copenhagen’s TODAY raises €2.8 million to bring compliant AI agents to financial and insurance advisors",
         "url": "https://www.eu-startups.com/2026/10/copenhagens-today-raises-e2-8-million-to-bring-compliant-ai-agents-to-financial-and-insurance-advisors/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-07",
-        "company": "Cori Clinical",
-        "fundingAmount": "€3.8 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "London’s Cori Clinical raises €3.8 million to accelerate clinical trials and reduce delays",
-        "url": "https://www.eu-startups.com/2026/10/londons-cori-clinical-raises-e3-55-million-to-accelerate-clinical-trials-and-reduce-delays/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-07",
-        "company": "Konsileo",
-        "fundingAmount": "€5.9 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "UK-based InsurTech Konsileo raises €5.9 million to expand its team and integrate AI",
-        "url": "https://www.eu-startups.com/2026/10/uk-based-insurtech-konsileo-raises-e5-9-million-to-expand-its-team-and-integrate-ai/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-06",
-        "company": "고스트",
-        "fundingAmount": "147억 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "19세 청년의 반란...고스트, 개인용 AI PC '코어'로 147억 투자 유치",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=216012",
-        "source": "AI타임스"
       }
     ],
     "previous": {
-      "articleCount": 72,
-      "dealCount": 13,
+      "articleCount": 67,
+      "dealCount": 14,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-15",
-    "to": "2026-10-14",
+    "from": "2026-09-16",
+    "to": "2026-10-15",
     "briefingDays": 29,
-    "articleCount": 228,
-    "domesticCount": 175,
+    "articleCount": 234,
+    "domesticCount": 181,
     "overseasCount": 53,
-    "dealCount": 47,
-    "disclosedKrwDealCount": 10,
-    "disclosedKrwTotalEok": 4321,
+    "dealCount": 52,
+    "disclosedKrwDealCount": 13,
+    "disclosedKrwTotalEok": 4811,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 71
+        "count": 76
       },
       {
         "label": "해외 VC",
@@ -362,11 +411,11 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 34
+        "count": 33
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 28
+        "count": 30
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -376,7 +425,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 94
+        "count": 100
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -384,7 +433,7 @@
       },
       {
         "label": "선정",
-        "count": 14
+        "count": 16
       },
       {
         "label": "협약",
@@ -395,11 +444,11 @@
         "count": 6
       },
       {
-        "label": "인수·M&A",
-        "count": 6
+        "label": "모집",
+        "count": 5
       },
       {
-        "label": "모집",
+        "label": "인수·M&A",
         "count": 5
       },
       {
@@ -422,19 +471,19 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 91
+        "count": 95
       },
       {
         "label": "바이오·헬스케어",
         "count": 6
       },
       {
-        "label": "반도체",
+        "label": "로봇",
         "count": 3
       },
       {
-        "label": "로봇",
-        "count": 2
+        "label": "반도체",
+        "count": 3
       }
     ],
     "byStage": [
@@ -443,15 +492,19 @@
         "count": 4
       },
       {
-        "label": "Series A",
+        "label": "Seed",
         "count": 4
       },
       {
-        "label": "Seed",
+        "label": "Series A",
         "count": 3
       },
       {
         "label": "시드 투자",
+        "count": 2
+      },
+      {
+        "label": "시리즈A",
         "count": 2
       },
       {
@@ -463,15 +516,19 @@
         "count": 1
       },
       {
-        "label": "시리즈A",
-        "count": 1
-      },
-      {
         "label": "시리즈C",
         "count": 1
       },
       {
+        "label": "프리시리즈A",
+        "count": 1
+      },
+      {
         "label": "프리A",
+        "count": 1
+      },
+      {
+        "label": "후속 투자",
         "count": 1
       }
     ],
@@ -486,7 +543,7 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 17
+        "count": 18
       },
       {
         "label": "TechCrunch",
@@ -498,23 +555,18 @@
       },
       {
         "label": "연합뉴스",
-        "count": 12
+        "count": 13
       },
       {
         "label": "AI타임스",
-        "count": 12
+        "count": 13
       },
       {
-        "label": "머니투데이",
-        "count": 10
+        "label": "아시아경제",
+        "count": 11
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-15",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-16",
         "total": 6,
@@ -654,9 +706,36 @@
         "date": "2026-10-14",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-15",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-15",
+        "company": "휴로보틱스",
+        "fundingAmount": "250억 원",
+        "fundingStage": "시리즈A",
+        "industry": "로봇",
+        "overseas": false,
+        "title": "휴로보틱스, 250억원 시리즈A 투자유치",
+        "url": "https://view.asiae.co.kr/article/2026101508245845605",
+        "source": "아시아경제"
+      },
+      {
+        "date": "2026-10-15",
+        "company": "오큐티",
+        "fundingAmount": "140억 원",
+        "fundingStage": "프리시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "양자컴퓨팅 기업 오큐티, 140억원 규모 프리 시리즈A 투자 받는다",
+        "url": "https://view.asiae.co.kr/article/2026101508104908540",
+        "source": "아시아경제"
+      },
       {
         "date": "2026-10-14",
         "company": "Pluto Security",
@@ -666,6 +745,50 @@
         "overseas": true,
         "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
         "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "Robotics",
+        "fundingAmount": "€1 million",
+        "fundingStage": "Seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
+        "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "Ambio",
+        "fundingAmount": "€5.1 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Helsinki’s Ambio raises €5.1 million to scale its AI-powered recycled plastics procurement platform",
+        "url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "알엑스",
+        "fundingAmount": "100억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "알엑스, 산업은행 등서 100억원 투자 유치…산업용 열공급 SMR ‘RX-50’ 개발 속도",
+        "url": "https://www.venturesquare.net/1119736/",
+        "source": "벤처스퀘어"
+      },
+      {
+        "date": "2026-10-14",
+        "company": "Scimplify",
+        "fundingAmount": "$25M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
+        "url": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
         "source": "TechCrunch"
       },
       {
@@ -810,77 +933,11 @@
         "title": "Hamburg’s Procuros raises €20 million Series A to build AI-native infrastructure for autonomous B2B trade",
         "url": "https://www.eu-startups.com/2026/10/hamburgs-procuros-raises-e20-million-series-a-to-build-ai-native-infrastructure-for-autonomous-b2b-trade/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-06",
-        "company": "Hadrian",
-        "fundingAmount": "€35.68 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Cybersecurity startup Hadrian raises €35.68 million to scale its agentic AI offensive security platform",
-        "url": "https://www.eu-startups.com/2026/10/london-amsterdam-based-hadrian-raises-e35-68-million-to-scale-its-agentic-ai-offensive-security-platform/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-06",
-        "company": "고스트",
-        "fundingAmount": "147억 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "19세 청년의 반란...고스트, 개인용 AI PC '코어'로 147억 투자 유치",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=216012",
-        "source": "AI타임스"
-      },
-      {
-        "date": "2026-10-05",
-        "company": "Fleuret AI",
-        "fundingAmount": "€4 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "French cybersecurity startup Fleuret AI raises €4 million to automate penetration testing with AI agents",
-        "url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-05",
-        "company": "에스앤이컴퍼니",
-        "fundingAmount": null,
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "에스앤이컴퍼니, 농업 비즈니스 데이터 AI 의사결정 지원 [서울AI허브 2027]",
-        "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171415",
-        "source": "IT조선"
-      },
-      {
-        "date": "2026-10-02",
-        "company": "Armadin",
-        "fundingAmount": "$255.5M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Kevin Mandia’s new ‘agent swarm’ security startup Armadin raises $255.5M at $2.5B valuation",
-        "url": "https://techcrunch.com/2026/10/01/kevin-mandias-new-agent-swarm-security-startup-armadin-raises-255-5m-at-2-5b-valuation/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-02",
-        "company": "Kuro",
-        "fundingAmount": "€10 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Berlin-based Kuro raises €10 million to build the AI foundation for general contractors",
-        "url": "https://www.eu-startups.com/2026/10/berlin-based-kuro-raises-e10-million-to-build-the-ai-foundation-for-general-contractors/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
       "articleCount": 128,
-      "dealCount": 39,
+      "dealCount": 40,
       "briefingDays": 30
     }
   }
