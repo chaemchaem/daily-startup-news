@@ -1,53 +1,36 @@
 {
-  "generatedAt": "2026-10-16T09:00:00+09:00",
-  "collectedAt": "2026-10-16T09:11:54+09:00",
+  "generatedAt": "2026-10-17T09:00:00+09:00",
+  "collectedAt": "2026-10-17T09:11:54+09:00",
   "range": {
-    "from": "2026-10-14T09:00:00+09:00",
-    "to": "2026-10-16T09:00:00+09:00"
+    "from": "2026-10-15T09:00:00+09:00",
+    "to": "2026-10-17T09:00:00+09:00"
   },
-  "totalCount": 10,
+  "totalCount": 11,
   "categoryCounts": {
-    "VC / AC": 5,
-    "TIPS / LIPS": 1,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
-    "스타트업 / 벤처기업 / 초기창업": 0,
+    "VC / AC": 4,
+    "TIPS / LIPS": 3,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
+    "스타트업 / 벤처기업 / 초기창업": 2,
     "세컨더리 / 구주매각": 0,
-    "해외 VC": 3
+    "해외 VC": 0
   },
   "items": [
     {
-      "id": "5ef76e90223d424f",
+      "id": "4254f934d92fbe74",
       "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "프로보티브, ‘글로벌 스타트업 창업사업화 지원사업’ 선정…포장산업 AI 솔루션 사업화 확대",
-      "publishedAt": "2026-10-14",
-      "summary": "포장산업 AI 솔루션 기업 프로보티브(Provotive)가 ‘글로벌 스타트업 창업사업화 지원사업’에 선정돼 제품 사업화와 해외 시장 확대에 나섰다.",
+      "title": "워프스페이스, ‘케이브덕’ 기반 AI 캐릭터 소비·창작 생태계 이끈다 [서울AI허브 2027]",
+      "publishedAt": "2026-10-17",
+      "summary": "2026년 약 43억원 규모의 시리즈A 투자 유치에도 성공했다. 2025년 2월에는 미국, 같은 해 7월에는 일본과 대만에서 자사 앱을 출시했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "서울신문",
-      "url": "https://www.seoul.co.kr/news/newsView.php?id=20261014500080",
+      "source": "IT조선",
+      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171954",
       "resolvedUrl": null,
-      "company": "프로보티브",
-      "eventType": "선정",
-      "industry": "AI",
-      "score": 104
-    },
-    {
-      "id": "bc68769743fa7f84",
-      "category": "해외 VC",
-      "title": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
-      "publishedAt": "2026-10-14",
-      "summary": "The funding will support BE-A, the company’s AI hospitality agent.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
-      "resolvedUrl": null,
-      "company": "Robotics",
-      "fundingAmount": "€1 million",
-      "fundingStage": "Seed",
+      "fundingAmount": "약 43억 원",
+      "fundingStage": "시리즈A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 93
+      "score": 81
     },
     {
       "id": "3ca2c15108a9fa4e",
@@ -64,7 +47,7 @@
       "fundingAmount": "140억 원",
       "fundingStage": "프리A",
       "eventType": "투자유치",
-      "score": 81
+      "score": 79
     },
     {
       "id": "1d47ad679f26526e",
@@ -82,58 +65,22 @@
       "fundingStage": "시리즈A",
       "eventType": "투자유치",
       "industry": "로봇",
-      "score": 81
-    },
-    {
-      "id": "718fcca065debff9",
-      "category": "VC / AC",
-      "title": "휴로보틱스, 250억원 시리즈A 투자유치",
-      "publishedAt": "2026-10-15",
-      "summary": "휴로틱스는 250억원 규모 시리즈A 투자를 받는다고 15일 밝혔다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026101508245845605",
-      "resolvedUrl": null,
-      "company": "휴로보틱스",
-      "fundingAmount": "250억 원",
-      "fundingStage": "시리즈A",
-      "eventType": "투자유치",
-      "industry": "로봇",
-      "score": 80
-    },
-    {
-      "id": "e9a9fa6f65294f76",
-      "category": "해외 VC",
-      "title": "Oslo-based AI-native engineering firm Solvera raises €5.62 million pre-Seed after July 2026 launch",
-      "publishedAt": "2026-10-15",
-      "summary": "The company also intends to expand into additional markets as the model develops.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/",
-      "resolvedUrl": null,
-      "company": "Solvera",
-      "fundingAmount": "€5.62 million",
-      "fundingStage": "pre-Seed",
-      "eventType": "투자유치",
-      "industry": "AI",
       "score": 79
     },
     {
-      "id": "edf20329482bb1a2",
-      "category": "VC / AC",
-      "title": "강쎈, ‘리치업플러스’로 투자유치 전략 점검∙∙∙투자자 밋업까지 연계",
-      "publishedAt": "2026-10-14",
-      "summary": "한편, 강원대학교 강원창업보육센터와 강쎈은 성장 단계와 기업별 수요를 반영한 맞춤형 지원을 이어 가며 창업기업의 투자유치 역량 강화와 투자 네트워크 확대를 지원할 계획이다.",
+      "id": "c1da820ee507ec3c",
+      "category": "TIPS / LIPS",
+      "title": "스마일게이트 오렌지플래닛, 유망 스타트업 12곳 선발",
+      "publishedAt": "2026-10-16",
+      "summary": "민간투자주도형기술창업지원(TIPS·팁스) 프로그램 연계도 추진한다. 오렌지플래닛은 선정된 기업에 최대 1년간 강남센터 입주 기회를 제공한다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53228",
+      "source": "ZDNet Korea",
+      "url": "https://zdnet.co.kr/view/?no=20261016111812",
       "resolvedUrl": null,
-      "company": "강쎈",
-      "eventType": "투자유치",
-      "score": 73
+      "company": "오렌지플래닛",
+      "eventType": "선정",
+      "score": 74
     },
     {
       "id": "da3c7830ac9a599e",
@@ -151,24 +98,66 @@
       "fundingStage": "시리즈B",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 72
+      "score": 70
     },
     {
-      "id": "0c7063e89e5ba1f4",
-      "category": "해외 VC",
-      "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
-      "publishedAt": "2026-10-14",
-      "summary": "Scimplify raised $25M to challenge China’s grip on critical materials with AI.",
-      "summarySource": "structured_overseas",
-      "summaryType": "structured_overseas",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
+      "id": "7d9ec478bc843fd7",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "한투AC, 스타트업 지원 프로그램 '바른동행' 4차 참가사 모집",
+      "publishedAt": "2026-10-16",
+      "summary": "이번 모집은 올해 마지막으로 진행되는 스타트업 발굴 사업으로, 창업한 지 3년이 되지 않은 기업 및 예비 창업자들에게 기업당 최대 5억원 규모의 투자를 집행하는 식이다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261016075500008",
       "resolvedUrl": null,
-      "company": "Scimplify",
-      "fundingAmount": "$25M",
+      "company": "한투AC",
+      "eventType": "모집",
+      "score": 68
+    },
+    {
+      "id": "4a5cb4354486dea8",
+      "category": "TIPS / LIPS",
+      "title": "‘스케일업 팁스’ 선정 주빅, 바이오의약품 마이크로니들 개발 속도",
+      "publishedAt": "2026-10-16",
+      "summary": "제품 양산·임상시료 제조역량 강화 마이크로니들 전문 기업 주빅이 ‘2026년 스케일업 팁스 특화형’에 선정됐다고 16일 밝혔다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/it/12177682",
+      "resolvedUrl": null,
+      "eventType": "TIPS·LIPS 선정",
+      "industry": "바이오·헬스케어",
+      "score": 60
+    },
+    {
+      "id": "3097ee063a49a6d5",
+      "category": "VC / AC",
+      "title": "'글로벌 진출·투자 유치'…전북 청년 창업박람회 20일 개막",
+      "publishedAt": "2026-10-16",
+      "summary": "유희숙 도 기업유치지원실장은 \"전주 한옥마을이라는 고즈넉한 공간에서 청년들의 혁신적 아이디어가 글로벌 진출과 투자 유치라는 결실로 이어지도록 지원을 아끼지 않겠다\"고 말했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261016106900055",
+      "resolvedUrl": null,
       "eventType": "투자유치",
-      "industry": "AI",
-      "score": 63
+      "score": 51
+    },
+    {
+      "id": "d56f992882821d1c",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "원격 운전으로 배차되는 PV5…기아, 제2판교 입주기업 카셰어링 연말까지 실증",
+      "publishedAt": "2026-10-16",
+      "summary": "기아 제공 기아는 제2판교 테크노밸리 입주기업 임직원이 앱으로 부르면 PV5가 원격 운전으로 찾아오는 카셰어링 시범 서비스를 시작했다고 16일 밝혔다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202610160843497820",
+      "resolvedUrl": null,
+      "company": "기아",
+      "eventType": "실증·PoC",
+      "score": 50
     },
     {
       "id": "452ea4e221f92572",
@@ -184,7 +173,20 @@
       "company": "베르티스",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
-      "score": 50
+      "score": 48
+    },
+    {
+      "id": "3e3169a6b50defe6",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "스타트업 군단, 누리호 발사 참여…민간 주도 '뉴스페이스' 개막",
+      "publishedAt": "2026-10-16",
+      "summary": "한국항공우주연구원 제공 16일 국내 최대 스타트업 지원기관인 디캠프에 따르면 누리호 5차 발사에서 ‘굵직한 임무’를 맡은 스타트업은 크게 6곳이다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "한국경제",
+      "url": "https://www.hankyung.com/article/2026101670881",
+      "resolvedUrl": null,
+      "score": 41
     }
   ]
 }
