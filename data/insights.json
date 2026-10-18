@@ -1,15 +1,15 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-17T00:11:54.785Z",
-  "latestDate": "2026-10-17",
+  "generatedAt": "2026-10-18T00:11:34.225Z",
+  "latestDate": "2026-10-18",
   "weekly": {
-    "from": "2026-10-11",
-    "to": "2026-10-17",
+    "from": "2026-10-12",
+    "to": "2026-10-18",
     "briefingDays": 7,
-    "articleCount": 74,
-    "domesticCount": 65,
+    "articleCount": 67,
+    "domesticCount": 58,
     "overseasCount": 9,
-    "dealCount": 17,
+    "dealCount": 16,
     "disclosedKrwDealCount": 8,
     "disclosedKrwTotalEok": 4175,
     "byCategory": [
@@ -18,34 +18,30 @@
         "count": 24
       },
       {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 14
-      },
-      {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 13
-      },
-      {
         "label": "TIPS / LIPS",
         "count": 13
       },
       {
-        "label": "해외 VC",
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 12
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 9
       },
       {
-        "label": "세컨더리 / 구주매각",
-        "count": 1
+        "label": "해외 VC",
+        "count": 9
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 31
+        "count": 27
       },
       {
         "label": "선정",
-        "count": 8
+        "count": 9
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -53,15 +49,15 @@
       },
       {
         "label": "모집",
-        "count": 3
+        "count": 4
       },
       {
         "label": "실증·PoC",
-        "count": 3
+        "count": 2
       },
       {
         "label": "인수·M&A",
-        "count": 3
+        "count": 2
       },
       {
         "label": "지원사업",
@@ -83,11 +79,15 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 33
+        "count": 30
       },
       {
         "label": "로봇",
-        "count": 3
+        "count": 4
+      },
+      {
+        "label": "기후테크·ESG",
+        "count": 1
       },
       {
         "label": "바이오·헬스케어",
@@ -126,27 +126,19 @@
     ],
     "topSources": [
       {
-        "label": "벤처스퀘어",
-        "count": 7
-      },
-      {
         "label": "연합뉴스",
         "count": 7
       },
       {
-        "label": "EU-Startups",
-        "count": 7
+        "label": "벤처스퀘어",
+        "count": 6
       },
       {
         "label": "아시아경제",
         "count": 6
       },
       {
-        "label": "파이낸셜뉴스",
-        "count": 6
-      },
-      {
-        "label": "AI타임스",
+        "label": "EU-Startups",
         "count": 6
       },
       {
@@ -154,16 +146,19 @@
         "count": 5
       },
       {
+        "label": "스타트업투데이",
+        "count": 5
+      },
+      {
         "label": "IT조선",
         "count": 5
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-11",
-        "total": 15,
-        "overseas": 1
-      },
       {
         "date": "2026-10-12",
         "total": 15,
@@ -193,6 +188,11 @@
         "date": "2026-10-17",
         "total": 11,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-18",
+        "total": 13,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -371,51 +371,40 @@
         "title": "아레나, 2700억 투자 유치…AI 안전성 평가 '정렬 지수' 도입",
         "url": "https://www.aitimes.com/news/articleView.html?idxno=216131",
         "source": "AI타임스"
-      },
-      {
-        "date": "2026-10-09",
-        "company": "Klarent",
-        "fundingAmount": "€7.13 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Zurich’s Klarent raises €7.13 million to scale its agentic software testing platform and expand into the US",
-        "url": "https://www.eu-startups.com/2026/10/zurichs-klarent-raises-e7-13-million-to-scale-its-agentic-software-testing-platform-and-expand-into-the-us/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 72,
-      "dealCount": 15,
+      "articleCount": 73,
+      "dealCount": 12,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-18",
-    "to": "2026-10-17",
+    "from": "2026-09-19",
+    "to": "2026-10-18",
     "briefingDays": 29,
-    "articleCount": 235,
-    "domesticCount": 186,
-    "overseasCount": 49,
-    "dealCount": 51,
+    "articleCount": 238,
+    "domesticCount": 191,
+    "overseasCount": 47,
+    "dealCount": 49,
     "disclosedKrwDealCount": 15,
     "disclosedKrwTotalEok": 5244,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 76
+        "count": 81
       },
       {
         "label": "해외 VC",
-        "count": 48
-      },
-      {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 37
+        "count": 46
       },
       {
         "label": "TIPS / LIPS",
-        "count": 36
+        "count": 38
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 35
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -429,30 +418,30 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 100
+        "count": 98
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 20
+        "count": 21
       },
       {
         "label": "선정",
-        "count": 17
+        "count": 18
+      },
+      {
+        "label": "모집",
+        "count": 7
       },
       {
         "label": "실증·PoC",
         "count": 7
       },
       {
-        "label": "모집",
-        "count": 6
+        "label": "인수·M&A",
+        "count": 5
       },
       {
         "label": "협약",
-        "count": 6
-      },
-      {
-        "label": "인수·M&A",
         "count": 5
       },
       {
@@ -475,7 +464,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 94
+        "count": 93
       },
       {
         "label": "바이오·헬스케어",
@@ -483,11 +472,15 @@
       },
       {
         "label": "로봇",
-        "count": 4
+        "count": 5
       },
       {
         "label": "반도체",
         "count": 3
+      },
+      {
+        "label": "기후테크·ESG",
+        "count": 1
       }
     ],
     "byStage": [
@@ -543,15 +536,15 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 35
+        "count": 33
       },
       {
         "label": "벤처스퀘어",
-        "count": 29
+        "count": 27
       },
       {
         "label": "스타트업투데이",
-        "count": 18
+        "count": 19
       },
       {
         "label": "연합뉴스",
@@ -562,24 +555,19 @@
         "count": 14
       },
       {
+        "label": "머니투데이",
+        "count": 13
+      },
+      {
         "label": "플래텀",
         "count": 13
       },
       {
         "label": "AI타임스",
         "count": 13
-      },
-      {
-        "label": "머니투데이",
-        "count": 12
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-18",
-        "total": 6,
-        "overseas": 3
-      },
       {
         "date": "2026-09-19",
         "total": 8,
@@ -719,6 +707,11 @@
         "date": "2026-10-17",
         "total": 11,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-18",
+        "total": 13,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -945,7 +938,7 @@
     ],
     "previous": {
       "articleCount": 129,
-      "dealCount": 44,
+      "dealCount": 45,
       "briefingDays": 30
     }
   }
