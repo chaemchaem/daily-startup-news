@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-18T00:11:34.225Z",
-  "latestDate": "2026-10-18",
+  "generatedAt": "2026-10-19T00:11:49.023Z",
+  "latestDate": "2026-10-19",
   "weekly": {
-    "from": "2026-10-12",
-    "to": "2026-10-18",
+    "from": "2026-10-13",
+    "to": "2026-10-19",
     "briefingDays": 7,
-    "articleCount": 67,
-    "domesticCount": 58,
+    "articleCount": 64,
+    "domesticCount": 55,
     "overseasCount": 9,
     "dealCount": 16,
     "disclosedKrwDealCount": 8,
@@ -19,33 +19,37 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 13
-      },
-      {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
         "count": 12
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 9
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 11
       },
       {
         "label": "해외 VC",
         "count": 9
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 7
+      },
+      {
+        "label": "세컨더리 / 구주매각",
+        "count": 1
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 27
-      },
-      {
-        "label": "선정",
-        "count": 9
+        "count": 28
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 8
+        "count": 7
+      },
+      {
+        "label": "선정",
+        "count": 6
       },
       {
         "label": "모집",
@@ -53,7 +57,7 @@
       },
       {
         "label": "실증·PoC",
-        "count": 2
+        "count": 3
       },
       {
         "label": "인수·M&A",
@@ -62,10 +66,6 @@
       {
         "label": "지원사업",
         "count": 2
-      },
-      {
-        "label": "출시·상용화",
-        "count": 1
       },
       {
         "label": "펀드결성",
@@ -79,7 +79,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 30
+        "count": 27
       },
       {
         "label": "로봇",
@@ -126,15 +126,11 @@
     ],
     "topSources": [
       {
-        "label": "연합뉴스",
-        "count": 7
-      },
-      {
         "label": "벤처스퀘어",
         "count": 6
       },
       {
-        "label": "아시아경제",
+        "label": "연합뉴스",
         "count": 6
       },
       {
@@ -142,28 +138,27 @@
         "count": 6
       },
       {
-        "label": "머니투데이",
-        "count": 5
-      },
-      {
         "label": "스타트업투데이",
         "count": 5
       },
       {
-        "label": "IT조선",
+        "label": "아시아경제",
         "count": 5
+      },
+      {
+        "label": "머니투데이",
+        "count": 4
       },
       {
         "label": "파이낸셜뉴스",
         "count": 4
+      },
+      {
+        "label": "IT조선",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-12",
-        "total": 15,
-        "overseas": 0
-      },
       {
         "date": "2026-10-13",
         "total": 15,
@@ -192,6 +187,11 @@
       {
         "date": "2026-10-18",
         "total": 13,
+        "overseas": 1
+      },
+      {
+        "date": "2026-10-19",
+        "total": 10,
         "overseas": 1
       }
     ],
@@ -374,25 +374,25 @@
       }
     ],
     "previous": {
-      "articleCount": 73,
-      "dealCount": 12,
+      "articleCount": 83,
+      "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-19",
-    "to": "2026-10-18",
+    "from": "2026-09-20",
+    "to": "2026-10-19",
     "briefingDays": 29,
-    "articleCount": 238,
-    "domesticCount": 191,
+    "articleCount": 241,
+    "domesticCount": 194,
     "overseasCount": 47,
-    "dealCount": 49,
-    "disclosedKrwDealCount": 15,
-    "disclosedKrwTotalEok": 5244,
+    "dealCount": 47,
+    "disclosedKrwDealCount": 14,
+    "disclosedKrwTotalEok": 4732,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 81
+        "count": 82
       },
       {
         "label": "해외 VC",
@@ -400,7 +400,7 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 38
+        "count": 39
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -412,7 +412,7 @@
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 8
+        "count": 9
       }
     ],
     "byEventType": [
@@ -429,16 +429,16 @@
         "count": 18
       },
       {
-        "label": "모집",
-        "count": 7
+        "label": "실증·PoC",
+        "count": 8
       },
       {
-        "label": "실증·PoC",
-        "count": 7
+        "label": "모집",
+        "count": 6
       },
       {
         "label": "인수·M&A",
-        "count": 5
+        "count": 6
       },
       {
         "label": "협약",
@@ -464,7 +464,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 93
+        "count": 94
       },
       {
         "label": "바이오·헬스케어",
@@ -486,7 +486,7 @@
     "byStage": [
       {
         "label": "시리즈B",
-        "count": 5
+        "count": 4
       },
       {
         "label": "시리즈A",
@@ -510,10 +510,6 @@
       },
       {
         "label": "시드투자",
-        "count": 1
-      },
-      {
-        "label": "시리즈C",
         "count": 1
       },
       {
@@ -559,20 +555,15 @@
         "count": 13
       },
       {
-        "label": "플래텀",
+        "label": "AI타임스",
         "count": 13
       },
       {
-        "label": "AI타임스",
-        "count": 13
+        "label": "아시아경제",
+        "count": 11
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-19",
-        "total": 8,
-        "overseas": 3
-      },
       {
         "date": "2026-09-20",
         "total": 5,
@@ -711,6 +702,11 @@
       {
         "date": "2026-10-18",
         "total": 13,
+        "overseas": 1
+      },
+      {
+        "date": "2026-10-19",
+        "total": 10,
         "overseas": 1
       }
     ],
@@ -937,7 +933,7 @@
       }
     ],
     "previous": {
-      "articleCount": 129,
+      "articleCount": 128,
       "dealCount": 45,
       "briefingDays": 30
     }
