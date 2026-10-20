@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-19T00:11:49.023Z",
-  "latestDate": "2026-10-19",
+  "generatedAt": "2026-10-20T00:11:45.771Z",
+  "latestDate": "2026-10-20",
   "weekly": {
-    "from": "2026-10-13",
-    "to": "2026-10-19",
+    "from": "2026-10-14",
+    "to": "2026-10-20",
     "briefingDays": 7,
-    "articleCount": 64,
-    "domesticCount": 55,
-    "overseasCount": 9,
-    "dealCount": 16,
-    "disclosedKrwDealCount": 8,
-    "disclosedKrwTotalEok": 4175,
+    "articleCount": 63,
+    "domesticCount": 53,
+    "overseasCount": 10,
+    "dealCount": 14,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 1483,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -19,11 +19,11 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 12
+        "count": 15
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 11
+        "count": 10
       },
       {
         "label": "해외 VC",
@@ -31,7 +31,7 @@
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 7
+        "count": 4
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,7 +41,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 28
+        "count": 29
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -49,7 +49,7 @@
       },
       {
         "label": "선정",
-        "count": 6
+        "count": 5
       },
       {
         "label": "모집",
@@ -57,22 +57,14 @@
       },
       {
         "label": "실증·PoC",
-        "count": 3
+        "count": 4
       },
       {
         "label": "인수·M&A",
-        "count": 2
-      },
-      {
-        "label": "지원사업",
-        "count": 2
-      },
-      {
-        "label": "펀드결성",
         "count": 1
       },
       {
-        "label": "협약",
+        "label": "펀드결성",
         "count": 1
       }
     ],
@@ -101,10 +93,6 @@
       },
       {
         "label": "시리즈B",
-        "count": 2
-      },
-      {
-        "label": "시드투자",
         "count": 1
       },
       {
@@ -126,31 +114,31 @@
     ],
     "topSources": [
       {
+        "label": "머니투데이",
+        "count": 5
+      },
+      {
         "label": "벤처스퀘어",
-        "count": 6
-      },
-      {
-        "label": "연합뉴스",
-        "count": 6
-      },
-      {
-        "label": "EU-Startups",
-        "count": 6
+        "count": 5
       },
       {
         "label": "스타트업투데이",
         "count": 5
       },
       {
-        "label": "아시아경제",
+        "label": "연합뉴스",
         "count": 5
       },
       {
-        "label": "머니투데이",
-        "count": 4
+        "label": "EU-Startups",
+        "count": 5
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "TechCrunch",
+        "count": 5
+      },
+      {
+        "label": "아시아경제",
         "count": 4
       },
       {
@@ -159,11 +147,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-13",
-        "total": 15,
-        "overseas": 1
-      },
       {
         "date": "2026-10-14",
         "total": 15,
@@ -193,9 +176,25 @@
         "date": "2026-10-19",
         "total": 10,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-20",
+        "total": 12,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-19",
+        "company": "참케어",
+        "fundingAmount": "10억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "참케어, ‘유한양행’으로부터 전략적 투자 유치∙∙∙병원 혈압 모니터링 시장 확대",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53271",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-10-15",
         "company": "휴로보틱스",
@@ -338,77 +337,44 @@
         "title": "차석호 함안군수, 취임 100일 국도비 확보550억원 투자유치 성과",
         "url": "https://view.asiae.co.kr/article/2026101315032020517",
         "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-12",
-        "company": "Gaius Capital",
-        "fundingAmount": "€50 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
-        "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-11",
-        "company": "웨이비나",
-        "fundingAmount": "2억 원",
-        "fundingStage": "시드투자",
-        "industry": "AI",
-        "overseas": false,
-        "title": "'버티컬AI' 파고든 초기 스타트업들…10월 첫주 벤처투자 몰렸다",
-        "url": "https://www.mt.co.kr/future/2026/10/11/2026101114143790821",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-11",
-        "company": "아레나",
-        "fundingAmount": "2700억 원",
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "아레나, 2700억 투자 유치…AI 안전성 평가 '정렬 지수' 도입",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=216131",
-        "source": "AI타임스"
       }
     ],
     "previous": {
-      "articleCount": 83,
-      "dealCount": 13,
+      "articleCount": 79,
+      "dealCount": 12,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-20",
-    "to": "2026-10-19",
+    "from": "2026-09-21",
+    "to": "2026-10-20",
     "briefingDays": 29,
-    "articleCount": 241,
-    "domesticCount": 194,
-    "overseasCount": 47,
+    "articleCount": 247,
+    "domesticCount": 201,
+    "overseasCount": 46,
     "dealCount": 47,
-    "disclosedKrwDealCount": 14,
-    "disclosedKrwTotalEok": 4732,
+    "disclosedKrwDealCount": 15,
+    "disclosedKrwTotalEok": 4742,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 82
+        "count": 85
       },
       {
         "label": "해외 VC",
-        "count": 46
+        "count": 44
       },
       {
         "label": "TIPS / LIPS",
-        "count": 39
+        "count": 42
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 35
+        "count": 36
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 30
+        "count": 31
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -418,7 +384,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 98
+        "count": 100
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -426,15 +392,15 @@
       },
       {
         "label": "선정",
-        "count": 18
+        "count": 17
       },
       {
         "label": "실증·PoC",
-        "count": 8
+        "count": 9
       },
       {
         "label": "모집",
-        "count": 6
+        "count": 8
       },
       {
         "label": "인수·M&A",
@@ -464,7 +430,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 94
+        "count": 98
       },
       {
         "label": "바이오·헬스케어",
@@ -494,7 +460,7 @@
       },
       {
         "label": "Seed",
-        "count": 3
+        "count": 2
       },
       {
         "label": "Series A",
@@ -532,43 +498,38 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 33
+        "count": 31
       },
       {
         "label": "벤처스퀘어",
-        "count": 27
+        "count": 25
       },
       {
         "label": "스타트업투데이",
-        "count": 19
+        "count": 20
       },
       {
         "label": "연합뉴스",
+        "count": 16
+      },
+      {
+        "label": "머니투데이",
         "count": 15
       },
       {
         "label": "TechCrunch",
-        "count": 14
-      },
-      {
-        "label": "머니투데이",
-        "count": 13
+        "count": 15
       },
       {
         "label": "AI타임스",
         "count": 13
       },
       {
-        "label": "아시아경제",
-        "count": 11
+        "label": "IT조선",
+        "count": 12
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-20",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-21",
         "total": 2,
@@ -708,9 +669,25 @@
         "date": "2026-10-19",
         "total": 10,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-20",
+        "total": 12,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-19",
+        "company": "참케어",
+        "fundingAmount": "10억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "참케어, ‘유한양행’으로부터 전략적 투자 유치∙∙∙병원 혈압 모니터링 시장 확대",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53271",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-10-15",
         "company": "휴로보틱스",
@@ -919,21 +896,10 @@
         "title": "German female-founded startup Finches raises €2 million to bring AI early warnings to agricultural sourcing",
         "url": "https://www.eu-startups.com/2026/10/bavarias-female-founded-startup-finches-raises-e2-million-to-bring-ai-early-warnings-to-agricultural-procurement/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-08",
-        "company": "TODAY",
-        "fundingAmount": "€2.8 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Copenhagen’s TODAY raises €2.8 million to bring compliant AI agents to financial and insurance advisors",
-        "url": "https://www.eu-startups.com/2026/10/copenhagens-today-raises-e2-8-million-to-bring-compliant-ai-agents-to-financial-and-insurance-advisors/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 128,
+      "articleCount": 123,
       "dealCount": 45,
       "briefingDays": 30
     }
