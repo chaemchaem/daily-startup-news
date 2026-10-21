@@ -1,20 +1,53 @@
 {
-  "generatedAt": "2026-10-20T09:00:00+09:00",
-  "collectedAt": "2026-10-20T09:11:45+09:00",
+  "generatedAt": "2026-10-21T09:00:00+09:00",
+  "collectedAt": "2026-10-21T09:12:00+09:00",
   "range": {
-    "from": "2026-10-18T09:00:00+09:00",
-    "to": "2026-10-20T09:00:00+09:00"
+    "from": "2026-10-19T09:00:00+09:00",
+    "to": "2026-10-21T09:00:00+09:00"
   },
   "totalCount": 12,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 4,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
+    "TIPS / LIPS": 1,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
     "스타트업 / 벤처기업 / 초기창업": 1,
     "세컨더리 / 구주매각": 0,
-    "해외 VC": 1
+    "해외 VC": 3
   },
   "items": [
+    {
+      "id": "63d767545fcc2f40",
+      "category": "VC / AC",
+      "title": "마이베네핏, 시리즈A 30억 투자 유치…인바디 전략적 투자자로 합류",
+      "publishedAt": "2026-10-20",
+      "summary": "디지털 헬스케어 스타트업 마이베네핏은 30억원 규모의 시리즈A 투자를 유치했다고 20일 밝혔다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "동아일보",
+      "url": "https://www.donga.com/news/Economy/article/all/20261020/134876579/1",
+      "resolvedUrl": null,
+      "company": "마이베네핏",
+      "fundingAmount": "30억 원",
+      "fundingStage": "시리즈A",
+      "eventType": "투자유치",
+      "score": 89
+    },
+    {
+      "id": "358e702012ffbb57",
+      "category": "해외 VC",
+      "title": "Otter.ai raises $320 million from General Catalyst’s growth fund for its meeting tool",
+      "publishedAt": "2026-10-20",
+      "summary": "Otter.ai raised $320 million.",
+      "summarySource": "structured_overseas",
+      "summaryType": "structured_overseas",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
+      "resolvedUrl": null,
+      "company": "Otter.ai",
+      "fundingAmount": "$320 million",
+      "eventType": "투자유치",
+      "score": 88
+    },
     {
       "id": "46e85c2d431f9f33",
       "category": "VC / AC",
@@ -30,7 +63,20 @@
       "fundingStage": "프리A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 88
+      "score": 86
+    },
+    {
+      "id": "d17a5ff62f52fc32",
+      "category": "해외 VC",
+      "title": "EU-Startups identifies 20 startups among 77 projects selected for €3.4 billion net-zero funding",
+      "publishedAt": "2026-10-20",
+      "summary": "Total funding sits at €17 million.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/10/eu-startups-identifies-20-startups-among-77-projects-selected-for-e3-4-billion-net-zero-funding/",
+      "resolvedUrl": null,
+      "score": 77
     },
     {
       "id": "4365a2a7c159efe1",
@@ -45,7 +91,7 @@
       "resolvedUrl": null,
       "company": "중진공",
       "eventType": "투자유치",
-      "score": 81
+      "score": 77
     },
     {
       "id": "00e376f1a9f29cbe",
@@ -59,7 +105,22 @@
       "url": "https://www.techm.kr/news/articleView.html?idxno=156223",
       "resolvedUrl": null,
       "industry": "AI",
-      "score": 79
+      "score": 77
+    },
+    {
+      "id": "d1e7936d6793301f",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "KT, K-패스 2026 열고 AI 스타트업과 AX 협업 성과 공개",
+      "publishedAt": "2026-10-20",
+      "summary": "행사엔 K-패스 선정 기업과 과학기술통신부, 중소벤처기업부, AWS, 구글클라우드 등 글로벌 빅테크, 산업계 관계자 약 200명이 참석했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "ZDNet Korea",
+      "url": "https://zdnet.co.kr/view/?no=20261020103507",
+      "resolvedUrl": null,
+      "eventType": "선정",
+      "industry": "AI",
+      "score": 75
     },
     {
       "id": "1593e111db71312a",
@@ -74,23 +135,52 @@
       "resolvedUrl": null,
       "company": "중진공",
       "eventType": "투자유치",
-      "score": 75
+      "score": 73
     },
     {
-      "id": "6cfb03c6068126b4",
+      "id": "88e10324dc778b13",
       "category": "VC / AC",
-      "title": "로바이, 中 링커봇과 피지컬 AI 협력…로봇 자가학습 기술 실증 나선다",
-      "publishedAt": "2026-10-19",
-      "summary": "이번 협약을 통해 양사는 링커봇의 상용 로봇 하드웨어에 로바이가 개발 중인 AI 자가탐색 플랫폼 '로봇 아카데미'를 적용해 기술 실효성을 검증한다.",
+      "title": "텐스토렌트, 8조 가치로 대규모 투자 유치...\"인수 대신 독자 노선\"",
+      "publishedAt": "2026-10-20",
+      "summary": "짐 켈러 텐스토렌트 CEO는 회사를 매각하는 대신 투자를 받아 독립적으로 성장하는 쪽을 택했다고 밝혔다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "머니투데이",
-      "url": "https://www.mt.co.kr/future/2026/10/19/2026101916054623332",
+      "source": "AI타임스",
+      "url": "https://www.aitimes.com/news/articleView.html?idxno=216444",
       "resolvedUrl": null,
-      "company": "로바이",
-      "eventType": "실증·PoC",
+      "company": "텐스토렌트",
+      "eventType": "투자유치",
+      "score": 67
+    },
+    {
+      "id": "e4c8e31f9e058829",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "“AI·디지털 창업기업 협력”…중부발전, ‘해외동반진출 연구회 2차 컨설팅 데이’ 개최",
+      "publishedAt": "2026-10-20",
+      "summary": "특히 인공지능(AI)·디지털 기술, 산업 솔루션 분야 창업·벤처기업 4개사가 참여해 보유 기술을 소개하고 협력 중소기업들과 신규 사업 협력 기회를 논의했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/business/12180498",
+      "resolvedUrl": null,
       "industry": "AI",
-      "score": 68
+      "score": 67
+    },
+    {
+      "id": "d329de15bc212b34",
+      "category": "해외 VC",
+      "title": "Espoo's Coherence Quantum raises €2.78 million to build infrastructure for larger quantum computers",
+      "publishedAt": "2026-10-20",
+      "summary": "Espoo's Coherence Quantum raises €2.78 million to build infrastructure for larger quantum.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/10/espoo-based-coherence-quantum-raises-e2-78-million-to-build-infrastructure-for-larger-quantum-computers/",
+      "resolvedUrl": null,
+      "company": "Coherence Quantum",
+      "fundingAmount": "€2.78 million",
+      "eventType": "투자유치",
+      "score": 67
     },
     {
       "id": "76d43a01e9b7ef18",
@@ -106,95 +196,7 @@
       "company": "참케어",
       "fundingAmount": "10억 원",
       "eventType": "투자유치",
-      "score": 65
-    },
-    {
-      "id": "cd8145bcdc2c9663",
-      "category": "VC / AC",
-      "title": "J벤처스 \"이스라엘-한국-실리콘밸리 연결 가교될 것\"",
-      "publishedAt": "2026-10-18",
-      "summary": "시드(Seed)부터 시리즈A(Series A) 단계의 스타트업에 주로 투자한다. 그가 투자한 25개 기업이 인수·매각 등을 통해 투자회수(Exit)에 성공했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "ZDNet Korea",
-      "url": "https://zdnet.co.kr/view/?no=20261018200458",
-      "resolvedUrl": null,
-      "fundingStage": "Seed",
-      "eventType": "투자유치",
-      "score": 65
-    },
-    {
-      "id": "549c83cf57cd0dba",
-      "category": "TIPS / LIPS",
-      "title": "온잇코리아, AI로 기업 화물운송 운영 자동화 [서울AI허브 2027]",
-      "publishedAt": "2026-10-19",
-      "summary": "기업 화물운송 넘어 AI 물류 운영으로 고도화 온잇코리아는 2022년 3개 기관으로부터 투자를 유치했고 2023년 중소벤처기업부 팁스(TIPS) R&D 기업에 선정됐다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "IT조선",
-      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092171952",
-      "resolvedUrl": null,
-      "company": "온잇코리아",
-      "eventType": "투자유치",
-      "industry": "AI",
-      "score": 64
-    },
-    {
-      "id": "a760e51ff3978391",
-      "category": "TIPS / LIPS",
-      "title": "중장비선수들, 산업현장 스타트업 오픈이노베이션 참가기업 모집",
-      "publishedAt": "2026-10-19",
-      "summary": "선정기업은 사업 특성에 따라 산업현장 판로 개척·공동사업화 트랙과 초기 투자·LIPS 연계 트랙에 참여할 수 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "조선비즈",
-      "url": "https://biz.chosun.com/industry/business_info/2026/10/19/OUW3XAC6YNELVHAPXUXHMMVQCU/",
-      "resolvedUrl": null,
-      "company": "중장비선수들",
-      "eventType": "모집",
-      "score": 59
-    },
-    {
-      "id": "f8b15f91f1b6f62a",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "IBK기업은행, 내년 상반기 'IBK창공' 혁신창업기업 모집",
-      "publishedAt": "2026-10-19",
-      "summary": "은행 관계자는 \"우수한 기술력과 아이디어를 갖춘 스타트업이 초기 단계를 넘어 실질적인 성과를 낼 수 있도록 지원을 아끼지 않겠다\"고 말했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "연합뉴스",
-      "url": "https://www.yna.co.kr/view/AKR20261019061500002",
-      "resolvedUrl": null,
-      "eventType": "모집",
-      "score": 57
-    },
-    {
-      "id": "e1e193b3efe011c8",
-      "category": "해외 VC",
-      "title": "AI assistant startup Town nabs unicorn valuation 4 months after launch",
-      "publishedAt": "2026-10-20",
-      "summary": null,
-      "summarySource": "unavailable",
-      "summaryType": "unavailable",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
-      "resolvedUrl": null,
-      "industry": "AI",
-      "score": 45
-    },
-    {
-      "id": "92d36f93f9efe59f",
-      "category": "TIPS / LIPS",
-      "title": "Tenstorrent hits $6.2B valuation to scale open-weight AI chips",
-      "publishedAt": "2026-10-20",
-      "summary": null,
-      "summarySource": "unavailable",
-      "summaryType": "unavailable",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
-      "resolvedUrl": null,
-      "industry": "AI",
-      "score": 39
+      "score": 63
     }
   ]
 }
