@@ -1,33 +1,33 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-21T00:12:00.542Z",
-  "latestDate": "2026-10-21",
+  "generatedAt": "2026-10-22T00:12:05.270Z",
+  "latestDate": "2026-10-22",
   "weekly": {
-    "from": "2026-10-15",
-    "to": "2026-10-21",
+    "from": "2026-10-16",
+    "to": "2026-10-22",
     "briefingDays": 7,
-    "articleCount": 59,
-    "domesticCount": 49,
-    "overseasCount": 10,
+    "articleCount": 57,
+    "domesticCount": 46,
+    "overseasCount": 11,
     "dealCount": 13,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 963,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 863,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 23
+        "count": 24
       },
       {
         "label": "TIPS / LIPS",
-        "count": 14
+        "count": 12
       },
       {
         "label": "해외 VC",
-        "count": 9
+        "count": 10
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 7
+        "count": 5
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -41,23 +41,23 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 27
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 7
-      },
-      {
-        "label": "선정",
-        "count": 5
+        "count": 29
       },
       {
         "label": "모집",
         "count": 4
       },
       {
-        "label": "실증·PoC",
+        "label": "선정",
         "count": 4
+      },
+      {
+        "label": "실증·PoC",
+        "count": 3
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 3
       },
       {
         "label": "인수·M&A",
@@ -92,11 +92,7 @@
         "count": 1
       },
       {
-        "label": "프리시리즈A",
-        "count": 1
-      },
-      {
-        "label": "후속 투자",
+        "label": "프리A",
         "count": 1
       },
       {
@@ -106,23 +102,23 @@
       {
         "label": "Seed",
         "count": 1
+      },
+      {
+        "label": "Series E",
+        "count": 1
       }
     ],
     "topSources": [
+      {
+        "label": "TechCrunch",
+        "count": 6
+      },
       {
         "label": "머니투데이",
         "count": 5
       },
       {
-        "label": "연합뉴스",
-        "count": 5
-      },
-      {
         "label": "EU-Startups",
-        "count": 5
-      },
-      {
-        "label": "TechCrunch",
         "count": 5
       },
       {
@@ -140,14 +136,13 @@
       {
         "label": "매일경제",
         "count": 3
+      },
+      {
+        "label": "연합뉴스",
+        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-15",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-16",
         "total": 10,
@@ -177,9 +172,36 @@
         "date": "2026-10-21",
         "total": 12,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-22",
+        "total": 12,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-22",
+        "company": "Legora",
+        "fundingAmount": "$550M",
+        "fundingStage": "Series E",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Legal AI startup Legora raises $550M Series E at $8.8B valuation",
+        "url": "https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-21",
+        "company": "Skyfly",
+        "fundingAmount": "€8.91 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
+        "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-20",
         "company": "마이베네핏",
@@ -226,25 +248,14 @@
       },
       {
         "date": "2026-10-15",
-        "company": "휴로보틱스",
-        "fundingAmount": "250억 원",
-        "fundingStage": "시리즈A",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "휴로보틱스, 250억원 시리즈A 투자유치",
-        "url": "https://view.asiae.co.kr/article/2026101508245845605",
-        "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-15",
         "company": "오큐티",
         "fundingAmount": "140억 원",
-        "fundingStage": "프리시리즈A",
+        "fundingStage": "프리A",
         "industry": null,
         "overseas": false,
-        "title": "양자컴퓨팅 기업 오큐티, 140억원 규모 프리 시리즈A 투자 받는다",
-        "url": "https://view.asiae.co.kr/article/2026101508104908540",
-        "source": "아시아경제"
+        "title": "\"양자컴퓨터 오류 잡는다\"…오큐티, 140억 프리A 투자유치",
+        "url": "https://www.mt.co.kr/future/2026/10/15/2026101509281665949",
+        "source": "머니투데이"
       },
       {
         "date": "2026-10-15",
@@ -256,6 +267,17 @@
         "title": "휴로틱스, 250억원 규모 시리즈A 투자 유치…“웨어러블 로봇 사업 확대”",
         "url": "https://www.mk.co.kr/news/business/12176786",
         "source": "매일경제"
+      },
+      {
+        "date": "2026-10-15",
+        "company": "휴로보틱스",
+        "fundingAmount": "250억 원",
+        "fundingStage": "시리즈A",
+        "industry": "로봇",
+        "overseas": false,
+        "title": "휴로보틱스, 250억원 시리즈A 투자유치",
+        "url": "https://view.asiae.co.kr/article/2026101508245845605",
+        "source": "아시아경제"
       },
       {
         "date": "2026-10-15",
@@ -292,28 +314,6 @@
       },
       {
         "date": "2026-10-14",
-        "company": "Ambio",
-        "fundingAmount": "€5.1 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Helsinki’s Ambio raises €5.1 million to scale its AI-powered recycled plastics procurement platform",
-        "url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "알엑스",
-        "fundingAmount": "100억 원",
-        "fundingStage": "후속 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "알엑스, 산업은행 등서 100억원 투자 유치…산업용 열공급 SMR ‘RX-50’ 개발 속도",
-        "url": "https://www.venturesquare.net/1119736/",
-        "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-10-14",
         "company": "Scimplify",
         "fundingAmount": "$25M",
         "fundingStage": null,
@@ -325,37 +325,37 @@
       }
     ],
     "previous": {
-      "articleCount": 80,
-      "dealCount": 14,
+      "articleCount": 84,
+      "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-22",
-    "to": "2026-10-21",
+    "from": "2026-09-23",
+    "to": "2026-10-22",
     "briefingDays": 29,
-    "articleCount": 252,
-    "domesticCount": 203,
-    "overseasCount": 49,
-    "dealCount": 50,
+    "articleCount": 258,
+    "domesticCount": 207,
+    "overseasCount": 51,
+    "dealCount": 52,
     "disclosedKrwDealCount": 16,
     "disclosedKrwTotalEok": 4772,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 87
+        "count": 90
       },
       {
         "label": "해외 VC",
-        "count": 47
+        "count": 49
       },
       {
         "label": "TIPS / LIPS",
-        "count": 42
+        "count": 44
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 35
+        "count": 34
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -369,7 +369,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 104
+        "count": 110
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -377,7 +377,7 @@
       },
       {
         "label": "선정",
-        "count": 18
+        "count": 17
       },
       {
         "label": "실증·PoC",
@@ -415,7 +415,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 100
+        "count": 102
       },
       {
         "label": "바이오·헬스케어",
@@ -423,7 +423,7 @@
       },
       {
         "label": "로봇",
-        "count": 5
+        "count": 6
       },
       {
         "label": "반도체",
@@ -478,27 +478,31 @@
       {
         "label": "pre-Seed",
         "count": 1
+      },
+      {
+        "label": "Series E",
+        "count": 1
       }
     ],
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 33
+        "count": 34
       },
       {
         "label": "벤처스퀘어",
-        "count": 25
+        "count": 23
       },
       {
         "label": "스타트업투데이",
-        "count": 20
-      },
-      {
-        "label": "연합뉴스",
-        "count": 16
+        "count": 21
       },
       {
         "label": "TechCrunch",
+        "count": 17
+      },
+      {
+        "label": "연합뉴스",
         "count": 16
       },
       {
@@ -507,19 +511,14 @@
       },
       {
         "label": "AI타임스",
-        "count": 14
+        "count": 15
       },
       {
-        "label": "IT조선",
+        "label": "아시아경제",
         "count": 12
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-22",
-        "total": 4,
-        "overseas": 2
-      },
       {
         "date": "2026-09-23",
         "total": 5,
@@ -659,9 +658,36 @@
         "date": "2026-10-21",
         "total": 12,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-22",
+        "total": 12,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-22",
+        "company": "Legora",
+        "fundingAmount": "$550M",
+        "fundingStage": "Series E",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Legal AI startup Legora raises $550M Series E at $8.8B valuation",
+        "url": "https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-21",
+        "company": "Skyfly",
+        "fundingAmount": "€8.91 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
+        "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-20",
         "company": "마이베네핏",
@@ -859,33 +885,11 @@
         "title": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
         "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-11",
-        "company": "웨이비나",
-        "fundingAmount": "2억 원",
-        "fundingStage": "시드투자",
-        "industry": "AI",
-        "overseas": false,
-        "title": "'버티컬AI' 파고든 초기 스타트업들…10월 첫주 벤처투자 몰렸다",
-        "url": "https://www.mt.co.kr/future/2026/10/11/2026101114143790821",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-11",
-        "company": "아레나",
-        "fundingAmount": "2700억 원",
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "아레나, 2700억 투자 유치…AI 안전성 평가 '정렬 지수' 도입",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=216131",
-        "source": "AI타임스"
       }
     ],
     "previous": {
       "articleCount": 120,
-      "dealCount": 42,
+      "dealCount": 41,
       "briefingDays": 30
     }
   }
