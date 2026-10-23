@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-22T00:12:05.270Z",
-  "latestDate": "2026-10-22",
+  "generatedAt": "2026-10-23T00:12:19.734Z",
+  "latestDate": "2026-10-23",
   "weekly": {
-    "from": "2026-10-16",
-    "to": "2026-10-22",
+    "from": "2026-10-17",
+    "to": "2026-10-23",
     "briefingDays": 7,
     "articleCount": 57,
-    "domesticCount": 46,
-    "overseasCount": 11,
-    "dealCount": 13,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 863,
+    "domesticCount": 48,
+    "overseasCount": 9,
+    "dealCount": 12,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 200698,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -19,11 +19,11 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 12
+        "count": 14
       },
       {
         "label": "해외 VC",
-        "count": 10
+        "count": 8
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -41,7 +41,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 29
+        "count": 27
       },
       {
         "label": "모집",
@@ -49,7 +49,7 @@
       },
       {
         "label": "선정",
-        "count": 4
+        "count": 3
       },
       {
         "label": "실증·PoC",
@@ -71,7 +71,7 @@
       },
       {
         "label": "로봇",
-        "count": 4
+        "count": 3
       },
       {
         "label": "기후테크·ESG",
@@ -88,19 +88,15 @@
         "count": 3
       },
       {
+        "label": "시드투자",
+        "count": 1
+      },
+      {
         "label": "시리즈B",
         "count": 1
       },
       {
         "label": "프리A",
-        "count": 1
-      },
-      {
-        "label": "pre-Seed",
-        "count": 1
-      },
-      {
-        "label": "Seed",
         "count": 1
       },
       {
@@ -110,19 +106,15 @@
     ],
     "topSources": [
       {
-        "label": "TechCrunch",
+        "label": "머니투데이",
         "count": 6
       },
       {
-        "label": "머니투데이",
+        "label": "TechCrunch",
         "count": 5
       },
       {
         "label": "EU-Startups",
-        "count": 5
-      },
-      {
-        "label": "스타트업투데이",
         "count": 4
       },
       {
@@ -138,16 +130,15 @@
         "count": 3
       },
       {
+        "label": "스타트업투데이",
+        "count": 3
+      },
+      {
         "label": "연합뉴스",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-16",
-        "total": 10,
-        "overseas": 3
-      },
       {
         "date": "2026-10-17",
         "total": 11,
@@ -177,6 +168,11 @@
         "date": "2026-10-22",
         "total": 12,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-23",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -192,6 +188,28 @@
         "source": "TechCrunch"
       },
       {
+        "date": "2026-10-22",
+        "company": "애니브릿지",
+        "fundingAmount": null,
+        "fundingStage": "시드투자",
+        "industry": "AI",
+        "overseas": false,
+        "title": "\"적합한 AI반도체 자동 할당, 비용↓\" 애니브릿지, 시드투자 유치",
+        "url": "https://www.mt.co.kr/future/2026/10/22/2026102210483624221",
+        "source": "머니투데이"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "딥시크",
+        "fundingAmount": "20조 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "中 딥시크, 20조원 투자 유치 성공⋯오픈AI·앤트로픽 추격 가속",
+        "url": "https://www.etoday.co.kr/news/view/2639076",
+        "source": "이투데이"
+      },
+      {
         "date": "2026-10-21",
         "company": "Skyfly",
         "fundingAmount": "€8.91 million",
@@ -201,6 +219,17 @@
         "title": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
         "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
         "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-21",
+        "company": "네이션에이",
+        "fundingAmount": "85억 원",
+        "fundingStage": "시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "네이션에이, 85억 원 시리즈A 투자 유치…누적 117억 원",
+        "url": "https://platum.kr/archives/296805",
+        "source": "플래텀"
       },
       {
         "date": "2026-10-20",
@@ -270,28 +299,6 @@
       },
       {
         "date": "2026-10-15",
-        "company": "휴로보틱스",
-        "fundingAmount": "250억 원",
-        "fundingStage": "시리즈A",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "휴로보틱스, 250억원 시리즈A 투자유치",
-        "url": "https://view.asiae.co.kr/article/2026101508245845605",
-        "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "Solvera",
-        "fundingAmount": "€5.62 million",
-        "fundingStage": "pre-Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Oslo-based AI-native engineering firm Solvera raises €5.62 million pre-Seed after July 2026 launch",
-        "url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-15",
         "company": "히츠",
         "fundingAmount": "183억 원",
         "fundingStage": "시리즈B",
@@ -300,66 +307,44 @@
         "title": "\"신약 개발 AI 플랫폼 공급\"…히츠, 183억 시리즈B 투자유치",
         "url": "https://www.mt.co.kr/future/2026/10/15/2026101509284260991",
         "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "Robotics",
-        "fundingAmount": "€1 million",
-        "fundingStage": "Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
-        "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "Scimplify",
-        "fundingAmount": "$25M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
-        "url": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 84,
+      "articleCount": 79,
       "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-23",
-    "to": "2026-10-22",
+    "from": "2026-09-24",
+    "to": "2026-10-23",
     "briefingDays": 29,
-    "articleCount": 258,
-    "domesticCount": 207,
-    "overseasCount": 51,
-    "dealCount": 52,
-    "disclosedKrwDealCount": 16,
-    "disclosedKrwTotalEok": 4772,
+    "articleCount": 260,
+    "domesticCount": 211,
+    "overseasCount": 49,
+    "dealCount": 54,
+    "disclosedKrwDealCount": 18,
+    "disclosedKrwTotalEok": 204857,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 90
+        "count": 92
       },
       {
         "label": "해외 VC",
-        "count": 49
+        "count": 47
       },
       {
         "label": "TIPS / LIPS",
-        "count": 44
-      },
-      {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 34
+        "count": 46
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 32
+        "count": 33
+      },
+      {
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 33
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -369,7 +354,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 110
+        "count": 111
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -404,18 +389,18 @@
         "count": 4
       },
       {
-        "label": "펀드결성",
-        "count": 4
+        "label": "출시·상용화",
+        "count": 3
       },
       {
-        "label": "출시·상용화",
+        "label": "펀드결성",
         "count": 3
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 102
+        "count": 104
       },
       {
         "label": "바이오·헬스케어",
@@ -437,11 +422,15 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 4
+        "count": 5
       },
       {
         "label": "시리즈B",
         "count": 4
+      },
+      {
+        "label": "시드투자",
+        "count": 2
       },
       {
         "label": "Seed",
@@ -457,10 +446,6 @@
       },
       {
         "label": "시드 투자",
-        "count": 1
-      },
-      {
-        "label": "시드투자",
         "count": 1
       },
       {
@@ -487,7 +472,7 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 34
+        "count": 33
       },
       {
         "label": "벤처스퀘어",
@@ -498,16 +483,16 @@
         "count": 21
       },
       {
-        "label": "TechCrunch",
-        "count": 17
+        "label": "머니투데이",
+        "count": 16
       },
       {
         "label": "연합뉴스",
         "count": 16
       },
       {
-        "label": "머니투데이",
-        "count": 15
+        "label": "TechCrunch",
+        "count": 16
       },
       {
         "label": "AI타임스",
@@ -519,11 +504,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-23",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-24",
         "total": 10,
@@ -663,6 +643,11 @@
         "date": "2026-10-22",
         "total": 12,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-23",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -678,6 +663,28 @@
         "source": "TechCrunch"
       },
       {
+        "date": "2026-10-22",
+        "company": "애니브릿지",
+        "fundingAmount": null,
+        "fundingStage": "시드투자",
+        "industry": "AI",
+        "overseas": false,
+        "title": "\"적합한 AI반도체 자동 할당, 비용↓\" 애니브릿지, 시드투자 유치",
+        "url": "https://www.mt.co.kr/future/2026/10/22/2026102210483624221",
+        "source": "머니투데이"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "딥시크",
+        "fundingAmount": "20조 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "中 딥시크, 20조원 투자 유치 성공⋯오픈AI·앤트로픽 추격 가속",
+        "url": "https://www.etoday.co.kr/news/view/2639076",
+        "source": "이투데이"
+      },
+      {
         "date": "2026-10-21",
         "company": "Skyfly",
         "fundingAmount": "€8.91 million",
@@ -687,6 +694,17 @@
         "title": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
         "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
         "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-21",
+        "company": "네이션에이",
+        "fundingAmount": "85억 원",
+        "fundingStage": "시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "네이션에이, 85억 원 시리즈A 투자 유치…누적 117억 원",
+        "url": "https://platum.kr/archives/296805",
+        "source": "플래텀"
       },
       {
         "date": "2026-10-20",
@@ -852,43 +870,10 @@
         "title": "Paris-based CarbonFarm raises €7 million to tackle methane emissions from rice farming",
         "url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-13",
-        "company": "Obsero",
-        "fundingAmount": "€1 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "London's Obsero raises €1 million to help brands improve visibility in AI-powered search",
-        "url": "https://www.eu-startups.com/2026/10/londons-obsero-raises-e1-million-to-help-brands-improve-visibility-in-ai-powered-search/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-13",
-        "company": "함안군수",
-        "fundingAmount": "550억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "차석호 함안군수, 취임 100일 국도비 확보550억원 투자유치 성과",
-        "url": "https://view.asiae.co.kr/article/2026101315032020517",
-        "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-12",
-        "company": "Gaius Capital",
-        "fundingAmount": "€50 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
-        "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 120,
+      "articleCount": 122,
       "dealCount": 41,
       "briefingDays": 30
     }

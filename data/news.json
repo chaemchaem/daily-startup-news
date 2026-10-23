@@ -1,20 +1,37 @@
 {
-  "generatedAt": "2026-10-22T09:00:00+09:00",
-  "collectedAt": "2026-10-22T09:12:05+09:00",
+  "generatedAt": "2026-10-23T09:00:00+09:00",
+  "collectedAt": "2026-10-23T09:12:19+09:00",
   "range": {
-    "from": "2026-10-20T09:00:00+09:00",
-    "to": "2026-10-22T09:00:00+09:00"
+    "from": "2026-10-21T09:00:00+09:00",
+    "to": "2026-10-23T09:00:00+09:00"
   },
-  "totalCount": 12,
+  "totalCount": 13,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 2,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
-    "스타트업 / 벤처기업 / 초기창업": 1,
+    "TIPS / LIPS": 3,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
+    "스타트업 / 벤처기업 / 초기창업": 0,
     "세컨더리 / 구주매각": 0,
     "해외 VC": 3
   },
   "items": [
+    {
+      "id": "9b84b8cd60e47110",
+      "category": "TIPS / LIPS",
+      "title": "네이션에이, 85억 원 시리즈A 투자 유치…누적 117억 원",
+      "publishedAt": "2026-10-21",
+      "summary": "AI 영상 제작 스타트업 네이션에이가 85억 원 규모의 시리즈A 투자를 유치했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "플래텀",
+      "url": "https://platum.kr/archives/296805",
+      "resolvedUrl": null,
+      "company": "네이션에이",
+      "fundingAmount": "85억 원",
+      "fundingStage": "시리즈A",
+      "eventType": "투자유치",
+      "score": 92
+    },
     {
       "id": "2f21b91e58ea6403",
       "category": "TIPS / LIPS",
@@ -28,7 +45,7 @@
       "resolvedUrl": null,
       "company": "더벤처스",
       "industry": "AI",
-      "score": 93
+      "score": 91
     },
     {
       "id": "266a567cd3a1a9dd",
@@ -46,61 +63,25 @@
       "fundingStage": "Series E",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 91
+      "score": 89
     },
     {
-      "id": "63d767545fcc2f40",
-      "category": "VC / AC",
-      "title": "마이베네핏, 시리즈A 30억 투자 유치…인바디 전략적 투자자로 합류",
-      "publishedAt": "2026-10-20",
-      "summary": "디지털 헬스케어 스타트업 마이베네핏은 30억원 규모의 시리즈A 투자를 유치했다고 20일 밝혔다.",
+      "id": "61c5e69bf8dfd55f",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "AI 스타트업 공식 바꾸는 김서준 해시드...\"투자 넘어 에이전틱 빌딩 생태계 키울 것\"",
+      "publishedAt": "2026-10-22",
+      "summary": "나이트로는 해시드가 AI 스타트업을 지원하는 프로그램이다. 스타트업들이 상시로 신청할 수 있도록 문을 열어두고 언제든지 지원할 수 있도록 개방한다는 설명이다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "동아일보",
-      "url": "https://www.donga.com/news/Economy/article/all/20261020/134876579/1",
+      "source": "테크M",
+      "url": "https://www.techm.kr/news/articleView.html?idxno=156399",
       "resolvedUrl": null,
-      "company": "마이베네핏",
-      "fundingAmount": "30억 원",
-      "fundingStage": "시리즈A",
-      "eventType": "투자유치",
-      "score": 87
-    },
-    {
-      "id": "f0b8f6a4c78ae2cf",
-      "category": "VC / AC",
-      "title": "로봇 파운데이션 모델 드림랩스, 1200억원 시드 투자 유치",
-      "publishedAt": "2026-10-20",
-      "summary": "엔비디아 로봇 연구진 출신이 창업한 AI 스타트업 드림랩스(Dream Labs)가 9000만 달러(약 1200억 원) 규모 시드 투자를 유치했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "플래텀",
-      "url": "https://platum.kr/archives/296587",
-      "resolvedUrl": null,
-      "fundingAmount": "1200억 원",
-      "fundingStage": "시드 투자",
-      "eventType": "투자유치",
-      "industry": "로봇",
-      "score": 87
-    },
-    {
-      "id": "358e702012ffbb57",
-      "category": "해외 VC",
-      "title": "Otter.ai raises $320 million from General Catalyst’s growth fund for its meeting tool",
-      "publishedAt": "2026-10-20",
-      "summary": "Otter.ai raised $320 million.",
-      "summarySource": "structured_overseas",
-      "summaryType": "structured_overseas",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
-      "resolvedUrl": null,
-      "company": "Otter.ai",
-      "fundingAmount": "$320 million",
-      "eventType": "투자유치",
-      "score": 86
+      "industry": "AI",
+      "score": 88
     },
     {
       "id": "8fdf6335fad36b6f",
-      "category": "TIPS / LIPS",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
       "title": "해시드, AI 스타트업 육성 프로그램 '나이트로 2기' 출범…김서준 \"실행력 넘어 조직 경쟁력 키운다\"",
       "publishedAt": "2026-10-22",
       "summary": "/ 블록체인 전문 투자사 해시드가 인공지능(AI) 스타트업 육성 프로그램 '나이트로 서울(Nitro Seoul)' 2기를 시작한다.",
@@ -111,7 +92,7 @@
       "resolvedUrl": null,
       "company": "해시드",
       "industry": "AI",
-      "score": 85
+      "score": 83
     },
     {
       "id": "c1ef254930b36e85",
@@ -125,7 +106,7 @@
       "url": "https://www.fnnews.com/news/202610211120356202",
       "resolvedUrl": null,
       "eventType": "투자유치",
-      "score": 85
+      "score": 83
     },
     {
       "id": "dc10932939e778db",
@@ -141,22 +122,51 @@
       "company": "Skyfly",
       "fundingAmount": "€8.91 million",
       "eventType": "투자유치",
-      "score": 82
+      "score": 80
     },
     {
-      "id": "d1e7936d6793301f",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "KT, K-패스 2026 열고 AI 스타트업과 AX 협업 성과 공개",
-      "publishedAt": "2026-10-20",
-      "summary": "행사엔 K-패스 선정 기업과 과학기술통신부, 중소벤처기업부, AWS, 구글클라우드 등 글로벌 빅테크, 산업계 관계자 약 200명이 참석했다.",
+      "id": "829a6aff2b0661c4",
+      "category": "VC / AC",
+      "title": "AI·로봇부터 푸드테크까지…유망 스타트업 기술력 뽐낸 ‘IBK창공’ 구로 16기 데모데이",
+      "publishedAt": "2026-10-22",
+      "summary": "AI·로봇·바이오 등 다양한 분야의 스타트업 20개사가 'IBK창공 구로센터 16기 데모데이'에 참여해 각사의 핵심 기술과 사업 비전을 발표했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "ZDNet Korea",
-      "url": "https://zdnet.co.kr/view/?no=20261020103507",
+      "source": "조선비즈",
+      "url": "https://biz.chosun.com/industry/business-venture/2026/10/22/UEZYWCN5BBHG5OUIQIFZ33N2EU/",
       "resolvedUrl": null,
-      "eventType": "선정",
       "industry": "AI",
-      "score": 73
+      "score": 77
+    },
+    {
+      "id": "d466c4b2f42adb91",
+      "category": "TIPS / LIPS",
+      "title": "\"적합한 AI반도체 자동 할당, 비용↓\" 애니브릿지, 시드투자 유치",
+      "publishedAt": "2026-10-22",
+      "summary": "애니브릿지는 더벤처스 투자유치와 추천을 기반으로 중소벤처기업부 R&D(연구개발) 지원사업 팁스에도 선정됐다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "머니투데이",
+      "url": "https://www.mt.co.kr/future/2026/10/22/2026102210483624221",
+      "resolvedUrl": null,
+      "company": "애니브릿지",
+      "fundingStage": "시드투자",
+      "eventType": "투자유치",
+      "industry": "AI",
+      "score": 74
+    },
+    {
+      "id": "64be3d1c64c9c119",
+      "category": "해외 VC",
+      "title": "Is the UK leading Europe's startup funding race? Yes, but there's a catch",
+      "publishedAt": "2026-10-22",
+      "summary": "So, is Britain Europe’s leading startup investment destination?",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/10/is-the-uk-leading-europes-startup-funding-race-yes-but-theres-a-catch/",
+      "resolvedUrl": null,
+      "score": 74
     },
     {
       "id": "56cb1d991a71b1a2",
@@ -171,7 +181,7 @@
       "resolvedUrl": null,
       "fundingStage": "후속 투자",
       "eventType": "투자유치",
-      "score": 67
+      "score": 65
     },
     {
       "id": "1f7394bb2fde8157",
@@ -187,21 +197,24 @@
       "company": "오픈AI",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 65
+      "score": 63
     },
     {
-      "id": "e4c8e31f9e058829",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "“AI·디지털 창업기업 협력”…중부발전, ‘해외동반진출 연구회 2차 컨설팅 데이’ 개최",
-      "publishedAt": "2026-10-20",
-      "summary": "특히 인공지능(AI)·디지털 기술, 산업 솔루션 분야 창업·벤처기업 4개사가 참여해 보유 기술을 소개하고 협력 중소기업들과 신규 사업 협력 기회를 논의했다.",
+      "id": "df5478b9c56206f5",
+      "category": "VC / AC",
+      "title": "中 딥시크, 20조원 투자 유치 성공⋯오픈AI·앤트로픽 추격 가속",
+      "publishedAt": "2026-10-22",
+      "summary": "(로이터연합뉴스) 중국 인공지능(AI) 스타트업 딥시크가 약 20조원 규모의 투자 유치에 성공하며 글로벌 AI 시장에서 경쟁력 강화에 나섰다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "매일경제",
-      "url": "https://www.mk.co.kr/news/business/12180498",
+      "source": "이투데이",
+      "url": "https://www.etoday.co.kr/news/view/2639076",
       "resolvedUrl": null,
+      "company": "딥시크",
+      "fundingAmount": "20조 원",
+      "eventType": "투자유치",
       "industry": "AI",
-      "score": 65
+      "score": 61
     }
   ]
 }
