@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-23T00:12:19.734Z",
-  "latestDate": "2026-10-23",
+  "generatedAt": "2026-10-24T00:11:55.008Z",
+  "latestDate": "2026-10-24",
   "weekly": {
-    "from": "2026-10-17",
-    "to": "2026-10-23",
+    "from": "2026-10-18",
+    "to": "2026-10-24",
     "briefingDays": 7,
-    "articleCount": 57,
-    "domesticCount": 48,
-    "overseasCount": 9,
-    "dealCount": 12,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 200698,
+    "articleCount": 62,
+    "domesticCount": 50,
+    "overseasCount": 12,
+    "dealCount": 13,
+    "disclosedKrwDealCount": 5,
+    "disclosedKrwTotalEok": 200455,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -19,18 +19,18 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 14
+        "count": 15
       },
       {
         "label": "해외 VC",
-        "count": 8
-      },
-      {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 5
+        "count": 11
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 6
+      },
+      {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
         "count": 5
       },
       {
@@ -41,7 +41,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 27
+        "count": 31
       },
       {
         "label": "모집",
@@ -52,26 +52,30 @@
         "count": 3
       },
       {
-        "label": "실증·PoC",
-        "count": 3
-      },
-      {
         "label": "TIPS·LIPS 선정",
         "count": 3
       },
       {
+        "label": "실증·PoC",
+        "count": 2
+      },
+      {
         "label": "인수·M&A",
+        "count": 1
+      },
+      {
+        "label": "협약",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 23
+        "count": 25
       },
       {
         "label": "로봇",
-        "count": 3
+        "count": 2
       },
       {
         "label": "기후테크·ESG",
@@ -85,18 +89,14 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 3
+        "count": 2
       },
       {
         "label": "시드투자",
         "count": 1
       },
       {
-        "label": "시리즈B",
-        "count": 1
-      },
-      {
-        "label": "프리A",
+        "label": "시리즈C",
         "count": 1
       },
       {
@@ -106,15 +106,19 @@
     ],
     "topSources": [
       {
-        "label": "머니투데이",
+        "label": "EU-Startups",
         "count": 6
       },
       {
         "label": "TechCrunch",
+        "count": 6
+      },
+      {
+        "label": "머니투데이",
         "count": 5
       },
       {
-        "label": "EU-Startups",
+        "label": "스타트업투데이",
         "count": 4
       },
       {
@@ -126,24 +130,15 @@
         "count": 4
       },
       {
-        "label": "매일경제",
+        "label": "아주경제",
         "count": 3
       },
       {
-        "label": "스타트업투데이",
-        "count": 3
-      },
-      {
-        "label": "연합뉴스",
+        "label": "이투데이",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-17",
-        "total": 11,
-        "overseas": 0
-      },
       {
         "date": "2026-10-18",
         "total": 13,
@@ -173,9 +168,25 @@
         "date": "2026-10-23",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-24",
+        "total": 14,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-23",
+        "company": "Intuitivo",
+        "fundingAmount": "€1.35 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
+        "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-22",
         "company": "Legora",
@@ -208,6 +219,39 @@
         "title": "中 딥시크, 20조원 투자 유치 성공⋯오픈AI·앤트로픽 추격 가속",
         "url": "https://www.etoday.co.kr/news/view/2639076",
         "source": "이투데이"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "트리오어",
+        "fundingAmount": "330억 원",
+        "fundingStage": "시리즈C",
+        "industry": null,
+        "overseas": false,
+        "title": "트리오어, 시리즈 C 330억원 투자 유치…누적 770억원",
+        "url": "https://www.hankyung.com/article/202610229108i",
+        "source": "한국경제"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "Beyond Vision",
+        "fundingAmount": "€28 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Lisbon’s Beyond Vision raises over €28 million to scale AI drones for civilian and defence markets",
+        "url": "https://www.eu-startups.com/2026/10/lisbons-beyond-vision-raises-over-e28-million-to-scale-ai-drones-for-civilian-and-defence-markets/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "Nirva",
+        "fundingAmount": "$33M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Nirva raises $33M for a pendant that only listens to you",
+        "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-10-21",
@@ -274,76 +318,43 @@
         "title": "참케어, ‘유한양행’으로부터 전략적 투자 유치∙∙∙병원 혈압 모니터링 시장 확대",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53271",
         "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "오큐티",
-        "fundingAmount": "140억 원",
-        "fundingStage": "프리A",
-        "industry": null,
-        "overseas": false,
-        "title": "\"양자컴퓨터 오류 잡는다\"…오큐티, 140억 프리A 투자유치",
-        "url": "https://www.mt.co.kr/future/2026/10/15/2026101509281665949",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "휴로틱스",
-        "fundingAmount": "250억 원",
-        "fundingStage": "시리즈A",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "휴로틱스, 250억원 규모 시리즈A 투자 유치…“웨어러블 로봇 사업 확대”",
-        "url": "https://www.mk.co.kr/news/business/12176786",
-        "source": "매일경제"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "히츠",
-        "fundingAmount": "183억 원",
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "\"신약 개발 AI 플랫폼 공급\"…히츠, 183억 시리즈B 투자유치",
-        "url": "https://www.mt.co.kr/future/2026/10/15/2026101509284260991",
-        "source": "머니투데이"
       }
     ],
     "previous": {
-      "articleCount": 79,
+      "articleCount": 74,
       "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-24",
-    "to": "2026-10-23",
+    "from": "2026-09-25",
+    "to": "2026-10-24",
     "briefingDays": 29,
-    "articleCount": 260,
-    "domesticCount": 211,
-    "overseasCount": 49,
-    "dealCount": 54,
+    "articleCount": 266,
+    "domesticCount": 216,
+    "overseasCount": 50,
+    "dealCount": 56,
     "disclosedKrwDealCount": 18,
-    "disclosedKrwTotalEok": 204857,
+    "disclosedKrwTotalEok": 205175,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 92
+        "count": 94
       },
       {
         "label": "해외 VC",
-        "count": 47
+        "count": 48
       },
       {
         "label": "TIPS / LIPS",
-        "count": 46
-      },
-      {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 33
+        "count": 47
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 35
+      },
+      {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
         "count": 33
       },
       {
@@ -354,11 +365,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 111
+        "count": 116
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 21
+        "count": 22
       },
       {
         "label": "선정",
@@ -378,7 +389,7 @@
       },
       {
         "label": "협약",
-        "count": 5
+        "count": 6
       },
       {
         "label": "세컨더리",
@@ -400,14 +411,14 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 104
-      },
-      {
-        "label": "바이오·헬스케어",
-        "count": 7
+        "count": 107
       },
       {
         "label": "로봇",
+        "count": 6
+      },
+      {
+        "label": "바이오·헬스케어",
         "count": 6
       },
       {
@@ -441,11 +452,11 @@
         "count": 2
       },
       {
-        "label": "시드",
+        "label": "시드 투자",
         "count": 1
       },
       {
-        "label": "시드 투자",
+        "label": "시리즈C",
         "count": 1
       },
       {
@@ -472,19 +483,19 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 33
+        "count": 34
       },
       {
         "label": "벤처스퀘어",
-        "count": 23
+        "count": 22
       },
       {
         "label": "스타트업투데이",
-        "count": 21
+        "count": 22
       },
       {
         "label": "머니투데이",
-        "count": 16
+        "count": 17
       },
       {
         "label": "연합뉴스",
@@ -500,15 +511,10 @@
       },
       {
         "label": "아시아경제",
-        "count": 12
+        "count": 13
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-24",
-        "total": 10,
-        "overseas": 3
-      },
       {
         "date": "2026-09-25",
         "total": 9,
@@ -648,9 +654,25 @@
         "date": "2026-10-23",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-24",
+        "total": 14,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-23",
+        "company": "Intuitivo",
+        "fundingAmount": "€1.35 million",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
+        "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-22",
         "company": "Legora",
@@ -683,6 +705,39 @@
         "title": "中 딥시크, 20조원 투자 유치 성공⋯오픈AI·앤트로픽 추격 가속",
         "url": "https://www.etoday.co.kr/news/view/2639076",
         "source": "이투데이"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "트리오어",
+        "fundingAmount": "330억 원",
+        "fundingStage": "시리즈C",
+        "industry": null,
+        "overseas": false,
+        "title": "트리오어, 시리즈 C 330억원 투자 유치…누적 770억원",
+        "url": "https://www.hankyung.com/article/202610229108i",
+        "source": "한국경제"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "Beyond Vision",
+        "fundingAmount": "€28 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Lisbon’s Beyond Vision raises over €28 million to scale AI drones for civilian and defence markets",
+        "url": "https://www.eu-startups.com/2026/10/lisbons-beyond-vision-raises-over-e28-million-to-scale-ai-drones-for-civilian-and-defence-markets/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-22",
+        "company": "Nirva",
+        "fundingAmount": "$33M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Nirva raises $33M for a pendant that only listens to you",
+        "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-10-21",
@@ -826,55 +881,11 @@
         "title": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
         "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "Ambio",
-        "fundingAmount": "€5.1 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Helsinki’s Ambio raises €5.1 million to scale its AI-powered recycled plastics procurement platform",
-        "url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "알엑스",
-        "fundingAmount": "100억 원",
-        "fundingStage": "후속 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "알엑스, 산업은행 등서 100억원 투자 유치…산업용 열공급 SMR ‘RX-50’ 개발 속도",
-        "url": "https://www.venturesquare.net/1119736/",
-        "source": "벤처스퀘어"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "Scimplify",
-        "fundingAmount": "$25M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
-        "url": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-13",
-        "company": "CarbonFarm",
-        "fundingAmount": "€7 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Paris-based CarbonFarm raises €7 million to tackle methane emissions from rice farming",
-        "url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 122,
-      "dealCount": 41,
+      "articleCount": 126,
+      "dealCount": 44,
       "briefingDays": 30
     }
   }
