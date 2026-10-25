@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-24T00:11:55.008Z",
-  "latestDate": "2026-10-24",
+  "generatedAt": "2026-10-25T00:11:43.156Z",
+  "latestDate": "2026-10-25",
   "weekly": {
-    "from": "2026-10-18",
-    "to": "2026-10-24",
+    "from": "2026-10-19",
+    "to": "2026-10-25",
     "briefingDays": 7,
-    "articleCount": 62,
-    "domesticCount": 50,
+    "articleCount": 61,
+    "domesticCount": 49,
     "overseasCount": 12,
     "dealCount": 13,
     "disclosedKrwDealCount": 5,
@@ -31,7 +31,7 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 5
+        "count": 4
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,19 +41,19 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 31
+        "count": 33
       },
       {
         "label": "모집",
-        "count": 4
-      },
-      {
-        "label": "선정",
         "count": 3
       },
       {
         "label": "TIPS·LIPS 선정",
         "count": 3
+      },
+      {
+        "label": "선정",
+        "count": 2
       },
       {
         "label": "실증·PoC",
@@ -71,19 +71,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 25
+        "count": 26
       },
       {
         "label": "로봇",
         "count": 2
-      },
-      {
-        "label": "기후테크·ESG",
-        "count": 1
-      },
-      {
-        "label": "바이오·헬스케어",
-        "count": 1
       }
     ],
     "byStage": [
@@ -106,6 +98,10 @@
     ],
     "topSources": [
       {
+        "label": "머니투데이",
+        "count": 6
+      },
+      {
         "label": "EU-Startups",
         "count": 6
       },
@@ -114,19 +110,7 @@
         "count": 6
       },
       {
-        "label": "머니투데이",
-        "count": 5
-      },
-      {
         "label": "스타트업투데이",
-        "count": 4
-      },
-      {
-        "label": "IT조선",
-        "count": 4
-      },
-      {
-        "label": "ZDNet Korea",
         "count": 4
       },
       {
@@ -136,14 +120,17 @@
       {
         "label": "이투데이",
         "count": 3
+      },
+      {
+        "label": "테크M",
+        "count": 3
+      },
+      {
+        "label": "IT조선",
+        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-18",
-        "total": 13,
-        "overseas": 1
-      },
       {
         "date": "2026-10-19",
         "total": 10,
@@ -173,6 +160,11 @@
         "date": "2026-10-24",
         "total": 14,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-25",
+        "total": 11,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -186,6 +178,17 @@
         "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
         "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
         "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-23",
+        "company": "네이션에이",
+        "fundingAmount": "85억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "네이션에이, 85억 원 규모 시리즈 A 클로징∙∙∙인공지능 영상 제작 플랫폼 본격 가동",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53321",
+        "source": "스타트업투데이"
       },
       {
         "date": "2026-10-22",
@@ -265,17 +268,6 @@
         "source": "EU-Startups"
       },
       {
-        "date": "2026-10-21",
-        "company": "네이션에이",
-        "fundingAmount": "85억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "네이션에이, 85억 원 시리즈A 투자 유치…누적 117억 원",
-        "url": "https://platum.kr/archives/296805",
-        "source": "플래텀"
-      },
-      {
         "date": "2026-10-20",
         "company": "마이베네핏",
         "fundingAmount": "30억 원",
@@ -321,41 +313,41 @@
       }
     ],
     "previous": {
-      "articleCount": 74,
-      "dealCount": 17,
+      "articleCount": 67,
+      "dealCount": 16,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-25",
-    "to": "2026-10-24",
+    "from": "2026-09-26",
+    "to": "2026-10-25",
     "briefingDays": 29,
-    "articleCount": 266,
-    "domesticCount": 216,
-    "overseasCount": 50,
-    "dealCount": 56,
-    "disclosedKrwDealCount": 18,
-    "disclosedKrwTotalEok": 205175,
+    "articleCount": 267,
+    "domesticCount": 218,
+    "overseasCount": 49,
+    "dealCount": 54,
+    "disclosedKrwDealCount": 17,
+    "disclosedKrwTotalEok": 205145,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 94
-      },
-      {
-        "label": "해외 VC",
-        "count": 48
+        "count": 96
       },
       {
         "label": "TIPS / LIPS",
+        "count": 49
+      },
+      {
+        "label": "해외 VC",
         "count": 47
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 35
+        "count": 34
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 33
+        "count": 32
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -365,7 +357,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 116
+        "count": 117
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -373,15 +365,15 @@
       },
       {
         "label": "선정",
-        "count": 17
+        "count": 16
+      },
+      {
+        "label": "모집",
+        "count": 9
       },
       {
         "label": "실증·PoC",
         "count": 9
-      },
-      {
-        "label": "모집",
-        "count": 8
       },
       {
         "label": "인수·M&A",
@@ -389,7 +381,7 @@
       },
       {
         "label": "협약",
-        "count": 6
+        "count": 5
       },
       {
         "label": "세컨더리",
@@ -444,10 +436,6 @@
         "count": 2
       },
       {
-        "label": "Seed",
-        "count": 2
-      },
-      {
         "label": "Series A",
         "count": 2
       },
@@ -464,15 +452,15 @@
         "count": 1
       },
       {
-        "label": "프리A",
-        "count": 1
-      },
-      {
         "label": "후속 투자",
         "count": 1
       },
       {
         "label": "pre-Seed",
+        "count": 1
+      },
+      {
+        "label": "Seed",
         "count": 1
       },
       {
@@ -483,23 +471,23 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 34
-      },
-      {
-        "label": "벤처스퀘어",
-        "count": 22
+        "count": 33
       },
       {
         "label": "스타트업투데이",
-        "count": 22
+        "count": 23
+      },
+      {
+        "label": "벤처스퀘어",
+        "count": 21
       },
       {
         "label": "머니투데이",
-        "count": 17
+        "count": 19
       },
       {
         "label": "연합뉴스",
-        "count": 16
+        "count": 17
       },
       {
         "label": "TechCrunch",
@@ -515,11 +503,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-25",
-        "total": 9,
-        "overseas": 2
-      },
       {
         "date": "2026-09-26",
         "total": 5,
@@ -659,6 +642,11 @@
         "date": "2026-10-24",
         "total": 14,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-25",
+        "total": 11,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -672,6 +660,17 @@
         "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
         "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
         "source": "EU-Startups"
+      },
+      {
+        "date": "2026-10-23",
+        "company": "네이션에이",
+        "fundingAmount": "85억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "네이션에이, 85억 원 규모 시리즈 A 클로징∙∙∙인공지능 영상 제작 플랫폼 본격 가동",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53321",
+        "source": "스타트업투데이"
       },
       {
         "date": "2026-10-22",
@@ -749,17 +748,6 @@
         "title": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
         "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-21",
-        "company": "네이션에이",
-        "fundingAmount": "85억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "네이션에이, 85억 원 시리즈A 투자 유치…누적 117억 원",
-        "url": "https://platum.kr/archives/296805",
-        "source": "플래텀"
       },
       {
         "date": "2026-10-20",
@@ -884,8 +872,8 @@
       }
     ],
     "previous": {
-      "articleCount": 126,
-      "dealCount": 44,
+      "articleCount": 125,
+      "dealCount": 43,
       "briefingDays": 30
     }
   }
