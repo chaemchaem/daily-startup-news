@@ -1,41 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-25T00:11:43.156Z",
-  "latestDate": "2026-10-25",
+  "generatedAt": "2026-10-26T00:11:40.351Z",
+  "latestDate": "2026-10-26",
   "weekly": {
-    "from": "2026-10-19",
-    "to": "2026-10-25",
+    "from": "2026-10-20",
+    "to": "2026-10-26",
     "briefingDays": 7,
-    "articleCount": 61,
-    "domesticCount": 49,
-    "overseasCount": 12,
+    "articleCount": 64,
+    "domesticCount": 53,
+    "overseasCount": 11,
     "dealCount": 13,
     "disclosedKrwDealCount": 5,
     "disclosedKrwTotalEok": 200455,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 24
+        "count": 22
       },
       {
         "label": "TIPS / LIPS",
-        "count": 15
+        "count": 16
       },
       {
         "label": "해외 VC",
-        "count": 11
+        "count": 10
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 6
+        "count": 9
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 4
-      },
-      {
-        "label": "세컨더리 / 구주매각",
-        "count": 1
+        "count": 7
       }
     ],
     "byEventType": [
@@ -44,38 +40,42 @@
         "count": 33
       },
       {
+        "label": "선정",
+        "count": 4
+      },
+      {
         "label": "모집",
         "count": 3
       },
       {
-        "label": "TIPS·LIPS 선정",
-        "count": 3
+        "label": "지원사업",
+        "count": 2
       },
       {
-        "label": "선정",
+        "label": "협약",
+        "count": 2
+      },
+      {
+        "label": "TIPS·LIPS 선정",
         "count": 2
       },
       {
         "label": "실증·PoC",
-        "count": 2
-      },
-      {
-        "label": "인수·M&A",
-        "count": 1
-      },
-      {
-        "label": "협약",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 26
+        "count": 24
       },
       {
         "label": "로봇",
-        "count": 2
+        "count": 1
+      },
+      {
+        "label": "반도체",
+        "count": 1
       }
     ],
     "byStage": [
@@ -107,10 +107,14 @@
       },
       {
         "label": "TechCrunch",
-        "count": 6
+        "count": 5
       },
       {
         "label": "스타트업투데이",
+        "count": 4
+      },
+      {
+        "label": "이투데이",
         "count": 4
       },
       {
@@ -118,24 +122,15 @@
         "count": 3
       },
       {
-        "label": "이투데이",
+        "label": "연합뉴스",
         "count": 3
       },
       {
         "label": "테크M",
         "count": 3
-      },
-      {
-        "label": "IT조선",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-19",
-        "total": 10,
-        "overseas": 1
-      },
       {
         "date": "2026-10-20",
         "total": 12,
@@ -165,9 +160,25 @@
         "date": "2026-10-25",
         "total": 11,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-26",
+        "total": 15,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-25",
+        "company": "네이션에이",
+        "fundingAmount": "85억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "네이션에이, 85억 시리즈A 유치…AI 영상 제작 워크플로우 내재화",
+        "url": "https://www.bloter.net/news/articleView.html?idxno=676622",
+        "source": "블로터"
+      },
       {
         "date": "2026-10-23",
         "company": "Intuitivo",
@@ -178,17 +189,6 @@
         "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
         "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-23",
-        "company": "네이션에이",
-        "fundingAmount": "85억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "네이션에이, 85억 원 규모 시리즈 A 클로징∙∙∙인공지능 영상 제작 플랫폼 본격 가동",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53321",
-        "source": "스타트업투데이"
       },
       {
         "date": "2026-10-22",
@@ -313,41 +313,41 @@
       }
     ],
     "previous": {
-      "articleCount": 67,
+      "articleCount": 64,
       "dealCount": 16,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-26",
-    "to": "2026-10-25",
+    "from": "2026-09-27",
+    "to": "2026-10-26",
     "briefingDays": 29,
-    "articleCount": 267,
-    "domesticCount": 218,
-    "overseasCount": 49,
-    "dealCount": 54,
+    "articleCount": 274,
+    "domesticCount": 228,
+    "overseasCount": 46,
+    "dealCount": 52,
     "disclosedKrwDealCount": 17,
     "disclosedKrwTotalEok": 205145,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 96
+        "count": 97
       },
       {
         "label": "TIPS / LIPS",
-        "count": 49
+        "count": 51
       },
       {
         "label": "해외 VC",
-        "count": 47
+        "count": 45
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 34
+        "count": 38
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 32
+        "count": 34
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -357,7 +357,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 117
+        "count": 118
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -365,7 +365,7 @@
       },
       {
         "label": "선정",
-        "count": 16
+        "count": 18
       },
       {
         "label": "모집",
@@ -373,37 +373,37 @@
       },
       {
         "label": "실증·PoC",
-        "count": 9
+        "count": 8
       },
       {
         "label": "인수·M&A",
         "count": 6
       },
       {
+        "label": "지원사업",
+        "count": 6
+      },
+      {
         "label": "협약",
-        "count": 5
+        "count": 6
       },
       {
         "label": "세컨더리",
         "count": 4
       },
       {
-        "label": "지원사업",
-        "count": 4
+        "label": "펀드결성",
+        "count": 3
       },
       {
         "label": "출시·상용화",
-        "count": 3
-      },
-      {
-        "label": "펀드결성",
-        "count": 3
+        "count": 2
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 107
+        "count": 108
       },
       {
         "label": "로봇",
@@ -415,7 +415,7 @@
       },
       {
         "label": "반도체",
-        "count": 2
+        "count": 3
       },
       {
         "label": "기후테크·ESG",
@@ -471,7 +471,7 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 33
+        "count": 31
       },
       {
         "label": "스타트업투데이",
@@ -479,7 +479,7 @@
       },
       {
         "label": "벤처스퀘어",
-        "count": 21
+        "count": 20
       },
       {
         "label": "머니투데이",
@@ -487,14 +487,14 @@
       },
       {
         "label": "연합뉴스",
-        "count": 17
-      },
-      {
-        "label": "TechCrunch",
-        "count": 16
+        "count": 18
       },
       {
         "label": "AI타임스",
+        "count": 15
+      },
+      {
+        "label": "TechCrunch",
         "count": 15
       },
       {
@@ -503,11 +503,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-26",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-27",
         "total": 5,
@@ -647,9 +642,25 @@
         "date": "2026-10-25",
         "total": 11,
         "overseas": 1
+      },
+      {
+        "date": "2026-10-26",
+        "total": 15,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-25",
+        "company": "네이션에이",
+        "fundingAmount": "85억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "네이션에이, 85억 시리즈A 유치…AI 영상 제작 워크플로우 내재화",
+        "url": "https://www.bloter.net/news/articleView.html?idxno=676622",
+        "source": "블로터"
+      },
       {
         "date": "2026-10-23",
         "company": "Intuitivo",
@@ -660,17 +671,6 @@
         "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
         "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-23",
-        "company": "네이션에이",
-        "fundingAmount": "85억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "네이션에이, 85억 원 규모 시리즈 A 클로징∙∙∙인공지능 영상 제작 플랫폼 본격 가동",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53321",
-        "source": "스타트업투데이"
       },
       {
         "date": "2026-10-22",
@@ -872,8 +872,8 @@
       }
     ],
     "previous": {
-      "articleCount": 125,
-      "dealCount": 43,
+      "articleCount": 122,
+      "dealCount": 42,
       "briefingDays": 30
     }
   }
