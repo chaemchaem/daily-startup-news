@@ -1,66 +1,70 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-26T00:11:40.351Z",
-  "latestDate": "2026-10-26",
+  "generatedAt": "2026-10-27T00:11:54.541Z",
+  "latestDate": "2026-10-27",
   "weekly": {
-    "from": "2026-10-20",
-    "to": "2026-10-26",
+    "from": "2026-10-21",
+    "to": "2026-10-27",
     "briefingDays": 7,
-    "articleCount": 64,
-    "domesticCount": 53,
+    "articleCount": 70,
+    "domesticCount": 59,
     "overseasCount": 11,
-    "dealCount": 13,
+    "dealCount": 14,
     "disclosedKrwDealCount": 5,
     "disclosedKrwTotalEok": 200455,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 22
+        "count": 23
       },
       {
         "label": "TIPS / LIPS",
         "count": 16
       },
       {
-        "label": "해외 VC",
-        "count": 10
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 11
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 9
+        "label": "해외 VC",
+        "count": 11
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 7
+        "count": 9
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 33
+        "count": 36
       },
       {
         "label": "선정",
-        "count": 4
+        "count": 5
+      },
+      {
+        "label": "협약",
+        "count": 3
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 3
       },
       {
         "label": "모집",
-        "count": 3
+        "count": 2
       },
       {
         "label": "지원사업",
         "count": 2
       },
       {
-        "label": "협약",
-        "count": 2
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 2
-      },
-      {
         "label": "실증·PoC",
+        "count": 1
+      },
+      {
+        "label": "펀드결성",
         "count": 1
       }
     ],
@@ -98,15 +102,19 @@
     ],
     "topSources": [
       {
+        "label": "EU-Startups",
+        "count": 7
+      },
+      {
         "label": "머니투데이",
         "count": 6
       },
       {
-        "label": "EU-Startups",
-        "count": 6
+        "label": "아주경제",
+        "count": 5
       },
       {
-        "label": "TechCrunch",
+        "label": "이투데이",
         "count": 5
       },
       {
@@ -114,28 +122,19 @@
         "count": 4
       },
       {
-        "label": "이투데이",
+        "label": "연합뉴스",
         "count": 4
       },
       {
-        "label": "아주경제",
-        "count": 3
+        "label": "파이낸셜뉴스",
+        "count": 4
       },
       {
-        "label": "연합뉴스",
-        "count": 3
-      },
-      {
-        "label": "테크M",
-        "count": 3
+        "label": "TechCrunch",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-20",
-        "total": 12,
-        "overseas": 2
-      },
       {
         "date": "2026-10-21",
         "total": 12,
@@ -165,19 +164,35 @@
         "date": "2026-10-26",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-27",
+        "total": 15,
+        "overseas": 2
       }
     ],
     "deals": [
       {
-        "date": "2026-10-25",
+        "date": "2026-10-26",
         "company": "네이션에이",
         "fundingAmount": "85억 원",
         "fundingStage": "시리즈A",
-        "industry": "AI",
+        "industry": null,
         "overseas": false,
-        "title": "네이션에이, 85억 시리즈A 유치…AI 영상 제작 워크플로우 내재화",
-        "url": "https://www.bloter.net/news/articleView.html?idxno=676622",
-        "source": "블로터"
+        "title": "네이션에이, 시리즈A 85억원 유치…누적 투자액 117억원",
+        "url": "https://it.chosun.com/news/articleView.html?idxno=2023092172777",
+        "source": "IT조선"
+      },
+      {
+        "date": "2026-10-26",
+        "company": "Matiks",
+        "fundingAmount": "$10M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Matiks raises $10M to expand its math and puzzle gaming platform",
+        "url": "https://techcrunch.com/2026/10/26/matiks-raises-10m-to-expand-its-math-and-puzzle-gaming-platform/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-10-23",
@@ -313,41 +328,41 @@
       }
     ],
     "previous": {
-      "articleCount": 64,
-      "dealCount": 16,
+      "articleCount": 63,
+      "dealCount": 14,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-27",
-    "to": "2026-10-26",
+    "from": "2026-09-28",
+    "to": "2026-10-27",
     "briefingDays": 29,
-    "articleCount": 274,
-    "domesticCount": 228,
-    "overseasCount": 46,
-    "dealCount": 52,
+    "articleCount": 282,
+    "domesticCount": 237,
+    "overseasCount": 45,
+    "dealCount": 53,
     "disclosedKrwDealCount": 17,
     "disclosedKrwTotalEok": 205145,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 97
+        "count": 100
       },
       {
         "label": "TIPS / LIPS",
-        "count": 51
+        "count": 54
       },
       {
         "label": "해외 VC",
-        "count": 45
+        "count": 44
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 38
+        "count": 40
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 34
+        "count": 35
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -357,11 +372,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 118
+        "count": 123
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 22
+        "count": 23
       },
       {
         "label": "선정",
@@ -369,11 +384,11 @@
       },
       {
         "label": "모집",
-        "count": 9
+        "count": 10
       },
       {
         "label": "실증·PoC",
-        "count": 8
+        "count": 9
       },
       {
         "label": "인수·M&A",
@@ -393,17 +408,17 @@
       },
       {
         "label": "펀드결성",
-        "count": 3
+        "count": 4
       },
       {
         "label": "출시·상용화",
-        "count": 2
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 108
+        "count": 109
       },
       {
         "label": "로봇",
@@ -471,43 +486,38 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 31
+        "count": 30
       },
       {
         "label": "스타트업투데이",
         "count": 23
       },
       {
-        "label": "벤처스퀘어",
+        "label": "머니투데이",
         "count": 20
       },
       {
-        "label": "머니투데이",
-        "count": 19
+        "label": "연합뉴스",
+        "count": 20
       },
       {
-        "label": "연합뉴스",
-        "count": 18
+        "label": "벤처스퀘어",
+        "count": 19
       },
       {
         "label": "AI타임스",
         "count": 15
       },
       {
-        "label": "TechCrunch",
+        "label": "IT조선",
         "count": 15
       },
       {
-        "label": "아시아경제",
-        "count": 13
+        "label": "TechCrunch",
+        "count": 15
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-27",
-        "total": 5,
-        "overseas": 3
-      },
       {
         "date": "2026-09-29",
         "total": 14,
@@ -647,19 +657,35 @@
         "date": "2026-10-26",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-10-27",
+        "total": 15,
+        "overseas": 2
       }
     ],
     "deals": [
       {
-        "date": "2026-10-25",
+        "date": "2026-10-26",
         "company": "네이션에이",
         "fundingAmount": "85억 원",
         "fundingStage": "시리즈A",
-        "industry": "AI",
+        "industry": null,
         "overseas": false,
-        "title": "네이션에이, 85억 시리즈A 유치…AI 영상 제작 워크플로우 내재화",
-        "url": "https://www.bloter.net/news/articleView.html?idxno=676622",
-        "source": "블로터"
+        "title": "네이션에이, 시리즈A 85억원 유치…누적 투자액 117억원",
+        "url": "https://it.chosun.com/news/articleView.html?idxno=2023092172777",
+        "source": "IT조선"
+      },
+      {
+        "date": "2026-10-26",
+        "company": "Matiks",
+        "fundingAmount": "$10M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Matiks raises $10M to expand its math and puzzle gaming platform",
+        "url": "https://techcrunch.com/2026/10/26/matiks-raises-10m-to-expand-its-math-and-puzzle-gaming-platform/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-10-23",
@@ -858,22 +884,11 @@
         "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
         "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "Robotics",
-        "fundingAmount": "€1 million",
-        "fundingStage": "Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
-        "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 122,
-      "dealCount": 42,
+      "articleCount": 125,
+      "dealCount": 40,
       "briefingDays": 30
     }
   }
