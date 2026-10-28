@@ -1,54 +1,58 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-27T00:11:54.541Z",
-  "latestDate": "2026-10-27",
+  "generatedAt": "2026-10-28T00:11:49.367Z",
+  "latestDate": "2026-10-28",
   "weekly": {
-    "from": "2026-10-21",
-    "to": "2026-10-27",
+    "from": "2026-10-22",
+    "to": "2026-10-28",
     "briefingDays": 7,
-    "articleCount": 70,
-    "domesticCount": 59,
-    "overseasCount": 11,
+    "articleCount": 74,
+    "domesticCount": 62,
+    "overseasCount": 12,
     "dealCount": 14,
     "disclosedKrwDealCount": 5,
-    "disclosedKrwTotalEok": 200455,
+    "disclosedKrwTotalEok": 202620,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 23
+        "count": 20
       },
       {
         "label": "TIPS / LIPS",
-        "count": 16
+        "count": 18
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 11
+        "count": 14
       },
       {
         "label": "해외 VC",
-        "count": 11
+        "count": 12
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 9
+        "count": 10
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 36
+        "count": 35
       },
       {
         "label": "선정",
-        "count": 5
-      },
-      {
-        "label": "협약",
-        "count": 3
+        "count": 7
       },
       {
         "label": "TIPS·LIPS 선정",
+        "count": 4
+      },
+      {
+        "label": "실증·PoC",
+        "count": 3
+      },
+      {
+        "label": "협약",
         "count": 3
       },
       {
@@ -58,10 +62,6 @@
       {
         "label": "지원사업",
         "count": 2
-      },
-      {
-        "label": "실증·PoC",
-        "count": 1
       },
       {
         "label": "펀드결성",
@@ -96,21 +96,41 @@
         "count": 1
       },
       {
+        "label": "후속 투자",
+        "count": 1
+      },
+      {
+        "label": "Series A",
+        "count": 1
+      },
+      {
         "label": "Series E",
         "count": 1
       }
     ],
     "topSources": [
       {
-        "label": "EU-Startups",
-        "count": 7
-      },
-      {
         "label": "머니투데이",
         "count": 6
       },
       {
         "label": "아주경제",
+        "count": 6
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 6
+      },
+      {
+        "label": "EU-Startups",
+        "count": 6
+      },
+      {
+        "label": "TechCrunch",
+        "count": 6
+      },
+      {
+        "label": "연합뉴스",
         "count": 5
       },
       {
@@ -120,26 +140,9 @@
       {
         "label": "스타트업투데이",
         "count": 4
-      },
-      {
-        "label": "연합뉴스",
-        "count": 4
-      },
-      {
-        "label": "파이낸셜뉴스",
-        "count": 4
-      },
-      {
-        "label": "TechCrunch",
-        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-21",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-10-22",
         "total": 12,
@@ -169,9 +172,36 @@
         "date": "2026-10-27",
         "total": 15,
         "overseas": 2
+      },
+      {
+        "date": "2026-10-28",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-27",
+        "company": "General Compute",
+        "fundingAmount": "$100 million",
+        "fundingStage": "Series A",
+        "industry": null,
+        "overseas": true,
+        "title": "General Compute raises $100 million Series A, countering the neocloud disaster narrative",
+        "url": "https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-27",
+        "company": "포스코그룹",
+        "fundingAmount": "2,175억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "후속 투자 2,175억 원 견인 포스코그룹, 계열사 실증 사업부터 검증해야",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53357",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-10-26",
         "company": "네이션에이",
@@ -303,66 +333,44 @@
         "title": "Otter.ai raises $320 million from General Catalyst’s growth fund for its meeting tool",
         "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-20",
-        "company": "Coherence Quantum",
-        "fundingAmount": "€2.78 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Espoo's Coherence Quantum raises €2.78 million to build infrastructure for larger quantum computers",
-        "url": "https://www.eu-startups.com/2026/10/espoo-based-coherence-quantum-raises-e2-78-million-to-build-infrastructure-for-larger-quantum-computers/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-19",
-        "company": "참케어",
-        "fundingAmount": "10억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "참케어, ‘유한양행’으로부터 전략적 투자 유치∙∙∙병원 혈압 모니터링 시장 확대",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53271",
-        "source": "스타트업투데이"
       }
     ],
     "previous": {
-      "articleCount": 63,
-      "dealCount": 14,
+      "articleCount": 59,
+      "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-28",
-    "to": "2026-10-27",
-    "briefingDays": 29,
-    "articleCount": 282,
-    "domesticCount": 237,
-    "overseasCount": 45,
-    "dealCount": 53,
-    "disclosedKrwDealCount": 17,
-    "disclosedKrwTotalEok": 205145,
+    "from": "2026-09-29",
+    "to": "2026-10-28",
+    "briefingDays": 30,
+    "articleCount": 294,
+    "domesticCount": 246,
+    "overseasCount": 48,
+    "dealCount": 55,
+    "disclosedKrwDealCount": 18,
+    "disclosedKrwTotalEok": 207320,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 100
+        "count": 101
       },
       {
         "label": "TIPS / LIPS",
-        "count": 54
+        "count": 57
       },
       {
         "label": "해외 VC",
-        "count": 44
+        "count": 47
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 40
+        "count": 43
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 35
+        "count": 37
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -372,23 +380,23 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 123
+        "count": 128
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 23
+        "count": 24
       },
       {
         "label": "선정",
-        "count": 18
+        "count": 20
+      },
+      {
+        "label": "실증·PoC",
+        "count": 11
       },
       {
         "label": "모집",
         "count": 10
-      },
-      {
-        "label": "실증·PoC",
-        "count": 9
       },
       {
         "label": "인수·M&A",
@@ -418,7 +426,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 109
+        "count": 111
       },
       {
         "label": "로봇",
@@ -447,11 +455,15 @@
         "count": 4
       },
       {
+        "label": "Series A",
+        "count": 3
+      },
+      {
         "label": "시드투자",
         "count": 2
       },
       {
-        "label": "Series A",
+        "label": "후속 투자",
         "count": 2
       },
       {
@@ -464,10 +476,6 @@
       },
       {
         "label": "프리시리즈A",
-        "count": 1
-      },
-      {
-        "label": "후속 투자",
         "count": 1
       },
       {
@@ -486,34 +494,34 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 30
+        "count": 31
       },
       {
         "label": "스타트업투데이",
-        "count": 23
+        "count": 24
       },
       {
         "label": "머니투데이",
-        "count": 20
+        "count": 21
       },
       {
         "label": "연합뉴스",
-        "count": 20
+        "count": 21
       },
       {
         "label": "벤처스퀘어",
         "count": 19
       },
       {
-        "label": "AI타임스",
-        "count": 15
-      },
-      {
-        "label": "IT조선",
-        "count": 15
-      },
-      {
         "label": "TechCrunch",
+        "count": 17
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 16
+      },
+      {
+        "label": "AI타임스",
         "count": 15
       }
     ],
@@ -662,9 +670,36 @@
         "date": "2026-10-27",
         "total": 15,
         "overseas": 2
+      },
+      {
+        "date": "2026-10-28",
+        "total": 15,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-27",
+        "company": "General Compute",
+        "fundingAmount": "$100 million",
+        "fundingStage": "Series A",
+        "industry": null,
+        "overseas": true,
+        "title": "General Compute raises $100 million Series A, countering the neocloud disaster narrative",
+        "url": "https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-27",
+        "company": "포스코그룹",
+        "fundingAmount": "2,175억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "후속 투자 2,175억 원 견인 포스코그룹, 계열사 실증 사업부터 검증해야",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53357",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-10-26",
         "company": "네이션에이",
@@ -862,34 +897,12 @@
         "title": "Oslo-based AI-native engineering firm Solvera raises €5.62 million pre-Seed after July 2026 launch",
         "url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "히츠",
-        "fundingAmount": "183억 원",
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "\"신약 개발 AI 플랫폼 공급\"…히츠, 183억 시리즈B 투자유치",
-        "url": "https://www.mt.co.kr/future/2026/10/15/2026101509284260991",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-14",
-        "company": "Pluto Security",
-        "fundingAmount": "$42M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
-        "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 125,
-      "dealCount": 40,
-      "briefingDays": 30
+      "articleCount": 122,
+      "dealCount": 39,
+      "briefingDays": 29
     }
   }
 }
