@@ -1,33 +1,33 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-28T00:11:49.367Z",
-  "latestDate": "2026-10-28",
+  "generatedAt": "2026-10-29T00:11:53.055Z",
+  "latestDate": "2026-10-29",
   "weekly": {
-    "from": "2026-10-22",
-    "to": "2026-10-28",
+    "from": "2026-10-23",
+    "to": "2026-10-29",
     "briefingDays": 7,
-    "articleCount": 74,
-    "domesticCount": 62,
-    "overseasCount": 12,
-    "dealCount": 14,
-    "disclosedKrwDealCount": 5,
-    "disclosedKrwTotalEok": 202620,
+    "articleCount": 79,
+    "domesticCount": 66,
+    "overseasCount": 13,
+    "dealCount": 17,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 220121.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 20
+        "count": 23
       },
       {
         "label": "TIPS / LIPS",
-        "count": 18
+        "count": 20
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 14
+        "count": 13
       },
       {
         "label": "해외 VC",
-        "count": 12
+        "count": 13
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -37,7 +37,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 35
+        "count": 40
       },
       {
         "label": "선정",
@@ -45,7 +45,7 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 4
+        "count": 5
       },
       {
         "label": "실증·PoC",
@@ -71,11 +71,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 24
-      },
-      {
-        "label": "로봇",
-        "count": 1
+        "count": 25
       },
       {
         "label": "반도체",
@@ -84,7 +80,11 @@
     ],
     "byStage": [
       {
-        "label": "시리즈A",
+        "label": "시리즈C",
+        "count": 2
+      },
+      {
+        "label": "후속 투자",
         "count": 2
       },
       {
@@ -92,11 +92,7 @@
         "count": 1
       },
       {
-        "label": "시리즈C",
-        "count": 1
-      },
-      {
-        "label": "후속 투자",
+        "label": "시리즈A",
         "count": 1
       },
       {
@@ -111,18 +107,22 @@
     "topSources": [
       {
         "label": "머니투데이",
-        "count": 6
+        "count": 7
+      },
+      {
+        "label": "EU-Startups",
+        "count": 7
       },
       {
         "label": "아주경제",
         "count": 6
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "이투데이",
         "count": 6
       },
       {
-        "label": "EU-Startups",
+        "label": "파이낸셜뉴스",
         "count": 6
       },
       {
@@ -134,20 +134,11 @@
         "count": 5
       },
       {
-        "label": "이투데이",
-        "count": 5
-      },
-      {
         "label": "스타트업투데이",
         "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-22",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-10-23",
         "total": 13,
@@ -177,9 +168,58 @@
         "date": "2026-10-28",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-29",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-29",
+        "company": "Upwind",
+        "fundingAmount": "$400M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
+        "url": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-29",
+        "company": "소상공인",
+        "fundingAmount": "1227억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치",
+        "url": "https://view.asiae.co.kr/article/2026102816561363049",
+        "source": "아시아경제"
+      },
+      {
+        "date": "2026-10-29",
+        "company": "특별시의원",
+        "fundingAmount": "1조6040억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "김정희 특별시의원, 광양경자청 투자유치·일자리 실적 부진 지적",
+        "url": "https://www.etoday.co.kr/news/view/2641403",
+        "source": "이투데이"
+      },
+      {
+        "date": "2026-10-28",
+        "company": "Artiso",
+        "fundingAmount": "€3 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Barcelona’s Artiso raises over €3 million to scale its AI operating system for fashion teams",
+        "url": "https://www.eu-startups.com/2026/10/barcelonas-artiso-raises-over-e3-million-to-scale-its-ai-operating-system-for-fashion-teams/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-27",
         "company": "General Compute",
@@ -201,6 +241,17 @@
         "title": "후속 투자 2,175억 원 견인 포스코그룹, 계열사 실증 사업부터 검증해야",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53357",
         "source": "스타트업투데이"
+      },
+      {
+        "date": "2026-10-27",
+        "company": "아모지",
+        "fundingAmount": "264.8억 원",
+        "fundingStage": "시리즈C",
+        "industry": null,
+        "overseas": false,
+        "title": "암모니아 발전기술 '아모지', 수은으로부터 264.8억 투자 유치",
+        "url": "https://wowtale.net/2026/10/27/266975/",
+        "source": "와우테일"
       },
       {
         "date": "2026-10-26",
@@ -311,62 +362,40 @@
         "title": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
         "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-20",
-        "company": "마이베네핏",
-        "fundingAmount": "30억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "마이베네핏, 시리즈A 30억 투자 유치…인바디 전략적 투자자로 합류",
-        "url": "https://www.donga.com/news/Economy/article/all/20261020/134876579/1",
-        "source": "동아일보"
-      },
-      {
-        "date": "2026-10-20",
-        "company": "Otter.ai",
-        "fundingAmount": "$320 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Otter.ai raises $320 million from General Catalyst’s growth fund for its meeting tool",
-        "url": "https://techcrunch.com/2026/10/20/otter-ai-raises-320-million-from-general-catalysts-growth-fund-for-its-meeting-tool/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 59,
+      "articleCount": 57,
       "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-09-29",
-    "to": "2026-10-28",
+    "from": "2026-09-30",
+    "to": "2026-10-29",
     "briefingDays": 30,
     "articleCount": 294,
-    "domesticCount": 246,
-    "overseasCount": 48,
-    "dealCount": 55,
-    "disclosedKrwDealCount": 18,
-    "disclosedKrwTotalEok": 207320,
+    "domesticCount": 247,
+    "overseasCount": 47,
+    "dealCount": 58,
+    "disclosedKrwDealCount": 20,
+    "disclosedKrwTotalEok": 224631.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 101
+        "count": 103
       },
       {
         "label": "TIPS / LIPS",
-        "count": 57
+        "count": 59
       },
       {
         "label": "해외 VC",
-        "count": 47
+        "count": 46
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 43
+        "count": 40
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -380,22 +409,22 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 128
+        "count": 131
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 24
+        "count": 25
       },
       {
         "label": "선정",
-        "count": 20
-      },
-      {
-        "label": "실증·PoC",
-        "count": 11
+        "count": 21
       },
       {
         "label": "모집",
+        "count": 10
+      },
+      {
+        "label": "실증·PoC",
         "count": 10
       },
       {
@@ -426,7 +455,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 111
+        "count": 109
       },
       {
         "label": "로봇",
@@ -452,7 +481,11 @@
       },
       {
         "label": "시리즈B",
-        "count": 4
+        "count": 3
+      },
+      {
+        "label": "후속 투자",
+        "count": 3
       },
       {
         "label": "Series A",
@@ -463,15 +496,11 @@
         "count": 2
       },
       {
-        "label": "후속 투자",
+        "label": "시리즈C",
         "count": 2
       },
       {
         "label": "시드 투자",
-        "count": 1
-      },
-      {
-        "label": "시리즈C",
         "count": 1
       },
       {
@@ -494,43 +523,38 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 31
+        "count": 30
       },
       {
         "label": "스타트업투데이",
-        "count": 24
+        "count": 23
       },
       {
         "label": "머니투데이",
-        "count": 21
+        "count": 22
       },
       {
         "label": "연합뉴스",
         "count": 21
       },
       {
-        "label": "벤처스퀘어",
-        "count": 19
-      },
-      {
         "label": "TechCrunch",
         "count": 17
+      },
+      {
+        "label": "벤처스퀘어",
+        "count": 16
       },
       {
         "label": "파이낸셜뉴스",
         "count": 16
       },
       {
-        "label": "AI타임스",
+        "label": "아시아경제",
         "count": 15
       }
     ],
     "daily": [
-      {
-        "date": "2026-09-29",
-        "total": 14,
-        "overseas": 3
-      },
       {
         "date": "2026-09-30",
         "total": 15,
@@ -675,9 +699,58 @@
         "date": "2026-10-28",
         "total": 15,
         "overseas": 3
+      },
+      {
+        "date": "2026-10-29",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
+      {
+        "date": "2026-10-29",
+        "company": "Upwind",
+        "fundingAmount": "$400M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
+        "url": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-10-29",
+        "company": "소상공인",
+        "fundingAmount": "1227억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치",
+        "url": "https://view.asiae.co.kr/article/2026102816561363049",
+        "source": "아시아경제"
+      },
+      {
+        "date": "2026-10-29",
+        "company": "특별시의원",
+        "fundingAmount": "1조6040억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "김정희 특별시의원, 광양경자청 투자유치·일자리 실적 부진 지적",
+        "url": "https://www.etoday.co.kr/news/view/2641403",
+        "source": "이투데이"
+      },
+      {
+        "date": "2026-10-28",
+        "company": "Artiso",
+        "fundingAmount": "€3 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Barcelona’s Artiso raises over €3 million to scale its AI operating system for fashion teams",
+        "url": "https://www.eu-startups.com/2026/10/barcelonas-artiso-raises-over-e3-million-to-scale-its-ai-operating-system-for-fashion-teams/",
+        "source": "EU-Startups"
+      },
       {
         "date": "2026-10-27",
         "company": "General Compute",
@@ -699,6 +772,17 @@
         "title": "후속 투자 2,175억 원 견인 포스코그룹, 계열사 실증 사업부터 검증해야",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53357",
         "source": "스타트업투데이"
+      },
+      {
+        "date": "2026-10-27",
+        "company": "아모지",
+        "fundingAmount": "264.8억 원",
+        "fundingStage": "시리즈C",
+        "industry": null,
+        "overseas": false,
+        "title": "암모니아 발전기술 '아모지', 수은으로부터 264.8억 투자 유치",
+        "url": "https://wowtale.net/2026/10/27/266975/",
+        "source": "와우테일"
       },
       {
         "date": "2026-10-26",
@@ -842,65 +926,10 @@
         "title": "Espoo's Coherence Quantum raises €2.78 million to build infrastructure for larger quantum computers",
         "url": "https://www.eu-startups.com/2026/10/espoo-based-coherence-quantum-raises-e2-78-million-to-build-infrastructure-for-larger-quantum-computers/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-19",
-        "company": "참케어",
-        "fundingAmount": "10억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "참케어, ‘유한양행’으로부터 전략적 투자 유치∙∙∙병원 혈압 모니터링 시장 확대",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53271",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "휴로보틱스",
-        "fundingAmount": "250억 원",
-        "fundingStage": "시리즈A",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "휴로보틱스, 250억원 시리즈A 투자유치",
-        "url": "https://view.asiae.co.kr/article/2026101508245845605",
-        "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "오큐티",
-        "fundingAmount": "140억 원",
-        "fundingStage": "프리시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "양자컴퓨팅 기업 오큐티, 140억원 규모 프리 시리즈A 투자 받는다",
-        "url": "https://view.asiae.co.kr/article/2026101508104908540",
-        "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "휴로틱스",
-        "fundingAmount": "250억 원",
-        "fundingStage": "시리즈A",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "휴로틱스, 250억원 규모 시리즈A 투자 유치…“웨어러블 로봇 사업 확대”",
-        "url": "https://www.mk.co.kr/news/business/12176786",
-        "source": "매일경제"
-      },
-      {
-        "date": "2026-10-15",
-        "company": "Solvera",
-        "fundingAmount": "€5.62 million",
-        "fundingStage": "pre-Seed",
-        "industry": "AI",
-        "overseas": true,
-        "title": "Oslo-based AI-native engineering firm Solvera raises €5.62 million pre-Seed after July 2026 launch",
-        "url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 122,
+      "articleCount": 131,
       "dealCount": 39,
       "briefingDays": 29
     }
