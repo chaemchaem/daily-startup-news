@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-31T09:00:00+09:00",
-  "collectedAt": "2026-10-31T09:12:01+09:00",
+  "generatedAt": "2026-11-01T09:00:00+09:00",
+  "collectedAt": "2026-11-01T09:11:43+09:00",
   "range": {
-    "from": "2026-10-29T09:00:00+09:00",
-    "to": "2026-10-31T09:00:00+09:00"
+    "from": "2026-10-30T09:00:00+09:00",
+    "to": "2026-11-01T09:00:00+09:00"
   },
-  "totalCount": 14,
+  "totalCount": 12,
   "categoryCounts": {
     "VC / AC": 5,
     "TIPS / LIPS": 5,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 4,
-    "스타트업 / 벤처기업 / 초기창업": 0,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
+    "스타트업 / 벤처기업 / 초기창업": 1,
     "세컨더리 / 구주매각": 0,
     "해외 VC": 0
   },
@@ -31,7 +31,7 @@
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
       "industry": "로봇",
-      "score": 93
+      "score": 91
     },
     {
       "id": "f9ab0c89990abaf0",
@@ -46,7 +46,7 @@
       "resolvedUrl": null,
       "eventType": "실증·PoC",
       "industry": "AI",
-      "score": 93
+      "score": 91
     },
     {
       "id": "6e33f78048891247",
@@ -61,43 +61,7 @@
       "resolvedUrl": null,
       "company": "중진공",
       "eventType": "투자유치",
-      "score": 85
-    },
-    {
-      "id": "30ef7ff9eded1f07",
-      "category": "VC / AC",
-      "title": "아이즈엔터테인먼트, 200억원 규모 시리즈A 투자 유치...AI 메신저 개발 속도",
-      "publishedAt": "2026-10-29",
-      "summary": "/ 아이즈엔터테인먼트가 카카오게임즈와 크래프톤으로부터 총 200억원 규모의 전략적 투자를 유치했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "테크M",
-      "url": "https://www.techm.kr/news/articleView.html?idxno=156652",
-      "resolvedUrl": null,
-      "company": "아이즈엔터테인먼트",
-      "fundingAmount": "200억 원",
-      "fundingStage": "시리즈A",
-      "eventType": "투자유치",
-      "industry": "AI",
-      "score": 79
-    },
-    {
-      "id": "ca671367052e3871",
-      "category": "VC / AC",
-      "title": "퓨리오사AI, 8,200억원 시리즈D 투자유치…기업가치 3.8조원",
-      "publishedAt": "2026-10-29",
-      "summary": "퓨리오사AI는 올해 1월 4,500억~7,500억원 규모를 목표로 시리즈D 투자유치를 시작했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "와우테일",
-      "url": "https://wowtale.net/2026/10/29/267133/",
-      "resolvedUrl": null,
-      "company": "퓨리오사AI",
-      "fundingAmount": "8,200억 원",
-      "fundingStage": "시리즈D",
-      "eventType": "투자유치",
-      "industry": "AI",
-      "score": 77
+      "score": 83
     },
     {
       "id": "b22efc2fe5718069",
@@ -114,7 +78,7 @@
       "fundingAmount": "166억 원",
       "fundingStage": "시리즈D",
       "eventType": "투자유치",
-      "score": 76
+      "score": 74
     },
     {
       "id": "081b9eaa01410f6c",
@@ -131,37 +95,50 @@
       "fundingStage": "시리즈D",
       "eventType": "투자유치",
       "industry": "우주항공",
-      "score": 72
+      "score": 70
     },
     {
-      "id": "fe670b2c6b09867b",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "삼성금융, AI 핀테크 스타트업 4곳 선정…사업화 협력 확대",
-      "publishedAt": "2026-10-29",
-      "summary": "삼성증권 삼성금융네트웍스가 인공지능(AI)과 금융 서비스를 접목한 스타트업 4곳을 최우수 기업으로 선정했다.",
+      "id": "f5e009ec3fd1d951",
+      "category": "TIPS / LIPS",
+      "title": "포레스트잘란, AI 심사로 소상공인 대출 연결 [서울AI허브 2027]",
+      "publishedAt": "2026-10-31",
+      "summary": "2025년에는 글로벌 팁스(TIPS)에 선정됐고 싱가포르 법인 ‘포레스트잘란 원(One)’을 설립했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "파이낸셜뉴스",
-      "url": "https://www.fnnews.com/news/202610291413532454",
+      "source": "IT조선",
+      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092173180",
       "resolvedUrl": null,
-      "company": "삼성금융",
-      "eventType": "선정",
+      "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
-      "score": 72
+      "score": 70
     },
     {
-      "id": "13afb9bcd51df494",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "중기부, AI 스타트업의 유니콘 도약, 현장 의견으로 정책 완성도 높인다",
-      "publishedAt": "2026-10-29",
-      "summary": "중기부는 제시된 의견을 면밀히 검토해 전략에 반영하고, AI 스타트업의 성장과 글로벌 경쟁력 확보를 뒷받침할 정책을 구체화해 나갈 계획이다.",
+      "id": "b5c6e70b16351833",
+      "category": "TIPS / LIPS",
+      "title": "피플즈리그, 패스트푸드 주방일 스스로 하는 피지컬 AI 개발 [서울AI허브 2027]",
+      "publishedAt": "2026-10-31",
+      "summary": "조리로봇 실적 기반으로 글로벌 QSR AI 시장 공략 피플즈리그는 2022년 팁스(TIPS)에 선정됐으며 현재까지 누적 24억원의 투자를 유치했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "중소벤처기업부",
-      "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=1072109",
+      "source": "IT조선",
+      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092173258",
       "resolvedUrl": null,
+      "company": "피플즈리그",
       "industry": "AI",
-      "score": 71
+      "score": 70
+    },
+    {
+      "id": "f98c6b6781ea2e64",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "디캠프 배치 4기 디데이 성료…딥테크 대표 7인 '증명·전환·확장' 공유",
+      "publishedAt": "2026-10-30",
+      "summary": "과학 커뮤니케이터 궤도가 진행을 맡아 '증명'과 '전환', '확장' 세 세션으로 딥테크 스타트업 대표 7명을 소개했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "블로터",
+      "url": "https://www.bloter.net/news/articleView.html?idxno=677290",
+      "resolvedUrl": null,
+      "score": 70
     },
     {
       "id": "d22e9933055f37b4",
@@ -178,65 +155,50 @@
       "fundingAmount": "€2.9 million",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 70
+      "score": 68
     },
     {
-      "id": "7167a42c9c7f76c8",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "박찬대표 '스타트업 육성' 본격화...\"청년이 인천에서 꿈 펼치는 도시 만들 것\"",
-      "publishedAt": "2026-10-29",
-      "summary": "혁신기업 성장·투자유치 지원 박찬대 시장이 '인천스타트업파크 붐업 페스티벌'에서 축사를 하고 있다.",
+      "id": "ce191c30e5485a80",
+      "category": "VC / AC",
+      "title": "판교허브 투자유치 밸류업 패키지, 11월 13일 최종 성과공유회 개최…발표팀 10개사 공개",
+      "publishedAt": "2026-10-30",
+      "summary": "최종 발표팀에 포함되지 않은 20개 팀도 기업별 사업에 관심을 보인 투자자와의 1:1 밋업을 통해 사업과 시장을 설명하고 투자유치 가능성과 후속 협력 기회를 탐색한다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "아주경제",
-      "url": "https://www.ajunews.com/view/20261029224934279",
+      "source": "와우테일",
+      "url": "https://wowtale.net/2026/10/30/267243/",
       "resolvedUrl": null,
       "eventType": "투자유치",
-      "score": 70
-    },
-    {
-      "id": "9186d1ace81c4479",
-      "category": "TIPS / LIPS",
-      "title": "‘스케일업 팁스’ 선정 컨트롤엠, 외식업 AI 비서 고도화 속도낸다",
-      "publishedAt": "2026-10-29",
-      "summary": "AI가 데이터 기반 운영방안 제안 AI 푸드테크 기업 컨트롤엠이 중소벤처기업부의 ‘2026년 스케일업 팁스(일반형)’에 선정됐다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "매일경제",
-      "url": "https://www.mk.co.kr/news/it/12189840",
-      "resolvedUrl": null,
-      "eventType": "TIPS·LIPS 선정",
-      "industry": "AI",
-      "score": 66
-    },
-    {
-      "id": "ac2e1e1ed1508cbd",
-      "category": "TIPS / LIPS",
-      "title": "서울시∙서울경제진흥원, 게임랩 입주기업 모집∙∙∙초기 개발사 인프라 지원",
-      "publishedAt": "2026-10-29",
-      "summary": "이와 함께 모바일 게임 테스트 기기 대여, 네트워킹 및 세미나 등 커뮤니케이션 지원, 서울경제진흥원 게임 지원사업 심사 가점 등 다각적인 혜택이 제공된다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53379",
-      "resolvedUrl": null,
-      "eventType": "모집",
       "score": 64
     },
     {
-      "id": "3aa716b7e9223c12",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "노용석 1차관 \"AI스타트업, 유니콘으로 육성해야\"",
-      "publishedAt": "2026-10-29",
-      "summary": "AI 스타트업 대표들은 AI 스타트업의 기술 실증 지원을 늘리고 정부·공공기관 구매 연계를 확대해달라고 요청했다.",
+      "id": "5f707cf794aefd17",
+      "category": "VC / AC",
+      "title": "희귀 혈액암 항체 신약 드렌바이오, 3억 5,000만 달러 투자유치",
+      "publishedAt": "2026-10-31",
+      "summary": "그런데 이번에 3억 5,000만 달러를 투자유치한 드렌바이오(Dren Bio) 의 주력 신약은 그 반대 방향이다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "뉴시스",
-      "url": "https://www.newsis.com/view/NISX20261029_0003846360",
+      "source": "와우테일",
+      "url": "https://wowtale.net/2026/10/31/267266/",
       "resolvedUrl": null,
-      "eventType": "실증·PoC",
-      "industry": "AI",
-      "score": 59
+      "eventType": "투자유치",
+      "industry": "바이오·헬스케어",
+      "score": 63
+    },
+    {
+      "id": "83466fc028eccd88",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "진주시의회 창업생태계 연구회, 원도심 창업 활성화 방안 논의",
+      "publishedAt": "2026-10-30",
+      "summary": "참석자들은 지역 창업 활성화를 위한 조례 제정과 예산 지원, 기존 창업 지원사업의 운영 실태 및 성과 점검 등 지방의회 차원에서 검토할 수 있는 정책 수단도 논의했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "아시아경제",
+      "url": "https://view.asiae.co.kr/article/2026103019552931128",
+      "resolvedUrl": null,
+      "eventType": "지원사업",
+      "score": 41
     }
   ]
 }

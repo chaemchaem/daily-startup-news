@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-31T00:12:01.485Z",
-  "latestDate": "2026-10-31",
+  "generatedAt": "2026-11-01T00:11:43.131Z",
+  "latestDate": "2026-11-01",
   "weekly": {
-    "from": "2026-10-25",
-    "to": "2026-10-31",
+    "from": "2026-10-26",
+    "to": "2026-11-01",
     "briefingDays": 7,
-    "articleCount": 78,
-    "domesticCount": 68,
-    "overseasCount": 10,
-    "dealCount": 17,
+    "articleCount": 75,
+    "domesticCount": 66,
+    "overseasCount": 9,
+    "dealCount": 16,
     "disclosedKrwDealCount": 9,
     "disclosedKrwTotalEok": 28503.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 24
+        "count": 22
       },
       {
         "label": "TIPS / LIPS",
@@ -31,28 +31,28 @@
       },
       {
         "label": "해외 VC",
-        "count": 9
+        "count": 8
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 39
+        "count": 36
       },
       {
         "label": "선정",
-        "count": 8
+        "count": 7
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 6
+        "count": 7
       },
       {
         "label": "실증·PoC",
         "count": 5
       },
       {
-        "label": "모집",
+        "label": "지원사업",
         "count": 3
       },
       {
@@ -60,7 +60,7 @@
         "count": 3
       },
       {
-        "label": "지원사업",
+        "label": "모집",
         "count": 2
       },
       {
@@ -75,6 +75,10 @@
       },
       {
         "label": "로봇",
+        "count": 1
+      },
+      {
+        "label": "바이오·헬스케어",
         "count": 1
       },
       {
@@ -114,16 +118,16 @@
     ],
     "topSources": [
       {
+        "label": "와우테일",
+        "count": 9
+      },
+      {
         "label": "머니투데이",
-        "count": 8
+        "count": 7
       },
       {
         "label": "아주경제",
-        "count": 7
-      },
-      {
-        "label": "와우테일",
-        "count": 7
+        "count": 6
       },
       {
         "label": "파이낸셜뉴스",
@@ -131,27 +135,22 @@
       },
       {
         "label": "EU-Startups",
-        "count": 6
+        "count": 5
+      },
+      {
+        "label": "IT조선",
+        "count": 5
+      },
+      {
+        "label": "블로터",
+        "count": 4
       },
       {
         "label": "스타트업투데이",
-        "count": 5
-      },
-      {
-        "label": "연합뉴스",
-        "count": 5
-      },
-      {
-        "label": "뉴시스",
         "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-25",
-        "total": 11,
-        "overseas": 1
-      },
       {
         "date": "2026-10-26",
         "total": 15,
@@ -180,6 +179,11 @@
       {
         "date": "2026-10-31",
         "total": 14,
+        "overseas": 1
+      },
+      {
+        "date": "2026-11-01",
+        "total": 12,
         "overseas": 1
       }
     ],
@@ -359,47 +363,36 @@
         "title": "Matiks raises $10M to expand its math and puzzle gaming platform",
         "url": "https://techcrunch.com/2026/10/26/matiks-raises-10m-to-expand-its-math-and-puzzle-gaming-platform/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-23",
-        "company": "Intuitivo",
-        "fundingAmount": "€1.35 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
-        "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 62,
+      "articleCount": 61,
       "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-02",
-    "to": "2026-10-31",
+    "from": "2026-10-03",
+    "to": "2026-11-01",
     "briefingDays": 30,
     "articleCount": 287,
-    "domesticCount": 243,
-    "overseasCount": 44,
-    "dealCount": 61,
-    "disclosedKrwDealCount": 24,
-    "disclosedKrwTotalEok": 233343.8,
+    "domesticCount": 244,
+    "overseasCount": 43,
+    "dealCount": 60,
+    "disclosedKrwDealCount": 23,
+    "disclosedKrwTotalEok": 233198.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 103
+        "count": 102
       },
       {
         "label": "TIPS / LIPS",
-        "count": 60
+        "count": 62
       },
       {
         "label": "해외 VC",
-        "count": 42
+        "count": 41
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -421,7 +414,7 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 25
+        "count": 26
       },
       {
         "label": "선정",
@@ -437,7 +430,7 @@
       },
       {
         "label": "지원사업",
-        "count": 6
+        "count": 7
       },
       {
         "label": "협약",
@@ -448,11 +441,11 @@
         "count": 5
       },
       {
-        "label": "펀드결성",
-        "count": 4
+        "label": "세컨더리",
+        "count": 3
       },
       {
-        "label": "세컨더리",
+        "label": "펀드결성",
         "count": 3
       },
       {
@@ -463,7 +456,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 110
+        "count": 109
       },
       {
         "label": "로봇",
@@ -471,7 +464,7 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 2
+        "count": 3
       },
       {
         "label": "반도체",
@@ -489,7 +482,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 6
+        "count": 5
       },
       {
         "label": "시리즈B",
@@ -539,7 +532,7 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 29
+        "count": 28
       },
       {
         "label": "머니투데이",
@@ -547,23 +540,23 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 22
+        "count": 20
       },
       {
         "label": "연합뉴스",
         "count": 20
       },
       {
+        "label": "아시아경제",
+        "count": 17
+      },
+      {
         "label": "파이낸셜뉴스",
         "count": 17
       },
       {
-        "label": "아시아경제",
-        "count": 16
-      },
-      {
         "label": "IT조선",
-        "count": 15
+        "count": 17
       },
       {
         "label": "TechCrunch",
@@ -571,11 +564,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-02",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-10-03",
         "total": 12,
@@ -719,6 +707,11 @@
       {
         "date": "2026-10-31",
         "total": 14,
+        "overseas": 1
+      },
+      {
+        "date": "2026-11-01",
+        "total": 12,
         "overseas": 1
       }
     ],
@@ -945,8 +938,8 @@
       }
     ],
     "previous": {
-      "articleCount": 146,
-      "dealCount": 40,
+      "articleCount": 153,
+      "dealCount": 42,
       "briefingDays": 29
     }
   }
