@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-01T00:11:43.131Z",
-  "latestDate": "2026-11-01",
+  "generatedAt": "2026-11-02T00:11:40.636Z",
+  "latestDate": "2026-11-02",
   "weekly": {
-    "from": "2026-10-26",
-    "to": "2026-11-01",
+    "from": "2026-10-27",
+    "to": "2026-11-02",
     "briefingDays": 7,
-    "articleCount": 75,
-    "domesticCount": 66,
+    "articleCount": 73,
+    "domesticCount": 64,
     "overseasCount": 9,
     "dealCount": 16,
     "disclosedKrwDealCount": 9,
@@ -15,19 +15,19 @@
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 22
+        "count": 26
       },
       {
         "label": "TIPS / LIPS",
-        "count": 21
+        "count": 19
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 12
+        "count": 11
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 12
+        "count": 9
       },
       {
         "label": "해외 VC",
@@ -37,41 +37,45 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 36
+        "count": 37
       },
       {
         "label": "선정",
-        "count": 7
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 7
+        "count": 8
       },
       {
         "label": "실증·PoC",
-        "count": 5
+        "count": 6
       },
       {
-        "label": "지원사업",
-        "count": 3
-      },
-      {
-        "label": "협약",
-        "count": 3
+        "label": "TIPS·LIPS 선정",
+        "count": 6
       },
       {
         "label": "모집",
-        "count": 2
+        "count": 4
+      },
+      {
+        "label": "인수·M&A",
+        "count": 1
+      },
+      {
+        "label": "지원사업",
+        "count": 1
       },
       {
         "label": "펀드결성",
+        "count": 1
+      },
+      {
+        "label": "협약",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 23
+        "count": 27
       },
       {
         "label": "로봇",
@@ -119,19 +123,19 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 9
+        "count": 11
       },
       {
         "label": "머니투데이",
         "count": 7
       },
       {
-        "label": "아주경제",
+        "label": "파이낸셜뉴스",
         "count": 6
       },
       {
-        "label": "파이낸셜뉴스",
-        "count": 6
+        "label": "아주경제",
+        "count": 5
       },
       {
         "label": "EU-Startups",
@@ -151,11 +155,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-26",
-        "total": 15,
-        "overseas": 0
-      },
       {
         "date": "2026-10-27",
         "total": 15,
@@ -185,9 +184,25 @@
         "date": "2026-11-01",
         "total": 12,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-02",
+        "total": 12,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-01",
+        "company": "프리뉴",
+        "fundingAmount": "166억 원",
+        "fundingStage": "시리즈D",
+        "industry": null,
+        "overseas": false,
+        "title": "'드론 설계·운영' 프리뉴, 시리즈D 166억 투자 유치…IPO 속도낸다",
+        "url": "https://www.mt.co.kr/future/2026/11/01/2026110111044971806",
+        "source": "머니투데이"
+      },
       {
         "date": "2026-10-31",
         "company": "파이어호크",
@@ -200,25 +215,14 @@
         "source": "와우테일"
       },
       {
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "company": "나노포지에이아이",
         "fundingAmount": "146억 원",
         "fundingStage": "시드 투자",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "나노포지에이아이, 146억 원 시드 투자 유치∙∙∙로봇 합성으로 차별화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53387",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-30",
-        "company": "프리뉴",
-        "fundingAmount": "166억 원",
-        "fundingStage": "시리즈D",
         "industry": null,
         "overseas": false,
-        "title": "프리뉴, 시리즈D 166억 투자유치 확정…기술특례상장 절차 돌입",
-        "url": "https://www.bloter.net/news/articleView.html?idxno=677294",
+        "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
+        "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
         "source": "블로터"
       },
       {
@@ -366,79 +370,79 @@
       }
     ],
     "previous": {
-      "articleCount": 61,
+      "articleCount": 64,
       "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-03",
-    "to": "2026-11-01",
+    "from": "2026-10-04",
+    "to": "2026-11-02",
     "briefingDays": 30,
-    "articleCount": 287,
-    "domesticCount": 244,
-    "overseasCount": 43,
-    "dealCount": 60,
+    "articleCount": 291,
+    "domesticCount": 250,
+    "overseasCount": 41,
+    "dealCount": 58,
     "disclosedKrwDealCount": 23,
     "disclosedKrwTotalEok": 233198.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 102
+        "count": 105
       },
       {
         "label": "TIPS / LIPS",
-        "count": 62
-      },
-      {
-        "label": "해외 VC",
-        "count": 41
+        "count": 63
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 38
+        "count": 39
+      },
+      {
+        "label": "해외 VC",
+        "count": 39
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 36
+        "count": 38
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 8
+        "count": 7
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 135
+        "count": 134
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 26
+        "count": 25
       },
       {
         "label": "선정",
-        "count": 22
+        "count": 24
       },
       {
         "label": "모집",
-        "count": 11
+        "count": 13
       },
       {
         "label": "실증·PoC",
-        "count": 10
+        "count": 11
       },
       {
         "label": "지원사업",
         "count": 7
       },
       {
-        "label": "협약",
+        "label": "인수·M&A",
         "count": 6
       },
       {
-        "label": "인수·M&A",
-        "count": 5
+        "label": "협약",
+        "count": 6
       },
       {
         "label": "세컨더리",
@@ -456,7 +460,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 109
+        "count": 113
       },
       {
         "label": "로봇",
@@ -464,7 +468,7 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 3
+        "count": 2
       },
       {
         "label": "반도체",
@@ -532,43 +536,38 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 28
+        "count": 27
       },
       {
         "label": "머니투데이",
-        "count": 24
-      },
-      {
-        "label": "스타트업투데이",
-        "count": 20
+        "count": 26
       },
       {
         "label": "연합뉴스",
         "count": 20
       },
       {
+        "label": "스타트업투데이",
+        "count": 19
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 19
+      },
+      {
+        "label": "IT조선",
+        "count": 18
+      },
+      {
         "label": "아시아경제",
         "count": 17
       },
       {
-        "label": "파이낸셜뉴스",
-        "count": 17
-      },
-      {
-        "label": "IT조선",
-        "count": 17
-      },
-      {
-        "label": "TechCrunch",
+        "label": "아주경제",
         "count": 15
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-03",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-10-04",
         "total": 12,
@@ -713,9 +712,25 @@
         "date": "2026-11-01",
         "total": 12,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-02",
+        "total": 12,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-01",
+        "company": "프리뉴",
+        "fundingAmount": "166억 원",
+        "fundingStage": "시리즈D",
+        "industry": null,
+        "overseas": false,
+        "title": "'드론 설계·운영' 프리뉴, 시리즈D 166억 투자 유치…IPO 속도낸다",
+        "url": "https://www.mt.co.kr/future/2026/11/01/2026110111044971806",
+        "source": "머니투데이"
+      },
       {
         "date": "2026-10-31",
         "company": "파이어호크",
@@ -728,25 +743,14 @@
         "source": "와우테일"
       },
       {
-        "date": "2026-10-30",
+        "date": "2026-10-31",
         "company": "나노포지에이아이",
         "fundingAmount": "146억 원",
         "fundingStage": "시드 투자",
-        "industry": "로봇",
-        "overseas": false,
-        "title": "나노포지에이아이, 146억 원 시드 투자 유치∙∙∙로봇 합성으로 차별화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53387",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-10-30",
-        "company": "프리뉴",
-        "fundingAmount": "166억 원",
-        "fundingStage": "시리즈D",
         "industry": null,
         "overseas": false,
-        "title": "프리뉴, 시리즈D 166억 투자유치 확정…기술특례상장 절차 돌입",
-        "url": "https://www.bloter.net/news/articleView.html?idxno=677294",
+        "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
+        "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
         "source": "블로터"
       },
       {
@@ -939,7 +943,7 @@
     ],
     "previous": {
       "articleCount": 153,
-      "dealCount": 42,
+      "dealCount": 40,
       "briefingDays": 29
     }
   }
