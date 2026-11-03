@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-11-02T09:00:00+09:00",
-  "collectedAt": "2026-11-02T09:11:40+09:00",
+  "generatedAt": "2026-11-03T09:00:00+09:00",
+  "collectedAt": "2026-11-03T09:11:52+09:00",
   "range": {
-    "from": "2026-10-31T09:00:00+09:00",
-    "to": "2026-11-02T09:00:00+09:00"
+    "from": "2026-11-01T09:00:00+09:00",
+    "to": "2026-11-03T09:00:00+09:00"
   },
   "totalCount": 12,
   "categoryCounts": {
     "VC / AC": 5,
     "TIPS / LIPS": 3,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
-    "스타트업 / 벤처기업 / 초기창업": 2,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 0,
+    "스타트업 / 벤처기업 / 초기창업": 1,
     "세컨더리 / 구주매각": 0,
-    "해외 VC": 0
+    "해외 VC": 3
   },
   "items": [
     {
@@ -28,24 +28,56 @@
       "resolvedUrl": null,
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
-      "score": 112
+      "score": 110
     },
     {
-      "id": "2f41dd0c7fd8a710",
-      "category": "VC / AC",
-      "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
-      "publishedAt": "2026-10-31",
-      "summary": "투자 유치와 함께 회사는 유승화 KAIST 기계공학과 석좌교수를 기술고문으로 새로 위촉했다.",
+      "id": "082cd26e1a9d6a2e",
+      "category": "TIPS / LIPS",
+      "title": "팀이지, 팁스 3차 일반트랙 선정∙∙∙중고차 보증보험 ‘핀캣’ 고도화",
+      "publishedAt": "2026-11-02",
+      "summary": "팁스는 민간 투자사가 유망 스타트업을 발굴해 먼저 투자하면 정부가 연구개발(R&D) 자금 등을 연계해 지원하는 프로그램이다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "블로터",
-      "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53410",
       "resolvedUrl": null,
-      "company": "나노포지에이아이",
-      "fundingAmount": "146억 원",
-      "fundingStage": "시드 투자",
+      "company": "팀이지",
+      "eventType": "TIPS·LIPS 선정",
+      "score": 89
+    },
+    {
+      "id": "42e3fe878cccd899",
+      "category": "VC / AC",
+      "title": "2차원 반도체 증착 장비 '티디에스이노베이션', 63억 프리A 투자 유치",
+      "publishedAt": "2026-11-03",
+      "summary": "회사는 이번 투자금으로 반도체 산업의 표준 웨이퍼 크기인 300mm에 대응하는 양산 대응형 2차원 반도체 증착 장비 개발을 본격화할 계획이다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "와우테일",
+      "url": "https://wowtale.net/2026/11/03/267351/",
+      "resolvedUrl": null,
+      "fundingAmount": "63억 원",
+      "fundingStage": "프리A",
       "eventType": "투자유치",
+      "industry": "반도체",
       "score": 82
+    },
+    {
+      "id": "f4b26cd4ef22a088",
+      "category": "해외 VC",
+      "title": "Northwood Space raises $375M Series C at a $2B valuation from a16z and DFJ Growth",
+      "publishedAt": "2026-11-02",
+      "summary": "Space raised $375M in a Series C round.",
+      "summarySource": "structured_overseas",
+      "summaryType": "structured_overseas",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/northwood-space-raises-375m-series-c-at-a-2b-valuation-from-a16z-and-dfj-growth/",
+      "resolvedUrl": null,
+      "company": "Northwood Space",
+      "fundingAmount": "$375M",
+      "fundingStage": "Series C",
+      "eventType": "투자유치",
+      "score": 80
     },
     {
       "id": "adeee522497133b4",
@@ -62,22 +94,39 @@
       "fundingAmount": "166억 원",
       "fundingStage": "시리즈D",
       "eventType": "투자유치",
-      "score": 81
+      "score": 79
     },
     {
-      "id": "eeb4c485725221bb",
-      "category": "TIPS / LIPS",
-      "title": "[위클리 인텔리전스 #27] 국내 AI 인프라·반도체 베팅, 해외는 빅테크 손익·첫 M&A",
-      "publishedAt": "2026-11-01",
-      "summary": "중기부는 뷰티·패션·라이프·푸드 분야 총 188개 제품을 K-수출전략품목으로 선정해 해외 유통망 입점을 지원하기로 했다.",
+      "id": "7ea2e4f63a49fa35",
+      "category": "VC / AC",
+      "title": "금융 AI 에이전트 카사프, 5600만 달러 시리즈B 투자유치",
+      "publishedAt": "2026-11-03",
+      "summary": "2025년 8월 2500만 달러 시리즈A 이후 1년여 만이며, 누적 투자금은 9000만 달러가 됐다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "와우테일",
-      "url": "https://wowtale.net/2026/11/01/267280/",
+      "url": "https://wowtale.net/2026/11/03/267339/",
       "resolvedUrl": null,
-      "eventType": "인수·M&A",
+      "fundingStage": "시리즈B",
+      "eventType": "투자유치",
       "industry": "AI",
-      "score": 73
+      "score": 74
+    },
+    {
+      "id": "95fe41447f4f06ef",
+      "category": "TIPS / LIPS",
+      "title": "카카오인베스트먼트, 과기원 AI 창업 상금 늘려 연말 투자 본계약 이끌까",
+      "publishedAt": "2026-11-02",
+      "summary": "이 밖에도 1기 결선 진출팀 중 5곳이 투자 심의 무대에 올랐으며, 그중 3곳은 카카오 계열사와 기술 실증(PoC)을 진행하며 연구실 밖 시장 진출의 교두보를 마련했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53407",
+      "resolvedUrl": null,
+      "company": "카카오인베스트먼트",
+      "eventType": "실증·PoC",
+      "industry": "AI",
+      "score": 72
     },
     {
       "id": "47ad16b37364a995",
@@ -92,37 +141,7 @@
       "resolvedUrl": null,
       "eventType": "선정",
       "industry": "AI",
-      "score": 72
-    },
-    {
-      "id": "aa4908bee9a2cd7e",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "코어스파크, 숙련자 경험 녹인 플랜트 정비 지원 AI 개발 [서울AI허브 2027]",
-      "publishedAt": "2026-11-01",
-      "summary": "현장 실증 이후에는 적용 설비를 단계적으로 확대한다. 국내 플랜트 현장에서 실증 사례를 확보한 뒤 현지 정유·석유화학 기업과 협력해 적용 범위를 확대할 예정이다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "IT조선",
-      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092173144",
-      "resolvedUrl": null,
-      "eventType": "실증·PoC",
-      "industry": "AI",
       "score": 70
-    },
-    {
-      "id": "b5c6e70b16351833",
-      "category": "TIPS / LIPS",
-      "title": "피플즈리그, 패스트푸드 주방일 스스로 하는 피지컬 AI 개발 [서울AI허브 2027]",
-      "publishedAt": "2026-10-31",
-      "summary": "조리로봇 실적 기반으로 글로벌 QSR AI 시장 공략 피플즈리그는 2022년 팁스(TIPS)에 선정됐으며 현재까지 누적 24억원의 투자를 유치했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "IT조선",
-      "url": "https://it.chosun.com/news/articleView.html?idxno=2023092173258",
-      "resolvedUrl": null,
-      "company": "피플즈리그",
-      "industry": "AI",
-      "score": 68
     },
     {
       "id": "710d3b5b0254f860",
@@ -139,50 +158,39 @@
       "fundingStage": "후속투자",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 67
+      "score": 65
     },
     {
-      "id": "2a89c14109e2c631",
-      "category": "VC / AC",
-      "title": "반도체·피지컬AI 미래 먹거리 키운다…이노비즈협회, 혁신기업 50곳 발굴",
-      "publishedAt": "2026-11-01",
-      "summary": "이노비즈협회 제공 이노비즈협회가 반도체와 피지컬 인공지능(AI), 첨단바이오 등 미래 전략산업 분야의 기술혁신형 중소기업 50개사를 선발한다.",
+      "id": "c95e2a88216ed089",
+      "category": "해외 VC",
+      "title": "Looking for a job? Estonia's Roleo just raised €2.9 million to help you on your journey",
+      "publishedAt": "2026-11-02",
+      "summary": "Estonia's Roleo just raised €2.9 million to help.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "파이낸셜뉴스",
-      "url": "https://www.fnnews.com/news/202611011351251076",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/11/looking-for-a-job-estonias-roleo-just-raised-e2-9-million-to-help-you-on-your-journey/",
       "resolvedUrl": null,
-      "eventType": "선정",
+      "fundingAmount": "€2.9 million",
+      "eventType": "투자유치",
+      "score": 61
+    },
+    {
+      "id": "d21434ddc6e2dd1a",
+      "category": "해외 VC",
+      "title": "Munich’s Marble Cognition raises €3.35 million to build AI coworkers that learn business processes before automating them",
+      "publishedAt": "2026-11-02",
+      "summary": "Munich’s Marble Cognition raises €3.35 million to build AI coworkers that learn.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/11/munichs-marble-cognition-raises-e3-35-million-to-build-ai-coworkers-that-learn-business-processes-before-automating-them/",
+      "resolvedUrl": null,
+      "company": "Marble Cognition",
+      "fundingAmount": "€3.35 million",
+      "eventType": "투자유치",
       "industry": "AI",
-      "score": 66
-    },
-    {
-      "id": "73b293ac2c6a6f80",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "이노비즈협회, '2027년 고성장 혁신형 기업' 50개사 모집...스케일업 집중 지원",
-      "publishedAt": "2026-11-01",
-      "summary": "중진공 '점프업 500' 대상 기업 추천 이노비즈협회 로고 이미지 [ 이노비즈협회는 ‘2027년 고성장 혁신형 기업’ 참여기업을 모집한다고 1일 밝혔다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "아주경제",
-      "url": "https://www.ajunews.com/view/20261101135840660",
-      "resolvedUrl": null,
-      "eventType": "모집",
-      "score": 64
-    },
-    {
-      "id": "845be73a1bcef5b8",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "기술만 팔던 시대 끝…한국오라클, AI 사업 판 바꾼다",
-      "publishedAt": "2026-11-01",
-      "summary": "기존 기술·라이선스 판매 중심에서 산업별 고객 문제를 해결하는 방식으로 전환하고, 멀티클라우드와 국내 AI 스타트업 협력을 통해 사업 성과를 확대한다는 방침이다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "ZDNet Korea",
-      "url": "https://zdnet.co.kr/view/?no=20261031114551",
-      "resolvedUrl": null,
-      "industry": "AI",
-      "score": 63
+      "score": 57
     },
     {
       "id": "c447937ca904f8da",
@@ -196,7 +204,7 @@
       "url": "https://www.yna.co.kr/view/AKR20261031033600004",
       "resolvedUrl": null,
       "eventType": "모집",
-      "score": 46
+      "score": 44
     }
   ]
 }
