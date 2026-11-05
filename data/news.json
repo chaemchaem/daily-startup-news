@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-04T09:00:00+09:00",
-  "collectedAt": "2026-11-04T09:11:46+09:00",
+  "generatedAt": "2026-11-05T09:00:00+09:00",
+  "collectedAt": "2026-11-05T09:12:12+09:00",
   "range": {
-    "from": "2026-11-02T09:00:00+09:00",
-    "to": "2026-11-04T09:00:00+09:00"
+    "from": "2026-11-03T09:00:00+09:00",
+    "to": "2026-11-05T09:00:00+09:00"
   },
-  "totalCount": 14,
+  "totalCount": 13,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 3,
+    "TIPS / LIPS": 2,
     "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 3,
     "스타트업 / 벤처기업 / 초기창업": 0,
     "세컨더리 / 구주매각": 0,
@@ -16,53 +16,50 @@
   },
   "items": [
     {
-      "id": "2f3c42b929193b9f",
-      "category": "TIPS / LIPS",
-      "title": "넘즈에이아이, 20억 프리시드 2차 투자 유치…팁스 선정",
+      "id": "f21a93f15a358a0a",
+      "category": "VC / AC",
+      "title": "집안일 하는 로봇 조명 신시어, 1100만 달러 프리시드 투자유치",
       "publishedAt": "2026-11-04",
-      "summary": "이번 2차 클로징으로 20억 원을 추가 확보하면서 누적 투자 유치 금액은 60억 원이 됐다.",
+      "summary": "크루즈 창업자 카일 보그트가 세운 더봇컴퍼니(The Bot Company) 는 지난해 3월 1억5000만 달러를 추가로 투자유치 하며 기업가치 20억 달러를 평가받았다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "와우테일",
-      "url": "https://wowtale.net/2026/11/04/267417/",
+      "url": "https://wowtale.net/2026/11/04/267470/",
       "resolvedUrl": null,
-      "company": "넘즈에이아이",
-      "fundingAmount": "20억 원",
-      "fundingStage": "시드",
+      "fundingStage": "시드 투자",
       "eventType": "투자유치",
-      "score": 97
+      "industry": "로봇",
+      "score": 83
     },
     {
-      "id": "082cd26e1a9d6a2e",
+      "id": "3ad8b89edb6b34ca",
       "category": "TIPS / LIPS",
-      "title": "팀이지, 팁스 3차 일반트랙 선정∙∙∙중고차 보증보험 ‘핀캣’ 고도화",
-      "publishedAt": "2026-11-02",
-      "summary": "팁스는 민간 투자사가 유망 스타트업을 발굴해 먼저 투자하면 정부가 연구개발(R&D) 자금 등을 연계해 지원하는 프로그램이다.",
+      "title": "소풍벤처스, 135억 강원 전략산업 펀드 결성∙∙∙한림대기술지주와 지역 유망기업 육성",
+      "publishedAt": "2026-11-04",
+      "summary": "한편, 소풍벤처스는 2025년 국내 첫 기후테크 특화형 팁스(TIPS) 운영사로 선정됐으며, 서울시와 협력한 기후테크 펀드를 운용하고 있다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53410",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53438",
       "resolvedUrl": null,
-      "company": "팀이지",
-      "eventType": "TIPS·LIPS 선정",
-      "score": 87
+      "company": "소풍벤처스",
+      "eventType": "펀드결성",
+      "score": 83
     },
     {
-      "id": "44b2d149657d0b40",
+      "id": "ec37f4916d25d0dd",
       "category": "해외 VC",
-      "title": "Following Austria's first commercial satellite launch, Tumbleweed raises €6.9 million to accelerate space missions",
-      "publishedAt": "2026-11-03",
-      "summary": "Following Austria's first commercial satellite launch, Tumbleweed raises €6.9 million to accelerate.",
+      "title": "Leipzig-based JawBuddy raises €818k to help people reduce jaw pain, bruxism, and TMJ-related tension",
+      "publishedAt": "2026-11-04",
+      "summary": "The app also supports people with bruxism, the unconscious grinding or clenching of teeth.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/",
+      "url": "https://www.eu-startups.com/2026/11/leipzig-based-jawbuddy-raises-e818k-to-help-people-reduce-jaw-pain-bruxism-and-tmj-related-tension/",
       "resolvedUrl": null,
-      "company": "Tumbleweed",
-      "fundingAmount": "€6.9 million",
+      "company": "JawBuddy",
       "eventType": "투자유치",
-      "industry": "우주항공",
-      "score": 83
+      "score": 82
     },
     {
       "id": "c194b8c2c503e56f",
@@ -80,40 +77,6 @@
       "fundingStage": "시리즈A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 80
-    },
-    {
-      "id": "42e3fe878cccd899",
-      "category": "VC / AC",
-      "title": "2차원 반도체 증착 장비 '티디에스이노베이션', 63억 프리A 투자 유치",
-      "publishedAt": "2026-11-03",
-      "summary": "회사는 이번 투자금으로 반도체 산업의 표준 웨이퍼 크기인 300mm에 대응하는 양산 대응형 2차원 반도체 증착 장비 개발을 본격화할 계획이다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "와우테일",
-      "url": "https://wowtale.net/2026/11/03/267351/",
-      "resolvedUrl": null,
-      "fundingAmount": "63억 원",
-      "fundingStage": "프리A",
-      "eventType": "투자유치",
-      "industry": "반도체",
-      "score": 80
-    },
-    {
-      "id": "f4b26cd4ef22a088",
-      "category": "해외 VC",
-      "title": "Northwood Space raises $375M Series C at a $2B valuation from a16z and DFJ Growth",
-      "publishedAt": "2026-11-02",
-      "summary": "Space raised $375M in a Series C round.",
-      "summarySource": "structured_overseas",
-      "summaryType": "structured_overseas",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/02/northwood-space-raises-375m-series-c-at-a-2b-valuation-from-a16z-and-dfj-growth/",
-      "resolvedUrl": null,
-      "company": "Northwood Space",
-      "fundingAmount": "$375M",
-      "fundingStage": "Series C",
-      "eventType": "투자유치",
       "score": 78
     },
     {
@@ -129,7 +92,23 @@
       "resolvedUrl": null,
       "company": "강원지사",
       "eventType": "투자유치",
-      "score": 77
+      "score": 75
+    },
+    {
+      "id": "66bb59384627864d",
+      "category": "해외 VC",
+      "title": "Copenhagen’s Biograil raises €20 million for oral drug delivery device designed as an alternative to injections",
+      "publishedAt": "2026-11-04",
+      "summary": "The round was backed by Verve Ventures and Megatrend Invest.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "EU-Startups",
+      "url": "https://www.eu-startups.com/2026/11/copenhagens-biograil-raises-e20-million-for-oral-drug-delivery-device-designed-as-an-alternative-to-injections/",
+      "resolvedUrl": null,
+      "company": "Biograil",
+      "fundingAmount": "€20 million",
+      "eventType": "투자유치",
+      "score": 73
     },
     {
       "id": "0cd90171bb2ef1ad",
@@ -147,24 +126,41 @@
       "fundingStage": "프리시리즈A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 73
+      "score": 71
     },
     {
-      "id": "4138b2e39a1caedf",
-      "category": "TIPS / LIPS",
-      "title": "퍼스트바이오, 100억 원 추가 투자 유치 완료∙∙∙신약 파이프라인 개발 가속화",
+      "id": "ddd63e9a16da5118",
+      "category": "VC / AC",
+      "title": "티디에스이노베이션, 63억 원 투자 유치∙∙∙300mm 2차원 반도체 증착 장비 개발 본격화",
       "publishedAt": "2026-11-03",
-      "summary": "신약 개발 기업 퍼스트바이오테라퓨틱스(대표 김재은, 이하 퍼스트바이오)가 총 100억 원 규모의 추가 투자금을 조달했다고 3일 밝혔다.",
+      "summary": "2차원 반도체 증착 장비·소재 전문기업 티디에스이노베이션(대표 강기범)이 63억 원 규모의 프리 시리즈 A 투자를 유치했다고 3일 밝혔다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53426",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53427",
       "resolvedUrl": null,
-      "company": "퍼스트바이오",
-      "fundingAmount": "100억 원",
+      "company": "티디에스이노베이션",
+      "fundingAmount": "63억 원",
+      "fundingStage": "프리시리즈A",
       "eventType": "투자유치",
-      "industry": "바이오·헬스케어",
-      "score": 70
+      "industry": "반도체",
+      "score": 71
+    },
+    {
+      "id": "a9ff7b847da0cd30",
+      "category": "해외 VC",
+      "title": "Titan OS raises $46 million to expand its smart TV OS internationally",
+      "publishedAt": "2026-11-05",
+      "summary": "The startup, which secured $58 million last year , has now raised $110 million in total.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/04/titan-os-raises-46-million-to-expand-its-smart-tv-os-internationally/",
+      "resolvedUrl": null,
+      "company": "Titan OS",
+      "fundingAmount": "$46 million",
+      "eventType": "투자유치",
+      "score": 68
     },
     {
       "id": "fc14196876175d6a",
@@ -180,7 +176,7 @@
       "company": "호반그룹",
       "eventType": "실증·PoC",
       "industry": "AI",
-      "score": 69
+      "score": 67
     },
     {
       "id": "51f6e4f909a543cd",
@@ -196,22 +192,22 @@
       "company": "호반그룹",
       "eventType": "실증·PoC",
       "industry": "AI",
-      "score": 69
+      "score": 67
     },
     {
-      "id": "e52cb35bcfff5667",
-      "category": "VC / AC",
-      "title": "기정원, 방산·전략기술 中企 투자유치 지원",
-      "publishedAt": "2026-11-04",
-      "summary": "이번 설명회는 기정원이 중소기업 R&D 자금예치 전담은행인 IBK기업은행·하나은행과 협력해 방산 및 12대 국가전략기술 분야중소기업의 사업화와 투자유치를 지원하기 위해 마련됐다.",
+      "id": "bb2c8e2c648f227d",
+      "category": "TIPS / LIPS",
+      "title": "더헤리티-디프크리에이티브-메디핸즈-오버랩웍스, 더인벤션랩 투자 유치",
+      "publishedAt": "2026-11-05",
+      "summary": "이를 바탕으로 LIPS 1차 사업의 최대 융자 한도인 5억 원(한도 100%) 지원 대상에 최종 선정됐다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026110408265164501",
+      "source": "와우테일",
+      "url": "https://wowtale.net/2026/11/05/267485/",
       "resolvedUrl": null,
-      "company": "기정원",
+      "company": "더헤리티-디프크리에이티브-메디핸즈-오버랩웍스",
       "eventType": "투자유치",
-      "score": 62
+      "score": 66
     },
     {
       "id": "2932c2a9b2833459",
@@ -225,22 +221,7 @@
       "url": "https://www.yna.co.kr/view/AKR20261103151100017",
       "resolvedUrl": null,
       "industry": "AI",
-      "score": 62
-    },
-    {
-      "id": "c95e2a88216ed089",
-      "category": "해외 VC",
-      "title": "Looking for a job? Estonia's Roleo just raised €2.9 million to help you on your journey",
-      "publishedAt": "2026-11-02",
-      "summary": "Estonia's Roleo just raised €2.9 million to help.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "EU-Startups",
-      "url": "https://www.eu-startups.com/2026/11/looking-for-a-job-estonias-roleo-just-raised-e2-9-million-to-help-you-on-your-journey/",
-      "resolvedUrl": null,
-      "fundingAmount": "€2.9 million",
-      "eventType": "투자유치",
-      "score": 59
+      "score": 60
     }
   ]
 }
