@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-05T00:12:12.915Z",
-  "latestDate": "2026-11-05",
+  "generatedAt": "2026-11-06T00:11:41.042Z",
+  "latestDate": "2026-11-06",
   "weekly": {
-    "from": "2026-10-30",
-    "to": "2026-11-05",
+    "from": "2026-10-31",
+    "to": "2026-11-06",
     "briefingDays": 7,
-    "articleCount": 64,
-    "domesticCount": 54,
+    "articleCount": 66,
+    "domesticCount": 56,
     "overseasCount": 10,
-    "dealCount": 19,
+    "dealCount": 18,
     "disclosedKrwDealCount": 10,
-    "disclosedKrwTotalEok": 10232,
+    "disclosedKrwTotalEok": 109005,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 23
+        "count": 25
       },
       {
         "label": "TIPS / LIPS",
@@ -37,7 +37,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 38
+        "count": 39
       },
       {
         "label": "실증·PoC",
@@ -45,14 +45,14 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 5
-      },
-      {
-        "label": "선정",
         "count": 4
       },
       {
         "label": "모집",
+        "count": 3
+      },
+      {
+        "label": "선정",
         "count": 3
       },
       {
@@ -66,6 +66,10 @@
       {
         "label": "펀드결성",
         "count": 1
+      },
+      {
+        "label": "협약",
+        "count": 1
       }
     ],
     "byIndustry": [
@@ -75,7 +79,7 @@
       },
       {
         "label": "로봇",
-        "count": 2
+        "count": 3
       },
       {
         "label": "바이오·헬스케어",
@@ -112,10 +116,6 @@
         "count": 1
       },
       {
-        "label": "후속 투자",
-        "count": 1
-      },
-      {
         "label": "Series C",
         "count": 1
       }
@@ -127,39 +127,34 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 8
+        "count": 9
       },
       {
         "label": "EU-Startups",
-        "count": 7
+        "count": 8
       },
       {
-        "label": "머니투데이",
+        "label": "아주경제",
         "count": 5
       },
       {
-        "label": "아시아경제",
-        "count": 4
+        "label": "파이낸셜뉴스",
+        "count": 5
+      },
+      {
+        "label": "머니투데이",
+        "count": 3
       },
       {
         "label": "블로터",
         "count": 3
       },
       {
-        "label": "아주경제",
-        "count": 3
-      },
-      {
-        "label": "파이낸셜뉴스",
+        "label": "아시아경제",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-30",
-        "total": 11,
-        "overseas": 2
-      },
       {
         "date": "2026-10-31",
         "total": 14,
@@ -189,6 +184,11 @@
         "date": "2026-11-05",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-11-06",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -202,6 +202,28 @@
         "title": "Titan OS raises $46 million to expand its smart TV OS internationally",
         "url": "https://techcrunch.com/2026/11/04/titan-os-raises-46-million-to-expand-its-smart-tv-os-internationally/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-05",
+        "company": "Sequoia Capital",
+        "fundingAmount": "€8.9 billion",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Sequoia Capital raises around €8.9 billion in new funds and closes London office; most local partners opt to stay in Europe",
+        "url": "https://www.eu-startups.com/2026/11/sequoia-capital-raises-around-e8-9-billion-in-new-funds-and-closes-london-office-most-local-partners-opt-to-stay-in-europe/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-11-05",
+        "company": "하남시장",
+        "fundingAmount": "10조 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "이현재 하남시장, 2030년 투자유치 10조 원 목표...교산 AI·미사 K-컬처로 자족도시 도약 박차",
+        "url": "https://www.ajunews.com/view/20261105170633964",
+        "source": "아주경제"
       },
       {
         "date": "2026-11-04",
@@ -348,17 +370,6 @@
       },
       {
         "date": "2026-10-29",
-        "company": "Upwind",
-        "fundingAmount": "$400M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
-        "url": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-29",
         "company": "아이즈엔터테인먼트",
         "fundingAmount": "200억 원",
         "fundingStage": "시리즈A",
@@ -378,66 +389,44 @@
         "title": "퓨리오사AI, 8,200억원 시리즈D 투자유치…기업가치 3.8조원",
         "url": "https://wowtale.net/2026/10/29/267133/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "VUSE XR",
-        "fundingAmount": "€1.2 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "EXCLUSIVE: Freiburg’s VUSE XR raises €1.2 million to bring AI-powered mixed reality training to enterprises",
-        "url": "https://www.eu-startups.com/2026/10/exclusive-freiburgs-vuse-xr-raises-e1-2-million-to-bring-ai-powered-mixed-reality-training-to-enterprises/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "소상공인",
-        "fundingAmount": "1227억 원",
-        "fundingStage": "후속 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치",
-        "url": "https://view.asiae.co.kr/article/2026102816561363049",
-        "source": "아시아경제"
       }
     ],
     "previous": {
-      "articleCount": 79,
-      "dealCount": 17,
+      "articleCount": 76,
+      "dealCount": 18,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-07",
-    "to": "2026-11-05",
+    "from": "2026-10-08",
+    "to": "2026-11-06",
     "briefingDays": 30,
     "articleCount": 286,
-    "domesticCount": 241,
-    "overseasCount": 45,
+    "domesticCount": 242,
+    "overseasCount": 44,
     "dealCount": 63,
-    "disclosedKrwDealCount": 27,
-    "disclosedKrwTotalEok": 233488.8,
+    "disclosedKrwDealCount": 28,
+    "disclosedKrwTotalEok": 333488.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 100
+        "count": 101
       },
       {
         "label": "TIPS / LIPS",
-        "count": 65
+        "count": 68
       },
       {
         "label": "해외 VC",
-        "count": 43
+        "count": 42
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 39
+        "count": 37
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 33
+        "count": 32
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -447,7 +436,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 142
+        "count": 144
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -467,7 +456,7 @@
       },
       {
         "label": "지원사업",
-        "count": 7
+        "count": 6
       },
       {
         "label": "협약",
@@ -478,11 +467,11 @@
         "count": 5
       },
       {
-        "label": "펀드결성",
-        "count": 4
+        "label": "세컨더리",
+        "count": 3
       },
       {
-        "label": "세컨더리",
+        "label": "펀드결성",
         "count": 3
       },
       {
@@ -493,11 +482,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 112
+        "count": 111
       },
       {
         "label": "로봇",
-        "count": 7
+        "count": 8
       },
       {
         "label": "바이오·헬스케어",
@@ -546,10 +535,6 @@
         "count": 2
       },
       {
-        "label": "Series A",
-        "count": 2
-      },
-      {
         "label": "시드",
         "count": 1
       },
@@ -563,6 +548,10 @@
       },
       {
         "label": "Seed",
+        "count": 1
+      },
+      {
+        "label": "Series A",
         "count": 1
       },
       {
@@ -581,39 +570,34 @@
       },
       {
         "label": "머니투데이",
-        "count": 24
+        "count": 23
       },
       {
         "label": "스타트업투데이",
-        "count": 21
+        "count": 22
+      },
+      {
+        "label": "와우테일",
+        "count": 19
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 18
       },
       {
         "label": "아시아경제",
-        "count": 18
+        "count": 17
+      },
+      {
+        "label": "아주경제",
+        "count": 17
       },
       {
         "label": "연합뉴스",
         "count": 17
-      },
-      {
-        "label": "와우테일",
-        "count": 17
-      },
-      {
-        "label": "파이낸셜뉴스",
-        "count": 17
-      },
-      {
-        "label": "IT조선",
-        "count": 17
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-07",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-08",
         "total": 14,
@@ -758,6 +742,11 @@
         "date": "2026-11-05",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-11-06",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -771,6 +760,28 @@
         "title": "Titan OS raises $46 million to expand its smart TV OS internationally",
         "url": "https://techcrunch.com/2026/11/04/titan-os-raises-46-million-to-expand-its-smart-tv-os-internationally/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-05",
+        "company": "Sequoia Capital",
+        "fundingAmount": "€8.9 billion",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Sequoia Capital raises around €8.9 billion in new funds and closes London office; most local partners opt to stay in Europe",
+        "url": "https://www.eu-startups.com/2026/11/sequoia-capital-raises-around-e8-9-billion-in-new-funds-and-closes-london-office-most-local-partners-opt-to-stay-in-europe/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-11-05",
+        "company": "하남시장",
+        "fundingAmount": "10조 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "이현재 하남시장, 2030년 투자유치 10조 원 목표...교산 AI·미사 K-컬처로 자족도시 도약 박차",
+        "url": "https://www.ajunews.com/view/20261105170633964",
+        "source": "아주경제"
       },
       {
         "date": "2026-11-04",
@@ -958,33 +969,11 @@
         "title": "아이즈엔터테인먼트, 200억원 규모 시리즈A 투자 유치...AI 메신저 개발 속도",
         "url": "https://www.techm.kr/news/articleView.html?idxno=156652",
         "source": "테크M"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "퓨리오사AI",
-        "fundingAmount": "8,200억 원",
-        "fundingStage": "시리즈D",
-        "industry": "AI",
-        "overseas": false,
-        "title": "퓨리오사AI, 8,200억원 시리즈D 투자유치…기업가치 3.8조원",
-        "url": "https://wowtale.net/2026/10/29/267133/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "VUSE XR",
-        "fundingAmount": "€1.2 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "EXCLUSIVE: Freiburg’s VUSE XR raises €1.2 million to bring AI-powered mixed reality training to enterprises",
-        "url": "https://www.eu-startups.com/2026/10/exclusive-freiburgs-vuse-xr-raises-e1-2-million-to-bring-ai-powered-mixed-reality-training-to-enterprises/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 168,
-      "dealCount": 41,
+      "articleCount": 180,
+      "dealCount": 44,
       "briefingDays": 29
     }
   }
