@@ -1,66 +1,70 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-06T00:11:41.042Z",
-  "latestDate": "2026-11-06",
+  "generatedAt": "2026-11-07T00:11:43.309Z",
+  "latestDate": "2026-11-07",
   "weekly": {
-    "from": "2026-10-31",
-    "to": "2026-11-06",
+    "from": "2026-11-01",
+    "to": "2026-11-07",
     "briefingDays": 7,
-    "articleCount": 66,
-    "domesticCount": 56,
-    "overseasCount": 10,
+    "articleCount": 69,
+    "domesticCount": 58,
+    "overseasCount": 11,
     "dealCount": 18,
-    "disclosedKrwDealCount": 10,
-    "disclosedKrwTotalEok": 109005,
+    "disclosedKrwDealCount": 9,
+    "disclosedKrwTotalEok": 101005,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 25
+        "count": 27
       },
       {
         "label": "TIPS / LIPS",
         "count": 19
       },
       {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "label": "해외 VC",
         "count": 10
       },
       {
-        "label": "해외 VC",
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
         "count": 9
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 3
+      },
+      {
+        "label": "세컨더리 / 구주매각",
+        "count": 1
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 39
+        "count": 41
       },
       {
         "label": "실증·PoC",
         "count": 6
       },
       {
-        "label": "TIPS·LIPS 선정",
-        "count": 4
-      },
-      {
-        "label": "모집",
-        "count": 3
-      },
-      {
         "label": "선정",
         "count": 3
       },
       {
-        "label": "인수·M&A",
-        "count": 1
+        "label": "TIPS·LIPS 선정",
+        "count": 3
+      },
+      {
+        "label": "모집",
+        "count": 2
       },
       {
         "label": "지원사업",
+        "count": 2
+      },
+      {
+        "label": "인수·M&A",
         "count": 1
       },
       {
@@ -75,7 +79,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 27
+        "count": 23
       },
       {
         "label": "로봇",
@@ -83,11 +87,11 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 2
+        "count": 3
       },
       {
         "label": "반도체",
-        "count": 2
+        "count": 3
       },
       {
         "label": "우주항공",
@@ -96,11 +100,11 @@
     ],
     "byStage": [
       {
-        "label": "시리즈D",
-        "count": 3
+        "label": "시리즈A",
+        "count": 2
       },
       {
-        "label": "시리즈A",
+        "label": "시리즈D",
         "count": 2
       },
       {
@@ -123,27 +127,27 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 14
+        "count": 16
       },
       {
         "label": "스타트업투데이",
-        "count": 9
+        "count": 8
       },
       {
         "label": "EU-Startups",
         "count": 8
       },
       {
-        "label": "아주경제",
+        "label": "머니투데이",
         "count": 5
+      },
+      {
+        "label": "아주경제",
+        "count": 4
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 5
-      },
-      {
-        "label": "머니투데이",
-        "count": 3
+        "count": 4
       },
       {
         "label": "블로터",
@@ -155,11 +159,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-31",
-        "total": 14,
-        "overseas": 1
-      },
       {
         "date": "2026-11-01",
         "total": 12,
@@ -189,9 +188,36 @@
         "date": "2026-11-06",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-11-07",
+        "total": 13,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-06",
+        "company": "유로보틱스",
+        "fundingAmount": "400억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "자율이동 AI '유로보틱스', 400억 규모 시리즈A 투자 유치",
+        "url": "https://wowtale.net/2026/11/06/267562/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-06",
+        "company": "Harbinger",
+        "fundingAmount": "$240M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Harbinger raises $240M after expanding into defense",
+        "url": "https://techcrunch.com/2026/11/05/harbinger-raises-240m-after-expanding-into-defense/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-05",
         "company": "Titan OS",
@@ -367,50 +393,28 @@
         "title": "EXCLUSIVE: London’s Ares Intelligence raises €2.9 million to turn employee insights into AI adoption plans",
         "url": "https://www.eu-startups.com/2026/10/exclusive-londons-ares-intelligence-raises-e2-6-million-to-turn-employee-insights-into-ai-adoption-plans/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "아이즈엔터테인먼트",
-        "fundingAmount": "200억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "아이즈엔터테인먼트, 200억원 규모 시리즈A 투자 유치...AI 메신저 개발 속도",
-        "url": "https://www.techm.kr/news/articleView.html?idxno=156652",
-        "source": "테크M"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "퓨리오사AI",
-        "fundingAmount": "8,200억 원",
-        "fundingStage": "시리즈D",
-        "industry": "AI",
-        "overseas": false,
-        "title": "퓨리오사AI, 8,200억원 시리즈D 투자유치…기업가치 3.8조원",
-        "url": "https://wowtale.net/2026/10/29/267133/",
-        "source": "와우테일"
       }
     ],
     "previous": {
-      "articleCount": 76,
-      "dealCount": 18,
+      "articleCount": 78,
+      "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-08",
-    "to": "2026-11-06",
+    "from": "2026-10-09",
+    "to": "2026-11-07",
     "briefingDays": 30,
-    "articleCount": 286,
-    "domesticCount": 242,
-    "overseasCount": 44,
-    "dealCount": 63,
+    "articleCount": 290,
+    "domesticCount": 247,
+    "overseasCount": 43,
+    "dealCount": 62,
     "disclosedKrwDealCount": 28,
-    "disclosedKrwTotalEok": 333488.8,
+    "disclosedKrwTotalEok": 333741.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 101
+        "count": 103
       },
       {
         "label": "TIPS / LIPS",
@@ -418,11 +422,11 @@
       },
       {
         "label": "해외 VC",
-        "count": 42
+        "count": 41
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 37
+        "count": 39
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -430,7 +434,7 @@
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 6
+        "count": 7
       }
     ],
     "byEventType": [
@@ -439,16 +443,16 @@
         "count": 144
       },
       {
-        "label": "TIPS·LIPS 선정",
-        "count": 24
+        "label": "선정",
+        "count": 23
       },
       {
-        "label": "선정",
+        "label": "TIPS·LIPS 선정",
         "count": 22
       },
       {
         "label": "실증·PoC",
-        "count": 14
+        "count": 15
       },
       {
         "label": "모집",
@@ -456,7 +460,7 @@
       },
       {
         "label": "지원사업",
-        "count": 6
+        "count": 7
       },
       {
         "label": "협약",
@@ -482,7 +486,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 111
+        "count": 109
       },
       {
         "label": "로봇",
@@ -490,11 +494,11 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 3
+        "count": 4
       },
       {
         "label": "반도체",
-        "count": 3
+        "count": 4
       },
       {
         "label": "우주항공",
@@ -508,7 +512,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 6
+        "count": 7
       },
       {
         "label": "시리즈D",
@@ -566,19 +570,23 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 29
+        "count": 27
       },
       {
         "label": "머니투데이",
-        "count": 23
-      },
-      {
-        "label": "스타트업투데이",
-        "count": 22
+        "count": 25
       },
       {
         "label": "와우테일",
-        "count": 19
+        "count": 22
+      },
+      {
+        "label": "스타트업투데이",
+        "count": 21
+      },
+      {
+        "label": "연합뉴스",
+        "count": 18
       },
       {
         "label": "파이낸셜뉴스",
@@ -586,23 +594,14 @@
       },
       {
         "label": "아시아경제",
-        "count": 17
+        "count": 16
       },
       {
         "label": "아주경제",
-        "count": 17
-      },
-      {
-        "label": "연합뉴스",
-        "count": 17
+        "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-08",
-        "total": 14,
-        "overseas": 3
-      },
       {
         "date": "2026-10-09",
         "total": 13,
@@ -747,9 +746,36 @@
         "date": "2026-11-06",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-11-07",
+        "total": 13,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-06",
+        "company": "유로보틱스",
+        "fundingAmount": "400억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "자율이동 AI '유로보틱스', 400억 규모 시리즈A 투자 유치",
+        "url": "https://wowtale.net/2026/11/06/267562/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-06",
+        "company": "Harbinger",
+        "fundingAmount": "$240M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Harbinger raises $240M after expanding into defense",
+        "url": "https://techcrunch.com/2026/11/05/harbinger-raises-240m-after-expanding-into-defense/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-05",
         "company": "Titan OS",
@@ -947,33 +973,11 @@
         "title": "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치",
         "url": "https://view.asiae.co.kr/article/2026102816561363049",
         "source": "아시아경제"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "특별시의원",
-        "fundingAmount": "1조6040억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "김정희 특별시의원, 광양경자청 투자유치·일자리 실적 부진 지적",
-        "url": "https://www.etoday.co.kr/news/view/2641403",
-        "source": "이투데이"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "아이즈엔터테인먼트",
-        "fundingAmount": "200억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "아이즈엔터테인먼트, 200억원 규모 시리즈A 투자 유치...AI 메신저 개발 속도",
-        "url": "https://www.techm.kr/news/articleView.html?idxno=156652",
-        "source": "테크M"
       }
     ],
     "previous": {
-      "articleCount": 180,
-      "dealCount": 44,
+      "articleCount": 186,
+      "dealCount": 45,
       "briefingDays": 29
     }
   }
