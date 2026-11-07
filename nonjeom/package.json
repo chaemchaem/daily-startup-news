@@ -1,0 +1,26 @@
+{
+  "name": "nonjeom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "논점 — 실제 시사 이슈 기반 논술 문제·모범답안 자동 발행 파이프라인",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "nj": "node --env-file-if-exists=.env src/cli.js",
+    "daily": "node --env-file-if-exists=.env src/cli.js daily",
+    "publish": "node --env-file-if-exists=.env src/cli.js publish",
+    "status": "node --env-file-if-exists=.env src/cli.js status",
+    "probe": "node src/cli.js probe-sources",
+    "build:public": "node src/cli.js rebuild-public",
+    "fixture:site": "node src/cli.js build-fixture-site",
+    "eval:adversarial": "node --env-file-if-exists=.env src/cli.js eval-adversarial",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "fast-xml-parser": "^5.12.0",
+    "zod": "^4.6.7"
+  }
+}

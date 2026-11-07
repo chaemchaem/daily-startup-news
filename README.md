@@ -1,5 +1,7 @@
 # Daily Startup & VC Briefing
 
+> **같은 저장소의 두 번째 서비스 — 논점(`nonjeom/`)**: 실제 시사 이슈로 논술 문제와 검토를 거친 모범답안을 매일 09:00(KST)에 발행합니다. 설명은 [nonjeom/README.md](nonjeom/README.md), 운영은 [nonjeom/docs/OPERATIONS.md](nonjeom/docs/OPERATIONS.md), 예약 작업은 `.github/workflows/nonjeom.yml`을 보세요. 아래 내용은 기존 스타트업 브리핑에 대한 설명입니다.
+
 한국시간 09:00 기준 최근 48시간 동안 발행된 주요 스타트업·VC·창업 생태계 뉴스를 RSS에서 선별해 정적 HTML로 보여주는 최소 기능 제품(MVP)입니다. 최종 후보 기사의 본문은 요약을 만들 때만 일시적으로 읽으며, 기사 제목·발행일·요약·출처·링크 등 제한된 정보만 저장합니다.
 
 ## 작동 구조
