@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-07T00:11:43.309Z",
-  "latestDate": "2026-11-07",
+  "generatedAt": "2026-11-08T00:11:40.950Z",
+  "latestDate": "2026-11-08",
   "weekly": {
-    "from": "2026-11-01",
-    "to": "2026-11-07",
+    "from": "2026-11-02",
+    "to": "2026-11-08",
     "briefingDays": 7,
-    "articleCount": 69,
-    "domesticCount": 58,
-    "overseasCount": 11,
-    "dealCount": 18,
+    "articleCount": 62,
+    "domesticCount": 52,
+    "overseasCount": 10,
+    "dealCount": 16,
     "disclosedKrwDealCount": 9,
     "disclosedKrwTotalEok": 101005,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 27
+        "count": 23
       },
       {
         "label": "TIPS / LIPS",
-        "count": 19
+        "count": 16
       },
       {
         "label": "해외 VC",
@@ -41,30 +41,34 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 41
+        "count": 35
       },
       {
         "label": "실증·PoC",
-        "count": 6
+        "count": 5
       },
       {
         "label": "선정",
-        "count": 3
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 3
+        "count": 4
       },
       {
         "label": "모집",
         "count": 2
       },
       {
-        "label": "지원사업",
+        "label": "TIPS·LIPS 선정",
         "count": 2
       },
       {
         "label": "인수·M&A",
+        "count": 1
+      },
+      {
+        "label": "지원사업",
+        "count": 1
+      },
+      {
+        "label": "출시·상용화",
         "count": 1
       },
       {
@@ -79,32 +83,28 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 23
-      },
-      {
-        "label": "로봇",
-        "count": 3
-      },
-      {
-        "label": "바이오·헬스케어",
-        "count": 3
+        "count": 21
       },
       {
         "label": "반도체",
         "count": 3
       },
       {
-        "label": "우주항공",
+        "label": "로봇",
         "count": 2
+      },
+      {
+        "label": "바이오·헬스케어",
+        "count": 2
+      },
+      {
+        "label": "우주항공",
+        "count": 1
       }
     ],
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 2
-      },
-      {
-        "label": "시리즈D",
         "count": 2
       },
       {
@@ -120,6 +120,10 @@
         "count": 1
       },
       {
+        "label": "시리즈D",
+        "count": 1
+      },
+      {
         "label": "Series C",
         "count": 1
       }
@@ -127,15 +131,15 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 16
+        "count": 13
       },
       {
         "label": "스타트업투데이",
-        "count": 8
+        "count": 7
       },
       {
         "label": "EU-Startups",
-        "count": 8
+        "count": 7
       },
       {
         "label": "머니투데이",
@@ -150,20 +154,15 @@
         "count": 4
       },
       {
-        "label": "블로터",
+        "label": "아시아경제",
         "count": 3
       },
       {
-        "label": "아시아경제",
+        "label": "연합뉴스",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-01",
-        "total": 12,
-        "overseas": 1
-      },
       {
         "date": "2026-11-02",
         "total": 12,
@@ -193,6 +192,11 @@
         "date": "2026-11-07",
         "total": 13,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-08",
+        "total": 11,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -363,17 +367,6 @@
       },
       {
         "date": "2026-10-31",
-        "company": "파이어호크",
-        "fundingAmount": null,
-        "fundingStage": "시리즈D",
-        "industry": "우주항공",
-        "overseas": false,
-        "title": "로켓모터 양산 파이어호크, 1억5천만 달러 시리즈D 투자유치…유니콘",
-        "url": "https://wowtale.net/2026/10/31/267269/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-10-31",
         "company": "나노포지에이아이",
         "fundingAmount": "146억 원",
         "fundingStage": "시드 투자",
@@ -382,55 +375,44 @@
         "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
         "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
         "source": "블로터"
-      },
-      {
-        "date": "2026-10-30",
-        "company": "Ares Intelligence",
-        "fundingAmount": "€2.9 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "EXCLUSIVE: London’s Ares Intelligence raises €2.9 million to turn employee insights into AI adoption plans",
-        "url": "https://www.eu-startups.com/2026/10/exclusive-londons-ares-intelligence-raises-e2-6-million-to-turn-employee-insights-into-ai-adoption-plans/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 78,
-      "dealCount": 17,
+      "articleCount": 75,
+      "dealCount": 16,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-09",
-    "to": "2026-11-07",
+    "from": "2026-10-10",
+    "to": "2026-11-08",
     "briefingDays": 30,
-    "articleCount": 290,
-    "domesticCount": 247,
-    "overseasCount": 43,
-    "dealCount": 62,
+    "articleCount": 284,
+    "domesticCount": 244,
+    "overseasCount": 40,
+    "dealCount": 59,
     "disclosedKrwDealCount": 28,
     "disclosedKrwTotalEok": 333741.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 103
+        "count": 100
       },
       {
         "label": "TIPS / LIPS",
-        "count": 68
-      },
-      {
-        "label": "해외 VC",
-        "count": 41
+        "count": 66
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 39
+        "count": 40
+      },
+      {
+        "label": "해외 VC",
+        "count": 38
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 32
+        "count": 33
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -440,15 +422,15 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 144
+        "count": 138
       },
       {
         "label": "선정",
-        "count": 23
+        "count": 24
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 22
+        "count": 19
       },
       {
         "label": "실증·PoC",
@@ -480,13 +462,13 @@
       },
       {
         "label": "출시·상용화",
-        "count": 1
+        "count": 2
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 109
+        "count": 105
       },
       {
         "label": "로봇",
@@ -570,11 +552,11 @@
     "topSources": [
       {
         "label": "EU-Startups",
-        "count": 27
+        "count": 25
       },
       {
         "label": "머니투데이",
-        "count": 25
+        "count": 24
       },
       {
         "label": "와우테일",
@@ -585,28 +567,23 @@
         "count": 21
       },
       {
-        "label": "연합뉴스",
-        "count": 18
-      },
-      {
         "label": "파이낸셜뉴스",
         "count": 18
       },
       {
         "label": "아시아경제",
-        "count": 16
+        "count": 17
+      },
+      {
+        "label": "연합뉴스",
+        "count": 17
       },
       {
         "label": "아주경제",
-        "count": 16
+        "count": 15
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-09",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-10-10",
         "total": 15,
@@ -751,6 +728,11 @@
         "date": "2026-11-07",
         "total": 13,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-08",
+        "total": 11,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -976,8 +958,8 @@
       }
     ],
     "previous": {
-      "articleCount": 186,
-      "dealCount": 45,
+      "articleCount": 188,
+      "dealCount": 47,
       "briefingDays": 29
     }
   }

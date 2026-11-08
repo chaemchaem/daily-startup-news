@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-11-07T09:00:00+09:00",
-  "collectedAt": "2026-11-07T09:11:43+09:00",
+  "generatedAt": "2026-11-08T09:00:00+09:00",
+  "collectedAt": "2026-11-08T09:11:40+09:00",
   "range": {
-    "from": "2026-11-05T09:00:00+09:00",
-    "to": "2026-11-07T09:00:00+09:00"
+    "from": "2026-11-06T09:00:00+09:00",
+    "to": "2026-11-08T09:00:00+09:00"
   },
-  "totalCount": 13,
+  "totalCount": 11,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 3,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 3,
-    "스타트업 / 벤처기업 / 초기창업": 0,
+    "TIPS / LIPS": 2,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
+    "스타트업 / 벤처기업 / 초기창업": 1,
     "세컨더리 / 구주매각": 1,
-    "해외 VC": 1
+    "해외 VC": 0
   },
   "items": [
     {
@@ -29,7 +29,7 @@
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
       "industry": "바이오·헬스케어",
-      "score": 81
+      "score": 79
     },
     {
       "id": "923e557e1d98151e",
@@ -47,22 +47,7 @@
       "fundingStage": "시리즈A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 80
-    },
-    {
-      "id": "6e35dc1b72b30376",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "반도체 극저온 냉동기 국산화 '크라이오H&I', 특구 딥테크 챌린지 대상",
-      "publishedAt": "2026-11-05",
-      "summary": "반도체 공정용 극저온 냉동기를 국산화한 크라이오에이치앤아이가 올해 연구개발특구 대표 딥테크 스타트업으로 선정됐다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "머니투데이",
-      "url": "https://www.mt.co.kr/future/2026/11/05/2026110514035146340",
-      "resolvedUrl": null,
-      "eventType": "선정",
-      "industry": "반도체",
-      "score": 77
+      "score": 78
     },
     {
       "id": "5359a377617a5446",
@@ -77,23 +62,20 @@
       "resolvedUrl": null,
       "fundingStage": "시리즈C",
       "eventType": "투자유치",
-      "score": 75
+      "score": 73
     },
     {
-      "id": "913c8af7c3286301",
+      "id": "e2c9495e8cb2819d",
       "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "한국딥러닝, 신한베트남파이낸스와 '금융 AI' 실증…동남아 진출 속도",
-      "publishedAt": "2026-11-05",
-      "summary": "이번 실증은 신한베트남은행과 서울경제진흥원(SBA)이 주관한 글로벌 오픈이노베이션 사업으로 진행됐다.",
+      "title": "한국벤처투자, 35조 원 쥔 유상훈 첫 시험대는 위축된 민간 자본 유치",
+      "publishedAt": "2026-11-06",
+      "summary": "◇ 누적 34조 원 관장하는 요직∙∙∙정책 집행 속도 낸다 한국벤처투자는 국내 벤처캐피탈(VC) 생태계에 자금을 공급하는 마중물 역할을 하는 최대 정책 출자 기관이다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "머니투데이",
-      "url": "https://www.mt.co.kr/future/2026/11/05/2026110509410237056",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53451",
       "resolvedUrl": null,
-      "company": "한국딥러닝",
-      "eventType": "실증·PoC",
-      "industry": "AI",
-      "score": 73
+      "score": 67
     },
     {
       "id": "506d253952c6fe80",
@@ -107,63 +89,36 @@
       "url": "https://www.donga.com/news/Economy/article/all/20261106/134979481/1",
       "resolvedUrl": null,
       "eventType": "투자유치",
-      "score": 68
+      "score": 66
     },
     {
-      "id": "c2a4c822d8e4700a",
-      "category": "VC / AC",
-      "title": "PwC컨설팅, 한국피씨피와 대학 실험실 창업 생태계 활성화 지원",
-      "publishedAt": "2026-11-05",
-      "summary": "5일 PwC컨설팅과 한국피씨피는 전날 서울 성동청년창업이룸센터에서 '대학 실험실 창업 생태계 활성화를 위한 업무협약(MOU)'을 체결했다고 밝혔다.",
+      "id": "33a24f6228a8ce2a",
+      "category": "TIPS / LIPS",
+      "title": "전북, 창업도시 도약 시동…전주 한옥마을서 창업대전 개막",
+      "publishedAt": "2026-11-06",
+      "summary": "전북도는 지난달 23일 중소벤처기업부가 공고한 '창업도시 조성 프로젝트' 선정을 위해 사업계획을 준비하고 있다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026110511260996440",
+      "url": "https://view.asiae.co.kr/article/2026110618163254844",
       "resolvedUrl": null,
-      "eventType": "협약",
-      "score": 64
+      "eventType": "선정",
+      "score": 62
     },
     {
-      "id": "2655cae2cb81edac",
-      "category": "TIPS / LIPS",
-      "title": "더인벤션랩, 라이프스타일∙바디테크 스타트업 4개사 투자∙∙∙LIPS 연계 스케일업 지원",
-      "publishedAt": "2026-11-05",
-      "summary": "중장비선수들은 이번에 확보한 정책금융을 바탕으로 전국 지점망 확장과 직영 장비 풀을 대폭 확충할 계획이다.",
+      "id": "098520ad4009575c",
+      "category": "VC / AC",
+      "title": "선거 후 AI 규제 우려에도… 오픈AI \"데이터센터 투자·자금 조달 계속\"",
+      "publishedAt": "2026-11-07",
+      "summary": "그는 \"유능한 CFO라면 자금을 조달할 수 있을 때 언제나 조달한다\"며 현재 투자 유치가 진행 중이라고 설명했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53447",
+      "source": "머니투데이",
+      "url": "https://www.mt.co.kr/world/2026/11/07/2026110714075191376",
       "resolvedUrl": null,
-      "score": 63
-    },
-    {
-      "id": "0ac0cd56fa73eb99",
-      "category": "해외 VC",
-      "title": "Harbinger raises $240M after expanding into defense",
-      "publishedAt": "2026-11-06",
-      "summary": "Harbinger raised $240M.",
-      "summarySource": "structured_overseas",
-      "summaryType": "structured_overseas",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/05/harbinger-raises-240m-after-expanding-into-defense/",
-      "resolvedUrl": null,
-      "company": "Harbinger",
-      "fundingAmount": "$240M",
       "eventType": "투자유치",
-      "score": 59
-    },
-    {
-      "id": "a33b1342e12587c1",
-      "category": "TIPS / LIPS",
-      "title": "중소벤처기업부, 신임 소상공인정책실장에 조경원 창업정책관 발탁",
-      "publishedAt": "2026-11-05",
-      "summary": "아울러 국민 누구나 창업에 도전할 수 있는 분위기 조성에 큰 성과를 거둔 ‘모두의 창업 프로젝트’를 총괄 기획·실행하는 등 탁월한 기획력과 강한 추진력을 보여준 바 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "중소벤처기업부",
-      "url": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=1072314",
-      "resolvedUrl": null,
-      "score": 55
+      "industry": "AI",
+      "score": 60
     },
     {
       "id": "dc278ed05ab9df39",
@@ -176,7 +131,7 @@
       "source": "뉴시스",
       "url": "https://www.newsis.com/view/NISX20261106_0003857490",
       "resolvedUrl": null,
-      "score": 49
+      "score": 47
     },
     {
       "id": "924405805930bf29",
@@ -190,7 +145,7 @@
       "url": "https://www.yna.co.kr/view/AKR20261106123300055",
       "resolvedUrl": null,
       "eventType": "지원사업",
-      "score": 46
+      "score": 44
     },
     {
       "id": "f19c94402cf2abf7",
@@ -203,7 +158,21 @@
       "source": "서울경제",
       "url": "https://www.sedaily.com/article/20111081",
       "resolvedUrl": null,
-      "score": 39
+      "score": 37
+    },
+    {
+      "id": "f8944e12a7f0d19f",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "비대면 진료 스타트업 창업 의대생, ‘BEST 약품’ 광고로 유죄 확정",
+      "publishedAt": "2026-11-08",
+      "summary": "장 전 대표는 한양대 의대를 다니다가 휴학하고 2019년 닥터나우를 창업했고, 2020년 11월 비대면 진료 및 처방약 배달 서비스를 국내 최초로 출시했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "조선비즈",
+      "url": "https://biz.chosun.com/topics/law_firm/2026/11/08/BZKB5M2OBRD5NIXWE3RYGW6WCA/",
+      "resolvedUrl": null,
+      "eventType": "출시·상용화",
+      "score": 31
     }
   ]
 }
