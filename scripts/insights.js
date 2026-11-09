@@ -107,6 +107,8 @@ function uniqueItems(archives) {
   return [...seen.values()];
 }
 
+const KRW_TOTAL_MAX_DEAL_EOK = 10_000;
+
 function summarizeWindow(archives, from, to) {
   const inWindow = archives.filter((archive) => archive.date >= from && archive.date <= to);
   const items = uniqueItems(inWindow);
@@ -119,9 +121,11 @@ function summarizeWindow(archives, from, to) {
     if (!dealsByCompany.has(key)) dealsByCompany.set(key, deal);
   }
   const uniqueDeals = [...dealsByCompany.values()];
+  // 원화 금액 합계는 국내 스타트업 라운드만 보려는 값이다. 1조 원 이상은 해외 대형사(원화로 보도된 경우)나
+  // 기사 해석 오류일 가능성이 커서 합계에서 뺀다. 투자 라운드 목록에는 그대로 남는다.
   const krwDeals = uniqueDeals
     .map((deal) => ({ deal, eok: deal.fundingAmount ? parseKrwToEok(deal.fundingAmount) : null }))
-    .filter((entry) => entry.eok !== null);
+    .filter((entry) => entry.eok !== null && entry.eok < KRW_TOTAL_MAX_DEAL_EOK);
 
   return {
     from,

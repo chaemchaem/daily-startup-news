@@ -66,8 +66,6 @@ const elements = {
   dealRows: $("#deal-rows"),
   dealSummary: $("#deal-summary"),
   eventBars: $("#event-bars"),
-  front: $("#front"),
-  heroField: $("#hero-field"),
   industryBars: $("#industry-bars"),
   issueNote: $("#issue-note"),
   latestButton: $("#latest-button"),
@@ -286,6 +284,44 @@ function matchesSearch(article) {
   ).includes(state.search);
 }
 
+// 투자 단계 표시: 시드 → A → B → C 이상을 네 칸 계단으로 보여준다(사이트 아이콘의 성장 블록과 같은 모양).
+// 저장된 라운드 이름만 읽고, 단계가 분명하지 않은 값(후속 투자·브릿지 등)은 계단 없이 글자만 쓴다.
+function stageLevel(stage) {
+  const text = String(stage || "");
+  if (/시리즈\s*[C-H]|series\s*[c-h](?![a-z])|프리\s*-?\s*IPO|pre-?\s*IPO/iu.test(text)) return 4;
+  if (/시리즈\s*B|series\s*b(?![a-z])|프리\s*-?\s*B|pre-?\s*B(?![a-z])/iu.test(text)) return 3;
+  if (/시리즈\s*A|series\s*a(?![a-z])|프리\s*-?\s*A|pre-?\s*A(?![a-z])/iu.test(text)) return 2;
+  if (/시드|seed|엔젤|angel/iu.test(text)) return 1;
+  return 0;
+}
+
+function stageLabel(stage) {
+  const label = el("span", "stage");
+  const level = stageLevel(stage);
+  if (level) {
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 16 12");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "12");
+    svg.setAttribute("class", "stage-mark");
+    svg.setAttribute("aria-hidden", "true");
+    [4, 6, 9, 12].forEach((height, index) => {
+      const bar = document.createElementNS(ns, "rect");
+      bar.setAttribute("x", String(index * 4));
+      bar.setAttribute("y", String(12 - height));
+      bar.setAttribute("width", "3");
+      bar.setAttribute("height", String(height));
+      bar.setAttribute("rx", "0.5");
+      if (index < level) bar.setAttribute("class", "on");
+      svg.append(bar);
+    });
+    label.append(svg);
+  }
+  label.append(stage);
+  return label;
+}
+
 // ---------- 기사 렌더링 ----------
 
 function renderStory(article, { headingLevel = "h3" } = {}) {
@@ -335,7 +371,7 @@ function renderStory(article, { headingLevel = "h3" } = {}) {
     deal.setAttribute("aria-label", "기사에 명시된 정보");
     if (info.eventType) deal.append(el("span", null, info.eventType));
     if (info.company) deal.append(el("span", null, info.company));
-    if (info.fundingStage) deal.append(el("span", null, info.fundingStage));
+    if (info.fundingStage) deal.append(stageLabel(info.fundingStage));
     if (info.fundingAmount) deal.append(el("span", "deal-amount", info.fundingAmount));
     fragment.append(deal);
   }
@@ -372,8 +408,6 @@ const deck = {
   lastTime: 0,
   cardWidth: 460,
   radius: 700,
-  pointer: { x: 0, y: 0 },
-  scroll: 0,
 };
 
 function prefersReducedMotion() {
@@ -434,50 +468,10 @@ function renderStats() {
       figure.append(number, el("span", "stat-unit", unit));
       tile.append(figure, el("p", "stat-label", label));
       tile.append(el("span", "visually-hidden", `${label} ${value}${unit}`));
-      if (extra === "is-main") tile.append(el("div", "stat-spark"));
       countUp(number, value);
       return tile;
     })
   );
-  renderStatSpark();
-}
-
-// 최근 7일 일별 기사 수를 큰 숫자 옆에 작은 선으로 그린다.
-function renderStatSpark() {
-  const holder = elements.statTiles.querySelector(".stat-spark");
-  if (!holder) return;
-  const daily = (state.insights?.weekly?.daily || []).slice(-7);
-  if (daily.length < 2) {
-    holder.replaceChildren();
-    return;
-  }
-  const width = 120;
-  const height = 36;
-  const max = Math.max(1, ...daily.map((day) => day.total));
-  const points = daily.map((day, index) => [
-    (index / (daily.length - 1)) * (width - 6) + 3,
-    height - 4 - (day.total / max) * (height - 10),
-  ]);
-  const ns = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(ns, "svg");
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-  svg.setAttribute("width", String(width));
-  svg.setAttribute("height", String(height));
-  svg.setAttribute("aria-hidden", "true");
-  const line = document.createElementNS(ns, "polyline");
-  line.setAttribute("points", points.map((point) => point.map((value) => value.toFixed(1)).join(",")).join(" "));
-  line.setAttribute("class", "spark-line");
-  line.setAttribute("pathLength", "100");
-  const [lastX, lastY] = points.at(-1);
-  const dot = document.createElementNS(ns, "circle");
-  dot.setAttribute("cx", lastX.toFixed(1));
-  dot.setAttribute("cy", lastY.toFixed(1));
-  dot.setAttribute("r", "3");
-  dot.setAttribute("class", "spark-dot");
-  svg.append(line, dot);
-  const caption = el("span", "spark-caption", `최근 ${daily.length}일 흐름`);
-  holder.replaceChildren(svg, caption);
-  holder.title = daily.map((day) => `${formatShortDate(day.date)} ${day.total}건`).join(" · ");
 }
 
 // ----- 카드 -----
@@ -489,8 +483,6 @@ function renderCardFace(article, position, total) {
   const front = el("div", "card-face card-front");
   const top = el("p", "card-top");
   top.append(el("span", "card-category", CATEGORY_LABELS[article.category] || article.category || "기타"));
-  const numeral = el("span", "card-number", String(position).padStart(2, "0"));
-  numeral.setAttribute("aria-hidden", "true");
   const kicker = el("p", "kicker card-kicker");
   kicker.append(
     el("span", null, article.source || "출처 미상"),
@@ -512,7 +504,7 @@ function renderCardFace(article, position, total) {
   } else {
     title.textContent = article.title || "제목 없음";
   }
-  front.append(numeral, top, kicker, title);
+  front.append(top, kicker, title);
 
   const facts = [
     ["기업", info.company],
@@ -525,7 +517,9 @@ function renderCardFace(article, position, total) {
     list.setAttribute("aria-label", "기사에 명시된 정보");
     for (const [label, value] of facts) {
       const row = el("div", label === "금액" ? "is-amount" : null);
-      row.append(el("dt", null, label), el("dd", null, value));
+      const valueCell = el("dd");
+      valueCell.append(label === "라운드" ? stageLabel(value) : value);
+      row.append(el("dt", null, label), valueCell);
       list.append(row);
     }
     front.append(list);
@@ -534,7 +528,7 @@ function renderCardFace(article, position, total) {
   flip.type = "button";
   flip.dataset.flip = "true";
   front.append(flip);
-  front.append(el("span", "card-glare"), el("span", "card-fog"));
+  front.append(el("span", "card-fog"));
 
   const back = el("div", "card-face card-back");
   const backTop = el("p", "card-top");
@@ -579,7 +573,6 @@ function renderDeck() {
     elements.deckDots.replaceChildren();
     elements.deck.classList.add("is-empty");
     elements.deckPosition.textContent = "";
-    heroField.setNodes([]);
     return;
   }
   elements.deck.classList.remove("is-empty");
@@ -608,7 +601,6 @@ function renderDeck() {
       return dot;
     })
   );
-  heroField.setNodes(deck.items.map((article) => CATEGORY_ORDER.indexOf(article.category) + 1));
   layoutDeck();
   paintDeck();
 }
@@ -643,8 +635,6 @@ function setFaceInert(face, value) {
 function paintDeck() {
   const size = deck.items.length;
   if (!size) return;
-  const tiltX = -deck.pointer.y * 3 + deck.scroll * 16;
-  const tiltY = deck.pointer.x * 2.5;
   // 카드마다 원근(perspective)을 따로 주어 각자 독립된 3D 공간에 그린다.
   // 카드들이 한 3D 공간을 공유하면 Chrome이 기울어진 정면 카드 일부를 그리지 않는 문제가 있다.
   // 앞뒤 순서는 z-index로 직접 정한다.
@@ -654,7 +644,7 @@ function paintDeck() {
     const distance = Math.abs(angle);
     card.style.transform =
       `perspective(${DECK_PERSPECTIVE}px) translateZ(${-deck.radius}px) ` +
-      `rotateX(${tiltX.toFixed(2)}deg) rotateY(${(angle + tiltY).toFixed(3)}deg) translateZ(${deck.radius}px)`;
+      `rotateY(${angle.toFixed(3)}deg) translateZ(${deck.radius}px)`;
     card.style.zIndex = String(1000 + Math.round(Math.cos((angle * Math.PI) / 180) * 500));
     if (distance >= RING_HIDE_DEG) {
       card.style.visibility = "hidden";
@@ -669,7 +659,6 @@ function paintDeck() {
   });
   const nearest = mod(Math.round(deck.pos), size);
   if (nearest !== deck.active) setActiveCard(nearest);
-  heroField.setRotation(deck.pos * ((RING_STEP_DEG * Math.PI) / 180) * 0.35);
 }
 
 function setActiveCard(index) {
@@ -681,9 +670,6 @@ function setActiveCard(index) {
     card.classList.remove("is-flipped");
     if (active) card.removeAttribute("aria-hidden");
     else card.setAttribute("aria-hidden", "true");
-    card.querySelector(".card-tilt")?.style.removeProperty("--tilt-x");
-    card.querySelector(".card-tilt")?.style.removeProperty("--tilt-y");
-    card.classList.remove("is-tilting");
     setFaceInert(card.querySelector(".card-front"), !active);
     setFaceInert(card.querySelector(".card-back"), true);
   });
@@ -696,7 +682,6 @@ function setActiveCard(index) {
   const atEnd = !ringWraps() && index === total - 1;
   elements.deckPrev.disabled = atStart || total < 2;
   elements.deckNext.disabled = atEnd || total < 2;
-  heroField.setActive(index);
 }
 
 function startDeckAnimation() {
@@ -711,12 +696,9 @@ function stepDeck(now) {
   const steps = clamp((now - deck.lastTime) / 16.667, 0.5, 3);
   deck.lastTime = now;
   if (!deck.drag?.moving) {
-    for (let i = 0; i < Math.round(steps); i += 1) {
-      deck.vel += (deck.target - deck.pos) * 0.075;
-      deck.vel *= 0.74;
-      deck.pos += deck.vel;
-    }
-    if (Math.abs(deck.target - deck.pos) < 0.0008 && Math.abs(deck.vel) < 0.0008) {
+    // 튕기지 않고 목표 카드에 부드럽게 다가가 멈춘다(ease-out).
+    deck.pos += (deck.target - deck.pos) * (1 - Math.pow(1 - 0.16, steps));
+    if (Math.abs(deck.target - deck.pos) < 0.001) {
       deck.pos = deck.target;
       deck.vel = 0;
       paintDeck();
@@ -774,14 +756,6 @@ function toggleFlip() {
   target?.focus({ preventScroll: true });
 }
 
-function clearTilt(card = activeCard()) {
-  if (!card) return;
-  card.classList.remove("is-tilting");
-  const tilt = card.querySelector(".card-tilt");
-  tilt?.style.removeProperty("--tilt-x");
-  tilt?.style.removeProperty("--tilt-y");
-}
-
 elements.deckStack.addEventListener("pointerdown", (event) => {
   if (!deck.items.length || event.button !== 0) return;
   if (event.target.closest("button")) return;
@@ -804,7 +778,6 @@ elements.deckStack.addEventListener("pointermove", (event) => {
     const dy = event.clientY - drag.y;
     if (!drag.moving && Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) {
       drag.moving = true;
-      clearTilt();
       elements.deckStack.classList.add("is-dragging");
       elements.deckStack.setPointerCapture?.(event.pointerId);
       if (deck.flipped) toggleFlipSilently();
@@ -828,18 +801,6 @@ elements.deckStack.addEventListener("pointermove", (event) => {
     }
     return;
   }
-  // 마우스를 올리면 가운데 카드가 포인터 쪽으로 기운다(내부 요소들이 서로 다른 깊이로 움직인다).
-  const card = activeCard();
-  if (event.pointerType !== "mouse" || prefersReducedMotion() || !card || !card.contains(event.target)) return;
-  const box = card.getBoundingClientRect();
-  const px = (event.clientX - box.left) / box.width - 0.5;
-  const py = (event.clientY - box.top) / box.height - 0.5;
-  card.classList.add("is-tilting");
-  const tilt = card.querySelector(".card-tilt");
-  tilt.style.setProperty("--tilt-x", `${(-py * 12).toFixed(2)}deg`);
-  tilt.style.setProperty("--tilt-y", `${(px * 14).toFixed(2)}deg`);
-  tilt.style.setProperty("--glare-x", `${((px + 0.5) * 100).toFixed(1)}%`);
-  tilt.style.setProperty("--glare-y", `${((py + 0.5) * 100).toFixed(1)}%`);
 });
 
 function toggleFlipSilently() {
@@ -887,7 +848,6 @@ elements.deckStack.addEventListener(
       deck.frame = 0;
     }
     deck.vel = 0;
-    clearTilt();
     if (deck.flipped) toggleFlipSilently();
     deck.pos += delta / (deck.cardWidth * 0.85);
     if (!ringWraps()) deck.pos = clamp(deck.pos, -0.3, deck.items.length - 0.7);
@@ -902,10 +862,6 @@ elements.deckStack.addEventListener(
   },
   { passive: false }
 );
-
-elements.deckStack.addEventListener("pointerleave", (event) => {
-  if (event.pointerType === "mouse" && !deck.drag) clearTilt();
-});
 
 elements.deckStack.addEventListener("click", (event) => {
   if (deck.suppressClick) {
@@ -925,7 +881,9 @@ elements.deckStack.addEventListener("click", (event) => {
     return;
   }
   if (event.target.closest("a, button")) return;
-  if (window.getSelection?.().toString()) return;
+  // 카드 안의 글자를 드래그해 고르는 중일 때만 뒤집지 않는다(다른 곳의 선택은 무시).
+  const selection = window.getSelection?.();
+  if (selection?.toString() && card.contains(selection.anchorNode)) return;
   toggleFlip();
 });
 
@@ -947,40 +905,6 @@ elements.deckDots.addEventListener("click", (event) => {
   if (dot) moveDeckTo(Number(dot.dataset.goto));
 });
 
-// 화면 위 포인터 위치와 스크롤에 따라 회전 무대 전체가 살짝 기운다.
-elements.front.addEventListener("pointermove", (event) => {
-  if (event.pointerType !== "mouse" || prefersReducedMotion() || deck.drag) return;
-  const box = elements.front.getBoundingClientRect();
-  deck.pointer.x = clamp((event.clientX - box.left) / box.width - 0.5, -0.5, 0.5);
-  deck.pointer.y = clamp((event.clientY - box.top) / box.height - 0.5, -0.5, 0.5);
-  heroField.setPointer(deck.pointer.x, deck.pointer.y);
-  if (!deck.frame) requestAnimationFrame(paintDeck);
-});
-
-elements.front.addEventListener("pointerleave", () => {
-  deck.pointer.x = 0;
-  deck.pointer.y = 0;
-  heroField.setPointer(0, 0);
-  if (!deck.frame) requestAnimationFrame(paintDeck);
-});
-
-let scrollQueued = false;
-window.addEventListener(
-  "scroll",
-  () => {
-    if (scrollQueued || prefersReducedMotion()) return;
-    scrollQueued = true;
-    requestAnimationFrame(() => {
-      scrollQueued = false;
-      const box = elements.front.getBoundingClientRect();
-      deck.scroll = clamp(-box.top / Math.max(1, box.height), 0, 1);
-      heroField.setScroll(deck.scroll);
-      if (!deck.frame) paintDeck();
-    });
-  },
-  { passive: true }
-);
-
 let resizeQueued = false;
 window.addEventListener("resize", () => {
   if (resizeQueued) return;
@@ -989,229 +913,8 @@ window.addEventListener("resize", () => {
     resizeQueued = false;
     layoutDeck();
     paintDeck();
-    heroField.resize();
   });
 });
-
-// ----- 별자리 배경(canvas) -----
-// 은은한 점과 선이 3D 공간에서 천천히 돈다. 오늘의 핵심 기사는 카테고리 색 별로 표시되고,
-// 가운데 카드의 별이 맥박처럼 빛난다. 화면 밖이거나 '동작 줄이기' 설정이면 멈춘다.
-
-const heroField = (() => {
-  const canvas = elements.heroField;
-  const context = canvas?.getContext?.("2d");
-  const field = {
-    points: [],
-    links: [],
-    nodeIndexes: [],
-    active: -1,
-    rotation: 0,
-    autoRotation: 0,
-    pointer: { x: 0, y: 0 },
-    scroll: 0,
-    colors: null,
-    visible: true,
-    frame: 0,
-    width: 0,
-    height: 0,
-    ratio: 1,
-  };
-
-  function random(seed) {
-    let value = seed;
-    return () => {
-      value = (value * 16807) % 2147483647;
-      return (value - 1) / 2147483646;
-    };
-  }
-
-  function buildPoints() {
-    const next = random(20261004);
-    field.points = Array.from({ length: 120 }, () => ({
-      x: next() * 2 - 1,
-      y: (next() * 2 - 1) * 0.55,
-      z: next() * 2 - 1,
-      size: 0.6 + next() * 1.1,
-      category: 0,
-    }));
-    field.links = [];
-    for (let i = 0; i < field.points.length; i += 1) {
-      for (let j = i + 1; j < field.points.length; j += 1) {
-        const a = field.points[i];
-        const b = field.points[j];
-        const distance = Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z);
-        if (distance < 0.3) field.links.push([i, j, distance]);
-      }
-    }
-  }
-
-  function readColors() {
-    const style = getComputedStyle(document.documentElement);
-    const read = (name) => style.getPropertyValue(name).trim();
-    field.colors = {
-      dot: read("--field-dot"),
-      line: read("--field-line"),
-      categories: [read("--accent"), ...[1, 2, 3, 4, 5, 6].map((n) => read(`--cat-${n}`))],
-    };
-  }
-
-  function resize() {
-    if (!canvas) return;
-    const box = canvas.getBoundingClientRect();
-    field.ratio = Math.min(2, window.devicePixelRatio || 1);
-    field.width = box.width;
-    field.height = box.height;
-    canvas.width = Math.round(box.width * field.ratio);
-    canvas.height = Math.round(box.height * field.ratio);
-    draw();
-  }
-
-  function project(point) {
-    const yaw = field.rotation + field.autoRotation + field.pointer.x * 0.35;
-    const pitch = 0.18 + field.pointer.y * 0.2 + field.scroll * 0.5;
-    const cosY = Math.cos(yaw);
-    const sinY = Math.sin(yaw);
-    const x1 = point.x * cosY - point.z * sinY;
-    const z1 = point.x * sinY + point.z * cosY;
-    const cosP = Math.cos(pitch);
-    const sinP = Math.sin(pitch);
-    const y2 = point.y * cosP - z1 * sinP;
-    const z2 = point.y * sinP + z1 * cosP;
-    const depth = 2.6 / (2.6 + z2);
-    return {
-      x: field.width / 2 + x1 * depth * field.width * 0.55,
-      y: field.height * 0.48 + y2 * depth * field.height * 0.9,
-      depth,
-      z: z2,
-    };
-  }
-
-  function draw(time = performance.now()) {
-    if (!context || !field.width) return;
-    if (!field.colors) readColors();
-    context.setTransform(field.ratio, 0, 0, field.ratio, 0, 0);
-    context.clearRect(0, 0, field.width, field.height);
-    const projected = field.points.map(project);
-    context.lineWidth = 1;
-    context.strokeStyle = field.colors.line;
-    for (const [i, j, distance] of field.links) {
-      const a = projected[i];
-      const b = projected[j];
-      context.globalAlpha = clamp((1 - distance / 0.3) * Math.min(a.depth, b.depth) * 0.9, 0, 0.8);
-      context.beginPath();
-      context.moveTo(a.x, a.y);
-      context.lineTo(b.x, b.y);
-      context.stroke();
-    }
-    projected.forEach((point, index) => {
-      const source = field.points[index];
-      const node = field.nodeIndexes.indexOf(index);
-      context.globalAlpha = clamp(point.depth * 0.9, 0.2, 1);
-      if (node >= 0) {
-        const color = field.colors.categories[source.category] || field.colors.categories[0];
-        const radius = (node === field.active ? 5 : 3.2) * point.depth;
-        context.fillStyle = color;
-        context.beginPath();
-        context.arc(point.x, point.y, radius, 0, Math.PI * 2);
-        context.fill();
-        if (node === field.active) {
-          const pulse = prefersReducedMotion() ? 0.5 : (Math.sin(time / 420) + 1) / 2;
-          context.globalAlpha = 0.5 - pulse * 0.35;
-          context.strokeStyle = color;
-          context.lineWidth = 1.5;
-          context.beginPath();
-          context.arc(point.x, point.y, radius + 6 + pulse * 10, 0, Math.PI * 2);
-          context.stroke();
-          context.lineWidth = 1;
-          context.strokeStyle = field.colors.line;
-        }
-      } else {
-        context.fillStyle = field.colors.dot;
-        context.beginPath();
-        context.arc(point.x, point.y, source.size * point.depth, 0, Math.PI * 2);
-        context.fill();
-      }
-    });
-    context.globalAlpha = 1;
-  }
-
-  function loop(time) {
-    field.frame = 0;
-    if (!field.visible || document.hidden) return;
-    field.autoRotation += 0.0007;
-    draw(time);
-    field.frame = requestAnimationFrame(loop);
-  }
-
-  function start() {
-    if (field.frame || prefersReducedMotion()) {
-      draw();
-      return;
-    }
-    field.frame = requestAnimationFrame(loop);
-  }
-
-  function refresh() {
-    if (prefersReducedMotion() || !field.frame) draw();
-  }
-
-  if (canvas && context) {
-    buildPoints();
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver((entries) => {
-        field.visible = entries.some((entry) => entry.isIntersecting);
-        if (field.visible) start();
-      }).observe(canvas);
-    }
-    document.addEventListener("visibilitychange", () => {
-      if (!document.hidden) start();
-    });
-    const scheme = window.matchMedia?.("(prefers-color-scheme: dark)");
-    scheme?.addEventListener?.("change", () => {
-      readColors();
-      refresh();
-    });
-    requestAnimationFrame(() => {
-      resize();
-      start();
-    });
-  }
-
-  return {
-    resize,
-    // 기사 수만큼 비교적 앞쪽의 점을 골라 카테고리 색 별로 바꾼다.
-    setNodes(categories) {
-      if (!field.points.length) return;
-      for (const point of field.points) point.category = 0;
-      const candidates = field.points
-        .map((point, index) => ({ index, score: Math.abs(point.y) + Math.abs(point.z) * 0.3 }))
-        .sort((left, right) => left.score - right.score);
-      const step = Math.max(1, Math.floor(candidates.length / Math.max(1, categories.length * 2)));
-      field.nodeIndexes = categories.map((category, order) => {
-        const index = candidates[(order * step) % candidates.length].index;
-        field.points[index].category = category;
-        return index;
-      });
-      refresh();
-    },
-    setActive(index) {
-      field.active = index;
-      refresh();
-    },
-    setRotation(value) {
-      field.rotation = value;
-      refresh();
-    },
-    setPointer(x, y) {
-      field.pointer = { x, y };
-      refresh();
-    },
-    setScroll(value) {
-      field.scroll = value;
-      refresh();
-    },
-  };
-})();
 
 // ----- 투자 티커 -----
 
@@ -1228,35 +931,28 @@ function renderTicker() {
     return;
   }
   ticker.hidden = false;
-  const makeTrack = (hidden) => {
-    const list = el("ul", "ticker-track");
-    if (hidden) list.setAttribute("aria-hidden", "true");
-    for (const article of deals) {
-      const info = structuredInfo(article);
-      const item = el("li", "ticker-item");
-      item.dataset.category = String(CATEGORY_ORDER.indexOf(article.category) + 1 || 0);
-      const url = safeUrl(article.url);
-      const label = el(url ? "a" : "span", "ticker-link");
-      if (url) {
-        label.href = url;
-        label.target = "_blank";
-        label.rel = "noopener noreferrer";
-        label.title = article.title || "";
-        if (hidden) label.tabIndex = -1;
-      }
-      label.append(el("strong", null, info.company));
-      if (info.fundingStage) label.append(el("span", null, info.fundingStage));
-      if (info.fundingAmount) label.append(el("span", "ticker-amount", info.fundingAmount));
-      item.append(label);
-      list.append(item);
+  // 흐르는 애니메이션 없이 한 줄로 두고, 넘치면 옆으로 넘겨 본다.
+  const list = el("ul", "ticker-track");
+  for (const article of deals) {
+    const info = structuredInfo(article);
+    const item = el("li", "ticker-item");
+    item.dataset.category = String(CATEGORY_ORDER.indexOf(article.category) + 1 || 0);
+    const url = safeUrl(article.url);
+    const label = el(url ? "a" : "span", "ticker-link");
+    if (url) {
+      label.href = url;
+      label.target = "_blank";
+      label.rel = "noopener noreferrer";
+      label.title = article.title || "";
     }
-    return list;
-  };
+    label.append(el("strong", null, info.company));
+    if (info.fundingStage) label.append(stageLabel(info.fundingStage));
+    if (info.fundingAmount) label.append(el("span", "ticker-amount", info.fundingAmount));
+    item.append(label);
+    list.append(item);
+  }
   const viewport = el("div", "ticker-viewport");
-  const belt = el("div", "ticker-belt");
-  belt.append(makeTrack(false), makeTrack(true));
-  belt.style.setProperty("--ticker-duration", `${Math.max(24, deals.length * 6)}s`);
-  viewport.append(belt);
+  viewport.append(list);
   ticker.replaceChildren(el("p", "ticker-label", "오늘의 투자"), viewport);
   ticker.setAttribute("aria-label", `오늘 기사에 명시된 투자 ${deals.length}건`);
 }
@@ -1478,7 +1174,11 @@ function renderDeals(window) {
       companyCell.append(el("span", "deal-date", `${formatShortDate(deal.date)} · ${deal.source}`));
       row.append(
         companyCell,
-        el("td", null, deal.fundingStage || "—"),
+        (() => {
+          const cell = el("td");
+          cell.append(deal.fundingStage ? stageLabel(deal.fundingStage) : "—");
+          return cell;
+        })(),
         el("td", "num", deal.fundingAmount || "—")
       );
       return row;
@@ -1587,7 +1287,6 @@ function renderBarList(container, entries, { limit = 6, empty = "데이터가 �
 }
 
 function renderInsights() {
-  renderStatSpark();
   const window = state.insights?.[state.period];
   for (const button of elements.periodToggle.querySelectorAll("[data-period]")) {
     button.setAttribute("aria-pressed", String(button.dataset.period === state.period));

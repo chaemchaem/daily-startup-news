@@ -195,3 +195,11 @@ test("지자체 기업 유치 설명회는 제외하되, 스타트업 대상 행
   );
   assert.equal(finalHardExcludeReason({ title: "경기도, 스타트업 50곳 투자유치 설명회 개최" }), null);
 });
+
+test("단체장이 주체인 투자유치 목표 기사는 최종 제외한다", () => {
+  const { finalHardExcludeReason: reason } = require("../scripts/collect-news");
+  assert.equal(
+    reason({ title: "이현재 하남시장, 2030년 투자유치 10조 원 목표...교산 AI·미사 K-컬처로 자족도시 도약 박차" }),
+    "hard_exclude_local_government_investment_attraction"
+  );
+});
