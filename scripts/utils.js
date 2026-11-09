@@ -374,7 +374,7 @@ function firstStructuredMatch(value, patterns) {
 
 // 구조화 필드는 recall보다 precision이 중요하다. 불확실하면 null을 반환한다.
 const GENERIC_ACTOR_PATTERN =
-  /^(?:스타트업|기업|회사|업체|업계|정부|당국|양국|양사|양측|기관|VC|AC|투자|투자사|지원|산업|시장|이번|해당|이들|국내|글로벌|해외|우리|대표|창업자|중기부|중소벤처기업부|과기정통부|금융위|금융위원회|미국|중국|일본|한국|유럽|인도|대만|베트남|반도체|드론|로봇|바이오|배터리|원전|성장동력)$/iu;
+  /^(?:스타트업|기업|회사|업체|업계|정부|당국|양국|양사|양측|기관|VC|AC|투자|투자사|지원|산업|시장|이번|해당|이들|국내|글로벌|해외|우리|대표|창업자|중기부|소상공인|자영업자|중소벤처기업부|과기정통부|금융위|금융위원회|미국|중국|일본|한국|유럽|인도|대만|베트남|반도체|드론|로봇|바이오|배터리|원전|성장동력)$/iu;
 const ENGLISH_NAME_DESCRIPTOR_PATTERN =
   /^(?:American|Austrian|Belgian|British|Chinese|Danish|Dutch|Estonian|European|Finnish|French|German|Greek|Indian|Irish|Israeli|Italian|Japanese|Korean|Latvian|Lithuanian|Norwegian|Polish|Portuguese|Romanian|Spanish|Swedish|Swiss|Turkish|Ukrainian|UK|US|EU|Nordic|Baltic|Berlin|London|Paris|Stockholm|Madrid|Munich|Amsterdam|Copenhagen|Helsinki|Lisbon|Dublin|Vienna|Zurich|Profitable|Embattled|Stealth|Crypto|Startup|Scaleup|CleanTech|Cleantech|ClimateTech|Climatetech|FinTech|Fintech|HealthTech|Healthtech|DeepTech|Deeptech|PropTech|Proptech|EdTech|Edtech|InsurTech|Insurtech|BioTech|Biotech|MedTech|Medtech|FoodTech|Foodtech|AgriTech|Agritech|SpaceTech|Spacetech|Defence|Defense|Quantum|Robotics|Cybersecurity|AI)$/u;
 const KOREAN_EVENT_CLAUSE_PATTERN =
@@ -382,11 +382,13 @@ const KOREAN_EVENT_CLAUSE_PATTERN =
 const INSTITUTION_SUFFIX_PATTERN =
   /(?:부|처|청|위원회|센터|재단|공사|공단|진흥원|협회|연구원|대학교|대학|은행|시청|도청|구청|군청)$/u;
 // 지방자치단체(아산시·경기도·강남구 등)는 기업이 아니다. 지자체의 "투자유치"는 기업 유치 행사이지 스타트업 투자가 아니다.
-const LOCAL_GOVERNMENT_PATTERN = /^[가-힣]{1,5}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|도)$/u;
+// 단체장 직함(하남시장·양평군수·강남구청장·경기도지사)도 지자체로 본다. 제목은 "이름 직함," 꼴로도 시작한다.
+const LOCAL_GOVERNMENT_PATTERN =
+  /^[가-힣]{1,5}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|도)(?:장|수|청장|지사|의원|의회)?$/u;
 const LOCAL_GOVERNMENT_TITLE_ACTOR_PATTERN =
-  /^[‘'"]?([가-힣]{1,5}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|도))(?:[,·∙]|\s*(?:가|는|이|와|과)\s)/u;
+  /^[‘'"]?(?:[가-힣]{2,4}\s)?([가-힣]{1,5}(?:특별자치시|특별자치도|특별시|광역시|시|군|구|도)(?:장|수|청장|지사|의원|의회)?)(?:[,·∙]|\s*(?:가|는|이|와|과)\s)/u;
 const PLANNED_FUNDING_PATTERN =
-  /(?:투자|유치|조달|라운드|펀드)[^.!?…]{0,12}(?:추진|검토|타진|협상|논의|모색)|\b(?:in\s+talks\s+to\s+raise|(?:plans?|plotting|looking|seeking|seeks?|aims?)\s+to\s+raise|reportedly\s+(?:in\s+talks|raising|seeking))\b/iu;
+  /(?:투자|유치|조달|라운드|펀드)[^.!?…]{0,12}(?:추진|검토|타진|협상|논의|모색|목표)|\b(?:in\s+talks\s+to\s+raise|(?:plans?|plotting|looking|seeking|seeks?|aims?)\s+to\s+raise|reportedly\s+(?:in\s+talks|raising|seeking))\b/iu;
 const ENGLISH_GENERIC_ACTOR_PATTERN =
   /^(?:startup|startups|company|firm|it|this|that|the|a|an|ai|fintech|platform|report|study|founder|founders|investors?)$/iu;
 const FUNDING_EVENT_PATTERN =
@@ -401,11 +403,15 @@ function isPlausibleCompanyName(value) {
   const isLatinName = /^[A-Za-z0-9&._\s-]+$/u.test(name);
   if ((name.match(/\s/gu) || []).length > (isLatinName ? 2 : 1)) return false;
   if (/^\d+$/u.test(name) || /[…|]/u.test(name)) return false;
+  // "51개사", "30곳"처럼 수를 세는 말은 회사 이름이 아니다.
+  if (/^\d[\d,]*\s*(?:개사|개\s*기업|곳|개|명|건|팀)$/u.test(name)) return false;
   if (GENERIC_ACTOR_PATTERN.test(name) || ENGLISH_GENERIC_ACTOR_PATTERN.test(name)) {
     return false;
   }
   if (INSTITUTION_SUFFIX_PATTERN.test(name)) return false;
   if (LOCAL_GOVERNMENT_PATTERN.test(name)) return false;
+  // 대기업 그룹(포스코그룹 등)은 스타트업 투자를 받는 쪽이 아니다.
+  if (/[가-힣A-Za-z]그룹$/u.test(name)) return false;
   // 한국어 문장 조각(조사·어미로 끝나는 구)은 회사명으로 보지 않는다.
   if (/(?:만|은|는|을|를|의|에|로|다|요|까|죠|며|고|서)$/u.test(name) && /\s/u.test(name)) {
     return false;

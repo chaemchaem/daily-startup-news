@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-09T00:11:55.391Z",
+  "generatedAt": "2026-11-09T17:08:06.333Z",
   "latestDate": "2026-11-09",
   "weekly": {
     "from": "2026-11-03",
@@ -9,9 +9,9 @@
     "articleCount": 64,
     "domesticCount": 54,
     "overseasCount": 10,
-    "dealCount": 15,
-    "disclosedKrwDealCount": 8,
-    "disclosedKrwTotalEok": 100859,
+    "dealCount": 14,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 859,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -41,7 +41,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 35
+        "count": 34
       },
       {
         "label": "선정",
@@ -241,17 +241,6 @@
         "source": "EU-Startups"
       },
       {
-        "date": "2026-11-05",
-        "company": "하남시장",
-        "fundingAmount": "10조 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "이현재 하남시장, 2030년 투자유치 10조 원 목표...교산 AI·미사 K-컬처로 자족도시 도약 박차",
-        "url": "https://www.ajunews.com/view/20261105170633964",
-        "source": "아주경제"
-      },
-      {
         "date": "2026-11-04",
         "company": "넘즈에이아이",
         "fundingAmount": "20억 원",
@@ -364,7 +353,7 @@
     ],
     "previous": {
       "articleCount": 73,
-      "dealCount": 16,
+      "dealCount": 13,
       "briefingDays": 7
     }
   },
@@ -375,9 +364,9 @@
     "articleCount": 281,
     "domesticCount": 241,
     "overseasCount": 40,
-    "dealCount": 59,
-    "disclosedKrwDealCount": 28,
-    "disclosedKrwTotalEok": 333741.8,
+    "dealCount": 54,
+    "disclosedKrwDealCount": 22,
+    "disclosedKrwTotalEok": 13749.8,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -407,7 +396,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 135
+        "count": 132
       },
       {
         "label": "선정",
@@ -486,10 +475,6 @@
         "count": 3
       },
       {
-        "label": "후속 투자",
-        "count": 3
-      },
-      {
         "label": "시드투자",
         "count": 2
       },
@@ -507,6 +492,10 @@
       },
       {
         "label": "시드 투자",
+        "count": 1
+      },
+      {
+        "label": "후속 투자",
         "count": 1
       },
       {
@@ -762,17 +751,6 @@
         "source": "EU-Startups"
       },
       {
-        "date": "2026-11-05",
-        "company": "하남시장",
-        "fundingAmount": "10조 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "이현재 하남시장, 2030년 투자유치 10조 원 목표...교산 AI·미사 K-컬처로 자족도시 도약 박차",
-        "url": "https://www.ajunews.com/view/20261105170633964",
-        "source": "아주경제"
-      },
-      {
         "date": "2026-11-04",
         "company": "넘즈에이아이",
         "fundingAmount": "20억 원",
@@ -928,14 +906,25 @@
       },
       {
         "date": "2026-10-29",
-        "company": "소상공인",
-        "fundingAmount": "1227억 원",
-        "fundingStage": "후속 투자",
-        "industry": null,
+        "company": "아이즈엔터테인먼트",
+        "fundingAmount": "200억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
         "overseas": false,
-        "title": "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치",
-        "url": "https://view.asiae.co.kr/article/2026102816561363049",
-        "source": "아시아경제"
+        "title": "아이즈엔터테인먼트, 200억원 규모 시리즈A 투자 유치...AI 메신저 개발 속도",
+        "url": "https://www.techm.kr/news/articleView.html?idxno=156652",
+        "source": "테크M"
+      },
+      {
+        "date": "2026-10-29",
+        "company": "퓨리오사AI",
+        "fundingAmount": "8,200억 원",
+        "fundingStage": "시리즈D",
+        "industry": "AI",
+        "overseas": false,
+        "title": "퓨리오사AI, 8,200억원 시리즈D 투자유치…기업가치 3.8조원",
+        "url": "https://wowtale.net/2026/10/29/267133/",
+        "source": "와우테일"
       }
     ],
     "previous": {

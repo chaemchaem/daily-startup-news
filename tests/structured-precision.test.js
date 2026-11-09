@@ -146,3 +146,36 @@ test("아직 끝나지 않은 투자(추진·검토·in talks)는 금액·라운
   });
   assert.equal(closed.fundingAmount, "€4.27 million");
 });
+
+test("단체장 직함과 '투자유치 목표'는 기업·확정 금액으로 저장하지 않는다", () => {
+  const hanam = extractStructuredArticleInfo({
+    title: "이현재 하남시장, 2030년 투자유치 10조 원 목표...교산 AI·미사 K-컬처로 자족도시 도약 박차",
+  });
+  assert.equal(hanam.company, null);
+  assert.equal(hanam.fundingAmount, null);
+  assert.equal(hanam.eventType, null);
+  // 회사가 실제로 받은 투자는 그대로 추출한다.
+  const startup = extractStructuredArticleInfo({ title: "마케마케, 프리A 30억 원 투자 유치" });
+  assert.equal(startup.company, "마케마케");
+  assert.equal(startup.fundingAmount, "30억 원");
+});
+
+test("의원·소상공인·대기업 그룹은 투자받은 기업으로 저장하지 않는다", () => {
+  assert.equal(
+    extractStructuredArticleInfo({ title: "김정희 특별시의원, 광양경자청 투자유치·일자리 실적 부진 지적" }).company,
+    null
+  );
+  assert.equal(extractStructuredArticleInfo({ title: "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치" }).company, null);
+  assert.equal(
+    extractStructuredArticleInfo({ title: "후속 투자 2,175억 원 견인 포스코그룹, 계열사 실증 사업부터 검증해야" }).company,
+    null
+  );
+});
+
+test("'51개사'처럼 수를 세는 말은 회사 이름으로 쓰지 않는다", () => {
+  const info = extractStructuredArticleInfo({
+    title: "로컬창업 소상공인, '립스' 통해 1227억원 투자 유치",
+    summary: "51개사가 립스 프로그램을 통해 투자를 유치했다.",
+  });
+  assert.notEqual(info.company, "51개사");
+});

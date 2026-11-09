@@ -16,6 +16,8 @@
   --accent-soft: #f3e3df;
   --chart: #2a6fb0;
   --chart-track: #ebe7de;
+  --bar: #b9b2a5;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --good: #2f6b3a;
   --warn: #8a5a00;
   --bad: #a3261b;
@@ -26,14 +28,7 @@
   --cat-4: #2a6fb0;
   --cat-5: #6b4aa0;
   --cat-6: #0f7b7b;
-  --extrude: #d8d3c8;
-  --extrude-shadow: rgba(60, 50, 30, 0.18);
-  --glare: rgba(255, 255, 255, 0.55);
   --card-shadow: 0 1px 2px rgba(40, 32, 20, 0.06), 0 18px 40px -16px rgba(40, 32, 20, 0.32);
-  --stage-glow: rgba(42, 111, 176, 0.07);
-  --floor-line: rgba(27, 26, 23, 0.07);
-  --field-dot: #8f897d;
-  --field-line: #b9b3a6;
 
   /* 영문 제목·숫자는 Bricolage Grotesque, 한글 제목은 원티드 산스. 한글은 뒤쪽 글꼴로 이어진다. */
   --display: "Bricolage Grotesque", "Wanted Sans Variable", "Wanted Sans", "Pretendard Variable", Pretendard,
@@ -62,6 +57,7 @@
     --accent-soft: #3a211d;
     --chart: #4f8fd0;
     --chart-track: #2b2a26;
+    --bar: #5c5850;
     --good: #7fbf88;
     --warn: #d9a64a;
     --bad: #e0776a;
@@ -72,14 +68,7 @@
     --cat-4: #6fa5dc;
     --cat-5: #b29ae0;
     --cat-6: #5fc0bd;
-    --extrude: #3a3833;
-    --extrude-shadow: rgba(0, 0, 0, 0.5);
-    --glare: rgba(255, 255, 255, 0.08);
     --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -16px rgba(0, 0, 0, 0.8);
-    --stage-glow: rgba(79, 143, 208, 0.12);
-    --floor-line: rgba(236, 232, 223, 0.07);
-    --field-dot: #8a857b;
-    --field-line: #4a4740;
     color-scheme: dark;
   }
 }
@@ -96,6 +85,7 @@
   --accent-soft: #3a211d;
   --chart: #4f8fd0;
   --chart-track: #2b2a26;
+  --bar: #5c5850;
   --good: #7fbf88;
   --warn: #d9a64a;
   --bad: #e0776a;
@@ -106,14 +96,7 @@
   --cat-4: #6fa5dc;
   --cat-5: #b29ae0;
   --cat-6: #5fc0bd;
-  --extrude: #3a3833;
-  --extrude-shadow: rgba(0, 0, 0, 0.5);
-  --glare: rgba(255, 255, 255, 0.08);
   --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 18px 40px -16px rgba(0, 0, 0, 0.8);
-  --stage-glow: rgba(79, 143, 208, 0.12);
-  --floor-line: rgba(236, 232, 223, 0.07);
-  --field-dot: #8a857b;
-  --field-line: #4a4740;
   color-scheme: dark;
 }
 
@@ -256,9 +239,9 @@ select {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(34px, 5.4vw, 60px);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.08;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
 }
 
 .tagline {
@@ -309,7 +292,7 @@ select {
   margin: 0;
   font-family: var(--sans);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
@@ -338,44 +321,8 @@ select {
   isolation: isolate;
   overflow: hidden;
   padding-bottom: 0;
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 58%, var(--stage-glow), transparent 70%),
-    var(--paper);
+  background: var(--paper);
   border-bottom: 1px solid var(--rule);
-}
-
-.hero-field {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.hero-floor {
-  position: absolute;
-  left: -25%;
-  right: -25%;
-  bottom: 40px;
-  z-index: -1;
-  height: 320px;
-  pointer-events: none;
-  background-image:
-    linear-gradient(var(--floor-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--floor-line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  transform: perspective(520px) rotateX(72deg);
-  transform-origin: 50% 100%;
-  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 85%);
-  mask-image: linear-gradient(to top, #000 0%, transparent 85%);
-  animation: floor-drift 9s linear infinite;
-}
-
-@keyframes floor-drift {
-  to {
-    background-position: 0 56px;
-  }
 }
 
 .hero-head {
@@ -384,8 +331,8 @@ select {
 
 .stat-tiles {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) repeat(4, minmax(0, 1fr));
-  gap: 16px 28px;
+  grid-template-columns: minmax(0, 1.4fr) repeat(4, minmax(0, 1fr));
+  gap: 16px 32px;
   align-items: end;
 }
 
@@ -395,23 +342,8 @@ select {
 }
 
 .stat-tile.is-main {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "figure spark"
-    "label spark";
-  align-items: end;
-  column-gap: 22px;
   padding-top: 0;
   border-top: 0;
-}
-
-.stat-tile.is-main .stat-figure {
-  grid-area: figure;
-}
-
-.stat-tile.is-main .stat-label {
-  grid-area: label;
 }
 
 .stat-figure {
@@ -425,22 +357,15 @@ select {
 .stat-value {
   font-family: var(--display);
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
 }
 
 .stat-tile.is-main .stat-value {
   font-size: clamp(72px, 7.4vw, 104px);
   color: var(--ink);
-  /* 겹친 그림자로 숫자가 종이에서 튀어나온 듯한 두께를 만든다. */
-  text-shadow:
-    1px 1px 0 var(--extrude),
-    2px 2px 0 var(--extrude),
-    3px 3px 0 var(--extrude),
-    4px 4px 0 var(--extrude),
-    5px 5px 0 var(--extrude),
-    8px 10px 18px var(--extrude-shadow);
+  letter-spacing: -0.03em;
 }
 
 .stat-unit {
@@ -449,56 +374,10 @@ select {
 }
 
 .stat-label {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   color: var(--ink-soft);
   font-size: 13px;
-  font-weight: 600;
-}
-
-.stat-spark {
-  grid-area: spark;
-  align-self: end;
-  display: grid;
-  gap: 2px;
-  padding-bottom: 4px;
-}
-
-.stat-spark svg {
-  overflow: visible;
-}
-
-.spark-line {
-  fill: none;
-  stroke: var(--chart);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: spark-draw 1.2s 0.3s cubic-bezier(0.3, 0.7, 0.2, 1) forwards;
-}
-
-.spark-dot {
-  fill: var(--chart);
-  opacity: 0;
-  animation: spark-dot 0.3s 1.4s ease forwards;
-}
-
-@keyframes spark-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes spark-dot {
-  to {
-    opacity: 1;
-  }
-}
-
-.spark-caption {
-  color: var(--ink-muted);
-  font-size: 11.5px;
+  font-weight: 500;
 }
 
 .deck {
@@ -509,6 +388,8 @@ select {
 .deck-stack {
   --card-w: 460px;
   position: relative;
+  /* 카드들의 z-index를 이 안에 가둬, 돌아가는 카드가 아래 버튼을 덮지 않게 한다. */
+  z-index: 1;
   height: 470px;
   margin-top: 8px;
   touch-action: pan-y;
@@ -545,7 +426,7 @@ select {
   height: 34px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(closest-side, var(--extrude-shadow), transparent);
+  background: radial-gradient(closest-side, rgba(40, 32, 20, 0.16), transparent);
   filter: blur(6px);
   pointer-events: none;
 }
@@ -591,20 +472,13 @@ select {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  transform:
-    translateZ(var(--lift, 0px))
-    rotateX(var(--tilt-x, 0deg))
-    rotateY(var(--tilt-y, 0deg));
-  transition: transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateZ(var(--lift, 0px));
+  transition: transform 360ms var(--ease);
 }
 
-.deck-card.is-tilting .card-tilt {
-  transition: transform 120ms ease-out;
-}
-
+/* 뒤집을 때만 카드를 잠깐 들어 올려, 넘기는 동작이 보이게 한다. */
 .deck-card.is-lifting .card-tilt {
-  --lift: 90px;
-  transition: transform 340ms cubic-bezier(0.3, 0.7, 0.2, 1);
+  --lift: 48px;
 }
 
 /* 그림자는 면(card-face)에 직접 주면 Chrome이 3D 카드 일부를 그리지 않는 문제가 있어 별도 층에 둔다. */
@@ -620,7 +494,7 @@ select {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  transition: transform 720ms cubic-bezier(0.35, 0.6, 0.2, 1);
+  transition: transform 720ms var(--ease);
 }
 
 .deck-card.is-flipped .card-inner {
@@ -638,15 +512,6 @@ select {
   border-radius: 16px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-}
-
-.card-face::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 5px;
-  border-radius: 16px 16px 0 0;
-  background: var(--cat);
 }
 
 .card-front {
@@ -678,31 +543,12 @@ select {
   -webkit-backface-visibility: hidden;
 }
 
-/* 앞면 요소들은 서로 다른 깊이에 떠 있어, 카드가 기울면 시차가 생긴다. */
-.card-front > .card-number { transform: translateZ(6px); }
+/* 앞면 요소들은 조금씩 다른 깊이에 놓여, 카드가 돌 때 두께가 느껴진다. */
 .card-front > .card-top { transform: translateZ(26px); }
 .card-front > .card-kicker { transform: translateZ(20px); }
 .card-front > .card-title { transform: translateZ(46px); }
 .card-front > .card-facts { transform: translateZ(34px); }
 .card-front > .card-flip { transform: translateZ(28px); }
-
-.card-glare {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--glare-x, 50%) var(--glare-y, 0%),
-    var(--glare),
-    transparent 58%
-  );
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-.deck-card.is-tilting .card-glare {
-  opacity: 1;
-}
 
 .deck-card:not(.is-active) a,
 .deck-card:not(.is-active) button {
@@ -717,11 +563,22 @@ select {
   margin: 0 0 12px;
 }
 
+/* 분야는 색 띠 대신 작은 점 하나로만 구분한다. */
 .card-category {
-  color: var(--cat);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.card-category::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cat);
 }
 
 .card-count {
@@ -729,19 +586,6 @@ select {
   font-family: var(--display);
   font-size: 15px;
   font-variant-numeric: tabular-nums;
-}
-
-.card-number {
-  position: absolute;
-  right: 22px;
-  bottom: 8px;
-  font-family: var(--display);
-  font-size: 140px;
-  font-weight: 800;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--rule);
-  pointer-events: none;
 }
 
 .card-kicker {
@@ -752,9 +596,9 @@ select {
   margin: 4px 0 0;
   font-family: var(--headline);
   font-size: clamp(21px, 2.2vw, 27px);
-  font-weight: 800;
-  line-height: 1.34;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  line-height: 1.36;
+  letter-spacing: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
@@ -793,9 +637,9 @@ select {
 }
 
 .card-facts .is-amount dd {
-  color: var(--cat);
+  color: var(--accent);
   font-size: 19px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .card-flip {
@@ -857,6 +701,10 @@ select {
 }
 
 .deck-controls {
+  position: relative;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -873,12 +721,15 @@ select {
   background: var(--paper-raised);
   font-size: 17px;
   cursor: pointer;
-  transition: transform 160ms ease, border-color 160ms ease;
+  transition: transform 120ms var(--ease), border-color 160ms var(--ease);
 }
 
 .deck-button:hover:not(:disabled) {
   border-color: var(--ink);
-  transform: translateY(-1px);
+}
+
+.deck-button:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
 .deck-button:disabled {
@@ -909,7 +760,7 @@ select {
   margin: auto;
   border-radius: 999px;
   background: var(--rule);
-  transition: width 240ms ease, background 240ms ease;
+  transition: width 240ms var(--ease), background-color 240ms var(--ease);
 }
 
 .deck-dot[aria-current="true"]::before {
@@ -964,42 +815,28 @@ select {
   flex: none;
   margin: 0;
   padding: 0 0 0 max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
 }
 
+/* 흐르지 않는 한 줄. 넘치면 옆으로 넘겨 본다. */
 .ticker-viewport {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.ticker-belt {
-  display: flex;
-  width: max-content;
-  animation: ticker-move var(--ticker-duration, 40s) linear infinite;
-}
-
-.deal-ticker:hover .ticker-belt,
-.deal-ticker:focus-within .ticker-belt {
-  animation-play-state: paused;
-}
-
-@keyframes ticker-move {
-  to {
-    transform: translateX(-50%);
-  }
+.ticker-viewport::-webkit-scrollbar {
+  display: none;
 }
 
 .ticker-track {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   margin: 0;
-  padding: 0 36px 0 0;
+  padding: 0 var(--gutter) 0 0;
   list-style: none;
 }
 
@@ -1026,8 +863,8 @@ select {
 .ticker-link::before {
   content: "";
   align-self: center;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--cat);
 }
@@ -1038,13 +875,29 @@ select {
 
 .ticker-link .ticker-amount {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
 
 a.ticker-link:hover strong {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* 투자 단계 표시: 시드 → A → B → C 이상을 네 칸 계단으로. 이 사이트에서만 쓰는 표식이다. */
+.stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.stage-mark rect {
+  fill: var(--rule);
+}
+
+.stage-mark rect.on {
+  fill: currentColor;
 }
 
 /* ---------- Story (shared by front page and list) ---------- */
@@ -1067,16 +920,16 @@ a.ticker-link:hover strong {
 
 .kicker-category {
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .story-title {
   margin: 0;
   font-family: var(--headline);
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
 }
 
 .story-title a {
@@ -1117,7 +970,7 @@ a.ticker-link:hover strong {
 }
 
 .deal-line .deal-amount {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .source-link {
@@ -1171,7 +1024,7 @@ a.ticker-link:hover strong {
 
 .category-tabs button[aria-pressed="true"] {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 600;
   border-bottom-color: var(--accent);
 }
 
@@ -1277,7 +1130,7 @@ a.ticker-link:hover strong {
 .period-label {
   margin: 0;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .period-row .segmented button {
@@ -1398,11 +1251,12 @@ a.ticker-link:hover strong {
   max-width: 24px;
   min-height: 2px;
   border-radius: 4px 4px 0 0;
-  background: var(--chart);
+  background: var(--bar);
 }
 
-.column.is-dim .column-bar {
-  opacity: 0.55;
+/* 가장 최근 날짜만 강조색, 나머지는 중립 막대. */
+.column:not(.is-dim) .column-bar {
+  background: var(--accent);
 }
 
 .column-value {
@@ -1475,7 +1329,7 @@ a.ticker-link:hover strong {
   height: 12px;
   min-width: 2px;
   border-radius: 0 4px 4px 0;
-  background: var(--chart);
+  background: var(--bar);
 }
 
 .bar-value {
@@ -1681,6 +1535,7 @@ a.ticker-link:hover strong {
 
   .stat-value {
     font-size: 30px;
+    letter-spacing: 0;
   }
 
   .stat-tile.is-main .stat-value {
@@ -1698,15 +1553,6 @@ a.ticker-link:hover strong {
   .card-face {
     padding: 26px 22px 20px;
     border-radius: 14px;
-  }
-
-  .card-number {
-    font-size: 110px;
-    right: 14px;
-  }
-
-  .hero-floor {
-    height: 220px;
   }
 
   .sidebar,
@@ -1740,6 +1586,7 @@ a.ticker-link:hover strong {
 
   .stat-value {
     font-size: 25px;
+    letter-spacing: 0;
   }
 
   .stat-label {
@@ -1800,37 +1647,10 @@ a.ticker-link:hover strong {
     transition: none;
   }
 
-  .hero-floor,
-  .spark-line,
-  .spark-dot {
-    animation: none;
-  }
-
-  .spark-line {
-    stroke-dashoffset: 0;
-  }
-
-  .spark-dot {
-    opacity: 1;
-  }
-
-  .ticker-belt {
-    animation: none;
-  }
-
-  .ticker-viewport {
-    overflow-x: auto;
-  }
-
-  .ticker-track[aria-hidden="true"] {
-    display: none;
-  }
 }
 
 @media print {
   .deck,
-  .hero-field,
-  .hero-floor,
   .deal-ticker,
   .section-nav,
   .controls,
