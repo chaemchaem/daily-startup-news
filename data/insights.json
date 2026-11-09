@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-08T00:11:40.950Z",
-  "latestDate": "2026-11-08",
+  "generatedAt": "2026-11-09T00:11:55.391Z",
+  "latestDate": "2026-11-09",
   "weekly": {
-    "from": "2026-11-02",
-    "to": "2026-11-08",
+    "from": "2026-11-03",
+    "to": "2026-11-09",
     "briefingDays": 7,
-    "articleCount": 62,
-    "domesticCount": 52,
+    "articleCount": 64,
+    "domesticCount": 54,
     "overseasCount": 10,
-    "dealCount": 16,
-    "disclosedKrwDealCount": 9,
-    "disclosedKrwTotalEok": 101005,
+    "dealCount": 15,
+    "disclosedKrwDealCount": 8,
+    "disclosedKrwTotalEok": 100859,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 23
+        "count": 25
       },
       {
         "label": "TIPS / LIPS",
-        "count": 16
+        "count": 15
       },
       {
         "label": "해외 VC",
@@ -27,15 +27,15 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 9
+        "count": 8
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 3
+        "count": 4
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 1
+        "count": 2
       }
     ],
     "byEventType": [
@@ -44,15 +44,19 @@
         "count": 35
       },
       {
-        "label": "실증·PoC",
-        "count": 5
-      },
-      {
         "label": "선정",
         "count": 4
       },
       {
+        "label": "실증·PoC",
+        "count": 4
+      },
+      {
         "label": "모집",
+        "count": 2
+      },
+      {
+        "label": "펀드결성",
         "count": 2
       },
       {
@@ -72,10 +76,6 @@
         "count": 1
       },
       {
-        "label": "펀드결성",
-        "count": 1
-      },
-      {
         "label": "협약",
         "count": 1
       }
@@ -83,7 +83,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 21
+        "count": 18
+      },
+      {
+        "label": "바이오·헬스케어",
+        "count": 3
       },
       {
         "label": "반도체",
@@ -91,10 +95,6 @@
       },
       {
         "label": "로봇",
-        "count": 2
-      },
-      {
-        "label": "바이오·헬스케어",
         "count": 2
       },
       {
@@ -113,10 +113,6 @@
       },
       {
         "label": "시드",
-        "count": 1
-      },
-      {
-        "label": "시드 투자",
         "count": 1
       },
       {
@@ -146,28 +142,23 @@
         "count": 5
       },
       {
+        "label": "연합뉴스",
+        "count": 5
+      },
+      {
+        "label": "아시아경제",
+        "count": 4
+      },
+      {
         "label": "아주경제",
         "count": 4
       },
       {
         "label": "파이낸셜뉴스",
         "count": 4
-      },
-      {
-        "label": "아시아경제",
-        "count": 3
-      },
-      {
-        "label": "연합뉴스",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-02",
-        "total": 12,
-        "overseas": 0
-      },
       {
         "date": "2026-11-03",
         "total": 12,
@@ -196,6 +187,11 @@
       {
         "date": "2026-11-08",
         "total": 11,
+        "overseas": 0
+      },
+      {
+        "date": "2026-11-09",
+        "total": 10,
         "overseas": 0
       }
     ],
@@ -364,31 +360,20 @@
         "title": "'드론 설계·운영' 프리뉴, 시리즈D 166억 투자 유치…IPO 속도낸다",
         "url": "https://www.mt.co.kr/future/2026/11/01/2026110111044971806",
         "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-31",
-        "company": "나노포지에이아이",
-        "fundingAmount": "146억 원",
-        "fundingStage": "시드 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
-        "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
-        "source": "블로터"
       }
     ],
     "previous": {
-      "articleCount": 75,
+      "articleCount": 73,
       "dealCount": 16,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-10",
-    "to": "2026-11-08",
+    "from": "2026-10-11",
+    "to": "2026-11-09",
     "briefingDays": 30,
-    "articleCount": 284,
-    "domesticCount": 244,
+    "articleCount": 281,
+    "domesticCount": 241,
     "overseasCount": 40,
     "dealCount": 59,
     "disclosedKrwDealCount": 28,
@@ -396,11 +381,11 @@
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 100
+        "count": 99
       },
       {
         "label": "TIPS / LIPS",
-        "count": 66
+        "count": 65
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -412,21 +397,21 @@
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 33
+        "count": 35
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 7
+        "count": 4
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 138
+        "count": 135
       },
       {
         "label": "선정",
-        "count": 24
+        "count": 23
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -438,27 +423,23 @@
       },
       {
         "label": "모집",
-        "count": 11
-      },
-      {
-        "label": "지원사업",
-        "count": 7
-      },
-      {
-        "label": "협약",
-        "count": 6
+        "count": 12
       },
       {
         "label": "인수·M&A",
+        "count": 6
+      },
+      {
+        "label": "지원사업",
+        "count": 6
+      },
+      {
+        "label": "협약",
         "count": 5
       },
       {
-        "label": "세컨더리",
-        "count": 3
-      },
-      {
         "label": "펀드결성",
-        "count": 3
+        "count": 4
       },
       {
         "label": "출시·상용화",
@@ -468,7 +449,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 105
+        "count": 104
       },
       {
         "label": "로봇",
@@ -476,7 +457,7 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 4
+        "count": 5
       },
       {
         "label": "반도체",
@@ -555,28 +536,28 @@
         "count": 25
       },
       {
-        "label": "머니투데이",
-        "count": 24
+        "label": "와우테일",
+        "count": 23
       },
       {
-        "label": "와우테일",
+        "label": "머니투데이",
         "count": 22
       },
       {
         "label": "스타트업투데이",
-        "count": 21
+        "count": 20
       },
       {
         "label": "파이낸셜뉴스",
+        "count": 19
+      },
+      {
+        "label": "연합뉴스",
         "count": 18
       },
       {
         "label": "아시아경제",
-        "count": 17
-      },
-      {
-        "label": "연합뉴스",
-        "count": 17
+        "count": 16
       },
       {
         "label": "아주경제",
@@ -584,11 +565,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-10",
-        "total": 15,
-        "overseas": 1
-      },
       {
         "date": "2026-10-11",
         "total": 15,
@@ -732,6 +708,11 @@
       {
         "date": "2026-11-08",
         "total": 11,
+        "overseas": 0
+      },
+      {
+        "date": "2026-11-09",
+        "total": 10,
         "overseas": 0
       }
     ],
@@ -958,8 +939,8 @@
       }
     ],
     "previous": {
-      "articleCount": 188,
-      "dealCount": 47,
+      "articleCount": 193,
+      "dealCount": 45,
       "briefingDays": 29
     }
   }
