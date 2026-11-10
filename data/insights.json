@@ -1,33 +1,33 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-09T17:08:06.333Z",
-  "latestDate": "2026-11-09",
+  "generatedAt": "2026-11-10T00:11:37.789Z",
+  "latestDate": "2026-11-10",
   "weekly": {
-    "from": "2026-11-03",
-    "to": "2026-11-09",
+    "from": "2026-11-04",
+    "to": "2026-11-10",
     "briefingDays": 7,
-    "articleCount": 64,
-    "domesticCount": 54,
+    "articleCount": 67,
+    "domesticCount": 57,
     "overseasCount": 10,
-    "dealCount": 14,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 859,
+    "dealCount": 12,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 693,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 25
+        "count": 26
       },
       {
         "label": "TIPS / LIPS",
         "count": 15
       },
       {
-        "label": "해외 VC",
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
         "count": 10
       },
       {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 8
+        "label": "해외 VC",
+        "count": 10
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -41,15 +41,19 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 34
+        "count": 33
       },
       {
         "label": "선정",
         "count": 4
       },
       {
-        "label": "실증·PoC",
+        "label": "TIPS·LIPS 선정",
         "count": 4
+      },
+      {
+        "label": "실증·PoC",
+        "count": 3
       },
       {
         "label": "모집",
@@ -57,10 +61,6 @@
       },
       {
         "label": "펀드결성",
-        "count": 2
-      },
-      {
-        "label": "TIPS·LIPS 선정",
         "count": 2
       },
       {
@@ -83,11 +83,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 18
+        "count": 19
       },
       {
         "label": "바이오·헬스케어",
-        "count": 3
+        "count": 4
       },
       {
         "label": "반도체",
@@ -96,6 +96,10 @@
       {
         "label": "로봇",
         "count": 2
+      },
+      {
+        "label": "농식품",
+        "count": 1
       },
       {
         "label": "우주항공",
@@ -116,10 +120,6 @@
         "count": 1
       },
       {
-        "label": "시리즈D",
-        "count": 1
-      },
-      {
         "label": "Series C",
         "count": 1
       }
@@ -127,26 +127,26 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 13
+        "count": 14
       },
       {
         "label": "스타트업투데이",
-        "count": 7
+        "count": 6
       },
       {
         "label": "EU-Startups",
-        "count": 7
-      },
-      {
-        "label": "머니투데이",
-        "count": 5
-      },
-      {
-        "label": "연합뉴스",
-        "count": 5
+        "count": 6
       },
       {
         "label": "아시아경제",
+        "count": 5
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 5
+      },
+      {
+        "label": "머니투데이",
         "count": 4
       },
       {
@@ -154,16 +154,11 @@
         "count": 4
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "연합뉴스",
         "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-03",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-11-04",
         "total": 14,
@@ -193,6 +188,11 @@
         "date": "2026-11-09",
         "total": 10,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-10",
+        "total": 12,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -327,44 +327,22 @@
         "title": "Northwood Space raises $375M Series C at a $2B valuation from a16z and DFJ Growth",
         "url": "https://techcrunch.com/2026/11/02/northwood-space-raises-375m-series-c-at-a-2b-valuation-from-a16z-and-dfj-growth/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-02",
-        "company": "Marble Cognition",
-        "fundingAmount": "€3.35 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Munich’s Marble Cognition raises €3.35 million to build AI coworkers that learn business processes before automating them",
-        "url": "https://www.eu-startups.com/2026/11/munichs-marble-cognition-raises-e3-35-million-to-build-ai-coworkers-that-learn-business-processes-before-automating-them/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-01",
-        "company": "프리뉴",
-        "fundingAmount": "166억 원",
-        "fundingStage": "시리즈D",
-        "industry": null,
-        "overseas": false,
-        "title": "'드론 설계·운영' 프리뉴, 시리즈D 166억 투자 유치…IPO 속도낸다",
-        "url": "https://www.mt.co.kr/future/2026/11/01/2026110111044971806",
-        "source": "머니투데이"
       }
     ],
     "previous": {
-      "articleCount": 73,
-      "dealCount": 13,
+      "articleCount": 68,
+      "dealCount": 14,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-11",
-    "to": "2026-11-09",
+    "from": "2026-10-12",
+    "to": "2026-11-10",
     "briefingDays": 30,
-    "articleCount": 281,
-    "domesticCount": 241,
+    "articleCount": 277,
+    "domesticCount": 237,
     "overseasCount": 40,
-    "dealCount": 54,
+    "dealCount": 53,
     "disclosedKrwDealCount": 22,
     "disclosedKrwTotalEok": 13749.8,
     "byCategory": [
@@ -386,41 +364,41 @@
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 35
+        "count": 32
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 4
+        "count": 3
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 132
+        "count": 130
       },
       {
         "label": "선정",
-        "count": 23
+        "count": 24
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 19
+        "count": 20
       },
       {
         "label": "실증·PoC",
-        "count": 15
+        "count": 14
       },
       {
         "label": "모집",
-        "count": 12
-      },
-      {
-        "label": "인수·M&A",
-        "count": 6
+        "count": 13
       },
       {
         "label": "지원사업",
         "count": 6
+      },
+      {
+        "label": "인수·M&A",
+        "count": 5
       },
       {
         "label": "협약",
@@ -438,7 +416,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 104
+        "count": 105
       },
       {
         "label": "로봇",
@@ -446,7 +424,7 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 5
+        "count": 6
       },
       {
         "label": "반도체",
@@ -458,6 +436,10 @@
       },
       {
         "label": "기후테크·ESG",
+        "count": 1
+      },
+      {
+        "label": "농식품",
         "count": 1
       }
     ],
@@ -521,12 +503,12 @@
     ],
     "topSources": [
       {
-        "label": "EU-Startups",
-        "count": 25
+        "label": "와우테일",
+        "count": 26
       },
       {
-        "label": "와우테일",
-        "count": 23
+        "label": "EU-Startups",
+        "count": 24
       },
       {
         "label": "머니투데이",
@@ -546,19 +528,14 @@
       },
       {
         "label": "아시아경제",
-        "count": 16
+        "count": 17
       },
       {
-        "label": "아주경제",
-        "count": 15
+        "label": "TechCrunch",
+        "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-11",
-        "total": 15,
-        "overseas": 1
-      },
       {
         "date": "2026-10-12",
         "total": 15,
@@ -703,6 +680,11 @@
         "date": "2026-11-09",
         "total": 10,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-10",
+        "total": 12,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -928,8 +910,8 @@
       }
     ],
     "previous": {
-      "articleCount": 193,
-      "dealCount": 45,
+      "articleCount": 201,
+      "dealCount": 43,
       "briefingDays": 29
     }
   }
