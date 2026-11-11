@@ -1,37 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-10T00:11:37.789Z",
-  "latestDate": "2026-11-10",
+  "generatedAt": "2026-11-11T00:11:39.629Z",
+  "latestDate": "2026-11-11",
   "weekly": {
-    "from": "2026-11-04",
-    "to": "2026-11-10",
+    "from": "2026-11-05",
+    "to": "2026-11-11",
     "briefingDays": 7,
-    "articleCount": 67,
-    "domesticCount": 57,
-    "overseasCount": 10,
-    "dealCount": 12,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 693,
+    "articleCount": 69,
+    "domesticCount": 61,
+    "overseasCount": 8,
+    "dealCount": 11,
+    "disclosedKrwDealCount": 5,
+    "disclosedKrwTotalEok": 593,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
+        "count": 29
       },
       {
         "label": "TIPS / LIPS",
-        "count": 15
+        "count": 13
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 10
+        "count": 12
       },
       {
         "label": "해외 VC",
-        "count": 10
+        "count": 8
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 4
+        "count": 5
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,7 +41,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 33
+        "count": 31
+      },
+      {
+        "label": "실증·PoC",
+        "count": 5
       },
       {
         "label": "선정",
@@ -52,11 +56,11 @@
         "count": 4
       },
       {
-        "label": "실증·PoC",
+        "label": "모집",
         "count": 3
       },
       {
-        "label": "모집",
+        "label": "지원사업",
         "count": 2
       },
       {
@@ -65,10 +69,6 @@
       },
       {
         "label": "인수·M&A",
-        "count": 1
-      },
-      {
-        "label": "지원사업",
         "count": 1
       },
       {
@@ -83,14 +83,10 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 19
+        "count": 25
       },
       {
         "label": "바이오·헬스케어",
-        "count": 4
-      },
-      {
-        "label": "반도체",
         "count": 3
       },
       {
@@ -98,18 +94,18 @@
         "count": 2
       },
       {
-        "label": "농식품",
-        "count": 1
+        "label": "반도체",
+        "count": 2
       },
       {
-        "label": "우주항공",
+        "label": "농식품",
         "count": 1
       }
     ],
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 2
+        "count": 3
       },
       {
         "label": "프리시리즈A",
@@ -117,10 +113,6 @@
       },
       {
         "label": "시드",
-        "count": 1
-      },
-      {
-        "label": "Series C",
         "count": 1
       }
     ],
@@ -130,11 +122,11 @@
         "count": 14
       },
       {
-        "label": "스타트업투데이",
-        "count": 6
+        "label": "파이낸셜뉴스",
+        "count": 7
       },
       {
-        "label": "EU-Startups",
+        "label": "머니투데이",
         "count": 6
       },
       {
@@ -142,11 +134,7 @@
         "count": 5
       },
       {
-        "label": "파이낸셜뉴스",
-        "count": 5
-      },
-      {
-        "label": "머니투데이",
+        "label": "스타트업투데이",
         "count": 4
       },
       {
@@ -156,14 +144,13 @@
       {
         "label": "연합뉴스",
         "count": 4
+      },
+      {
+        "label": "AI타임스",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-04",
-        "total": 14,
-        "overseas": 3
-      },
       {
         "date": "2026-11-05",
         "total": 13,
@@ -193,9 +180,36 @@
         "date": "2026-11-10",
         "total": 12,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-11",
+        "total": 10,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-11",
+        "company": "머코어",
+        "fundingAmount": null,
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
+        "url": "https://wowtale.net/2026/11/11/267802/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-11",
+        "company": "Proximal Ventures",
+        "fundingAmount": "$27.5 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Proximal Ventures raises debut fund to back startups bringing AI to drug development",
+        "url": "https://techcrunch.com/2026/11/10/proximal-ventures-raises-debut-fund-to-back-startups-bringing-ai-to-drug-development/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-06",
         "company": "유로보틱스",
@@ -242,17 +256,6 @@
       },
       {
         "date": "2026-11-04",
-        "company": "넘즈에이아이",
-        "fundingAmount": "20억 원",
-        "fundingStage": "시드",
-        "industry": null,
-        "overseas": false,
-        "title": "넘즈에이아이, 20억 프리시드 2차 투자 유치…팁스 선정",
-        "url": "https://wowtale.net/2026/11/04/267417/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-04",
         "company": "Biograil",
         "fundingAmount": "€20 million",
         "fundingStage": null,
@@ -263,15 +266,15 @@
         "source": "EU-Startups"
       },
       {
-        "date": "2026-11-03",
-        "company": "Tumbleweed",
-        "fundingAmount": "€6.9 million",
-        "fundingStage": null,
-        "industry": "우주항공",
-        "overseas": true,
-        "title": "Following Austria's first commercial satellite launch, Tumbleweed raises €6.9 million to accelerate space missions",
-        "url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/",
-        "source": "EU-Startups"
+        "date": "2026-11-04",
+        "company": "넘즈에이아이",
+        "fundingAmount": "20억 원",
+        "fundingStage": "시드",
+        "industry": null,
+        "overseas": false,
+        "title": "[게시판] 넘즈에이아이, 20억 프리시드 2차 투자 유치 등 단신",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=217018",
+        "source": "AI타임스"
       },
       {
         "date": "2026-11-03",
@@ -297,17 +300,6 @@
       },
       {
         "date": "2026-11-03",
-        "company": "퍼스트바이오",
-        "fundingAmount": "100억 원",
-        "fundingStage": null,
-        "industry": "바이오·헬스케어",
-        "overseas": false,
-        "title": "퍼스트바이오, 100억 원 추가 투자 유치 완료∙∙∙신약 파이프라인 개발 가속화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53426",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-11-03",
         "company": "티디에스이노베이션",
         "fundingAmount": "63억 원",
         "fundingStage": "프리시리즈A",
@@ -316,55 +308,44 @@
         "title": "티디에스이노베이션, 63억 원 투자 유치∙∙∙300mm 2차원 반도체 증착 장비 개발 본격화",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53427",
         "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-11-02",
-        "company": "Northwood Space",
-        "fundingAmount": "$375M",
-        "fundingStage": "Series C",
-        "industry": null,
-        "overseas": true,
-        "title": "Northwood Space raises $375M Series C at a $2B valuation from a16z and DFJ Growth",
-        "url": "https://techcrunch.com/2026/11/02/northwood-space-raises-375m-series-c-at-a-2b-valuation-from-a16z-and-dfj-growth/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 68,
-      "dealCount": 14,
+      "articleCount": 66,
+      "dealCount": 18,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-12",
-    "to": "2026-11-10",
+    "from": "2026-10-13",
+    "to": "2026-11-11",
     "briefingDays": 30,
-    "articleCount": 277,
+    "articleCount": 278,
     "domesticCount": 237,
-    "overseasCount": 40,
-    "dealCount": 53,
+    "overseasCount": 41,
+    "dealCount": 55,
     "disclosedKrwDealCount": 22,
     "disclosedKrwTotalEok": 13749.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 99
+        "count": 101
       },
       {
         "label": "TIPS / LIPS",
-        "count": 65
+        "count": 64
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 40
+        "count": 41
       },
       {
         "label": "해외 VC",
-        "count": 38
+        "count": 39
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 32
+        "count": 30
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -374,11 +355,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 130
+        "count": 134
       },
       {
         "label": "선정",
-        "count": 24
+        "count": 21
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -386,23 +367,23 @@
       },
       {
         "label": "실증·PoC",
-        "count": 14
+        "count": 16
       },
       {
         "label": "모집",
-        "count": 13
+        "count": 14
       },
       {
         "label": "지원사업",
-        "count": 6
-      },
-      {
-        "label": "인수·M&A",
-        "count": 5
+        "count": 7
       },
       {
         "label": "협약",
         "count": 5
+      },
+      {
+        "label": "인수·M&A",
+        "count": 4
       },
       {
         "label": "펀드결성",
@@ -410,13 +391,13 @@
       },
       {
         "label": "출시·상용화",
-        "count": 2
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 105
+        "count": 106
       },
       {
         "label": "로봇",
@@ -446,7 +427,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 7
+        "count": 8
       },
       {
         "label": "시리즈D",
@@ -504,7 +485,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 26
+        "count": 28
       },
       {
         "label": "EU-Startups",
@@ -512,7 +493,7 @@
       },
       {
         "label": "머니투데이",
-        "count": 22
+        "count": 23
       },
       {
         "label": "스타트업투데이",
@@ -520,27 +501,22 @@
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 19
-      },
-      {
-        "label": "연합뉴스",
-        "count": 18
+        "count": 20
       },
       {
         "label": "아시아경제",
         "count": 17
       },
       {
+        "label": "연합뉴스",
+        "count": 17
+      },
+      {
         "label": "TechCrunch",
-        "count": 16
+        "count": 17
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-12",
-        "total": 15,
-        "overseas": 0
-      },
       {
         "date": "2026-10-13",
         "total": 15,
@@ -685,9 +661,36 @@
         "date": "2026-11-10",
         "total": 12,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-11",
+        "total": 10,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-11",
+        "company": "머코어",
+        "fundingAmount": null,
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
+        "url": "https://wowtale.net/2026/11/11/267802/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-11",
+        "company": "Proximal Ventures",
+        "fundingAmount": "$27.5 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Proximal Ventures raises debut fund to back startups bringing AI to drug development",
+        "url": "https://techcrunch.com/2026/11/10/proximal-ventures-raises-debut-fund-to-back-startups-bringing-ai-to-drug-development/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-06",
         "company": "유로보틱스",
@@ -885,32 +888,10 @@
         "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
         "url": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "아이즈엔터테인먼트",
-        "fundingAmount": "200억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "아이즈엔터테인먼트, 200억원 규모 시리즈A 투자 유치...AI 메신저 개발 속도",
-        "url": "https://www.techm.kr/news/articleView.html?idxno=156652",
-        "source": "테크M"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "퓨리오사AI",
-        "fundingAmount": "8,200억 원",
-        "fundingStage": "시리즈D",
-        "industry": "AI",
-        "overseas": false,
-        "title": "퓨리오사AI, 8,200억원 시리즈D 투자유치…기업가치 3.8조원",
-        "url": "https://wowtale.net/2026/10/29/267133/",
-        "source": "와우테일"
       }
     ],
     "previous": {
-      "articleCount": 201,
+      "articleCount": 212,
       "dealCount": 43,
       "briefingDays": 29
     }
