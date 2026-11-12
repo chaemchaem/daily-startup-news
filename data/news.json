@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-11T09:00:00+09:00",
-  "collectedAt": "2026-11-11T09:11:39+09:00",
+  "generatedAt": "2026-11-12T09:00:00+09:00",
+  "collectedAt": "2026-11-12T09:11:52+09:00",
   "range": {
-    "from": "2026-11-09T09:00:00+09:00",
-    "to": "2026-11-11T09:00:00+09:00"
+    "from": "2026-11-10T09:00:00+09:00",
+    "to": "2026-11-12T09:00:00+09:00"
   },
-  "totalCount": 10,
+  "totalCount": 14,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 1,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
+    "TIPS / LIPS": 3,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 4,
     "스타트업 / 벤처기업 / 초기창업": 1,
     "세컨더리 / 구주매각": 0,
     "해외 VC": 1
@@ -27,7 +27,23 @@
       "url": "https://www.donga.com/news/Economy/article/all/20261110/135000070/1",
       "resolvedUrl": null,
       "eventType": "TIPS·LIPS 선정",
-      "score": 97
+      "score": 95
+    },
+    {
+      "id": "61931f9429c2f2fd",
+      "category": "TIPS / LIPS",
+      "title": "춘천 더픽트, 공간 AI로 딥테크 팁스 선정…최대 15억원 지원",
+      "publishedAt": "2026-11-11",
+      "summary": "더픽트는 팁스 운영사인 더존비즈온의 추천으로 최종 선정됐다고 11일 밝혔다. 딥테크 팁스는 일반 팁스 과제를 마치고 후속 투자를 유치한 기업을 대상으로 하는 연구개발 프로그램이다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261111159600062",
+      "resolvedUrl": null,
+      "company": "더픽트",
+      "eventType": "TIPS·LIPS 선정",
+      "industry": "AI",
+      "score": 87
     },
     {
       "id": "d0e62ef79c607bad",
@@ -43,7 +59,7 @@
       "company": "광주인공지능산업융합사업단",
       "eventType": "모집",
       "industry": "AI",
-      "score": 88
+      "score": 86
     },
     {
       "id": "c4898c7783078fee",
@@ -57,7 +73,7 @@
       "url": "https://www.fnnews.com/news/202611102138080055",
       "resolvedUrl": null,
       "eventType": "투자유치",
-      "score": 84
+      "score": 82
     },
     {
       "id": "0e3a751160945b24",
@@ -72,22 +88,7 @@
       "resolvedUrl": null,
       "fundingStage": "후속 투자",
       "eventType": "투자유치",
-      "score": 84
-    },
-    {
-      "id": "a83f8d1253edbcb2",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "풀무원, AI·로봇 활용 식품 공정 혁신한다…스타트업 11곳과 협업",
-      "publishedAt": "2026-11-11",
-      "summary": "전체 11개 과제 중 3개는 중소벤처기업부의 민관협력 오픈이노베이션 지원사업과 연계됐으며 나머지 8개는 풀무원 자체 지원으로 추진됐다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "뉴시스",
-      "url": "https://www.newsis.com/view/NISX20261111_0003863055",
-      "resolvedUrl": null,
-      "eventType": "지원사업",
-      "industry": "AI",
-      "score": 79
+      "score": 82
     },
     {
       "id": "97d6ffaa5e4c1b8b",
@@ -104,39 +105,83 @@
       "fundingStage": "프리시리즈A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 76
+      "score": 74
     },
     {
-      "id": "28522a5458f5b94e",
-      "category": "VC / AC",
-      "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
-      "publishedAt": "2026-11-11",
-      "summary": "후속학습 플랫폼 트래젝토리(Trajectory)도 이달 4,500만 달러 시리즈A 를 유치했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "와우테일",
-      "url": "https://wowtale.net/2026/11/11/267802/",
-      "resolvedUrl": null,
-      "company": "머코어",
-      "fundingStage": "시리즈A",
-      "eventType": "투자유치",
-      "industry": "AI",
-      "score": 71
-    },
-    {
-      "id": "62bdbbb94c0f0edc",
+      "id": "e714a36339c46252",
       "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "GS리테일, AI 스타트업 협업 성과…\"상품 검색 노출 3.9배↑\"",
+      "title": "롯데건설, 스타트업 10곳과 건설 신기술 검증",
       "publishedAt": "2026-11-11",
-      "summary": "그 결과 상품 검색 노출이 실증 단계별로 각각 3.8배, 3.9배 증가했다.",
+      "summary": "롯데건설 제공 롯데건설은 올해 서울경제진흥원(SBA), 창업진흥원과 함께 진행한 오픈이노베이션 프로그램을 통해 스타트업 9곳을 선정했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026111108042017622",
+      "source": "세계일보",
+      "url": "https://www.segye.com/newsView/20261111517845",
+      "resolvedUrl": null,
+      "company": "롯데건설",
+      "eventType": "실증·PoC",
+      "score": 68
+    },
+    {
+      "id": "aadda75ea520bbac",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "소풍커넥트, 농협 애그테크 성과공유회 개최∙∙∙스타트업 7개사 실증 결과 공유",
+      "publishedAt": "2026-11-11",
+      "summary": "알트투는 태안농협과 하드웨어 및 클라우드 AI를 통합한 피지컬 AI 솔루션을, 팜커넥트는 농소농협과 AI 에이전트 기반 벌 수분 영농 컨설팅을 각각 실증했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53488",
+      "resolvedUrl": null,
+      "company": "소풍커넥트",
+      "eventType": "실증·PoC",
+      "industry": "농식품",
+      "score": 66
+    },
+    {
+      "id": "3c241b202fdc3fa6",
+      "category": "VC / AC",
+      "title": "광주 첨단지구 AI 창업동 입주기업 모집…23일까지 접수",
+      "publishedAt": "2026-11-10",
+      "summary": "모집 규모는 총 21개 입주실이며, 대상은 AI 관련 중소기업과 벤처투자회사, 액셀러레이터 등 투자·사업화 지원기관이다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/AKR20261110106900054",
+      "resolvedUrl": null,
+      "eventType": "모집",
+      "industry": "AI",
+      "score": 66
+    },
+    {
+      "id": "50453c31658c1a0d",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "GS리테일, AX 스타트업 협업 성과 “AI 검색 노출 약 4배↑”",
+      "publishedAt": "2026-11-11",
+      "summary": "행사에서는 7월부터 약 4개월간 AI 스타트업 5개사와 추진한 사업 실증(PoC) 결과와 함께 향후 사업 적용 및 협업 확대 방안이 논의됐다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "이투데이",
+      "url": "https://www.etoday.co.kr/news/view/2646712",
       "resolvedUrl": null,
       "eventType": "실증·PoC",
       "industry": "AI",
-      "score": 70
+      "score": 65
+    },
+    {
+      "id": "3c6c6d19899c95a7",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "중기부, 2030년까지 ‘기업가치 1조’ AI 스타트업 20개 육성",
+      "publishedAt": "2026-11-11",
+      "summary": "국내 AI 산업·인프라 생태계 전 단계(반도체-클라우드-LLM-서비스)를 수직 계열화해 스타트업 중심의 통합 실증 체계를 구축·지원한다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "와우테일",
+      "url": "https://wowtale.net/2026/11/11/267884/",
+      "resolvedUrl": null,
+      "eventType": "실증·PoC",
+      "industry": "AI",
+      "score": 62
     },
     {
       "id": "445ab430c2cfa633",
@@ -150,7 +195,22 @@
       "url": "https://www.mt.co.kr/industry/2026/11/10/2026111014254437663",
       "resolvedUrl": null,
       "eventType": "실증·PoC",
-      "score": 64
+      "score": 62
+    },
+    {
+      "id": "2fa71a9edb3e0fd1",
+      "category": "TIPS / LIPS",
+      "title": "'AI 기반' 기술로 쾌거…단국대 보육기업 2곳, CES 2027 혁신상",
+      "publishedAt": "2026-11-11",
+      "summary": "지난 9월에는 중소벤처기업부 팁스(TIPS) 프로그램에도 선정됐다. 수상 기업은 컴포랩스와 씨이앤에스로, 각각 AI 기반 제품 디자인 플랫폼과 지속가능한 열관리 기술을 인정받았다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "아시아경제",
+      "url": "https://view.asiae.co.kr/article/2026111114492129569",
+      "resolvedUrl": null,
+      "eventType": "TIPS·LIPS 선정",
+      "industry": "AI",
+      "score": 56
     },
     {
       "id": "7893798900a63194",
@@ -167,7 +227,7 @@
       "fundingAmount": "$27.5 million",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 81
+      "score": 79
     }
   ]
 }
