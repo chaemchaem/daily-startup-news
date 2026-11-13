@@ -1,37 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-12T00:11:52.253Z",
-  "latestDate": "2026-11-12",
+  "generatedAt": "2026-11-13T00:11:35.343Z",
+  "latestDate": "2026-11-13",
   "weekly": {
-    "from": "2026-11-06",
-    "to": "2026-11-12",
+    "from": "2026-11-07",
+    "to": "2026-11-13",
     "briefingDays": 7,
-    "articleCount": 65,
-    "domesticCount": 59,
-    "overseasCount": 6,
-    "dealCount": 7,
-    "disclosedKrwDealCount": 2,
-    "disclosedKrwTotalEok": 420,
+    "articleCount": 64,
+    "domesticCount": 61,
+    "overseasCount": 3,
+    "dealCount": 6,
+    "disclosedKrwDealCount": 1,
+    "disclosedKrwTotalEok": 400,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 25
-      },
-      {
-        "label": "TIPS / LIPS",
-        "count": 14
+        "count": 24
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 15
+      },
+      {
+        "label": "TIPS / LIPS",
         "count": 12
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 6
+        "count": 8
       },
       {
         "label": "해외 VC",
-        "count": 6
+        "count": 3
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,11 +41,15 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 23
+        "count": 19
       },
       {
         "label": "실증·PoC",
-        "count": 7
+        "count": 9
+      },
+      {
+        "label": "선정",
+        "count": 6
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -56,15 +60,11 @@
         "count": 4
       },
       {
-        "label": "선정",
-        "count": 4
-      },
-      {
         "label": "지원사업",
         "count": 2
       },
       {
-        "label": "펀드결성",
+        "label": "협약",
         "count": 2
       },
       {
@@ -76,14 +76,14 @@
         "count": 1
       },
       {
-        "label": "협약",
+        "label": "펀드결성",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 25
+        "count": 27
       },
       {
         "label": "바이오·헬스케어",
@@ -94,10 +94,6 @@
         "count": 2
       },
       {
-        "label": "로봇",
-        "count": 1
-      },
-      {
         "label": "반도체",
         "count": 1
       }
@@ -105,10 +101,10 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 2
+        "count": 3
       },
       {
-        "label": "시드",
+        "label": "시리즈C",
         "count": 1
       }
     ],
@@ -118,40 +114,35 @@
         "count": 12
       },
       {
+        "label": "머니투데이",
+        "count": 7
+      },
+      {
+        "label": "아시아경제",
+        "count": 7
+      },
+      {
         "label": "파이낸셜뉴스",
         "count": 7
       },
       {
-        "label": "머니투데이",
-        "count": 6
-      },
-      {
-        "label": "아시아경제",
-        "count": 6
-      },
-      {
         "label": "연합뉴스",
-        "count": 5
+        "count": 6
       },
       {
         "label": "스타트업투데이",
-        "count": 4
+        "count": 3
+      },
+      {
+        "label": "AI타임스",
+        "count": 3
       },
       {
         "label": "TechCrunch",
-        "count": 4
-      },
-      {
-        "label": "아주경제",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-06",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-11-07",
         "total": 13,
@@ -181,9 +172,36 @@
         "date": "2026-11-12",
         "total": 14,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-13",
+        "total": 15,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-13",
+        "company": "하이드라호스트",
+        "fundingAmount": null,
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "전력망 여유 용량에 AI 설비를 얹는 토러스, 5억 달러 투자유치",
+        "url": "https://wowtale.net/2026/11/13/267981/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-12",
+        "company": "프랙타일",
+        "fundingAmount": "1조 원",
+        "fundingStage": "시리즈C",
+        "industry": "AI",
+        "overseas": false,
+        "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
+        "source": "AI타임스"
+      },
       {
         "date": "2026-11-11",
         "company": "머코어",
@@ -227,55 +245,22 @@
         "title": "Harbinger raises $240M after expanding into defense",
         "url": "https://techcrunch.com/2026/11/05/harbinger-raises-240m-after-expanding-into-defense/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-05",
-        "company": "Sequoia Capital",
-        "fundingAmount": "€8.9 billion",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Sequoia Capital raises around €8.9 billion in new funds and closes London office; most local partners opt to stay in Europe",
-        "url": "https://www.eu-startups.com/2026/11/sequoia-capital-raises-around-e8-9-billion-in-new-funds-and-closes-london-office-most-local-partners-opt-to-stay-in-europe/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-05",
-        "company": "Titan OS",
-        "fundingAmount": "$46 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Titan OS raises $46 million to expand its smart TV OS internationally",
-        "url": "https://techcrunch.com/2026/11/04/titan-os-raises-46-million-to-expand-its-smart-tv-os-internationally/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-04",
-        "company": "넘즈에이아이",
-        "fundingAmount": "20억 원",
-        "fundingStage": "시드",
-        "industry": null,
-        "overseas": false,
-        "title": "[게시판] 넘즈에이아이, 20억 프리시드 2차 투자 유치 등 단신",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=217018",
-        "source": "AI타임스"
       }
     ],
     "previous": {
-      "articleCount": 64,
-      "dealCount": 18,
+      "articleCount": 66,
+      "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-14",
-    "to": "2026-11-12",
+    "from": "2026-10-15",
+    "to": "2026-11-13",
     "briefingDays": 30,
-    "articleCount": 273,
-    "domesticCount": 233,
-    "overseasCount": 40,
-    "dealCount": 52,
+    "articleCount": 272,
+    "domesticCount": 235,
+    "overseasCount": 37,
+    "dealCount": 51,
     "disclosedKrwDealCount": 20,
     "disclosedKrwTotalEok": 11047.8,
     "byCategory": [
@@ -285,19 +270,19 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 65
+        "count": 66
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 42
+        "count": 41
       },
       {
         "label": "해외 VC",
-        "count": 38
+        "count": 35
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 27
+        "count": 29
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -307,19 +292,19 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 130
+        "count": 128
       },
       {
         "label": "TIPS·LIPS 선정",
+        "count": 23
+      },
+      {
+        "label": "실증·PoC",
         "count": 22
       },
       {
         "label": "선정",
-        "count": 20
-      },
-      {
-        "label": "실증·PoC",
-        "count": 20
+        "count": 21
       },
       {
         "label": "모집",
@@ -330,15 +315,15 @@
         "count": 5
       },
       {
-        "label": "펀드결성",
-        "count": 4
-      },
-      {
         "label": "협약",
-        "count": 4
+        "count": 5
       },
       {
         "label": "인수·M&A",
+        "count": 3
+      },
+      {
+        "label": "펀드결성",
         "count": 3
       },
       {
@@ -349,7 +334,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 105
+        "count": 104
       },
       {
         "label": "로봇",
@@ -379,7 +364,11 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 8
+        "count": 9
+      },
+      {
+        "label": "시리즈C",
+        "count": 3
       },
       {
         "label": "시리즈D",
@@ -388,10 +377,6 @@
       {
         "label": "프리시리즈A",
         "count": 3
-      },
-      {
-        "label": "시리즈C",
-        "count": 2
       },
       {
         "label": "시드",
@@ -437,43 +422,38 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 29
-      },
-      {
-        "label": "EU-Startups",
-        "count": 23
+        "count": 31
       },
       {
         "label": "머니투데이",
-        "count": 22
-      },
-      {
-        "label": "스타트업투데이",
-        "count": 20
+        "count": 23
       },
       {
         "label": "파이낸셜뉴스",
+        "count": 21
+      },
+      {
+        "label": "EU-Startups",
+        "count": 21
+      },
+      {
+        "label": "스타트업투데이",
         "count": 19
       },
       {
-        "label": "아시아경제",
-        "count": 17
+        "label": "연합뉴스",
+        "count": 18
       },
       {
-        "label": "연합뉴스",
-        "count": 17
+        "label": "아시아경제",
+        "count": 16
       },
       {
         "label": "TechCrunch",
-        "count": 17
+        "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-14",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-15",
         "total": 15,
@@ -618,9 +598,36 @@
         "date": "2026-11-12",
         "total": 14,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-13",
+        "total": 15,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-13",
+        "company": "하이드라호스트",
+        "fundingAmount": null,
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "전력망 여유 용량에 AI 설비를 얹는 토러스, 5억 달러 투자유치",
+        "url": "https://wowtale.net/2026/11/13/267981/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-12",
+        "company": "프랙타일",
+        "fundingAmount": "1조 원",
+        "fundingStage": "시리즈C",
+        "industry": "AI",
+        "overseas": false,
+        "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
+        "source": "AI타임스"
+      },
       {
         "date": "2026-11-11",
         "company": "머코어",
@@ -818,33 +825,11 @@
         "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
         "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
         "source": "블로터"
-      },
-      {
-        "date": "2026-10-30",
-        "company": "Ares Intelligence",
-        "fundingAmount": "€2.9 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "EXCLUSIVE: London’s Ares Intelligence raises €2.9 million to turn employee insights into AI adoption plans",
-        "url": "https://www.eu-startups.com/2026/10/exclusive-londons-ares-intelligence-raises-e2-6-million-to-turn-employee-insights-into-ai-adoption-plans/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-10-29",
-        "company": "Upwind",
-        "fundingAmount": "$400M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
-        "url": "https://techcrunch.com/2026/10/28/upwind-raises-400m-after-walking-away-from-datadog-acquisition-offer/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 217,
-      "dealCount": 43,
+      "articleCount": 228,
+      "dealCount": 46,
       "briefingDays": 29
     }
   }
