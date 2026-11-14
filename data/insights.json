@@ -1,21 +1,21 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-13T00:11:35.343Z",
-  "latestDate": "2026-11-13",
+  "generatedAt": "2026-11-14T00:11:45.356Z",
+  "latestDate": "2026-11-14",
   "weekly": {
-    "from": "2026-11-07",
-    "to": "2026-11-13",
+    "from": "2026-11-08",
+    "to": "2026-11-14",
     "briefingDays": 7,
-    "articleCount": 64,
-    "domesticCount": 61,
-    "overseasCount": 3,
+    "articleCount": 67,
+    "domesticCount": 65,
+    "overseasCount": 2,
     "dealCount": 6,
-    "disclosedKrwDealCount": 1,
-    "disclosedKrwTotalEok": 400,
+    "disclosedKrwDealCount": 2,
+    "disclosedKrwTotalEok": 470,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 24
+        "count": 27
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -27,44 +27,40 @@
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 8
-      },
-      {
-        "label": "해외 VC",
-        "count": 3
+        "count": 9
       },
       {
         "label": "세컨더리 / 구주매각",
+        "count": 2
+      },
+      {
+        "label": "해외 VC",
         "count": 2
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 19
+        "count": 23
       },
       {
         "label": "실증·PoC",
-        "count": 9
-      },
-      {
-        "label": "선정",
-        "count": 6
+        "count": 8
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 6
+        "count": 7
       },
       {
         "label": "모집",
-        "count": 4
+        "count": 5
+      },
+      {
+        "label": "선정",
+        "count": 5
       },
       {
         "label": "지원사업",
-        "count": 2
-      },
-      {
-        "label": "협약",
         "count": 2
       },
       {
@@ -78,30 +74,30 @@
       {
         "label": "펀드결성",
         "count": 1
+      },
+      {
+        "label": "협약",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 27
+        "count": 28
       },
       {
         "label": "바이오·헬스케어",
-        "count": 3
+        "count": 4
       },
       {
         "label": "농식품",
         "count": 2
-      },
-      {
-        "label": "반도체",
-        "count": 1
       }
     ],
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 3
+        "count": 4
       },
       {
         "label": "시리즈C",
@@ -111,43 +107,38 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 12
+        "count": 15
       },
       {
-        "label": "머니투데이",
-        "count": 7
+        "label": "파이낸셜뉴스",
+        "count": 8
       },
       {
         "label": "아시아경제",
         "count": 7
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "연합뉴스",
         "count": 7
       },
       {
-        "label": "연합뉴스",
-        "count": 6
+        "label": "머니투데이",
+        "count": 5
       },
       {
         "label": "스타트업투데이",
+        "count": 4
+      },
+      {
+        "label": "동아일보",
         "count": 3
       },
       {
         "label": "AI타임스",
         "count": 3
-      },
-      {
-        "label": "TechCrunch",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-07",
-        "total": 13,
-        "overseas": 1
-      },
       {
         "date": "2026-11-08",
         "total": 11,
@@ -177,6 +168,11 @@
         "date": "2026-11-13",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-14",
+        "total": 15,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -190,6 +186,17 @@
         "title": "전력망 여유 용량에 AI 설비를 얹는 토러스, 5억 달러 투자유치",
         "url": "https://wowtale.net/2026/11/13/267981/",
         "source": "와우테일"
+      },
+      {
+        "date": "2026-11-13",
+        "company": "라이플렉스사이언스",
+        "fundingAmount": "70억 원",
+        "fundingStage": "시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "라이플렉스사이언스, 70억 원 시리즈 A 투자 유치∙∙∙골관절염 치료제 임상 채비",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53500",
+        "source": "스타트업투데이"
       },
       {
         "date": "2026-11-12",
@@ -234,43 +241,32 @@
         "title": "자율이동 AI '유로보틱스', 400억 규모 시리즈A 투자 유치",
         "url": "https://wowtale.net/2026/11/06/267562/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-06",
-        "company": "Harbinger",
-        "fundingAmount": "$240M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Harbinger raises $240M after expanding into defense",
-        "url": "https://techcrunch.com/2026/11/05/harbinger-raises-240m-after-expanding-into-defense/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 66,
+      "articleCount": 69,
       "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-15",
-    "to": "2026-11-13",
+    "from": "2026-10-16",
+    "to": "2026-11-14",
     "briefingDays": 30,
-    "articleCount": 272,
+    "articleCount": 271,
     "domesticCount": 235,
-    "overseasCount": 37,
-    "dealCount": 51,
+    "overseasCount": 36,
+    "dealCount": 50,
     "disclosedKrwDealCount": 20,
-    "disclosedKrwTotalEok": 11047.8,
+    "disclosedKrwTotalEok": 11017.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 98
+        "count": 99
       },
       {
         "label": "TIPS / LIPS",
-        "count": 66
+        "count": 64
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -278,11 +274,11 @@
       },
       {
         "label": "해외 VC",
-        "count": 35
+        "count": 34
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 29
+        "count": 30
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -292,23 +288,23 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 128
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 23
+        "count": 129
       },
       {
         "label": "실증·PoC",
-        "count": 22
-      },
-      {
-        "label": "선정",
         "count": 21
       },
       {
+        "label": "선정",
+        "count": 20
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 20
+      },
+      {
         "label": "모집",
-        "count": 13
+        "count": 14
       },
       {
         "label": "지원사업",
@@ -334,15 +330,15 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 104
+        "count": 102
       },
       {
         "label": "로봇",
-        "count": 8
+        "count": 7
       },
       {
         "label": "바이오·헬스케어",
-        "count": 6
+        "count": 7
       },
       {
         "label": "반도체",
@@ -364,7 +360,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 9
+        "count": 10
       },
       {
         "label": "시리즈C",
@@ -376,7 +372,7 @@
       },
       {
         "label": "프리시리즈A",
-        "count": 3
+        "count": 2
       },
       {
         "label": "시드",
@@ -395,7 +391,7 @@
         "count": 1
       },
       {
-        "label": "후속 투자",
+        "label": "프리A",
         "count": 1
       },
       {
@@ -422,7 +418,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 31
+        "count": 34
       },
       {
         "label": "머니투데이",
@@ -433,16 +429,16 @@
         "count": 21
       },
       {
-        "label": "EU-Startups",
-        "count": 21
+        "label": "스타트업투데이",
+        "count": 20
       },
       {
-        "label": "스타트업투데이",
-        "count": 19
+        "label": "EU-Startups",
+        "count": 20
       },
       {
         "label": "연합뉴스",
-        "count": 18
+        "count": 17
       },
       {
         "label": "아시아경제",
@@ -454,11 +450,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-15",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-16",
         "total": 10,
@@ -603,6 +594,11 @@
         "date": "2026-11-13",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-14",
+        "total": 15,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -616,6 +612,17 @@
         "title": "전력망 여유 용량에 AI 설비를 얹는 토러스, 5억 달러 투자유치",
         "url": "https://wowtale.net/2026/11/13/267981/",
         "source": "와우테일"
+      },
+      {
+        "date": "2026-11-13",
+        "company": "라이플렉스사이언스",
+        "fundingAmount": "70억 원",
+        "fundingStage": "시리즈A",
+        "industry": null,
+        "overseas": false,
+        "title": "라이플렉스사이언스, 70억 원 시리즈 A 투자 유치∙∙∙골관절염 치료제 임상 채비",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53500",
+        "source": "스타트업투데이"
       },
       {
         "date": "2026-11-12",
@@ -814,22 +821,11 @@
         "title": "로켓모터 양산 파이어호크, 1억5천만 달러 시리즈D 투자유치…유니콘",
         "url": "https://wowtale.net/2026/10/31/267269/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-10-31",
-        "company": "나노포지에이아이",
-        "fundingAmount": "146억 원",
-        "fundingStage": "시드 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "신소재 개발기업 나노포지에이아이, 146억 규모 시드 투자 유치",
-        "url": "https://www.bloter.net/news/articleView.html?idxno=677355",
-        "source": "블로터"
       }
     ],
     "previous": {
-      "articleCount": 228,
-      "dealCount": 46,
+      "articleCount": 234,
+      "dealCount": 51,
       "briefingDays": 29
     }
   }
