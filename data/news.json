@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-11-14T09:00:00+09:00",
-  "collectedAt": "2026-11-14T09:11:45+09:00",
+  "generatedAt": "2026-11-15T09:00:00+09:00",
+  "collectedAt": "2026-11-15T09:11:36+09:00",
   "range": {
-    "from": "2026-11-12T09:00:00+09:00",
-    "to": "2026-11-14T09:00:00+09:00"
+    "from": "2026-11-13T09:00:00+09:00",
+    "to": "2026-11-15T09:00:00+09:00"
   },
-  "totalCount": 15,
+  "totalCount": 12,
   "categoryCounts": {
     "VC / AC": 5,
-    "TIPS / LIPS": 3,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 4,
+    "TIPS / LIPS": 2,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
     "스타트업 / 벤처기업 / 초기창업": 3,
     "세컨더리 / 구주매각": 0,
-    "해외 VC": 0
+    "해외 VC": 1
   },
   "items": [
     {
@@ -30,7 +30,7 @@
       "fundingAmount": "70억 원",
       "fundingStage": "시리즈A",
       "eventType": "투자유치",
-      "score": 81
+      "score": 79
     },
     {
       "id": "667d89dc9ee76d3d",
@@ -46,7 +46,7 @@
       "fundingStage": "시리즈E",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 77
+      "score": 75
     },
     {
       "id": "4e16e1583a5141fb",
@@ -62,7 +62,25 @@
       "company": "동네선물",
       "eventType": "TIPS·LIPS 선정",
       "industry": "AI",
-      "score": 73
+      "score": 71
+    },
+    {
+      "id": "4fcca15d95e8cb5d",
+      "category": "VC / AC",
+      "title": "“AI 원금복구 기다리느니”…‘미워도 다시한번’ 바이오 몰리는 투자금",
+      "publishedAt": "2026-11-14",
+      "summary": "바이온사이트는 최근 150억원 규모의 시리즈B 투자금을 유치했다. 시리즈A 라운드에서 55억원을 조달한 뒤 3년여 만에 추가 투자를 받았다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "매일경제",
+      "url": "https://www.mk.co.kr/news/business/12208700",
+      "resolvedUrl": null,
+      "company": "바이온사이트",
+      "fundingAmount": "150억 원",
+      "fundingStage": "시리즈B",
+      "eventType": "투자유치",
+      "industry": "AI",
+      "score": 67
     },
     {
       "id": "b05719eb95e81cc8",
@@ -76,25 +94,7 @@
       "url": "https://www.yna.co.kr/view/AKR20261113035600062",
       "resolvedUrl": null,
       "eventType": "모집",
-      "score": 69
-    },
-    {
-      "id": "3670cdc23ccd1acc",
-      "category": "VC / AC",
-      "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
-      "publishedAt": "2026-11-12",
-      "summary": "프랙타일은 11일(현지시간) 시리즈 C 투자 라운드에서 7억2000만달러를 유치했다고 밝혔다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "AI타임스",
-      "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
-      "resolvedUrl": null,
-      "company": "프랙타일",
-      "fundingAmount": "1조 원",
-      "fundingStage": "시리즈C",
-      "eventType": "투자유치",
-      "industry": "AI",
-      "score": 69
+      "score": 67
     },
     {
       "id": "b2b82d84a24726db",
@@ -109,104 +109,51 @@
       "resolvedUrl": null,
       "fundingAmount": "1조 원",
       "eventType": "투자유치",
-      "score": 68
+      "score": 66
     },
     {
-      "id": "fe4fd248b8249b24",
+      "id": "0718bce329b6157d",
       "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "인텔코리아, 서울 AI 허브와 AI 스타트업 육성 협력",
-      "publishedAt": "2026-11-12",
-      "summary": "인텔코리아가 12일 국내 AI 스타트업 기술 경쟁력 강화를 위해 서울 AI 허브와 업무협약(MOU)을 체결했다.",
+      "title": "로레알, 국내 스타트업 3곳과 中 수입박람회 참가…AI·바이오 기술 선봬",
+      "publishedAt": "2026-11-13",
+      "summary": "국내 스타트업 3곳은 로레알 전시관에서 각자의 기술을 선보이고, 피칭 로드쇼와 워크숍에 참여해 글로벌 기업들과 협력 가능성을 논의했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "ZDNet Korea",
-      "url": "https://zdnet.co.kr/view/?no=20261112181333",
+      "url": "https://zdnet.co.kr/view/?no=20261113184711",
       "resolvedUrl": null,
-      "company": "인텔코리아",
-      "eventType": "협약",
       "industry": "AI",
-      "score": 65
-    },
-    {
-      "id": "475d17a31fc21c4f",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "롯데벤처스, 롯데 오픈이노베이션 데이…스타트업 실증사례 발표",
-      "publishedAt": "2026-11-12",
-      "summary": "전날 롯데시네마 월드타워점에서 열린 행사에서는 롯데벤처스의 대표 오픈이노베이션 프로그램에 참여한 스타트업 10개사가 협업 성과를 발표했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "연합뉴스",
-      "url": "https://www.yna.co.kr/view/AKR20261112035900030",
-      "resolvedUrl": null,
-      "eventType": "실증·PoC",
       "score": 64
     },
     {
-      "id": "677e6adc24b9d2b0",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "국내 유망 스타트업 日 진출 지원… 신한금융 ‘퓨처스랩 데모데이’",
-      "publishedAt": "2026-11-12",
-      "summary": "신한금융그룹은 일본 도쿄에서 신한은행 현지법인인 SBJ은행이 키라보시뱅크와 공동으로 ‘신한 퓨처스랩 재팬 데모데이’를 개최했다고 12일 밝혔다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "세계일보",
-      "url": "https://www.segye.com/newsView/20261112515944",
-      "resolvedUrl": null,
-      "score": 63
-    },
-    {
-      "id": "e3d274ca94c5190a",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "롯데건설, 마곡서 스타트업 '오픈이노베이션 성과공유회' 개최",
-      "publishedAt": "2026-11-12",
-      "summary": "이번 행사에는 서울경제진흥원, 창업진흥원 협력 프로그램으로 선발한 9개 사와 롯데건설이 자체 발굴한 1개 사 등 스타트업 10곳이 참여했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026111209031830710",
-      "resolvedUrl": null,
-      "eventType": "선정",
-      "score": 61
-    },
-    {
-      "id": "6c8a8d1823be8c1c",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "롯데벤처스, 롯데 오픈이노베이션 데이 개최∙∙∙스타트업 10개사 협업 성과 공유",
-      "publishedAt": "2026-11-12",
-      "summary": "2016년 2월 설립된 롯데벤처스는 롯데그룹의 기업주도형 벤처캐피탈로, 국내 최초로 액셀러레이터(AC) 기능을 결합한 모델을 기반으로 스타트업 발굴과 육성을 지원하고 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53490",
-      "resolvedUrl": null,
-      "score": 61
-    },
-    {
-      "id": "0c3c3a6fe7d2ae18",
-      "category": "TIPS / LIPS",
-      "title": "단국대 보육기업 씨이엔에스 CES 2027 혁신상 수상",
-      "publishedAt": "2026-11-12",
-      "summary": "이주예 씨이앤에스 대표는 \"이번 선정을 계기로 12월 출시와 핵심 고객 레퍼런스 확보에 속도를 내고 레트로핏 시장 진입과 해외 진출을 추진하겠다\"고 말했다.",
+      "id": "584cca5ff6595aa6",
+      "category": "VC / AC",
+      "title": "'AI 기반 모듈형 스킨케어' 뭐길래…소비자·투자자 지갑 열었다",
+      "publishedAt": "2026-11-14",
+      "summary": "위트컴퍼니는 2024년 출시한 모듈형 스킨케어 브랜드 '오가니시티'의 빠른 성장세에 힘입어 최근 젠엑시스와 에스에스투인베스트먼트가 공동으로 조성한 펀드로부터 시드 투자를 유치했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "머니투데이",
-      "url": "https://www.mt.co.kr/future/2026/11/12/2026111216431465854",
+      "url": "https://www.mt.co.kr/future/2026/11/14/2026111307405633492",
       "resolvedUrl": null,
-      "eventType": "선정",
-      "score": 58
+      "company": "위트컴퍼니",
+      "fundingStage": "시드 투자",
+      "eventType": "투자유치",
+      "industry": "AI",
+      "score": 60
     },
     {
-      "id": "01597770da546ce3",
-      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "롯데벤처스, 스타트업 협업 성과 공유…내년 바이오 분야로 확대",
-      "publishedAt": "2026-11-12",
-      "summary": "롯데그룹 제공 롯데그룹의 기업주도형 벤처캐피탈(CVC) 롯데벤처스가 스타트업과의 협업 성과를 공유하고, 내년부터 오픈이노베이션(개방형 혁신) 지원 분야를 바이오로 확대한다.",
+      "id": "0024da7375361536",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "\"호남 창업 생태계 확장\"…코스포·순천대 '맞손'",
+      "publishedAt": "2026-11-14",
+      "summary": "14일 코리아스타트업포럼(코스포)에 따르면 코스포는 국립순천대학교(순천대)와 이 같은 취지의 업무협약(MOU)을 체결했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "파이낸셜뉴스",
-      "url": "https://www.fnnews.com/news/202611120917296768",
+      "source": "뉴시스",
+      "url": "https://www.newsis.com/view/NISX20261113_0003866898",
       "resolvedUrl": null,
-      "industry": "바이오·헬스케어",
+      "eventType": "협약",
       "score": 57
     },
     {
@@ -222,22 +169,35 @@
       "resolvedUrl": null,
       "fundingAmount": "200억 원",
       "eventType": "투자유치",
-      "score": 55
+      "score": 53
     },
     {
-      "id": "0dc822e825f20581",
-      "category": "VC / AC",
-      "title": "중기중앙회·전남광주통합시, ‘중소기업 투자유치 헬프데스크’ 공동 구축",
-      "publishedAt": "2026-11-12",
-      "summary": "양 기관은 간담회에 앞서 ‘중소기업 투자유치 헬프데스크’ 공동 운영을 위한 업무협약을 체결했다.",
+      "id": "a9e3018a08821d8d",
+      "category": "스타트업 / 벤처기업 / 초기창업",
+      "title": "‘로레알 빅뱅’ 선정 스타트업, 중국서 뷰티테크 기술 선보여",
+      "publishedAt": "2026-11-13",
+      "summary": "한국에서는 2023년 로레알 그룹과 중소벤처기업부가 체결한 업무협약에 기반해 중기부 및 창업진흥원과 공동으로 매년 운영하고 있다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "동아일보",
-      "url": "https://www.donga.com/news/Economy/article/all/20261112/135014945/1",
+      "source": "서울경제",
+      "url": "https://www.sedaily.com/article/20113893",
       "resolvedUrl": null,
-      "company": "중기중앙회·전남광주통합시",
-      "eventType": "투자유치",
-      "score": 54
+      "eventType": "선정",
+      "score": 41
+    },
+    {
+      "id": "12025d2612cc5357",
+      "category": "해외 VC",
+      "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+      "publishedAt": "2026-11-14",
+      "summary": null,
+      "summarySource": "unavailable",
+      "summaryType": "unavailable",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+      "resolvedUrl": null,
+      "industry": "AI",
+      "score": 48
     }
   ]
 }

@@ -1,47 +1,47 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-14T00:11:45.356Z",
-  "latestDate": "2026-11-14",
+  "generatedAt": "2026-11-15T00:11:36.469Z",
+  "latestDate": "2026-11-15",
   "weekly": {
-    "from": "2026-11-08",
-    "to": "2026-11-14",
+    "from": "2026-11-09",
+    "to": "2026-11-15",
     "briefingDays": 7,
-    "articleCount": 67,
-    "domesticCount": 65,
-    "overseasCount": 2,
-    "dealCount": 6,
+    "articleCount": 63,
+    "domesticCount": 60,
+    "overseasCount": 3,
+    "dealCount": 7,
     "disclosedKrwDealCount": 2,
-    "disclosedKrwTotalEok": 470,
+    "disclosedKrwTotalEok": 220,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 27
+        "count": 25
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 15
-      },
-      {
-        "label": "TIPS / LIPS",
-        "count": 12
+        "count": 14
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 9
+        "count": 10
       },
       {
-        "label": "세컨더리 / 구주매각",
-        "count": 2
+        "label": "TIPS / LIPS",
+        "count": 10
       },
       {
         "label": "해외 VC",
-        "count": 2
+        "count": 3
+      },
+      {
+        "label": "세컨더리 / 구주매각",
+        "count": 1
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 23
+        "count": 21
       },
       {
         "label": "실증·PoC",
@@ -60,7 +60,7 @@
         "count": 5
       },
       {
-        "label": "지원사업",
+        "label": "협약",
         "count": 2
       },
       {
@@ -68,26 +68,22 @@
         "count": 1
       },
       {
-        "label": "출시·상용화",
+        "label": "지원사업",
         "count": 1
       },
       {
         "label": "펀드결성",
-        "count": 1
-      },
-      {
-        "label": "협약",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 28
+        "count": 31
       },
       {
         "label": "바이오·헬스케어",
-        "count": 4
+        "count": 3
       },
       {
         "label": "농식품",
@@ -97,7 +93,15 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 4
+        "count": 3
+      },
+      {
+        "label": "시드 투자",
+        "count": 1
+      },
+      {
+        "label": "시리즈B",
+        "count": 1
       },
       {
         "label": "시리즈C",
@@ -107,43 +111,38 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 15
+        "count": 12
       },
       {
         "label": "파이낸셜뉴스",
         "count": 8
       },
       {
+        "label": "머니투데이",
+        "count": 6
+      },
+      {
         "label": "아시아경제",
-        "count": 7
+        "count": 6
       },
       {
         "label": "연합뉴스",
-        "count": 7
-      },
-      {
-        "label": "머니투데이",
-        "count": 5
+        "count": 6
       },
       {
         "label": "스타트업투데이",
-        "count": 4
-      },
-      {
-        "label": "동아일보",
         "count": 3
       },
       {
         "label": "AI타임스",
         "count": 3
+      },
+      {
+        "label": "TechCrunch",
+        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-08",
-        "total": 11,
-        "overseas": 0
-      },
       {
         "date": "2026-11-09",
         "total": 10,
@@ -173,9 +172,36 @@
         "date": "2026-11-14",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-15",
+        "total": 12,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-14",
+        "company": "바이온사이트",
+        "fundingAmount": "150억 원",
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "“AI 원금복구 기다리느니”…‘미워도 다시한번’ 바이오 몰리는 투자금",
+        "url": "https://www.mk.co.kr/news/business/12208700",
+        "source": "매일경제"
+      },
+      {
+        "date": "2026-11-14",
+        "company": "위트컴퍼니",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": "AI",
+        "overseas": false,
+        "title": "'AI 기반 모듈형 스킨케어' 뭐길래…소비자·투자자 지갑 열었다",
+        "url": "https://www.mt.co.kr/future/2026/11/14/2026111307405633492",
+        "source": "머니투데이"
+      },
       {
         "date": "2026-11-13",
         "company": "하이드라호스트",
@@ -230,35 +256,24 @@
         "title": "Proximal Ventures raises debut fund to back startups bringing AI to drug development",
         "url": "https://techcrunch.com/2026/11/10/proximal-ventures-raises-debut-fund-to-back-startups-bringing-ai-to-drug-development/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-06",
-        "company": "유로보틱스",
-        "fundingAmount": "400억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "자율이동 AI '유로보틱스', 400억 규모 시리즈A 투자 유치",
-        "url": "https://wowtale.net/2026/11/06/267562/",
-        "source": "와우테일"
       }
     ],
     "previous": {
-      "articleCount": 69,
-      "dealCount": 17,
+      "articleCount": 62,
+      "dealCount": 15,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-16",
-    "to": "2026-11-14",
+    "from": "2026-10-17",
+    "to": "2026-11-15",
     "briefingDays": 30,
     "articleCount": 271,
-    "domesticCount": 235,
-    "overseasCount": 36,
-    "dealCount": 50,
+    "domesticCount": 237,
+    "overseasCount": 34,
+    "dealCount": 48,
     "disclosedKrwDealCount": 20,
-    "disclosedKrwTotalEok": 11017.8,
+    "disclosedKrwTotalEok": 10917.8,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -273,12 +288,12 @@
         "count": 41
       },
       {
-        "label": "해외 VC",
-        "count": 34
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 32
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 30
+        "label": "해외 VC",
+        "count": 32
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -288,7 +303,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 129
+        "count": 126
       },
       {
         "label": "실증·PoC",
@@ -307,11 +322,11 @@
         "count": 14
       },
       {
-        "label": "지원사업",
-        "count": 5
+        "label": "협약",
+        "count": 6
       },
       {
-        "label": "협약",
+        "label": "지원사업",
         "count": 5
       },
       {
@@ -333,12 +348,12 @@
         "count": 102
       },
       {
-        "label": "로봇",
+        "label": "바이오·헬스케어",
         "count": 7
       },
       {
-        "label": "바이오·헬스케어",
-        "count": 7
+        "label": "로봇",
+        "count": 6
       },
       {
         "label": "반도체",
@@ -360,7 +375,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 10
+        "count": 9
       },
       {
         "label": "시리즈C",
@@ -371,6 +386,14 @@
         "count": 3
       },
       {
+        "label": "시드 투자",
+        "count": 2
+      },
+      {
+        "label": "시리즈B",
+        "count": 2
+      },
+      {
         "label": "프리시리즈A",
         "count": 2
       },
@@ -379,27 +402,11 @@
         "count": 1
       },
       {
-        "label": "시드 투자",
-        "count": 1
-      },
-      {
         "label": "시드투자",
         "count": 1
       },
       {
-        "label": "시리즈B",
-        "count": 1
-      },
-      {
         "label": "프리A",
-        "count": 1
-      },
-      {
-        "label": "pre-Seed",
-        "count": 1
-      },
-      {
-        "label": "Seed",
         "count": 1
       },
       {
@@ -422,7 +429,7 @@
       },
       {
         "label": "머니투데이",
-        "count": 23
+        "count": 24
       },
       {
         "label": "파이낸셜뉴스",
@@ -430,31 +437,26 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 20
+        "count": 19
       },
       {
         "label": "EU-Startups",
-        "count": 20
+        "count": 18
       },
       {
         "label": "연합뉴스",
         "count": 17
       },
       {
-        "label": "아시아경제",
+        "label": "TechCrunch",
         "count": 16
       },
       {
-        "label": "TechCrunch",
-        "count": 16
+        "label": "아시아경제",
+        "count": 15
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-16",
-        "total": 10,
-        "overseas": 3
-      },
       {
         "date": "2026-10-17",
         "total": 11,
@@ -599,9 +601,36 @@
         "date": "2026-11-14",
         "total": 15,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-15",
+        "total": 12,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-14",
+        "company": "바이온사이트",
+        "fundingAmount": "150억 원",
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "“AI 원금복구 기다리느니”…‘미워도 다시한번’ 바이오 몰리는 투자금",
+        "url": "https://www.mk.co.kr/news/business/12208700",
+        "source": "매일경제"
+      },
+      {
+        "date": "2026-11-14",
+        "company": "위트컴퍼니",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": "AI",
+        "overseas": false,
+        "title": "'AI 기반 모듈형 스킨케어' 뭐길래…소비자·투자자 지갑 열었다",
+        "url": "https://www.mt.co.kr/future/2026/11/14/2026111307405633492",
+        "source": "머니투데이"
+      },
       {
         "date": "2026-11-13",
         "company": "하이드라호스트",
@@ -799,33 +828,11 @@
         "title": "Munich’s Marble Cognition raises €3.35 million to build AI coworkers that learn business processes before automating them",
         "url": "https://www.eu-startups.com/2026/11/munichs-marble-cognition-raises-e3-35-million-to-build-ai-coworkers-that-learn-business-processes-before-automating-them/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-01",
-        "company": "프리뉴",
-        "fundingAmount": "166억 원",
-        "fundingStage": "시리즈D",
-        "industry": null,
-        "overseas": false,
-        "title": "'드론 설계·운영' 프리뉴, 시리즈D 166억 투자 유치…IPO 속도낸다",
-        "url": "https://www.mt.co.kr/future/2026/11/01/2026110111044971806",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-10-31",
-        "company": "파이어호크",
-        "fundingAmount": null,
-        "fundingStage": "시리즈D",
-        "industry": "우주항공",
-        "overseas": false,
-        "title": "로켓모터 양산 파이어호크, 1억5천만 달러 시리즈D 투자유치…유니콘",
-        "url": "https://wowtale.net/2026/10/31/267269/",
-        "source": "와우테일"
       }
     ],
     "previous": {
       "articleCount": 234,
-      "dealCount": 51,
+      "dealCount": 52,
       "briefingDays": 29
     }
   }
