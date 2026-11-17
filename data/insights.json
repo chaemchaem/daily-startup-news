@@ -1,43 +1,43 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-16T00:11:28.694Z",
-  "latestDate": "2026-11-16",
+  "generatedAt": "2026-11-17T00:11:39.067Z",
+  "latestDate": "2026-11-17",
   "weekly": {
-    "from": "2026-11-10",
-    "to": "2026-11-16",
+    "from": "2026-11-11",
+    "to": "2026-11-17",
     "briefingDays": 7,
-    "articleCount": 67,
-    "domesticCount": 63,
-    "overseasCount": 4,
-    "dealCount": 8,
-    "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 370,
+    "articleCount": 66,
+    "domesticCount": 61,
+    "overseasCount": 5,
+    "dealCount": 13,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 992,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 25
+        "count": 23
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 18
+        "count": 17
+      },
+      {
+        "label": "TIPS / LIPS",
+        "count": 11
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 10
       },
       {
-        "label": "TIPS / LIPS",
-        "count": 10
-      },
-      {
         "label": "해외 VC",
-        "count": 4
+        "count": 5
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 25
+        "count": 27
       },
       {
         "label": "실증·PoC",
@@ -45,11 +45,11 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 8
+        "count": 7
       },
       {
         "label": "모집",
-        "count": 6
+        "count": 5
       },
       {
         "label": "선정",
@@ -67,15 +67,15 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 36
-      },
-      {
-        "label": "농식품",
-        "count": 2
+        "count": 32
       },
       {
         "label": "바이오·헬스케어",
         "count": 2
+      },
+      {
+        "label": "농식품",
+        "count": 1
       }
     ],
     "byStage": [
@@ -84,22 +84,22 @@
         "count": 3
       },
       {
-        "label": "시드 투자",
-        "count": 1
-      },
-      {
         "label": "시리즈B",
-        "count": 1
+        "count": 2
       },
       {
         "label": "시리즈C",
+        "count": 2
+      },
+      {
+        "label": "시드 투자",
         "count": 1
       }
     ],
     "topSources": [
       {
         "label": "와우테일",
-        "count": 14
+        "count": 13
       },
       {
         "label": "머니투데이",
@@ -107,7 +107,7 @@
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 7
+        "count": 6
       },
       {
         "label": "아시아경제",
@@ -118,24 +118,19 @@
         "count": 5
       },
       {
+        "label": "TechCrunch",
+        "count": 5
+      },
+      {
         "label": "뉴시스",
         "count": 4
       },
       {
-        "label": "TechCrunch",
-        "count": 4
-      },
-      {
         "label": "스타트업투데이",
-        "count": 3
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-10",
-        "total": 12,
-        "overseas": 1
-      },
       {
         "date": "2026-11-11",
         "total": 10,
@@ -165,9 +160,25 @@
         "date": "2026-11-16",
         "total": 13,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-17",
+        "total": 15,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-17",
+        "company": "메디인테크",
+        "fundingAmount": "338억 원",
+        "fundingStage": "시리즈C",
+        "industry": "바이오·헬스케어",
+        "overseas": false,
+        "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
+        "url": "https://view.asiae.co.kr/article/2026111708280565140",
+        "source": "아시아경제"
+      },
       {
         "date": "2026-11-16",
         "company": "페르소나AI",
@@ -178,6 +189,50 @@
         "title": "페르소나AI, 국민성장펀드 통해 150억 투자 유치…AI 에이전트 사업 성장 가속화",
         "url": "https://zdnet.co.kr/view/?no=20261115233648",
         "source": "ZDNet Korea"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "레이와트",
+        "fundingAmount": "130억 원",
+        "fundingStage": "시리즈B",
+        "industry": null,
+        "overseas": false,
+        "title": "심혈관 영상진단 '레이와트', 130억 시리즈B 투자 유치…28년 상장 목표",
+        "url": "https://wowtale.net/2026/11/16/268121/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "한국예탁결제원",
+        "fundingAmount": "154억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "예탁결제원 ‘K-캠프’가 키운 지방 스타트업, 154억 투자 유치",
+        "url": "https://www.mk.co.kr/news/business/12210041",
+        "source": "매일경제"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "Bedrock Energy",
+        "fundingAmount": "$24M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Bedrock Energy raises $24M to build more AI-enabled geothermal drill rigs for enterprise buildings",
+        "url": "https://techcrunch.com/2026/11/16/bedrock-energy-raises-24m-to-build-more-ai-enabled-geothermal-drill-rigs-for-enterprise-buildings/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "Plural",
+        "fundingAmount": "$1.1B",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Helsing backer Plural raises $1.1B to fund Europe’s next moonshots",
+        "url": "https://techcrunch.com/2026/11/15/helsing-backer-plural-raises-1-1b-to-fund-europes-next-moonshots/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-11-14",
@@ -258,21 +313,21 @@
       }
     ],
     "previous": {
-      "articleCount": 64,
-      "dealCount": 14,
+      "articleCount": 67,
+      "dealCount": 12,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-18",
-    "to": "2026-11-16",
+    "from": "2026-10-19",
+    "to": "2026-11-17",
     "briefingDays": 30,
-    "articleCount": 278,
+    "articleCount": 280,
     "domesticCount": 243,
-    "overseasCount": 35,
-    "dealCount": 46,
-    "disclosedKrwDealCount": 18,
-    "disclosedKrwTotalEok": 10494.8,
+    "overseasCount": 37,
+    "dealCount": 51,
+    "disclosedKrwDealCount": 21,
+    "disclosedKrwTotalEok": 11116.8,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -287,11 +342,11 @@
         "count": 45
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 33
+        "label": "해외 VC",
+        "count": 35
       },
       {
-        "label": "해외 VC",
+        "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 33
       },
       {
@@ -302,11 +357,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 128
+        "count": 133
       },
       {
         "label": "선정",
-        "count": 21
+        "count": 20
       },
       {
         "label": "실증·PoC",
@@ -318,7 +373,7 @@
       },
       {
         "label": "모집",
-        "count": 15
+        "count": 14
       },
       {
         "label": "지원사업",
@@ -344,7 +399,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 108
+        "count": 109
       },
       {
         "label": "바이오·헬스케어",
@@ -365,10 +420,6 @@
       {
         "label": "우주항공",
         "count": 2
-      },
-      {
-        "label": "기후테크·ESG",
-        "count": 1
       }
     ],
     "byStage": [
@@ -378,7 +429,7 @@
       },
       {
         "label": "시리즈C",
-        "count": 3
+        "count": 4
       },
       {
         "label": "시리즈D",
@@ -386,6 +437,10 @@
       },
       {
         "label": "시드 투자",
+        "count": 2
+      },
+      {
+        "label": "시리즈B",
         "count": 2
       },
       {
@@ -398,10 +453,6 @@
       },
       {
         "label": "시드투자",
-        "count": 1
-      },
-      {
-        "label": "시리즈B",
         "count": 1
       },
       {
@@ -420,7 +471,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 37
+        "count": 39
       },
       {
         "label": "머니투데이",
@@ -428,10 +479,14 @@
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 20
+        "count": 21
       },
       {
         "label": "스타트업투데이",
+        "count": 19
+      },
+      {
+        "label": "TechCrunch",
         "count": 19
       },
       {
@@ -439,11 +494,7 @@
         "count": 18
       },
       {
-        "label": "TechCrunch",
-        "count": 17
-      },
-      {
-        "label": "아주경제",
+        "label": "아시아경제",
         "count": 16
       },
       {
@@ -452,11 +503,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-18",
-        "total": 13,
-        "overseas": 1
-      },
       {
         "date": "2026-10-19",
         "total": 10,
@@ -601,9 +647,25 @@
         "date": "2026-11-16",
         "total": 13,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-17",
+        "total": 15,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-17",
+        "company": "메디인테크",
+        "fundingAmount": "338억 원",
+        "fundingStage": "시리즈C",
+        "industry": "바이오·헬스케어",
+        "overseas": false,
+        "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
+        "url": "https://view.asiae.co.kr/article/2026111708280565140",
+        "source": "아시아경제"
+      },
       {
         "date": "2026-11-16",
         "company": "페르소나AI",
@@ -614,6 +676,50 @@
         "title": "페르소나AI, 국민성장펀드 통해 150억 투자 유치…AI 에이전트 사업 성장 가속화",
         "url": "https://zdnet.co.kr/view/?no=20261115233648",
         "source": "ZDNet Korea"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "레이와트",
+        "fundingAmount": "130억 원",
+        "fundingStage": "시리즈B",
+        "industry": null,
+        "overseas": false,
+        "title": "심혈관 영상진단 '레이와트', 130억 시리즈B 투자 유치…28년 상장 목표",
+        "url": "https://wowtale.net/2026/11/16/268121/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "한국예탁결제원",
+        "fundingAmount": "154억 원",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": false,
+        "title": "예탁결제원 ‘K-캠프’가 키운 지방 스타트업, 154억 투자 유치",
+        "url": "https://www.mk.co.kr/news/business/12210041",
+        "source": "매일경제"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "Bedrock Energy",
+        "fundingAmount": "$24M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Bedrock Energy raises $24M to build more AI-enabled geothermal drill rigs for enterprise buildings",
+        "url": "https://techcrunch.com/2026/11/16/bedrock-energy-raises-24m-to-build-more-ai-enabled-geothermal-drill-rigs-for-enterprise-buildings/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "Plural",
+        "fundingAmount": "$1.1B",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Helsing backer Plural raises $1.1B to fund Europe’s next moonshots",
+        "url": "https://techcrunch.com/2026/11/15/helsing-backer-plural-raises-1-1b-to-fund-europes-next-moonshots/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-11-14",
@@ -768,66 +874,11 @@
         "title": "Following Austria's first commercial satellite launch, Tumbleweed raises €6.9 million to accelerate space missions",
         "url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-03",
-        "company": "무빈",
-        "fundingAmount": "100억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "모션 데이터 AI '무빈', 100억 규모 시리즈A 투자유치",
-        "url": "https://wowtale.net/2026/11/03/267354/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-03",
-        "company": "위고페어",
-        "fundingAmount": "10억 원",
-        "fundingStage": "프리시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "위고페어, AI 브랜드 보호 기술로 10억 프리 시리즈A 투자 유치",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=216949",
-        "source": "AI타임스"
-      },
-      {
-        "date": "2026-11-03",
-        "company": "퍼스트바이오",
-        "fundingAmount": "100억 원",
-        "fundingStage": null,
-        "industry": "바이오·헬스케어",
-        "overseas": false,
-        "title": "퍼스트바이오, 100억 원 추가 투자 유치 완료∙∙∙신약 파이프라인 개발 가속화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53426",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-11-03",
-        "company": "티디에스이노베이션",
-        "fundingAmount": "63억 원",
-        "fundingStage": "프리시리즈A",
-        "industry": "반도체",
-        "overseas": false,
-        "title": "티디에스이노베이션, 63억 원 투자 유치∙∙∙300mm 2차원 반도체 증착 장비 개발 본격화",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53427",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-11-02",
-        "company": "Northwood Space",
-        "fundingAmount": "$375M",
-        "fundingStage": "Series C",
-        "industry": null,
-        "overseas": true,
-        "title": "Northwood Space raises $375M Series C at a $2B valuation from a16z and DFJ Growth",
-        "url": "https://techcrunch.com/2026/11/02/northwood-space-raises-375m-series-c-at-a-2b-valuation-from-a16z-and-dfj-growth/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 235,
-      "dealCount": 50,
+      "articleCount": 238,
+      "dealCount": 48,
       "briefingDays": 29
     }
   }
