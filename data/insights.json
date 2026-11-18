@@ -1,29 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-17T00:11:39.067Z",
-  "latestDate": "2026-11-17",
+  "generatedAt": "2026-11-18T00:11:41.771Z",
+  "latestDate": "2026-11-18",
   "weekly": {
-    "from": "2026-11-11",
-    "to": "2026-11-17",
+    "from": "2026-11-12",
+    "to": "2026-11-18",
     "briefingDays": 7,
-    "articleCount": 66,
-    "domesticCount": 61,
-    "overseasCount": 5,
-    "dealCount": 13,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 992,
+    "articleCount": 73,
+    "domesticCount": 67,
+    "overseasCount": 6,
+    "dealCount": 15,
+    "disclosedKrwDealCount": 7,
+    "disclosedKrwTotalEok": 1142,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 23
+        "count": 26
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 17
+        "count": 18
       },
       {
         "label": "TIPS / LIPS",
-        "count": 11
+        "count": 13
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -31,17 +31,21 @@
       },
       {
         "label": "해외 VC",
-        "count": 5
+        "count": 6
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 27
+        "count": 33
+      },
+      {
+        "label": "선정",
+        "count": 7
       },
       {
         "label": "실증·PoC",
-        "count": 8
+        "count": 7
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -52,22 +56,22 @@
         "count": 5
       },
       {
-        "label": "선정",
-        "count": 5
+        "label": "협약",
+        "count": 3
       },
       {
         "label": "지원사업",
-        "count": 3
+        "count": 2
       },
       {
-        "label": "협약",
-        "count": 3
+        "label": "펀드결성",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 32
+        "count": 36
       },
       {
         "label": "바이오·헬스케어",
@@ -94,48 +98,47 @@
       {
         "label": "시드 투자",
         "count": 1
+      },
+      {
+        "label": "후속 투자",
+        "count": 1
       }
     ],
     "topSources": [
       {
         "label": "와우테일",
-        "count": 13
+        "count": 14
       },
       {
         "label": "머니투데이",
-        "count": 7
+        "count": 8
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 6
-      },
-      {
-        "label": "아시아경제",
-        "count": 5
+        "count": 7
       },
       {
         "label": "연합뉴스",
-        "count": 5
+        "count": 6
       },
       {
         "label": "TechCrunch",
-        "count": 5
-      },
-      {
-        "label": "뉴시스",
-        "count": 4
+        "count": 6
       },
       {
         "label": "스타트업투데이",
         "count": 4
+      },
+      {
+        "label": "아시아경제",
+        "count": 4
+      },
+      {
+        "label": "ZDNet Korea",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-11",
-        "total": 10,
-        "overseas": 1
-      },
       {
         "date": "2026-11-12",
         "total": 14,
@@ -165,9 +168,25 @@
         "date": "2026-11-17",
         "total": 15,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-18",
+        "total": 15,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-18",
+        "company": "기보",
+        "fundingAmount": null,
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "기보, 네이버페이·코드박스와 맞손…스타트업 후속 투자 지원",
+        "url": "https://www.etoday.co.kr/news/view/2649556",
+        "source": "이투데이"
+      },
       {
         "date": "2026-11-17",
         "company": "메디인테크",
@@ -178,6 +197,28 @@
         "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
         "url": "https://view.asiae.co.kr/article/2026111708280565140",
         "source": "아시아경제"
+      },
+      {
+        "date": "2026-11-17",
+        "company": "숨빗AI",
+        "fundingAmount": "150억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "숨빗AI, 시리즈A·스케일업 팁스로 150억원 확보…\"CT·MRI 판독 AI 확장\"",
+        "url": "https://zdnet.co.kr/view/?no=20261117231316",
+        "source": "ZDNet Korea"
+      },
+      {
+        "date": "2026-11-17",
+        "company": "Isomorphic Labs",
+        "fundingAmount": "$5B",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
+        "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-11-16",
@@ -291,17 +332,6 @@
       },
       {
         "date": "2026-11-11",
-        "company": "머코어",
-        "fundingAmount": null,
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
-        "url": "https://wowtale.net/2026/11/11/267802/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-11",
         "company": "Proximal Ventures",
         "fundingAmount": "$27.5 million",
         "fundingStage": null,
@@ -313,21 +343,21 @@
       }
     ],
     "previous": {
-      "articleCount": 67,
-      "dealCount": 12,
+      "articleCount": 69,
+      "dealCount": 11,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-19",
-    "to": "2026-11-17",
+    "from": "2026-10-20",
+    "to": "2026-11-18",
     "briefingDays": 30,
-    "articleCount": 280,
-    "domesticCount": 243,
+    "articleCount": 281,
+    "domesticCount": 244,
     "overseasCount": 37,
-    "dealCount": 51,
-    "disclosedKrwDealCount": 21,
-    "disclosedKrwTotalEok": 11116.8,
+    "dealCount": 54,
+    "disclosedKrwDealCount": 22,
+    "disclosedKrwTotalEok": 11266.8,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -339,7 +369,7 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 45
+        "count": 47
       },
       {
         "label": "해외 VC",
@@ -351,25 +381,25 @@
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 3
+        "count": 2
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 133
+        "count": 137
       },
       {
         "label": "선정",
-        "count": 20
+        "count": 22
       },
       {
         "label": "실증·PoC",
-        "count": 20
+        "count": 19
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 20
+        "count": 19
       },
       {
         "label": "모집",
@@ -384,12 +414,12 @@
         "count": 7
       },
       {
-        "label": "인수·M&A",
-        "count": 3
+        "label": "펀드결성",
+        "count": 4
       },
       {
-        "label": "펀드결성",
-        "count": 3
+        "label": "인수·M&A",
+        "count": 2
       },
       {
         "label": "출시·상용화",
@@ -399,7 +429,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 109
+        "count": 112
       },
       {
         "label": "바이오·헬스케어",
@@ -407,7 +437,7 @@
       },
       {
         "label": "로봇",
-        "count": 5
+        "count": 4
       },
       {
         "label": "반도체",
@@ -425,7 +455,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 8
+        "count": 9
       },
       {
         "label": "시리즈C",
@@ -456,6 +486,10 @@
         "count": 1
       },
       {
+        "label": "후속 투자",
+        "count": 1
+      },
+      {
         "label": "Series A",
         "count": 1
       },
@@ -471,11 +505,11 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 39
+        "count": 41
       },
       {
         "label": "머니투데이",
-        "count": 24
+        "count": 25
       },
       {
         "label": "파이낸셜뉴스",
@@ -494,20 +528,15 @@
         "count": 18
       },
       {
-        "label": "아시아경제",
-        "count": 16
+        "label": "연합뉴스",
+        "count": 17
       },
       {
-        "label": "연합뉴스",
+        "label": "아시아경제",
         "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-19",
-        "total": 10,
-        "overseas": 1
-      },
       {
         "date": "2026-10-20",
         "total": 12,
@@ -652,9 +681,25 @@
         "date": "2026-11-17",
         "total": 15,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-18",
+        "total": 15,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-18",
+        "company": "기보",
+        "fundingAmount": null,
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "기보, 네이버페이·코드박스와 맞손…스타트업 후속 투자 지원",
+        "url": "https://www.etoday.co.kr/news/view/2649556",
+        "source": "이투데이"
+      },
       {
         "date": "2026-11-17",
         "company": "메디인테크",
@@ -665,6 +710,28 @@
         "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
         "url": "https://view.asiae.co.kr/article/2026111708280565140",
         "source": "아시아경제"
+      },
+      {
+        "date": "2026-11-17",
+        "company": "숨빗AI",
+        "fundingAmount": "150억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "숨빗AI, 시리즈A·스케일업 팁스로 150억원 확보…\"CT·MRI 판독 AI 확장\"",
+        "url": "https://zdnet.co.kr/view/?no=20261117231316",
+        "source": "ZDNet Korea"
+      },
+      {
+        "date": "2026-11-17",
+        "company": "Isomorphic Labs",
+        "fundingAmount": "$5B",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
+        "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-11-16",
@@ -841,44 +908,11 @@
         "title": "Sequoia Capital raises around €8.9 billion in new funds and closes London office; most local partners opt to stay in Europe",
         "url": "https://www.eu-startups.com/2026/11/sequoia-capital-raises-around-e8-9-billion-in-new-funds-and-closes-london-office-most-local-partners-opt-to-stay-in-europe/",
         "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-04",
-        "company": "넘즈에이아이",
-        "fundingAmount": "20억 원",
-        "fundingStage": "시드",
-        "industry": null,
-        "overseas": false,
-        "title": "넘즈에이아이, 20억 프리시드 2차 투자 유치…팁스 선정",
-        "url": "https://wowtale.net/2026/11/04/267417/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-04",
-        "company": "Biograil",
-        "fundingAmount": "€20 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Copenhagen’s Biograil raises €20 million for oral drug delivery device designed as an alternative to injections",
-        "url": "https://www.eu-startups.com/2026/11/copenhagens-biograil-raises-e20-million-for-oral-drug-delivery-device-designed-as-an-alternative-to-injections/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-03",
-        "company": "Tumbleweed",
-        "fundingAmount": "€6.9 million",
-        "fundingStage": null,
-        "industry": "우주항공",
-        "overseas": true,
-        "title": "Following Austria's first commercial satellite launch, Tumbleweed raises €6.9 million to accelerate space missions",
-        "url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 238,
-      "dealCount": 48,
+      "articleCount": 241,
+      "dealCount": 46,
       "briefingDays": 29
     }
   }
