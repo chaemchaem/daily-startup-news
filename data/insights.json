@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-18T00:11:41.771Z",
-  "latestDate": "2026-11-18",
+  "generatedAt": "2026-11-19T00:11:58.272Z",
+  "latestDate": "2026-11-19",
   "weekly": {
-    "from": "2026-11-12",
-    "to": "2026-11-18",
+    "from": "2026-11-13",
+    "to": "2026-11-19",
     "briefingDays": 7,
-    "articleCount": 73,
-    "domesticCount": 67,
-    "overseasCount": 6,
-    "dealCount": 15,
+    "articleCount": 74,
+    "domesticCount": 66,
+    "overseasCount": 8,
+    "dealCount": 17,
     "disclosedKrwDealCount": 7,
     "disclosedKrwTotalEok": 1142,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
+        "count": 25
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 18
+        "count": 17
       },
       {
         "label": "TIPS / LIPS",
@@ -27,17 +27,17 @@
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 10
+        "count": 11
       },
       {
         "label": "해외 VC",
-        "count": 6
+        "count": 8
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 33
+        "count": 36
       },
       {
         "label": "선정",
@@ -45,23 +45,23 @@
       },
       {
         "label": "실증·PoC",
-        "count": 7
+        "count": 6
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 7
+        "count": 6
       },
       {
         "label": "모집",
-        "count": 5
-      },
-      {
-        "label": "협약",
         "count": 3
       },
       {
         "label": "지원사업",
-        "count": 2
+        "count": 3
+      },
+      {
+        "label": "협약",
+        "count": 3
       },
       {
         "label": "펀드결성",
@@ -71,7 +71,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 36
+        "count": 34
       },
       {
         "label": "바이오·헬스케어",
@@ -79,6 +79,10 @@
       },
       {
         "label": "농식품",
+        "count": 1
+      },
+      {
+        "label": "로봇",
         "count": 1
       }
     ],
@@ -107,18 +111,14 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 14
+        "count": 13
       },
       {
         "label": "머니투데이",
-        "count": 8
+        "count": 6
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 7
-      },
-      {
-        "label": "연합뉴스",
         "count": 6
       },
       {
@@ -126,11 +126,15 @@
         "count": 6
       },
       {
-        "label": "스타트업투데이",
-        "count": 4
+        "label": "아시아경제",
+        "count": 5
       },
       {
-        "label": "아시아경제",
+        "label": "연합뉴스",
+        "count": 5
+      },
+      {
+        "label": "스타트업투데이",
         "count": 4
       },
       {
@@ -139,11 +143,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-12",
-        "total": 14,
-        "overseas": 1
-      },
       {
         "date": "2026-11-13",
         "total": 15,
@@ -173,6 +172,11 @@
         "date": "2026-11-18",
         "total": 15,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-19",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -186,6 +190,39 @@
         "title": "기보, 네이버페이·코드박스와 맞손…스타트업 후속 투자 지원",
         "url": "https://www.etoday.co.kr/news/view/2649556",
         "source": "이투데이"
+      },
+      {
+        "date": "2026-11-18",
+        "company": "MountAIn",
+        "fundingAmount": "€7.3 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "French frugal AI infrastructure startup MountAIn raises €7.3 million to bring advanced AI to sub-€9 chips",
+        "url": "https://www.eu-startups.com/2026/11/french-frugal-ai-infrastructure-startup-mountain-raises-e7-3-million-to-bring-advanced-ai-to-sub-e9-chips/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-11-18",
+        "company": "Iconic",
+        "fundingAmount": "€9.1 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Meatable co-founder’s new firm Iconic raises €9.1 million to build AI operating system for large capital projects",
+        "url": "https://www.eu-startups.com/2026/11/meatable-co-founders-new-firm-iconic-raises-e9-1-million-to-build-ai-operating-system-for-large-capital-projects/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-11-18",
+        "company": "Humyn Labs",
+        "fundingAmount": "$47M",
+        "fundingStage": null,
+        "industry": "로봇",
+        "overseas": true,
+        "title": "India’s Humyn Labs raises $47M to feed US robotics companies the data they need",
+        "url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-11-17",
@@ -329,51 +366,40 @@
         "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
         "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
         "source": "AI타임스"
-      },
-      {
-        "date": "2026-11-11",
-        "company": "Proximal Ventures",
-        "fundingAmount": "$27.5 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Proximal Ventures raises debut fund to back startups bringing AI to drug development",
-        "url": "https://techcrunch.com/2026/11/10/proximal-ventures-raises-debut-fund-to-back-startups-bringing-ai-to-drug-development/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 69,
-      "dealCount": 11,
+      "articleCount": 65,
+      "dealCount": 7,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-20",
-    "to": "2026-11-18",
+    "from": "2026-10-21",
+    "to": "2026-11-19",
     "briefingDays": 30,
-    "articleCount": 281,
-    "domesticCount": 244,
-    "overseasCount": 37,
-    "dealCount": 54,
+    "articleCount": 284,
+    "domesticCount": 246,
+    "overseasCount": 38,
+    "dealCount": 57,
     "disclosedKrwDealCount": 22,
     "disclosedKrwTotalEok": 11266.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 100
+        "count": 102
       },
       {
         "label": "TIPS / LIPS",
-        "count": 64
+        "count": 62
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 47
+        "count": 48
       },
       {
         "label": "해외 VC",
-        "count": 35
+        "count": 37
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -387,7 +413,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 137
+        "count": 142
       },
       {
         "label": "선정",
@@ -403,11 +429,11 @@
       },
       {
         "label": "모집",
-        "count": 14
+        "count": 12
       },
       {
         "label": "지원사업",
-        "count": 7
+        "count": 8
       },
       {
         "label": "협약",
@@ -437,7 +463,7 @@
       },
       {
         "label": "로봇",
-        "count": 4
+        "count": 5
       },
       {
         "label": "반도체",
@@ -509,39 +535,34 @@
       },
       {
         "label": "머니투데이",
-        "count": 25
+        "count": 24
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 21
+        "count": 22
+      },
+      {
+        "label": "EU-Startups",
+        "count": 20
       },
       {
         "label": "스타트업투데이",
         "count": 19
       },
       {
-        "label": "TechCrunch",
-        "count": 19
+        "label": "아시아경제",
+        "count": 18
       },
       {
-        "label": "EU-Startups",
+        "label": "TechCrunch",
         "count": 18
       },
       {
         "label": "연합뉴스",
-        "count": 17
-      },
-      {
-        "label": "아시아경제",
         "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-20",
-        "total": 12,
-        "overseas": 2
-      },
       {
         "date": "2026-10-21",
         "total": 12,
@@ -686,6 +707,11 @@
         "date": "2026-11-18",
         "total": 15,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-19",
+        "total": 13,
+        "overseas": 3
       }
     ],
     "deals": [
@@ -699,6 +725,39 @@
         "title": "기보, 네이버페이·코드박스와 맞손…스타트업 후속 투자 지원",
         "url": "https://www.etoday.co.kr/news/view/2649556",
         "source": "이투데이"
+      },
+      {
+        "date": "2026-11-18",
+        "company": "MountAIn",
+        "fundingAmount": "€7.3 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "French frugal AI infrastructure startup MountAIn raises €7.3 million to bring advanced AI to sub-€9 chips",
+        "url": "https://www.eu-startups.com/2026/11/french-frugal-ai-infrastructure-startup-mountain-raises-e7-3-million-to-bring-advanced-ai-to-sub-e9-chips/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-11-18",
+        "company": "Iconic",
+        "fundingAmount": "€9.1 million",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Meatable co-founder’s new firm Iconic raises €9.1 million to build AI operating system for large capital projects",
+        "url": "https://www.eu-startups.com/2026/11/meatable-co-founders-new-firm-iconic-raises-e9-1-million-to-build-ai-operating-system-for-large-capital-projects/",
+        "source": "EU-Startups"
+      },
+      {
+        "date": "2026-11-18",
+        "company": "Humyn Labs",
+        "fundingAmount": "$47M",
+        "fundingStage": null,
+        "industry": "로봇",
+        "overseas": true,
+        "title": "India’s Humyn Labs raises $47M to feed US robotics companies the data they need",
+        "url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/",
+        "source": "TechCrunch"
       },
       {
         "date": "2026-11-17",
@@ -875,43 +934,10 @@
         "title": "자율이동 AI '유로보틱스', 400억 규모 시리즈A 투자 유치",
         "url": "https://wowtale.net/2026/11/06/267562/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-06",
-        "company": "Harbinger",
-        "fundingAmount": "$240M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Harbinger raises $240M after expanding into defense",
-        "url": "https://techcrunch.com/2026/11/05/harbinger-raises-240m-after-expanding-into-defense/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-05",
-        "company": "Titan OS",
-        "fundingAmount": "$46 million",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Titan OS raises $46 million to expand its smart TV OS internationally",
-        "url": "https://techcrunch.com/2026/11/04/titan-os-raises-46-million-to-expand-its-smart-tv-os-internationally/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-05",
-        "company": "Sequoia Capital",
-        "fundingAmount": "€8.9 billion",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Sequoia Capital raises around €8.9 billion in new funds and closes London office; most local partners opt to stay in Europe",
-        "url": "https://www.eu-startups.com/2026/11/sequoia-capital-raises-around-e8-9-billion-in-new-funds-and-closes-london-office-most-local-partners-opt-to-stay-in-europe/",
-        "source": "EU-Startups"
       }
     ],
     "previous": {
-      "articleCount": 241,
+      "articleCount": 247,
       "dealCount": 46,
       "briefingDays": 29
     }
