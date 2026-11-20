@@ -1,85 +1,81 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-19T00:11:58.272Z",
-  "latestDate": "2026-11-19",
+  "generatedAt": "2026-11-20T00:11:59.146Z",
+  "latestDate": "2026-11-20",
   "weekly": {
-    "from": "2026-11-13",
-    "to": "2026-11-19",
+    "from": "2026-11-14",
+    "to": "2026-11-20",
     "briefingDays": 7,
-    "articleCount": 74,
-    "domesticCount": 66,
-    "overseasCount": 8,
-    "dealCount": 17,
+    "articleCount": 73,
+    "domesticCount": 64,
+    "overseasCount": 9,
+    "dealCount": 18,
     "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 1142,
+    "disclosedKrwTotalEok": 1112,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 25
+        "count": 26
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 17
-      },
-      {
-        "label": "TIPS / LIPS",
-        "count": 13
+        "count": 15
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 12
+      },
+      {
+        "label": "TIPS / LIPS",
         "count": 11
       },
       {
         "label": "해외 VC",
-        "count": 8
+        "count": 9
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 36
+        "count": 39
       },
       {
         "label": "선정",
         "count": 7
       },
       {
-        "label": "실증·PoC",
-        "count": 6
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 6
-      },
-      {
         "label": "모집",
-        "count": 3
+        "count": 4
+      },
+      {
+        "label": "협약",
+        "count": 4
       },
       {
         "label": "지원사업",
         "count": 3
       },
       {
-        "label": "협약",
+        "label": "TIPS·LIPS 선정",
         "count": 3
       },
       {
+        "label": "실증·PoC",
+        "count": 2
+      },
+      {
         "label": "펀드결성",
-        "count": 1
+        "count": 2
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 34
+        "count": 31
       },
       {
         "label": "바이오·헬스케어",
         "count": 2
-      },
-      {
-        "label": "농식품",
-        "count": 1
       },
       {
         "label": "로봇",
@@ -88,11 +84,11 @@
     ],
     "byStage": [
       {
-        "label": "시리즈A",
+        "label": "시리즈B",
         "count": 3
       },
       {
-        "label": "시리즈B",
+        "label": "시리즈A",
         "count": 2
       },
       {
@@ -111,18 +107,14 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 13
-      },
-      {
-        "label": "머니투데이",
-        "count": 6
-      },
-      {
-        "label": "파이낸셜뉴스",
-        "count": 6
+        "count": 12
       },
       {
         "label": "TechCrunch",
+        "count": 7
+      },
+      {
+        "label": "머니투데이",
         "count": 6
       },
       {
@@ -138,16 +130,15 @@
         "count": 4
       },
       {
+        "label": "파이낸셜뉴스",
+        "count": 4
+      },
+      {
         "label": "ZDNet Korea",
         "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-13",
-        "total": 15,
-        "overseas": 0
-      },
       {
         "date": "2026-11-14",
         "total": 15,
@@ -177,9 +168,36 @@
         "date": "2026-11-19",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-11-20",
+        "total": 11,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-20",
+        "company": "링크",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "AI 에이전트 메시징 링크, 9천만 달러 시리즈B 투자유치",
+        "url": "https://wowtale.net/2026/11/20/268380/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-20",
+        "company": "Everful",
+        "fundingAmount": "$48.5M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
+        "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-18",
         "company": "기보",
@@ -225,6 +243,17 @@
         "source": "TechCrunch"
       },
       {
+        "date": "2026-11-18",
+        "company": "숨빗AI",
+        "fundingAmount": "120억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "숨빗AI, 120억 시리즈A 투자 유치·스케일업 팁스 선정",
+        "url": "https://wowtale.net/2026/11/18/268272/",
+        "source": "와우테일"
+      },
+      {
         "date": "2026-11-17",
         "company": "메디인테크",
         "fundingAmount": "338억 원",
@@ -234,17 +263,6 @@
         "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
         "url": "https://view.asiae.co.kr/article/2026111708280565140",
         "source": "아시아경제"
-      },
-      {
-        "date": "2026-11-17",
-        "company": "숨빗AI",
-        "fundingAmount": "150억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "숨빗AI, 시리즈A·스케일업 팁스로 150억원 확보…\"CT·MRI 판독 AI 확장\"",
-        "url": "https://zdnet.co.kr/view/?no=20261117231316",
-        "source": "ZDNet Korea"
       },
       {
         "date": "2026-11-17",
@@ -336,17 +354,6 @@
       },
       {
         "date": "2026-11-13",
-        "company": "하이드라호스트",
-        "fundingAmount": null,
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "전력망 여유 용량에 AI 설비를 얹는 토러스, 5억 달러 투자유치",
-        "url": "https://wowtale.net/2026/11/13/267981/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-13",
         "company": "라이플렉스사이언스",
         "fundingAmount": "70억 원",
         "fundingStage": "시리즈A",
@@ -369,25 +376,25 @@
       }
     ],
     "previous": {
-      "articleCount": 65,
-      "dealCount": 7,
+      "articleCount": 64,
+      "dealCount": 6,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-21",
-    "to": "2026-11-19",
+    "from": "2026-10-22",
+    "to": "2026-11-20",
     "briefingDays": 30,
     "articleCount": 284,
-    "domesticCount": 246,
-    "overseasCount": 38,
+    "domesticCount": 247,
+    "overseasCount": 37,
     "dealCount": 57,
-    "disclosedKrwDealCount": 22,
-    "disclosedKrwTotalEok": 11266.8,
+    "disclosedKrwDealCount": 21,
+    "disclosedKrwTotalEok": 11226.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 102
+        "count": 101
       },
       {
         "label": "TIPS / LIPS",
@@ -399,11 +406,11 @@
       },
       {
         "label": "해외 VC",
-        "count": 37
+        "count": 36
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 33
+        "count": 35
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -413,7 +420,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 142
+        "count": 141
       },
       {
         "label": "선정",
@@ -429,7 +436,7 @@
       },
       {
         "label": "모집",
-        "count": 12
+        "count": 13
       },
       {
         "label": "지원사업",
@@ -437,11 +444,11 @@
       },
       {
         "label": "협약",
-        "count": 7
+        "count": 8
       },
       {
         "label": "펀드결성",
-        "count": 4
+        "count": 5
       },
       {
         "label": "인수·M&A",
@@ -488,15 +495,15 @@
         "count": 4
       },
       {
+        "label": "시리즈B",
+        "count": 3
+      },
+      {
         "label": "시리즈D",
         "count": 3
       },
       {
         "label": "시드 투자",
-        "count": 2
-      },
-      {
-        "label": "시리즈B",
         "count": 2
       },
       {
@@ -531,22 +538,22 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 41
+        "count": 43
       },
       {
         "label": "머니투데이",
-        "count": 24
+        "count": 23
       },
       {
         "label": "파이낸셜뉴스",
         "count": 22
       },
       {
-        "label": "EU-Startups",
-        "count": 20
+        "label": "스타트업투데이",
+        "count": 19
       },
       {
-        "label": "스타트업투데이",
+        "label": "TechCrunch",
         "count": 19
       },
       {
@@ -554,20 +561,15 @@
         "count": 18
       },
       {
-        "label": "TechCrunch",
+        "label": "EU-Startups",
         "count": 18
       },
       {
         "label": "연합뉴스",
-        "count": 16
+        "count": 17
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-21",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-10-22",
         "total": 12,
@@ -712,9 +714,36 @@
         "date": "2026-11-19",
         "total": 13,
         "overseas": 3
+      },
+      {
+        "date": "2026-11-20",
+        "total": 11,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-20",
+        "company": "링크",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": "AI",
+        "overseas": false,
+        "title": "AI 에이전트 메시징 링크, 9천만 달러 시리즈B 투자유치",
+        "url": "https://wowtale.net/2026/11/20/268380/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-20",
+        "company": "Everful",
+        "fundingAmount": "$48.5M",
+        "fundingStage": null,
+        "industry": null,
+        "overseas": true,
+        "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
+        "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-18",
         "company": "기보",
@@ -760,6 +789,17 @@
         "source": "TechCrunch"
       },
       {
+        "date": "2026-11-18",
+        "company": "숨빗AI",
+        "fundingAmount": "120억 원",
+        "fundingStage": "시리즈A",
+        "industry": "AI",
+        "overseas": false,
+        "title": "숨빗AI, 120억 시리즈A 투자 유치·스케일업 팁스 선정",
+        "url": "https://wowtale.net/2026/11/18/268272/",
+        "source": "와우테일"
+      },
+      {
         "date": "2026-11-17",
         "company": "메디인테크",
         "fundingAmount": "338억 원",
@@ -769,17 +809,6 @@
         "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
         "url": "https://view.asiae.co.kr/article/2026111708280565140",
         "source": "아시아경제"
-      },
-      {
-        "date": "2026-11-17",
-        "company": "숨빗AI",
-        "fundingAmount": "150억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "숨빗AI, 시리즈A·스케일업 팁스로 150억원 확보…\"CT·MRI 판독 AI 확장\"",
-        "url": "https://zdnet.co.kr/view/?no=20261117231316",
-        "source": "ZDNet Korea"
       },
       {
         "date": "2026-11-17",
@@ -912,33 +941,11 @@
         "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
         "url": "https://wowtale.net/2026/11/11/267802/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-11",
-        "company": "Proximal Ventures",
-        "fundingAmount": "$27.5 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Proximal Ventures raises debut fund to back startups bringing AI to drug development",
-        "url": "https://techcrunch.com/2026/11/10/proximal-ventures-raises-debut-fund-to-back-startups-bringing-ai-to-drug-development/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-06",
-        "company": "유로보틱스",
-        "fundingAmount": "400억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "자율이동 AI '유로보틱스', 400억 규모 시리즈A 투자 유치",
-        "url": "https://wowtale.net/2026/11/06/267562/",
-        "source": "와우테일"
       }
     ],
     "previous": {
-      "articleCount": 247,
-      "dealCount": 46,
+      "articleCount": 252,
+      "dealCount": 49,
       "briefingDays": 29
     }
   }
