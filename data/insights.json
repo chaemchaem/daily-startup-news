@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-20T00:11:59.146Z",
-  "latestDate": "2026-11-20",
+  "generatedAt": "2026-11-21T00:11:51.017Z",
+  "latestDate": "2026-11-21",
   "weekly": {
-    "from": "2026-11-14",
-    "to": "2026-11-20",
+    "from": "2026-11-15",
+    "to": "2026-11-21",
     "briefingDays": 7,
     "articleCount": 73,
     "domesticCount": 64,
@@ -15,11 +15,11 @@
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
+        "count": 27
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 15
+        "count": 13
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -27,7 +27,7 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 11
+        "count": 12
       },
       {
         "label": "해외 VC",
@@ -37,18 +37,18 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 39
+        "count": 42
       },
       {
         "label": "선정",
-        "count": 7
-      },
-      {
-        "label": "모집",
-        "count": 4
+        "count": 5
       },
       {
         "label": "협약",
+        "count": 5
+      },
+      {
+        "label": "모집",
         "count": 4
       },
       {
@@ -60,18 +60,18 @@
         "count": 3
       },
       {
-        "label": "실증·PoC",
+        "label": "펀드결성",
         "count": 2
       },
       {
-        "label": "펀드결성",
-        "count": 2
+        "label": "실증·PoC",
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 31
+        "count": 33
       },
       {
         "label": "바이오·헬스케어",
@@ -85,18 +85,18 @@
     "byStage": [
       {
         "label": "시리즈B",
-        "count": 3
+        "count": 4
       },
       {
         "label": "시리즈A",
         "count": 2
       },
       {
-        "label": "시리즈C",
-        "count": 2
+        "label": "시드 투자",
+        "count": 1
       },
       {
-        "label": "시드 투자",
+        "label": "시리즈C",
         "count": 1
       },
       {
@@ -107,7 +107,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 12
+        "count": 14
       },
       {
         "label": "TechCrunch",
@@ -115,10 +115,6 @@
       },
       {
         "label": "머니투데이",
-        "count": 6
-      },
-      {
-        "label": "아시아경제",
         "count": 5
       },
       {
@@ -126,24 +122,23 @@
         "count": 5
       },
       {
+        "label": "서울경제",
+        "count": 4
+      },
+      {
         "label": "스타트업투데이",
         "count": 4
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "아시아경제",
         "count": 4
       },
       {
-        "label": "ZDNet Korea",
-        "count": 4
+        "label": "뉴시스",
+        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-14",
-        "total": 15,
-        "overseas": 0
-      },
       {
         "date": "2026-11-15",
         "total": 12,
@@ -173,6 +168,11 @@
         "date": "2026-11-20",
         "total": 11,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-21",
+        "total": 14,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -197,6 +197,17 @@
         "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
         "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-19",
+        "company": "베리에이셔널",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": null,
+        "overseas": false,
+        "title": "온체인 파생상품 '베리에이셔널', 1.1억 달러 시리즈B 투자유치",
+        "url": "https://wowtale.net/2026/11/19/268347/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-18",
@@ -362,54 +373,43 @@
         "title": "라이플렉스사이언스, 70억 원 시리즈 A 투자 유치∙∙∙골관절염 치료제 임상 채비",
         "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53500",
         "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-11-12",
-        "company": "프랙타일",
-        "fundingAmount": "1조 원",
-        "fundingStage": "시리즈C",
-        "industry": "AI",
-        "overseas": false,
-        "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
-        "source": "AI타임스"
       }
     ],
     "previous": {
-      "articleCount": 64,
+      "articleCount": 67,
       "dealCount": 6,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-22",
-    "to": "2026-11-20",
+    "from": "2026-10-23",
+    "to": "2026-11-21",
     "briefingDays": 30,
-    "articleCount": 284,
-    "domesticCount": 247,
-    "overseasCount": 37,
-    "dealCount": 57,
-    "disclosedKrwDealCount": 21,
-    "disclosedKrwTotalEok": 11226.8,
+    "articleCount": 288,
+    "domesticCount": 252,
+    "overseasCount": 36,
+    "dealCount": 56,
+    "disclosedKrwDealCount": 20,
+    "disclosedKrwTotalEok": 11196.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 101
+        "count": 102
       },
       {
         "label": "TIPS / LIPS",
-        "count": 62
+        "count": 63
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 48
-      },
-      {
-        "label": "해외 VC",
-        "count": 36
+        "count": 50
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 36
+      },
+      {
+        "label": "해외 VC",
         "count": 35
       },
       {
@@ -420,11 +420,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 141
+        "count": 143
       },
       {
         "label": "선정",
-        "count": 22
+        "count": 21
       },
       {
         "label": "실증·PoC",
@@ -439,11 +439,11 @@
         "count": 13
       },
       {
-        "label": "지원사업",
-        "count": 8
+        "label": "협약",
+        "count": 10
       },
       {
-        "label": "협약",
+        "label": "지원사업",
         "count": 8
       },
       {
@@ -462,15 +462,15 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 112
+        "count": 114
       },
       {
         "label": "바이오·헬스케어",
-        "count": 7
+        "count": 8
       },
       {
         "label": "로봇",
-        "count": 5
+        "count": 4
       },
       {
         "label": "반도체",
@@ -488,15 +488,15 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 9
+        "count": 8
+      },
+      {
+        "label": "시리즈B",
+        "count": 4
       },
       {
         "label": "시리즈C",
         "count": 4
-      },
-      {
-        "label": "시리즈B",
-        "count": 3
       },
       {
         "label": "시리즈D",
@@ -538,7 +538,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 43
+        "count": 45
       },
       {
         "label": "머니투데이",
@@ -550,14 +550,14 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 19
-      },
-      {
-        "label": "TechCrunch",
-        "count": 19
+        "count": 20
       },
       {
         "label": "아시아경제",
+        "count": 18
+      },
+      {
+        "label": "연합뉴스",
         "count": 18
       },
       {
@@ -565,16 +565,11 @@
         "count": 18
       },
       {
-        "label": "연합뉴스",
-        "count": 17
+        "label": "TechCrunch",
+        "count": 18
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-22",
-        "total": 12,
-        "overseas": 3
-      },
       {
         "date": "2026-10-23",
         "total": 13,
@@ -719,6 +714,11 @@
         "date": "2026-11-20",
         "total": 11,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-21",
+        "total": 14,
+        "overseas": 1
       }
     ],
     "deals": [
@@ -743,6 +743,17 @@
         "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
         "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-19",
+        "company": "베리에이셔널",
+        "fundingAmount": null,
+        "fundingStage": "시리즈B",
+        "industry": null,
+        "overseas": false,
+        "title": "온체인 파생상품 '베리에이셔널', 1.1억 달러 시리즈B 투자유치",
+        "url": "https://wowtale.net/2026/11/19/268347/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-18",
@@ -930,22 +941,11 @@
         "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
         "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
         "source": "AI타임스"
-      },
-      {
-        "date": "2026-11-11",
-        "company": "머코어",
-        "fundingAmount": null,
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "AI 평가·후속학습 머코어, 7억5천만 달러 투자유치…가치 200억 달러",
-        "url": "https://wowtale.net/2026/11/11/267802/",
-        "source": "와우테일"
       }
     ],
     "previous": {
-      "articleCount": 252,
-      "dealCount": 49,
+      "articleCount": 258,
+      "dealCount": 51,
       "briefingDays": 29
     }
   }

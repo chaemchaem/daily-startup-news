@@ -1,20 +1,20 @@
 {
-  "lastRunAt": "2026-11-20T00:11:59.058Z",
+  "lastRunAt": "2026-11-21T00:11:50.934Z",
   "success": true,
-  "rawArticleCount": 12257,
+  "rawArticleCount": 11548,
   "candidateArticleCount": 30,
-  "finalArticleCount": 11,
+  "finalArticleCount": 14,
   "sourceSuccessCount": 41,
   "sourceFailureCount": 2,
-  "lastSuccessfulRunAt": "2026-11-20T00:11:59.058Z",
-  "briefingDate": "2026-11-20",
+  "lastSuccessfulRunAt": "2026-11-21T00:11:50.934Z",
+  "briefingDate": "2026-11-21",
   "range": {
-    "from": "2026-11-18T09:00:00+09:00",
-    "to": "2026-11-20T09:00:00+09:00"
+    "from": "2026-11-19T09:00:00+09:00",
+    "to": "2026-11-21T09:00:00+09:00"
   },
-  "domesticCount": 9,
-  "overseasCount": 2,
-  "runDurationMs": 86922,
+  "domesticCount": 13,
+  "overseasCount": 1,
+  "runDurationMs": 79717,
   "failedSources": [
     {
       "name": "EU-Startups",
@@ -27,51 +27,6 @@
   ],
   "sources": [
     {
-      "name": "동아일보 경제",
-      "source": "동아일보",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 50,
-      "entries": 300,
-      "inRange": 228,
-      "keywordPassed": 139,
-      "passed": 130,
-      "buffered": 250,
-      "candidates": 3,
-      "extracted": 3,
-      "final": 2,
-      "skipped": {
-        "olderThanRange": 72
-      }
-    },
-    {
-      "name": "와우테일",
-      "source": "와우테일",
-      "type": "html_list",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 20,
-      "entries": 13,
-      "inRange": 6,
-      "keywordPassed": 6,
-      "passed": 6,
-      "buffered": 0,
-      "candidates": 6,
-      "extracted": 6,
-      "final": 2,
-      "skipped": {
-        "olderThanRange": 7,
-        "keywordMissing": 7
-      }
-    },
-    {
       "name": "연합뉴스 경제",
       "source": "연합뉴스",
       "type": "rss",
@@ -81,66 +36,21 @@
       "ok": true,
       "error": null,
       "fetched": 120,
-      "entries": 621,
-      "inRange": 418,
-      "keywordPassed": 159,
-      "passed": 130,
-      "buffered": 501,
-      "candidates": 2,
-      "extracted": 2,
-      "final": 1,
+      "entries": 586,
+      "inRange": 356,
+      "keywordPassed": 133,
+      "passed": 109,
+      "buffered": 466,
+      "candidates": 3,
+      "extracted": 3,
+      "final": 2,
       "skipped": {
-        "newerThanRange": 4,
-        "olderThanRange": 199
+        "newerThanRange": 1,
+        "olderThanRange": 229
       }
     },
     {
-      "name": "이투데이",
-      "source": "이투데이",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 60,
-      "entries": 542,
-      "inRange": 361,
-      "keywordPassed": 134,
-      "passed": 128,
-      "buffered": 482,
-      "candidates": 1,
-      "extracted": 1,
-      "final": 1,
-      "skipped": {
-        "newerThanRange": 17,
-        "olderThanRange": 164
-      }
-    },
-    {
-      "name": "한국경제 경제",
-      "source": "한국경제",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 50,
-      "entries": 301,
-      "inRange": 199,
-      "keywordPassed": 49,
-      "passed": 46,
-      "buffered": 251,
-      "candidates": 1,
-      "extracted": 1,
-      "final": 1,
-      "skipped": {
-        "olderThanRange": 102
-      }
-    },
-    {
-      "name": "서울경제 경제",
+      "name": "서울경제 산업",
       "source": "서울경제",
       "type": "rss",
       "region": "domestic",
@@ -149,16 +59,17 @@
       "ok": true,
       "error": null,
       "fetched": 50,
-      "entries": 75,
-      "inRange": 54,
-      "keywordPassed": 12,
-      "passed": 12,
-      "buffered": 25,
-      "candidates": 1,
-      "extracted": 1,
-      "final": 1,
+      "entries": 264,
+      "inRange": 162,
+      "keywordPassed": 41,
+      "passed": 41,
+      "buffered": 214,
+      "candidates": 2,
+      "extracted": 2,
+      "final": 2,
       "skipped": {
-        "olderThanRange": 21
+        "newerThanRange": 2,
+        "olderThanRange": 100
       }
     },
     {
@@ -172,15 +83,38 @@
       "error": null,
       "fetched": 50,
       "entries": 50,
-      "inRange": 8,
-      "keywordPassed": 8,
-      "passed": 8,
+      "inRange": 9,
+      "keywordPassed": 9,
+      "passed": 9,
       "buffered": 0,
-      "candidates": 1,
-      "extracted": 1,
-      "final": 1,
+      "candidates": 2,
+      "extracted": 2,
+      "final": 2,
       "skipped": {
-        "olderThanRange": 42
+        "olderThanRange": 41
+      }
+    },
+    {
+      "name": "와우테일",
+      "source": "와우테일",
+      "type": "html_list",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 20,
+      "entries": 12,
+      "inRange": 5,
+      "keywordPassed": 5,
+      "passed": 5,
+      "buffered": 0,
+      "candidates": 5,
+      "extracted": 5,
+      "final": 2,
+      "skipped": {
+        "olderThanRange": 7,
+        "keywordMissing": 8
       }
     },
     {
@@ -193,204 +127,21 @@
       "ok": true,
       "error": null,
       "fetched": 250,
-      "entries": 1440,
-      "inRange": 936,
-      "keywordPassed": 583,
-      "passed": 529,
-      "buffered": 1190,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 7,
-        "olderThanRange": 497
-      }
-    },
-    {
-      "name": "파이낸셜뉴스",
-      "source": "파이낸셜뉴스",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 85,
-      "entries": 1470,
-      "inRange": 928,
-      "keywordPassed": 512,
-      "passed": 476,
-      "buffered": 1385,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 5,
-        "olderThanRange": 537
-      }
-    },
-    {
-      "name": "아시아경제",
-      "source": "아시아경제",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 100,
-      "entries": 823,
-      "inRange": 554,
-      "keywordPassed": 272,
-      "passed": 252,
-      "buffered": 723,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 13,
-        "olderThanRange": 256
-      }
-    },
-    {
-      "name": "머니투데이",
-      "source": "머니투데이",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 100,
-      "entries": 939,
-      "inRange": 629,
-      "keywordPassed": 276,
-      "passed": 247,
-      "buffered": 839,
+      "entries": 1348,
+      "inRange": 803,
+      "keywordPassed": 500,
+      "passed": 459,
+      "buffered": 1098,
       "candidates": 1,
       "extracted": 1,
-      "final": 0,
+      "final": 1,
       "skipped": {
-        "newerThanRange": 15,
-        "olderThanRange": 295
+        "olderThanRange": 545
       }
     },
     {
-      "name": "연합뉴스 산업",
-      "source": "연합뉴스",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 120,
-      "entries": 798,
-      "inRange": 534,
-      "keywordPassed": 207,
-      "passed": 202,
-      "buffered": 678,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 5,
-        "olderThanRange": 259
-      }
-    },
-    {
-      "name": "조선일보 경제",
-      "source": "조선일보",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 100,
-      "entries": 680,
-      "inRange": 463,
-      "keywordPassed": 208,
-      "passed": 186,
-      "buffered": 580,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 1,
-        "olderThanRange": 216
-      }
-    },
-    {
-      "name": "뉴시스 산업",
-      "source": "뉴시스",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 35,
-      "entries": 297,
-      "inRange": 197,
-      "keywordPassed": 120,
-      "passed": 118,
-      "buffered": 262,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 6,
-        "olderThanRange": 94
-      }
-    },
-    {
-      "name": "뉴시스 경제",
-      "source": "뉴시스",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 35,
-      "entries": 290,
-      "inRange": 199,
-      "keywordPassed": 127,
-      "passed": 109,
-      "buffered": 255,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "olderThanRange": 91
-      }
-    },
-    {
-      "name": "ZDNet Korea",
-      "source": "ZDNet Korea",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 30,
-      "entries": 220,
-      "inRange": 147,
-      "keywordPassed": 110,
-      "passed": 108,
-      "buffered": 190,
-      "candidates": 2,
-      "extracted": 2,
-      "final": 0,
-      "skipped": {
-        "olderThanRange": 73
-      }
-    },
-    {
-      "name": "IT조선",
-      "source": "IT조선",
+      "name": "동아일보 경제",
+      "source": "동아일보",
       "type": "rss",
       "region": "domestic",
       "priority": "primary",
@@ -398,16 +149,16 @@
       "ok": true,
       "error": null,
       "fetched": 50,
-      "entries": 231,
-      "inRange": 160,
-      "keywordPassed": 114,
-      "passed": 106,
-      "buffered": 181,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
+      "entries": 331,
+      "inRange": 228,
+      "keywordPassed": 132,
+      "passed": 117,
+      "buffered": 281,
+      "candidates": 2,
+      "extracted": 2,
+      "final": 1,
       "skipped": {
-        "olderThanRange": 71
+        "olderThanRange": 103
       }
     },
     {
@@ -420,21 +171,88 @@
       "ok": true,
       "error": null,
       "fetched": 50,
-      "entries": 212,
-      "inRange": 144,
-      "keywordPassed": 102,
-      "passed": 96,
-      "buffered": 162,
-      "candidates": 2,
-      "extracted": 2,
-      "final": 0,
+      "entries": 196,
+      "inRange": 122,
+      "keywordPassed": 81,
+      "passed": 77,
+      "buffered": 146,
+      "candidates": 1,
+      "extracted": 1,
+      "final": 1,
       "skipped": {
-        "olderThanRange": 68
+        "olderThanRange": 74
       }
     },
     {
-      "name": "조선비즈",
-      "source": "조선비즈",
+      "name": "서울신문 경제",
+      "source": "서울신문",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 23,
+      "entries": 121,
+      "inRange": 71,
+      "keywordPassed": 46,
+      "passed": 44,
+      "buffered": 98,
+      "candidates": 1,
+      "extracted": 1,
+      "final": 1,
+      "skipped": {
+        "olderThanRange": 50
+      }
+    },
+    {
+      "name": "한국경제 경제",
+      "source": "한국경제",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 50,
+      "entries": 280,
+      "inRange": 175,
+      "keywordPassed": 37,
+      "passed": 35,
+      "buffered": 230,
+      "candidates": 1,
+      "extracted": 1,
+      "final": 1,
+      "skipped": {
+        "olderThanRange": 105
+      }
+    },
+    {
+      "name": "파이낸셜뉴스",
+      "source": "파이낸셜뉴스",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 57,
+      "entries": 1368,
+      "inRange": 835,
+      "keywordPassed": 429,
+      "passed": 389,
+      "buffered": 1311,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 1,
+        "olderThanRange": 532
+      }
+    },
+    {
+      "name": "머니투데이",
+      "source": "머니투데이",
       "type": "rss",
       "region": "domestic",
       "priority": "primary",
@@ -442,17 +260,197 @@
       "ok": true,
       "error": null,
       "fetched": 100,
-      "entries": 970,
-      "inRange": 664,
-      "keywordPassed": 92,
-      "passed": 87,
-      "buffered": 870,
+      "entries": 861,
+      "inRange": 548,
+      "keywordPassed": 226,
+      "passed": 207,
+      "buffered": 761,
+      "candidates": 2,
+      "extracted": 2,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 3,
+        "olderThanRange": 310
+      }
+    },
+    {
+      "name": "아시아경제",
+      "source": "아시아경제",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 100,
+      "entries": 725,
+      "inRange": 448,
+      "keywordPassed": 193,
+      "passed": 181,
+      "buffered": 625,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
-        "newerThanRange": 11,
-        "olderThanRange": 295
+        "newerThanRange": 1,
+        "olderThanRange": 276
+      }
+    },
+    {
+      "name": "연합뉴스 산업",
+      "source": "연합뉴스",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 120,
+      "entries": 766,
+      "inRange": 489,
+      "keywordPassed": 178,
+      "passed": 169,
+      "buffered": 646,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 3,
+        "olderThanRange": 274
+      }
+    },
+    {
+      "name": "조선일보 경제",
+      "source": "조선일보",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 100,
+      "entries": 654,
+      "inRange": 431,
+      "keywordPassed": 171,
+      "passed": 151,
+      "buffered": 554,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 223
+      }
+    },
+    {
+      "name": "뉴시스 산업",
+      "source": "뉴시스",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 35,
+      "entries": 284,
+      "inRange": 185,
+      "keywordPassed": 113,
+      "passed": 112,
+      "buffered": 249,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 1,
+        "olderThanRange": 98
+      }
+    },
+    {
+      "name": "뉴시스 경제",
+      "source": "뉴시스",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 35,
+      "entries": 285,
+      "inRange": 182,
+      "keywordPassed": 122,
+      "passed": 104,
+      "buffered": 250,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 103
+      }
+    },
+    {
+      "name": "ZDNet Korea",
+      "source": "ZDNet Korea",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 29,
+      "entries": 213,
+      "inRange": 140,
+      "keywordPassed": 101,
+      "passed": 99,
+      "buffered": 184,
+      "candidates": 1,
+      "extracted": 1,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 73
+      }
+    },
+    {
+      "name": "이투데이",
+      "source": "이투데이",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 52,
+      "entries": 489,
+      "inRange": 319,
+      "keywordPassed": 109,
+      "passed": 95,
+      "buffered": 437,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 1,
+        "olderThanRange": 169
+      }
+    },
+    {
+      "name": "IT조선",
+      "source": "IT조선",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 50,
+      "entries": 221,
+      "inRange": 145,
+      "keywordPassed": 96,
+      "passed": 91,
+      "buffered": 171,
+      "candidates": 2,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 76
       }
     },
     {
@@ -465,38 +463,16 @@
       "ok": true,
       "error": null,
       "fetched": 50,
-      "entries": 175,
-      "inRange": 121,
-      "keywordPassed": 76,
-      "passed": 74,
-      "buffered": 125,
+      "entries": 193,
+      "inRange": 144,
+      "keywordPassed": 82,
+      "passed": 79,
+      "buffered": 143,
       "candidates": 2,
       "extracted": 2,
       "final": 0,
       "skipped": {
-        "olderThanRange": 54
-      }
-    },
-    {
-      "name": "매일경제",
-      "source": "매일경제",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 35,
-      "entries": 161,
-      "inRange": 117,
-      "keywordPassed": 63,
-      "passed": 62,
-      "buffered": 126,
-      "candidates": 1,
-      "extracted": 1,
-      "final": 0,
-      "skipped": {
-        "olderThanRange": 44
+        "olderThanRange": 49
       }
     },
     {
@@ -509,16 +485,62 @@
       "ok": true,
       "error": null,
       "fetched": 50,
-      "entries": 108,
-      "inRange": 71,
-      "keywordPassed": 62,
-      "passed": 62,
-      "buffered": 58,
+      "entries": 106,
+      "inRange": 72,
+      "keywordPassed": 66,
+      "passed": 65,
+      "buffered": 56,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
-        "olderThanRange": 37
+        "newerThanRange": 2,
+        "olderThanRange": 32
+      }
+    },
+    {
+      "name": "조선비즈",
+      "source": "조선비즈",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 100,
+      "entries": 955,
+      "inRange": 629,
+      "keywordPassed": 66,
+      "passed": 62,
+      "buffered": 855,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 3,
+        "olderThanRange": 323
+      }
+    },
+    {
+      "name": "매일경제",
+      "source": "매일경제",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 35,
+      "entries": 154,
+      "inRange": 104,
+      "keywordPassed": 62,
+      "passed": 59,
+      "buffered": 119,
+      "candidates": 1,
+      "extracted": 1,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 50
       }
     },
     {
@@ -531,108 +553,16 @@
       "ok": true,
       "error": null,
       "fetched": 60,
-      "entries": 155,
-      "inRange": 101,
-      "keywordPassed": 58,
-      "passed": 57,
-      "buffered": 95,
+      "entries": 140,
+      "inRange": 85,
+      "keywordPassed": 50,
+      "passed": 49,
+      "buffered": 80,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
-        "newerThanRange": 1,
-        "olderThanRange": 53
-      }
-    },
-    {
-      "name": "서울경제 산업",
-      "source": "서울경제",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 50,
-      "entries": 284,
-      "inRange": 183,
-      "keywordPassed": 57,
-      "passed": 56,
-      "buffered": 234,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 1,
-        "olderThanRange": 100
-      }
-    },
-    {
-      "name": "서울신문 경제",
-      "source": "서울신문",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 22,
-      "entries": 131,
-      "inRange": 84,
-      "keywordPassed": 61,
-      "passed": 53,
-      "buffered": 109,
-      "candidates": 1,
-      "extracted": 1,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 2,
-        "olderThanRange": 45
-      }
-    },
-    {
-      "name": "세계일보 경제",
-      "source": "세계일보",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 20,
-      "entries": 165,
-      "inRange": 109,
-      "keywordPassed": 48,
-      "passed": 45,
-      "buffered": 145,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 1,
         "olderThanRange": 55
-      }
-    },
-    {
-      "name": "경향신문 경제",
-      "source": "경향신문",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 50,
-      "entries": 151,
-      "inRange": 106,
-      "keywordPassed": 48,
-      "passed": 42,
-      "buffered": 101,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "olderThanRange": 45
       }
     },
     {
@@ -645,16 +575,16 @@
       "ok": true,
       "error": null,
       "fetched": 30,
-      "entries": 96,
-      "inRange": 56,
-      "keywordPassed": 43,
-      "passed": 42,
-      "buffered": 66,
+      "entries": 85,
+      "inRange": 51,
+      "keywordPassed": 42,
+      "passed": 41,
+      "buffered": 55,
       "candidates": 2,
       "extracted": 2,
       "final": 0,
       "skipped": {
-        "olderThanRange": 40
+        "olderThanRange": 34
       }
     },
     {
@@ -667,16 +597,61 @@
       "ok": true,
       "error": null,
       "fetched": 30,
-      "entries": 95,
-      "inRange": 64,
+      "entries": 97,
+      "inRange": 67,
       "keywordPassed": 39,
-      "passed": 38,
-      "buffered": 65,
+      "passed": 37,
+      "buffered": 67,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
-        "olderThanRange": 31
+        "olderThanRange": 30
+      }
+    },
+    {
+      "name": "경향신문 경제",
+      "source": "경향신문",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 50,
+      "entries": 136,
+      "inRange": 79,
+      "keywordPassed": 34,
+      "passed": 31,
+      "buffered": 86,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "newerThanRange": 1,
+        "olderThanRange": 56
+      }
+    },
+    {
+      "name": "세계일보 경제",
+      "source": "세계일보",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 20,
+      "entries": 143,
+      "inRange": 84,
+      "keywordPassed": 28,
+      "passed": 24,
+      "buffered": 123,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 59
       }
     },
     {
@@ -689,40 +664,17 @@
       "ok": true,
       "error": null,
       "fetched": 11,
-      "entries": 98,
-      "inRange": 60,
-      "keywordPassed": 24,
-      "passed": 24,
-      "buffered": 87,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "newerThanRange": 3,
-        "olderThanRange": 35
-      }
-    },
-    {
-      "name": "한국경제 IT",
-      "source": "한국경제",
-      "type": "rss",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 50,
-      "entries": 108,
-      "inRange": 52,
-      "keywordPassed": 21,
-      "passed": 19,
-      "buffered": 58,
+      "entries": 88,
+      "inRange": 53,
+      "keywordPassed": 23,
+      "passed": 22,
+      "buffered": 77,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
         "newerThanRange": 1,
-        "olderThanRange": 55
+        "olderThanRange": 34
       }
     },
     {
@@ -736,16 +688,37 @@
       "error": null,
       "fetched": 29,
       "entries": 96,
-      "inRange": 62,
-      "keywordPassed": 19,
-      "passed": 17,
+      "inRange": 73,
+      "keywordPassed": 25,
+      "passed": 21,
       "buffered": 67,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
-        "newerThanRange": 1,
-        "olderThanRange": 33
+        "olderThanRange": 23
+      }
+    },
+    {
+      "name": "한국경제 IT",
+      "source": "한국경제",
+      "type": "rss",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 50,
+      "entries": 76,
+      "inRange": 41,
+      "keywordPassed": 16,
+      "passed": 15,
+      "buffered": 26,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 35
       }
     },
     {
@@ -760,8 +733,8 @@
       "fetched": 30,
       "entries": 30,
       "inRange": 30,
-      "keywordPassed": 15,
-      "passed": 12,
+      "keywordPassed": 14,
+      "passed": 11,
       "buffered": 0,
       "candidates": 0,
       "extracted": 0,
@@ -769,25 +742,25 @@
       "skipped": {}
     },
     {
-      "name": "중앙일보 경제 목록",
-      "source": "중앙일보",
-      "type": "html_list",
+      "name": "서울경제 경제",
+      "source": "서울경제",
+      "type": "rss",
       "region": "domestic",
       "priority": "primary",
       "candidate": false,
       "ok": true,
       "error": null,
-      "fetched": 25,
-      "entries": 8,
-      "inRange": 8,
+      "fetched": 50,
+      "entries": 72,
+      "inRange": 41,
       "keywordPassed": 8,
-      "passed": 7,
-      "buffered": 0,
+      "passed": 8,
+      "buffered": 22,
       "candidates": 0,
       "extracted": 0,
       "final": 0,
       "skipped": {
-        "keywordMissing": 17
+        "olderThanRange": 31
       }
     },
     {
@@ -801,15 +774,37 @@
       "error": null,
       "fetched": 20,
       "entries": 20,
-      "inRange": 10,
-      "keywordPassed": 4,
-      "passed": 4,
+      "inRange": 6,
+      "keywordPassed": 5,
+      "passed": 5,
       "buffered": 0,
       "candidates": 1,
       "extracted": 1,
       "final": 0,
       "skipped": {
-        "olderThanRange": 10
+        "olderThanRange": 14
+      }
+    },
+    {
+      "name": "중앙일보 경제 목록",
+      "source": "중앙일보",
+      "type": "html_list",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 25,
+      "entries": 5,
+      "inRange": 5,
+      "keywordPassed": 5,
+      "passed": 5,
+      "buffered": 0,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "keywordMissing": 20
       }
     },
     {
@@ -833,6 +828,29 @@
       "skipped": {
         "olderThanRange": 2,
         "keywordMissing": 4
+      }
+    },
+    {
+      "name": "플래텀",
+      "source": "플래텀",
+      "type": "html_list",
+      "region": "domestic",
+      "priority": "primary",
+      "candidate": false,
+      "ok": true,
+      "error": null,
+      "fetched": 5,
+      "entries": 3,
+      "inRange": 1,
+      "keywordPassed": 1,
+      "passed": 1,
+      "buffered": 0,
+      "candidates": 0,
+      "extracted": 0,
+      "final": 0,
+      "skipped": {
+        "olderThanRange": 2,
+        "keywordMissing": 2
       }
     },
     {
@@ -881,29 +899,6 @@
       }
     },
     {
-      "name": "플래텀",
-      "source": "플래텀",
-      "type": "html_list",
-      "region": "domestic",
-      "priority": "primary",
-      "candidate": false,
-      "ok": true,
-      "error": null,
-      "fetched": 5,
-      "entries": 3,
-      "inRange": 0,
-      "keywordPassed": 0,
-      "passed": 0,
-      "buffered": 0,
-      "candidates": 0,
-      "extracted": 0,
-      "final": 0,
-      "skipped": {
-        "olderThanRange": 3,
-        "keywordMissing": 2
-      }
-    },
-    {
       "name": "TechCrunch",
       "source": "TechCrunch",
       "type": "rss",
@@ -913,16 +908,16 @@
       "ok": true,
       "error": null,
       "fetched": 20,
-      "entries": 68,
-      "inRange": 44,
-      "keywordPassed": 40,
-      "passed": 40,
-      "buffered": 48,
-      "candidates": 3,
-      "extracted": 3,
-      "final": 2,
+      "entries": 62,
+      "inRange": 32,
+      "keywordPassed": 28,
+      "passed": 27,
+      "buffered": 42,
+      "candidates": 1,
+      "extracted": 1,
+      "final": 1,
       "skipped": {
-        "olderThanRange": 24
+        "olderThanRange": 30
       }
     },
     {
