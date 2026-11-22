@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-21T00:11:51.017Z",
-  "latestDate": "2026-11-21",
+  "generatedAt": "2026-11-22T00:11:28.294Z",
+  "latestDate": "2026-11-22",
   "weekly": {
-    "from": "2026-11-15",
-    "to": "2026-11-21",
+    "from": "2026-11-16",
+    "to": "2026-11-22",
     "briefingDays": 7,
-    "articleCount": 73,
-    "domesticCount": 64,
-    "overseasCount": 9,
-    "dealCount": 18,
-    "disclosedKrwDealCount": 7,
-    "disclosedKrwTotalEok": 1112,
+    "articleCount": 69,
+    "domesticCount": 61,
+    "overseasCount": 8,
+    "dealCount": 15,
+    "disclosedKrwDealCount": 5,
+    "disclosedKrwTotalEok": 892,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 27
+        "count": 26
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 13
+        "count": 12
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -27,17 +27,17 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 12
+        "count": 11
       },
       {
         "label": "해외 VC",
-        "count": 9
+        "count": 8
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 42
+        "count": 38
       },
       {
         "label": "선정",
@@ -45,54 +45,50 @@
       },
       {
         "label": "협약",
-        "count": 5
+        "count": 4
       },
       {
         "label": "모집",
-        "count": 4
+        "count": 3
       },
       {
         "label": "지원사업",
         "count": 3
       },
       {
-        "label": "TIPS·LIPS 선정",
-        "count": 3
+        "label": "실증·PoC",
+        "count": 2
       },
       {
         "label": "펀드결성",
         "count": 2
       },
       {
-        "label": "실증·PoC",
-        "count": 1
+        "label": "TIPS·LIPS 선정",
+        "count": 2
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 33
+        "count": 29
       },
       {
         "label": "바이오·헬스케어",
-        "count": 2
+        "count": 4
       },
       {
         "label": "로봇",
-        "count": 1
+        "count": 2
       }
     ],
     "byStage": [
       {
         "label": "시리즈B",
-        "count": 4
+        "count": 3
       },
       {
         "label": "시리즈A",
-        "count": 2
-      },
-      {
-        "label": "시드 투자",
         "count": 1
       },
       {
@@ -107,43 +103,38 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 14
-      },
-      {
-        "label": "TechCrunch",
-        "count": 7
+        "count": 12
       },
       {
         "label": "머니투데이",
-        "count": 5
+        "count": 6
       },
       {
-        "label": "연합뉴스",
-        "count": 5
+        "label": "TechCrunch",
+        "count": 6
       },
       {
-        "label": "서울경제",
-        "count": 4
+        "label": "파이낸셜뉴스",
+        "count": 5
       },
       {
         "label": "스타트업투데이",
         "count": 4
       },
       {
-        "label": "아시아경제",
+        "label": "연합뉴스",
         "count": 4
       },
       {
-        "label": "뉴시스",
+        "label": "서울경제",
+        "count": 3
+      },
+      {
+        "label": "아시아경제",
         "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-15",
-        "total": 12,
-        "overseas": 1
-      },
       {
         "date": "2026-11-16",
         "total": 13,
@@ -173,6 +164,11 @@
         "date": "2026-11-21",
         "total": 14,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-22",
+        "total": 12,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -340,55 +336,22 @@
         "title": "Helsing backer Plural raises $1.1B to fund Europe’s next moonshots",
         "url": "https://techcrunch.com/2026/11/15/helsing-backer-plural-raises-1-1b-to-fund-europes-next-moonshots/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-14",
-        "company": "바이온사이트",
-        "fundingAmount": "150억 원",
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "“AI 원금복구 기다리느니”…‘미워도 다시한번’ 바이오 몰리는 투자금",
-        "url": "https://www.mk.co.kr/news/business/12208700",
-        "source": "매일경제"
-      },
-      {
-        "date": "2026-11-14",
-        "company": "위트컴퍼니",
-        "fundingAmount": null,
-        "fundingStage": "시드 투자",
-        "industry": "AI",
-        "overseas": false,
-        "title": "'AI 기반 모듈형 스킨케어' 뭐길래…소비자·투자자 지갑 열었다",
-        "url": "https://www.mt.co.kr/future/2026/11/14/2026111307405633492",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-11-13",
-        "company": "라이플렉스사이언스",
-        "fundingAmount": "70억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "라이플렉스사이언스, 70억 원 시리즈 A 투자 유치∙∙∙골관절염 치료제 임상 채비",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53500",
-        "source": "스타트업투데이"
       }
     ],
     "previous": {
-      "articleCount": 67,
-      "dealCount": 6,
+      "articleCount": 63,
+      "dealCount": 7,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-23",
-    "to": "2026-11-21",
+    "from": "2026-10-24",
+    "to": "2026-11-22",
     "briefingDays": 30,
-    "articleCount": 288,
-    "domesticCount": 252,
-    "overseasCount": 36,
-    "dealCount": 56,
+    "articleCount": 286,
+    "domesticCount": 253,
+    "overseasCount": 33,
+    "dealCount": 54,
     "disclosedKrwDealCount": 20,
     "disclosedKrwTotalEok": 11196.8,
     "byCategory": [
@@ -398,19 +361,19 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 63
+        "count": 62
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 50
+        "count": 49
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 36
+        "count": 39
       },
       {
         "label": "해외 VC",
-        "count": 35
+        "count": 32
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -420,15 +383,15 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 143
+        "count": 138
       },
       {
         "label": "선정",
-        "count": 21
+        "count": 22
       },
       {
         "label": "실증·PoC",
-        "count": 19
+        "count": 20
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -462,15 +425,15 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 114
+        "count": 111
       },
       {
         "label": "바이오·헬스케어",
-        "count": 8
+        "count": 10
       },
       {
         "label": "로봇",
-        "count": 4
+        "count": 5
       },
       {
         "label": "반도체",
@@ -529,52 +492,43 @@
       {
         "label": "Series C",
         "count": 1
-      },
-      {
-        "label": "Series E",
-        "count": 1
       }
     ],
     "topSources": [
       {
         "label": "와우테일",
-        "count": 45
+        "count": 46
       },
       {
         "label": "머니투데이",
-        "count": 23
+        "count": 25
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 22
+        "count": 23
       },
       {
         "label": "스타트업투데이",
         "count": 20
       },
       {
-        "label": "아시아경제",
-        "count": 18
-      },
-      {
         "label": "연합뉴스",
         "count": 18
       },
       {
-        "label": "EU-Startups",
-        "count": 18
+        "label": "아시아경제",
+        "count": 17
       },
       {
         "label": "TechCrunch",
-        "count": 18
+        "count": 17
+      },
+      {
+        "label": "EU-Startups",
+        "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-23",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-10-24",
         "total": 14,
@@ -719,6 +673,11 @@
         "date": "2026-11-21",
         "total": 14,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-22",
+        "total": 12,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -944,8 +903,8 @@
       }
     ],
     "previous": {
-      "articleCount": 258,
-      "dealCount": 51,
+      "articleCount": 260,
+      "dealCount": 53,
       "briefingDays": 29
     }
   }
