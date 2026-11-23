@@ -1,29 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-22T00:11:28.294Z",
-  "latestDate": "2026-11-22",
+  "generatedAt": "2026-11-23T00:11:33.785Z",
+  "latestDate": "2026-11-23",
   "weekly": {
-    "from": "2026-11-16",
-    "to": "2026-11-22",
+    "from": "2026-11-17",
+    "to": "2026-11-23",
     "briefingDays": 7,
-    "articleCount": 69,
-    "domesticCount": 61,
-    "overseasCount": 8,
+    "articleCount": 70,
+    "domesticCount": 63,
+    "overseasCount": 7,
     "dealCount": 15,
     "disclosedKrwDealCount": 5,
     "disclosedKrwTotalEok": 892,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 26
-      },
-      {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 12
+        "count": 28
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
         "count": 12
+      },
+      {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 11
       },
       {
         "label": "TIPS / LIPS",
@@ -31,17 +31,21 @@
       },
       {
         "label": "해외 VC",
-        "count": 8
+        "count": 7
+      },
+      {
+        "label": "세컨더리 / 구주매각",
+        "count": 1
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 38
+        "count": 39
       },
       {
         "label": "선정",
-        "count": 5
+        "count": 6
       },
       {
         "label": "협약",
@@ -52,11 +56,11 @@
         "count": 3
       },
       {
-        "label": "지원사업",
-        "count": 3
+        "label": "실증·PoC",
+        "count": 2
       },
       {
-        "label": "실증·PoC",
+        "label": "지원사업",
         "count": 2
       },
       {
@@ -65,21 +69,29 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 2
+        "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 29
+        "count": 25
       },
       {
         "label": "바이오·헬스케어",
-        "count": 4
+        "count": 5
       },
       {
         "label": "로봇",
         "count": 2
+      },
+      {
+        "label": "핀테크",
+        "count": 2
+      },
+      {
+        "label": "반도체",
+        "count": 1
       }
     ],
     "byStage": [
@@ -103,18 +115,22 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 12
+        "count": 10
       },
       {
         "label": "머니투데이",
-        "count": 6
+        "count": 7
       },
       {
-        "label": "TechCrunch",
-        "count": 6
+        "label": "아시아경제",
+        "count": 5
       },
       {
         "label": "파이낸셜뉴스",
+        "count": 5
+      },
+      {
+        "label": "TechCrunch",
         "count": 5
       },
       {
@@ -128,18 +144,9 @@
       {
         "label": "서울경제",
         "count": 3
-      },
-      {
-        "label": "아시아경제",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-16",
-        "total": 13,
-        "overseas": 1
-      },
       {
         "date": "2026-11-17",
         "total": 15,
@@ -167,6 +174,11 @@
       },
       {
         "date": "2026-11-22",
+        "total": 12,
+        "overseas": 0
+      },
+      {
+        "date": "2026-11-23",
         "total": 12,
         "overseas": 0
       }
@@ -284,17 +296,6 @@
       },
       {
         "date": "2026-11-16",
-        "company": "페르소나AI",
-        "fundingAmount": "150억 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "페르소나AI, 국민성장펀드 통해 150억 투자 유치…AI 에이전트 사업 성장 가속화",
-        "url": "https://zdnet.co.kr/view/?no=20261115233648",
-        "source": "ZDNet Korea"
-      },
-      {
-        "date": "2026-11-16",
         "company": "레이와트",
         "fundingAmount": "130억 원",
         "fundingStage": "시리즈B",
@@ -314,6 +315,17 @@
         "title": "예탁결제원 ‘K-캠프’가 키운 지방 스타트업, 154억 투자 유치",
         "url": "https://www.mk.co.kr/news/business/12210041",
         "source": "매일경제"
+      },
+      {
+        "date": "2026-11-16",
+        "company": "페르소나AI",
+        "fundingAmount": "150억 원",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": false,
+        "title": "페르소나AI, 국민성장펀드 통해 150억 투자 유치…AI 에이전트 사업 성장 가속화",
+        "url": "https://zdnet.co.kr/view/?no=20261115233648",
+        "source": "ZDNet Korea"
       },
       {
         "date": "2026-11-16",
@@ -339,33 +351,33 @@
       }
     ],
     "previous": {
-      "articleCount": 63,
-      "dealCount": 7,
+      "articleCount": 67,
+      "dealCount": 8,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-24",
-    "to": "2026-11-22",
+    "from": "2026-10-25",
+    "to": "2026-11-23",
     "briefingDays": 30,
     "articleCount": 286,
-    "domesticCount": 253,
-    "overseasCount": 33,
-    "dealCount": 54,
-    "disclosedKrwDealCount": 20,
-    "disclosedKrwTotalEok": 11196.8,
+    "domesticCount": 255,
+    "overseasCount": 31,
+    "dealCount": 49,
+    "disclosedKrwDealCount": 19,
+    "disclosedKrwTotalEok": 10866.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 102
+        "count": 104
       },
       {
         "label": "TIPS / LIPS",
-        "count": 62
+        "count": 60
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 49
+        "count": 50
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -373,21 +385,21 @@
       },
       {
         "label": "해외 VC",
-        "count": 32
+        "count": 30
       },
       {
         "label": "세컨더리 / 구주매각",
-        "count": 2
+        "count": 3
       }
     ],
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 138
+        "count": 137
       },
       {
         "label": "선정",
-        "count": 22
+        "count": 24
       },
       {
         "label": "실증·PoC",
@@ -395,11 +407,11 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 19
+        "count": 18
       },
       {
         "label": "모집",
-        "count": 13
+        "count": 14
       },
       {
         "label": "협약",
@@ -407,7 +419,7 @@
       },
       {
         "label": "지원사업",
-        "count": 8
+        "count": 9
       },
       {
         "label": "펀드결성",
@@ -425,11 +437,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 111
+        "count": 106
       },
       {
         "label": "바이오·헬스케어",
-        "count": 10
+        "count": 11
       },
       {
         "label": "로봇",
@@ -437,7 +449,7 @@
       },
       {
         "label": "반도체",
-        "count": 4
+        "count": 5
       },
       {
         "label": "농식품",
@@ -445,6 +457,10 @@
       },
       {
         "label": "우주항공",
+        "count": 2
+      },
+      {
+        "label": "핀테크",
         "count": 2
       }
     ],
@@ -459,7 +475,7 @@
       },
       {
         "label": "시리즈C",
-        "count": 4
+        "count": 3
       },
       {
         "label": "시리즈D",
@@ -478,10 +494,6 @@
         "count": 1
       },
       {
-        "label": "시드투자",
-        "count": 1
-      },
-      {
         "label": "후속 투자",
         "count": 1
       },
@@ -497,11 +509,11 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 46
+        "count": 47
       },
       {
         "label": "머니투데이",
-        "count": 25
+        "count": 26
       },
       {
         "label": "파이낸셜뉴스",
@@ -509,31 +521,26 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 20
+        "count": 19
+      },
+      {
+        "label": "아시아경제",
+        "count": 19
       },
       {
         "label": "연합뉴스",
         "count": 18
       },
       {
-        "label": "아시아경제",
+        "label": "아주경제",
         "count": 17
       },
       {
         "label": "TechCrunch",
-        "count": 17
-      },
-      {
-        "label": "EU-Startups",
         "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-24",
-        "total": 14,
-        "overseas": 3
-      },
       {
         "date": "2026-10-25",
         "total": 11,
@@ -676,6 +683,11 @@
       },
       {
         "date": "2026-11-22",
+        "total": 12,
+        "overseas": 0
+      },
+      {
+        "date": "2026-11-23",
         "total": 12,
         "overseas": 0
       }
@@ -903,8 +915,8 @@
       }
     ],
     "previous": {
-      "articleCount": 260,
-      "dealCount": 53,
+      "articleCount": 266,
+      "dealCount": 55,
       "briefingDays": 29
     }
   }
