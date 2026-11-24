@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-23T00:11:33.785Z",
-  "latestDate": "2026-11-23",
+  "generatedAt": "2026-11-24T00:11:36.129Z",
+  "latestDate": "2026-11-24",
   "weekly": {
-    "from": "2026-11-17",
-    "to": "2026-11-23",
+    "from": "2026-11-18",
+    "to": "2026-11-24",
     "briefingDays": 7,
-    "articleCount": 70,
-    "domesticCount": 63,
+    "articleCount": 71,
+    "domesticCount": 64,
     "overseasCount": 7,
-    "dealCount": 15,
-    "disclosedKrwDealCount": 5,
-    "disclosedKrwTotalEok": 892,
+    "dealCount": 17,
+    "disclosedKrwDealCount": 6,
+    "disclosedKrwTotalEok": 847,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 28
+        "count": 29
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 12
+        "count": 13
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -27,7 +27,7 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 11
+        "count": 10
       },
       {
         "label": "해외 VC",
@@ -41,22 +41,22 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 39
+        "count": 41
       },
       {
         "label": "선정",
         "count": 6
       },
       {
-        "label": "협약",
+        "label": "실증·PoC",
         "count": 4
       },
       {
-        "label": "모집",
+        "label": "협약",
         "count": 3
       },
       {
-        "label": "실증·PoC",
+        "label": "모집",
         "count": 2
       },
       {
@@ -75,15 +75,15 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 25
+        "count": 23
       },
       {
         "label": "바이오·헬스케어",
-        "count": 5
+        "count": 4
       },
       {
         "label": "로봇",
-        "count": 2
+        "count": 3
       },
       {
         "label": "핀테크",
@@ -100,6 +100,10 @@
         "count": 3
       },
       {
+        "label": "시드 투자",
+        "count": 1
+      },
+      {
         "label": "시리즈A",
         "count": 1
       },
@@ -108,21 +112,33 @@
         "count": 1
       },
       {
+        "label": "프리-A",
+        "count": 1
+      },
+      {
+        "label": "프리A",
+        "count": 1
+      },
+      {
         "label": "후속 투자",
+        "count": 1
+      },
+      {
+        "label": "seed",
         "count": 1
       }
     ],
     "topSources": [
       {
         "label": "와우테일",
-        "count": 10
+        "count": 12
       },
       {
         "label": "머니투데이",
-        "count": 7
+        "count": 6
       },
       {
-        "label": "아시아경제",
+        "label": "스타트업투데이",
         "count": 5
       },
       {
@@ -134,24 +150,19 @@
         "count": 5
       },
       {
-        "label": "스타트업투데이",
+        "label": "동아일보",
+        "count": 4
+      },
+      {
+        "label": "아시아경제",
         "count": 4
       },
       {
         "label": "연합뉴스",
         "count": 4
-      },
-      {
-        "label": "서울경제",
-        "count": 3
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-17",
-        "total": 15,
-        "overseas": 2
-      },
       {
         "date": "2026-11-18",
         "total": 15,
@@ -181,9 +192,58 @@
         "date": "2026-11-23",
         "total": 12,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-24",
+        "total": 14,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-24",
+        "company": "웨어러블에이아이",
+        "fundingAmount": "30억 원",
+        "fundingStage": "프리A",
+        "industry": null,
+        "overseas": false,
+        "title": "웨어러블에이아이, 30억원 규모 프리A 투자유치",
+        "url": "https://wowtale.net/2026/11/24/268571/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-24",
+        "company": "엠보",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": "로봇",
+        "overseas": false,
+        "title": "엠보, 1.1억 달러 시드 투자유치…월드 모델로 로봇 두뇌 만든다",
+        "url": "https://wowtale.net/2026/11/24/268547/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-24",
+        "company": "Supertake",
+        "fundingAmount": "$20M",
+        "fundingStage": "seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
+        "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-23",
+        "company": "쓰리브룩스테라퓨틱스",
+        "fundingAmount": "75억 원",
+        "fundingStage": "프리-A",
+        "industry": null,
+        "overseas": false,
+        "title": "쓰리브룩스테라퓨틱스, 프리-A 75억원 규모 투자 유치 완료",
+        "url": "https://www.hankyung.com/article/202611234118i",
+        "source": "한국경제"
+      },
       {
         "date": "2026-11-20",
         "company": "링크",
@@ -274,17 +334,6 @@
       },
       {
         "date": "2026-11-17",
-        "company": "메디인테크",
-        "fundingAmount": "338억 원",
-        "fundingStage": "시리즈C",
-        "industry": "바이오·헬스케어",
-        "overseas": false,
-        "title": "'의료로봇 스타트업' 메디인테크, 338억 시리즈C 투자유치",
-        "url": "https://view.asiae.co.kr/article/2026111708280565140",
-        "source": "아시아경제"
-      },
-      {
-        "date": "2026-11-17",
         "company": "Isomorphic Labs",
         "fundingAmount": "$5B",
         "fundingStage": null,
@@ -293,6 +342,17 @@
         "title": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
         "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-17",
+        "company": "메디인테크",
+        "fundingAmount": "338억 원",
+        "fundingStage": "시리즈C",
+        "industry": "AI",
+        "overseas": false,
+        "title": "내시경에 AI 접목한 메디인테크, 338억원 시리즈C 투자 유치",
+        "url": "https://www.aitimes.com/news/articleView.html?idxno=217498",
+        "source": "AI타임스"
       },
       {
         "date": "2026-11-16",
@@ -318,28 +378,6 @@
       },
       {
         "date": "2026-11-16",
-        "company": "페르소나AI",
-        "fundingAmount": "150억 원",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": false,
-        "title": "페르소나AI, 국민성장펀드 통해 150억 투자 유치…AI 에이전트 사업 성장 가속화",
-        "url": "https://zdnet.co.kr/view/?no=20261115233648",
-        "source": "ZDNet Korea"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "Bedrock Energy",
-        "fundingAmount": "$24M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Bedrock Energy raises $24M to build more AI-enabled geothermal drill rigs for enterprise buildings",
-        "url": "https://techcrunch.com/2026/11/16/bedrock-energy-raises-24m-to-build-more-ai-enabled-geothermal-drill-rigs-for-enterprise-buildings/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-16",
         "company": "Plural",
         "fundingAmount": "$1.1B",
         "fundingStage": null,
@@ -351,37 +389,37 @@
       }
     ],
     "previous": {
-      "articleCount": 67,
-      "dealCount": 8,
+      "articleCount": 66,
+      "dealCount": 13,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-25",
-    "to": "2026-11-23",
+    "from": "2026-10-26",
+    "to": "2026-11-24",
     "briefingDays": 30,
-    "articleCount": 286,
-    "domesticCount": 255,
+    "articleCount": 288,
+    "domesticCount": 257,
     "overseasCount": 31,
-    "dealCount": 49,
-    "disclosedKrwDealCount": 19,
-    "disclosedKrwTotalEok": 10866.8,
+    "dealCount": 52,
+    "disclosedKrwDealCount": 21,
+    "disclosedKrwTotalEok": 10971.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 104
+        "count": 105
       },
       {
         "label": "TIPS / LIPS",
-        "count": 60
+        "count": 58
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 50
+        "count": 51
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 39
+        "count": 41
       },
       {
         "label": "해외 VC",
@@ -395,7 +433,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 137
+        "count": 139
       },
       {
         "label": "선정",
@@ -403,7 +441,7 @@
       },
       {
         "label": "실증·PoC",
-        "count": 20
+        "count": 22
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -411,7 +449,7 @@
       },
       {
         "label": "모집",
-        "count": 14
+        "count": 13
       },
       {
         "label": "협약",
@@ -445,7 +483,7 @@
       },
       {
         "label": "로봇",
-        "count": 5
+        "count": 6
       },
       {
         "label": "반도체",
@@ -474,16 +512,16 @@
         "count": 4
       },
       {
+        "label": "시드 투자",
+        "count": 3
+      },
+      {
         "label": "시리즈C",
         "count": 3
       },
       {
         "label": "시리즈D",
         "count": 3
-      },
-      {
-        "label": "시드 투자",
-        "count": 2
       },
       {
         "label": "프리시리즈A",
@@ -494,7 +532,19 @@
         "count": 1
       },
       {
+        "label": "프리-A",
+        "count": 1
+      },
+      {
+        "label": "프리A",
+        "count": 1
+      },
+      {
         "label": "후속 투자",
+        "count": 1
+      },
+      {
+        "label": "seed",
         "count": 1
       },
       {
@@ -509,7 +559,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 47
+        "count": 50
       },
       {
         "label": "머니투데이",
@@ -525,27 +575,22 @@
       },
       {
         "label": "아시아경제",
-        "count": 19
+        "count": 18
       },
       {
         "label": "연합뉴스",
         "count": 18
       },
       {
-        "label": "아주경제",
+        "label": "TechCrunch",
         "count": 17
       },
       {
-        "label": "TechCrunch",
+        "label": "아주경제",
         "count": 16
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-25",
-        "total": 11,
-        "overseas": 1
-      },
       {
         "date": "2026-10-26",
         "total": 15,
@@ -690,9 +735,58 @@
         "date": "2026-11-23",
         "total": 12,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-24",
+        "total": 14,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-24",
+        "company": "웨어러블에이아이",
+        "fundingAmount": "30억 원",
+        "fundingStage": "프리A",
+        "industry": null,
+        "overseas": false,
+        "title": "웨어러블에이아이, 30억원 규모 프리A 투자유치",
+        "url": "https://wowtale.net/2026/11/24/268571/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-24",
+        "company": "엠보",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": "로봇",
+        "overseas": false,
+        "title": "엠보, 1.1억 달러 시드 투자유치…월드 모델로 로봇 두뇌 만든다",
+        "url": "https://wowtale.net/2026/11/24/268547/",
+        "source": "와우테일"
+      },
+      {
+        "date": "2026-11-24",
+        "company": "Supertake",
+        "fundingAmount": "$20M",
+        "fundingStage": "seed",
+        "industry": "AI",
+        "overseas": true,
+        "title": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
+        "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
+        "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-23",
+        "company": "쓰리브룩스테라퓨틱스",
+        "fundingAmount": "75억 원",
+        "fundingStage": "프리-A",
+        "industry": null,
+        "overseas": false,
+        "title": "쓰리브룩스테라퓨틱스, 프리-A 75억원 규모 투자 유치 완료",
+        "url": "https://www.hankyung.com/article/202611234118i",
+        "source": "한국경제"
+      },
       {
         "date": "2026-11-20",
         "company": "링크",
@@ -868,55 +962,11 @@
         "title": "“AI 원금복구 기다리느니”…‘미워도 다시한번’ 바이오 몰리는 투자금",
         "url": "https://www.mk.co.kr/news/business/12208700",
         "source": "매일경제"
-      },
-      {
-        "date": "2026-11-14",
-        "company": "위트컴퍼니",
-        "fundingAmount": null,
-        "fundingStage": "시드 투자",
-        "industry": "AI",
-        "overseas": false,
-        "title": "'AI 기반 모듈형 스킨케어' 뭐길래…소비자·투자자 지갑 열었다",
-        "url": "https://www.mt.co.kr/future/2026/11/14/2026111307405633492",
-        "source": "머니투데이"
-      },
-      {
-        "date": "2026-11-13",
-        "company": "하이드라호스트",
-        "fundingAmount": null,
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "전력망 여유 용량에 AI 설비를 얹는 토러스, 5억 달러 투자유치",
-        "url": "https://wowtale.net/2026/11/13/267981/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-13",
-        "company": "라이플렉스사이언스",
-        "fundingAmount": "70억 원",
-        "fundingStage": "시리즈A",
-        "industry": null,
-        "overseas": false,
-        "title": "라이플렉스사이언스, 70억 원 시리즈 A 투자 유치∙∙∙골관절염 치료제 임상 채비",
-        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53500",
-        "source": "스타트업투데이"
-      },
-      {
-        "date": "2026-11-12",
-        "company": "프랙타일",
-        "fundingAmount": "1조 원",
-        "fundingStage": "시리즈C",
-        "industry": "AI",
-        "overseas": false,
-        "title": "영국 AI 칩 스타트업 프랙타일, 9.3조 가치로 1조 투자 유치",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=217330",
-        "source": "AI타임스"
       }
     ],
     "previous": {
-      "articleCount": 266,
-      "dealCount": 55,
+      "articleCount": 267,
+      "dealCount": 53,
       "briefingDays": 29
     }
   }
