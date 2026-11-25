@@ -1,37 +1,37 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-24T00:11:36.129Z",
-  "latestDate": "2026-11-24",
+  "generatedAt": "2026-11-25T00:11:45.176Z",
+  "latestDate": "2026-11-25",
   "weekly": {
-    "from": "2026-11-18",
-    "to": "2026-11-24",
+    "from": "2026-11-19",
+    "to": "2026-11-25",
     "briefingDays": 7,
-    "articleCount": 71,
-    "domesticCount": 64,
-    "overseasCount": 7,
-    "dealCount": 17,
-    "disclosedKrwDealCount": 6,
-    "disclosedKrwTotalEok": 847,
+    "articleCount": 69,
+    "domesticCount": 63,
+    "overseasCount": 6,
+    "dealCount": 13,
+    "disclosedKrwDealCount": 4,
+    "disclosedKrwTotalEok": 563,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 29
+        "count": 28
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 13
-      },
-      {
-        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 11
+        "count": 14
       },
       {
         "label": "TIPS / LIPS",
-        "count": 10
+        "count": 11
+      },
+      {
+        "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+        "count": 9
       },
       {
         "label": "해외 VC",
-        "count": 7
+        "count": 6
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,7 +41,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 41
+        "count": 38
       },
       {
         "label": "선정",
@@ -52,15 +52,15 @@
         "count": 4
       },
       {
+        "label": "지원사업",
+        "count": 3
+      },
+      {
         "label": "협약",
         "count": 3
       },
       {
         "label": "모집",
-        "count": 2
-      },
-      {
-        "label": "지원사업",
         "count": 2
       },
       {
@@ -86,18 +86,18 @@
         "count": 3
       },
       {
-        "label": "핀테크",
+        "label": "반도체",
         "count": 2
       },
       {
-        "label": "반도체",
-        "count": 1
+        "label": "핀테크",
+        "count": 2
       }
     ],
     "byStage": [
       {
         "label": "시리즈B",
-        "count": 3
+        "count": 2
       },
       {
         "label": "시드 투자",
@@ -112,15 +112,11 @@
         "count": 1
       },
       {
-        "label": "프리-A",
+        "label": "프리시리즈A",
         "count": 1
       },
       {
         "label": "프리A",
-        "count": 1
-      },
-      {
-        "label": "후속 투자",
         "count": 1
       },
       {
@@ -131,26 +127,22 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 12
+        "count": 11
       },
       {
         "label": "머니투데이",
-        "count": 6
-      },
-      {
-        "label": "스타트업투데이",
-        "count": 5
+        "count": 7
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 5
-      },
-      {
-        "label": "TechCrunch",
-        "count": 5
+        "count": 6
       },
       {
         "label": "동아일보",
+        "count": 5
+      },
+      {
+        "label": "스타트업투데이",
         "count": 4
       },
       {
@@ -160,14 +152,13 @@
       {
         "label": "연합뉴스",
         "count": 4
+      },
+      {
+        "label": "TechCrunch",
+        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-18",
-        "total": 15,
-        "overseas": 2
-      },
       {
         "date": "2026-11-19",
         "total": 13,
@@ -197,9 +188,25 @@
         "date": "2026-11-24",
         "total": 14,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-25",
+        "total": 14,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-25",
+        "company": "Maple",
+        "fundingAmount": "$5.3M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+        "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-24",
         "company": "웨어러블에이아이",
@@ -234,15 +241,15 @@
         "source": "TechCrunch"
       },
       {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "company": "쓰리브룩스테라퓨틱스",
         "fundingAmount": "75억 원",
-        "fundingStage": "프리-A",
+        "fundingStage": "프리시리즈A",
         "industry": null,
         "overseas": false,
-        "title": "쓰리브룩스테라퓨틱스, 프리-A 75억원 규모 투자 유치 완료",
-        "url": "https://www.hankyung.com/article/202611234118i",
-        "source": "한국경제"
+        "title": "쓰리브룩스테라퓨틱스, 75억원 프리시리즈A 투자유치",
+        "url": "https://wowtale.net/2026/11/24/268596/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-20",
@@ -276,17 +283,6 @@
         "title": "온체인 파생상품 '베리에이셔널', 1.1억 달러 시리즈B 투자유치",
         "url": "https://wowtale.net/2026/11/19/268347/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-18",
-        "company": "기보",
-        "fundingAmount": null,
-        "fundingStage": "후속 투자",
-        "industry": null,
-        "overseas": false,
-        "title": "기보, 네이버페이·코드박스와 맞손…스타트업 후속 투자 지원",
-        "url": "https://www.etoday.co.kr/news/view/2649556",
-        "source": "이투데이"
       },
       {
         "date": "2026-11-18",
@@ -334,17 +330,6 @@
       },
       {
         "date": "2026-11-17",
-        "company": "Isomorphic Labs",
-        "fundingAmount": "$5B",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
-        "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-17",
         "company": "메디인테크",
         "fundingAmount": "338억 원",
         "fundingStage": "시리즈C",
@@ -353,77 +338,44 @@
         "title": "내시경에 AI 접목한 메디인테크, 338억원 시리즈C 투자 유치",
         "url": "https://www.aitimes.com/news/articleView.html?idxno=217498",
         "source": "AI타임스"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "레이와트",
-        "fundingAmount": "130억 원",
-        "fundingStage": "시리즈B",
-        "industry": null,
-        "overseas": false,
-        "title": "심혈관 영상진단 '레이와트', 130억 시리즈B 투자 유치…28년 상장 목표",
-        "url": "https://wowtale.net/2026/11/16/268121/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "한국예탁결제원",
-        "fundingAmount": "154억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "예탁결제원 ‘K-캠프’가 키운 지방 스타트업, 154억 투자 유치",
-        "url": "https://www.mk.co.kr/news/business/12210041",
-        "source": "매일경제"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "Plural",
-        "fundingAmount": "$1.1B",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Helsing backer Plural raises $1.1B to fund Europe’s next moonshots",
-        "url": "https://techcrunch.com/2026/11/15/helsing-backer-plural-raises-1-1b-to-fund-europes-next-moonshots/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 66,
-      "dealCount": 13,
+      "articleCount": 73,
+      "dealCount": 15,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-26",
-    "to": "2026-11-24",
+    "from": "2026-10-27",
+    "to": "2026-11-25",
     "briefingDays": 30,
-    "articleCount": 288,
-    "domesticCount": 257,
-    "overseasCount": 31,
-    "dealCount": 52,
+    "articleCount": 285,
+    "domesticCount": 253,
+    "overseasCount": 32,
+    "dealCount": 53,
     "disclosedKrwDealCount": 21,
     "disclosedKrwTotalEok": 10971.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 105
+        "count": 107
       },
       {
         "label": "TIPS / LIPS",
-        "count": 58
+        "count": 57
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 51
+        "count": 49
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 41
+        "count": 38
       },
       {
         "label": "해외 VC",
-        "count": 30
+        "count": 31
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -433,7 +385,7 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 139
+        "count": 142
       },
       {
         "label": "선정",
@@ -452,12 +404,12 @@
         "count": 13
       },
       {
-        "label": "협약",
-        "count": 10
+        "label": "지원사업",
+        "count": 8
       },
       {
-        "label": "지원사업",
-        "count": 9
+        "label": "협약",
+        "count": 8
       },
       {
         "label": "펀드결성",
@@ -475,7 +427,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 106
+        "count": 108
       },
       {
         "label": "바이오·헬스케어",
@@ -487,7 +439,7 @@
       },
       {
         "label": "반도체",
-        "count": 5
+        "count": 6
       },
       {
         "label": "농식품",
@@ -525,14 +477,10 @@
       },
       {
         "label": "프리시리즈A",
-        "count": 2
+        "count": 3
       },
       {
         "label": "시드",
-        "count": 1
-      },
-      {
-        "label": "프리-A",
         "count": 1
       },
       {
@@ -559,7 +507,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 50
+        "count": 52
       },
       {
         "label": "머니투데이",
@@ -583,19 +531,14 @@
       },
       {
         "label": "TechCrunch",
-        "count": 17
+        "count": 18
       },
       {
         "label": "아주경제",
-        "count": 16
+        "count": 14
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-26",
-        "total": 15,
-        "overseas": 0
-      },
       {
         "date": "2026-10-27",
         "total": 15,
@@ -740,9 +683,25 @@
         "date": "2026-11-24",
         "total": 14,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-25",
+        "total": 14,
+        "overseas": 2
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-25",
+        "company": "Maple",
+        "fundingAmount": "$5.3M",
+        "fundingStage": null,
+        "industry": "AI",
+        "overseas": true,
+        "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+        "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
+        "source": "TechCrunch"
+      },
       {
         "date": "2026-11-24",
         "company": "웨어러블에이아이",
@@ -777,15 +736,15 @@
         "source": "TechCrunch"
       },
       {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "company": "쓰리브룩스테라퓨틱스",
         "fundingAmount": "75억 원",
-        "fundingStage": "프리-A",
+        "fundingStage": "프리시리즈A",
         "industry": null,
         "overseas": false,
-        "title": "쓰리브룩스테라퓨틱스, 프리-A 75억원 규모 투자 유치 완료",
-        "url": "https://www.hankyung.com/article/202611234118i",
-        "source": "한국경제"
+        "title": "쓰리브룩스테라퓨틱스, 75억원 프리시리즈A 투자유치",
+        "url": "https://wowtale.net/2026/11/24/268596/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-20",
@@ -951,22 +910,11 @@
         "title": "Helsing backer Plural raises $1.1B to fund Europe’s next moonshots",
         "url": "https://techcrunch.com/2026/11/15/helsing-backer-plural-raises-1-1b-to-fund-europes-next-moonshots/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-14",
-        "company": "바이온사이트",
-        "fundingAmount": "150억 원",
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "“AI 원금복구 기다리느니”…‘미워도 다시한번’ 바이오 몰리는 투자금",
-        "url": "https://www.mk.co.kr/news/business/12208700",
-        "source": "매일경제"
       }
     ],
     "previous": {
-      "articleCount": 267,
-      "dealCount": 53,
+      "articleCount": 274,
+      "dealCount": 51,
       "briefingDays": 29
     }
   }
