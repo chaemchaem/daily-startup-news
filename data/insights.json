@@ -1,17 +1,17 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-25T00:11:45.176Z",
-  "latestDate": "2026-11-25",
+  "generatedAt": "2026-11-26T00:11:44.550Z",
+  "latestDate": "2026-11-26",
   "weekly": {
-    "from": "2026-11-19",
-    "to": "2026-11-25",
+    "from": "2026-11-20",
+    "to": "2026-11-26",
     "briefingDays": 7,
     "articleCount": 69,
-    "domesticCount": 63,
-    "overseasCount": 6,
-    "dealCount": 13,
-    "disclosedKrwDealCount": 4,
-    "disclosedKrwTotalEok": 563,
+    "domesticCount": 65,
+    "overseasCount": 4,
+    "dealCount": 11,
+    "disclosedKrwDealCount": 3,
+    "disclosedKrwTotalEok": 225,
     "byCategory": [
       {
         "label": "VC / AC",
@@ -23,7 +23,7 @@
       },
       {
         "label": "TIPS / LIPS",
-        "count": 11
+        "count": 13
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -31,7 +31,7 @@
       },
       {
         "label": "해외 VC",
-        "count": 6
+        "count": 4
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,11 +41,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 38
+        "count": 34
       },
       {
         "label": "선정",
-        "count": 6
+        "count": 5
       },
       {
         "label": "실증·PoC",
@@ -53,7 +53,11 @@
       },
       {
         "label": "지원사업",
-        "count": 3
+        "count": 4
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 4
       },
       {
         "label": "협약",
@@ -65,21 +69,17 @@
       },
       {
         "label": "펀드결성",
-        "count": 2
-      },
-      {
-        "label": "TIPS·LIPS 선정",
         "count": 1
       }
     ],
     "byIndustry": [
       {
         "label": "AI",
-        "count": 23
+        "count": 16
       },
       {
         "label": "바이오·헬스케어",
-        "count": 4
+        "count": 5
       },
       {
         "label": "로봇",
@@ -96,19 +96,15 @@
     ],
     "byStage": [
       {
+        "label": "시드 투자",
+        "count": 2
+      },
+      {
         "label": "시리즈B",
         "count": 2
       },
       {
-        "label": "시드 투자",
-        "count": 1
-      },
-      {
         "label": "시리즈A",
-        "count": 1
-      },
-      {
-        "label": "시리즈C",
         "count": 1
       },
       {
@@ -127,30 +123,30 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 11
+        "count": 13
       },
       {
         "label": "머니투데이",
         "count": 7
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "동아일보",
         "count": 6
       },
       {
-        "label": "동아일보",
+        "label": "스타트업투데이",
         "count": 5
       },
       {
-        "label": "스타트업투데이",
-        "count": 4
-      },
-      {
-        "label": "아시아경제",
-        "count": 4
-      },
-      {
         "label": "연합뉴스",
+        "count": 5
+      },
+      {
+        "label": "아주경제",
+        "count": 4
+      },
+      {
+        "label": "파이낸셜뉴스",
         "count": 4
       },
       {
@@ -159,11 +155,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-19",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-11-20",
         "total": 11,
@@ -193,9 +184,25 @@
         "date": "2026-11-25",
         "total": 14,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-26",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-26",
+        "company": "엔크레더블",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "식품제조 AX '엔크레더블', 시드 투자 유치…'모두첵' 고도화",
+        "url": "https://wowtale.net/2026/11/26/268674/",
+        "source": "와우테일"
+      },
       {
         "date": "2026-11-25",
         "company": "Maple",
@@ -286,25 +293,14 @@
       },
       {
         "date": "2026-11-18",
-        "company": "MountAIn",
-        "fundingAmount": "€7.3 million",
-        "fundingStage": null,
+        "company": "숨빗AI",
+        "fundingAmount": "120억 원",
+        "fundingStage": "시리즈A",
         "industry": "AI",
-        "overseas": true,
-        "title": "French frugal AI infrastructure startup MountAIn raises €7.3 million to bring advanced AI to sub-€9 chips",
-        "url": "https://www.eu-startups.com/2026/11/french-frugal-ai-infrastructure-startup-mountain-raises-e7-3-million-to-bring-advanced-ai-to-sub-e9-chips/",
-        "source": "EU-Startups"
-      },
-      {
-        "date": "2026-11-18",
-        "company": "Iconic",
-        "fundingAmount": "€9.1 million",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Meatable co-founder’s new firm Iconic raises €9.1 million to build AI operating system for large capital projects",
-        "url": "https://www.eu-startups.com/2026/11/meatable-co-founders-new-firm-iconic-raises-e9-1-million-to-build-ai-operating-system-for-large-capital-projects/",
-        "source": "EU-Startups"
+        "overseas": false,
+        "title": "숨빗AI, 120억 시리즈A 투자 유치·스케일업 팁스 선정",
+        "url": "https://wowtale.net/2026/11/18/268272/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-18",
@@ -316,66 +312,44 @@
         "title": "India’s Humyn Labs raises $47M to feed US robotics companies the data they need",
         "url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-18",
-        "company": "숨빗AI",
-        "fundingAmount": "120억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "숨빗AI, 120억 시리즈A 투자 유치·스케일업 팁스 선정",
-        "url": "https://wowtale.net/2026/11/18/268272/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-17",
-        "company": "메디인테크",
-        "fundingAmount": "338억 원",
-        "fundingStage": "시리즈C",
-        "industry": "AI",
-        "overseas": false,
-        "title": "내시경에 AI 접목한 메디인테크, 338억원 시리즈C 투자 유치",
-        "url": "https://www.aitimes.com/news/articleView.html?idxno=217498",
-        "source": "AI타임스"
       }
     ],
     "previous": {
-      "articleCount": 73,
-      "dealCount": 15,
+      "articleCount": 74,
+      "dealCount": 17,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-27",
-    "to": "2026-11-25",
+    "from": "2026-10-28",
+    "to": "2026-11-26",
     "briefingDays": 30,
-    "articleCount": 285,
+    "articleCount": 283,
     "domesticCount": 253,
-    "overseasCount": 32,
+    "overseasCount": 30,
     "dealCount": 53,
     "disclosedKrwDealCount": 21,
     "disclosedKrwTotalEok": 10971.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 107
+        "count": 106
       },
       {
         "label": "TIPS / LIPS",
-        "count": 57
+        "count": 61
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 49
+        "count": 48
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 38
+        "count": 36
       },
       {
         "label": "해외 VC",
-        "count": 31
+        "count": 29
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -385,11 +359,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 142
+        "count": 140
       },
       {
         "label": "선정",
-        "count": 24
+        "count": 22
       },
       {
         "label": "실증·PoC",
@@ -397,23 +371,23 @@
       },
       {
         "label": "TIPS·LIPS 선정",
-        "count": 18
+        "count": 21
       },
       {
         "label": "모집",
-        "count": 13
+        "count": 12
       },
       {
         "label": "지원사업",
-        "count": 8
+        "count": 9
       },
       {
         "label": "협약",
-        "count": 8
+        "count": 7
       },
       {
         "label": "펀드결성",
-        "count": 5
+        "count": 4
       },
       {
         "label": "인수·M&A",
@@ -427,11 +401,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 108
+        "count": 104
       },
       {
         "label": "바이오·헬스케어",
-        "count": 11
+        "count": 12
       },
       {
         "label": "로봇",
@@ -439,7 +413,7 @@
       },
       {
         "label": "반도체",
-        "count": 6
+        "count": 5
       },
       {
         "label": "농식품",
@@ -460,12 +434,12 @@
         "count": 8
       },
       {
-        "label": "시리즈B",
+        "label": "시드 투자",
         "count": 4
       },
       {
-        "label": "시드 투자",
-        "count": 3
+        "label": "시리즈B",
+        "count": 4
       },
       {
         "label": "시리즈C",
@@ -507,7 +481,7 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 52
+        "count": 54
       },
       {
         "label": "머니투데이",
@@ -515,11 +489,11 @@
       },
       {
         "label": "파이낸셜뉴스",
-        "count": 23
+        "count": 22
       },
       {
         "label": "스타트업투데이",
-        "count": 19
+        "count": 20
       },
       {
         "label": "아시아경제",
@@ -527,11 +501,11 @@
       },
       {
         "label": "연합뉴스",
-        "count": 18
+        "count": 17
       },
       {
         "label": "TechCrunch",
-        "count": 18
+        "count": 17
       },
       {
         "label": "아주경제",
@@ -539,11 +513,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-27",
-        "total": 15,
-        "overseas": 2
-      },
       {
         "date": "2026-10-28",
         "total": 15,
@@ -688,9 +657,25 @@
         "date": "2026-11-25",
         "total": 14,
         "overseas": 2
+      },
+      {
+        "date": "2026-11-26",
+        "total": 15,
+        "overseas": 1
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-26",
+        "company": "엔크레더블",
+        "fundingAmount": null,
+        "fundingStage": "시드 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "식품제조 AX '엔크레더블', 시드 투자 유치…'모두첵' 고도화",
+        "url": "https://wowtale.net/2026/11/26/268674/",
+        "source": "와우테일"
+      },
       {
         "date": "2026-11-25",
         "company": "Maple",
@@ -899,22 +884,11 @@
         "title": "Bedrock Energy raises $24M to build more AI-enabled geothermal drill rigs for enterprise buildings",
         "url": "https://techcrunch.com/2026/11/16/bedrock-energy-raises-24m-to-build-more-ai-enabled-geothermal-drill-rigs-for-enterprise-buildings/",
         "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "Plural",
-        "fundingAmount": "$1.1B",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Helsing backer Plural raises $1.1B to fund Europe’s next moonshots",
-        "url": "https://techcrunch.com/2026/11/15/helsing-backer-plural-raises-1-1b-to-fund-europes-next-moonshots/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 274,
-      "dealCount": 51,
+      "articleCount": 282,
+      "dealCount": 52,
       "briefingDays": 29
     }
   }
