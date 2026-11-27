@@ -1,29 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-26T00:11:44.550Z",
-  "latestDate": "2026-11-26",
+  "generatedAt": "2026-11-27T00:11:41.906Z",
+  "latestDate": "2026-11-27",
   "weekly": {
-    "from": "2026-11-20",
-    "to": "2026-11-26",
+    "from": "2026-11-21",
+    "to": "2026-11-27",
     "briefingDays": 7,
-    "articleCount": 69,
-    "domesticCount": 65,
-    "overseasCount": 4,
-    "dealCount": 11,
+    "articleCount": 72,
+    "domesticCount": 69,
+    "overseasCount": 3,
+    "dealCount": 9,
     "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 225,
+    "disclosedKrwTotalEok": 258,
     "byCategory": [
       {
         "label": "VC / AC",
         "count": 28
       },
       {
-        "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 14
+        "label": "TIPS / LIPS",
+        "count": 17
       },
       {
-        "label": "TIPS / LIPS",
-        "count": 13
+        "label": "스타트업 / 벤처기업 / 초기창업",
+        "count": 14
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -31,7 +31,7 @@
       },
       {
         "label": "해외 VC",
-        "count": 4
+        "count": 3
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,10 +41,14 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 34
+        "count": 37
       },
       {
         "label": "선정",
+        "count": 5
+      },
+      {
+        "label": "TIPS·LIPS 선정",
         "count": 5
       },
       {
@@ -53,11 +57,7 @@
       },
       {
         "label": "지원사업",
-        "count": 4
-      },
-      {
-        "label": "TIPS·LIPS 선정",
-        "count": 4
+        "count": 3
       },
       {
         "label": "협약",
@@ -66,10 +66,6 @@
       {
         "label": "모집",
         "count": 2
-      },
-      {
-        "label": "펀드결성",
-        "count": 1
       }
     ],
     "byIndustry": [
@@ -79,11 +75,11 @@
       },
       {
         "label": "바이오·헬스케어",
-        "count": 5
+        "count": 6
       },
       {
         "label": "로봇",
-        "count": 3
+        "count": 2
       },
       {
         "label": "반도체",
@@ -101,10 +97,10 @@
       },
       {
         "label": "시리즈B",
-        "count": 2
+        "count": 1
       },
       {
-        "label": "시리즈A",
+        "label": "시리즈D",
         "count": 1
       },
       {
@@ -127,14 +123,18 @@
       },
       {
         "label": "머니투데이",
+        "count": 8
+      },
+      {
+        "label": "스타트업투데이",
         "count": 7
       },
       {
         "label": "동아일보",
-        "count": 6
+        "count": 5
       },
       {
-        "label": "스타트업투데이",
+        "label": "아시아경제",
         "count": 5
       },
       {
@@ -148,18 +148,9 @@
       {
         "label": "파이낸셜뉴스",
         "count": 4
-      },
-      {
-        "label": "TechCrunch",
-        "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-20",
-        "total": 11,
-        "overseas": 2
-      },
       {
         "date": "2026-11-21",
         "total": 14,
@@ -189,6 +180,11 @@
         "date": "2026-11-26",
         "total": 15,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-27",
+        "total": 12,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -213,6 +209,17 @@
         "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
         "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-25",
+        "company": "아보메드",
+        "fundingAmount": "153억 원",
+        "fundingStage": "시리즈D",
+        "industry": null,
+        "overseas": false,
+        "title": "아보메드, 153억 시리즈D 투자 유치…2027년 IPO 추진",
+        "url": "https://wowtale.net/2026/11/25/268641/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-24",
@@ -260,17 +267,6 @@
       },
       {
         "date": "2026-11-20",
-        "company": "링크",
-        "fundingAmount": null,
-        "fundingStage": "시리즈B",
-        "industry": "AI",
-        "overseas": false,
-        "title": "AI 에이전트 메시징 링크, 9천만 달러 시리즈B 투자유치",
-        "url": "https://wowtale.net/2026/11/20/268380/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-20",
         "company": "Everful",
         "fundingAmount": "$48.5M",
         "fundingStage": null,
@@ -290,66 +286,44 @@
         "title": "온체인 파생상품 '베리에이셔널', 1.1억 달러 시리즈B 투자유치",
         "url": "https://wowtale.net/2026/11/19/268347/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-18",
-        "company": "숨빗AI",
-        "fundingAmount": "120억 원",
-        "fundingStage": "시리즈A",
-        "industry": "AI",
-        "overseas": false,
-        "title": "숨빗AI, 120억 시리즈A 투자 유치·스케일업 팁스 선정",
-        "url": "https://wowtale.net/2026/11/18/268272/",
-        "source": "와우테일"
-      },
-      {
-        "date": "2026-11-18",
-        "company": "Humyn Labs",
-        "fundingAmount": "$47M",
-        "fundingStage": null,
-        "industry": "로봇",
-        "overseas": true,
-        "title": "India’s Humyn Labs raises $47M to feed US robotics companies the data they need",
-        "url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 74,
-      "dealCount": 17,
+      "articleCount": 73,
+      "dealCount": 18,
       "briefingDays": 7
     }
   },
   "monthly": {
-    "from": "2026-10-28",
-    "to": "2026-11-26",
+    "from": "2026-10-29",
+    "to": "2026-11-27",
     "briefingDays": 30,
-    "articleCount": 283,
-    "domesticCount": 253,
-    "overseasCount": 30,
+    "articleCount": 280,
+    "domesticCount": 252,
+    "overseasCount": 28,
     "dealCount": 53,
     "disclosedKrwDealCount": 21,
-    "disclosedKrwTotalEok": 10971.8,
+    "disclosedKrwTotalEok": 11039.8,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 106
+        "count": 107
       },
       {
         "label": "TIPS / LIPS",
-        "count": 61
+        "count": 63
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 48
+        "count": 46
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 36
+        "count": 34
       },
       {
         "label": "해외 VC",
-        "count": 29
+        "count": 27
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -359,19 +333,19 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 140
-      },
-      {
-        "label": "선정",
-        "count": 22
-      },
-      {
-        "label": "실증·PoC",
-        "count": 22
+        "count": 142
       },
       {
         "label": "TIPS·LIPS 선정",
         "count": 21
+      },
+      {
+        "label": "선정",
+        "count": 20
+      },
+      {
+        "label": "실증·PoC",
+        "count": 20
       },
       {
         "label": "모집",
@@ -401,11 +375,11 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 104
+        "count": 105
       },
       {
         "label": "바이오·헬스케어",
-        "count": 12
+        "count": 13
       },
       {
         "label": "로봇",
@@ -431,7 +405,7 @@
     "byStage": [
       {
         "label": "시리즈A",
-        "count": 8
+        "count": 7
       },
       {
         "label": "시드 투자",
@@ -442,11 +416,11 @@
         "count": 4
       },
       {
-        "label": "시리즈C",
-        "count": 3
+        "label": "시리즈D",
+        "count": 4
       },
       {
-        "label": "시리즈D",
+        "label": "시리즈C",
         "count": 3
       },
       {
@@ -481,43 +455,38 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 54
+        "count": 56
       },
       {
         "label": "머니투데이",
         "count": 26
       },
       {
-        "label": "파이낸셜뉴스",
-        "count": 22
-      },
-      {
         "label": "스타트업투데이",
-        "count": 20
+        "count": 21
       },
       {
         "label": "아시아경제",
-        "count": 18
+        "count": 20
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 20
       },
       {
         "label": "연합뉴스",
-        "count": 17
+        "count": 16
       },
       {
         "label": "TechCrunch",
-        "count": 17
+        "count": 16
       },
       {
         "label": "아주경제",
-        "count": 14
+        "count": 12
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-28",
-        "total": 15,
-        "overseas": 3
-      },
       {
         "date": "2026-10-29",
         "total": 13,
@@ -662,6 +631,11 @@
         "date": "2026-11-26",
         "total": 15,
         "overseas": 1
+      },
+      {
+        "date": "2026-11-27",
+        "total": 12,
+        "overseas": 0
       }
     ],
     "deals": [
@@ -686,6 +660,17 @@
         "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
         "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
         "source": "TechCrunch"
+      },
+      {
+        "date": "2026-11-25",
+        "company": "아보메드",
+        "fundingAmount": "153억 원",
+        "fundingStage": "시리즈D",
+        "industry": null,
+        "overseas": false,
+        "title": "아보메드, 153억 시리즈D 투자 유치…2027년 IPO 추진",
+        "url": "https://wowtale.net/2026/11/25/268641/",
+        "source": "와우테일"
       },
       {
         "date": "2026-11-24",
@@ -873,23 +858,12 @@
         "title": "예탁결제원 ‘K-캠프’가 키운 지방 스타트업, 154억 투자 유치",
         "url": "https://www.mk.co.kr/news/business/12210041",
         "source": "매일경제"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "Bedrock Energy",
-        "fundingAmount": "$24M",
-        "fundingStage": null,
-        "industry": "AI",
-        "overseas": true,
-        "title": "Bedrock Energy raises $24M to build more AI-enabled geothermal drill rigs for enterprise buildings",
-        "url": "https://techcrunch.com/2026/11/16/bedrock-energy-raises-24m-to-build-more-ai-enabled-geothermal-drill-rigs-for-enterprise-buildings/",
-        "source": "TechCrunch"
       }
     ],
     "previous": {
-      "articleCount": 282,
-      "dealCount": 52,
-      "briefingDays": 29
+      "articleCount": 294,
+      "dealCount": 53,
+      "briefingDays": 30
     }
   }
 }
