@@ -1,29 +1,29 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-27T00:11:41.906Z",
-  "latestDate": "2026-11-27",
+  "generatedAt": "2026-11-28T00:11:35.869Z",
+  "latestDate": "2026-11-28",
   "weekly": {
-    "from": "2026-11-21",
-    "to": "2026-11-27",
+    "from": "2026-11-22",
+    "to": "2026-11-28",
     "briefingDays": 7,
-    "articleCount": 72,
-    "domesticCount": 69,
-    "overseasCount": 3,
-    "dealCount": 9,
-    "disclosedKrwDealCount": 3,
-    "disclosedKrwTotalEok": 258,
+    "articleCount": 67,
+    "domesticCount": 65,
+    "overseasCount": 2,
+    "dealCount": 8,
+    "disclosedKrwDealCount": 4,
+    "disclosedKrwTotalEok": 397,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 28
+        "count": 25
       },
       {
         "label": "TIPS / LIPS",
-        "count": 17
+        "count": 18
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
-        "count": 14
+        "count": 12
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
@@ -31,7 +31,7 @@
       },
       {
         "label": "해외 VC",
-        "count": 3
+        "count": 2
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -41,31 +41,31 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 37
+        "count": 34
+      },
+      {
+        "label": "TIPS·LIPS 선정",
+        "count": 6
       },
       {
         "label": "선정",
         "count": 5
       },
       {
-        "label": "TIPS·LIPS 선정",
-        "count": 5
-      },
-      {
         "label": "실증·PoC",
-        "count": 4
+        "count": 5
       },
       {
         "label": "지원사업",
         "count": 3
       },
       {
-        "label": "협약",
-        "count": 3
+        "label": "모집",
+        "count": 1
       },
       {
-        "label": "모집",
-        "count": 2
+        "label": "협약",
+        "count": 1
       }
     ],
     "byIndustry": [
@@ -96,10 +96,6 @@
         "count": 2
       },
       {
-        "label": "시리즈B",
-        "count": 1
-      },
-      {
         "label": "시리즈D",
         "count": 1
       },
@@ -109,6 +105,10 @@
       },
       {
         "label": "프리A",
+        "count": 1
+      },
+      {
+        "label": "후속 투자",
         "count": 1
       },
       {
@@ -127,7 +127,11 @@
       },
       {
         "label": "스타트업투데이",
-        "count": 7
+        "count": 6
+      },
+      {
+        "label": "파이낸셜뉴스",
+        "count": 6
       },
       {
         "label": "동아일보",
@@ -138,24 +142,15 @@
         "count": 5
       },
       {
-        "label": "연합뉴스",
-        "count": 5
-      },
-      {
         "label": "아주경제",
         "count": 4
       },
       {
-        "label": "파이낸셜뉴스",
+        "label": "연합뉴스",
         "count": 4
       }
     ],
     "daily": [
-      {
-        "date": "2026-11-21",
-        "total": 14,
-        "overseas": 1
-      },
       {
         "date": "2026-11-22",
         "total": 12,
@@ -185,9 +180,25 @@
         "date": "2026-11-27",
         "total": 12,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-28",
+        "total": 9,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-27",
+        "company": "DHP",
+        "fundingAmount": "139억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "DHP, 보건산업진흥원 투자유치 지원사업 성료∙∙∙스타트업 4개사 139억 원 확보",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53587",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-11-26",
         "company": "엔크레더블",
@@ -264,28 +275,6 @@
         "title": "쓰리브룩스테라퓨틱스, 75억원 프리시리즈A 투자유치",
         "url": "https://wowtale.net/2026/11/24/268596/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-20",
-        "company": "Everful",
-        "fundingAmount": "$48.5M",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": true,
-        "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
-        "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
-        "source": "TechCrunch"
-      },
-      {
-        "date": "2026-11-19",
-        "company": "베리에이셔널",
-        "fundingAmount": null,
-        "fundingStage": "시리즈B",
-        "industry": null,
-        "overseas": false,
-        "title": "온체인 파생상품 '베리에이셔널', 1.1억 달러 시리즈B 투자유치",
-        "url": "https://wowtale.net/2026/11/19/268347/",
-        "source": "와우테일"
       }
     ],
     "previous": {
@@ -295,19 +284,19 @@
     }
   },
   "monthly": {
-    "from": "2026-10-29",
-    "to": "2026-11-27",
+    "from": "2026-10-30",
+    "to": "2026-11-28",
     "briefingDays": 30,
-    "articleCount": 280,
-    "domesticCount": 252,
-    "overseasCount": 28,
-    "dealCount": 53,
+    "articleCount": 276,
+    "domesticCount": 250,
+    "overseasCount": 26,
+    "dealCount": 51,
     "disclosedKrwDealCount": 21,
-    "disclosedKrwTotalEok": 11039.8,
+    "disclosedKrwTotalEok": 10914,
     "byCategory": [
       {
         "label": "VC / AC",
-        "count": 107
+        "count": 103
       },
       {
         "label": "TIPS / LIPS",
@@ -315,7 +304,7 @@
       },
       {
         "label": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-        "count": 46
+        "count": 48
       },
       {
         "label": "스타트업 / 벤처기업 / 초기창업",
@@ -323,7 +312,7 @@
       },
       {
         "label": "해외 VC",
-        "count": 27
+        "count": 25
       },
       {
         "label": "세컨더리 / 구주매각",
@@ -333,7 +322,11 @@
     "byEventType": [
       {
         "label": "투자유치",
-        "count": 142
+        "count": 137
+      },
+      {
+        "label": "실증·PoC",
+        "count": 21
       },
       {
         "label": "TIPS·LIPS 선정",
@@ -341,10 +334,6 @@
       },
       {
         "label": "선정",
-        "count": 20
-      },
-      {
-        "label": "실증·PoC",
         "count": 20
       },
       {
@@ -375,7 +364,7 @@
     "byIndustry": [
       {
         "label": "AI",
-        "count": 105
+        "count": 104
       },
       {
         "label": "바이오·헬스케어",
@@ -420,12 +409,16 @@
         "count": 4
       },
       {
-        "label": "시리즈C",
+        "label": "프리시리즈A",
         "count": 3
       },
       {
-        "label": "프리시리즈A",
-        "count": 3
+        "label": "시리즈C",
+        "count": 2
+      },
+      {
+        "label": "후속 투자",
+        "count": 2
       },
       {
         "label": "시드",
@@ -436,15 +429,7 @@
         "count": 1
       },
       {
-        "label": "후속 투자",
-        "count": 1
-      },
-      {
         "label": "seed",
-        "count": 1
-      },
-      {
-        "label": "Series A",
         "count": 1
       },
       {
@@ -455,22 +440,22 @@
     "topSources": [
       {
         "label": "와우테일",
-        "count": 56
+        "count": 54
       },
       {
         "label": "머니투데이",
-        "count": 26
+        "count": 25
       },
       {
         "label": "스타트업투데이",
-        "count": 21
-      },
-      {
-        "label": "아시아경제",
-        "count": 20
+        "count": 22
       },
       {
         "label": "파이낸셜뉴스",
+        "count": 22
+      },
+      {
+        "label": "아시아경제",
         "count": 20
       },
       {
@@ -479,7 +464,7 @@
       },
       {
         "label": "TechCrunch",
-        "count": 16
+        "count": 15
       },
       {
         "label": "아주경제",
@@ -487,11 +472,6 @@
       }
     ],
     "daily": [
-      {
-        "date": "2026-10-29",
-        "total": 13,
-        "overseas": 3
-      },
       {
         "date": "2026-10-30",
         "total": 11,
@@ -636,9 +616,25 @@
         "date": "2026-11-27",
         "total": 12,
         "overseas": 0
+      },
+      {
+        "date": "2026-11-28",
+        "total": 9,
+        "overseas": 0
       }
     ],
     "deals": [
+      {
+        "date": "2026-11-27",
+        "company": "DHP",
+        "fundingAmount": "139억 원",
+        "fundingStage": "후속 투자",
+        "industry": null,
+        "overseas": false,
+        "title": "DHP, 보건산업진흥원 투자유치 지원사업 성료∙∙∙스타트업 4개사 139억 원 확보",
+        "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53587",
+        "source": "스타트업투데이"
+      },
       {
         "date": "2026-11-26",
         "company": "엔크레더블",
@@ -847,22 +843,11 @@
         "title": "심혈관 영상진단 '레이와트', 130억 시리즈B 투자 유치…28년 상장 목표",
         "url": "https://wowtale.net/2026/11/16/268121/",
         "source": "와우테일"
-      },
-      {
-        "date": "2026-11-16",
-        "company": "한국예탁결제원",
-        "fundingAmount": "154억 원",
-        "fundingStage": null,
-        "industry": null,
-        "overseas": false,
-        "title": "예탁결제원 ‘K-캠프’가 키운 지방 스타트업, 154억 투자 유치",
-        "url": "https://www.mk.co.kr/news/business/12210041",
-        "source": "매일경제"
       }
     ],
     "previous": {
       "articleCount": 294,
-      "dealCount": 53,
+      "dealCount": 54,
       "briefingDays": 30
     }
   }

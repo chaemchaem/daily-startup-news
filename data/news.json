@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-27T09:00:00+09:00",
-  "collectedAt": "2026-11-27T09:11:41+09:00",
+  "generatedAt": "2026-11-28T09:00:00+09:00",
+  "collectedAt": "2026-11-28T09:11:35+09:00",
   "range": {
-    "from": "2026-11-25T09:00:00+09:00",
-    "to": "2026-11-27T09:00:00+09:00"
+    "from": "2026-11-26T09:00:00+09:00",
+    "to": "2026-11-28T09:00:00+09:00"
   },
-  "totalCount": 12,
+  "totalCount": 9,
   "categoryCounts": {
-    "VC / AC": 5,
+    "VC / AC": 2,
     "TIPS / LIPS": 5,
-    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 1,
-    "스타트업 / 벤처기업 / 초기창업": 1,
+    "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주": 2,
+    "스타트업 / 벤처기업 / 초기창업": 0,
     "세컨더리 / 구주매각": 0,
     "해외 VC": 0
   },
@@ -30,21 +30,22 @@
       "fundingStage": "프리A",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 98
+      "score": 96
     },
     {
-      "id": "733bf1199e8fa016",
+      "id": "4bc077235fb5458c",
       "category": "TIPS / LIPS",
-      "title": "VC협회, '스케일업 팁스 서밋' 개최…해외 투자유치 지원",
+      "title": "관악연구소 중기부 팁스 선정…최대 8억 원 연구개발비 지원",
       "publishedAt": "2026-11-27",
-      "summary": "해외 투자유치를 위한 기업설명회(IR)도 진행됐다. 초기 창업기업을 지원하는 팁스에서 스케일업 팁스와 글로벌 팁스로 이어지는 지원 체계의 운영 현황도 점검했다.",
+      "summary": "관악연구소는 팁스 운영사인 서울대학교기술지주로부터 3억 원의 투자를 유치하고 추천을 받아 이번 과제에 선정됐다고 설명했다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026112708384535129",
+      "source": "동아일보",
+      "url": "https://www.donga.com/news/Economy/article/all/20261127/135103680/1",
       "resolvedUrl": null,
-      "eventType": "투자유치",
-      "score": 96
+      "company": "관악연구소",
+      "eventType": "TIPS·LIPS 선정",
+      "score": 87
     },
     {
       "id": "30d9fbb88e6abb91",
@@ -61,7 +62,39 @@
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
       "industry": "AI",
-      "score": 86
+      "score": 84
+    },
+    {
+      "id": "15e36f5a337ae49d",
+      "category": "TIPS / LIPS",
+      "title": "DHP, 보건산업진흥원 투자유치 지원사업 성료∙∙∙스타트업 4개사 139억 원 확보",
+      "publishedAt": "2026-11-27",
+      "summary": "초기 투자와 의학 자문, 임상 검증, 후속 투자 유치 지원 등을 제공하며 현재까지 60여 개 혁신 기업에 투자했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "스타트업투데이",
+      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53587",
+      "resolvedUrl": null,
+      "company": "DHP",
+      "fundingAmount": "139억 원",
+      "fundingStage": "후속 투자",
+      "eventType": "투자유치",
+      "score": 83
+    },
+    {
+      "id": "9ee2ca813bded001",
+      "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
+      "title": "K-스마트축산, 라오스 국가 플랫폼 뚫었다… 숭실대 창업기업 첫 AI 실증 성공",
+      "publishedAt": "2026-11-27",
+      "summary": "㈜와이비즈는 지난 24일 라오스 수도 비엔티안에서 최종 성과발표회를 열고, 이번 시범 모델을 라오스 국가 축산 정보 통합 플랫폼으로 확대하는 방안을 현지 정부와 논의했다.",
+      "summarySource": "local_extractive",
+      "summaryType": "local_extractive",
+      "source": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202611271026132279",
+      "resolvedUrl": null,
+      "eventType": "실증·PoC",
+      "industry": "AI",
+      "score": 83
     },
     {
       "id": "f0b83079830f93b2",
@@ -76,88 +109,41 @@
       "resolvedUrl": null,
       "fundingStage": "시드 투자",
       "eventType": "투자유치",
-      "score": 85
+      "score": 83
     },
     {
-      "id": "f33670dd3d9a82d3",
+      "id": "71539c9a4770fb31",
       "category": "VC / AC",
-      "title": "아보메드, 153억 시리즈D 투자 유치…2027년 IPO 추진",
-      "publishedAt": "2026-11-25",
-      "summary": "당초 목표였던 150억 원을 넘겨 누적 투자유치 금액은 580억 원이 됐다. 아보메드는 이번 펀딩에서 기업가치 조정 없이 투자금 납입을 완료했다.",
+      "title": "집수리 '홈코' 운영사 홈앤코, 프리시리즈A 투자유치",
+      "publishedAt": "2026-11-27",
+      "summary": "집수리 ‘홈코’ 운영사 홈앤코, 프리시리즈A 투자유치 집수리 서비스 ‘ 홈코 ‘를 운영하는 홈앤코 가 프리시리즈A 투자를 마무리했다고 27일 밝혔다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
       "source": "와우테일",
-      "url": "https://wowtale.net/2026/11/25/268641/",
+      "url": "https://wowtale.net/2026/11/27/268786/",
       "resolvedUrl": null,
-      "company": "아보메드",
-      "fundingAmount": "153억 원",
-      "fundingStage": "시리즈D",
+      "fundingStage": "프리시리즈A",
       "eventType": "투자유치",
       "score": 82
     },
     {
-      "id": "e4cc4e86695f1f3d",
-      "category": "VC / AC",
-      "title": "[VC는 지금]신약 후보는 한국서 개발, 임상은 해외 자본으로…\"시리즈A부터 파트너 찾아야\"",
-      "publishedAt": "2026-11-27",
-      "summary": "시리즈A부터 해외 파트너 찾아야\" 해외 투자자는 임상자금뿐 아니라 전문 인력을 확보하는 데도 관여할 수 있다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "아시아경제",
-      "url": "https://view.asiae.co.kr/article/2026112515553340104",
-      "resolvedUrl": null,
-      "fundingStage": "시리즈A",
-      "eventType": "투자유치",
-      "industry": "바이오·헬스케어",
-      "score": 77
-    },
-    {
-      "id": "fce2a36bd03a44fa",
-      "category": "VC / AC",
-      "title": "누리하우스·해시드, K-뷰티 글로벌 진출 지원 본격화∙∙∙뉴욕서 미국 투자자 매칭",
-      "publishedAt": "2026-11-25",
-      "summary": "이에 주최 측은 K-뷰티 브랜드의 성공적인 북미 진출을 지원하고 이들이 현지 투자자와 직접 교류할 수 있는 기회를 마련했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "스타트업투데이",
-      "url": "https://www.startuptoday.kr/news/articleView.html?idxno=53569",
-      "resolvedUrl": null,
-      "company": "누리하우스·해시드",
-      "eventType": "지원사업",
-      "score": 76
-    },
-    {
-      "id": "5fc83e26acbf62ff",
-      "category": "TIPS / LIPS",
-      "title": "제노헬릭스, 동원그룹과 '참치 miPDRN' 상용화…스케일업 팁스 선정",
-      "publishedAt": "2026-11-26",
-      "summary": "동원그룹이 원료수급과 완제품 사업화를, 제노헬릭스는 신소재를 개발하고, 동물실험은 연세대학교, 인체적용시험은 알엔비에스가 각각 담당할 예정이다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "머니투데이",
-      "url": "https://www.mt.co.kr/future/2026/11/26/2026112617323451565",
-      "resolvedUrl": null,
-      "company": "제노헬릭스",
-      "eventType": "TIPS·LIPS 선정",
-      "score": 72
-    },
-    {
-      "id": "065ac74925eee255",
+      "id": "8a3adaff219f6867",
       "category": "농식품 / 딥테크 / ESG / AI / 반도체 / 항공우주",
-      "title": "산업은행, ‘KDB 넥스트원’ 데모데이…유망 스타트업 비전 공유",
-      "publishedAt": "2026-11-25",
-      "summary": "윤태정 한국산업은행 혁신성장금융부문 부행장은 “산업은행은 KDB 벤처플랫폼과 직·간접 투자를 통한 스타트업의 성장 단계별 종합 지원을 이어나갈 계획”이라고 말했다.",
+      "title": "벤츠, 韓 스타트업과 미래차 기술 개발…AI·무선충전 협력 강화",
+      "publishedAt": "2026-11-27",
+      "summary": "메르세데스-벤츠 코리아 제공 메르세데스-벤츠 코리아가 국내 스타트업과 손잡고 미래 모빌리티 기술 확보에 나섰다.",
       "summarySource": "local_extractive",
       "summaryType": "local_extractive",
-      "source": "동아일보",
-      "url": "https://www.donga.com/news/Economy/article/all/20261125/135089909/1",
+      "source": "파이낸셜뉴스",
+      "url": "https://www.fnnews.com/news/202611271011417602",
       "resolvedUrl": null,
-      "score": 69
+      "industry": "AI",
+      "score": 68
     },
     {
-      "id": "185a3303411052a2",
+      "id": "200143fe2fb6ad7d",
       "category": "VC / AC",
-      "title": "크릿벤처스, 클링크 후속 투자∙∙∙한국 웹툰 IP 일본 현지화 주도",
+      "title": "크릿벤처스, 클링크에 후속 투자∙∙∙한국 웹툰 IP 일본 현지화 주도",
       "publishedAt": "2026-11-26",
       "summary": "벤처캐피탈(VC) 크릿벤처스(대표 송재준)가 콘텐츠 지식재산권(IP) 전문 기업 클링크(대표 마혁민)에 후속 투자를 진행했다고 26일 밝혔다.",
       "summarySource": "local_extractive",
@@ -167,33 +153,7 @@
       "resolvedUrl": null,
       "fundingStage": "후속 투자",
       "eventType": "투자유치",
-      "score": 65
-    },
-    {
-      "id": "2828fe6d8c8201aa",
-      "category": "VC / AC",
-      "title": "현대건설, 스타트업 14곳과 혁신기술 공유…오픈이노베이션 데이 개최",
-      "publishedAt": "2026-11-25",
-      "summary": "현대건설은 지난 23일 서울 마포구 스타트업 벤처 캠퍼스 서울(SVC Seoul)에서 '2026 현대건설 오픈이노베이션 데이'를 개최했다고 25일 밝혔다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "아주경제",
-      "url": "https://www.ajunews.com/view/20261125143350543",
-      "resolvedUrl": null,
-      "score": 60
-    },
-    {
-      "id": "a93b4577b5fd80d2",
-      "category": "스타트업 / 벤처기업 / 초기창업",
-      "title": "스타트업 규제 전담위 신설…\"부처 간 이견 조정\"",
-      "publishedAt": "2026-11-27",
-      "summary": "민간위원에는 창업·벤처 분야의 협·단체, 벤처·스타트업, 규제 연구기관 및 법률·회계·경영 전문가가 참여했다.",
-      "summarySource": "local_extractive",
-      "summaryType": "local_extractive",
-      "source": "뉴시스",
-      "url": "https://www.newsis.com/view/NISX20261126_0003885074",
-      "resolvedUrl": null,
-      "score": 50
+      "score": 63
     }
   ]
 }
